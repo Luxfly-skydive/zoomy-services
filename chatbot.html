@@ -220,5 +220,75 @@
 <script src="js/main.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/chatbot.js"></script>
+
+<script>
+// ── Zoomy demo widget wiring ───────────────────────────────────────────────
+(function() {
+  function initDemo() {
+    if (!window.__zmy) { setTimeout(initDemo, 50); return; }
+
+    // Remove the floating chat bubble on this page (demo widget IS the demo)
+    var root = document.getElementById('zmy-root');
+    if (root) root.remove();
+    var attn = document.getElementById('zmy-attn');
+    if (attn) attn.remove();
+
+    var messagesEl = document.getElementById('chatbot-messages');
+    var inputEl    = document.getElementById('chatbot-input-field');
+    var sendBtn    = document.getElementById('chatbot-send');
+    if (!messagesEl || !inputEl || !sendBtn) return;
+
+    // Clear the static demo messages on first interaction
+    var firstInteraction = true;
+
+    function appendMsg(text, role) {
+      var div = document.createElement('div');
+      div.className = 'msg msg-' + role;
+      // Render markdown: **bold**, _italic_, links, newlines
+      var html = text
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/_(.+?)_/g, '<em>$1</em>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+        .replace(/\n/g, '<br>');
+      div.innerHTML = html;
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function sendMessage() {
+      var text = inputEl.value.trim();
+      if (!text) return;
+      if (firstInteraction) {
+        messagesEl.innerHTML = '';
+        firstInteraction = false;
+      }
+      appendMsg(text, 'user');
+      inputEl.value = '';
+      // Typing indicator
+      var typing = document.createElement('div');
+      typing.className = 'msg msg-bot';
+      typing.id = 'zmy-typing';
+      typing.textContent = '…';
+      messagesEl.appendChild(typing);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      setTimeout(function() {
+        typing.remove();
+        var response = window.__zmy.getResponse(text);
+        appendMsg(response, 'bot');
+      }, 280);
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    inputEl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+    });
+
+    // Update status to show it's live
+    var status = document.querySelector('.chatbot-status');
+    if (status) status.textContent = 'Live — powered by Zoomy chatbot.js';
+  }
+  initDemo();
+})();
+</script>
 </body>
 </html>

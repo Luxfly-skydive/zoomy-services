@@ -1456,14 +1456,16 @@ function render() {
   }
 }
 
-render();
+// render() disabled for testing
 
 /* Export for test runner */
 if (typeof module !== 'undefined') {
   module.exports = { getResponse, KB, norm, anyKw, kwMatch, expandSynonyms, fuzzy, scoreKB };
 }
-if (typeof window !== 'undefined') {
-  window.__zmy = { getResponse };
+/* Export for test runner */
+if (typeof module !== 'undefined') {
+  module.exports = { getResponse, KB, norm, anyKw, kwMatch, expandSynonyms, fuzzy, scoreKB };
 }
+// window export disabled for testing
 
 })(); /* end IIFE */

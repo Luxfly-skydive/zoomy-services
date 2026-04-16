@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI Chatbots — Zoomy.services</title>
+<meta name="description" content="Custom AI chatbots trained on your business. Deployed on your website. Multilingual, lead capture, no third-party dependencies."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.chatbot-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.detail-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.detail-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.25rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.detail-row:first-child{border-top:1px solid var(--border-b)}
+.detail-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.detail-name{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#fff}
+.detail-desc{color:var(--text-2);font-size:.9rem;line-height:1.75}
+@media(max-width:900px){.chatbot-detail-grid{grid-template-columns:1fr}.detail-row{grid-template-columns:1fr;gap:1rem}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Digital Production Studio</span></a>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="campaign-portfolio.html">Campaigns</a></li>
+    <li><a href="website-design.html">Websites</a></li>
+    <li><a href="phone-agent.html">Phone Agents</a></li>
+    <li><a href="chatbot.html">Chatbots</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="contact.html" class="btn-nav">Start a Project &#8250;</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+  <div class="aurora">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+    <div class="aurora-blob aurora-blob-3"></div>
+  </div>
+  <div class="grid-overlay"></div>
+  <div class="section-inner" style="z-index:2;">
+    <div class="chatbot-detail-grid">
+      <div>
+        <div class="section-tag" style="margin-bottom:1.5rem;">AI Chatbot</div>
+        <h1 style="text-align:left;margin-bottom:1.5rem;max-width:600px;">
+          <span class="glitch grad-text-animated">Trained</span><br>
+          on your business.
+        </h1>
+        <p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:540px;margin-bottom:2rem;">A chatbot that knows your business the way you do. Not a general-purpose assistant &#8212; a custom-built tool trained on your specific services, prices, hours, and policies. Deployed directly on your website.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary">Add to your project &#8250;</a>
+          <a href="#demo" class="btn btn-ghost">Try the demo &#8250;</a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;align-items:center;">
+        <div class="chatbot-mock" id="demo">
+          <div class="chatbot-header">
+            <div class="chatbot-avatar">&#129302;</div>
+            <div>
+              <div class="chatbot-name">Zoomy Assistant</div>
+              <div class="chatbot-status">Live demo &#8212; try it</div>
+            </div>
+          </div>
+          <div class="chatbot-messages" id="chatbot-messages">
+            <div class="msg msg-bot">Hello. Ask me anything about our services &#8212; websites, chatbots, campaigns, or phone agents.</div>
+            <div class="msg msg-user">How does the chatbot work?</div>
+            <div class="msg msg-bot">It&#39;s trained on a custom knowledge base built around your business. When a visitor asks a question, it matches their input against that knowledge base and responds accurately. It only knows what you&#39;ve provided &#8212; it doesn&#39;t improvise or make things up.</div>
+          </div>
+          <div class="chatbot-input">
+            <input class="chatbot-input-field" id="chatbot-input-field" type="text" placeholder="Ask anything..."/>
+            <button class="chatbot-send" id="chatbot-send">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">How it works</div>
+    <h2 class="section-title">What makes it different.</h2>
+    <div class="detail-rows">
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">Knowledge</div>
+          <div class="detail-name">Trained on your data</div>
+        </div>
+        <div class="detail-desc">We build a custom knowledge base from the information you provide &#8212; your services, pricing, availability, booking process, FAQs, and policies. The chatbot only answers based on what you&#39;ve given us, which means it answers accurately and doesn&#39;t guess or fabricate information.</div>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">Language</div>
+          <div class="detail-name">Multilingual by default</div>
+        </div>
+        <div class="detail-desc">The chatbot responds in the language the visitor is using. The knowledge base is built in each language separately to ensure responses are natural and accurate, not machine-translated. Works in EN, FR, DE, NL, ES, and any other language you need.</div>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">Matching</div>
+          <div class="detail-name">Handles typos and informal language</div>
+        </div>
+        <div class="detail-desc">Visitors rarely type perfectly. The chatbot uses fuzzy matching to understand variations in spelling, informal phrasing, and abbreviated questions. A visitor typing &#34;whats ur price&#34; gets the same accurate response as one typing &#34;What is your pricing?&#34;</div>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">Leads</div>
+          <div class="detail-name">Collects contact details</div>
+        </div>
+        <div class="detail-desc">When a visitor&#39;s question suggests they&#39;re interested in booking or getting a quote, the chatbot can prompt them to leave their email or phone number. Those details are collected and stored for you to follow up.</div>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">Hosting</div>
+          <div class="detail-name">Self-hosted, no platform fees</div>
+        </div>
+        <div class="detail-desc">The chatbot runs directly on your website&#39;s infrastructure. There are no third-party platform subscriptions, no per-message fees, and no external dependencies that could go offline or change their pricing. You own it outright once it&#39;s built.</div>
+      </div>
+
+      <div class="detail-row reveal">
+        <div>
+          <div class="detail-label">Option</div>
+          <div class="detail-name">API-based alternative</div>
+        </div>
+        <div class="detail-desc">For use cases that need more open-ended or complex responses, an API-based version is available. This connects to an external AI service and handles a wider range of questions. Usage costs are billed at the provider&#39;s rate plus a management margin. We&#39;ll advise which option fits your use case better during the brief.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-2);">
+  <div class="section-inner">
+    <div class="section-tag">Availability</div>
+    <h2 class="section-title">Standalone or as an add-on.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;">
+        <h3 style="font-family:var(--font-display);color:#fff;font-size:1.15rem;margin-bottom:1rem;">Standalone build</h3>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1.5rem;">We build and deploy the chatbot on its own, integrated into your existing website. You provide the business data; we build the knowledge base, set up the chatbot, and handle the deployment.</p>
+        <a href="contact.html" class="btn btn-primary" style="font-size:.875rem;">Get a quote &#8250;</a>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;">
+        <h3 style="font-family:var(--font-display);color:#fff;font-size:1.15rem;margin-bottom:1rem;">Add-on with a website</h3>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1.5rem;">If you&#39;re ordering a website or landing page, a chatbot can be included in the same project. Mention it in your brief and it will be scoped and priced as part of the same build.</p>
+        <a href="contact.html" class="btn btn-ghost" style="font-size:.875rem;">Start a brief &#8250;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="position:relative;overflow:hidden;">
+  <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
+  <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+    <div class="section-tag" style="justify-content:center;">Get Started</div>
+    <h2 class="section-title">Tell us about your business.</h2>
+    <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">The more detail you share, the better we can scope the chatbot and give you an accurate quote.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Start a Chatbot Brief</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo grad-text">Zoomy.services</div>
+        <p class="footer-tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
+        <div class="footer-social" style="margin-top:24px;">
+          <a href="#" title="X" style="font-size:.75rem;font-family:var(--font-mono);">&#120143;</a>
+          <a href="#" title="LinkedIn" style="font-size:.75rem;font-family:var(--font-mono);">in</a>
+          <a href="#" title="Instagram" style="font-size:.75rem;font-family:var(--font-mono);">ig</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="campaign-portfolio.html">Campaigns</a></li>
+        <li><a href="website-design.html">Websites</a></li>
+        <li><a href="phone-agent.html">Phone Agents</a></li>
+        <li><a href="chatbot.html">AI Chatbots</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="portfolio.html">Our Work</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="contact.html">Start a Project</a></li>
+        <li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+      </ul>
+        <div style="margin-top:20px;"><span class="badge badge-green badge-dot">Open for Projects</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Zoomy.services &#8212; All rights reserved.</span>
+      <span style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

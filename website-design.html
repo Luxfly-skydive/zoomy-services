@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Websites — Zoomy.services</title>
+<meta name="description" content="Custom websites and landing pages built from scratch. Multilingual, booking systems, e-commerce, admin panels, and AI chatbots."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.cap-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.cap-row-item{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.25rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.cap-row-item:first-child{border-top:1px solid var(--border-b)}
+.cap-row-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.cap-row-name{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#fff}
+.cap-desc{color:var(--text-2);font-size:.9rem;line-height:1.75}
+.feature-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+.feature-box{padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.14);border-radius:12px}
+@media(max-width:900px){
+.cap-row-item{grid-template-columns:1fr;gap:1rem}
+.feature-row{grid-template-columns:1fr}
+[style*="grid-template-columns:220px 1fr"]{grid-template-columns:1fr !important;gap:0.5rem !important}
+}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Digital Production Studio</span></a>
+      <ul class="nav-links" id="navLinks">
+    <li><a href="campaign-portfolio.html">Campaigns</a></li>
+    <li><a href="website-design.html">Websites</a></li>
+    <li><a href="phone-agent.html">Phone Agents</a></li>
+    <li><a href="chatbot.html">Chatbots</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="contact.html" class="btn-nav">Start a Project &#8250;</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+  <div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div><div class="aurora-blob aurora-blob-3"></div></div>
+  <div class="grid-overlay"></div>
+  <div class="section-inner" style="z-index:2;">
+    <div class="section-tag" style="margin-bottom:1.5rem;">Websites &amp; Landing Pages</div>
+    <h1 style="text-align:left;margin-bottom:1.5rem;max-width:700px;">
+      <span class="glitch grad-text-animated">Built from</span><br>
+      scratch.
+    </h1>
+    <p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;">Everything is custom-coded in HTML, CSS, and JavaScript. No WordPress, no page builders, no themes. Each project is built for what it actually needs to do.</p>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">What we build</div>
+    <h2 class="section-title">Types of sites.</h2>
+    <p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:600px;margin-top:.75rem;">The scope varies by project. Below is what we&#39;ve built and are set up to build again.</p>
+
+    <div class="cap-rows">
+
+      <div class="cap-row-item reveal">
+        <div>
+          <div class="cap-row-label">Booking</div>
+          <div class="cap-row-name">Activity &amp; Venue Sites</div>
+        </div>
+        <div class="cap-desc">Sites for venues, activities, experiences, and leisure businesses that need online booking. Includes real-time slot availability, booking confirmation, payment integration, and an admin panel for managing reservations. Multilingual support across as many languages as required.</div>
+      </div>
+
+      <div class="cap-row-item reveal">
+        <div>
+          <div class="cap-row-label">Commerce</div>
+          <div class="cap-row-name">E-Commerce Stores</div>
+        </div>
+        <div class="cap-desc">Product catalogue sites with online payment via Mollie. Supports multiple product types, filtering, and purchase flows. Can be built with an admin panel for managing products and orders. Multilingual where required.</div>
+      </div>
+
+      <div class="cap-row-item reveal">
+        <div>
+          <div class="cap-row-label">Hospitality</div>
+          <div class="cap-row-name">Restaurants &amp; Catering</div>
+        </div>
+        <div class="cap-desc">Restaurant and catering sites with menus, reservation systems, gallery sections, and location information. Built for conversions &#8212; getting visitors to book a table or make an enquiry. Multilingual where required.</div>
+      </div>
+
+      <div class="cap-row-item reveal">
+        <div>
+          <div class="cap-row-label">Service</div>
+          <div class="cap-row-name">Service Business Sites</div>
+        </div>
+        <div class="cap-desc">Sites for businesses offering a service &#8212; consultancies, clinics, agencies, tradespeople, and similar. Typically structured around presenting services clearly, capturing leads, and facilitating contact or booking.</div>
+      </div>
+
+      <div class="cap-row-item reveal">
+        <div>
+          <div class="cap-row-label">Conversion</div>
+          <div class="cap-row-name">Landing Pages</div>
+        </div>
+        <div class="cap-desc">Single-page builds designed around a specific campaign or audience. Usually tied to a paid media campaign and built to convert traffic into leads or purchases. Built to the same standard as full sites &#8212; custom code, fast loading, mobile-first.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT CAN BE INCLUDED -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="section-inner">
+    <div class="section-tag">Features</div>
+    <h2 class="section-title">What can be included.</h2>
+    <p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:600px;margin-top:.75rem;">Not every project needs all of these. What is included is defined during the brief and scoped accordingly.</p>
+
+    <div style="display:flex;flex-direction:column;gap:0;margin-top:2.5rem;">
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Multilingual</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Pages built in as many languages as required &#8212; EN, FR, DE, NL, ES, and more. Includes language switchers, hreflang tags, and fallback logic for partial translations.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Booking System</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Real-time slot availability, date and group size selection, booking confirmation, and email notification. Backend powered by Supabase. Admin panel for viewing and managing reservations included.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Online Payment</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Payment integration via Mollie, supporting cards, iDEAL, Bancontact, and other local methods. Can be combined with the booking system or used independently for e-commerce.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Admin Panel</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">A secured management dashboard for bookings, content, products, or users. MFA-protected login via Supabase Auth. Role-based access and audit logging where required.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">AI Chatbot</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">A chatbot trained on your business data and deployed directly on the site. Handles visitor questions, collects leads, and works in multiple languages. Full description further down this page.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">GDPR Compliance</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Cookie consent banner with category-level controls, privacy policy structure, and data handling configuration. Included as standard on all sites that collect visitor data.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">SEO Structure</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Semantic HTML, correct heading hierarchy, meta tags, Open Graph, structured data markup, and XML sitemap. Included on all sites by default.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Analytics &amp; Tracking</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">GA4 setup with event tracking and goal configuration. Meta Pixel and Google Tag Manager where the site is connected to paid campaigns. Heatmap or session recording integration on request.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Domain &amp; Hosting</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Domain registration and hosting configuration on request. If you already have both, we deploy to those. If not, we handle it as part of the project.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;">
+        <div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Animations &amp; Interactions</div>
+        <div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Scroll animations, hover effects, parallax, and custom transitions. The level of animation is matched to what fits the project &#8212; not every site needs elaborate motion.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHATBOT SECTION -->
+<section id="chatbot" class="section" style="position:relative;overflow:hidden;">
+  <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-2"></div></div>
+  <div class="section-inner" style="position:relative;z-index:2;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <div class="reveal-left">
+        <div class="section-tag">AI Chatbot</div>
+        <h2 class="section-title" style="margin-bottom:1.25rem;">Trained on your business.</h2>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:1.25rem;">The chatbot is built entirely around your specific business &#8212; not a general-purpose assistant. It knows your services, prices, opening hours, booking procedure, and common questions because we&#39;ve trained it on that information directly.</p>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:1.25rem;">It runs directly on your website without any third-party platform dependencies. Visitor data stays on your own infrastructure.</p>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Available as a standalone build, or included when ordering a website or landing page. Mention it in your brief and we&#39;ll scope it into the same project.</p>
+        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">&#8212;</span>
+            <span style="color:var(--text-2);font-size:.9rem;">Responds accurately because it only knows what you&#39;ve provided &#8212; it does not improvise</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">&#8212;</span>
+            <span style="color:var(--text-2);font-size:.9rem;">Multilingual &#8212; responds in the language the visitor is using</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">&#8212;</span>
+            <span style="color:var(--text-2);font-size:.9rem;">Collects leads &#8212; captures email or phone when relevant</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">&#8212;</span>
+            <span style="color:var(--text-2);font-size:.9rem;">Fuzzy matching &#8212; understands typos and informal phrasing</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">&#8212;</span>
+            <span style="color:var(--text-2);font-size:.9rem;">Self-hosted &#8212; no monthly platform fees, no external API dependency</span>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Add to your project &#8250;</a>
+      </div>
+      <div class="reveal-right">
+        <div class="chatbot-mock">
+          <div class="chatbot-header">
+            <div class="chatbot-avatar">&#129302;</div>
+            <div>
+              <div class="chatbot-name">Zoomy Assistant</div>
+              <div class="chatbot-status">Live demo &#8212; try it</div>
+            </div>
+          </div>
+          <div class="chatbot-messages" id="chatbot-messages">
+            <div class="msg msg-bot">Hello. Ask me anything about our services &#8212; websites, chatbots, campaigns, or phone agents.</div>
+            <div class="msg msg-user">Do you use WordPress?</div>
+            <div class="msg msg-bot">No. Every site we build is custom-coded from scratch in HTML, CSS, and JavaScript. No WordPress, no page builders, no themes. We work this way because it gives us full control over performance, layout, and functionality.</div>
+          </div>
+          <div class="chatbot-input">
+            <input class="chatbot-input-field" id="chatbot-input-field" type="text" placeholder="Ask about our services..."/>
+            <button class="chatbot-send" id="chatbot-send">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+  <div class="aurora" style="opacity:.3;"><div class="aurora-blob aurora-blob-1"></div></div>
+  <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+    <div class="section-tag" style="justify-content:center;">Get Started</div>
+    <h2 class="section-title">Tell us what you need.</h2>
+    <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Describe the project and we&#39;ll come back with a scope and price.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Start a Website Brief</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo grad-text">Zoomy.services</div>
+        <p class="footer-tagline">Campaign files, custom websites, AI chatbots, and phone agents. Domain registered, hosting configured, handed to you live.</p>
+        <div class="footer-social" style="margin-top:24px;">
+          <a href="#" title="X" style="font-size:.75rem;font-family:var(--font-mono);">&#120143;</a>
+          <a href="#" title="LinkedIn" style="font-size:.75rem;font-family:var(--font-mono);">in</a>
+          <a href="#" title="Instagram" style="font-size:.75rem;font-family:var(--font-mono);">ig</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="campaign-portfolio.html">Campaign Files</a></li>
+        <li><a href="website-design.html">Websites</a></li>
+        <li><a href="phone-agent.html">Phone Agents</a></li>
+        <li><a href="chatbot.html">AI Chatbots</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="portfolio.html">Our Work</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="contact.html">Start a Project</a></li>
+        <li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+      </ul>
+        <div style="margin-top:20px;"><span class="badge badge-green badge-dot">Open for Projects</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Zoomy.services &#8212; All rights reserved.</span>
+      <span style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Services — Zoomy.services</title>
+<meta name="description" content="Campaign management, custom websites, AI phone agents, and website chatbots. Everything scoped and priced per project."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.overview-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.overview-row{display:grid;grid-template-columns:260px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.overview-row:first-child{border-top:1px solid var(--border-b)}
+.overview-num{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.overview-title{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.75rem}
+.overview-desc{color:var(--text-2);font-size:.925rem;line-height:1.78;margin-bottom:1.25rem}
+@media(max-width:768px){.overview-row{grid-template-columns:1fr;gap:1rem}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Digital Production Studio</span></a>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="campaign-portfolio.html">Campaigns</a></li>
+    <li><a href="website-design.html">Websites</a></li>
+    <li><a href="phone-agent.html">Phone Agents</a></li>
+    <li><a href="chatbot.html">Chatbots</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="contact.html" class="btn-nav">Start a Project &#8250;</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+  <div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+  <div class="grid-overlay"></div>
+  <div class="section-inner" style="z-index:2;text-align:center;">
+    <div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Services</div>
+    <h1 style="margin-bottom:1.5rem;"><span class="glitch grad-text-animated">Four services.</span><br>One studio.</h1>
+    <p class="hero-sub" style="margin:0 auto;">Each service is scoped and priced per project. Some clients need one. Some need all four. We work to fixed budgets with a clear scope agreed upfront.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="overview-rows">
+
+      <div class="overview-row reveal">
+        <div>
+          <div class="overview-num">01</div>
+          <div class="overview-title">Campaign<br>Management</div>
+        </div>
+        <div>
+          <p class="overview-desc">We create and manage paid media campaigns on Meta, Google, TikTok, and LinkedIn. Full setup — strategy, targeting, ad copy, pixel and tracking configuration — followed by ongoing management: performance monitoring, spend optimisation, and regular reporting. Campaigns run in your ad account.</p>
+          <a href="campaign-portfolio.html" class="btn btn-ghost" style="font-size:.875rem;">View details &#8250;</a>
+        </div>
+      </div>
+
+      <div class="overview-row reveal">
+        <div>
+          <div class="overview-num">02</div>
+          <div class="overview-title">Websites &amp;<br>Landing Pages</div>
+        </div>
+        <div>
+          <p class="overview-desc">Custom-coded websites and landing pages built from scratch. No WordPress, no templates. Multilingual support, booking systems, e-commerce, admin panels, payment integration, and AI chatbots can all be included depending on the project. Domain registration and hosting setup available on request.</p>
+          <a href="website-design.html" class="btn btn-ghost" style="font-size:.875rem;">View details &#8250;</a>
+        </div>
+      </div>
+
+      <div class="overview-row reveal">
+        <div>
+          <div class="overview-num">03</div>
+          <div class="overview-title">AI Phone<br>Agent</div>
+        </div>
+        <div>
+          <p class="overview-desc">A custom AI voice agent that answers inbound calls, speaks naturally in any language, and handles bookings and common questions without human involvement. Connects to your calendar in real time to book, cancel, and reschedule appointments during the call. Every call generates a transcript for quality review.</p>
+          <a href="phone-agent.html" class="btn btn-ghost" style="font-size:.875rem;">View details &#8250;</a>
+        </div>
+      </div>
+
+      <div class="overview-row reveal">
+        <div>
+          <div class="overview-num">04</div>
+          <div class="overview-title">Website<br>Chatbot</div>
+        </div>
+        <div>
+          <p class="overview-desc">A chatbot trained on your specific business — your services, prices, hours, and policies. Deployed directly on your website without third-party platform dependencies. Multilingual, with lead capture and booking integration. Available as a standalone build or as an add-on to a website project.</p>
+          <a href="chatbot.html" class="btn btn-ghost" style="font-size:.875rem;">View details &#8250;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+  <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
+  <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+    <div class="section-tag" style="justify-content:center;">Get Started</div>
+    <h2 class="section-title">Tell us what you need.</h2>
+    <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Describe the project and we&#39;ll come back with a scope, approach, and fixed price.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Start a Project</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo grad-text">Zoomy.services</div>
+        <p class="footer-tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
+        <div class="footer-social" style="margin-top:24px;">
+          <a href="#" title="X" style="font-size:.75rem;font-family:var(--font-mono);">&#120143;</a>
+          <a href="#" title="LinkedIn" style="font-size:.75rem;font-family:var(--font-mono);">in</a>
+          <a href="#" title="Instagram" style="font-size:.75rem;font-family:var(--font-mono);">ig</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="campaign-portfolio.html">Campaigns</a></li>
+        <li><a href="website-design.html">Websites</a></li>
+        <li><a href="phone-agent.html">Phone Agents</a></li>
+        <li><a href="chatbot.html">AI Chatbots</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="portfolio.html">Our Work</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="contact.html">Start a Project</a></li>
+        <li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+      </ul>
+        <div style="margin-top:20px;"><span class="badge badge-green badge-dot">Open for Projects</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Zoomy.services &#8212; All rights reserved.</span>
+      <span style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

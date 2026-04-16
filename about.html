@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About — Zoomy.services</title>
+<meta name="description" content="We are a small, fast digital production studio. We build campaign files, websites, and AI chatbots for ambitious brands."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.value-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem}
+.value-num{font-family:var(--font-mono);font-size:.7rem;color:var(--muted);margin-bottom:1rem;letter-spacing:.1em}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem;text-align:center}
+@media(max-width:900px){.values-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Digital Production Studio</span></a>
+          <ul class="nav-links" id="navLinks">
+    <li><a href="campaign-portfolio.html">Campaigns</a></li>
+    <li><a href="website-design.html">Websites</a></li>
+    <li><a href="phone-agent.html">Phone Agents</a></li>
+    <li><a href="chatbot.html">Chatbots</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="contact.html" class="btn-nav">Start a Project &#8250;</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero" style="min-height:60vh;padding:140px 2rem 6rem;">
+  <div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+  <div class="grid-overlay"></div>
+  <div class="section-inner" style="z-index:2;">
+    <div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">About Us</div>
+    <h1 style="margin-bottom:1.5rem;">Small team.<br><span class="grad-text-animated">Big output.</span></h1>
+    <p class="hero-sub" style="margin:0 auto;">We are a small, AI-augmented digital production studio. We create and manage campaigns, build custom websites, and develop AI tools for businesses.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+      <div class="reveal-left">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title" style="margin-bottom:1.5rem;">Why Zoomy exists.</h2>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:1.5rem;">Most agencies are slow, expensive, and templated. We built Zoomy.services to fix that. We use cutting-edge AI tools to ship production-quality work at startup speed &#8212; without sacrificing quality or attention to detail.</p>
+        <p style="color:var(--text-2);line-height:1.8;margin-bottom:1.5rem;">Every project gets the same level of care: proper research, clear thinking, and careful execution. The scope differs by project. The standard does not.</p>
+        <p style="color:var(--text-2);line-height:1.8;">We are remote-first and work with clients internationally.</p>
+      </div>
+      <div class="reveal-right">
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-dot" style="background:#10b981;"></div>
+            <div class="terminal-dot" style="background:#f59e0b;"></div>
+            <div class="terminal-dot" style="background:#ef4444;"></div>
+            <div class="terminal-title">about.txt</div>
+          </div>
+          <div class="terminal-body">
+            <div><span class="term-prompt">$</span> <span class="term-cmd">cat about.txt</span></div>
+            <div style="margin-top:1rem;"><span class="term-highlight">Studio type:</span> <span class="term-output">AI-augmented production</span></div>
+            <div><span class="term-highlight">Founded:</span> <span class="term-output">2025</span></div>
+            <div><span class="term-highlight">Location:</span> <span class="term-output">Remote-first</span></div>
+            <div><span class="term-highlight">Specialties:</span></div>
+            <div style="margin-left:1rem;"><span class="term-output">- Paid media campaign management</span></div>
+            <div style="margin-left:1rem;"><span class="term-output">- Multilingual custom websites</span></div>
+            <div style="margin-left:1rem;"><span class="term-output">- AI chatbot development</span></div>
+            <div style="margin-left:1rem;"><span class="term-output">- AI phone agent development</span></div>
+            <div><span class="term-highlight">Delivery:</span> <span class="term-output">Scoped per project</span></div>
+            <div><span class="term-highlight">Languages:</span> <span class="term-output">EN, FR, ES and more</span></div>
+            <div style="margin-top:.5rem;"><span class="term-cursor"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:1rem;">
+      <div class="section-tag">Values</div>
+      <h2 class="section-title">How we work.</h2>
+    </div>
+    <div class="values-grid stagger-children">
+      <div class="value-card reveal">
+        <div class="value-num">01 / SPEED</div>
+        <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;">Fast without cutting corners.</h3>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">We use AI tooling to do more with less overhead. The thinking, strategy, and quality standards remain the same &#8212; the process is just more efficient.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-num">02 / QUALITY</div>
+        <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;">Production-ready. Always.</h3>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Every deliverable is built to go live immediately. No rough edges, no placeholder copy, no &#34;to be filled in later.&#34; If we deliver it, it&#39;s finished.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-num">03 / TRANSPARENCY</div>
+        <h3 style="color:#fff;font-size:1.2rem;margin-bottom:1rem;">No surprises. Ever.</h3>
+        <p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Fixed budgets. Clear scope. Daily updates during production. You always know exactly what you&#39;re getting and when it&#39;s coming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+  <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-2"></div></div>
+  <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+    <div class="section-tag" style="justify-content:center;">Work With Us</div>
+    <h2 class="section-title">Ready to move fast?</h2>
+    <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">If you have a project in mind, get in touch and we&#39;ll come back with a scope and approach.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Start a Project</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo grad-text">Zoomy.services</div>
+        <p class="footer-tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
+        <div class="footer-social" style="margin-top:24px;">
+          <a href="#" title="X" style="font-size:.75rem;font-family:var(--font-mono);">&#120143;</a>
+          <a href="#" title="LinkedIn" style="font-size:.75rem;font-family:var(--font-mono);">in</a>
+          <a href="#" title="Instagram" style="font-size:.75rem;font-family:var(--font-mono);">ig</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="campaign-portfolio.html">Campaigns</a></li>
+        <li><a href="website-design.html">Websites</a></li>
+        <li><a href="phone-agent.html">Phone Agents</a></li>
+        <li><a href="chatbot.html">AI Chatbots</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="portfolio.html">Our Work</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="contact.html">Start a Project</a></li>
+        <li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+      </ul>
+        <div style="margin-top:20px;"><span class="badge badge-green badge-dot">Open for Projects</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Zoomy.services &#8212; All rights reserved.</span>
+      <span style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

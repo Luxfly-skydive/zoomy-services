@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Our Work — Zoomy.services</title>
+<meta name="description" content="Portfolio of campaign files, custom websites, and AI chatbots built by Zoomy.services."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.filter-tabs{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem}
+.filter-tab{padding:8px 20px;border-radius:var(--radius-full);border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.85rem;font-family:var(--font-mono);cursor:pointer;transition:all var(--transition)}
+.filter-tab:hover,.filter-tab.active{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.4);color:var(--primary)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.portfolio-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform var(--transition),border-color var(--transition),box-shadow var(--transition)}
+.portfolio-item:hover{transform:translateY(-6px);border-color:rgba(99,102,241,.4);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.portfolio-thumb{height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
+.portfolio-body{padding:1.5rem}
+.portfolio-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+@media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.portfolio-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Digital Production Studio</span></a>
+          <ul class="nav-links" id="navLinks">
+    <li><a href="campaign-portfolio.html">Campaigns</a></li>
+    <li><a href="website-design.html">Websites</a></li>
+    <li><a href="phone-agent.html">Phone Agents</a></li>
+    <li><a href="chatbot.html">Chatbots</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <a href="contact.html" class="btn-nav">Start a Project &#8250;</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+  <div class="aurora"><div class="aurora-blob aurora-blob-2"></div><div class="aurora-blob aurora-blob-3"></div></div>
+  <div class="grid-overlay"></div>
+  <div class="section-inner" style="z-index:2;">
+    <div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Our Work</div>
+    <h1 style="margin-bottom:1.5rem;">Built to<br><span class="grad-text-animated">perform.</span></h1>
+    <p class="hero-sub" style="margin:0 auto;">A selection of campaign files, websites, and chatbots we&#39;ve shipped for our clients.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-filter="all">All Work</button>
+      <button class="filter-tab" data-filter="website">Websites</button>
+      <button class="filter-tab" data-filter="campaign">Campaigns</button>
+      <button class="filter-tab" data-filter="chatbot">Chatbots</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <div class="portfolio-item reveal" data-category="website">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(99,102,241,.3),rgba(168,85,247,.3));">
+          <span>&#127760;</span>
+          <div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-primary" style="font-size:.7rem;">60 pages</span></div>
+        </div>
+        <div class="portfolio-body">
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">WEBSITE &#183; INDOOR ACTIVITY VENUE</div>
+          <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Multilingual Booking Platform</h3>
+          <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">60-page multilingual site across 5 languages with a full online booking system, Supabase backend, MFA-secured admin panel, AI chatbot, and GDPR-compliant cookie management.</p>
+          <div class="portfolio-tags">
+            <span class="badge badge-primary" style="font-size:.72rem;">5 Languages</span>
+            <span class="badge badge-cyan" style="font-size:.72rem;">Booking System</span>
+            <span class="badge badge-green" style="font-size:.72rem;">AI Chatbot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal reveal-delay-1" data-category="chatbot">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(6,182,212,.2));">
+          <span>&#129302;</span>
+          <div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-green" style="font-size:.7rem;">Multilingual</span></div>
+        </div>
+        <div class="portfolio-body">
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">AI CHATBOT &#183; VENUE &amp; EXPERIENCES</div>
+          <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Custom Knowledge-Base Chatbot</h3>
+          <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Venue-specific chatbot trained on services, pricing, and booking procedures. Multilingual with smart topic routing, lead capture, and self-hosted deployment.</p>
+          <div class="portfolio-tags">
+            <span class="badge badge-green" style="font-size:.72rem;">Self-Hosted</span>
+            <span class="badge badge-primary" style="font-size:.72rem;">Lead Capture</span>
+            <span class="badge badge-accent" style="font-size:.72rem;">5 Languages</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal reveal-delay-2" data-category="campaign">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(236,72,153,.2),rgba(99,102,241,.2));">
+          <span>&#128202;</span>
+          <div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-accent" style="font-size:.7rem;">Meta + Google</span></div>
+        </div>
+        <div class="portfolio-body">
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">CAMPAIGN &#183; EXPERIENCES &amp; LEISURE</div>
+          <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Full-Funnel Paid Media Package</h3>
+          <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Complete Meta Ads package with prospecting and retargeting adsets, audience configurations, creative briefs, UTM setup, pixel implementation, and budget pacing strategy.</p>
+          <div class="portfolio-tags">
+            <span class="badge badge-primary" style="font-size:.72rem;">Meta Ads</span>
+            <span class="badge badge-cyan" style="font-size:.72rem;">Full Funnel</span>
+            <span class="badge badge-accent" style="font-size:.72rem;">UTM + Pixel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal" data-category="website">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,.2),rgba(239,68,68,.2));">
+          <span>&#128722;</span>
+          <div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-cyan" style="font-size:.7rem;">E-commerce</span></div>
+        </div>
+        <div class="portfolio-body">
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">WEBSITE &#183; LUXURY RETAIL</div>
+          <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Luxury E-Commerce Store</h3>
+          <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Premium product e-commerce site with Mollie payment integration, product catalogue with filtering, multilingual support, and custom animations.</p>
+          <div class="portfolio-tags">
+            <span class="badge badge-cyan" style="font-size:.72rem;">E-Commerce</span>
+            <span class="badge badge-primary" style="font-size:.72rem;">Multilingual</span>
+            <span class="badge badge-accent" style="font-size:.72rem;">Mollie Payments</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal reveal-delay-1" data-category="website">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(245,158,11,.2));">
+          <span>&#127859;</span>
+          <div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-green" style="font-size:.7rem;">Restaurant</span></div>
+        </div>
+        <div class="portfolio-body">
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">WEBSITE &#183; HOSPITALITY</div>
+          <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Restaurant &amp; Reservation Site</h3>
+          <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Restaurant site with online reservation system, full menu showcase, Google Maps integration, and multilingual support. Mobile-first design with custom animations.</p>
+          <div class="portfolio-tags">
+            <span class="badge badge-green" style="font-size:.72rem;">Reservations</span>
+            <span class="badge badge-primary" style="font-size:.72rem;">Multilingual</span>
+            <span class="badge badge-cyan" style="font-size:.72rem;">Mobile-First</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal reveal-delay-2" data-category="chatbot">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(168,85,247,.25),rgba(99,102,241,.25));">
+          <span>&#128222;</span>
+          <div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-accent" style="font-size:.7rem;">AI Voice</span></div>
+        </div>
+        <div class="portfolio-body">
+          <div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">AI PHONE AGENT &#183; VENUE &amp; EXPERIENCES</div>
+          <h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">AI Phone Agent with Live Booking</h3>
+          <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Multilingual AI voice agent handling inbound calls 24/7. Live calendar integration for appointment booking, cancellation, and rescheduling during the call.</p>
+          <div class="portfolio-tags">
+            <span class="badge badge-accent" style="font-size:.72rem;">Voice AI</span>
+            <span class="badge badge-primary" style="font-size:.72rem;">Live Booking</span>
+            <span class="badge badge-green" style="font-size:.72rem;">Multilingual</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+  <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
+  <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+    <div class="section-tag" style="justify-content:center;">Next?</div>
+    <h2 class="section-title">Your project could be here.</h2>
+    <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">We&#39;re always looking for ambitious projects. Let&#39;s build something together.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Start a Project</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo grad-text">Zoomy.services</div>
+        <p class="footer-tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
+        <div class="footer-social" style="margin-top:24px;">
+          <a href="#" title="X" style="font-size:.75rem;font-family:var(--font-mono);">&#120143;</a>
+          <a href="#" title="LinkedIn" style="font-size:.75rem;font-family:var(--font-mono);">in</a>
+          <a href="#" title="Instagram" style="font-size:.75rem;font-family:var(--font-mono);">ig</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="campaign-portfolio.html">Campaigns</a></li>
+        <li><a href="website-design.html">Websites</a></li>
+        <li><a href="phone-agent.html">Phone Agents</a></li>
+        <li><a href="chatbot.html">AI Chatbots</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="portfolio.html">Our Work</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="contact.html">Start a Project</a></li>
+        <li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+      </ul>
+        <div style="margin-top:20px;"><span class="badge badge-green badge-dot">Open for Projects</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2026 Zoomy.services &#8212; All rights reserved.</span>
+      <span style="display:flex;gap:20px;"><a href="#">Privacy</a><a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+(function(){
+const tabs=document.querySelectorAll('.filter-tab');
+const items=document.querySelectorAll('.portfolio-item');
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter=tab.dataset.filter;
+    items.forEach(item=>{
+      if(filter==='all'||item.dataset.category===filter){
+        item.style.display='';
+      } else {
+        item.style.display='none';
+      }
+    });
+  });
+});
+})();
+</script>
+</body>
+</html>

@@ -30,7 +30,30 @@ if(nav){
 }
 const toggle=document.getElementById('navToggle');
 const links=document.getElementById('navLinks');
-if(toggle&&links){toggle.addEventListener('click',()=>{toggle.classList.toggle('open');links.classList.toggle('open')});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle.classList.remove('open');links.classList.remove('open')}));document.addEventListener('click',e=>{if(!toggle.contains(e.target)&&!links.contains(e.target)){toggle.classList.remove('open');links.classList.remove('open')}})}
+if(toggle&&links){
+  /* ── Overlay backdrop ── */
+  const overlay=document.createElement('div');
+  overlay.className='nav-overlay';
+  document.body.appendChild(overlay);
+  /* ── Mobile footer: lang + CTA injected into menu ── */
+  if(!links.querySelector('.nav-mobile-footer')){
+    const mf=document.createElement('div');
+    mf.className='nav-mobile-footer';
+    const curPage=window.location.pathname.split('/').pop()||'index.html';
+    mf.innerHTML='<a class="btn-nav btn-nav-full" href="contact.html">Start a Project ›</a>'
+      +'<div class="lang-switcher lang-switcher-menu">'
+      +'<button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>'
+      +'<a class="lang-btn" href="fr/'+curPage+'">FR</a>'
+      +'<a class="lang-btn" href="es/'+curPage+'">ES</a>'
+      +'</div>';
+    links.appendChild(mf);
+  }
+  function openMenu(){toggle.classList.add('open');links.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
+  function closeMenu(){toggle.classList.remove('open');links.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
+  toggle.addEventListener('click',()=>{links.classList.contains('open')?closeMenu():openMenu();});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  overlay.addEventListener('click',closeMenu);
+}
 const dot=document.querySelector('.cursor-dot');
 const ring=document.querySelector('.cursor-ring');
 if(dot&&ring&&window.matchMedia('(hover:hover)').matches){let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});document.addEventListener('mousedown',()=>{dot.classList.add('click');ring.classList.add('click')});document.addEventListener('mouseup',()=>{dot.classList.remove('click');ring.classList.remove('click')});const hoverEls=document.querySelectorAll('a,button,.card,.btn,.icon-box');hoverEls.forEach(el=>{el.addEventListener('mouseenter',()=>{dot.classList.add('hover');ring.classList.add('hover')});el.addEventListener('mouseleave',()=>{dot.classList.remove('hover');ring.classList.remove('hover')})});(function tick(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;dot.style.left=mx+'px';dot.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick)})()}

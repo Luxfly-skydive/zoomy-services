@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+html
+html
+html
+html
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Campagnes — Zoomy.services</title>
+<meta content="We create and manage paid media campaigns on Meta, Google, TikTok, and LinkedIn. Strategy, setup, and ongoing optimisation." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.phase-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.phase-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.phase-row:first-child{border-top:1px solid var(--border-b)}
+.phase-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.phase-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff}
+.phase-accent{display:block;width:32px;height:2px;border-radius:2px;margin-top:.75rem}
+.item-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
+.item-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text-2);line-height:1.6}
+.item-list li::before{content:"&#x2014;";color:var(--muted);flex-shrink:0;margin-top:1px}
+.platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
+.platform-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden}
+.platform-item::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.platform-item.meta::before{background:linear-gradient(90deg,#1877f2,#e1306c)}
+.platform-item.google::before{background:linear-gradient(90deg,#4285f4,#34a853,#ea4335)}
+.platform-item.tiktok::before{background:linear-gradient(90deg,#010101,#ff0050)}
+.platform-item.linkedin::before{background:linear-gradient(90deg,#0077b5,#00a0dc)}
+.platform-name{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.platform-desc{font-size:.875rem;color:var(--text-2);line-height:1.7}
+@media(max-width:768px){.phase-row{grid-template-columns:1fr;gap:1rem}.platform-grid{grid-template-columns:1fr}}
+</style>
+<script>localStorage.setItem('zmy_lang','fr');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Studio de production numérique</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a class="active" data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.about" href="about.html">À propos de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacter</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../campaign-portfolio.html">EN</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">FR</span>
+<a class="lang-btn" href="../es/campaign-portfolio.html">ES</a>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Démarrer un projet</span> ›</a>
+<button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" style="margin-bottom:1.5rem;">Médias payants</div>
+<h1 style="text-align:left;margin-bottom:1.5rem;max-width:700px;">
+<span class="glitch grad-text-animated">Campagnes</span><br/>
+      créé et géré.
+    </h1>
+<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;">Nous créons et gérons des campagnes médiatiques payantes sur Meta, Google, TikTok et LinkedIn. Cela signifie la configuration initiale, l'optimisation continue et le reporting – gérés par nos soins, dans votre compte publicitaire.</p>
+</div>
+</section>
+<!-- HOW WE WORK -->
+<section class="section">
+<div class="section-inner">
+<div class="section-tag">Comment ça marche</div>
+<h2 class="section-title">Ce que nous gérons.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:640px;margin-top:.75rem;">La gestion de campagne est un processus continu. Vous trouverez ci-dessous ce que nous faisons à chaque étape.</p>
+<div class="phase-rows">
+<div class="phase-row reveal">
+<div>
+<div class="phase-label">Phase 01</div>
+<div class="phase-name">Stratégie &amp;<br/>Configuration</div>
+<span class="phase-accent" style="background:var(--primary);"></span>
+</div>
+<div>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Avant la mise en ligne de la campagne, nous définissons la structure, configurons le ciblage, rédigeons le texte et mettons en place tout le suivi. La campagne est construite selon un objectif clair et un budget défini.</p>
+<ul class="item-list">
+<li>Objectif et structure de la campagne en fonction de votre objectif</li>
+<li>Recherche d'audience et paramétrage du ciblage</li>
+<li>Texte publicitaire rédigé pour chaque format et emplacement</li>
+<li>Brief créatif si de nouveaux actifs doivent être produits</li>
+<li>Paramètres UTM et suivi des conversions configurés</li>
+<li>Configuration des pixels et des événements vérifiée avant le lancement</li>
+</ul>
+</div>
+</div>
+<div class="phase-row reveal">
+<div>
+<div class="phase-label">Phase 02</div>
+<div class="phase-name">Lancement &amp;<br/>Surveillance</div>
+<span class="phase-accent" style="background:var(--accent);"></span>
+</div>
+<div>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Une fois en direct, nous surveillons activement les performances. Les premières dépenses sont surveillées de près pour détecter les problèmes de livraison, les inadéquations d'audience ou tout ce qui nécessite un ajustement avant la mise à l'échelle.</p>
+<ul class="item-list">
+<li>Campagne examinée et mise en ligne dans les délais convenus</li>
+<li>Surveillance des premières performances pour la livraison et les clics</li>
+<li>Le rythme budgétaire est comparé aux projections</li>
+<li>Tout problème technique de suivi résolu immédiatement</li>
+</ul>
+</div>
+</div>
+<div class="phase-row reveal">
+<div>
+<div class="phase-label">Phase 03</div>
+<div class="phase-name">Optimisation</div>
+<span class="phase-accent" style="background:linear-gradient(90deg,var(--accent),var(--secondary));"></span>
+</div>
+<div>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Au fur et à mesure que la campagne collecte des données, nous procédons à des ajustements pour améliorer les résultats. Cela inclut l'affinement de l'audience, la suspension des publicités peu performantes, la réorientation du budget vers ce qui fonctionne et le test de nouvelles variantes, le cas échéant.</p>
+<ul class="item-list">
+<li>Les performances des ensembles de publicités et au niveau des publicités sont examinées régulièrement</li>
+<li>Budget réaffecté vers un coût par résultat inférieur</li>
+<li>Annonces peu performantes mises en veille et remplacées</li>
+<li>Extension ou exclusion de l'audience appliquée le cas échéant</li>
+<li>Stratégie d'enchères ajustée à mesure que la campagne mûrit</li>
+<li>Nouvelle création testée lorsque les annonces existantes sont fatiguées</li>
+</ul>
+</div>
+</div>
+<div class="phase-row reveal">
+<div>
+<div class="phase-label">Phase 04</div>
+<div class="phase-name">Rapports</div>
+<span class="phase-accent" style="background:var(--secondary);"></span>
+</div>
+<div>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Nous fournissons régulièrement des rapports de performance couvrant ce qui a été dépensé, ce qui a été produit, ce qui a changé et quelle est l'orientation pour la période suivante. Les rapports sont rédigés pour être compris sans avoir besoin d’une formation en publicité.</p>
+<ul class="item-list">
+<li>Dépenses, impressions, clics et conversions</li>
+<li>Coût par résultat suivi par rapport à l'indice de référence</li>
+<li>Qu'est-ce qui a changé depuis le dernier rapport et pourquoi</li>
+<li>Orientation recommandée pour la prochaine période</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PLATFORMS -->
+<section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div class="section-tag">Plateformes</div>
+<h2 class="section-title">Où nous menons des campagnes.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:600px;margin-top:.75rem;">Chaque plateforme a des mécanismes, des publics et des formats créatifs différents. Nous travaillons avec chacun différemment en fonction de ce que l'objectif exige.</p>
+<div class="platform-grid stagger-children">
+<div class="platform-item meta reveal">
+<div class="platform-name">Méta-annonces</div>
+<div class="platform-desc">Campagnes Facebook et Instagram couvrant à la fois la prospection et le retargeting. Comprend des audiences personnalisées, des sosies, des publicités de produits dynamiques et des structures d'entonnoir complètes. Nous gérons les pixels, les événements de conversion et les flux de catalogue le cas échéant.</div>
+</div>
+<div class="platform-item google reveal reveal-delay-1">
+<div class="platform-name">Annonces Google</div>
+<div class="platform-desc">Campagnes de recherche, display, Performance Max et YouTube. Nous gérons la stratégie de mots clés, les listes négatives, le contenu publicitaire, les enchères et le suivi des conversions. Les rapports sont liés aux données de conversion réelles, et pas seulement aux clics.</div>
+</div>
+<div class="platform-item tiktok reveal">
+<div class="platform-name">Annonces TikTok</div>
+<div class="platform-desc">Campagnes In-Feed et TopFeed pour les plateformes où la vidéo courte est le format dominant. Nous gérons la configuration de l'audience, le briefing créatif, la configuration des pixels et le suivi des performances.</div>
+</div>
+<div class="platform-item linkedin reveal reveal-delay-1">
+<div class="platform-name">Publicités LinkedIn</div>
+<div class="platform-desc">Campagnes B2B utilisant le titre du poste, l'ancienneté, la taille de l'entreprise et le ciblage par secteur. Contenu sponsorisé, InMail et formulaires Lead Gen. Utilisé lorsque le public cible est mieux atteint par des données de profil professionnel plutôt que par des signaux basés sur les intérêts.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="section" style="position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+<div class="section-tag" style="justify-content:center;">Commencez</div>
+<h2 class="section-title">Dites-nous ce dont vous faites la publicité.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Partagez le produit, l'objectif, le public cible et la plateforme. Nous reviendrons avec une portée et une approche.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Lancer une brève campagne</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestion de campagnes, sites Web personnalisés, chatbots IA et agents téléphoniques.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Prestations</h4><ul>
+<li><a class="active" href="campaign-portfolio.html">Gestion de campagne</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a href="chatbot.html">Chatbots IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Entreprise</h4><ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="portfolio.html">Notre travail</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacter</h4><ul>
+<li><a href="contact.html">Démarrer un projet</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Ouvert aux projets</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Tous droits réservés.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Confidentialité</a><a data-i18n="footer.terms" href="#">Conditions</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

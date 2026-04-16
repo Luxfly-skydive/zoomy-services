@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+HTML
+HTML
+HTML
+HTML
+HTML
+HTML
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Nuestro trabajo — Zoomy.services</title>
+<meta content="Portfolio of campaign files, custom websites, and AI chatbots built by Zoomy.services." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.filter-tabs{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem}
+.filter-tab{padding:8px 20px;border-radius:var(--radius-full);border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.85rem;font-family:var(--font-mono);cursor:pointer;transition:all var(--transition)}
+.filter-tab:hover,.filter-tab.active{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.4);color:var(--primary)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.portfolio-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform var(--transition),border-color var(--transition),box-shadow var(--transition)}
+.portfolio-item:hover{transform:translateY(-6px);border-color:rgba(99,102,241,.4);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.portfolio-thumb{height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
+.portfolio-body{padding:1.5rem}
+.portfolio-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+@media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.portfolio-grid{grid-template-columns:1fr}}
+</style>
+<script>localStorage.setItem('zmy_lang','es');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacto</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../portfolio.html">EN</a>
+<a class="lang-btn" href="../fr/portfolio.html">FR</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-2"></div><div class="aurora-blob aurora-blob-3"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Nuestro Trabajo</div>
+<h1 style="margin-bottom:1.5rem;">Construido para<br/><span class="grad-text-animated">llevar a cabo.</span></h1>
+<p class="hero-sub" style="margin:0 auto;">Una selección de archivos de campaña, sitios web y chatbots que hemos enviado a nuestros clientes.</p>
+</div>
+</section>
+<section class="section">
+<div class="section-inner">
+<div class="filter-tabs" id="filterTabs">
+<button class="filter-tab active" data-filter="all">Todo el trabajo</button>
+<button class="filter-tab" data-filter="website">Sitios web</button>
+<button class="filter-tab" data-filter="campaign">Campañas</button>
+<button class="filter-tab" data-filter="chatbot">Chatbots</button>
+</div>
+<div class="portfolio-grid" id="portfolioGrid">
+<div class="portfolio-item reveal" data-category="website">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(99,102,241,.3),rgba(168,85,247,.3));">
+<span>🌐</span>
+<div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-primary" style="font-size:.7rem;">60 páginas</span></div>
+</div>
+<div class="portfolio-body">
+<div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">SITIO WEB · LUGAR DE ACTIVIDADES INTERIOR</div>
+<h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Plataforma de reservas multilingüe</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Sitio multilingüe de 60 páginas en 5 idiomas con un sistema completo de reservas en línea, backend de Supabase, panel de administración protegido por MFA, chatbot de IA y administración de cookies que cumple con GDPR.</p>
+<div class="portfolio-tags">
+<span class="badge badge-primary" style="font-size:.72rem;">5 idiomas</span>
+<span class="badge badge-cyan" style="font-size:.72rem;">Sistema de reservas</span>
+<span class="badge badge-green" style="font-size:.72rem;">Chatbot de IA</span>
+</div>
+</div>
+</div>
+<div class="portfolio-item reveal reveal-delay-1" data-category="chatbot">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(6,182,212,.2));">
+<span>🤖</span>
+<div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-green" style="font-size:.7rem;">Multilingüe</span></div>
+</div>
+<div class="portfolio-body">
+<div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">CHATBOT AI · LUGAR Y EXPERIENCIAS</div>
+<h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Chatbot personalizado de base de conocimientos</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Chatbot específico del lugar capacitado en servicios, precios y procedimientos de reserva. Multilingüe con enrutamiento inteligente de temas, captura de clientes potenciales e implementación autohospedada.</p>
+<div class="portfolio-tags">
+<span class="badge badge-green" style="font-size:.72rem;">Autohospedado</span>
+<span class="badge badge-primary" style="font-size:.72rem;">Captura de clientes potenciales</span>
+<span class="badge badge-accent" style="font-size:.72rem;">5 idiomas</span>
+</div>
+</div>
+</div>
+<div class="portfolio-item reveal reveal-delay-2" data-category="campaign">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(236,72,153,.2),rgba(99,102,241,.2));">
+<span>📊</span>
+<div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-accent" style="font-size:.7rem;">Meta+Google</span></div>
+</div>
+<div class="portfolio-body">
+<div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">CAMPAÑA · EXPERIENCIAS Y OCIO</div>
+<h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Paquete de medios pagos de embudo completo</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Paquete completo de Meta Ads con conjuntos de anuncios de prospección y reorientación, configuraciones de audiencia, resúmenes creativos, configuración UTM, implementación de píxeles y estrategia de ritmo presupuestario.</p>
+<div class="portfolio-tags">
+<span class="badge badge-primary" style="font-size:.72rem;">Metaanuncios</span>
+<span class="badge badge-cyan" style="font-size:.72rem;">Embudo completo</span>
+<span class="badge badge-accent" style="font-size:.72rem;">UTM + Píxel</span>
+</div>
+</div>
+</div>
+<div class="portfolio-item reveal" data-category="website">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,.2),rgba(239,68,68,.2));">
+<span>🛒</span>
+<div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-cyan" style="font-size:.7rem;">Comercio electrónico</span></div>
+</div>
+<div class="portfolio-body">
+<div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">SITIO WEB · VENTA MINORISTA DE LUJO</div>
+<h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Tienda de comercio electrónico de lujo</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Sitio de comercio electrónico de productos premium con integración de pagos Stripe, catálogo de productos con filtrado, soporte multilingüe y animaciones personalizadas.</p>
+<div class="portfolio-tags">
+<span class="badge badge-cyan" style="font-size:.72rem;">Comercio electrónico</span>
+<span class="badge badge-primary" style="font-size:.72rem;">Multilingüe</span>
+<span class="badge badge-accent" style="font-size:.72rem;">Pagos de franjas</span>
+</div>
+</div>
+</div>
+<div class="portfolio-item reveal reveal-delay-1" data-category="website">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,.2),rgba(245,158,11,.2));">
+<span>🍳</span>
+<div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-green" style="font-size:.7rem;">Restaurante</span></div>
+</div>
+<div class="portfolio-body">
+<div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">SITIO WEB · HOSPITALIDAD</div>
+<h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Sitio de restaurante y reservas</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Sitio de restaurante con sistema de reservas en línea, presentación de menú completo, integración de Google Maps y soporte multilingüe. Diseño móvil primero con animaciones personalizadas.</p>
+<div class="portfolio-tags">
+<span class="badge badge-green" style="font-size:.72rem;">Reservas</span>
+<span class="badge badge-primary" style="font-size:.72rem;">Multilingüe</span>
+<span class="badge badge-cyan" style="font-size:.72rem;">Móvil primero</span>
+</div>
+</div>
+</div>
+<div class="portfolio-item reveal reveal-delay-2" data-category="chatbot">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(168,85,247,.25),rgba(99,102,241,.25));">
+<span>📞</span>
+<div style="position:absolute;bottom:12px;right:12px;"><span class="badge badge-accent" style="font-size:.7rem;">Voz IA</span></div>
+</div>
+<div class="portfolio-body">
+<div style="font-size:.75rem;color:var(--muted);font-family:var(--font-mono);margin-bottom:.5rem;">AGENTE TELEFÓNICO AI · LUGAR Y EXPERIENCIAS</div>
+<h3 style="color:#fff;font-size:1.1rem;margin-bottom:.5rem;font-family:var(--font-display);">Agente telefónico AI con reserva en vivo</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;">Agente de voz con IA multilingüe que maneja llamadas entrantes las 24 horas, los 7 días de la semana. Integración de calendario en vivo para reservar, cancelar y reprogramar citas durante la llamada.</p>
+<div class="portfolio-tags">
+<span class="badge badge-accent" style="font-size:.72rem;">IA de voz</span>
+<span class="badge badge-primary" style="font-size:.72rem;">Reserva en vivo</span>
+<span class="badge badge-green" style="font-size:.72rem;">Multilingüe</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+<div class="section-tag" style="justify-content:center;">¿Próximo?</div>
+<h2 class="section-title">Tu proyecto podría estar aquí.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Siempre estamos buscando proyectos ambiciosos. Construyamos algo juntos.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Iniciar un proyecto</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a href="chatbot.html">Chatbots de IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Empresa</h4><ul>
+<li><a href="about.html">Sobre nosotros</a></li>
+<li><a href="portfolio.html">Nuestro Trabajo</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacto</h4><ul>
+<li><a href="contact.html">Iniciar un proyecto</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Todos los derechos reservados.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Privacidad</a><a data-i18n="footer.terms" href="#">Términos</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+(function(){
+const tabs=document.querySelectorAll('.filter-tab');
+const items=document.querySelectorAll('.portfolio-item');
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter=tab.dataset.filter;
+    items.forEach(item=>{
+      if(filter==='all'||item.dataset.category===filter){
+        item.style.display='';
+      } else {
+        item.style.display='none';
+      }
+    });
+  });
+});
+})();
+</script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

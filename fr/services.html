@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+html
+html
+html
+html
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Services — Zoomy.services</title>
+<meta content="Campaign management, custom websites, AI phone agents, and website chatbots. Everything scoped and priced per project." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.overview-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.overview-row{display:grid;grid-template-columns:260px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.overview-row:first-child{border-top:1px solid var(--border-b)}
+.overview-num{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.overview-title{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.75rem}
+.overview-desc{color:var(--text-2);font-size:.925rem;line-height:1.78;margin-bottom:1.25rem}
+@media(max-width:768px){.overview-row{grid-template-columns:1fr;gap:1rem}}
+</style>
+<script>localStorage.setItem('zmy_lang','fr');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Studio de production numérique</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.about" href="about.html">À propos de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacter</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../services.html">EN</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">FR</span>
+<a class="lang-btn" href="../es/services.html">ES</a>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Démarrer un projet</span> ›</a>
+<button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;text-align:center;">
+<div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Prestations</div>
+<h1 style="margin-bottom:1.5rem;"><span class="glitch grad-text-animated">Quatre prestations.</span><br/>Un studio.</h1>
+<p class="hero-sub" style="margin:0 auto;">Chaque service est défini et tarifé par projet. Certains clients en ont besoin. Certains ont besoin des quatre. Nous travaillons selon des budgets fixes avec un périmètre clair convenu à l'avance.</p>
+</div>
+</section>
+<section class="section">
+<div class="section-inner">
+<div class="overview-rows">
+<div class="overview-row reveal">
+<div>
+<div class="overview-num">01</div>
+<div class="overview-title">Campagne<br/>Gestion</div>
+</div>
+<div>
+<p class="overview-desc">Nous créons et gérons des campagnes médiatiques payantes sur Meta, Google, TikTok et LinkedIn. Configuration complète — stratégie, ciblage, contenu publicitaire, configuration des pixels et du suivi — suivie d'une gestion continue : suivi des performances, optimisation des dépenses et reporting régulier. Les campagnes sont diffusées dans votre compte publicitaire.</p>
+<a class="btn btn-ghost" href="campaign-portfolio.html" style="font-size:.875rem;">Voir les détails ›</a>
+</div>
+</div>
+<div class="overview-row reveal">
+<div>
+<div class="overview-num">02</div>
+<div class="overview-title">Sites Web et<br/>Pages de destination</div>
+</div>
+<div>
+<p class="overview-desc">Sites Web codés sur mesure et pages de destination créés à partir de zéro. Pas de WordPress, pas de modèles. L'assistance multilingue, les systèmes de réservation, le commerce électronique, les panneaux d'administration, l'intégration des paiements et les chatbots IA peuvent tous être inclus en fonction du projet. Enregistrement de domaine et configuration d'hébergement disponibles sur demande.</p>
+<a class="btn btn-ghost" href="website-design.html" style="font-size:.875rem;">Voir les détails ›</a>
+</div>
+</div>
+<div class="overview-row reveal">
+<div>
+<div class="overview-num">03</div>
+<div class="overview-title">Téléphone IA<br/>Agent</div>
+</div>
+<div>
+<p class="overview-desc">Un agent vocal IA personnalisé qui répond aux appels entrants, parle naturellement dans n'importe quelle langue et gère les réservations et les questions courantes sans implication humaine. Se connecte à votre calendrier en temps réel pour réserver, annuler et reprogrammer des rendez-vous pendant l'appel. Chaque appel génère une transcription pour un examen qualité.</p>
+<a class="btn btn-ghost" href="phone-agent.html" style="font-size:.875rem;">Voir les détails ›</a>
+</div>
+</div>
+<div class="overview-row reveal">
+<div>
+<div class="overview-num">04</div>
+<div class="overview-title">Site Web<br/>Chatbot</div>
+</div>
+<div>
+<p class="overview-desc">Un chatbot formé à votre entreprise spécifique : vos services, prix, horaires et politiques. Déployé directement sur votre site Web sans dépendances de plateforme tierce. Multilingue, avec capture de leads et intégration de réservation. Disponible en tant que version autonome ou en tant que module complémentaire à un projet de site Web.</p>
+<a class="btn btn-ghost" href="chatbot.html" style="font-size:.875rem;">Voir les détails ›</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+<div class="section-tag" style="justify-content:center;">Commencez</div>
+<h2 class="section-title">Dites-nous ce dont vous avez besoin.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Décrivez le projet et nous reviendrons avec une portée, une approche et un prix fixe.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Démarrer un projet</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestion de campagnes, sites Web personnalisés, chatbots IA et agents téléphoniques.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Prestations</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a href="chatbot.html">Chatbots IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Entreprise</h4><ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="portfolio.html">Notre travail</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacter</h4><ul>
+<li><a href="contact.html">Démarrer un projet</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Ouvert aux projets</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Tous droits réservés.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Confidentialité</a><a data-i18n="footer.terms" href="#">Conditions</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

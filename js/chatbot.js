@@ -1392,18 +1392,42 @@ function render() {
     return d;
   }
 
-  function send() {
+  const AI_WORKER = 'https://zoomy-ai.zoozoomfast.workers.dev/chat';
+
+  async function send() {
     const text = input.value.trim();
     if (!text) return;
     addMsg(text, 'user');
     input.value = '';
     input.style.height = 'auto';
     const typing = showTyping();
-    setTimeout(() => {
-      typing.remove();
-      const resp = getResponse(text);
-      addMsg(md(resp), 'bot');
-    }, 600 + Math.random() * 500);
+
+    const delay = 600 + Math.random() * 500;
+    await new Promise(r => setTimeout(r, delay));
+
+    const resp = getResponse(text);
+    const isFallback = ctx.lastEntry === 'fallback';
+
+    if (isFallback) {
+      // Try Gemini AI fallback — seamlessly replaces the default response
+      try {
+        const res = await fetch(AI_WORKER, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, history: memory.history.slice(-8) })
+        });
+        if (res.ok) {
+          const { reply } = await res.json();
+          typing.remove();
+          addMsg(md(reply), 'bot');
+          memory.push('bot', reply, 'ai-fallback');
+          return;
+        }
+      } catch { /* fall through to local response */ }
+    }
+
+    typing.remove();
+    addMsg(md(resp), 'bot');
   }
 
   function dismissAttn() {

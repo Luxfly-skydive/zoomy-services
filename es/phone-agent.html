@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<html lang="en">
+HTML
+HTML
+HTML
+HTML
+HTML
+HTML
+<html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
-<title>AI Phone Agents — Zoomy.services</title>
+<title>Agentes telefónicos de IA: Zoomy.services</title>
 <meta content="Custom AI phone agents that answer calls, book appointments, and handle customer enquiries 24/7 in any language." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
 <style>
 .agent-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .capability-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem}
@@ -73,30 +67,30 @@
 .integration-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
-</head>
+<script>localStorage.setItem('zmy_lang','es');</script></head>
 <body>
 <div id="scroll-progress"></div>
 <canvas id="particle-canvas"></canvas>
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 <nav>
-<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Digital Production Studio</span></a>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campaigns</a></li>
-<li><a data-i18n="nav.websites" href="website-design.html">Websites</a></li>
-<li><a class="active" data-i18n="nav.phone" href="phone-agent.html">Phone Agents</a></li>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a class="active" data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
-<li><a data-i18n="nav.about" href="about.html">About</a></li>
-<li><a data-i18n="nav.contact" href="contact.html">Contact</a></li>
+<li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacto</a></li>
 </ul>
 <div style="display:flex;align-items:center;gap:16px;">
 <div class="lang-switcher">
-<button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-<a class="lang-btn" href="fr/phone-agent.html">FR</a>
-<a class="lang-btn" href="es/phone-agent.html">ES</a>
+<a class="lang-btn" href="../phone-agent.html">EN</a>
+<a class="lang-btn" href="../fr/phone-agent.html">FR</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
 </div>
-<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Start a Project</span> ›</a>
-<button aria-label="Menu" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <!-- ═══════════ HERO ═══════════ -->
@@ -110,16 +104,16 @@
 <div class="section-inner" style="z-index:2;">
 <div class="agent-grid">
 <div>
-<div class="section-tag" style="margin-bottom:1.5rem;">AI Phone Agents</div>
+<div class="section-tag" style="margin-bottom:1.5rem;">Agentes telefónicos de IA</div>
 <h1 style="text-align:left;margin-bottom:1.5rem;">
-<span class="glitch grad-text-animated">Your phone.</span><br/>
-          Answered.
+<span class="glitch grad-text-animated">Tu teléfono.</span><br/>
+          Respondido.
         </h1>
-<p style="color:var(--text-2);font-size:1.1rem;line-height:1.8;margin-bottom:2rem;max-width:520px;">A custom AI agent that picks up every call, speaks naturally in any language, books appointments in real time, and handles your most common enquiries — without any human involvement.</p>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.75;margin-bottom:2.5rem;max-width:520px;">Built and configured around your specific business: your services, your calendar, your tone, your language. Callers hear a natural voice, not a phone tree.</p>
+<p style="color:var(--text-2);font-size:1.1rem;line-height:1.8;margin-bottom:2rem;max-width:520px;">Un agente de IA personalizado que atiende cada llamada, habla con naturalidad en cualquier idioma, programa citas en tiempo real y maneja sus consultas más comunes, sin ninguna participación humana.</p>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.75;margin-bottom:2.5rem;max-width:520px;">Construido y configurado en torno a su negocio específico: sus servicios, su calendario, su tono, su idioma. Las personas que llaman escuchan una voz natural, no una cadena telefónica.</p>
 <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-<a class="btn btn-primary btn-lg" href="contact.html">Get a Phone Agent</a>
-<a class="btn btn-ghost btn-lg" href="#try">🎤 Test the Agent</a>
+<a class="btn btn-primary btn-lg" href="contact.html">Consiga un agente telefónico</a>
+<a class="btn btn-ghost btn-lg" href="#try">🎤 Pruebe el agente</a>
 </div>
 </div>
 <div style="display:flex;justify-content:flex-end;align-items:center;">
@@ -127,42 +121,42 @@
 <div class="voice-header">
 <div class="voice-orb">📞</div>
 <div>
-<div class="voice-name">AI Phone Agent</div>
-<div class="voice-status">Live call in progress</div>
+<div class="voice-name">Agente telefónico de IA</div>
+<div class="voice-status">Llamada en vivo en curso</div>
 </div>
 </div>
 <div class="call-transcript">
 <div class="call-line">
-<span class="call-speaker">Agent</span>
-<span class="call-text agent">Good afternoon, thanks for calling. How can I help you today?</span>
+<span class="call-speaker">Agente</span>
+<span class="call-text agent">Buenas tardes, gracias por llamar. ¿Cómo puedo ayudarte hoy?</span>
 </div>
 <div class="call-line">
-<span class="call-speaker">Caller</span>
-<span class="call-text">Hi, I'd like to book an appointment for Saturday if you have space?</span>
+<span class="call-speaker">Persona que llama</span>
+<span class="call-text">Hola, me gustaría reservar una cita para el sábado si tienes espacio.</span>
 </div>
 <div class="call-line">
-<span class="call-speaker">Agent</span>
-<span class="call-text agent">Of course. Let me check availability for this Saturday…</span>
+<span class="call-speaker">Agente</span>
+<span class="call-text agent">Por supuesto. Déjame consultar disponibilidad para este sábado…</span>
 </div>
 <div class="call-line action">
-<span class="call-speaker">System</span>
-<span class="call-text">→ Checking calendar availability…</span>
+<span class="call-speaker">Sistema</span>
+<span class="call-text">→ Comprobando disponibilidad del calendario…</span>
 </div>
 <div class="call-line">
-<span class="call-speaker">Agent</span>
-<span class="call-text agent">We have availability from 10 AM through to 3 PM. What time works best for you?</span>
+<span class="call-speaker">Agente</span>
+<span class="call-text agent">Tenemos disponibilidad de 10 am a 3 pm. ¿A qué hora te conviene más?</span>
 </div>
 <div class="call-line">
-<span class="call-speaker">Caller</span>
-<span class="call-text">11 o'clock would be perfect.</span>
+<span class="call-speaker">Persona que llama</span>
+<span class="call-text">A las 11 sería perfecto.</span>
 </div>
 <div class="call-line">
-<span class="call-speaker">Agent</span>
-<span class="call-text agent">11 AM on Saturday — can I take your name and a contact number to confirm the booking?</span>
+<span class="call-speaker">Agente</span>
+<span class="call-text agent">El sábado a las 11:00. ¿Puedo indicar su nombre y un número de contacto para confirmar la reserva?</span>
 </div>
 <div class="call-line action">
-<span class="call-speaker">System</span>
-<span class="call-text">→ Appointment confirmed in calendar</span>
+<span class="call-speaker">Sistema</span>
+<span class="call-text">→ Cita confirmada en calendario</span>
 </div>
 </div>
 <div class="voice-footer">
@@ -187,22 +181,22 @@
 <div class="section-inner" style="position:relative;z-index:2;">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
 <div class="reveal-left">
-<div class="section-tag">Live Demo</div>
-<h2 class="section-title" style="margin-bottom:1.25rem;">Talk to the agent.</h2>
-<p style="color:var(--text-2);font-size:1rem;line-height:1.82;margin-bottom:1.25rem;">This is a live AI phone agent. Click the button and speak to it directly in your browser — no phone required. Ask it questions, request a booking, or just see how it handles a natural conversation.</p>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:2rem;">The agent on this page is a demonstration version trained on Zoomy.services. Every agent we build is configured around your specific business — your services, your voice, your language.</p>
+<div class="section-tag">Demostración en vivo</div>
+<h2 class="section-title" style="margin-bottom:1.25rem;">Habla con el agente.</h2>
+<p style="color:var(--text-2);font-size:1rem;line-height:1.82;margin-bottom:1.25rem;">Este es un agente telefónico con IA en vivo. Haga clic en el botón y hable con él directamente en su navegador, no se requiere teléfono. Hazle preguntas, solicita una reserva o simplemente observa cómo maneja una conversación natural.</p>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:2rem;">El agente de esta página es una versión de demostración capacitada en Zoomy.services. Cada agente que creamos está configurado en torno a su negocio específico: sus servicios, su voz, su idioma.</p>
 <div style="display:flex;flex-direction:column;gap:.75rem;">
 <div style="display:flex;align-items:flex-start;gap:12px;">
 <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
-<span style="color:var(--text-2);font-size:.9rem;">Speak naturally — it understands conversation, not just keywords</span>
+<span style="color:var(--text-2);font-size:.9rem;">Habla con naturalidad: entiende la conversación, no solo las palabras clave</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px;">
 <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
-<span style="color:var(--text-2);font-size:.9rem;">Try asking about services, pricing, or requesting a booking</span>
+<span style="color:var(--text-2);font-size:.9rem;">Intente preguntar sobre servicios, precios o solicitar una reserva</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px;">
 <span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
-<span style="color:var(--text-2);font-size:.9rem;">Switch language mid-conversation — the agent responds in the same language</span>
+<span style="color:var(--text-2);font-size:.9rem;">Cambiar de idioma en mitad de la conversación: el agente responde en el mismo idioma</span>
 </div>
 </div>
 </div>
@@ -212,12 +206,12 @@
             📞
             <div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(99,102,241,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
 </div>
-<h3 style="font-family:var(--font-display);color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Zoomy Phone Agent</h3>
-<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;margin-bottom:2rem;">Click below to start a live voice conversation with the demo agent. Your microphone will be requested.</p>
+<h3 style="font-family:var(--font-display);color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Agente telefónico de Zoomy</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;margin-bottom:2rem;">Haga clic a continuación para iniciar una conversación de voz en vivo con el agente de demostración. Se le solicitará su micrófono.</p>
 <div id="call-ui" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
 <button id="call-btn" onclick="toggleCall()" style="width:100%;padding:14px 28px;background:var(--grad-main);border:none;border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 0 30px rgba(99,102,241,.4);transition:filter .2s,transform .2s;">
 <svg fill="none" height="18" id="call-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
-<span id="call-label">Start Call</span>
+<span id="call-label">Iniciar llamada</span>
 </button>
 <div id="call-waves" style="display:none;align-items:center;gap:3px;height:24px;">
 <div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:0s;"></div>
@@ -226,7 +220,7 @@
 <div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.36s;"></div>
 <div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.48s;"></div>
 </div>
-<div id="call-status" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);">Ready</div>
+<div id="call-status" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);">Listo</div>
 </div>
 <script type="module">
             import { Conversation } from 'https://cdn.jsdelivr.net/npm/@elevenlabs/client@0.14.0/+esm';
@@ -297,7 +291,7 @@
             }
           </script>
 </div>
-<p style="font-size:.78rem;color:var(--muted);text-align:center;max-width:320px;">This call is recorded for quality review. By speaking with the agent you consent to the recording of this conversation.</p>
+<p style="font-size:.78rem;color:var(--muted);text-align:center;max-width:320px;">Esta llamada se graba para revisión de calidad. Al hablar con el agente, usted acepta la grabación de esta conversación.</p>
 </div>
 </div>
 </div>
@@ -305,50 +299,50 @@
 <!-- ═══════════ WHAT IT DOES ═══════════ -->
 <section class="section" id="how-it-works">
 <div class="section-inner">
-<div class="section-tag">Capabilities</div>
-<h2 class="section-title">What the agent handles.</h2>
+<div class="section-tag">Capacidades</div>
+<h2 class="section-title">Lo que maneja el agente.</h2>
 <div class="capability-list">
 <div class="cap-row reveal">
 <div>
-<div class="cap-row-label">01 — Voice</div>
-<div class="cap-row-title">Natural conversation<br/>in any language</div>
+<div class="cap-row-label">01 — Voz</div>
+<div class="cap-row-title">Conversación natural<br/>en cualquier idioma</div>
 </div>
-<div class="cap-row-desc">The agent speaks with a natural, human-quality voice — not a robotic phone tree. It understands and responds conversationally, holds context throughout the call, and automatically switches language to match the caller. Configuration options include voice selection, speaking speed, and tone to match your brand.</div>
-</div>
-<div class="cap-row reveal">
-<div>
-<div class="cap-row-label">02 — Booking</div>
-<div class="cap-row-title">Live appointment<br/>scheduling</div>
-</div>
-<div class="cap-row-desc">The agent checks your calendar in real time during the call, offers available time slots naturally (“we have availability from 10 AM to 3 PM on Saturday — what works for you?”), collects the caller’s name and contact number, and confirms the booking directly into your calendar. Cancellations and rescheduling are handled the same way.</div>
+<div class="cap-row-desc">El agente habla con una voz natural y de calidad humana, no con una cadena telefónica robótica. Entiende y responde en forma conversacional, mantiene el contexto durante toda la llamada y cambia automáticamente el idioma para coincidir con el de la persona que llama. Las opciones de configuración incluyen selección de voz, velocidad de conversación y tono para que coincida con su marca.</div>
 </div>
 <div class="cap-row reveal">
 <div>
-<div class="cap-row-label">03 — Knowledge</div>
-<div class="cap-row-title">Trained on your<br/>business</div>
+<div class="cap-row-label">02 — Reserva</div>
+<div class="cap-row-title">Cita en vivo<br/>programación</div>
 </div>
-<div class="cap-row-desc">The agent is built around your specific business — your services, prices, opening hours, location, policies, and FAQs. It answers questions accurately because it only knows what you’ve provided. When it doesn’t know something, it says so clearly and offers an alternative — it does not improvise or guess.</div>
-</div>
-<div class="cap-row reveal">
-<div>
-<div class="cap-row-label">04 — Integrations</div>
-<div class="cap-row-title">Connected to your<br/>existing tools</div>
-</div>
-<div class="cap-row-desc">The agent connects to your calendar, CRM, or other systems via webhooks. During a live call it can check availability, create records, look up existing bookings, and trigger actions in your backend — all without any manual intervention. Integration scope is defined during the project brief.</div>
+<div class="cap-row-desc">El agente consulta su calendario en tiempo real durante la llamada, ofrece naturalmente los horarios disponibles (“tenemos disponibilidad de 10 a. m. a 3 p. m. los sábados, ¿qué le conviene?”), recopila el nombre y el número de contacto de la persona que llama y confirma la reserva directamente en su calendario. Las cancelaciones y reprogramaciones se manejan de la misma manera.</div>
 </div>
 <div class="cap-row reveal">
 <div>
-<div class="cap-row-label">05 — Availability</div>
-<div class="cap-row-title">24/7 — every call<br/>answered</div>
+<div class="cap-row-label">03 — Conocimiento</div>
+<div class="cap-row-title">Entrenado en tu<br/>negocio</div>
 </div>
-<div class="cap-row-desc">The agent operates at all hours, handles multiple concurrent calls, and does not take days off. Calls outside business hours are handled according to rules you define — whether that means taking a message, offering the next available slot, or providing a specific out-of-hours response.</div>
+<div class="cap-row-desc">El agente se basa en su negocio específico: sus servicios, precios, horarios de apertura, ubicación, políticas y preguntas frecuentes. Responde preguntas con precisión porque solo sabe lo que usted proporcionó. Cuando no sabe algo, lo dice claramente y ofrece una alternativa: no improvisa ni adivina.</div>
 </div>
 <div class="cap-row reveal">
 <div>
-<div class="cap-row-label">06 — Quality</div>
-<div class="cap-row-title">Call transcripts<br/>&amp; quality review</div>
+<div class="cap-row-label">04 — Integraciones</div>
+<div class="cap-row-title">Conectado a tu<br/>herramientas existentes</div>
 </div>
-<div class="cap-row-desc">Every call generates a full transcript. You can review exactly what was said, how the agent handled each request, and where it may have responded incorrectly or incompletely. This makes it straightforward to identify gaps in the agent's knowledge and improve its responses over time. Transcripts can also be used for staff training, compliance purposes, or general call quality monitoring.</div>
+<div class="cap-row-desc">El agente se conecta a su calendario, CRM u otros sistemas a través de webhooks. Durante una llamada en vivo, puede verificar la disponibilidad, crear registros, buscar reservas existentes y activar acciones en su backend, todo sin ninguna intervención manual. El alcance de la integración se define durante el resumen del proyecto.</div>
+</div>
+<div class="cap-row reveal">
+<div>
+<div class="cap-row-label">05 — Disponibilidad</div>
+<div class="cap-row-title">24 horas al día, 7 días a la semana: cada llamada<br/>respondido</div>
+</div>
+<div class="cap-row-desc">El agente opera a todas horas, maneja múltiples llamadas simultáneas y no toma días libres. Las llamadas fuera del horario comercial se manejan de acuerdo con las reglas que usted define, ya sea que eso signifique recibir un mensaje, ofrecer el siguiente espacio disponible o brindar una respuesta específica fuera del horario laboral.</div>
+</div>
+<div class="cap-row reveal">
+<div>
+<div class="cap-row-label">06 — Calidad</div>
+<div class="cap-row-title">Transcripciones de llamadas<br/>y revisión de calidad</div>
+</div>
+<div class="cap-row-desc">Cada llamada genera una transcripción completa. Puede revisar exactamente lo que se dijo, cómo el agente manejó cada solicitud y dónde pudo haber respondido de manera incorrecta o incompleta. Esto hace que sea sencillo identificar lagunas en el conocimiento del agente y mejorar sus respuestas con el tiempo. Las transcripciones también se pueden utilizar para capacitación del personal, fines de cumplimiento o monitoreo general de la calidad de las llamadas.</div>
 </div>
 </div>
 </div>
@@ -356,38 +350,38 @@
 <!-- ═══════════ USE CASES ═══════════ -->
 <section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
-<div class="section-tag">Applications</div>
-<h2 class="section-title">Built for businesses<br/>that receive calls.</h2>
+<div class="section-tag">Aplicaciones</div>
+<h2 class="section-title">Creado para empresas<br/>que reciben llamadas.</h2>
 <div class="use-case-grid stagger-children">
 <div class="use-case reveal">
 <div class="use-case-icon">🍔</div>
-<h4>Restaurants &amp; Venues</h4>
-<p>Handles reservation requests, confirms table availability, answers menu and dietary questions, and manages cancellations. Operates during and outside service hours.</p>
+<h4>Restaurantes y lugares</h4>
+<p>Maneja solicitudes de reserva, confirma la disponibilidad de mesa, responde preguntas sobre menús y dietas y gestiona cancelaciones. Opera durante y fuera del horario de servicio.</p>
 </div>
 <div class="use-case reveal reveal-delay-1">
 <div class="use-case-icon">💧</div>
-<h4>Health &amp; Wellness</h4>
-<p>Books, reschedules, and cancels client appointments. Answers standard questions about services, pricing, and availability. Integrates with booking systems directly.</p>
+<h4>Salud y Bienestar</h4>
+<p>Reserva, reprograma y cancela citas de clientes. Responde preguntas estándar sobre servicios, precios y disponibilidad. Se integra directamente con los sistemas de reservas.</p>
 </div>
 <div class="use-case reveal reveal-delay-2">
 <div class="use-case-icon">🏈</div>
-<h4>Sports &amp; Activities</h4>
-<p>Manages session bookings, provides information about packages and requirements, handles group enquiries, and answers questions about location and arrival instructions.</p>
+<h4>Deportes y actividades</h4>
+<p>Gestiona reservas de sesiones, proporciona información sobre paquetes y requisitos, maneja consultas de grupos y responde preguntas sobre ubicación e instrucciones de llegada.</p>
 </div>
 <div class="use-case reveal">
 <div class="use-case-icon">🏠</div>
-<h4>Property &amp; Real Estate</h4>
-<p>Answers enquiries about listings, schedules viewings, collects caller information, and provides property details — without a human agent needing to be available at all times.</p>
+<h4>Propiedad y bienes raíces</h4>
+<p>Responde consultas sobre listados, programa visitas, recopila información de las personas que llaman y proporciona detalles de la propiedad, sin que sea necesario que un agente humano esté disponible en todo momento.</p>
 </div>
 <div class="use-case reveal reveal-delay-1">
 <div class="use-case-icon">🔧</div>
-<h4>Service Businesses</h4>
-<p>Handles inbound service requests, schedules on-site visits or consultations, collects job details, and routes calls according to priority or service type.</p>
+<h4>Empresas de servicios</h4>
+<p>Maneja solicitudes de servicio entrantes, programa visitas o consultas in situ, recopila detalles del trabajo y enruta llamadas según la prioridad o el tipo de servicio.</p>
 </div>
 <div class="use-case reveal reveal-delay-2">
 <div class="use-case-icon">📚</div>
-<h4>Professional Services</h4>
-<p>Manages initial enquiry calls, schedules consultations, and provides information about services and processes — handling the first point of contact professionally and consistently.</p>
+<h4>Servicios profesionales</h4>
+<p>Gestiona llamadas de consulta iniciales, programa consultas y proporciona información sobre servicios y procesos, manejando el primer punto de contacto de manera profesional y consistente.</p>
 </div>
 </div>
 </div>
@@ -397,33 +391,33 @@
 <div class="section-inner">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
 <div class="reveal-left">
-<div class="section-tag">Integrations</div>
-<h2 class="section-title" style="margin-bottom:1.25rem;">Connected to the tools<br/>you already use.</h2>
-<p style="color:var(--text-2);line-height:1.8;margin-bottom:1.25rem;">The agent connects to your calendar, booking system, or CRM via webhooks during the live call. It queries and writes data in real time — no manual follow-up required.</p>
-<p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Each integration is scoped and built as part of the project. If your existing tools have an API or webhook support, we can connect to them.</p>
-<a class="btn btn-primary" href="contact.html">Discuss your setup ›</a>
+<div class="section-tag">Integraciones</div>
+<h2 class="section-title" style="margin-bottom:1.25rem;">Conectado a las herramientas<br/>ya usas.</h2>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:1.25rem;">El agente se conecta a su calendario, sistema de reservas o CRM a través de webhooks durante la llamada en vivo. Consulta y escribe datos en tiempo real, sin necesidad de seguimiento manual.</p>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Cada integración tiene un alcance y se construye como parte del proyecto. Si sus herramientas existentes tienen soporte para API o webhook, podemos conectarnos a ellas.</p>
+<a class="btn btn-primary" href="contact.html">Discuta su configuración ›</a>
 </div>
 <div class="reveal-right">
 <div class="integration-grid">
 <div class="integration-item">
 <div class="integration-icon">📅</div>
-<div class="integration-name">Google Calendar</div>
-<div class="integration-desc">Live availability &amp; booking</div>
+<div class="integration-name">Calendario de Google</div>
+<div class="integration-desc">Disponibilidad y reserva en vivo</div>
 </div>
 <div class="integration-item">
 <div class="integration-icon">📋</div>
-<div class="integration-name">CRM Systems</div>
-<div class="integration-desc">Contact &amp; lead creation</div>
+<div class="integration-name">Sistemas CRM</div>
+<div class="integration-desc">Creación de contactos y clientes potenciales</div>
 </div>
 <div class="integration-item">
 <div class="integration-icon">🔗</div>
-<div class="integration-name">Custom Webhooks</div>
-<div class="integration-desc">Any API-connected tool</div>
+<div class="integration-name">Webhooks personalizados</div>
+<div class="integration-desc">Cualquier herramienta conectada a API</div>
 </div>
 <div class="integration-item">
 <div class="integration-icon">📝</div>
-<div class="integration-name">Booking Software</div>
-<div class="integration-desc">Read &amp; write appointments</div>
+<div class="integration-name">Software de reservas</div>
+<div class="integration-desc">Leer y escribir citas</div>
 </div>
 </div>
 </div>
@@ -433,8 +427,8 @@
 <!-- ═══════════ HOW WE BUILD IT ═══════════ -->
 <section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
-<div class="section-tag">Process</div>
-<h2 class="section-title">How we build your agent.</h2>
+<div class="section-tag">Proceso</div>
+<h2 class="section-title">Cómo construimos su agente.</h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem;align-items:start;">
 <div class="terminal reveal-left">
 <div class="terminal-header">
@@ -445,33 +439,33 @@
 </div>
 <div class="terminal-body">
 <div><span class="term-prompt">$</span> <span class="term-cmd">./build-phone-agent --client</span></div>
-<div style="margin-top:1rem;"><span class="term-highlight">Step 1:</span> <span class="term-output">Business briefing &amp; knowledge extraction</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Services, pricing, hours, FAQs</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Tone &amp; personality guidelines</span></div>
-<div style="margin-top:.75rem;"><span class="term-highlight">Step 2:</span> <span class="term-output">Calendar &amp; tool integration</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Connect availability system</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Configure booking webhooks</span></div>
-<div style="margin-top:.75rem;"><span class="term-highlight">Step 3:</span> <span class="term-output">Voice &amp; language configuration</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Voice selection &amp; tuning</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Language &amp; fallback rules</span></div>
-<div style="margin-top:.75rem;"><span class="term-highlight">Step 4:</span> <span class="term-output">Testing &amp; deployment</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Scenario testing across call types</span></div>
-<div style="margin-left:1rem;"><span class="term-output">→ Live on your phone number</span></div>
+<div style="margin-top:1rem;"><span class="term-highlight">Paso 1:</span> <span class="term-output">Información empresarial y extracción de conocimientos</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Servicios, precios, horarios, preguntas frecuentes</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Pautas de tono y personalidad</span></div>
+<div style="margin-top:.75rem;"><span class="term-highlight">Paso 2:</span> <span class="term-output">Integración de calendario y herramientas</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Conectar sistema de disponibilidad</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Configurar webhooks de reserva</span></div>
+<div style="margin-top:.75rem;"><span class="term-highlight">Paso 3:</span> <span class="term-output">Configuración de voz e idioma</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Selección y sintonización de voces</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Idioma y reglas alternativas</span></div>
+<div style="margin-top:.75rem;"><span class="term-highlight">Paso 4:</span> <span class="term-output">Pruebas e implementación</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Pruebas de escenarios en todos los tipos de llamadas</span></div>
+<div style="margin-left:1rem;"><span class="term-output">→ Vive en tu número de teléfono</span></div>
 <div style="margin-top:.5rem;"><span class="term-cursor"></span></div>
 </div>
 </div>
 <div class="reveal-right" style="display:flex;flex-direction:column;gap:1.5rem;">
 <div style="padding:1.5rem;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:14px;">
-<h4 style="color:var(--primary);margin-bottom:.5rem;font-weight:600;">Built around your business</h4>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">The agent is trained on the information you provide. The more detail you give us, the more accurately it represents your business to callers.</p>
+<h4 style="color:var(--primary);margin-bottom:.5rem;font-weight:600;">Creado en torno a su negocio</h4>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">El agente está capacitado sobre la información que usted proporciona. Cuanto más detalles nos brinde, con mayor precisión representará su negocio ante las personas que llaman.</p>
 </div>
 <div style="padding:1.5rem;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);border-radius:14px;">
-<h4 style="color:var(--accent);margin-bottom:.5rem;font-weight:600;">Tested before go-live</h4>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">We run through a range of call scenarios — booking requests, edge cases, out-of-hours calls, and language switches — before the agent goes live on your number.</p>
+<h4 style="color:var(--accent);margin-bottom:.5rem;font-weight:600;">Probado antes de la entrada en funcionamiento</h4>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Analizamos una variedad de escenarios de llamadas (solicitudes de reserva, casos extremos, llamadas fuera de horario y cambios de idioma) antes de que el agente active su número.</p>
 </div>
 <div style="padding:1.5rem;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);border-radius:14px;">
-<h4 style="color:var(--secondary);margin-bottom:.5rem;font-weight:600;">Iterable after deployment</h4>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Call transcripts are available for review. If the agent handles something incorrectly, we update its instructions. The agent improves over time as edge cases are addressed.</p>
+<h4 style="color:var(--secondary);margin-bottom:.5rem;font-weight:600;">Iterable después de la implementación</h4>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Las transcripciones de llamadas están disponibles para su revisión. Si el agente maneja algo incorrectamente, actualizamos sus instrucciones. El agente mejora con el tiempo a medida que se abordan los casos extremos.</p>
 </div>
 </div>
 </div>
@@ -484,10 +478,10 @@
 <div class="aurora-blob aurora-blob-3"></div>
 </div>
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
-<div class="section-tag" style="justify-content:center;">Get Started</div>
-<h2 class="section-title">Every call answered.<br/>Every time.</h2>
-<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Tell us about your business and how you currently handle inbound calls. We'll scope a solution and come back with a proposal.</p>
-<a class="btn btn-primary btn-lg" href="contact.html">Request a Phone Agent</a>
+<div class="section-tag" style="justify-content:center;">Empezar</div>
+<h2 class="section-title">Cada llamada contestada.<br/>Cada vez.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Cuéntenos sobre su negocio y cómo maneja actualmente las llamadas entrantes. Buscaremos una solución y regresaremos con una propuesta.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Solicite un agente telefónico</a>
 </div>
 </section>
 <footer>
@@ -495,40 +489,40 @@
 <div class="footer-grid">
 <div>
 <div class="footer-logo grad-text">Zoomy.services</div>
-<p class="footer-tagline" data-i18n="footer.tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
 <div class="footer-social" style="margin-top:24px;">
 <a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
 <a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
 <a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
 </div>
 </div>
-<div class="footer-col"><h4 data-i18n="footer.services">Services</h4><ul>
-<li><a href="campaign-portfolio.html">Campaign Files</a></li>
-<li><a data-i18n="nav.websites" href="website-design.html">Websites</a></li>
-<li><a class="active" data-i18n="nav.phone" href="phone-agent.html">Phone Agents</a></li>
-<li><a class="active" data-i18n="nav.phone" href="phone-agent.html">Phone Agents</a></li>
-<li><a href="chatbot.html">AI Chatbots</a></li>
+<div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
+<li><a href="campaign-portfolio.html">Archivos de campaña</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a class="active" data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a class="active" data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a href="chatbot.html">Chatbots de IA</a></li>
 </ul></div>
-<div class="footer-col"><h4 data-i18n="footer.company">Company</h4><ul>
-<li><a href="about.html">About Us</a></li>
-<li><a href="portfolio.html">Our Work</a></li>
+<div class="footer-col"><h4 data-i18n="footer.company">Empresa</h4><ul>
+<li><a href="about.html">Sobre nosotros</a></li>
+<li><a href="portfolio.html">Nuestro Trabajo</a></li>
 <li><a href="faq.html">FAQ</a></li>
 </ul></div>
-<div class="footer-col"><h4 data-i18n="footer.contact">Contact</h4><ul>
-<li><a href="contact.html">Start a Project</a></li>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacto</h4><ul>
+<li><a href="contact.html">Iniciar un proyecto</a></li>
 <li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
 </ul>
-<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Open for Projects</span></div>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
 </div>
 </div>
 <div class="footer-bottom">
-<span>© 2026 Zoomy.services — All rights reserved.</span>
-<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Privacy</a><a data-i18n="footer.terms" href="#">Terms</a></span>
+<span>© 2026 Zoomy.services — Todos los derechos reservados.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Privacidad</a><a data-i18n="footer.terms" href="#">Términos</a></span>
 </div>
 </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/chatbot.js"></script>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
 </body>
 </html>

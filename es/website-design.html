@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+HTML
+HTML
+HTML
+HTML
+HTML
+HTML
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Sitios web — Zoomy.services</title>
+<meta content="Custom websites and landing pages built from scratch. Multilingual, booking systems, e-commerce, admin panels, and AI chatbots." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.cap-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.cap-row-item{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.25rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.cap-row-item:first-child{border-top:1px solid var(--border-b)}
+.cap-row-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.cap-row-name{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#fff}
+.cap-desc{color:var(--text-2);font-size:.9rem;line-height:1.75}
+.feature-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+.feature-box{padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.14);border-radius:12px}
+@media(max-width:900px){
+.cap-row-item{grid-template-columns:1fr;gap:1rem}
+.feature-row{grid-template-columns:1fr}
+[style*="grid-template-columns:220px 1fr"]{grid-template-columns:1fr !important;gap:0.5rem !important}
+}
+</style>
+<script>localStorage.setItem('zmy_lang','es');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a class="active" data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacto</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../website-design.html">EN</a>
+<a class="lang-btn" href="../fr/website-design.html">FR</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div><div class="aurora-blob aurora-blob-3"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" style="margin-bottom:1.5rem;">Sitios web y páginas de destino</div>
+<h1 style="text-align:left;margin-bottom:1.5rem;max-width:700px;">
+<span class="glitch grad-text-animated">Construido a partir de</span><br/>
+      rascar.
+    </h1>
+<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;">Todo está codificado de forma personalizada en HTML, CSS y JavaScript. Sin WordPress, sin creadores de páginas, sin temas. Cada proyecto está diseñado para lo que realmente necesita hacer.</p>
+</div>
+</section>
+<!-- WHAT WE BUILD -->
+<section class="section">
+<div class="section-inner">
+<div class="section-tag">Lo que construimos</div>
+<h2 class="section-title">Tipos de sitios.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:600px;margin-top:.75rem;">El alcance varía según el proyecto. A continuación se muestra lo que hemos creado y lo que estamos configurados para construir nuevamente.</p>
+<div class="cap-rows">
+<div class="cap-row-item reveal">
+<div>
+<div class="cap-row-label">Reserva</div>
+<div class="cap-row-name">Sitios de actividades y lugares</div>
+</div>
+<div class="cap-desc">Sitios para lugares, actividades, experiencias y negocios de ocio que necesitan reservas online. Incluye disponibilidad de espacios en tiempo real, confirmación de reserva, integración de pagos y un panel de administración para gestionar reservas. Soporte multilingüe en tantos idiomas como sea necesario.</div>
+</div>
+<div class="cap-row-item reveal">
+<div>
+<div class="cap-row-label">Comercio</div>
+<div class="cap-row-name">Tiendas de comercio electrónico</div>
+</div>
+<div class="cap-desc">Sitios de catálogo de productos con pago online vía Stripe. Admite múltiples tipos de productos, filtrado y flujos de compra. Se puede construir con un panel de administración para gestionar productos y pedidos. Multilingüe cuando sea necesario.</div>
+</div>
+<div class="cap-row-item reveal">
+<div>
+<div class="cap-row-label">Hospitalidad</div>
+<div class="cap-row-name">Restaurantes y Catering</div>
+</div>
+<div class="cap-desc">Sitios de restaurantes y catering con menús, sistemas de reservas, secciones de galería e información de ubicación. Creado para conversiones: lograr que los visitantes reserven una mesa o realicen una consulta. Multilingüe cuando sea necesario.</div>
+</div>
+<div class="cap-row-item reveal">
+<div>
+<div class="cap-row-label">Servicio</div>
+<div class="cap-row-name">Sitios de empresas de servicios</div>
+</div>
+<div class="cap-desc">Sitios para empresas que ofrecen un servicio: consultorías, clínicas, agencias, comerciantes y similares. Por lo general, se estructura en torno a la presentación clara de los servicios, la captura de clientes potenciales y la facilitación del contacto o la reserva.</div>
+</div>
+<div class="cap-row-item reveal">
+<div>
+<div class="cap-row-label">Conversión</div>
+<div class="cap-row-name">Páginas de destino</div>
+</div>
+<div class="cap-desc">Construcciones de una sola página diseñadas en torno a una campaña o audiencia específica. Generalmente vinculado a una campaña de medios pagos y diseñado para convertir el tráfico en clientes potenciales o compras. Creado con el mismo estándar que los sitios completos: código personalizado, carga rápida y dispositivos móviles primero.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHAT CAN BE INCLUDED -->
+<section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div class="section-tag">Características</div>
+<h2 class="section-title">Qué se puede incluir.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:600px;margin-top:.75rem;">No todos los proyectos necesitan todos estos. Lo que se incluye se define durante el informe y tiene su alcance en consecuencia.</p>
+<div style="display:flex;flex-direction:column;gap:0;margin-top:2.5rem;">
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Multilingüe</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Páginas creadas en tantos idiomas como sea necesario: EN, FR, DE, NL, ES y más. Incluye conmutadores de idiomas, etiquetas hreflang y lógica alternativa para traducciones parciales.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Sistema de reservas</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Disponibilidad de espacios en tiempo real, selección de fecha y tamaño de grupo, confirmación de reserva y notificación por correo electrónico. Backend impulsado por Supabase. Panel de administración para visualización y gestión de reservas incluido.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Pago en línea</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Integración de pagos a través de Stripe, tarjetas compatibles, ACH, Apple Pay y Google Pay. Puede combinarse con el sistema de reservas o utilizarse de forma independiente para el comercio electrónico.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Panel de administración</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Un panel de gestión seguro para reservas, contenidos, productos o usuarios. Inicio de sesión protegido por MFA a través de Supabase Auth. Acceso basado en roles y registro de auditoría cuando sea necesario.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Chatbot de IA</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Un chatbot capacitado en los datos de su negocio e implementado directamente en el sitio. Maneja las preguntas de los visitantes, recopila clientes potenciales y trabaja en varios idiomas. Descripción completa más abajo en esta página.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Cumplimiento del RGPD</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Banner de consentimiento de cookies con controles a nivel de categoría, estructura de política de privacidad y configuración de manejo de datos. Incluido de serie en todos los sitios que recopilan datos de visitantes.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Estructura SEO</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">HTML semántico, jerarquía de encabezados correcta, metaetiquetas, Open Graph, marcado de datos estructurados y mapa del sitio XML. Incluido en todos los sitios de forma predeterminada.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Análisis y seguimiento</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Configuración GA4 con seguimiento de eventos y configuración de objetivos. Meta Pixel y Google Tag Manager donde el sitio está conectado a campañas pagas. Integración de mapas de calor o grabación de sesiones bajo petición.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;border-bottom:1px solid var(--border-b);">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Dominio y alojamiento</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Registro de dominio y configuración de hosting bajo petición. Si ya tiene ambos, los implementamos. Si no, lo manejamos como parte del proyecto.</div>
+</div>
+<div style="display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:1.5rem 0;">
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;font-size:.95rem;padding-top:2px;">Animaciones e interacciones</div>
+<div style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Animaciones de desplazamiento, efectos de desplazamiento, paralaje y transiciones personalizadas. El nivel de animación se adapta a lo que se adapta al proyecto; no todos los sitios necesitan movimientos elaborados.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CHATBOT SECTION -->
+<section class="section" id="chatbot" style="position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="section-inner" style="position:relative;z-index:2;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+<div class="reveal-left">
+<div class="section-tag">Chatbot de IA</div>
+<h2 class="section-title" style="margin-bottom:1.25rem;">Capacitado en su negocio.</h2>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:1.25rem;">El chatbot está diseñado enteramente en torno a su negocio específico, no es un asistente de uso general. Conoce sus servicios, precios, horarios de apertura, procedimiento de reserva y preguntas comunes porque lo hemos capacitado directamente en esa información.</p>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:1.25rem;">Se ejecuta directamente en su sitio web sin dependencias de plataformas de terceros. Los datos de los visitantes permanecen en su propia infraestructura.</p>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Disponible como versión independiente o incluida al solicitar un sitio web o una página de destino. Menciónelo en su informe y lo incluiremos en el mismo proyecto.</p>
+<div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;">
+<div style="display:flex;align-items:flex-start;gap:12px;">
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--text-2);font-size:.9rem;">Responde con precisión porque solo sabe lo que le has proporcionado y no improvisa</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;">
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--text-2);font-size:.9rem;">Multilingüe: responde en el idioma que utiliza el visitante</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;">
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--text-2);font-size:.9rem;">Recopila clientes potenciales: captura correos electrónicos o llamadas telefónicas cuando sea relevante</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;">
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--text-2);font-size:.9rem;">Coincidencia aproximada: comprende errores tipográficos y frases informales</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:12px;">
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--text-2);font-size:.9rem;">Autohospedado: sin tarifas mensuales de plataforma, sin dependencia de API externa</span>
+</div>
+</div>
+<a class="btn btn-primary" href="contact.html">Añadir a tu proyecto ›</a>
+</div>
+<div class="reveal-right">
+<div class="chatbot-mock">
+<div class="chatbot-header">
+<div class="chatbot-avatar">🤖</div>
+<div>
+<div class="chatbot-name">Asistente Zoomy</div>
+<div class="chatbot-status">Demostración en vivo: pruébelo</div>
+</div>
+</div>
+<div class="chatbot-messages" id="chatbot-messages">
+<div class="msg msg-bot">Hola. Pregúntame cualquier cosa sobre nuestros servicios: sitios web, chatbots, campañas o agentes telefónicos.</div>
+<div class="msg msg-user">¿Utilizas WordPress?</div>
+<div class="msg msg-bot">No. Cada sitio que creamos está codificado de forma personalizada desde cero en HTML, CSS y JavaScript. Sin WordPress, sin creadores de páginas, sin temas. Trabajamos de esta manera porque nos brinda control total sobre el rendimiento, el diseño y la funcionalidad.</div>
+</div>
+<div class="chatbot-input">
+<input class="chatbot-input-field" id="chatbot-input-field" placeholder="Pregunta por nuestros servicios..." type="text"/>
+<button class="chatbot-send" id="chatbot-send">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.3;"><div class="aurora-blob aurora-blob-1"></div></div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+<div class="section-tag" style="justify-content:center;">Empezar</div>
+<h2 class="section-title">Cuéntanos qué necesitas.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Describa el proyecto y le informaremos el alcance y el precio.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Iniciar un resumen del sitio web</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
+<li><a href="campaign-portfolio.html">Archivos de campaña</a></li>
+<li><a class="active" data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a href="chatbot.html">Chatbots de IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Empresa</h4><ul>
+<li><a href="about.html">Sobre nosotros</a></li>
+<li><a href="portfolio.html">Nuestro Trabajo</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacto</h4><ul>
+<li><a href="contact.html">Iniciar un proyecto</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Todos los derechos reservados.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Privacidad</a><a data-i18n="footer.terms" href="#">Términos</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

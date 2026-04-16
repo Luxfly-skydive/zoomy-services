@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+HTML
+HTML
+HTML
+HTML
+HTML
+HTML
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Chatbots de IA: Zoomy.services</title>
+<meta content="Custom AI chatbots trained on your business. Deployed on your website. Multilingual, lead capture, no third-party dependencies." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.chatbot-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.detail-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.detail-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.25rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.detail-row:first-child{border-top:1px solid var(--border-b)}
+.detail-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.detail-name{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#fff}
+.detail-desc{color:var(--text-2);font-size:.9rem;line-height:1.75}
+@media(max-width:900px){.chatbot-detail-grid{grid-template-columns:1fr}.detail-row{grid-template-columns:1fr;gap:1rem}}
+</style>
+<script>localStorage.setItem('zmy_lang','es');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a class="active" data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacto</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../chatbot.html">EN</a>
+<a class="lang-btn" href="../fr/chatbot.html">FR</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<div class="aurora">
+<div class="aurora-blob aurora-blob-1"></div>
+<div class="aurora-blob aurora-blob-2"></div>
+<div class="aurora-blob aurora-blob-3"></div>
+</div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="chatbot-detail-grid">
+<div>
+<div class="section-tag" style="margin-bottom:1.5rem;">Chatbot de IA</div>
+<h1 style="text-align:left;margin-bottom:1.5rem;max-width:600px;">
+<span class="glitch grad-text-animated">Capacitado</span><br/>
+          en tu negocio.
+        </h1>
+<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:540px;margin-bottom:2rem;">Un chatbot que conoce tu negocio como tú. No es un asistente de uso general: es una herramienta personalizada y capacitada para sus servicios, precios, horarios y políticas específicos. Implementado directamente en su sitio web.</p>
+<div style="display:flex;gap:1rem;flex-wrap:wrap;">
+<a class="btn btn-primary" href="contact.html">Añadir a tu proyecto ›</a>
+<a class="btn btn-ghost" href="#demo">Pruebe la demostración ›</a>
+</div>
+</div>
+<div style="display:flex;justify-content:flex-end;align-items:center;">
+<div class="chatbot-mock" id="demo">
+<div class="chatbot-header">
+<div class="chatbot-avatar">🤖</div>
+<div>
+<div class="chatbot-name">Asistente Zoomy</div>
+<div class="chatbot-status">Demostración en vivo: pruébelo</div>
+</div>
+</div>
+<div class="chatbot-messages" id="chatbot-messages">
+<div class="msg msg-bot">Hola. Pregúntame cualquier cosa sobre nuestros servicios: sitios web, chatbots, campañas o agentes telefónicos.</div>
+<div class="msg msg-user">¿Cómo funciona el chatbot?</div>
+<div class="msg msg-bot">Está capacitado sobre una base de conocimientos personalizada creada en torno a su negocio. Cuando un visitante hace una pregunta, compara sus comentarios con esa base de conocimientos y responde con precisión. Sólo sabe lo que usted le ha proporcionado; no improvisa ni inventa nada.</div>
+</div>
+<div class="chatbot-input">
+<input class="chatbot-input-field" id="chatbot-input-field" placeholder="Pregunta cualquier cosa..." type="text"/>
+<button class="chatbot-send" id="chatbot-send">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-inner">
+<div class="section-tag">Cómo funciona</div>
+<h2 class="section-title">Lo que lo hace diferente.</h2>
+<div class="detail-rows">
+<div class="detail-row reveal">
+<div>
+<div class="detail-label">Conocimiento</div>
+<div class="detail-name">Capacitado con sus datos</div>
+</div>
+<div class="detail-desc">Creamos una base de conocimientos personalizada a partir de la información que usted proporciona: sus servicios, precios, disponibilidad, proceso de reserva, preguntas frecuentes y políticas. El chatbot solo responde en función de lo que usted nos ha proporcionado, lo que significa que responde con precisión y no adivina ni fabrica información.</div>
+</div>
+<div class="detail-row reveal">
+<div>
+<div class="detail-label">Idioma</div>
+<div class="detail-name">Multilingüe por defecto</div>
+</div>
+<div class="detail-desc">El chatbot responde en el idioma que utiliza el visitante. La base de conocimientos se construye en cada idioma por separado para garantizar que las respuestas sean naturales y precisas, no traducidas automáticamente. Funciona en EN, FR, DE, NL, ES y cualquier otro idioma que necesites.</div>
+</div>
+<div class="detail-row reveal">
+<div>
+<div class="detail-label">Coincidencia</div>
+<div class="detail-name">Maneja errores tipográficos y lenguaje informal</div>
+</div>
+<div class="detail-desc">Los visitantes rara vez escriben perfectamente. El chatbot utiliza coincidencias aproximadas para comprender variaciones en la ortografía, frases informales y preguntas abreviadas. Un visitante que escribe "¿Cuál es su precio?" obtiene la misma respuesta precisa que uno que escribe "¿Cuál es su precio?"</div>
+</div>
+<div class="detail-row reveal">
+<div>
+<div class="detail-label">Clientes potenciales</div>
+<div class="detail-name">Recopila datos de contacto</div>
+</div>
+<div class="detail-desc">Cuando la pregunta de un visitante sugiere que está interesado en reservar u obtener una cotización, el chatbot puede solicitarle que deje su correo electrónico o número de teléfono. Esos detalles se recopilan y almacenan para que usted pueda realizar un seguimiento.</div>
+</div>
+<div class="detail-row reveal">
+<div>
+<div class="detail-label">Alojamiento</div>
+<div class="detail-name">Autohospedado, sin tarifas de plataforma</div>
+</div>
+<div class="detail-desc">El chatbot se ejecuta directamente en la infraestructura de su sitio web. No hay suscripciones a plataformas de terceros, ni tarifas por mensaje, ni dependencias externas que puedan desconectarse o cambiar sus precios. Eres propietario absoluto una vez que esté construido.</div>
+</div>
+<div class="detail-row reveal">
+<div>
+<div class="detail-label">Opción</div>
+<div class="detail-name">Alternativa basada en API</div>
+</div>
+<div class="detail-desc">Para casos de uso que necesitan respuestas más abiertas o complejas, hay disponible una versión basada en API. Esto se conecta a un servicio de inteligencia artificial externo y maneja una gama más amplia de preguntas. Los costes de uso se facturan según la tarifa del proveedor más un margen de gestión. Le aconsejaremos qué opción se adapta mejor a su caso de uso durante el resumen.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div class="section-tag">Disponibilidad</div>
+<h2 class="section-title">Independiente o como complemento.</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;">
+<h3 style="font-family:var(--font-display);color:#fff;font-size:1.15rem;margin-bottom:1rem;">Construcción independiente</h3>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1.5rem;">Construimos e implementamos el chatbot por sí solo, integrado en su sitio web existente. Usted proporciona los datos comerciales; Construimos la base de conocimientos, configuramos el chatbot y manejamos la implementación.</p>
+<a class="btn btn-primary" href="contact.html" style="font-size:.875rem;">Obtenga una cotización ›</a>
+</div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;">
+<h3 style="font-family:var(--font-display);color:#fff;font-size:1.15rem;margin-bottom:1rem;">Complemento con un sitio web</h3>
+<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1.5rem;">Si solicita un sitio web o una página de destino, se puede incluir un chatbot en el mismo proyecto. Menciónelo en su informe y su alcance y precio se incluirán como parte de la misma compilación.</p>
+<a class="btn btn-ghost" href="contact.html" style="font-size:.875rem;">Iniciar un breve ›</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+<div class="section-tag" style="justify-content:center;">Empezar</div>
+<h2 class="section-title">Cuéntanos sobre tu negocio.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Cuantos más detalles comparta, mejor podremos analizar el chatbot y ofrecerle una cotización precisa.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Iniciar un resumen de Chatbot</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a class="active" href="chatbot.html">Chatbots de IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Empresa</h4><ul>
+<li><a href="about.html">Sobre nosotros</a></li>
+<li><a href="portfolio.html">Nuestro Trabajo</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacto</h4><ul>
+<li><a href="contact.html">Iniciar un proyecto</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Todos los derechos reservados.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Privacidad</a><a data-i18n="footer.terms" href="#">Términos</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+<script>
+// ── Zoomy demo widget wiring ───────────────────────────────────────────────
+(function() {
+  function initDemo() {
+    if (!window.__zmy) { setTimeout(initDemo, 50); return; }
+
+    // Remove the floating chat bubble on this page (demo widget IS the demo)
+    var root = document.getElementById('zmy-root');
+    if (root) root.remove();
+    var attn = document.getElementById('zmy-attn');
+    if (attn) attn.remove();
+
+    var messagesEl = document.getElementById('chatbot-messages');
+    var inputEl    = document.getElementById('chatbot-input-field');
+    var sendBtn    = document.getElementById('chatbot-send');
+    if (!messagesEl || !inputEl || !sendBtn) return;
+
+    // Clear the static demo messages on first interaction
+    var firstInteraction = true;
+
+    function appendMsg(text, role) {
+      var div = document.createElement('div');
+      div.className = 'msg msg-' + role;
+      // Render markdown: **bold**, _italic_, links, newlines
+      var html = text
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/_(.+?)_/g, '<em>$1</em>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+        .replace(/\n/g, '<br>');
+      div.innerHTML = html;
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function sendMessage() {
+      var text = inputEl.value.trim();
+      if (!text) return;
+      if (firstInteraction) {
+        messagesEl.innerHTML = '';
+        firstInteraction = false;
+      }
+      appendMsg(text, 'user');
+      inputEl.value = '';
+      // Typing indicator
+      var typing = document.createElement('div');
+      typing.className = 'msg msg-bot';
+      typing.id = 'zmy-typing';
+      typing.textContent = '…';
+      messagesEl.appendChild(typing);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      setTimeout(function() {
+        typing.remove();
+        var response = window.__zmy.getResponse(text);
+        appendMsg(response, 'bot');
+      }, 280);
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    inputEl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+    });
+
+    // Update status to show it's live
+    var status = document.querySelector('.chatbot-status');
+    if (status) status.textContent = 'Live — powered by Zoomy chatbot.js';
+  }
+  initDemo();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+HTML
+HTML
+HTML
+HTML
+HTML
+HTML
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Contacto — Zoomy.servicios</title>
+<meta content="Start your project. We reply within 24 hours with a tailored proposal." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;margin-top:3rem}
+.contact-info-item{display:flex;align-items:flex-start;gap:16px;padding:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1rem}
+.contact-icon{width:44px;height:44px;border-radius:10px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+</style>
+<script>localStorage.setItem('zmy_lang','es');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>
+<li><a class="active" data-i18n="nav.contact" href="contact.html">Contacto</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../contact.html">EN</a>
+<a class="lang-btn" href="../fr/contact.html">FR</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-3"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" data-i18n="contact.hero.tag" style="justify-content:center;margin-bottom:1.5rem;">Contacto</div>
+<h1 style="margin-bottom:1.5rem;">Construyamos<br/><span class="grad-text-animated">algo genial.</span></h1>
+<p class="hero-sub" data-i18n="contact.hero.sub" style="margin:0 auto;">Cuéntanos sobre tu proyecto. Le responderemos dentro de las 24 horas con una propuesta y un cronograma personalizados.</p>
+</div>
+</section>
+<section class="section" style="padding-top:2rem;">
+<div class="section-inner">
+<div class="contact-grid">
+<div class="reveal-left">
+<div class="section-tag" style="margin-bottom:1.5rem;">Ponte en contacto</div>
+<h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-.02em;">Estamos aquí para ayudar.</h2>
+<p style="color:var(--text-2);margin-bottom:2rem;line-height:1.7;">Ya sea que tenga un informe detallado o simplemente una idea, comuníquese con nosotros. Hacemos las preguntas correctas para comprender sus necesidades y crear una propuesta que se ajuste a sus objetivos y presupuesto.</p>
+<div class="contact-info-item">
+<div class="contact-icon">✉</div>
+<div>
+<div style="font-weight:600;color:#fff;margin-bottom:.25rem;font-size:.95rem;">Envíenos un correo electrónico</div>
+<div style="color:var(--text-2);font-size:.9rem;">hello@zoomy.services</div>
+<div style="color:var(--muted);font-size:.8rem;margin-top:3px;">Respondemos en 24 horas</div>
+</div>
+</div>
+<div class="contact-info-item">
+<div class="contact-icon">🕑</div>
+<div>
+<div style="font-weight:600;color:#fff;margin-bottom:.25rem;font-size:.95rem;">Tiempo de respuesta</div>
+<div style="color:var(--text-2);font-size:.9rem;">En 24 horas</div>
+<div style="color:var(--muted);font-size:.8rem;margin-top:3px;">7 días a la semana, zona horaria ET</div>
+</div>
+</div>
+<div class="contact-info-item">
+<div class="contact-icon">🌎</div>
+<div>
+<div style="font-weight:600;color:#fff;margin-bottom:.25rem;font-size:.95rem;">Ubicación</div>
+<div style="color:var(--text-2);font-size:.9rem;">Nueva York: primero lo remoto</div>
+<div style="color:var(--muted);font-size:.8rem;margin-top:3px;">Trabajando con clientes en todo el mundo</div>
+</div>
+</div>
+<div style="margin-top:2rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:14px;overflow:hidden;">
+<div style="padding:1rem 1.5rem .75rem;border-bottom:1px solid rgba(99,102,241,.12);">
+<div style="font-size:.7rem;color:rgba(255,255,255,.4);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">Qué incluir</div>
+<div id="wi-tabs" style="display:flex;gap:.4rem;flex-wrap:wrap;">
+<button class="wi-tab wi-tab-active" id="wi-tab-campaign" onclick="wiTab('campaign')">Campaña</button>
+<button class="wi-tab" id="wi-tab-website" onclick="wiTab('website')">Sitio web</button>
+<button class="wi-tab" id="wi-tab-chatbot" onclick="wiTab('chatbot')">Chatbot</button>
+<button class="wi-tab" id="wi-tab-phone" onclick="wiTab('phone')">Agente telefónico</button>
+</div>
+</div>
+<div style="padding:1.25rem 1.5rem;">
+<!-- Campaign -->
+<ul class="wi-panel" id="wi-campaign" style="list-style:none;display:flex;flex-direction:column;gap:.55rem;margin:0;padding:0;">
+<li class="wi-item"><span class="wi-arrow">›</span> Qué plataformas: Meta, Google, TikTok, LinkedIn</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Su presupuesto publicitario mensual</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Qué estás promocionando y tu público objetivo</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Ya sea que tenga creatividades existentes o necesite editar medios</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Cualquier cuenta actual o píxel ya configurado</li>
+</ul>
+<!-- Website -->
+<ul class="wi-panel" id="wi-website" style="list-style:none;display:none;flex-direction:column;gap:.55rem;margin:0;padding:0;">
+<li class="wi-item"><span class="wi-arrow">›</span> Tipo de sitio: informativo, de reservas, de comercio electrónico, página de destino</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Número aproximado de páginas e idiomas necesarios</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Funciones clave: sistema de reservas, pagos, panel de administración, etc.</li>
+<li class="wi-item"><span class="wi-arrow">›</span> ¿Tienes un dominio y hosting, o necesitas que lo configuremos?</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Su plazo y rango de presupuesto</li>
+</ul>
+<!-- Chatbot -->
+<ul class="wi-panel" id="wi-chatbot" style="list-style:none;display:none;flex-direction:column;gap:.55rem;margin:0;padding:0;">
+<li class="wi-item"><span class="wi-arrow">›</span> Lo que el chatbot necesita para responder: servicios, precios, reservas</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Idiomas requeridos (soportamos EN, FR, ES listos para usar)</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Chatbot independiente o complemento para un sitio web nuevo o existente</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Ya sea que necesite capturar clientes potenciales o conectarse a un CRM</li>
+</ul>
+<!-- Phone Agent -->
+<ul class="wi-panel" id="wi-phone" style="list-style:none;display:none;flex-direction:column;gap:.55rem;margin:0;padding:0;">
+<li class="wi-item"><span class="wi-arrow">›</span> Tipo de negocio y volumen de llamadas entrantes</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Si necesita reservar un calendario en vivo durante las llamadas</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Idiomas que utilizan las personas que llaman</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Cualquier sistema de reservas existente o CRM con el que integrarse</li>
+<li class="wi-item"><span class="wi-arrow">›</span> ¿Tiene un número de teléfono existente para vincular o necesita uno nuevo</li>
+</ul>
+</div>
+</div>
+<style>
+          .wi-tab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:4px 11px;font-size:.75rem;font-family:var(--font-mono);color:rgba(255,255,255,.5);cursor:pointer;transition:all .18s;}
+          .wi-tab:hover{background:rgba(99,102,241,.15);color:#fff;border-color:rgba(99,102,241,.4);}
+          .wi-tab-active{background:rgba(99,102,241,.2)!important;color:#fff!important;border-color:rgba(99,102,241,.5)!important;}
+          .wi-item{font-size:.875rem;color:var(--text-2);display:flex;gap:8px;}
+          .wi-arrow{color:var(--primary);flex-shrink:0;}
+        </style>
+<script>
+          function wiTab(id){
+            ['campaign','website','chatbot','phone'].forEach(function(t){
+              document.getElementById('wi-'+t).style.display='none';
+              document.getElementById('wi-tab-'+t).classList.remove('wi-tab-active');
+            });
+            document.getElementById('wi-'+id).style.display='flex';
+            document.getElementById('wi-tab-'+id).classList.add('wi-tab-active');
+          }
+        </script>
+</div>
+<div class="contact-form reveal-right">
+<div style="margin-bottom:2rem;">
+<h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.5rem;">Iniciar un proyecto</h3>
+<p style="color:var(--muted);font-size:.875rem;">Complete el formulario y nos comunicaremos con usted dentro de las 24 horas.</p>
+</div>
+<form>
+<div class="form-row">
+<div class="form-field">
+<label data-i18n="contact.form.firstname">Nombre</label>
+<input placeholder="Nombre" type="text"/>
+</div>
+<div class="form-field">
+<label data-i18n="contact.form.lastname">Apellido</label>
+<input placeholder="Apellido" type="text"/>
+</div>
+</div>
+<div class="form-field">
+<label data-i18n="contact.form.email">Dirección de correo electrónico</label>
+<input placeholder="your@email.com" type="email"/>
+</div>
+<div class="form-field">
+<label data-i18n="contact.form.company">Empresa / Sitio web</label>
+<input placeholder="empresa.com (opcional)" type="text"/>
+</div>
+<div class="form-field">
+<label data-i18n="contact.form.need">¿Qué estás buscando?</label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.5rem;">
+<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
+<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Archivos de campaña
+              </label>
+<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
+<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Sitio web personalizado
+              </label>
+<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
+<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Página de destino
+              </label>
+<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
+<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Chatbot de IA
+              </label>
+<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
+<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Agente de IA por teléfono
+              </label>
+<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
+<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Dominio y alojamiento
+              </label>
+</div>
+</div>
+<div class="form-field">
+<label data-i18n="contact.form.message">Cuéntanos tu proyecto</label>
+<textarea data-i18n-ph="contact.form.placeholder" placeholder="Describe lo que necesitas, tu audiencia y cualquier detalle o plazo relevante."></textarea>
+</div>
+<button class="btn btn-primary" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send">Enviar mensaje</span> ›</button>
+<p data-i18n="contact.form.privacy" style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:1rem;">Su dirección de correo electrónico se utiliza únicamente para responder a su consulta y para cualquier correspondencia futura sobre proyectos.</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- ── PRICING ──────────────────────────────────────────────────────────── -->
+<section class="section" style="padding-top:0;padding-bottom:5rem;">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:3rem;">
+<div class="section-tag" style="justify-content:center;margin-bottom:1.25rem;">Precios</div>
+<h2 style="font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:1rem;">Precios claros y fijos.<br/><span class="grad-text-animated">Sin facturación por horas.</span></h2>
+<p style="color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7;">Cada proyecto tiene un alcance por adelantado: usted conoce el precio exacto antes de comenzar. Sin sorpresas ni hojas de tiempo abiertas.</p>
+</div>
+<!-- CAMPAIGNS -->
+<div style="margin-bottom:2.5rem;">
+<div style="font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:1.25rem;padding-left:4px;">Gestión de campañas</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;">
+<div class="card reveal-up" style="padding:1.75rem;position:relative;">
+<div style="font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">Tarifa de instalación</div>
+<div style="font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:.25rem;">Desde <span style="color:#fff;">$400</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">Una sola vez · por plataforma</div>
+<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;">
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Estructura de campaña y grupos de anuncios</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Configuración de audiencia y segmentación</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Texto del anuncio para todos los formatos</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Seguimiento de píxeles y conversiones</li>
+</ul>
+</div>
+<div class="card reveal-up" style="padding:1.75rem;border-color:rgba(99,102,241,.4);">
+<div style="font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">Gestión Mensual</div>
+<div style="font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:.25rem;">Personalizado <span style="color:#fff;">cita</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">Basado en inversión publicitaria y plataformas</div>
+<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;">
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Ritmo presupuestario y optimización de ofertas</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Pruebas A/B y rotación creativa</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Informes semanales de desempeño</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Retargeting y gestión de audiencia</li>
+</ul>
+</div>
+<div class="card reveal-up" style="padding:1.75rem;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Edición de medios</div>
+<span class="badge" style="font-size:.65rem;">Complemento</span>
+</div>
+<div style="font-size:2rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:.25rem;"><span style="color:#fff;">$75</span> / activo</div>
+<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">or <strong style="color:#fff;">$250/mes</strong> · hasta 5 activos</div>
+<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;">
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Cargar metraje o imágenes sin editar</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Cortes, subtítulos y cambio de tamaño</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Formato para cada ubicación</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Entrega lista para anuncios</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- WEBSITES -->
+<div style="margin-bottom:2.5rem;">
+<div style="font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:1.25rem;padding-left:4px;">Desarrollo de sitios web y aplicaciones web</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+<div class="card reveal-up" style="padding:1.5rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Página de contenido</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;">Desde <span style="color:#fff;">$200</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Página estándar de información/servicio</div>
+</div>
+<div class="card reveal-up" style="padding:1.5rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Página compleja</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$300–400</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Página de inicio, animaciones de héroes</div>
+</div>
+<div class="card reveal-up" style="padding:1.5rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Página funcional</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400–600</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Flujo de reserva, pago</div>
+</div>
+<div class="card reveal-up" style="padding:1.5rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Sistema de reservas</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$600</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Franjas en tiempo real, pagos</div>
+</div>
+<div class="card reveal-up" style="padding:1.5rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Panel de administración</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">CMS personalizado y protegido por MFA</div>
+</div>
+<div class="card reveal-up" style="padding:1.5rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Idioma adicional</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$200</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Por idioma adicional</div>
+</div>
+</div>
+</div>
+<!-- AI PRODUCTS -->
+<div style="margin-bottom:2.5rem;">
+<div style="font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:1.25rem;padding-left:4px;">Productos de IA</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;">
+<div class="card reveal-up" style="padding:1.75rem;">
+<div style="font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">Chatbot del sitio web</div>
+<div style="font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:.25rem;">Desde <span style="color:#fff;">$500</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">+ $50/mes hosting · o $400 como complemento del sitio web</div>
+<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;">
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Capacitado en tu negocio</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>EN / FR / ES listo para usar</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Coincidencia basada en puntuaciones, tolerante a errores tipográficos</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Autohospedado: sin tarifas de terceros</li>
+</ul>
+</div>
+<div class="card reveal-up" style="padding:1.75rem;border-color:rgba(99,102,241,.4);">
+<div style="font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">Agente telefónico de IA</div>
+<div style="font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:.25rem;">Desde <span style="color:#fff;">$600</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">+ mensual basado en el uso (ElevenLabs + 40%)</div>
+<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;">
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Responde todas las llamadas entrantes las 24 horas del día, los 7 días de la semana</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Reserva de calendario en vivo</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Cualquier idioma, detectado automáticamente</li>
+<li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Transcripciones completas de llamadas</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- FOOTNOTE -->
+<div style="text-align:center;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:680px;margin:0 auto;">
+<p style="color:var(--muted);font-size:.875rem;line-height:1.7;margin:0;">Todos los precios son puntos de partida. El precio final del proyecto se acuerda en la etapa de información y se fija por escrito antes de comenzar. La plataforma siempre factura la inversión publicitaria directamente a su tarjeta; nunca lo manejamos. <a href="mailto:hello@zoomy.services" style="color:var(--accent);text-decoration:none;">hello@zoomy.services</a></p>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a href="chatbot.html">Chatbots de IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Empresa</h4><ul>
+<li><a href="about.html">Sobre nosotros</a></li>
+<li><a href="portfolio.html">Nuestro Trabajo</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacto</h4><ul>
+<li><a class="active" href="contact.html">Iniciar un proyecto</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Todos los derechos reservados.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Privacidad</a><a data-i18n="footer.terms" href="#">Términos</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

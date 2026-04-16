@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+HTML
+HTML
+HTML
+HTML
+HTML
+HTML
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Zoomy.services — Estudio de producción digital</title>
+<meta content="Campaign files, custom websites, AI chatbots, domain registration and hosting setup. We build it, we launch it." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+/* ── Services as clean text rows ── */
+.services-list{margin-top:3rem}
+.svc-row{display:grid;grid-template-columns:260px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start;transition:background var(--transition)}
+.svc-row:first-child{border-top:1px solid var(--border-b)}
+.svc-row:hover{background:rgba(99,102,241,.025)}
+.svc-left{position:sticky;top:100px}
+.svc-num{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem}
+.svc-title{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-.02em}
+.svc-right p{color:var(--text-2);font-size:.95rem;line-height:1.8;margin-bottom:1rem}
+.svc-right p:last-of-type{margin-bottom:1.25rem}
+.svc-meta{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.05em}
+.svc-meta span{color:var(--text-2)}
+.svc-link{font-size:.875rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+
+/* ── Free sample banner ── */
+.sample-banner{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(99,102,241,.12) 0%,rgba(168,85,247,.12) 50%,rgba(6,182,212,.08) 100%);border:1px solid rgba(99,102,241,.3);border-radius:var(--radius-xl);padding:3rem;margin-top:4rem;text-align:center}
+.sample-glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.2),transparent);top:-80px;right:-60px;filter:blur(60px);pointer-events:none}
+.sample-glow2{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.2),transparent);bottom:-60px;left:-40px;filter:blur(60px);pointer-events:none}
+.sample-tag{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(168,85,247,.2));border:1px solid rgba(99,102,241,.4);border-radius:var(--radius-full);padding:5px 16px;font-family:var(--font-mono);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#fff;margin-bottom:1.25rem}
+
+/* ── Steps redesign ── */
+.steps-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:3rem}
+.steps-flow::before{content:"";position:absolute;top:36px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,var(--primary),var(--accent),var(--secondary),transparent);opacity:.4;z-index:0}
+.step-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.5rem;text-align:center;position:relative;margin:0 .75rem;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
+.step-card:hover{border-color:rgba(99,102,241,.45);box-shadow:0 16px 48px rgba(0,0,0,.4);transform:translateY(-4px)}
+.step-card:first-child{margin-left:0}
+.step-card:last-child{margin-right:0}
+.step-badge{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:#fff;margin:0 auto 1.25rem;position:relative;z-index:1}
+.step-badge-1{background:var(--primary);box-shadow:0 0 24px rgba(99,102,241,.5)}
+.step-badge-2{background:var(--accent);box-shadow:0 0 24px rgba(168,85,247,.5)}
+.step-badge-3{background:linear-gradient(135deg,var(--accent),var(--secondary));box-shadow:0 0 24px rgba(6,182,212,.4)}
+.step-badge-4{background:var(--secondary);box-shadow:0 0 24px rgba(6,182,212,.5)}
+.step-card h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:#fff;margin-bottom:.75rem}
+.step-card p{font-size:.85rem;color:var(--text-2);line-height:1.65}
+
+/* ── Chatbot demo section ── */
+.chatbot-section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.chatbot-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.chatbot-feat{padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.14);border-radius:12px;transition:border-color var(--transition),background var(--transition)}
+.chatbot-feat:hover{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3)}
+.chatbot-feat-icon{font-size:1.4rem;margin-bottom:.6rem}
+.chatbot-feat-title{font-weight:600;color:#fff;font-size:.9rem;margin-bottom:.25rem}
+.chatbot-feat-desc{color:var(--muted);font-size:.8rem}
+
+/* ── Capability strip (replaces fake stats) ── */
+.cap-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:2.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:3rem}
+.cap-item{display:flex;align-items:flex-start;gap:14px}
+.cap-icon{width:40px;height:40px;border-radius:10px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cap-label{font-weight:600;color:#fff;font-size:.9rem;margin-bottom:.2rem;font-family:var(--font-display)}
+.cap-desc{font-size:.78rem;color:var(--muted);line-height:1.4}
+
+@keyframes orbPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.12)}}
+@keyframes waveBounce{0%,100%{transform:scaleY(.4);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+@media(max-width:900px){
+.svc-row{grid-template-columns:1fr;gap:1.25rem}
+.svc-left{position:static}
+.steps-flow{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.steps-flow::before{display:none}
+.step-card{margin:0}
+.chatbot-section{grid-template-columns:1fr}
+.chatbot-features{grid-template-columns:1fr 1fr}
+.cap-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+.chatbot-features{grid-template-columns:1fr}
+.cap-strip{grid-template-columns:1fr}
+}
+</style>
+<script>localStorage.setItem('zmy_lang','es');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacto</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../index.html">EN</a>
+<a class="lang-btn" href="../fr/index.html">FR</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+<div class="aurora">
+<div class="aurora-blob aurora-blob-1"></div>
+<div class="aurora-blob aurora-blob-2"></div>
+<div class="aurora-blob aurora-blob-3"></div>
+</div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;text-align:center;">
+<span class="badge badge-primary badge-dot" data-i18n="index.hero.badge" style="margin-bottom:1.75rem;display:inline-flex;">Disponible para Proyectos</span>
+<h1 style="margin-bottom:1.5rem;">
+<span class="glitch grad-text-animated">digitales</span><br/>
+      Estudio de producción.
+    </h1>
+<p class="hero-sub" data-i18n="index.hero.sub" style="margin:0 auto 2.5rem;">Archivos de campaña, sitios web personalizados y chatbots de IA: creados desde cero, registrados en el dominio, configurados con hosting y entregados a usted en vivo.</p>
+<div class="hero-actions" style="justify-content:center;margin-bottom:3rem;">
+<a class="btn btn-primary btn-lg" href="contact.html">Iniciar un proyecto</a>
+<a class="btn btn-ghost btn-lg" href="#our-services">Explorar servicios</a>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;">
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check1">Gestión de campañas</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check2">Sitios web personalizados</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check3">Chatbots de IA</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check4">Configuración de dominio y alojamiento</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check5">Muestra gratuita de la primera página</span></div>
+</div>
+</div>
+</section>
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="marquee">
+<div class="marquee-track">
+<span class="marquee-item"><span class="marquee-dot"></span>Archivos de campaña</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Sitios web personalizados</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Chatbots de IA</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Registro de dominio</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Configuración de alojamiento</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Metaanuncios</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Anuncios de Google</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Estrategia de TikTok</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Sistemas de Reservas</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Paneles de administración</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Archivos de campaña</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Sitios web personalizados</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Chatbots de IA</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Registro de dominio</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Configuración de alojamiento</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Metaanuncios</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Anuncios de Google</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Estrategia de TikTok</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Sistemas de Reservas</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Paneles de administración</span>
+</div>
+</div>
+<!-- ═══════════ SERVICES ═══════════ -->
+<section class="section" id="our-services">
+<div class="section-inner">
+<div style="margin-bottom:1rem;">
+<div class="section-tag">Servicios</div>
+<h2 class="section-title" data-i18n="index.svc.heading">Lo que construimos.</h2>
+<p class="section-sub" style="max-width:560px;">Cuatro servicios distintos. Cada uno con alcance y precio por proyecto.</p>
+</div>
+<div class="services-list">
+<div class="svc-row reveal">
+<div class="svc-left">
+<div class="svc-num">01</div>
+<div class="svc-title">Campaña<br/>Gestión</div>
+</div>
+<div class="svc-right">
+<p>Creamos y gestionamos campañas de medios pagos en Meta, Google, TikTok y LinkedIn. Eso significa la configuración completa (estrategia, configuración de audiencia, texto del anuncio, seguimiento e implementación de píxeles) y la gestión continua: monitorear el rendimiento, optimizar el gasto, ajustar la orientación e informar los resultados.</p>
+<p>Las campañas se ejecutan en su cuenta publicitaria. Nosotros nos encargamos de todo lo demás.</p>
+<a class="svc-link" href="campaign-portfolio.html" style="color:var(--primary);margin-top:1.25rem;">Qué incluye ›</a>
+</div>
+</div>
+<div class="svc-row reveal">
+<div class="svc-left">
+<div class="svc-num">02</div>
+<div class="svc-title">Sitios web y<br/>Páginas de destino</div>
+</div>
+<div class="svc-right">
+<p>Cada sitio se crea desde cero con código personalizado: sin WordPress ni plantillas. Creamos plataformas de reservas multilingües, tiendas de comercio electrónico, sitios de restaurantes y locales, sitios web de empresas de servicios y páginas de destino de una sola página. Se pueden incluir sistemas de reserva, pagos en línea, paneles de administración y chatbots de inteligencia artificial según las necesidades del proyecto.</p>
+<p>El registro de dominio y la configuración de alojamiento están disponibles como opción en cualquier proyecto.</p>
+<a class="svc-link" href="website-design.html" style="color:var(--secondary);margin-top:1.25rem;">Qué incluye ›</a>
+</div>
+</div>
+<div class="svc-row reveal">
+<div class="svc-left">
+<div class="svc-num">03</div>
+<div class="svc-title">Teléfono AI<br/>Agente</div>
+</div>
+<div class="svc-right">
+<p>Un agente de IA que responde a sus llamadas entrantes, habla con naturalidad en cualquier idioma y maneja reservas y preguntas comunes sin participación humana. Durante la llamada, consulta su calendario, programa o cancela citas en tiempo real y recopila los detalles de la persona que llama.</p>
+<p>El agente está capacitado sobre la información que usted proporciona. Si tiene un sitio web existente, podemos trabajar a partir de él. De lo contrario, usted proporciona los detalles comerciales, los precios, las reglas de disponibilidad y cualquier otra información relevante, y nosotros construimos a partir de eso.</p>
+<a class="svc-link" href="phone-agent.html" style="color:var(--primary);margin-top:1.25rem;">Cómo funciona ›</a>
+</div>
+</div>
+<div class="svc-row reveal">
+<div class="svc-left">
+<div class="svc-num">04</div>
+<div class="svc-title">Sitio web<br/>Chatbot</div>
+</div>
+<div class="svc-right">
+<p>Un chatbot capacitado para su negocio específico: sus servicios, precios, horarios de apertura y políticas. Maneja las preguntas de los visitantes, recopila clientes potenciales y funciona en cualquier idioma. Vive en su sitio web y se ejecuta sin costos continuos de plataforma ni dependencias de terceros.</p>
+<p>Disponible como versión independiente o como complemento al solicitar un sitio web o una página de destino.</p>
+<a class="svc-link" href="chatbot.html" style="color:var(--green);margin-top:1.25rem;">Ver demostración en vivo ›</a>
+</div>
+</div>
+</div>
+<!-- CAPABILITY STRIP -->
+<div class="cap-strip stagger-children">
+<div class="cap-item reveal">
+<div class="cap-icon">🕑</div>
+<div><div class="cap-label">Gestión de campañas</div><div class="cap-desc">Creado, gestionado y reportado por nosotros</div></div>
+</div>
+<div class="cap-item reveal reveal-delay-1">
+<div class="cap-icon">🌐</div>
+<div><div class="cap-label">Dominio y alojamiento</div><div class="cap-desc">Registramos dominios y configuramos hosting para ti</div></div>
+</div>
+<div class="cap-item reveal reveal-delay-2">
+<div class="cap-icon">🆕</div>
+<div><div class="cap-label">Primera página gratuita</div><div class="cap-desc">Primera página completa del sitio web creada sin coste ni compromiso</div></div>
+</div>
+<div class="cap-item reveal reveal-delay-3">
+<div class="cap-icon">📄</div>
+<div><div class="cap-label">Plantillas cero</div><div class="cap-desc">Cada proyecto está codificado de forma personalizada desde cero</div></div>
+</div>
+</div>
+<!-- FREE SAMPLE BANNER -->
+<div class="sample-banner reveal">
+<div class="sample-glow"></div>
+<div class="sample-glow2"></div>
+<div class="sample-tag">🆕 Oferta limitada</div>
+<h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:1rem;line-height:1.2;">Construimos toda tu primera página.<br/><span class="grad-text-animated">Gratis.</span></h2>
+<p style="color:var(--text-2);font-size:1.05rem;max-width:600px;margin:0 auto 2rem;line-height:1.7;">¿Aún no estás seguro? Permítanos crear la primera página completa de su sitio web: diseño real, código real, contenido real. Compromiso cero. Si te encanta, construimos el resto.</p>
+<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<a class="btn btn-primary btn-lg" href="contact.html">Reclama tu página gratuita ›</a>
+<a class="btn btn-ghost btn-lg" href="website-design.html">Ver ejemplos</a>
+</div>
+<p style="margin-top:1.25rem;font-size:.78rem;color:var(--muted);font-family:var(--font-mono);">// Sin tarjeta de crédito. Sin compromiso. Sólo resultados.</p>
+</div>
+</div>
+</section>
+<!-- ═══════════ PHONE AGENT FEATURE ═══════════ -->
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;">
+<div class="aurora-blob aurora-blob-1" style="background:radial-gradient(circle,#6366f1,transparent);animation-duration:16s;"></div>
+<div class="aurora-blob aurora-blob-2" style="animation-duration:20s;"></div>
+</div>
+<div class="section-inner" style="position:relative;z-index:2;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+<div class="reveal-left">
+<div class="section-tag">Agente telefónico de IA</div>
+<h2 class="section-title" style="margin-bottom:1.25rem;">Cada llamada.<br/>Respondido.</h2>
+<p style="color:var(--text-2);font-size:1rem;line-height:1.82;margin-bottom:1.25rem;">Un agente de voz con IA personalizado que atiende todas las llamadas entrantes, habla con naturalidad en cualquier idioma y maneja sus solicitudes más comunes sin ninguna participación humana.</p>
+<p style="color:var(--text-2);font-size:1rem;line-height:1.82;margin-bottom:2rem;">Durante una llamada en vivo, el agente revisa su calendario, programa o cancela citas en tiempo real, recopila detalles de la persona que llama y escribe directamente en sus sistemas a través de integraciones de webhook. Nunca pierde una llamada, nunca se toma un día libre y representa a su empresa de manera consistente en todo momento.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">Reserva de calendario en vivo</div>
+<div style="color:var(--muted);font-size:.8rem;">Lee y escribe citas en tiempo real durante la llamada</div>
+</div>
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">Cualquier idioma</div>
+<div style="color:var(--muted);font-size:.8rem;">Detecta y responde en el idioma de la persona que llama automáticamente</div>
+</div>
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">Empresas específicas</div>
+<div style="color:var(--muted);font-size:.8rem;">Capacitados sobre sus servicios, precios, horarios y políticas</div>
+</div>
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">Disponibilidad 24 horas al día, 7 días a la semana</div>
+<div style="color:var(--muted);font-size:.8rem;">Opera a todas horas, maneja múltiples llamadas simultáneas</div>
+</div>
+</div>
+<a class="btn btn-primary btn-lg" href="phone-agent.html">Ver agente telefónico ›</a>
+</div>
+<div class="reveal-right" style="display:flex;justify-content:flex-end;">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);">
+<div style="background:linear-gradient(135deg,#312e81,#6366f1);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:14px;">
+<div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;position:relative;">
+              📞
+              <div style="position:absolute;inset:-4px;border-radius:50%;border:1.5px solid rgba(99,102,241,.4);animation:orbPulse 2s ease-in-out infinite;"></div>
+</div>
+<div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:.95rem;color:#fff;">Agente telefónico de IA</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:5px;margin-top:2px;">
+<span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;animation:pulseDot 2s infinite;"></span>
+                Llamada en vivo en curso
+              </div>
+</div>
+</div>
+<div style="padding:1.5rem;background:var(--bg-2);display:flex;flex-direction:column;gap:1rem;">
+<div style="display:flex;gap:10px;">
+<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Agente</span>
+<span style="font-size:.875rem;color:var(--text);line-height:1.6;">Buenas tardes, gracias por llamar. ¿Cómo puedo ayudarte hoy?</span>
+</div>
+<div style="display:flex;gap:10px;">
+<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Persona que llama</span>
+<span style="font-size:.875rem;color:var(--text-2);line-height:1.6;">¿Me gustaría reservar para este sábado si hay espacio?</span>
+</div>
+<div style="display:flex;gap:10px;">
+<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Agente</span>
+<span style="font-size:.875rem;color:var(--text);line-height:1.6;">Déjame comprobar qué hay disponible…</span>
+</div>
+<div style="display:flex;gap:10px;">
+<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--primary);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Sistema</span>
+<span style="font-size:.78rem;color:var(--primary);font-family:var(--font-mono);font-style:italic;line-height:1.6;">→ Consulta de calendario enviada y confirmada</span>
+</div>
+<div style="display:flex;gap:10px;">
+<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Agente</span>
+<span style="font-size:.875rem;color:var(--text);line-height:1.6;">Tenemos disponibilidad de 10 am a 3 pm. ¿Qué horario te conviene más?</span>
+</div>
+</div>
+<div style="padding:1rem 1.5rem;border-top:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:space-between;">
+<span style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">01:42</span>
+<div style="display:flex;align-items:center;gap:3px;">
+<div style="width:3px;height:8px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:0s;"></div>
+<div style="width:3px;height:16px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.1s;"></div>
+<div style="width:3px;height:22px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.2s;"></div>
+<div style="width:3px;height:14px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.3s;"></div>
+<div style="width:3px;height:20px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.4s;"></div>
+<div style="width:3px;height:10px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.5s;"></div>
+<div style="width:3px;height:18px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.6s;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:1rem;">
+<div class="section-tag">Cómo funciona</div>
+<h2 class="section-title">Cuatro pasos. Fricción cero.</h2>
+<p class="section-sub" style="text-align:center;margin:0 auto;">Desde el primer contacto hasta un producto vivo con hosting configurado.</p>
+</div>
+<div class="steps-flow stagger-children">
+<div class="step-card reveal" style="position:relative;">
+<div class="step-badge step-badge-1" data-i18n="step1.num">01</div>
+<h4 data-i18n="step1.title">Información informativa</h4>
+<p>Cuéntenos su objetivo, público objetivo y fecha límite. Hacemos las preguntas correctas y confirmamos el alcance completo y el precio dentro de las 24 horas.</p>
+</div>
+<div class="step-card reveal reveal-delay-1" style="position:relative;">
+<div class="step-badge step-badge-2" data-i18n="step2.num">02</div>
+<h4 data-i18n="step2.title">Nosotros construimos</h4>
+<p>Nos encargamos de todo: diseño, código, copia, integraciones. Obtendrás una línea directa para cualquier pregunta mientras trabajamos.</p>
+</div>
+<div class="step-card reveal reveal-delay-2" style="position:relative;">
+<div class="step-badge step-badge-3" data-i18n="step3.num">03</div>
+<h4 data-i18n="step3.title">Revisar y revisar</h4>
+<p>Recibirá un producto final pulido y listo para producción. Nosotros nos encargamos de tu ronda de revisión, luego es tuya.</p>
+</div>
+<div class="step-card reveal reveal-delay-3">
+<div class="step-badge step-badge-4" data-i18n="step4.num">04</div>
+<h4 data-i18n="step4.title">En vivo</h4>
+<p>Para los sitios web, nos encargamos de la configuración del dominio y del alojamiento. Su producto se activa y el proyecto está completo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════ AI CHATBOT SHOWCASE ═══════════ -->
+<section class="section" style="position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.5;">
+<div class="aurora-blob aurora-blob-2" style="animation-duration:15s;"></div>
+<div class="aurora-blob aurora-blob-3" style="animation-duration:22s;"></div>
+</div>
+<div class="section-inner" style="position:relative;z-index:2;">
+<div class="chatbot-section">
+<div class="reveal-left">
+<div class="section-tag">Chatbot de IA</div>
+<h2 class="section-title" style="margin-bottom:1rem;">Tu asistente de ventas 24 horas al día, 7 días a la semana.</h2>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:1.5rem;">Un asistente de IA personalizado y capacitado exclusivamente para su negocio: sus productos, sus precios, sus políticas. No es un bot genérico. Conoce su negocio como usted.</p>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Disponible como versión independiente o como complemento cuando solicita un sitio web o una página de destino. Sólo menciónelo en su informe.</p>
+<div class="chatbot-features">
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">💬</div>
+<div class="chatbot-feat-title">Completamente capacitado</div>
+<div class="chatbot-feat-desc">Sobre sus datos comerciales reales</div>
+</div>
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">🌐</div>
+<div class="chatbot-feat-title">Multilingüe</div>
+<div class="chatbot-feat-desc">Atiende a los visitantes en su idioma</div>
+</div>
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">👤</div>
+<div class="chatbot-feat-title">Captura de clientes potenciales</div>
+<div class="chatbot-feat-desc">Colección de correo electrónico y teléfono integrada</div>
+</div>
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">🔒</div>
+<div class="chatbot-feat-title">Cumple con el RGPD</div>
+<div class="chatbot-feat-desc">Autohospedado, tus datos siguen siendo tuyos</div>
+</div>
+</div>
+<div style="margin-top:2rem;">
+<a class="btn btn-primary" href="contact.html">Agregar a su proyecto ›</a>
+</div>
+</div>
+<div class="reveal-right" style="display:flex;justify-content:flex-end;">
+<div class="chatbot-mock" style="width:100%;max-width:400px;">
+<div class="chatbot-header">
+<div class="chatbot-avatar">🤖</div>
+<div>
+<div class="chatbot-name">Asistente Zoomy</div>
+<div class="chatbot-status">En línea: pruébalo</div>
+</div>
+</div>
+<div class="chatbot-messages" id="chatbot-messages">
+<div class="msg msg-bot">¡Hola! Pregúntame cualquier cosa sobre nuestros servicios: sitios web, campañas, chatbots, precios o cronogramas.</div>
+<div class="msg msg-user">¿Configuras hosting para sitios web?</div>
+<div class="msg msg-bot">Sí, nos encargamos del registro de dominio y la configuración del alojamiento para que usted no tenga que resolver nada de eso. Obtienes una URL activa, no solo archivos.</div>
+</div>
+<div class="chatbot-input">
+<input class="chatbot-input-field" id="chatbot-input-field" placeholder="Pregunta por nuestros servicios..." type="text"/>
+<button class="chatbot-send" id="chatbot-send">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════ WHY ZOOMY ═══════════ -->
+<section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:3rem;">
+<div class="section-tag">Por qué Zoomy</div>
+<h2 class="section-title">Creado para marcas que se mueven rápido.</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+<div class="terminal reveal-left">
+<div class="terminal-header">
+<div class="terminal-dot" style="background:#10b981;"></div>
+<div class="terminal-dot" style="background:#f59e0b;"></div>
+<div class="terminal-dot" style="background:#ef4444;"></div>
+<div class="terminal-title">por qué-zoomy.sh</div>
+</div>
+<div class="terminal-body">
+<div><span class="term-prompt">$</span> <span class="term-cmd">./why-zoomy --salida todo</span></div>
+<div style="margin-top:1rem;"><span class="term-output"># Sin hinchazón</span></div>
+<div><span class="term-output">Sin creadores de páginas. Sin plantillas. Sin WordPress.</span></div>
+<div><span class="term-output">Código personalizado que se carga rápido y convierte.</span></div>
+<div style="margin-top:1rem;"><span class="term-output"># De extremo a extremo</span></div>
+<div><span class="term-output">De una URL breve a una URL activa. Manejamos dominios,</span></div>
+<div><span class="term-output">alojamiento, construcción y entrega.</span></div>
+<div style="margin-top:1rem;"><span class="term-output"># Precios transparentes</span></div>
+<div><span class="term-output">Presupuestos fijos. Entregables claros.</span></div>
+<div><span class="term-output">Sin cargos sorpresa. Alguna vez.</span></div>
+<div style="margin-top:.5rem;"><span class="term-cursor"></span></div>
+</div>
+</div>
+<div class="reveal-right">
+<div style="display:grid;gap:1.5rem;">
+<div style="padding:1.5rem;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:14px;">
+<h4 style="color:var(--primary);margin-bottom:.5rem;font-weight:600;">Entrega de campaña en 72 horas</h4>
+<p style="color:var(--text-2);font-size:.9rem;">Archivos de campaña creados y probados en menos de 3 días. Sitios web en 5 a 21 días, según el alcance.</p>
+</div>
+<div style="padding:1.5rem;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);border-radius:14px;">
+<h4 style="color:var(--accent);margin-bottom:.5rem;font-weight:600;">Entrega de pila completa</h4>
+<p style="color:var(--text-2);font-size:.9rem;">No le entregamos archivos. Le entregamos un producto en vivo: dominio registrado, alojamiento configurado, sitio en funcionamiento.</p>
+</div>
+<div style="padding:1.5rem;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);border-radius:14px;">
+<h4 style="color:var(--secondary);margin-bottom:.5rem;font-weight:600;">Calidad Premium</h4>
+<p style="color:var(--text-2);font-size:.9rem;">Animaciones, accesibilidad, SEO. Móvil perfecto en todos los dispositivos. No hay atajos en ningún proyecto.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════ CTA ═══════════ -->
+<section class="section" style="position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.5;">
+<div class="aurora-blob aurora-blob-1"></div>
+<div class="aurora-blob aurora-blob-3"></div>
+</div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+<div class="section-tag" style="justify-content:center;">¿Listo?</div>
+<h2 class="section-title" data-i18n="cta.heading">Construyamos algo grandioso.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Cuéntanos qué necesitas. Respondemos dentro de las 24 horas con un alcance, cronograma y precio fijo.</p>
+<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<a class="btn btn-primary btn-lg" href="contact.html">Iniciar un proyecto</a>
+<a class="btn btn-ghost btn-lg" href="portfolio.html">Vea nuestro trabajo</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a href="chatbot.html">Chatbots de IA</a></li>
+<li><a href="website-design.html">Páginas de destino</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Empresa</h4><ul>
+<li><a href="about.html">Sobre nosotros</a></li>
+<li><a href="portfolio.html">Nuestro Trabajo</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacto</h4><ul>
+<li><a href="contact.html">Iniciar un proyecto</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Todos los derechos reservados.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Privacidad</a><a data-i18n="footer.terms" href="#">Términos</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

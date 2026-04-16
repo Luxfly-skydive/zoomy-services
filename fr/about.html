@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+html
+html
+html
+html
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>À propos — Zoomy.services</title>
+<meta content="We are a small, fast digital production studio. We build campaign files, websites, and AI chatbots for ambitious brands." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.value-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem}
+.value-num{font-family:var(--font-mono);font-size:.7rem;color:var(--muted);margin-bottom:1rem;letter-spacing:.1em}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem;text-align:center}
+@media(max-width:900px){.values-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(2,1fr)}}
+</style>
+<script>localStorage.setItem('zmy_lang','fr');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Studio de production numérique</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a class="active" data-i18n="nav.about" href="about.html">À propos de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacter</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../about.html">EN</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">FR</span>
+<a class="lang-btn" href="../es/about.html">ES</a>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Démarrer un projet</span> ›</a>
+<button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:60vh;padding:140px 2rem 6rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" data-i18n="about.hero.tag" style="justify-content:center;margin-bottom:1.5rem;">À propos de nous</div>
+<h1 style="margin-bottom:1.5rem;">Petite équipe.<br/><span class="grad-text-animated">Gros rendement.</span></h1>
+<p class="hero-sub" data-i18n="about.hero.sub" style="margin:0 auto;">Nous sommes un petit studio de production numérique augmenté par l'IA. Nous créons et gérons des campagnes, construisons des sites Web personnalisés et développons des outils d'IA pour les entreprises.</p>
+</div>
+</section>
+<section class="section">
+<div class="section-inner">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+<div class="reveal-left">
+<div class="section-tag" data-i18n="about.story.tag">Notre histoire</div>
+<h2 class="section-title" data-i18n="about.story.heading" style="margin-bottom:1.5rem;">Pourquoi Zoomy existe.</h2>
+<p data-i18n="about.story.p1" style="color:var(--text-2);line-height:1.8;margin-bottom:1.5rem;">La plupart des agences sont lentes, coûteuses et basées sur des modèles. Nous avons construit Zoomy.services pour résoudre ce problème. Nous utilisons des outils d'IA de pointe pour livrer un travail de qualité en production à la vitesse de démarrage, sans sacrifier la qualité ni l'attention aux détails.</p>
+<p data-i18n="about.story.p2" style="color:var(--text-2);line-height:1.8;margin-bottom:1.5rem;">Chaque projet bénéficie du même niveau de soin : une recherche appropriée, une réflexion claire et une exécution minutieuse. La portée diffère selon le projet. Ce n’est pas le cas de la norme.</p>
+<p data-i18n="about.story.p3" style="color:var(--text-2);line-height:1.8;">Nous travaillons d'abord à distance et travaillons avec des clients internationaux.</p>
+</div>
+<div class="reveal-right">
+<div class="terminal">
+<div class="terminal-header">
+<div class="terminal-dot" style="background:#10b981;"></div>
+<div class="terminal-dot" style="background:#f59e0b;"></div>
+<div class="terminal-dot" style="background:#ef4444;"></div>
+<div class="terminal-title">à propos de.txt</div>
+</div>
+<div class="terminal-body">
+<div><span class="term-prompt">$</span> <span class="term-cmd">chat à propos de.txt</span></div>
+<div style="margin-top:1rem;"><span class="term-highlight">Type d'atelier :</span> <span class="term-output">Production augmentée par l'IA</span></div>
+<div><span class="term-highlight">Fondé :</span> <span class="term-output">2025</span></div>
+<div><span class="term-highlight">Localisation :</span> <span class="term-output">À distance d'abord</span></div>
+<div><span class="term-highlight">Spécialités :</span></div>
+<div style="margin-left:1rem;"><span class="term-output">- Gestion de campagnes média payantes</span></div>
+<div style="margin-left:1rem;"><span class="term-output">- Sites Web personnalisés multilingues</span></div>
+<div style="margin-left:1rem;"><span class="term-output">- Développement de chatbot IA</span></div>
+<div style="margin-left:1rem;"><span class="term-output">- Développement d'agents téléphoniques IA</span></div>
+<div><span class="term-highlight">Livraison :</span> <span class="term-output">Portée par projet</span></div>
+<div><span class="term-highlight">Langues :</span> <span class="term-output">EN, FR, ES et plus</span></div>
+<div style="margin-top:.5rem;"><span class="term-cursor"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:1rem;">
+<div class="section-tag">Valeurs</div>
+<h2 class="section-title">Comment nous travaillons.</h2>
+</div>
+<div class="values-grid stagger-children">
+<div class="value-card reveal">
+<div class="value-num" data-i18n="about.v1.num">01 / VITESSE</div>
+<h3 data-i18n="about.v1.title" style="color:#fff;font-size:1.2rem;margin-bottom:1rem;">Rapide sans rogner sur les raccourcis.</h3>
+<p data-i18n="about.v1.desc" style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Nous utilisons les outils d'IA pour faire plus avec moins de frais généraux. La réflexion, la stratégie et les normes de qualité restent les mêmes : le processus est simplement plus efficace.</p>
+</div>
+<div class="value-card reveal reveal-delay-1">
+<div class="value-num" data-i18n="about.v2.num">02 / QUALITÉ</div>
+<h3 data-i18n="about.v2.title" style="color:#fff;font-size:1.2rem;margin-bottom:1rem;">Prêt pour la production. Toujours.</h3>
+<p data-i18n="about.v2.desc" style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Chaque livrable est conçu pour être mis en ligne immédiatement. Pas de bords bruts, pas de copie d'espace réservé, pas de "à remplir plus tard". Si nous le livrons, c'est fini.</p>
+</div>
+<div class="value-card reveal reveal-delay-2">
+<div class="value-num" data-i18n="about.v3.num">03 / TRANSPARENCE</div>
+<h3 data-i18n="about.v3.title" style="color:#fff;font-size:1.2rem;margin-bottom:1rem;">Aucune surprise. Jamais.</h3>
+<p data-i18n="about.v3.desc" style="color:var(--text-2);font-size:.9rem;line-height:1.7;">Budgets fixes. Portée claire. Mises à jour quotidiennes pendant la production. Vous savez toujours exactement ce que vous obtenez et quand cela arrive.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
+<div class="section-tag" style="justify-content:center;">Travaillez avec nous</div>
+<h2 class="section-title">Prêt à aller vite ?</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Si vous avez un projet en tête, contactez-nous et nous vous proposerons une portée et une approche.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Démarrer un projet</a>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestion de campagnes, sites Web personnalisés, chatbots IA et agents téléphoniques.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Prestations</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a href="chatbot.html">Chatbots IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Entreprise</h4><ul>
+<li><a class="active" href="about.html">À propos de nous</a></li>
+<li><a href="portfolio.html">Notre travail</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacter</h4><ul>
+<li><a href="contact.html">Démarrer un projet</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Ouvert aux projets</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Tous droits réservés.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Confidentialité</a><a data-i18n="footer.terms" href="#">Conditions</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

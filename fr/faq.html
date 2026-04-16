@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+html
+html
+html
+html
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>FAQ — Zoomy.services</title>
+<meta content="Frequently asked questions about campaign management, websites, chatbots, phone agents, and working with Zoomy.services." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+.faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
+.faq-item{border-bottom:1px solid var(--border-b);padding:1.5rem 0}
+.faq-item:first-child{padding-top:0}
+.faq-q{font-family:var(--font-display);font-weight:600;font-size:1rem;color:#fff;margin-bottom:.75rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-a{color:var(--text-2);font-size:.9rem;line-height:1.75}
+.faq-icon{color:var(--primary);font-size:1.2rem;flex-shrink:0;transition:transform .3s}
+.faq-section{margin-bottom:3rem}
+.faq-section-title{font-family:var(--font-mono);font-size:.7rem;color:var(--primary);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
+</style>
+<script>localStorage.setItem('zmy_lang','fr');</script></head>
+<body>
+<div id="scroll-progress"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="grad-text">.</span>services<span class="nav-logo-sub">Studio de production numérique</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a class="active" data-i18n="nav.about" href="about.html">À propos de</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacter</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../faq.html">EN</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">FR</span>
+<a class="lang-btn" href="../es/faq.html">ES</a>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Démarrer un projet</span> ›</a>
+<button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" data-i18n="faq.hero.tag" style="justify-content:center;margin-bottom:1.5rem;">FAQ</div>
+<h1 style="margin-bottom:1.5rem;">Foire aux questions<br/><span class="grad-text-animated">questions.</span></h1>
+<p class="hero-sub" data-i18n="faq.hero.sub" style="margin:0 auto;">Tout ce que vous devez savoir pour travailler avec nous. Vous ne trouvez pas votre réponse ? Envoyez un e-mail à hello@zoomy.services.</p>
+</div>
+</section>
+<section class="section">
+<div class="section-inner">
+<div class="faq-grid">
+<div>
+<div class="section-tag" style="margin-bottom:1.5rem;">Aller à</div>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:.75rem;">
+<li><a href="#general" style="color:var(--text-2);font-size:.9rem;transition:color var(--transition);">Questions générales</a></li>
+<li><a href="#campaigns" style="color:var(--text-2);font-size:.9rem;">Fichiers de campagne</a></li>
+<li><a href="#websites" style="color:var(--text-2);font-size:.9rem;">Sites Web</a></li>
+<li><a href="#chatbots" style="color:var(--text-2);font-size:.9rem;">Chatbots IA</a></li>
+<li><a href="#phone" style="color:var(--text-2);font-size:.9rem;">Agents téléphoniques</a></li>
+<li><a href="#process" style="color:var(--text-2);font-size:.9rem;">Processus et tarification</a></li>
+</ul>
+<div style="margin-top:2rem;padding:1.5rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:14px;">
+<div style="font-weight:600;color:#fff;margin-bottom:.5rem;font-size:.95rem;">Vous avez encore des questions ?</div>
+<p style="color:var(--text-2);font-size:.875rem;margin-bottom:1rem;">Nous répondons dans les 24 heures.</p>
+<a class="btn btn-primary" href="contact.html" style="font-size:.85rem;padding:10px 20px;">Entrez en contact</a>
+</div>
+</div>
+<div>
+<div class="faq-section" id="general">
+<div class="faq-section-title">Général</div>
+<div class="faq-item reveal">
+<div class="faq-q">Que fait Zoomy.services exactement ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Nous sommes un studio de production numérique. Nous créons et gérons des campagnes médiatiques payantes (Meta, Google, TikTok, LinkedIn), construisons des sites Web multilingues personnalisés avec des systèmes de réservation et des panneaux d'administration, développons des chatbots IA formés pour votre entreprise et créons des agents téléphoniques IA qui gèrent les appels entrants. Nous mettons également en place l'hébergement et enregistrons des domaines sur demande.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Quel est le calendrier typique d’un projet ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Cela dépend de la portée. Une simple page de destination prend moins de temps qu’une plateforme de réservation multilingue. Nous convenons d'un calendrier dans le cadre du brief avant le début des travaux, et nous nous y tenons. Nous vous donnerons une estimation réaliste lorsque nous définirons votre projet.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Travaillez-vous avec des clients en dehors des États-Unis ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Oui. Nous travaillons d'abord à distance et travaillons avec des clients du monde entier. Notre équipe principale travaille d'abord à distance (fuseau horaire CET), mais nous traitons sans problème des clients aux États-Unis, au Moyen-Orient et en Asie.</div>
+</div>
+</div>
+<div class="faq-section" id="campaigns">
+<div class="faq-section-title">Campagnes</div>
+<div class="faq-item reveal">
+<div class="faq-q">Créez-vous et gérez-vous les campagnes ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Oui. Nous gérons l'intégralité du processus : stratégie, configuration de l'audience, contenu publicitaire, configuration du suivi et gestion continue. Cela signifie surveiller les performances, optimiser les dépenses, ajuster le ciblage au fur et à mesure que les données arrivent et vous envoyer des rapports réguliers. Les campagnes sont diffusées dans votre compte publicitaire.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Quelles plateformes couvrez-vous ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Meta Ads (Facebook et Instagram), Google Ads (Search, Display, YouTube), TikTok Ads, LinkedIn Ads. Nous pouvons également couvrir Pinterest, Snapchat et Twitter/X sur demande. La plupart des fichiers de campagne couvrent 1 à 2 plates-formes, sauf indication contraire.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Que comprend la gestion continue des campagnes ? <span class="faq-icon">+</span></div>
+<div class="faq-a">La configuration couvre la stratégie, la configuration de l'audience, le texte publicitaire, les briefs créatifs, les paramètres UTM et la mise en œuvre des pixels. La gestion continue comprend le suivi des performances, l'optimisation du budget, les ajustements d'audience, les tests créatifs lorsque les publicités sont fatiguées et un rapport de performances régulier couvrant les résultats et les prochaines étapes.</div>
+</div>
+</div>
+<div class="faq-section" id="websites">
+<div class="faq-section-title">Sites Web</div>
+<div class="faq-item reveal">
+<div class="faq-q">Utilisez-vous WordPress ou des constructeurs de pages ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Jamais. Chaque site que nous construisons est codé sur mesure à partir de zéro : HTML, CSS, JavaScript, avec un backend alimenté par Supabase (PostgreSQL). Pas de WordPress, pas de Webflow, pas de modèles. Cela nous donne un contrôle total sur les performances, les animations et l'expérience mobile.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Pouvez-vous créer des sites multilingues ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Oui, c'est l'une de nos spécialités. Nous avons construit en anglais, français, espagnol et plus encore. Notre générateur de site statique produit des pages séparées par langue avec des balises hreflang appropriées, des sélecteurs de langue et une logique de secours pour les traductions partielles.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Gérez-vous l’hébergement et l’enregistrement de domaine ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Oui, sur demande. Si vous avez besoin d'un domaine enregistré et d'un hébergement configuré, nous gérons les deux dans le cadre du projet. Si vous disposez déjà d'un domaine et d'un fournisseur d'hébergement, nous déployons plutôt vers ceux-ci. Quoi qu’il en soit, c’est bien – mentionnez-le simplement dans votre mémoire.</div>
+</div>
+</div>
+<div class="faq-section" id="chatbots">
+<div class="faq-section-title">Chatbots IA</div>
+<div class="faq-item reveal">
+<div class="faq-q">Vos chatbots sont-ils auto-hébergés ou utilisent-ils une API externe ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Les deux options sont disponibles. Les chatbots auto-hébergés utilisent une base de connaissances locale avec une classification des mots clés et une correspondance floue : pas de coûts d'API continus, pas de dépendances externes et conformes au RGPD par défaut. Les chatbots basés sur une API se connectent à un service d'IA externe et sont mieux adaptés à une conversation plus ouverte. Nous vous recommanderons la bonne approche en fonction de votre cas d'utilisation.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Quelles langues le chatbot peut-il parler ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Autant que nécessaire. Nous construisons la base de connaissances dans chaque langue séparément. Anglais, français, espagnol et plus encore, quelle que soit la langue parlée par vos clients. Le chatbot détecte la langue et répond en conséquence.</div>
+</div>
+</div>
+<div class="faq-section" id="phone">
+<div class="faq-section-title">Agent téléphonique IA</div>
+<div class="faq-item reveal">
+<div class="faq-q">Que fait réellement l’agent téléphonique IA ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Il répond à vos appels entrants, parle naturellement dans n'importe quelle langue et traite les demandes courantes sans intervention humaine. Pendant un appel, il peut consulter votre calendrier, prendre ou annuler des rendez-vous en temps réel, collecter les détails de l'appelant et répondre aux questions sur votre entreprise. Il fonctionne 24 heures sur 24 et chaque appel génère une transcription complète pour un examen qualité.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">De quoi l’agent a-t-il besoin pour démarrer ? <span class="faq-icon">+</span></div>
+<div class="faq-a">L'agent est formé sur les informations que vous fournissez. Si vous avez un site Web existant, nous pouvons travailler à partir de là. Dans le cas contraire, vous fournissez les détails de l'entreprise (services, tarifs, horaires, politiques, règles de réservation) et nous construisons la base de connaissances à partir de cela. Plus les informations sont complètes, meilleures sont les performances de l’agent.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Peut-il prendre rendez-vous directement ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Oui, lorsqu'une intégration de calendrier est incluse. L'agent vérifie la disponibilité en temps réel pendant l'appel et inscrit la réservation directement dans votre calendrier. Il peut également gérer les annulations et les reprogrammations. L'intégration est délimitée et construite dans le cadre du projet.</div>
+</div>
+</div>
+<div class="faq-section" id="process">
+<div class="faq-section-title">Processus et tarification</div>
+<div class="faq-item reveal">
+<div class="faq-q">Comment obtenir un prix ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Chaque projet est personnalisé. Envoyez-nous un e-mail à hello@zoomy.services avec la description de votre projet et nous vous répondrons dans les 24 heures avec un devis sur mesure. Le prix dépend de la portée, de la complexité et du calendrier. Nous travaillons toujours avec des budgets fixes – pas de facturation horaire.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Comment se déroule le processus de briefing ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Nous commençons par un bref formulaire détaillé ou un appel. Nous vous posons des questions sur vos objectifs, votre public cible, votre calendrier et votre budget. À partir de là, nous définissons la portée, convenons des livrables et confirmons le prix. La production démarre une fois la caution versée.</div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Proposez-vous des révisions ? <span class="faq-icon">+</span></div>
+<div class="faq-a">Oui. Tous les projets comprennent au moins un cycle de révision. Nous intégrons des fenêtres de révision dans la chronologie afin qu'elles ne retardent pas votre lancement. Nous sommes disponibles après le lancement pour tout problème découlant du travail livré.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div>
+<div class="footer-logo grad-text">Zoomy.services</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestion de campagnes, sites Web personnalisés, chatbots IA et agents téléphoniques.</p>
+<div class="footer-social" style="margin-top:24px;">
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="X">𝕏</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="LinkedIn">in</a>
+<a href="#" style="font-size:.75rem;font-family:var(--font-mono);" title="Instagram">ig</a>
+</div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Prestations</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a href="chatbot.html">Chatbots IA</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Entreprise</h4><ul>
+<li><a class="active" href="about.html">À propos de nous</a></li>
+<li><a href="portfolio.html">Notre travail</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacter</h4><ul>
+<li><a href="contact.html">Démarrer un projet</a></li>
+<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+</ul>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Ouvert aux projets</span></div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy.services — Tous droits réservés.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Confidentialité</a><a data-i18n="footer.terms" href="#">Conditions</a></span>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+
+<script src="../js/chatbot.js"></script>
+</body>
+</html>

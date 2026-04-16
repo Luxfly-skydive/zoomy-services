@@ -106,7 +106,7 @@ en:{
   'contact.form.send':'Send Message',
   'contact.form.privacy':'Your email address is used solely to respond to your enquiry and for any future project correspondence.',
   /* ── FAQ ── */
-  'faq.hero.tag':'FAQ','faq.hero.sub':'Everything you need to know about working with us. Can\'t find your answer? Email hello@zoomy.services.',
+  'faq.hero.tag':'FAQ','faq.hero.sub':'Everything you need to know about working with us. Can\'t find your answer? Email admin@zoomy.services.',
 },
 
 fr:{
@@ -200,7 +200,7 @@ fr:{
   'contact.form.placeholder':'Décrivez ce dont vous avez besoin, votre audience et tout délai pertinent.',
   'contact.form.send':'Envoyer',
   'contact.form.privacy':'Votre adresse e-mail est utilisée uniquement pour répondre à votre demande et pour toute correspondance future.',
-  'faq.hero.tag':'FAQ','faq.hero.sub':'Tout ce que vous devez savoir sur notre façon de travailler. Vous ne trouvez pas votre réponse ? Écrivez à hello@zoomy.services.',
+  'faq.hero.tag':'FAQ','faq.hero.sub':'Tout ce que vous devez savoir sur notre façon de travailler. Vous ne trouvez pas votre réponse ? Écrivez à admin@zoomy.services.',
 },
 
 es:{
@@ -294,7 +294,7 @@ es:{
   'contact.form.placeholder':'Describe lo que necesitas, tu audiencia y cualquier detalle o fecha límite relevante.',
   'contact.form.send':'Enviar mensaje',
   'contact.form.privacy':'Tu dirección de correo electrónico se usa únicamente para responder a tu consulta y para cualquier correspondencia futura.',
-  'faq.hero.tag':'Preguntas frecuentes','faq.hero.sub':'Todo lo que necesitas saber sobre trabajar con nosotros. ¿No encuentras tu respuesta? Escríbenos a hello@zoomy.services.',
+  'faq.hero.tag':'Preguntas frecuentes','faq.hero.sub':'Todo lo que necesitas saber sobre trabajar con nosotros. ¿No encuentras tu respuesta? Escríbenos a admin@zoomy.services.',
 }
 };
 

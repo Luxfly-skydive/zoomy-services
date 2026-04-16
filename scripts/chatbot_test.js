@@ -17,9 +17,9 @@ function t(en, fr, es) {
 /* ── Business facts ───────────────────────────────────────────────────── */
 const BIZ = {
   name:  'Zoomy.services',
-  email: 'hello@zoomy.services',
+  email: 'admin@zoomy.services',
   url:   'zoomy.services',
-  contact: 'hello@zoomy.services',
+  contact: 'admin@zoomy.services',
 };
 
 /* ── Conversation memory ──────────────────────────────────────────────── */
@@ -393,16 +393,16 @@ const VARIATIONS = {
   },
   fallback: {
     en: [
-      'I didn\'t quite catch that. Try asking me:\n\n\u2022 _"How do Meta Ads work?"_\n\u2022 _"What does a website cost?"_\n\u2022 _"How does the phone agent handle bookings?"_\n\nOr email **hello@zoomy.services**.',
+      'I didn\'t quite catch that. Try asking me:\n\n\u2022 _"How do Meta Ads work?"_\n\u2022 _"What does a website cost?"_\n\u2022 _"How does the phone agent handle bookings?"_\n\nOr email **admin@zoomy.services**.',
       'Hmm, not sure I understood that. I can help with campaigns, websites, chatbots, phone agents, or pricing. Could you rephrase?',
       'I didn\'t get that one. What are you trying to figure out \u2014 running ads, building something, or pricing?',
     ],
     fr: [
-      'Je n\'ai pas bien compris. Essayez :\n\n\u2022 _"Comment fonctionnent les Meta Ads ?"_\n\u2022 _"Combien co\u00FBte un site web ?"_\n\nOu \u00E9crivez \u00E0 **hello@zoomy.services**.',
+      'Je n\'ai pas bien compris. Essayez :\n\n\u2022 _"Comment fonctionnent les Meta Ads ?"_\n\u2022 _"Combien co\u00FBte un site web ?"_\n\nOu \u00E9crivez \u00E0 **admin@zoomy.services**.',
       'Je ne suis pas s\u00FBr d\'avoir compris. Puis-je vous aider avec les campagnes, les sites web, les chatbots ou les tarifs ? Pouvez-vous reformuler ?',
     ],
     es: [
-      'No entend\u00ED bien eso. Intenta con:\n\n\u2022 _"\u00BFC\u00F3mo funcionan los anuncios de Meta?"_\n\u2022 _"\u00BFCu\u00E1nto cuesta un sitio web?"_\n\nO escribe a **hello@zoomy.services**.',
+      'No entend\u00ED bien eso. Intenta con:\n\n\u2022 _"\u00BFC\u00F3mo funcionan los anuncios de Meta?"_\n\u2022 _"\u00BFCu\u00E1nto cuesta un sitio web?"_\n\nO escribe a **admin@zoomy.services**.',
       'No estoy seguro de haber entendido eso. \u00BFPuedes reformularlo? Puedo ayudar con campa\u00F1as, sitios web, chatbots o precios.',
     ]
   }
@@ -503,9 +503,9 @@ const KB = [
   r:() => {
     ctx.lastEntry='website-pricing';
     return t(
-      'Website pricing depends on scope. We price per page plus feature costs:\n\n• **Standard content page** — from $200\n• **Complex page** (home, animated) — $300–400\n• **Functional page** (booking, checkout) — $400–600\n• **Booking system** — $600 · **Admin panel** — $400\n• **Each extra language** — $200\n\nA typical 6-page restaurant site in 2 languages: $1,800–$2,500. Email **hello@zoomy.services** for an exact quote.',
-      'Le prix d\'un site dépend du périmètre. Nous tarifons par page plus les fonctionnalités :\n\n• **Page de contenu standard** — à partir de 200$\n• **Page complexe** — 300–400$\n• **Page fonctionnelle** — 400–600$\n• **Système de réservation** — 600$\n\nÉcrivez à **hello@zoomy.services** pour un devis.',
-      'El precio de un sitio depende del alcance. Tarificamos por página más funcionalidades:\n\n• **Página estándar** — desde $200 · **Página funcional** — $400–600\n• **Sistema de reservas** — $600\n\nEscribe a **hello@zoomy.services** para un presupuesto.'
+      'Website pricing depends on scope. We price per page plus feature costs:\n\n• **Standard content page** — from $200\n• **Complex page** (home, animated) — $300–400\n• **Functional page** (booking, checkout) — $400–600\n• **Booking system** — $600 · **Admin panel** — $400\n• **Each extra language** — $200\n\nA typical 6-page restaurant site in 2 languages: $1,800–$2,500. Email **admin@zoomy.services** for an exact quote.',
+      'Le prix d\'un site dépend du périmètre. Nous tarifons par page plus les fonctionnalités :\n\n• **Page de contenu standard** — à partir de 200$\n• **Page complexe** — 300–400$\n• **Page fonctionnelle** — 400–600$\n• **Système de réservation** — 600$\n\nÉcrivez à **admin@zoomy.services** pour un devis.',
+      'El precio de un sitio depende del alcance. Tarificamos por página más funcionalidades:\n\n• **Página estándar** — desde $200 · **Página funcional** — $400–600\n• **Sistema de reservas** — $600\n\nEscribe a **admin@zoomy.services** para un presupuesto.'
     );
   }
 },
@@ -516,9 +516,9 @@ const KB = [
   r:() => {
     ctx.lastEntry='chatbot-pricing';
     return t(
-      '**Chatbot pricing:**\n\n• Standard (1–2 languages, ~30 topics) — **$500**\n• Complex (multilingual, 50+ topics, booking/leads) — **$1,000–$1,500**\n• Monthly hosting (self-hosted) — **$50/month**\n• API-based — cost + 50%, min $40/month\n\nAs an add-on to a website: **$400**. Email **hello@zoomy.services** for an exact quote.',
-      '**Tarification chatbot :**\n\n• Standard — **500$** · Complexe — **1 000–1 500$**\n• Hébergement mensuel — **50$/mois**\n• En complément site : **400$**\n\nÉcrivez à **hello@zoomy.services**.',
-      '**Precio chatbot:**\n\n• Estándar — **$500** · Complejo — **$1.000–$1.500**\n• Hosting mensual — **$50/mes**\n• Como complemento de sitio: **$400**\n\nEscribe a **hello@zoomy.services**.'
+      '**Chatbot pricing:**\n\n• Standard (1–2 languages, ~30 topics) — **$500**\n• Complex (multilingual, 50+ topics, booking/leads) — **$1,000–$1,500**\n• Monthly hosting (self-hosted) — **$50/month**\n• API-based — cost + 50%, min $40/month\n\nAs an add-on to a website: **$400**. Email **admin@zoomy.services** for an exact quote.',
+      '**Tarification chatbot :**\n\n• Standard — **500$** · Complexe — **1 000–1 500$**\n• Hébergement mensuel — **50$/mois**\n• En complément site : **400$**\n\nÉcrivez à **admin@zoomy.services**.',
+      '**Precio chatbot:**\n\n• Estándar — **$500** · Complejo — **$1.000–$1.500**\n• Hosting mensual — **$50/mes**\n• Como complemento de sitio: **$400**\n\nEscribe a **admin@zoomy.services**.'
     );
   }
 },
@@ -529,9 +529,9 @@ const KB = [
   r:() => {
     ctx.lastEntry='phone-pricing';
     return t(
-      '**AI Phone Agent pricing:**\n\n• Standard (FAQ + availability) — from **$600**\n• With calendar booking — **$1,000–$1,500**\n• Custom integrations — **$1,500–$2,500**\n• Monthly: ElevenLabs usage + 40%, min **$60/month**\n\nEmail **hello@zoomy.services** for a quote.',
-      '**Tarification agent téléphonique :**\n\n• Standard — à partir de **600$**\n• Avec réservation calendrier — **1 000–1 500$**\n• Mensuel — coût ElevenLabs + 40%, min **60$/mois**\n\nÉcrivez à **hello@zoomy.services**.',
-      '**Precio agente telefónico:**\n\n• Estándar — desde **$600** · Con reservas — **$1.000–$1.500**\n• Mensual: coste ElevenLabs + 40%, mín **$60/mes**\n\nEscribe a **hello@zoomy.services**.'
+      '**AI Phone Agent pricing:**\n\n• Standard (FAQ + availability) — from **$600**\n• With calendar booking — **$1,000–$1,500**\n• Custom integrations — **$1,500–$2,500**\n• Monthly: ElevenLabs usage + 40%, min **$60/month**\n\nEmail **admin@zoomy.services** for a quote.',
+      '**Tarification agent téléphonique :**\n\n• Standard — à partir de **600$**\n• Avec réservation calendrier — **1 000–1 500$**\n• Mensuel — coût ElevenLabs + 40%, min **60$/mois**\n\nÉcrivez à **admin@zoomy.services**.',
+      '**Precio agente telefónico:**\n\n• Estándar — desde **$600** · Con reservas — **$1.000–$1.500**\n• Mensual: coste ElevenLabs + 40%, mín **$60/mes**\n\nEscribe a **admin@zoomy.services**.'
     );
   }
 },
@@ -955,9 +955,9 @@ const KB = [
     'crm para ventas','gestion de clientes','base de datos clientes'],
   r:() => { ctx.lastEntry='crm';
     return t(
-      `CRM setup isn't currently in our standard offering, but it's something we can scope case by case. We work with lead capture, form integrations, and automation workflows that often connect to CRM platforms.\n\nIf you need CRM configuration (HubSpot, Pipedrive, Salesforce, Zoho, etc.), email **hello@zoomy.services** with your requirements and we'll tell you whether it fits our expertise or recommend someone who can.`,
-      `La mise en place de CRM ne fait pas partie de notre offre standard, mais c'est quelque chose que nous pouvons étudier. Écrivez à **hello@zoomy.services** avec vos besoins et nous vous dirons si cela correspond à notre expertise.`,
-      `La configuración de CRM no está en nuestra oferta estándar actualmente, pero es algo que podemos estudiar. Escribe a **hello@zoomy.services** con tus requerimientos.`
+      `CRM setup isn't currently in our standard offering, but it's something we can scope case by case. We work with lead capture, form integrations, and automation workflows that often connect to CRM platforms.\n\nIf you need CRM configuration (HubSpot, Pipedrive, Salesforce, Zoho, etc.), email **admin@zoomy.services** with your requirements and we'll tell you whether it fits our expertise or recommend someone who can.`,
+      `La mise en place de CRM ne fait pas partie de notre offre standard, mais c'est quelque chose que nous pouvons étudier. Écrivez à **admin@zoomy.services** avec vos besoins et nous vous dirons si cela correspond à notre expertise.`,
+      `La configuración de CRM no está en nuestra oferta estándar actualmente, pero es algo que podemos estudiar. Escribe a **admin@zoomy.services** con tus requerimientos.`
     );
   }
 },
@@ -970,9 +970,9 @@ const KB = [
     'app movil','desarrollar app','aplicacion movil','desarrollo movil'],
   r:() => { ctx.lastEntry='app-dev';
     return t(
-      `We don't build native mobile apps (iOS/Android). Our work is web-based: websites, web apps, chatbots, and campaign management.\n\nThat said, if you need a mobile-accessible solution, a **progressive web app (PWA)** — a web app that installs to the home screen and works offline — can often achieve what you need without native app development. Email **hello@zoomy.services** to discuss whether a PWA fits your use case.`,
-      `Nous ne développons pas d'applications mobiles natives (iOS/Android). Notre travail est basé sur le web.\n\nSi vous avez besoin d'une solution accessible sur mobile, une **progressive web app (PWA)** peut souvent couvrir le besoin. Écrivez à **hello@zoomy.services** pour en discuter.`,
-      `No desarrollamos aplicaciones móviles nativas (iOS/Android). Nuestro trabajo es basado en web.\n\nSi necesitas una solución accesible en móvil, una **progressive web app (PWA)** puede cubrir la necesidad. Escribe a **hello@zoomy.services** para discutir.`
+      `We don't build native mobile apps (iOS/Android). Our work is web-based: websites, web apps, chatbots, and campaign management.\n\nThat said, if you need a mobile-accessible solution, a **progressive web app (PWA)** — a web app that installs to the home screen and works offline — can often achieve what you need without native app development. Email **admin@zoomy.services** to discuss whether a PWA fits your use case.`,
+      `Nous ne développons pas d'applications mobiles natives (iOS/Android). Notre travail est basé sur le web.\n\nSi vous avez besoin d'une solution accessible sur mobile, une **progressive web app (PWA)** peut souvent couvrir le besoin. Écrivez à **admin@zoomy.services** pour en discuter.`,
+      `No desarrollamos aplicaciones móviles nativas (iOS/Android). Nuestro trabajo es basado en web.\n\nSi necesitas una solución accesible en móvil, una **progressive web app (PWA)** puede cubrir la necesidad. Escribe a **admin@zoomy.services** para discutir.`
     );
   }
 },
@@ -986,9 +986,9 @@ const KB = [
     'gestion redes sociales','contenido organico','redes sociales organicas'],
   r:() => { ctx.lastEntry='social-organic';
     return t(
-      `We manage **paid social** (Meta Ads, TikTok Ads, LinkedIn Ads) but we don't manage organic social media content or community management.\n\nFor paid campaigns driving real measurable results — reach, leads, purchases — that's exactly what we do. If you need organic content management alongside, email **hello@zoomy.services** and we can discuss what combination makes sense for your goals.`,
-      `Nous gérons la **publicité sociale payante** (Meta Ads, TikTok Ads, LinkedIn Ads) mais pas la gestion de contenu organique ou le community management.\n\nPour des campagnes payantes avec des résultats mesurables, c'est exactement ce que nous faisons. Écrivez à **hello@zoomy.services** pour en discuter.`,
-      `Gestionamos **publicidad social de pago** (Meta Ads, TikTok Ads, LinkedIn Ads) pero no el contenido orgánico ni la gestión de comunidades.\n\nPara campañas de pago con resultados medibles, eso es exactamente lo que hacemos. Escribe a **hello@zoomy.services** para discutir.`
+      `We manage **paid social** (Meta Ads, TikTok Ads, LinkedIn Ads) but we don't manage organic social media content or community management.\n\nFor paid campaigns driving real measurable results — reach, leads, purchases — that's exactly what we do. If you need organic content management alongside, email **admin@zoomy.services** and we can discuss what combination makes sense for your goals.`,
+      `Nous gérons la **publicité sociale payante** (Meta Ads, TikTok Ads, LinkedIn Ads) mais pas la gestion de contenu organique ou le community management.\n\nPour des campagnes payantes avec des résultats mesurables, c'est exactement ce que nous faisons. Écrivez à **admin@zoomy.services** pour en discuter.`,
+      `Gestionamos **publicidad social de pago** (Meta Ads, TikTok Ads, LinkedIn Ads) pero no el contenido orgánico ni la gestión de comunidades.\n\nPara campañas de pago con resultados medibles, eso es exactamente lo que hacemos. Escribe a **admin@zoomy.services** para discutir.`
     );
   }
 },
@@ -1000,9 +1000,9 @@ const KB = [
     'identidad visual','diseno logo','diseno grafico','marca visual','guia de marca'],
   r:() => { ctx.lastEntry='branding';
     return t(
-      `Logo and brand identity design isn't a service we currently offer. Our focus is digital production: campaigns, websites, chatbots, and phone agents.\n\nFor branding, you'd want to brief a brand designer or studio. That said, if you have existing brand assets (logo, colors, fonts) and need them implemented across a website or ad campaign, we absolutely work with what you have. Email **hello@zoomy.services** if you have a brief.`,
-      `Le design de logo et l'identité de marque ne font pas partie de nos services actuels. Notre focus est la production digitale.\n\nSi vous avez des assets de marque existants à implémenter, nous pouvons certainement travailler avec. Contactez **hello@zoomy.services**.`,
-      `El diseño de logo e identidad de marca no es un servicio que ofrecemos actualmente. Nuestro enfoque es la producción digital.\n\nSi tienes assets de marca existentes para implementar, trabajamos con eso. Escribe a **hello@zoomy.services**.`
+      `Logo and brand identity design isn't a service we currently offer. Our focus is digital production: campaigns, websites, chatbots, and phone agents.\n\nFor branding, you'd want to brief a brand designer or studio. That said, if you have existing brand assets (logo, colors, fonts) and need them implemented across a website or ad campaign, we absolutely work with what you have. Email **admin@zoomy.services** if you have a brief.`,
+      `Le design de logo et l'identité de marque ne font pas partie de nos services actuels. Notre focus est la production digitale.\n\nSi vous avez des assets de marque existants à implémenter, nous pouvons certainement travailler avec. Contactez **admin@zoomy.services**.`,
+      `El diseño de logo e identidad de marca no es un servicio que ofrecemos actualmente. Nuestro enfoque es la producción digital.\n\nSi tienes assets de marca existentes para implementar, trabajamos con eso. Escribe a **admin@zoomy.services**.`
     );
   }
 },
@@ -1015,9 +1015,9 @@ const KB = [
     'produccion video','video promocional','edicion video','video corporativo'],
   r:() => { ctx.lastEntry='video-prod';
     return t(
-      `We don't do video production or video editing. When running paid campaigns, we write detailed creative briefs and can direct UGC or studio shoots — but the filming and editing happens with your production team or a dedicated video partner.\n\nIf you need video ad creatives, we can scope the brief and spec requirements for your campaign. Email **hello@zoomy.services**.`,
-      `Nous ne faisons pas de production ni de montage vidéo. Pour les campagnes, nous pouvons rédiger des briefs créatifs détaillés. Écrivez à **hello@zoomy.services** pour en discuter.`,
-      `No hacemos producción ni edición de video. Para campañas, podemos escribir briefs creativos detallados. Escribe a **hello@zoomy.services** para discutir.`
+      `We don't do video production or video editing. When running paid campaigns, we write detailed creative briefs and can direct UGC or studio shoots — but the filming and editing happens with your production team or a dedicated video partner.\n\nIf you need video ad creatives, we can scope the brief and spec requirements for your campaign. Email **admin@zoomy.services**.`,
+      `Nous ne faisons pas de production ni de montage vidéo. Pour les campagnes, nous pouvons rédiger des briefs créatifs détaillés. Écrivez à **admin@zoomy.services** pour en discuter.`,
+      `No hacemos producción ni edición de video. Para campañas, podemos escribir briefs creativos detallados. Escribe a **admin@zoomy.services** para discutir.`
     );
   }
 },
@@ -1029,9 +1029,9 @@ const KB = [
     'bot de whatsapp','marketing por whatsapp','chatbot sms'],
   r:() => { ctx.lastEntry='whatsapp';
     return t(
-      `WhatsApp Business API integration and WhatsApp bots are something we can scope. Our chatbot expertise extends to messaging platforms — same custom knowledge base approach, different delivery channel.\n\nEmail **hello@zoomy.services** with your use case: what the bot should handle, expected message volume, and whether you need outbound messaging or just inbound responses.`,
-      `L'intégration WhatsApp Business API et les bots WhatsApp font partie de ce que nous pouvons étudier. Notre expertise en chatbots s'étend aux plateformes de messagerie.\n\nÉcrivez à **hello@zoomy.services** avec votre cas d'usage.`,
-      `La integración de WhatsApp Business API y los bots de WhatsApp son algo que podemos estudiar. Nuestra experiencia en chatbots se extiende a plataformas de mensajería.\n\nEscribe a **hello@zoomy.services** con tu caso de uso.`
+      `WhatsApp Business API integration and WhatsApp bots are something we can scope. Our chatbot expertise extends to messaging platforms — same custom knowledge base approach, different delivery channel.\n\nEmail **admin@zoomy.services** with your use case: what the bot should handle, expected message volume, and whether you need outbound messaging or just inbound responses.`,
+      `L'intégration WhatsApp Business API et les bots WhatsApp font partie de ce que nous pouvons étudier. Notre expertise en chatbots s'étend aux plateformes de messagerie.\n\nÉcrivez à **admin@zoomy.services** avec votre cas d'usage.`,
+      `La integración de WhatsApp Business API y los bots de WhatsApp son algo que podemos estudiar. Nuestra experiencia en chatbots se extiende a plataformas de mensajería.\n\nEscribe a **admin@zoomy.services** con tu caso de uso.`
     );
   }
 },
@@ -1044,9 +1044,9 @@ const KB = [
     'redaccion web','contenido seo','redaccion de contenido','escribir articulos'],
   r:() => { ctx.lastEntry='content-writing';
     return t(
-      `Ad copy and landing page copy are written as part of our campaign and website builds — that's included in scope. We don't offer standalone copywriting, blog writing, or content strategy services.\n\nIf copy is needed for a project you're building with us, it's covered. For a standalone content retainer or blog production, email **hello@zoomy.services** and we'll tell you honestly whether it fits.`,
-      `La rédaction d'annonces et de landing pages est incluse dans nos projets. Nous ne proposons pas de rédaction indépendante ou de production de blogs.\n\nÉcrivez à **hello@zoomy.services** pour en discuter.`,
-      `La redacción de anuncios y landing pages está incluida en nuestros proyectos. No ofrecemos redacción independiente o producción de blogs.\n\nEscribe a **hello@zoomy.services** para discutir.`
+      `Ad copy and landing page copy are written as part of our campaign and website builds — that's included in scope. We don't offer standalone copywriting, blog writing, or content strategy services.\n\nIf copy is needed for a project you're building with us, it's covered. For a standalone content retainer or blog production, email **admin@zoomy.services** and we'll tell you honestly whether it fits.`,
+      `La rédaction d'annonces et de landing pages est incluse dans nos projets. Nous ne proposons pas de rédaction indépendante ou de production de blogs.\n\nÉcrivez à **admin@zoomy.services** pour en discuter.`,
+      `La redacción de anuncios y landing pages está incluida en nuestros proyectos. No ofrecemos redacción independiente o producción de blogs.\n\nEscribe a **admin@zoomy.services** para discutir.`
     );
   }
 },
@@ -1057,9 +1057,9 @@ const KB = [
     'tienda shopify','desarrollo shopify','personalizar shopify','tema shopify'],
   r:() => { ctx.lastEntry='shopify'; ctx.service='websites';
     return t(
-      `We don't build on Shopify. We build **custom-coded e-commerce stores** — HTML, CSS, JavaScript with Stripe payment integration, custom product catalogues, and full admin panels. No platform fees, no Shopify subscription.\n\nIf you specifically need a Shopify theme or app, that requires a Shopify Partner, which we're not. But if you're open to a custom build that gives you full ownership and no recurring platform costs, email **hello@zoomy.services**.`,
-      `Nous ne développons pas sur Shopify. Nous construisons des boutiques e-commerce **codées sur-mesure** sans dépendance à une plateforme et sans frais mensuels Shopify.\n\nÉcrivez à **hello@zoomy.services** pour en discuter.`,
-      `No desarrollamos en Shopify. Construimos tiendas e-commerce **custom** desde cero sin dependencia de plataforma y sin tarifas mensuales de Shopify.\n\nEscribe a **hello@zoomy.services** para discutirlo.`
+      `We don't build on Shopify. We build **custom-coded e-commerce stores** — HTML, CSS, JavaScript with Stripe payment integration, custom product catalogues, and full admin panels. No platform fees, no Shopify subscription.\n\nIf you specifically need a Shopify theme or app, that requires a Shopify Partner, which we're not. But if you're open to a custom build that gives you full ownership and no recurring platform costs, email **admin@zoomy.services**.`,
+      `Nous ne développons pas sur Shopify. Nous construisons des boutiques e-commerce **codées sur-mesure** sans dépendance à une plateforme et sans frais mensuels Shopify.\n\nÉcrivez à **admin@zoomy.services** pour en discuter.`,
+      `No desarrollamos en Shopify. Construimos tiendas e-commerce **custom** desde cero sin dependencia de plataforma y sin tarifas mensuales de Shopify.\n\nEscribe a **admin@zoomy.services** para discutirlo.`
     );
   }
 },
@@ -1071,9 +1071,9 @@ const KB = [
     'relaciones publicas','relaciones con medios','influencer','prensa','notas de prensa'],
   r:() => { ctx.lastEntry='pr-influencer';
     return t(
-      `PR, press releases, and influencer marketing aren't services we offer. Our focus is paid digital media — where results are measurable, trackable, and controllable — rather than earned media or influencer outreach.\n\nEmail **hello@zoomy.services** if you want to discuss how paid media fits into your broader marketing mix.`,
-      `Les relations presse et le marketing d'influence ne font pas partie de nos services. Notre focus est les médias payants digitaux où les résultats sont mesurables.\n\nÉcrivez à **hello@zoomy.services** pour discuter de votre stratégie marketing globale.`,
-      `Las relaciones públicas y el marketing de influencers no son servicios que ofrecemos. Nuestro enfoque son los medios digitales de pago donde los resultados son medibles.\n\nEscribe a **hello@zoomy.services** para discutir tu estrategia de marketing.`
+      `PR, press releases, and influencer marketing aren't services we offer. Our focus is paid digital media — where results are measurable, trackable, and controllable — rather than earned media or influencer outreach.\n\nEmail **admin@zoomy.services** if you want to discuss how paid media fits into your broader marketing mix.`,
+      `Les relations presse et le marketing d'influence ne font pas partie de nos services. Notre focus est les médias payants digitaux où les résultats sont mesurables.\n\nÉcrivez à **admin@zoomy.services** pour discuter de votre stratégie marketing globale.`,
+      `Las relaciones públicas y el marketing de influencers no son servicios que ofrecemos. Nuestro enfoque son los medios digitales de pago donde los resultados son medibles.\n\nEscribe a **admin@zoomy.services** para discutir tu estrategia de marketing.`
     );
   }
 },
@@ -1085,9 +1085,9 @@ const KB = [
     'hacen','pueden hacer','ofrecen','trabajan con','algo mas','otros servicios'],
   r:() => { ctx.lastEntry='request-service';
     return t(
-      `Here's what we do:\n\n• **Paid campaigns** — Meta, Google, TikTok, LinkedIn\n• **Custom websites** — booking platforms, e-commerce, multilingual\n• **AI chatbots** — custom-trained, self-hosted, multilingual\n• **AI phone agents** — live call handling, booking, outbound\n• **SEO** — built into every website build\n• **Analytics & tracking** — GA4, Meta Pixel, GTM\n• **Email marketing & automation** — Zapier, Make, n8n\n\nIf you're asking about something not on the list, email **hello@zoomy.services** — we'll tell you whether we can do it or point you in the right direction.`,
-      `Voici ce que nous faisons :\n\n• **Campagnes payantes** — Meta, Google, TikTok, LinkedIn\n• **Sites web sur-mesure** — plateformes de réservation, e-commerce, multilingue\n• **Chatbots IA** — entraînés sur-mesure, auto-hébergés, multilingues\n• **Agents téléphoniques IA** — gestion d'appels, réservations\n• **SEO, Analytics, Automatisation**\n\nÉcrivez à **hello@zoomy.services** pour tout le reste.`,
-      `Esto es lo que hacemos:\n\n• **Campañas de pago** — Meta, Google, TikTok, LinkedIn\n• **Sitios web personalizados** — plataformas de reservas, e-commerce, multilingüe\n• **Chatbots IA** — entrenados a medida, auto-alojados\n• **Agentes telefónicos IA** — gestión de llamadas, reservas\n• **SEO, Analytics, Automatización**\n\nEscribe a **hello@zoomy.services** para cualquier otra cosa.`
+      `Here's what we do:\n\n• **Paid campaigns** — Meta, Google, TikTok, LinkedIn\n• **Custom websites** — booking platforms, e-commerce, multilingual\n• **AI chatbots** — custom-trained, self-hosted, multilingual\n• **AI phone agents** — live call handling, booking, outbound\n• **SEO** — built into every website build\n• **Analytics & tracking** — GA4, Meta Pixel, GTM\n• **Email marketing & automation** — Zapier, Make, n8n\n\nIf you're asking about something not on the list, email **admin@zoomy.services** — we'll tell you whether we can do it or point you in the right direction.`,
+      `Voici ce que nous faisons :\n\n• **Campagnes payantes** — Meta, Google, TikTok, LinkedIn\n• **Sites web sur-mesure** — plateformes de réservation, e-commerce, multilingue\n• **Chatbots IA** — entraînés sur-mesure, auto-hébergés, multilingues\n• **Agents téléphoniques IA** — gestion d'appels, réservations\n• **SEO, Analytics, Automatisation**\n\nÉcrivez à **admin@zoomy.services** pour tout le reste.`,
+      `Esto es lo que hacemos:\n\n• **Campañas de pago** — Meta, Google, TikTok, LinkedIn\n• **Sitios web personalizados** — plataformas de reservas, e-commerce, multilingüe\n• **Chatbots IA** — entrenados a medida, auto-alojados\n• **Agentes telefónicos IA** — gestión de llamadas, reservas\n• **SEO, Analytics, Automatización**\n\nEscribe a **admin@zoomy.services** para cualquier otra cosa.`
     );
   }
 },
@@ -1281,9 +1281,9 @@ function getResponse(userInput) {
 
   // Fallback with variation
   const fbText = vary('fallback') || t(
-    'I didn\'t quite catch that. Try asking about our campaigns, websites, chatbots, or phone agents. Or email **hello@zoomy.services**.',
-    'Je n\'ai pas compris. Essayez nos campagnes, sites web, chatbots ou agents téléphoniques. Ou écrivez à **hello@zoomy.services**.',
-    'No entendí. Prueba con nuestras campañas, sitios web, chatbots o agentes telefónicos. O escribe a **hello@zoomy.services**.'
+    'I didn\'t quite catch that. Try asking about our campaigns, websites, chatbots, or phone agents. Or email **admin@zoomy.services**.',
+    'Je n\'ai pas compris. Essayez nos campagnes, sites web, chatbots ou agents téléphoniques. Ou écrivez à **admin@zoomy.services**.',
+    'No entendí. Prueba con nuestras campañas, sitios web, chatbots o agentes telefónicos. O escribe a **admin@zoomy.services**.'
   );
   ctx.lastEntry = 'fallback'; memory.push('bot', fbText, 'fallback'); return fbText;
 }

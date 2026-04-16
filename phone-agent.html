@@ -231,32 +231,92 @@
 <script type="module">
             import { Conversation } from 'https://cdn.jsdelivr.net/npm/@elevenlabs/client@0.14.0/+esm';
             let conv = null;
+            let callTimer = null;
+            const CALL_LIMIT = 120; // 2 minutes
             const btn = document.getElementById('call-btn');
             const label = document.getElementById('call-label');
             const icon = document.getElementById('call-icon');
             const waves = document.getElementById('call-waves');
             const status = document.getElementById('call-status');
             const TOKEN_URL = 'https://zoomy-ai.zoozoomfast.workers.dev/elevenlabs-token';
+
+            // Play one telephone ring using Web Audio API
+            function playRing() {
+              return new Promise(resolve => {
+                try {
+                  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                  const t = ctx.currentTime;
+                  // UK/EU ring: two bursts of dual-tone (440Hz + 480Hz), 0.4s each
+                  [[t, t+0.4],[t+0.65, t+1.05]].forEach(([s, e]) => {
+                    [440, 480].forEach(freq => {
+                      const osc = ctx.createOscillator();
+                      const gain = ctx.createGain();
+                      osc.connect(gain); gain.connect(ctx.destination);
+                      osc.type = 'sine'; osc.frequency.value = freq;
+                      gain.gain.setValueAtTime(0.18, s);
+                      gain.gain.setValueAtTime(0.18, e - 0.04);
+                      gain.gain.linearRampToValueAtTime(0, e);
+                      osc.start(s); osc.stop(e);
+                    });
+                  });
+                  setTimeout(() => { ctx.close(); resolve(); }, 1300);
+                } catch { resolve(); }
+              });
+            }
+
+            function startCallTimer() {
+              let elapsed = 0;
+              callTimer = setInterval(async () => {
+                elapsed++;
+                const remaining = CALL_LIMIT - elapsed;
+                if (remaining <= 30 && remaining > 0) {
+                  status.textContent = `Live — ${remaining}s left`;
+                } else if (remaining <= 0) {
+                  clearInterval(callTimer); callTimer = null;
+                  status.textContent = 'Time limit reached';
+                  status.style.color = '#f59e0b';
+                  if (conv) { await conv.endSession(); conv = null; }
+                }
+              }, 1000);
+            }
+
+            function resetUI(msg) {
+              if (callTimer) { clearInterval(callTimer); callTimer = null; }
+              conv = null;
+              label.textContent = 'Start Call';
+              btn.style.opacity = '1';
+              btn.style.background = 'var(--grad-main)';
+              btn.style.boxShadow = '0 0 30px rgba(99,102,241,.4)';
+              icon.innerHTML = '<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>';
+              waves.style.display = 'none';
+              status.textContent = msg || 'Call ended';
+              status.style.color = '';
+            }
+
             window.toggleCall = async function() {
               if (conv) {
                 await conv.endSession();
-                conv = null;
-                return;
+                return; // onDisconnect fires resetUI
               }
               try {
-                label.textContent = 'Connecting...';
+                label.textContent = 'Calling...';
                 btn.style.opacity = '0.7';
-                status.textContent = 'Requesting microphone...';
-                // Pre-request mic so browser permission dialog fires cleanly
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                stream.getTracks().forEach(t => t.stop()); // release preview track
-                status.textContent = 'Connecting to agent...';
-                // Get a short-lived signed URL from Cloudflare Worker (keeps agent ID server-side)
+                btn.disabled = true;
+                status.textContent = 'Ringing...';
+
+                // Fetch token first, then ring while waiting feels natural
                 const tokenRes = await fetch(TOKEN_URL);
                 const { signedUrl } = await tokenRes.json();
+
+                // One ring before connecting (ElevenLabs will request mic on its own)
+                await playRing();
+
+                status.textContent = 'Connecting...';
+
                 conv = await Conversation.startSession({
                   signedUrl,
                   onConnect: () => {
+                    btn.disabled = false;
                     label.textContent = 'End Call';
                     btn.style.opacity = '1';
                     btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
@@ -265,32 +325,19 @@
                     waves.style.display = 'flex';
                     status.textContent = 'Live';
                     status.style.color = '#4ade80';
+                    startCallTimer();
                   },
-                  onDisconnect: () => {
-                    conv = null;
-                    label.textContent = 'Start Call';
-                    btn.style.opacity = '1';
-                    btn.style.background = 'var(--grad-main)';
-                    btn.style.boxShadow = '0 0 30px rgba(99,102,241,.4)';
-                    icon.innerHTML = '<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>';
-                    waves.style.display = 'none';
-                    status.textContent = 'Call ended';
-                    status.style.color = '';
-                  },
+                  onDisconnect: () => resetUI('Call ended'),
                   onError: (err) => {
-                    conv = null;
-                    label.textContent = 'Start Call';
-                    btn.style.opacity = '1';
-                    waves.style.display = 'none';
+                    btn.disabled = false;
+                    resetUI(null);
                     status.textContent = 'Error: ' + (err.message || 'Could not connect');
                     status.style.color = '#ef4444';
                   }
                 });
               } catch(e) {
-                conv = null;
-                label.textContent = 'Start Call';
-                btn.style.opacity = '1';
-                waves.style.display = 'none';
+                btn.disabled = false;
+                resetUI(null);
                 status.textContent = 'Could not connect. Check microphone permissions.';
                 status.style.color = '#ef4444';
               }

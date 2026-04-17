@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="css/style.css?v=20260416b" rel="stylesheet"/>
 <style>
 /* ── Services as clean text rows ── */
 .services-list{margin-top:3rem}
@@ -580,25 +580,23 @@
       typing.textContent = '…';
       messagesEl.appendChild(typing);
       messagesEl.scrollTop = messagesEl.scrollHeight;
-      await new Promise(function(r) { setTimeout(r, 600 + Math.random() * 500); });
+      // Always use Gemini AI — skip KB entirely for the demo widget
+      try {
+        var res = await fetch(AI_WORKER, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, history: history.slice(-8) })
+        });
+        if (res.ok) {
+          var data = await res.json();
+          typing.remove();
+          appendMsg(data.reply, 'bot');
+          history.push({ role: 'assistant', content: data.reply });
+          return;
+        }
+      } catch(e) {}
+      // Gemini unavailable — fall back to KB
       var response = window.__zmy.getResponse(text);
-      var isFallback = window.__zmy.isLastFallback();
-      if (isFallback) {
-        try {
-          var res = await fetch(AI_WORKER, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: text, history: history.slice(-8) })
-          });
-          if (res.ok) {
-            var data = await res.json();
-            typing.remove();
-            appendMsg(data.reply, 'bot');
-            history.push({ role: 'assistant', content: data.reply });
-            return;
-          }
-        } catch(e) {}
-      }
       typing.remove();
       appendMsg(response, 'bot');
       history.push({ role: 'assistant', content: response });
@@ -612,8 +610,8 @@
   initDemo();
 })();
 </script>
-<script src="js/main.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/chatbot.js"></script>
+<script src="js/main.js?v=20260416b"></script>
+<script src="js/i18n.js?v=20260416b"></script>
+<script src="js/chatbot.js?v=20260416b"></script>
 </body>
 </html>

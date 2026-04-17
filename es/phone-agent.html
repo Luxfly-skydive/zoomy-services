@@ -248,8 +248,12 @@ HTML
                 // Get a short-lived signed URL from Cloudflare Worker (keeps agent ID server-side)
                 const tokenRes = await fetch(TOKEN_URL);
                 const { signedUrl } = await tokenRes.json();
+                const pageLang = window.location.pathname.includes('/fr/') ? 'fr'
+                               : window.location.pathname.includes('/es/') ? 'es'
+                               : (localStorage.getItem('zmy_lang') || 'en');
                 conv = await Conversation.startSession({
                   signedUrl,
+                  overrides: { agent: { language: pageLang } },
                   onConnect: () => {
                     label.textContent = 'End Call';
                     btn.style.opacity = '1';

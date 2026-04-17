@@ -421,8 +421,14 @@
                 status.textContent = 'Connecting...';
 
                 transcriptLines = [];
+                // Detect page language from URL path or localStorage
+                const pageLang = window.location.pathname.includes('/fr/') ? 'fr'
+                               : window.location.pathname.includes('/es/') ? 'es'
+                               : (localStorage.getItem('zmy_lang') || 'en');
+
                 conv = await Conversation.startSession({
                   signedUrl,
+                  overrides: { agent: { language: pageLang } },
                   onConnect: () => {
                     btn.disabled = false;
                     label.textContent = 'End Call';

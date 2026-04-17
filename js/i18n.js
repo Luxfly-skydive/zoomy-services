@@ -330,8 +330,13 @@ function applyLang(lang){
 window.setLang = function(lang){ applyLang(lang); };
 
 document.addEventListener('DOMContentLoaded', function(){
-  const lang = getLang();
-  // Resolve browser lang
+  // Root pages are always English. If user navigated back from /fr/ or /es/,
+  // reset localStorage so the page doesn't re-apply the old language.
+  const inLangDir = /\/(fr|es)\//.test(window.location.pathname);
+  if (!inLangDir) {
+    localStorage.setItem('zmy_lang', 'en');
+    return;
+  }
   const bl = (navigator.language||'').slice(0,2);
   const detected = (bl==='fr'||bl==='es') ? bl : DEFAULT_LANG;
   applyLang(localStorage.getItem('zmy_lang') || detected);

@@ -684,7 +684,10 @@
     "+ usage-based monthly · min $60/month": "+ mensuel basé sur l'utilisation · min 60 $/mois",
     "Booking, checkout, admin panel": "Réservation, paiement, panneau d'administration",
     "Per asset · one-time": "Par actif · ponctuel",
-    "For use cases that need more open-ended or complex responses, an API-based version is available. This connects to an external AI service and handles a wider range of questions. Usage costs are billed at the provider's rate. We'll advise which option fits your use case during the brief.": "Pour les cas d'utilisation nécessitant des réponses plus ouvertes ou plus complexes, une version basée sur une API est disponible. Celui-ci se connecte à un service d’IA externe et traite un plus large éventail de questions. Les frais d'utilisation sont facturés au tarif du fournisseur. Nous vous indiquerons quelle option correspond à votre cas d'utilisation lors du briefing."
+    "For use cases that need more open-ended or complex responses, an API-based version is available. This connects to an external AI service and handles a wider range of questions. Usage costs are billed at the provider's rate. We'll advise which option fits your use case during the brief.": "Pour les cas d'utilisation nécessitant des réponses plus ouvertes ou plus complexes, une version basée sur une API est disponible. Celui-ci se connecte à un service d’IA externe et traite un plus large éventail de questions. Les frais d'utilisation sont facturés au tarif du fournisseur. Nous vous indiquerons quelle option correspond à votre cas d'utilisation lors du briefing.",
+    "Any language supported": "Toute langue prise en charge",
+    "// Supports any language — auto-detected": "// Prend en charge n'importe quelle langue — détection automatique",
+    "Languages required (we support virtually any language)": "Langues requises (nous prenons en charge pratiquement toutes les langues)"
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -1371,6 +1374,9 @@
     "+ usage-based monthly · min $60/month": "+ mensual basado en el uso · mínimo $60/mes",
     "Booking, checkout, admin panel": "Reserva, pago, panel de administración",
     "Per asset · one-time": "Por activo · una sola vez",
-    "For use cases that need more open-ended or complex responses, an API-based version is available. This connects to an external AI service and handles a wider range of questions. Usage costs are billed at the provider's rate. We'll advise which option fits your use case during the brief.": "Para casos de uso que necesitan respuestas más abiertas o complejas, hay disponible una versión basada en API. Esto se conecta a un servicio de inteligencia artificial externo y maneja una gama más amplia de preguntas. Los costos de uso se facturan según la tarifa del proveedor. Le aconsejaremos qué opción se adapta a su caso de uso durante el resumen."
+    "For use cases that need more open-ended or complex responses, an API-based version is available. This connects to an external AI service and handles a wider range of questions. Usage costs are billed at the provider's rate. We'll advise which option fits your use case during the brief.": "Para casos de uso que necesitan respuestas más abiertas o complejas, hay disponible una versión basada en API. Esto se conecta a un servicio de inteligencia artificial externo y maneja una gama más amplia de preguntas. Los costos de uso se facturan según la tarifa del proveedor. Le aconsejaremos qué opción se adapta a su caso de uso durante el resumen.",
+    "Any language supported": "Cualquier idioma soportado",
+    "// Supports any language — auto-detected": "// Admite cualquier idioma: detección automática",
+    "Languages required (we support virtually any language)": "Idiomas requeridos (soportamos prácticamente cualquier idioma)"
   }
 }

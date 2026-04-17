@@ -678,7 +678,11 @@
     "// Works in EN · FR · ES — try it in any language": "// Fonctionne en EN · FR · ES — essayez-le dans n'importe quelle langue",
     "You get a tailored proposal within 24h": "Vous recevez une proposition sur mesure sous 24h",
     "Usually within a few hours — we read every submission personally.": "Généralement en quelques heures, nous lisons personnellement chaque soumission.",
-    "Check your inbox — our reply comes from contact@zoomy.services": "Vérifiez votre boîte de réception – notre réponse vient de contact@zoomy.services"
+    "Check your inbox — our reply comes from contact@zoomy.services": "Vérifiez votre boîte de réception – notre réponse vient de contact@zoomy.services",
+    "Any page": "N'importe quelle page",
+    "Standard, complex, animated": "Standard, complexe, animé",
+    "+ usage-based monthly · min $60/month": "+ mensuel basé sur l'utilisation · min 60 $/mois",
+    "Booking, checkout, admin panel": "Réservation, paiement, panneau d'administration"
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -1359,6 +1363,10 @@
     "// Works in EN · FR · ES — try it in any language": "// Funciona en EN · FR · ES — pruébalo en cualquier idioma",
     "You get a tailored proposal within 24h": "Recibirás una propuesta personalizada en 24h",
     "Usually within a few hours — we read every submission personally.": "Por lo general, en unas pocas horas; leemos cada envío personalmente.",
-    "Check your inbox — our reply comes from contact@zoomy.services": "Revise su bandeja de entrada: nuestra respuesta proviene de contact@zoomy.services"
+    "Check your inbox — our reply comes from contact@zoomy.services": "Revise su bandeja de entrada: nuestra respuesta proviene de contact@zoomy.services",
+    "Any page": "Cualquier página",
+    "Standard, complex, animated": "Estándar, complejo, animado",
+    "+ usage-based monthly · min $60/month": "+ mensual basado en el uso · mínimo $60/mes",
+    "Booking, checkout, admin panel": "Reserva, pago, panel de administración"
   }
 }

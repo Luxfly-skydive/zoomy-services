@@ -11,6 +11,7 @@ html
 html
 html
 html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -221,7 +222,7 @@ html
 <div style="width:22px;height:22px;border-radius:50%;background:rgba(99,102,241,.3);border:1px solid rgba(99,102,241,.5);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#a5b4fc;flex-shrink:0;margin-top:1px;">2</div>
 <div><div style="font-size:.875rem;color:#fff;font-weight:600;margin-bottom:2px;">Vous recevez une proposition sur mesure sous 24h</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5;">Prix ​​fixe, portée complète, calendrier clair. Pas d’estimations vagues.</div></div>
 </div>
-<div style="display:flex;align-items:flex-start;gap:12px;">
+<div id="next-step-free-page" style="display:none;align-items:flex-start;gap:12px;">
 <div style="width:22px;height:22px;border-radius:50%;background:rgba(99,102,241,.3);border:1px solid rgba(99,102,241,.5);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#a5b4fc;flex-shrink:0;margin-top:1px;">3</div>
 <div><div style="font-size:.875rem;color:#fff;font-weight:600;margin-bottom:2px;">Nous construisons d'abord votre page d'accueil gratuite</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5;">Vrai design, vrai code. Vous l’approuvez avant que quoi que ce soit ne soit payé.</div></div>
 </div>
@@ -236,7 +237,7 @@ html
 <div style="display:flex;flex-direction:column;gap:.6rem;">
 <div style="font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> Vérifiez votre boîte de réception – notre réponse vient de contact@zoomy.services</div>
 <div style="font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> Nous inclurons un prix fixe et un calendrier dans notre première réponse</div>
-<div style="font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> La création gratuite de votre page d'accueil démarre dès que vous confirmez</div>
+<div id="success-free-page" style="display:none;font-size:.82rem;color:var(--muted);align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> La création gratuite de votre page d'accueil démarre dès que vous confirmez</div>
 </div>
 </div>
 </form>
@@ -244,6 +245,19 @@ html
 (function(){
   var form=document.getElementById('contact-form');
   if(!form)return;
+
+  // Show free homepage step only when a website service is selected
+  var WEB_SERVICES = ['Custom Website','Landing Page'];
+  function updateFreePageVisibility(){
+    var checked = Array.from(form.querySelectorAll('input[name="service"]:checked')).map(function(el){return el.value;});
+    var hasWeb = checked.some(function(v){return WEB_SERVICES.includes(v);});
+    var stepEl = document.getElementById('next-step-free-page');
+    if(stepEl) stepEl.style.display = hasWeb ? 'flex' : 'none';
+  }
+  form.querySelectorAll('input[name="service"]').forEach(function(cb){
+    cb.addEventListener('change', updateFreePageVisibility);
+  });
+
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var btn=document.getElementById('contact-submit');
@@ -255,8 +269,11 @@ html
     .then(function(r){return r.json()})
     .then(function(r){
       if(r.ok){
+        var hadWeb = Array.from(form.querySelectorAll('input[name="service"]:checked')).some(function(el){return WEB_SERVICES.includes(el.value);});
         form.reset();
         document.getElementById('contact-success').style.display='block';
+        var sfp = document.getElementById('success-free-page');
+        if(sfp) sfp.style.display = hadWeb ? 'flex' : 'none';
         btn.style.display='none';
       } else {
         btnText.textContent='Send Message';
@@ -331,29 +348,19 @@ html
 <div style="font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:1.25rem;padding-left:4px;">Développement de sites Web et d'applications Web</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
 <div class="card reveal-up" style="padding:1.5rem;">
-<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Page de contenu</div>
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">N'importe quelle page</div>
 <div style="font-size:1.6rem;font-weight:700;color:#fff;">De <span style="color:#fff;">$200</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Page d'informations/services standard</div>
-</div>
-<div class="card reveal-up" style="padding:1.5rem;">
-<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Page complexe</div>
-<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$300–400</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Page d'accueil, animations de héros</div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Standard, complexe, animé</div>
 </div>
 <div class="card reveal-up" style="padding:1.5rem;">
 <div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Page fonctionnelle</div>
-<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400–600</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Flux de réservation, paiement</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Réservation, paiement, panneau d'administration</div>
 </div>
 <div class="card reveal-up" style="padding:1.5rem;">
 <div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Système de réservation</div>
 <div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$600</span></div>
 <div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Créneaux en temps réel, paiements</div>
-</div>
-<div class="card reveal-up" style="padding:1.5rem;">
-<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Panneau d'administration</div>
-<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">CMS personnalisé, sécurisé par MFA</div>
 </div>
 <div class="card reveal-up" style="padding:1.5rem;">
 <div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Langue supplémentaire</div>
@@ -380,7 +387,7 @@ html
 <div class="card reveal-up" style="padding:1.75rem;border-color:rgba(99,102,241,.4);">
 <div style="font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">Agent téléphonique IA</div>
 <div style="font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:.25rem;">De <span style="color:#fff;">$600</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">+ mensuel basé sur l'utilisation (ElevenLabs + 40%)</div>
+<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">+ mensuel basé sur l'utilisation · min 60 $/mois</div>
 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;">
 <li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Répond à tous les appels entrants 24h/24 et 7j/7</li>
 <li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Réservation de calendrier en direct</li>

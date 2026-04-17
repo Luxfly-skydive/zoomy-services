@@ -25,6 +25,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -235,7 +237,7 @@
 <div style="width:22px;height:22px;border-radius:50%;background:rgba(99,102,241,.3);border:1px solid rgba(99,102,241,.5);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#a5b4fc;flex-shrink:0;margin-top:1px;">2</div>
 <div><div style="font-size:.875rem;color:#fff;font-weight:600;margin-bottom:2px;">You get a tailored proposal within 24h</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5;">Fixed price, full scope, clear timeline. No vague estimates.</div></div>
 </div>
-<div style="display:flex;align-items:flex-start;gap:12px;">
+<div id="next-step-free-page" style="display:none;align-items:flex-start;gap:12px;">
 <div style="width:22px;height:22px;border-radius:50%;background:rgba(99,102,241,.3);border:1px solid rgba(99,102,241,.5);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#a5b4fc;flex-shrink:0;margin-top:1px;">3</div>
 <div><div style="font-size:.875rem;color:#fff;font-weight:600;margin-bottom:2px;">We build your free homepage first</div><div style="font-size:.8rem;color:var(--muted);line-height:1.5;">Real design, real code. You approve it before anything is paid.</div></div>
 </div>
@@ -250,7 +252,7 @@
 <div style="display:flex;flex-direction:column;gap:.6rem;">
 <div style="font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> Check your inbox — our reply comes from contact@zoomy.services</div>
 <div style="font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> We'll include a fixed price and timeline in our first reply</div>
-<div style="font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> Your free homepage build starts as soon as you confirm</div>
+<div id="success-free-page" style="display:none;font-size:.82rem;color:var(--muted);align-items:center;gap:8px;"><span style="color:#4ade80;">›</span> Your free homepage build starts as soon as you confirm</div>
 </div>
 </div>
 </form>
@@ -258,6 +260,19 @@
 (function(){
   var form=document.getElementById('contact-form');
   if(!form)return;
+
+  // Show free homepage step only when a website service is selected
+  var WEB_SERVICES = ['Custom Website','Landing Page'];
+  function updateFreePageVisibility(){
+    var checked = Array.from(form.querySelectorAll('input[name="service"]:checked')).map(function(el){return el.value;});
+    var hasWeb = checked.some(function(v){return WEB_SERVICES.includes(v);});
+    var stepEl = document.getElementById('next-step-free-page');
+    if(stepEl) stepEl.style.display = hasWeb ? 'flex' : 'none';
+  }
+  form.querySelectorAll('input[name="service"]').forEach(function(cb){
+    cb.addEventListener('change', updateFreePageVisibility);
+  });
+
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var btn=document.getElementById('contact-submit');
@@ -269,8 +284,11 @@
     .then(function(r){return r.json()})
     .then(function(r){
       if(r.ok){
+        var hadWeb = Array.from(form.querySelectorAll('input[name="service"]:checked')).some(function(el){return WEB_SERVICES.includes(el.value);});
         form.reset();
         document.getElementById('contact-success').style.display='block';
+        var sfp = document.getElementById('success-free-page');
+        if(sfp) sfp.style.display = hadWeb ? 'flex' : 'none';
         btn.style.display='none';
       } else {
         btnText.textContent='Send Message';
@@ -345,29 +363,19 @@
 <div style="font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:1.25rem;padding-left:4px;">Website &amp; Web App Development</div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
 <div class="card reveal-up" style="padding:1.5rem;">
-<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Content page</div>
+<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Any page</div>
 <div style="font-size:1.6rem;font-weight:700;color:#fff;">From <span style="color:#fff;">$200</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Standard info/service page</div>
-</div>
-<div class="card reveal-up" style="padding:1.5rem;">
-<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Complex page</div>
-<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$300–400</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Homepage, hero animations</div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Standard, complex, animated</div>
 </div>
 <div class="card reveal-up" style="padding:1.5rem;">
 <div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Functional page</div>
-<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400–600</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Booking flow, checkout</div>
+<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400</span></div>
+<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Booking, checkout, admin panel</div>
 </div>
 <div class="card reveal-up" style="padding:1.5rem;">
 <div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Booking system</div>
 <div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$600</span></div>
 <div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">Real-time slots, payments</div>
-</div>
-<div class="card reveal-up" style="padding:1.5rem;">
-<div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Admin panel</div>
-<div style="font-size:1.6rem;font-weight:700;color:#fff;"><span style="color:#fff;">$400</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-top:.25rem;">MFA-secured, custom CMS</div>
 </div>
 <div class="card reveal-up" style="padding:1.5rem;">
 <div style="font-size:.75rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em;">Extra language</div>
@@ -394,7 +402,7 @@
 <div class="card reveal-up" style="padding:1.75rem;border-color:rgba(99,102,241,.4);">
 <div style="font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">AI Phone Agent</div>
 <div style="font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:.25rem;">From <span style="color:#fff;">$600</span></div>
-<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">+ usage-based monthly (ElevenLabs + 40%)</div>
+<div style="font-size:.8rem;color:var(--muted);margin-bottom:1.25rem;">+ usage-based monthly · min $60/month</div>
 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;">
 <li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Answers every inbound call 24/7</li>
 <li style="font-size:.875rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;"><span style="color:#10b981;flex-shrink:0;margin-top:2px;">✓</span>Live calendar booking</li>

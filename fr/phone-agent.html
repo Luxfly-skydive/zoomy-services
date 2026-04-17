@@ -9,6 +9,7 @@ html
 html
 html
 html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -441,19 +442,21 @@ html
                                : window.location.pathname.includes('/es/') ? 'es'
                                : (document.documentElement.lang || localStorage.getItem('zmy_lang') || 'en');
 
-                // Override firstMessage + language so agent responds in correct language
-                // "Zoomy Services" (no dot) so TTS doesn't say "Zoomy dot services"
-                // NOTE: prompt override requires "System prompt" enabled in ElevenLabs Security tab
-                // NOTE: language override requires the language added under Agent > Additional Languages
+                // Override firstMessage + language + system prompt to enforce language
+                // All three overrides are enabled on the agent (verified via API)
                 const firstMessages = {
                   'fr': "Bonjour ! Je suis l'assistante IA de Zoomy Services. Comment puis-je vous aider aujourd'hui ?",
                   'es': "¡Hola! Soy la asistente IA de Zoomy Services. ¿En qué puedo ayudarle hoy?",
-                  'en': "Hi! I'm the AI assistant for Zoomy Services. How can I help you today?"
+                  'en': "Hi there, this is Zoomy Services. I can help answer any questions about our services in any language. What can I do for you?"
                 };
-                // Build overrides — only include fields enabled in ElevenLabs Security tab
-                const agentOverride = {};
-                if (pageLang !== 'en') agentOverride.language = pageLang;
+                const systemPrompts = {
+                  'fr': `# Règles de prononciation\n- "Zoomy Services" se prononce "ZOU-mi Services" — jamais "Zoomy dot services".\n- L'email se dit "hello at ZOU-mi Services".\n\n# Langue (CRITIQUE)\nTu DOIS répondre UNIQUEMENT en français, sans exception. Ne passe jamais à l'anglais.\n\n# Personnalité\nTu es l'assistante IA de Zoomy Services, une agence digitale. Chaleureuse, directe et professionnelle.\n\n# Services\n1. Campagnes publicitaires (Meta, Google, TikTok) — à partir de 400$\n2. Sites web sur mesure (HTML/CSS/JS) — à partir de 200$/page\n3. Agents téléphoniques IA — à partir de 600$\n4. Chatbots IA — à partir de 500$\n\nPour un devis : contact@zoomy.services`,
+                  'es': `# Reglas de pronunciación\n- "Zoomy Services" — nunca "Zoomy dot services".\n- El email se dice "hello at Zoomy Services".\n\n# Idioma (CRÍTICO)\nDEBES responder ÚNICAMENTE en español, sin excepción. Nunca cambies al inglés.\n\n# Personalidad\nEres la asistente IA de Zoomy Services, una agencia digital. Cálida, directa y profesional.\n\n# Servicios\n1. Campañas publicitarias (Meta, Google, TikTok) — desde $400\n2. Sitios web personalizados (HTML/CSS/JS) — desde $200/página\n3. Agentes telefónicos IA — desde $600\n4. Chatbots IA — desde $500\n\nPara presupuestos: contact@zoomy.services`,
+                  'en': undefined
+                };
+                const agentOverride = { language: pageLang };
                 agentOverride.firstMessage = firstMessages[pageLang] || firstMessages['en'];
+                if (systemPrompts[pageLang]) agentOverride.prompt = { prompt: systemPrompts[pageLang] };
 
                 conv = await Conversation.startSession({
                   signedUrl,

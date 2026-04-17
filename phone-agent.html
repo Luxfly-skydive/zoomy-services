@@ -19,6 +19,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -451,22 +453,19 @@
                                : window.location.pathname.includes('/es/') ? 'es'
                                : (document.documentElement.lang || localStorage.getItem('zmy_lang') || 'en');
 
-                // Override firstMessage + system prompt to enforce language
+                // Override firstMessage + language so agent responds in correct language
                 // "Zoomy Services" (no dot) so TTS doesn't say "Zoomy dot services"
+                // NOTE: prompt override requires "System prompt" enabled in ElevenLabs Security tab
+                // NOTE: language override requires the language added under Agent > Additional Languages
                 const firstMessages = {
                   'fr': "Bonjour ! Je suis l'assistante IA de Zoomy Services. Comment puis-je vous aider aujourd'hui ?",
                   'es': "¡Hola! Soy la asistente IA de Zoomy Services. ¿En qué puedo ayudarle hoy?",
                   'en': "Hi! I'm the AI assistant for Zoomy Services. How can I help you today?"
                 };
-                // System prompt overrides force the LLM to respond in the correct language
-                const systemPrompts = {
-                  'fr': "Tu es l'assistante IA de démonstration de Zoomy Services, une agence digitale. Tu DOIS toujours répondre en français, sans exception. Aide les appelants avec leurs questions sur les services de Zoomy Services : sites web personnalisés, chatbots IA, agents téléphoniques IA, et gestion de campagnes publicitaires (Meta, Google, TikTok). Sois concise, professionnelle et chaleureuse. Pour des devis, dirige-les vers contact@zoomy.services.",
-                  'es': "Eres la asistente IA de demostración de Zoomy Services, una agencia digital. DEBES responder siempre en español, sin excepción. Ayuda a los llamantes con preguntas sobre los servicios de Zoomy Services: sitios web personalizados, chatbots IA, agentes telefónicos IA y gestión de campañas publicitarias (Meta, Google, TikTok). Sé concisa, profesional y amable. Para presupuestos, dirígelos a contact@zoomy.services.",
-                  'en': undefined
-                };
-                const agentOverride = { language: pageLang };
-                agentOverride.firstMessage = firstMessages[pageLang];
-                if (systemPrompts[pageLang]) agentOverride.prompt = { prompt: systemPrompts[pageLang] };
+                // Build overrides — only include fields enabled in ElevenLabs Security tab
+                const agentOverride = {};
+                if (pageLang !== 'en') agentOverride.language = pageLang;
+                agentOverride.firstMessage = firstMessages[pageLang] || firstMessages['en'];
 
                 conv = await Conversation.startSession({
                   signedUrl,
@@ -491,11 +490,22 @@
                     const text = msg.message || msg.text || '';
                     if (text && text.trim()) transcriptLines.push({ role, text: text.trim() });
                   },
-                  onDisconnect: () => resetUI('Call ended'),
+                  onDisconnect: (details) => {
+                    if (details && details.reason === 'error') {
+                      const code = details.closeCode ? ` (${details.closeCode})` : '';
+                      resetUI(null);
+                      status.textContent = 'Connection error' + code + '. Try again.';
+                      status.style.color = '#ef4444';
+                    } else {
+                      resetUI('Call ended');
+                    }
+                  },
                   onError: (err) => {
                     btn.disabled = false;
                     resetUI(null);
-                    status.textContent = 'Error: ' + (err.message || 'Could not connect');
+                    const msg = err.closeReason || err.message || 'Could not connect';
+                    const code = err.closeCode ? ` [${err.closeCode}]` : '';
+                    status.textContent = 'Error: ' + msg + code;
                     status.style.color = '#ef4444';
                   }
                 });

@@ -4,6 +4,7 @@ html
 html
 html
 html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -13,7 +14,7 @@ html
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/style.css?v=20260416b" rel="stylesheet"/>
 <style>
 /* ── Services as clean text rows ── */
 .services-list{margin-top:3rem}
@@ -522,7 +523,7 @@ html
 </ul></div>
 <div class="footer-col"><h4 data-i18n="footer.contact">Contacter</h4><ul>
 <li><a href="contact.html">Démarrer un projet</a></li>
-<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+<li><a href="mailto:contact@zoomy.services">contact@zoomy.services</a></li>
 </ul>
 <div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Ouvert aux projets</span></div>
 </div>
@@ -533,8 +534,79 @@ html
 </div>
 </div>
 </footer>
-<script src="../js/main.js"></script>
+<script>
+// ── Homepage chatbot demo wiring ───────────────────────────────────────────
+(function() {
+  function initDemo() {
+    if (!window.__zmy) { setTimeout(initDemo, 50); return; }
+    var messagesEl = document.getElementById('chatbot-messages');
+    var inputEl    = document.getElementById('chatbot-input-field');
+    var sendBtn    = document.getElementById('chatbot-send');
+    if (!messagesEl || !inputEl || !sendBtn) return;
 
-<script src="../js/chatbot.js"></script>
+    // Pre-seed history with the visible demo conversation
+    var history = [
+      { role: 'user', content: 'Do you set up hosting for websites?' },
+      { role: 'assistant', content: 'Yes — we handle domain registration and hosting setup so you don't have to figure any of that out. You get a live URL, not just files.' }
+    ];
+    var AI_WORKER = 'https://zoomy-ai.zoozoomfast.workers.dev/chat';
+
+    function appendMsg(text, role) {
+      var div = document.createElement('div');
+      div.className = 'msg msg-' + role;
+      var html = text
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/_(.+?)_/g, '<em>$1</em>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+        .replace(/\n/g, '<br>');
+      div.innerHTML = html;
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    async function sendMessage() {
+      var text = inputEl.value.trim();
+      if (!text) return;
+      appendMsg(text, 'user');
+      inputEl.value = '';
+      history.push({ role: 'user', content: text });
+      var typing = document.createElement('div');
+      typing.className = 'msg msg-bot';
+      typing.textContent = '…';
+      messagesEl.appendChild(typing);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      // Always use Gemini AI — skip KB entirely for the demo widget
+      try {
+        var res = await fetch(AI_WORKER, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, history: history.slice(-8) })
+        });
+        if (res.ok) {
+          var data = await res.json();
+          typing.remove();
+          appendMsg(data.reply, 'bot');
+          history.push({ role: 'assistant', content: data.reply });
+          return;
+        }
+      } catch(e) {}
+      // Gemini unavailable — fall back to KB
+      var response = window.__zmy.getResponse(text);
+      typing.remove();
+      appendMsg(response, 'bot');
+      history.push({ role: 'assistant', content: response });
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    inputEl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+    });
+  }
+  initDemo();
+})();
+</script>
+<script src="../js/main.js?v=20260416b"></script>
+
+<script src="../js/chatbot.js?v=20260416b"></script>
 </body>
 </html>

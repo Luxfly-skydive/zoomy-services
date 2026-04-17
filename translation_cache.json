@@ -655,7 +655,15 @@
     "Reporting": "Rapports",
     "The more detail you share, the better we can scope the chatbot and give you an accurate quote.": "Plus vous partagez de détails, mieux nous pouvons évaluer le chatbot et vous fournir un devis précis.",
     "// No credit card. No commitment. Just results.": "// Pas de carte de crédit. Aucun engagement. Juste des résultats.",
-    "Switch language mid-conversation — the agent responds in the same language": "Changer de langue en cours de conversation : l'agent répond dans la même langue"
+    "Switch language mid-conversation — the agent responds in the same language": "Changer de langue en cours de conversation : l'agent répond dans la même langue",
+    "Mute": "Muet",
+    "View Call Transcript": "Afficher la transcription de l'appel",
+    "or call directly": "ou appelez directement",
+    "Speaker": "Président",
+    "Every project is custom-scoped. Email us at contact@zoomy.services with your project description and we'll reply within 24 hours with a tailored quote. Pricing depends on scope, complexity, and timeline. We always work to fixed budgets — no hourly billing.": "Chaque projet est personnalisé. Envoyez-nous un e-mail à contact@zoomy.services avec la description de votre projet et nous vous répondrons dans les 24 heures avec un devis sur mesure. Le prix dépend de la portée, de la complexité et du calendrier. Nous travaillons toujours avec des budgets fixes – pas de facturation horaire.",
+    "We'll be in touch within 24 hours.": "Nous vous contacterons dans les 24 heures.",
+    "Message sent!": "Message envoyé !",
+    "Everything you need to know about working with us. Can't find your answer? Email contact@zoomy.services.": "Tout ce que vous devez savoir pour travailler avec nous. Vous ne trouvez pas votre réponse ? Envoyez un e-mail à contact@zoomy.services."
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -1313,6 +1321,14 @@
     "Reporting": "Informes",
     "The more detail you share, the better we can scope the chatbot and give you an accurate quote.": "Cuantos más detalles comparta, mejor podremos analizar el chatbot y ofrecerle una cotización precisa.",
     "// No credit card. No commitment. Just results.": "// Sin tarjeta de crédito. Sin compromiso. Sólo resultados.",
-    "Switch language mid-conversation — the agent responds in the same language": "Cambiar de idioma en mitad de la conversación: el agente responde en el mismo idioma"
+    "Switch language mid-conversation — the agent responds in the same language": "Cambiar de idioma en mitad de la conversación: el agente responde en el mismo idioma",
+    "Mute": "Silenciar",
+    "View Call Transcript": "Ver transcripción de la llamada",
+    "or call directly": "o llama directamente",
+    "Speaker": "Orador",
+    "Every project is custom-scoped. Email us at contact@zoomy.services with your project description and we'll reply within 24 hours with a tailored quote. Pricing depends on scope, complexity, and timeline. We always work to fixed budgets — no hourly billing.": "Cada proyecto tiene un alcance personalizado. Envíenos un correo electrónico a contact@zoomy.services con la descripción de su proyecto y le responderemos dentro de las 24 horas con un presupuesto personalizado. El precio depende del alcance, la complejidad y el cronograma. Siempre trabajamos con presupuestos fijos, sin facturación por horas.",
+    "We'll be in touch within 24 hours.": "Nos comunicaremos en 24 horas.",
+    "Message sent!": "¡Mensaje enviado!",
+    "Everything you need to know about working with us. Can't find your answer? Email contact@zoomy.services.": "Todo lo que necesitas saber para trabajar con nosotros. ¿No encuentras tu respuesta? Envíe un correo electrónico a contact@zoomy.services."
   }
 }

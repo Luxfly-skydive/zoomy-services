@@ -5,6 +5,7 @@ HTML
 HTML
 HTML
 HTML
+HTML
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -14,7 +15,7 @@ HTML
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;margin-top:3rem}
 .contact-info-item{display:flex;align-items:flex-start;gap:16px;padding:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1rem}
@@ -69,7 +70,7 @@ HTML
 <div class="contact-icon">✉</div>
 <div>
 <div style="font-weight:600;color:#fff;margin-bottom:.25rem;font-size:.95rem;">Envíenos un correo electrónico</div>
-<div style="color:var(--text-2);font-size:.9rem;">hello@zoomy.services</div>
+<div style="color:var(--text-2);font-size:.9rem;">contact@zoomy.services</div>
 <div style="color:var(--muted);font-size:.8rem;margin-top:3px;">Respondemos en 24 horas</div>
 </div>
 </div>
@@ -156,55 +157,92 @@ HTML
 <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.5rem;">Iniciar un proyecto</h3>
 <p style="color:var(--muted);font-size:.875rem;">Complete el formulario y nos comunicaremos con usted dentro de las 24 horas.</p>
 </div>
-<form>
+<form id="contact-form">
 <div class="form-row">
 <div class="form-field">
 <label data-i18n="contact.form.firstname">Nombre</label>
-<input placeholder="Nombre" type="text"/>
+<input name="first_name" placeholder="Nombre" required="" type="text"/>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.lastname">Apellido</label>
-<input placeholder="Apellido" type="text"/>
+<input name="last_name" placeholder="Apellido" type="text"/>
 </div>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.email">Dirección de correo electrónico</label>
-<input placeholder="your@email.com" type="email"/>
+<input name="email" placeholder="your@email.com" required="" type="email"/>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.company">Empresa / Sitio web</label>
-<input placeholder="empresa.com (opcional)" type="text"/>
+<input name="company" placeholder="empresa.com (opcional)" type="text"/>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.need">¿Qué estás buscando?</label>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.5rem;">
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Archivos de campaña
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Campaign Files"/> Archivos de campaña
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Sitio web personalizado
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Custom Website"/> Sitio web personalizado
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Página de destino
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Landing Page"/> Página de destino
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Chatbot de IA
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="AI Chatbot"/> Chatbot de IA
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Agente de IA por teléfono
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Phone AI Agent"/> Agente de IA por teléfono
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox"/> Dominio y alojamiento
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Domain &amp; Hosting"/> Dominio y alojamiento
               </label>
 </div>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.message">Cuéntanos tu proyecto</label>
-<textarea data-i18n-ph="contact.form.placeholder" placeholder="Describe lo que necesitas, tu audiencia y cualquier detalle o plazo relevante."></textarea>
+<textarea data-i18n-ph="contact.form.placeholder" name="message" placeholder="Describe lo que necesitas, tu audiencia y cualquier detalle o plazo relevante." required=""></textarea>
 </div>
-<button class="btn btn-primary" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send">Enviar mensaje</span> ›</button>
+<button class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send" id="contact-btn-text">Enviar mensaje</span> ›</button>
 <p data-i18n="contact.form.privacy" style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:1rem;">Su dirección de correo electrónico se utiliza únicamente para responder a su consulta y para cualquier correspondencia futura sobre proyectos.</p>
+<div id="contact-success" style="display:none;text-align:center;padding:1.5rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:12px;margin-top:1rem;">
+<div style="font-size:1.5rem;margin-bottom:.5rem;">✓</div>
+<div style="color:#4ade80;font-weight:600;margin-bottom:.25rem;">¡Mensaje enviado!</div>
+<div style="color:var(--muted);font-size:.875rem;">Nos comunicaremos en 24 horas.</div>
+</div>
 </form>
+<script>
+(function(){
+  var form=document.getElementById('contact-form');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=document.getElementById('contact-submit');
+    var btnText=document.getElementById('contact-btn-text');
+    btn.disabled=true;
+    btnText.textContent='Sending...';
+    var data=new FormData(form);
+    fetch('https://formspree.io/f/mgoraddk',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json()})
+    .then(function(r){
+      if(r.ok){
+        form.reset();
+        document.getElementById('contact-success').style.display='block';
+        btn.style.display='none';
+      } else {
+        btnText.textContent='Send Message';
+        btn.disabled=false;
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(function(){
+      btnText.textContent='Send Message';
+      btn.disabled=false;
+      alert('Something went wrong. Please try again.');
+    });
+  });
+})();
+</script>
 </div>
 </div>
 </div>
@@ -325,7 +363,7 @@ HTML
 </div>
 <!-- FOOTNOTE -->
 <div style="text-align:center;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);max-width:680px;margin:0 auto;">
-<p style="color:var(--muted);font-size:.875rem;line-height:1.7;margin:0;">Todos los precios son puntos de partida. El precio final del proyecto se acuerda en la etapa de información y se fija por escrito antes de comenzar. La plataforma siempre factura la inversión publicitaria directamente a su tarjeta; nunca lo manejamos. <a href="mailto:hello@zoomy.services" style="color:var(--accent);text-decoration:none;">hello@zoomy.services</a></p>
+<p style="color:var(--muted);font-size:.875rem;line-height:1.7;margin:0;">Todos los precios son puntos de partida. El precio final del proyecto se acuerda en la etapa de información y se fija por escrito antes de comenzar. La plataforma siempre factura la inversión publicitaria directamente a su tarjeta; nunca lo manejamos. <a href="mailto:contact@zoomy.services" style="color:var(--accent);text-decoration:none;">contact@zoomy.services</a></p>
 </div>
 </div>
 </section>
@@ -354,7 +392,7 @@ HTML
 </ul></div>
 <div class="footer-col"><h4 data-i18n="footer.contact">Contacto</h4><ul>
 <li><a class="active" href="contact.html">Iniciar un proyecto</a></li>
-<li><a href="mailto:hello@zoomy.services">hello@zoomy.services</a></li>
+<li><a href="mailto:contact@zoomy.services">contact@zoomy.services</a></li>
 </ul>
 <div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
 </div>
@@ -365,8 +403,8 @@ HTML
 </div>
 </div>
 </footer>
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=20260416"></script>
 
-<script src="../js/chatbot.js"></script>
+<script src="../js/chatbot.js?v=20260416"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ html
 html
 html
 html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -79,7 +80,11 @@ html
 
 @keyframes orbPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.12)}}
 @keyframes waveBounce{0%,100%{transform:scaleY(.4);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+.sections-reorder{display:flex;flex-direction:column}
 @media(max-width:900px){
+.sections-reorder{display:flex;flex-direction:column}
+#phone-agent-section{order:2}
+#our-services{order:1}
 .svc-row{grid-template-columns:1fr;gap:1.25rem}
 .svc-left{position:static}
 .steps-flow{grid-template-columns:repeat(2,1fr);gap:1.5rem}
@@ -173,8 +178,9 @@ html
 <span class="marquee-item"><span class="marquee-dot"></span>Panneaux d'administration</span>
 </div>
 </div>
-<!-- ═══════════ PHONE AGENT FEATURE ═══════════ -->
-<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<!-- ═══════════ PHONE AGENT FEATURE + SERVICES (reorder on mobile) ═══════════ -->
+<div class="sections-reorder">
+<section class="section" id="phone-agent-section" style="background:var(--bg-2);position:relative;overflow:hidden;">
 <div class="aurora" style="opacity:.4;">
 <div class="aurora-blob aurora-blob-1" style="background:radial-gradient(circle,#6366f1,transparent);animation-duration:16s;"></div>
 <div class="aurora-blob aurora-blob-2" style="animation-duration:20s;"></div>
@@ -355,6 +361,7 @@ Essayez la démo en direct
 </div>
 </div>
 </section>
+</div><!-- /sections-reorder -->
 <!-- ═══════════ HOW IT WORKS ═══════════ -->
 <section class="section" style="background:var(--bg-2);">
 <div class="section-inner">

@@ -96,6 +96,7 @@ nav{top:var(--bar-h)!important}
         el.addEventListener('click', function() {
           gtag('event', 'cta_click', {event_category: 'engagement', event_label: el.textContent.trim().substring(0,50)});
           clarity('event', 'cta_click');
+          fbq('track', 'Contact');
         });
       });
       // Track phone demo button
@@ -103,6 +104,7 @@ nav{top:var(--bar-h)!important}
         el.addEventListener('click', function() {
           gtag('event', 'phone_demo_click', {event_category: 'engagement'});
           clarity('event', 'phone_demo_click');
+          fbq('track', 'Contact');
         });
       });
       // Track free bar claim click
@@ -111,6 +113,7 @@ nav{top:var(--bar-h)!important}
         freeBar.querySelector('a') && freeBar.querySelector('a').addEventListener('click', function() {
           gtag('event', 'free_bar_claim', {event_category: 'engagement'});
           clarity('event', 'free_bar_claim');
+          fbq('track', 'Lead');
         });
       }
       // Track scroll depth (25%, 50%, 75%, 90%)
@@ -129,6 +132,7 @@ nav{top:var(--bar-h)!important}
         form.addEventListener('submit', function() {
           gtag('event', 'form_submit', {event_category: 'conversion', event_label: window.location.pathname});
           clarity('event', 'form_submit');
+          fbq('track', 'Lead');
         });
       });
     });
@@ -143,6 +147,7 @@ nav{top:var(--bar-h)!important}
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '972114368527990');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {content_name: document.title});
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=972114368527990&ev=PageView&noscript=1"/></noscript>

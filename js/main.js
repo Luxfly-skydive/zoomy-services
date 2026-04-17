@@ -10,23 +10,7 @@ const nav=document.querySelector('nav');
 if(nav){
   const s=()=>nav.classList.toggle('scrolled',window.scrollY>20);
   window.addEventListener('scroll',s,{passive:true});s();
-  /* Mobile: hide nav on scroll down, show on scroll up */
-  let lastY=window.scrollY,ticking=false;
-  window.addEventListener('scroll',()=>{
-    if(!ticking){
-      requestAnimationFrame(()=>{
-        const y=window.scrollY;
-        if(window.innerWidth<=768){
-          const links=document.getElementById('navLinks');
-          const isOpen=links&&links.classList.contains('open');
-          if(!isOpen){nav.classList.toggle('nav-hidden',y>y&&y>80);}
-          if(y>lastY+8&&y>80){nav.classList.add('nav-hidden');}
-          else if(y<lastY-4){nav.classList.remove('nav-hidden');}
-        }else{nav.classList.remove('nav-hidden');}
-        lastY=y;ticking=false;
-      });ticking=true;
-    }
-  },{passive:true});
+
 }
 const toggle=document.getElementById('navToggle');
 const links=document.getElementById('navLinks');
@@ -50,8 +34,8 @@ if(toggle&&links){
     ls.appendChild(enBtn);ls.appendChild(frA);ls.appendChild(esA);
     mf.appendChild(cta);mf.appendChild(ls);links.appendChild(mf);
   }
-  function openMenu(){toggle.classList.add('open');links.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
-  function closeMenu(){toggle.classList.remove('open');links.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
+  function openMenu(){toggle.classList.add('open');links.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';const b=document.getElementById('zmy-bubble');if(b)b.style.display='none';}
+  function closeMenu(){toggle.classList.remove('open');links.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';const b=document.getElementById('zmy-bubble');if(b)b.style.display='';}
   toggle.addEventListener('click',()=>{links.classList.contains('open')?closeMenu():openMenu();});
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
   overlay.addEventListener('click',closeMenu);

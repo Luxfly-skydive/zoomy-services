@@ -250,7 +250,7 @@ HTML
                 const { signedUrl } = await tokenRes.json();
                 const pageLang = window.location.pathname.includes('/fr/') ? 'fr'
                                : window.location.pathname.includes('/es/') ? 'es'
-                               : (localStorage.getItem('zmy_lang') || 'en');
+                               : (document.documentElement.lang || localStorage.getItem('zmy_lang') || 'en');
                 conv = await Conversation.startSession({
                   signedUrl,
                   overrides: { agent: { language: pageLang } },

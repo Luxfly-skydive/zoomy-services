@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .agent-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .capability-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem}
@@ -322,10 +322,15 @@
             };
 
             // Play one telephone ring using Web Audio API
+            // Shared AudioContext — created once, kept alive so ElevenLabs inherits
+            // a warm audio pipeline (avoids glitchy/high-pitched first utterance)
+            let sharedAudioCtx = null;
+
             function playRing() {
               return new Promise(resolve => {
                 try {
-                  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                  sharedAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                  const ctx = sharedAudioCtx;
                   const t = ctx.currentTime;
                   // UK/EU ring: two bursts of dual-tone (440Hz + 480Hz), 0.4s each
                   [[t, t+0.4],[t+0.65, t+1.05]].forEach(([s, e]) => {
@@ -340,7 +345,18 @@
                       osc.start(s); osc.stop(e);
                     });
                   });
-                  setTimeout(() => { ctx.close(); resolve(); }, 1300);
+                  // DO NOT close ctx — keep it alive so ElevenLabs reuses the warm pipeline
+                  // Play a silent buffer at end to hold the context in running state
+                  setTimeout(() => {
+                    try {
+                      const silence = ctx.createBuffer(1, ctx.sampleRate * 0.1, ctx.sampleRate);
+                      const src = ctx.createBufferSource();
+                      src.buffer = silence;
+                      src.connect(ctx.destination);
+                      src.start();
+                    } catch(e) {}
+                    resolve();
+                  }, 1300);
                 } catch { resolve(); }
               });
             }
@@ -421,10 +437,11 @@
                 status.textContent = 'Connecting...';
 
                 transcriptLines = [];
-                // Detect page language from URL path or localStorage
+                // Detect page language from URL path or current page lang attribute
+                // (document.documentElement.lang is set by i18n.js to whatever language is shown)
                 const pageLang = window.location.pathname.includes('/fr/') ? 'fr'
                                : window.location.pathname.includes('/es/') ? 'es'
-                               : (localStorage.getItem('zmy_lang') || 'en');
+                               : (document.documentElement.lang || localStorage.getItem('zmy_lang') || 'en');
 
                 conv = await Conversation.startSession({
                   signedUrl,
@@ -705,8 +722,8 @@
 </div>
 </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/chatbot.js"></script>
+<script src="js/main.js?v=20260416"></script>
+<script src="js/i18n.js?v=20260416"></script>
+<script src="js/chatbot.js?v=20260416"></script>
 </body>
 </html>

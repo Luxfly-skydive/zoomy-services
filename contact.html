@@ -11,6 +11,10 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -20,7 +24,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;margin-top:3rem}
 .contact-info-item{display:flex;align-items:flex-start;gap:16px;padding:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1rem}
@@ -166,7 +170,7 @@
 <div class="form-row">
 <div class="form-field">
 <label data-i18n="contact.form.firstname">First Name</label>
-<input name="first_name" placeholder="First name" type="text" required/>
+<input name="first_name" placeholder="First name" required="" type="text"/>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.lastname">Last Name</label>
@@ -175,7 +179,7 @@
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.email">Email Address</label>
-<input name="email" placeholder="your@email.com" type="email" required/>
+<input name="email" placeholder="your@email.com" required="" type="email"/>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.company">Company / Website</label>
@@ -185,30 +189,30 @@
 <label data-i18n="contact.form.need">What are you looking for?</label>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.5rem;">
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" name="service" type="checkbox" value="Campaign Files"/> Campaign Files
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Campaign Files"/> Campaign Files
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" name="service" type="checkbox" value="Custom Website"/> Custom Website
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Custom Website"/> Custom Website
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" name="service" type="checkbox" value="Landing Page"/> Landing Page
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Landing Page"/> Landing Page
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" name="service" type="checkbox" value="AI Chatbot"/> AI Chatbot
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="AI Chatbot"/> AI Chatbot
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" name="service" type="checkbox" value="Phone AI Agent"/> Phone AI Agent
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Phone AI Agent"/> Phone AI Agent
               </label>
 <label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" name="service" type="checkbox" value="Domain &amp; Hosting"/> Domain &amp; Hosting
+<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Domain &amp; Hosting"/> Domain &amp; Hosting
               </label>
 </div>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.message">Tell us about your project</label>
-<textarea data-i18n-ph="contact.form.placeholder" name="message" placeholder="Describe what you need, your audience, and any relevant details or deadlines." required></textarea>
+<textarea data-i18n-ph="contact.form.placeholder" name="message" placeholder="Describe what you need, your audience, and any relevant details or deadlines." required=""></textarea>
 </div>
-<button class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;" type="submit"><span id="contact-btn-text" data-i18n="contact.form.send">Send Message</span> ›</button>
+<button class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send" id="contact-btn-text">Send Message</span> ›</button>
 <p data-i18n="contact.form.privacy" style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:1rem;">Your email address is used solely to respond to your enquiry and for any future project correspondence.</p>
 <div id="contact-success" style="display:none;text-align:center;padding:1.5rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:12px;margin-top:1rem;">
 <div style="font-size:1.5rem;margin-bottom:.5rem;">✓</div>
@@ -408,8 +412,8 @@
 </div>
 </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/chatbot.js"></script>
+<script src="js/main.js?v=20260416"></script>
+<script src="js/i18n.js?v=20260416"></script>
+<script src="js/chatbot.js?v=20260416"></script>
 </body>
 </html>

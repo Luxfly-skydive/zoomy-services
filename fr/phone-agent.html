@@ -5,6 +5,7 @@ html
 html
 html
 html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -437,9 +438,18 @@ html
                                : window.location.pathname.includes('/es/') ? 'es'
                                : (document.documentElement.lang || localStorage.getItem('zmy_lang') || 'en');
 
+                // Override firstMessage in target language so LLM continues in that language
+                const firstMessages = {
+                  'fr': "Bonjour ! Je suis l'assistante IA de Zoomy.services. Comment puis-je vous aider aujourd'hui ?",
+                  'es': "¡Hola! Soy la asistente IA de Zoomy.services. ¿En qué puedo ayudarle hoy?",
+                  'en': undefined
+                };
+                const langOverride = { language: pageLang };
+                if (firstMessages[pageLang]) langOverride.firstMessage = firstMessages[pageLang];
+
                 conv = await Conversation.startSession({
                   signedUrl,
-                  overrides: { agent: { language: pageLang } },
+                  overrides: { agent: langOverride },
                   onConnect: () => {
                     btn.disabled = false;
                     label.textContent = 'End Call';

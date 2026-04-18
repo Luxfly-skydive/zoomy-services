@@ -18,8 +18,8 @@ button{font-family:inherit;cursor:pointer}
 #scroll-progress{position:fixed;top:0;left:0;z-index:10001;height:2px;width:0%;background:var(--grad-main);transition:width .1s linear;box-shadow:0 0 8px var(--glow-p)}
 nav{position:fixed;top:0;left:0;right:0;z-index:10000;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between;background:transparent;transition:background var(--transition),border-color var(--transition);border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(2,2,8,.96);border-bottom-color:var(--border-b)}
-.nav-logo{font-family:var(--font-display);font-weight:700;font-size:1.65rem;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;flex-shrink:0;text-decoration:none}
-.nav-logo-sub{color:var(--muted);-webkit-text-fill-color:var(--muted);font-weight:300;font-size:.75rem;display:none;letter-spacing:.05em;font-family:var(--font-body)}
+.nav-logo{font-family:var(--font-display);font-weight:700;font-size:1.65rem;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;flex-shrink:0;text-decoration:none;display:flex;flex-direction:column;justify-content:center;height:68px}
+.nav-logo-sub{color:var(--muted);-webkit-text-fill-color:var(--muted);font-weight:300;font-size:.75rem;display:block;letter-spacing:.05em;font-family:var(--font-body)}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}.nav-links>li{display:flex;align-items:center}.nav-links a{white-space:nowrap}
 .nav-links a{font-size:.875rem;font-weight:500;color:var(--text-2);position:relative;transition:color var(--transition);text-decoration:none}
 .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--grad-main);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.4,0,.2,1)}

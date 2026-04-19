@@ -1467,11 +1467,9 @@ function render() {
     input.style.height = Math.min(input.scrollHeight, 80) + 'px';
   });
 
-  // Attention bubble — shown once ever (persists across pages via localStorage)
+  // Attention bubble — shown every page load, auto-dismisses after 8s
   setTimeout(() => {
     if (isOpen) return;
-    if (localStorage.getItem('zmy_popup_seen')) return;
-    localStorage.setItem('zmy_popup_seen', '1');
     const attn = document.createElement('div');
     attn.id = 'zmy-attn';
     attn.textContent = t('Have a question? Ask me! 💬','Une question ? Demandez-moi ! 💬','¿Tienes una pregunta? ¡Pregúntame! 💬');

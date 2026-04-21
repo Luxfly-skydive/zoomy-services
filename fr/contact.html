@@ -377,7 +377,8 @@ html
     btnText.textContent='Sending...';
     var data=new FormData(form);
     fireCAPI(data);
-    fetch('https://formspree.io/f/mgoraddk',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+    data.append('_site','zoomy.services');
+    fetch('https://zoomy-forms.zoozoomfast.workers.dev',{method:'POST',body:data})
     .then(function(r){return r.json()})
     .then(function(r){
       if(r.ok){

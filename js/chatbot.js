@@ -1456,7 +1456,11 @@ function render() {
 
   const AI_WORKER = 'https://zoomy-ai.zoozoomfast.workers.dev/chat';
 
+  let sending = false;
   async function send() {
+    if (sending) return;
+    sending = true;
+    setTimeout(() => { sending = false; }, 1500);
     const text = input.value.trim();
     if (!text) return;
     addMsg(text, 'user');

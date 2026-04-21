@@ -1,31 +1,4 @@
 <!DOCTYPE html>
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -40,74 +13,90 @@ html
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="../css/style.css?v=20260416" rel="stylesheet"/>
 <style>
+/* ── Phase rows ── */
 .phase-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
-.phase-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.phase-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start;position:relative}
 .phase-row:first-child{border-top:1px solid var(--border-b)}
 .phase-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
 .phase-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff}
 .phase-accent{display:block;width:32px;height:2px;border-radius:2px;margin-top:.75rem}
+.phase-ghost{font-family:var(--font-display);font-size:7rem;font-weight:900;line-height:1;position:absolute;right:0;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.06}
 .item-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
 .item-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text-2);line-height:1.6}
 .item-list li::before{content:"\2014";color:var(--muted);flex-shrink:0;margin-top:1px}
+
+/* ── Stats strip ── */
+.stats-strip{padding:3rem 2rem;background:var(--surface);border-top:1px solid var(--border-b);border-bottom:1px solid var(--border-b)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:var(--max-w);margin:0 auto}
+.stat-block{text-align:center;padding:1.25rem 1rem}
+.stat-block-num{font-family:var(--font-display);font-size:2rem;font-weight:700;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.4rem}
+.stat-block-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono)}
+.stat-block-divider{width:1px;background:var(--border-b);align-self:stretch}
+
+/* ── Platform grid ── */
 .platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
-.platform-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden}
+.platform-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden;transition:transform var(--transition),border-color var(--transition),box-shadow var(--transition)}
+.platform-item:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
 .platform-item::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
 .platform-item.meta::before{background:linear-gradient(90deg,#1877f2,#e1306c)}
-.platform-item.google::before{background:linear-gradient(90deg,#4285f4,#34a853,#ea4335)}
-.platform-item.tiktok::before{background:linear-gradient(90deg,#010101,#ff0050)}
+.platform-item.google::before{background:linear-gradient(90deg,#4285f4,#34a853,#fbbc04,#ea4335)}
+.platform-item.tiktok::before{background:linear-gradient(90deg,#010101,#69c9d0,#ff0050)}
 .platform-item.linkedin::before{background:linear-gradient(90deg,#0077b5,#00a0dc)}
+.platform-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.1rem;font-weight:900;font-family:var(--font-display);flex-shrink:0}
+.platform-item.meta .platform-icon{background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.25)}
+.platform-item.google .platform-icon{background:rgba(66,133,244,.12);border:1px solid rgba(66,133,244,.2)}
+.platform-item.tiktok .platform-icon{background:rgba(255,0,80,.1);border:1px solid rgba(255,0,80,.2)}
+.platform-item.linkedin .platform-icon{background:rgba(0,119,181,.15);border:1px solid rgba(0,119,181,.25)}
 .platform-name{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.6rem}
 .platform-desc{font-size:.875rem;color:var(--text-2);line-height:1.7}
-@media(max-width:768px){.phase-row{grid-template-columns:1fr;gap:1rem}.platform-grid{grid-template-columns:1fr}}
+.platform-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.platform-tag{font-family:var(--font-mono);font-size:.62rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border-b);padding:3px 9px;border-radius:var(--radius-full);letter-spacing:.05em}
+
+/* ── Pricing callout ── */
+.pricing-callout{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;position:relative;overflow:hidden}
+.pricing-callout::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main)}
+.pricing-half{padding:2.25rem 2.5rem;position:relative}
+.pricing-half:first-child{border-right:1px solid var(--border-b)}
+.pricing-half-tag{font-family:var(--font-mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.75rem}
+.pricing-half-price{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.25rem}
+.pricing-half-price span{font-size:1rem;font-weight:400;color:var(--muted)}
+.pricing-half-desc{font-size:.875rem;color:var(--text-2);line-height:1.65;margin-top:.75rem}
+.pricing-half-list{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.4rem}
+.pricing-half-list li{font-size:.8rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start}
+.pricing-half-list li::before{content:"✓";color:var(--primary);font-weight:700;flex-shrink:0}
+
+@media(max-width:768px){
+  .phase-row{grid-template-columns:1fr;gap:1rem}
+  .platform-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .pricing-callout{grid-template-columns:1fr}
+  .pricing-half:first-child{border-right:none;border-bottom:1px solid var(--border-b)}
+  .phase-ghost{display:none}
+}
 </style>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
-<!-- Google Analytics 4 -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-L5RX761T33"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-L5RX761T33', {
-      send_page_view: true
-    });
-  </script>
-<!-- Microsoft Clarity -->
+    gtag('config', 'G-L5RX761T33', { send_page_view: true });
+</script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wd5th9teha");
-  </script>
-<!-- Custom event tracking -->
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Track outbound CTA clicks (contact page links)
       document.querySelectorAll('a[href*="contact"]').forEach(function(el) {
         el.addEventListener('click', function() {
           gtag('event', 'cta_click', {event_category: 'engagement', event_label: el.textContent.trim().substring(0,50)});
-          clarity('event', 'cta_click');
-          fbq('track', 'Contact');
+          clarity('event', 'cta_click'); fbq('track', 'Contact');
         });
       });
-      // Track phone demo button
-      document.querySelectorAll('[id*="demo"], [class*="demo"], [id*="phone"], a[href*="tel:"]').forEach(function(el) {
-        el.addEventListener('click', function() {
-          gtag('event', 'phone_demo_click', {event_category: 'engagement'});
-          clarity('event', 'phone_demo_click');
-          fbq('track', 'Contact');
-        });
-      });
-      // Track free bar claim click
-      var freeBar = document.getElementById('free-bar');
-      if (freeBar) {
-        freeBar.querySelector('a') && freeBar.querySelector('a').addEventListener('click', function() {
-          gtag('event', 'free_bar_claim', {event_category: 'engagement'});
-          clarity('event', 'free_bar_claim');
-          fbq('track', 'Lead');
-        });
-      }
-      // Track scroll depth (25%, 50%, 75%, 90%)
       var scrollMilestones = {25: false, 50: false, 75: false, 90: false};
       window.addEventListener('scroll', function() {
         var scrollPct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
@@ -118,29 +107,18 @@ html
           }
         });
       }, {passive: true});
-      // Track contact form submit
-      document.querySelectorAll('form').forEach(function(form) {
-        form.addEventListener('submit', function() {
-          gtag('event', 'form_submit', {event_category: 'conversion', event_label: window.location.pathname});
-          clarity('event', 'form_submit');
-          fbq('track', 'Lead');
-        });
-      });
     });
-  </script>
-<!-- ═══ END TRACKING ═══ -->
-<!-- ═══ META PIXEL ═══ -->
+</script>
+<!-- Meta Pixel -->
 <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '972114368527990');
-    fbq('track', 'PageView');
-  </script>
+    fbq('init', '972114368527990'); fbq('track', 'PageView');
+</script>
 <noscript><img height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
-<!-- ═══ END META PIXEL ═══ -->
 <script>localStorage.setItem('zmy_lang','fr');</script></head>
 <body>
 <div id="scroll-progress"></div>
@@ -168,18 +146,39 @@ html
 <button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
+<!-- HERO -->
 <section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
 <div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
 <div class="grid-overlay"></div>
 <div class="section-inner" style="z-index:2;text-align:center;">
 <div class="section-tag" style="margin-bottom:1.5rem;">Médias payants</div>
 <h1 style="margin-bottom:1.5rem;">
-<span class="glitch grad-text-animated">Campagnes créées</span><br/>
-      et géré.
-    </h1>
+<span class="glitch grad-text-animated">Campagnes créées</span><br/>et géré.
+</h1>
 <p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;margin:0 auto;">Nous créons et gérons des campagnes médiatiques payantes sur Meta, Google, TikTok et LinkedIn. Cela signifie la configuration initiale, l'optimisation continue et le reporting – gérés par nos soins, dans votre compte publicitaire.</p>
 </div>
 </section>
+<!-- STATS STRIP -->
+<div class="stats-strip">
+<div class="stats-row">
+<div class="stat-block reveal">
+<div class="stat-block-num">4</div>
+<div class="stat-block-label">Plateformes</div>
+</div>
+<div class="stat-block reveal reveal-delay-1">
+<div class="stat-block-num">Entonnoir complet</div>
+<div class="stat-block-label">Stratégie de reporting</div>
+</div>
+<div class="stat-block reveal reveal-delay-2">
+<div class="stat-block-num">Hebdomadaire</div>
+<div class="stat-block-label">Cycle d'optimisation</div>
+</div>
+<div class="stat-block reveal reveal-delay-3">
+<div class="stat-block-num">Le vôtre</div>
+<div class="stat-block-label">Vous êtes propriétaire du compte publicitaire</div>
+</div>
+</div>
+</div>
 <!-- HOW WE WORK -->
 <section class="section">
 <div class="section-inner">
@@ -188,6 +187,7 @@ html
 <p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:640px;margin-top:.75rem;">La gestion de campagne est un processus continu. Vous trouverez ci-dessous ce que nous faisons à chaque étape.</p>
 <div class="phase-rows">
 <div class="phase-row reveal">
+<span class="phase-ghost">01</span>
 <div>
 <div class="phase-label">Phase 01</div>
 <div class="phase-name">Stratégie &amp;<br/>Configuration</div>
@@ -206,6 +206,7 @@ html
 </div>
 </div>
 <div class="phase-row reveal">
+<span class="phase-ghost">02</span>
 <div>
 <div class="phase-label">Phase 02</div>
 <div class="phase-name">Lancement &amp;<br/>Surveillance</div>
@@ -222,6 +223,7 @@ html
 </div>
 </div>
 <div class="phase-row reveal">
+<span class="phase-ghost">03</span>
 <div>
 <div class="phase-label">Phase 03</div>
 <div class="phase-name">Optimisation</div>
@@ -240,6 +242,7 @@ html
 </div>
 </div>
 <div class="phase-row reveal">
+<span class="phase-ghost">04</span>
 <div>
 <div class="phase-label">Phase 04</div>
 <div class="phase-name">Rapports</div>
@@ -266,20 +269,61 @@ html
 <p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:600px;margin-top:.75rem;">Chaque plateforme a des mécanismes, des publics et des formats créatifs différents. Nous travaillons avec chacun différemment en fonction de ce que l'objectif exige.</p>
 <div class="platform-grid stagger-children">
 <div class="platform-item meta reveal">
+<div class="platform-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z" fill="#1877f2"></path></svg>
+</div>
 <div class="platform-name">Méta-annonces</div>
 <div class="platform-desc">Campagnes Facebook et Instagram couvrant à la fois la prospection et le retargeting. Comprend des audiences personnalisées, des sosies, des publicités de produits dynamiques et des structures d'entonnoir complètes. Nous gérons les pixels, les événements de conversion et les flux de catalogue le cas échéant.</div>
+<div class="platform-tags"><span class="platform-tag">Audiences personnalisées</span><span class="platform-tag">Sosies</span><span class="platform-tag">Reciblage</span><span class="platform-tag">Annonces dynamiques</span></div>
 </div>
 <div class="platform-item google reveal reveal-delay-1">
+<div class="platform-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+</div>
 <div class="platform-name">Annonces Google</div>
 <div class="platform-desc">Campagnes de recherche, display, Performance Max et YouTube. Nous gérons la stratégie de mots clés, les listes négatives, le contenu publicitaire, les enchères et le suivi des conversions. Les rapports sont liés aux données de conversion réelles, et pas seulement aux clics.</div>
+<div class="platform-tags"><span class="platform-tag">Rechercher</span><span class="platform-tag">Performances maximales</span><span class="platform-tag">Afficher</span><span class="platform-tag">YouTube</span></div>
 </div>
 <div class="platform-item tiktok reveal">
+<div class="platform-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" fill="#ff0050"></path></svg>
+</div>
 <div class="platform-name">Annonces TikTok</div>
 <div class="platform-desc">Campagnes In-Feed et TopFeed pour les plateformes où la vidéo courte est le format dominant. Nous gérons la configuration de l'audience, le briefing créatif, la configuration des pixels et le suivi des performances.</div>
+<div class="platform-tags"><span class="platform-tag">Dans le flux</span><span class="platform-tag">TopFeed</span><span class="platform-tag">Vidéo courte</span></div>
 </div>
 <div class="platform-item linkedin reveal reveal-delay-1">
+<div class="platform-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" fill="#0077b5"></path><circle cx="4" cy="4" fill="#0077b5" r="2"></circle></svg>
+</div>
 <div class="platform-name">Publicités LinkedIn</div>
 <div class="platform-desc">Campagnes B2B utilisant le titre du poste, l'ancienneté, la taille de l'entreprise et le ciblage par secteur. Contenu sponsorisé, InMail et formulaires Lead Gen. Utilisé lorsque le public cible est mieux atteint par des données de profil professionnel plutôt que par des signaux basés sur les intérêts.</div>
+<div class="platform-tags"><span class="platform-tag">Contenu sponsorisé</span><span class="platform-tag">Formulaires de génération de leads</span><span class="platform-tag">Ciblage B2B</span></div>
+</div>
+</div>
+<!-- PRICING CALLOUT -->
+<div class="pricing-callout reveal" style="margin-top:3.5rem;">
+<div class="pricing-half">
+<div class="pricing-half-tag">Configuration unique</div>
+<div class="pricing-half-price">$999<span> / première plateforme</span></div>
+<p class="pricing-half-desc">Couvre la stratégie, la création complète de la campagne, la configuration du suivi et le lancement. Chaque plateforme supplémentaire coûte 600 $.</p>
+<ul class="pricing-half-list">
+<li>Structure de la campagne et développement de l'audience</li>
+<li>Texte publicitaire pour tous les formats</li>
+<li>Configuration des événements de pixels et de conversion</li>
+<li>Suivi UTM configuré</li>
+</ul>
+</div>
+<div class="pricing-half">
+<div class="pricing-half-tag">Gestion mensuelle</div>
+<div class="pricing-half-price">$600<span> /mois minimum</span></div>
+<p class="pricing-half-desc">Optimisation continue, contrôles de performances hebdomadaires, rapports mensuels et actualisation des créations si nécessaire.</p>
+<ul class="pricing-half-list">
+<li>Budget hebdomadaire et optimisation des enchères</li>
+<li>Rotation des annonces et gestion de la fatigue</li>
+<li>Rapport de performance mensuel</li>
+<li>Pas de blocage — annulez à tout moment</li>
+</ul>
 </div>
 </div>
 </div>

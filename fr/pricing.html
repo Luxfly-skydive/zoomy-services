@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Tarifs — Studio de production numérique Zoomy</title>
+<meta content="Transparent, fixed pricing for AI chatbots, AI phone agents, and custom websites. No hourly billing. Scope confirmed upfront." name="description"/>
+<link href="https://zoomy.services/pricing.html" rel="canonical"/>
+<meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+<meta content="SAMEORIGIN" http-equiv="X-Frame-Options"/>
+<meta content="strict-origin-when-cross-origin" http-equiv="Referrer-Policy"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../css/style.css?v=20260421" rel="stylesheet"/>
+<style>
+/* ── Pricing page styles ── */
+.pricing-hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);border-radius:999px;padding:6px 16px;font-size:.75rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.12em;color:var(--primary);margin-bottom:1.5rem;}
+.pricing-section{padding:5rem 2rem;}
+.pricing-section-inner{max-width:var(--max-w);margin:0 auto;}
+.pricing-section-label{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--primary);margin-bottom:.6rem;}
+.pricing-section-heading{font-family:var(--font-display);font-size:2rem;font-weight:700;color:#fff;margin-bottom:.75rem;letter-spacing:-.02em;line-height:1.2;}
+.pricing-section-sub{color:var(--text-2);font-size:.95rem;max-width:560px;line-height:1.7;margin-bottom:3rem;}
+/* ── Tier cards ── */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:1.5rem;}
+.tier-card{background:var(--card);border:1px solid var(--border-b);border-radius:var(--radius-lg);padding:2rem;position:relative;display:flex;flex-direction:column;transition:border-color .25s,transform .25s;}
+.tier-card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-3px);}
+.tier-card.popular{border-color:var(--primary);background:linear-gradient(135deg,rgba(99,102,241,.08) 0%,rgba(168,85,247,.06) 100%);}
+.tier-card.popular::before{content:'';position:absolute;inset:0;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(168,85,247,.1));pointer-events:none;}
+.tier-badge{display:inline-flex;align-items:center;gap:6px;background:var(--primary);color:#fff;font-size:.68rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;padding:4px 10px;border-radius:999px;position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.tier-name{font-family:var(--font-display);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:1rem;}
+.tier-price{font-family:var(--font-display);font-size:2.6rem;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:.3rem;}
+.tier-price-note{font-size:.78rem;color:var(--muted);margin-bottom:1.5rem;font-family:var(--font-mono);}
+.tier-divider{height:1px;background:var(--border-b);margin-bottom:1.5rem;}
+.tier-desc{font-size:.875rem;color:var(--text-2);line-height:1.7;flex:1;margin-bottom:1.5rem;}
+.tier-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.3);color:var(--primary);border-radius:var(--radius-md);padding:.75rem 1.25rem;font-size:.875rem;font-weight:600;font-family:var(--font-display);text-decoration:none;transition:all .2s;margin-top:auto;}
+.tier-cta:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+.tier-card.popular .tier-cta{background:var(--primary);color:#fff;border-color:var(--primary);}
+.tier-card.popular .tier-cta:hover{background:var(--primary-dk);}
+/* ── Add-on strip ── */
+.addon-strip{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.addon-pill{background:rgba(255,255,255,.04);border:1px solid var(--border-b);border-radius:var(--radius-md);padding:.75rem 1.25rem;display:flex;align-items:center;gap:.75rem;}
+.addon-pill-icon{font-size:1.1rem;}
+.addon-pill-text{font-size:.83rem;color:var(--text-2);}
+.addon-pill-text strong{color:#fff;font-weight:600;}
+/* ── Not-sure CTA block ── */
+.notsure-block{background:var(--card);border:1px solid var(--border-b);border-radius:var(--radius-lg);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin-top:4rem;}
+.notsure-block h3{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.4rem;}
+.notsure-block p{color:var(--text-2);font-size:.9rem;}
+/* ── Website pricing table ── */
+.web-table{width:100%;border-collapse:collapse;margin-top:1.5rem;}
+.web-table th{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--border-b);}
+.web-table td{padding:1rem;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;color:var(--text-2);vertical-align:top;}
+.web-table tr:last-child td{border-bottom:none;}
+.web-table td:first-child{color:#fff;font-weight:600;font-family:var(--font-display);font-size:.95rem;}
+.web-table td.price-cell{color:var(--primary);font-family:var(--font-display);font-weight:700;font-size:1.05rem;white-space:nowrap;}
+/* ── Section alt bg ── */
+.pricing-section.alt{background:var(--bg-2);}
+/* ── Phone monthly note ── */
+.usage-note{background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.2);border-radius:var(--radius-md);padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:.83rem;color:var(--text-2);display:flex;gap:.75rem;align-items:flex-start;}
+.usage-note-icon{color:var(--secondary);font-size:1rem;flex-shrink:0;margin-top:1px;}
+/* ── Responsive ── */
+@media(max-width:900px){
+  .tier-grid{grid-template-columns:1fr;}
+  .notsure-block{flex-direction:column;text-align:center;}
+  .addon-strip{justify-content:center;}
+  .pricing-section-heading{font-size:1.5rem;}
+}
+</style>
+<script>localStorage.setItem('zmy_lang','fr');</script></head>
+<body>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<nav>
+<a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Studio de production numérique</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a class="active" data-i18n="nav.pricing" href="pricing.html">Tarifs</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Contacter</a></li>
+</ul>
+<div style="display:flex;align-items:center;gap:16px;">
+<div class="lang-switcher">
+<a class="lang-btn" href="../pricing.html">EN</a>
+<span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">FR</span>
+<a class="lang-btn" href="../es/pricing.html">ES</a>
+</div>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Démarrer un projet</span> ›</a>
+<button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<!-- Hero -->
+<section class="hero" style="min-height:44vh;padding:130px 2rem 4rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-3"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;text-align:center;">
+<div class="pricing-hero-tag"><span data-i18n="pricing.hero.tag">Tarifs</span></div>
+<h1 data-i18n="pricing.hero.heading" style="margin-bottom:1.25rem;">Tarification simple et transparente.</h1>
+<p class="hero-sub" data-i18n="pricing.hero.sub" style="margin:0 auto;">Chaque projet est défini et confirmé à l'avance. Prix ​​fixe, périmètre clair, pas de facturation horaire.</p>
+</div>
+</section>
+<!-- ══ AI CHATBOT ══ -->
+<section class="pricing-section">
+<div class="pricing-section-inner">
+<div class="pricing-section-label" data-i18n="pricing.chatbot.tag">Chatbot IA</div>
+<h2 class="pricing-section-heading" data-i18n="pricing.chatbot.heading">Quel chatbot convient à votre entreprise ?</h2>
+<p class="pricing-section-sub" data-i18n="pricing.chatbot.sub">La complexité est déterminée par le degré de détail et de diversité des informations relatives à votre entreprise, et non par des fonctionnalités spécifiques.</p>
+<div class="tier-grid">
+<!-- Simple -->
+<div class="tier-card">
+<div class="tier-name" data-i18n="pricing.tier.simple">Simple</div>
+<div class="tier-price" data-i18n="price.chatbot.simple">$599</div>
+<div class="tier-price-note" data-i18n="price.chatbot.monthly">49 $/mois</div>
+<div class="tier-divider"></div>
+<p class="tier-desc" data-i18n="pricing.chatbot.simple.desc">Votre entreprise dispose d'un à deux services de base avec des informations fixes et stables : horaires, emplacement, ce que vous faites et comment vous joindre. La plupart des questions des visiteurs suivent les mêmes modèles. Un café, un consultant solo, une boutique de proximité ou un simple service.</p>
+<a class="tier-cta" href="contact.html">Commencer ›</a>
+</div>
+<!-- Standard — popular -->
+<div class="tier-card popular">
+<div class="tier-badge" data-i18n="pricing.popular">Les plus populaires</div>
+<div class="tier-name" data-i18n="pricing.tier.standard">Norme</div>
+<div class="tier-price" data-i18n="price.chatbot.standard">$949</div>
+<div class="tier-price-note" data-i18n="price.chatbot.monthly">49 $/mois</div>
+<div class="tier-divider"></div>
+<p class="tier-desc" data-i18n="pricing.chatbot.standard.desc">Plusieurs services, produits ou éléments de menu avec quelques variations dans les prix ou les détails. Vos informations changent occasionnellement. Les visiteurs comparent les options et demandent des détails. Un salon, une agence, un restaurant ou une entreprise multiservices.</p>
+<a class="tier-cta" href="contact.html">Commencer ›</a>
+</div>
+<!-- Advanced -->
+<div class="tier-card">
+<div class="tier-name" data-i18n="pricing.tier.advanced">Avancé</div>
+<div class="tier-price" data-i18n="price.chatbot.advanced">$1,499</div>
+<div class="tier-price-note" data-i18n="price.chatbot.monthly">49 $/mois</div>
+<div class="tier-divider"></div>
+<p class="tier-desc" data-i18n="pricing.chatbot.advanced.desc">Un catalogue volumineux, des informations complexes ou qui changent fréquemment, de nombreux scénarios de FAQ différents ou des visiteurs qui attendent des réponses détaillées et nuancées. Magasins de commerce électronique, cabinets médicaux, hôtels ou entreprises multi-sites.</p>
+<a class="tier-cta" href="contact.html">Commencer ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">🌐</div>
+<div class="addon-pill-text"><strong data-i18n="pricing.language.note">Langue supplémentaire</strong> — <span data-i18n="price.chatbot.language">+199$ par langue supplémentaire</span></div>
+</div>
+<div class="addon-pill">
+<div class="addon-pill-icon">🖥️</div>
+<div class="addon-pill-text"><strong data-i18n="pricing.monthly.hosting">+ hébergement</strong> — <span data-i18n="price.chatbot.monthly">49 $/mois</span> maintient le chatbot en vie et maintenu</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══ AI PHONE AGENT ══ -->
+<section class="pricing-section alt">
+<div class="pricing-section-inner">
+<div class="pricing-section-label" data-i18n="pricing.phone.tag">Agent téléphonique IA</div>
+<h2 class="pricing-section-heading" data-i18n="pricing.phone.heading">Quel agent téléphonique convient à votre entreprise ?</h2>
+<p class="pricing-section-sub" data-i18n="pricing.phone.sub">La complexité dépend du nombre de scénarios d'appels différents que votre entreprise gère et de la diversité des conversations.</p>
+<div class="usage-note">
+<span class="usage-note-icon">ⓘ</span>
+<span>Les agents téléphoniques incluent des frais d'installation uniques ainsi qu'un coût mensuel basé sur l'utilisation. La facturation mensuelle reflète le volume d'appels réel : vous ne payez que ce que l'agent gère. <span data-i18n="price.phone.monthly">à partir de 59 $/mois</span>.</span>
+</div>
+<div class="tier-grid">
+<!-- Simple -->
+<div class="tier-card">
+<div class="tier-name" data-i18n="pricing.tier.simple">Simple</div>
+<div class="tier-price" data-i18n="price.phone.simple">$699</div>
+<div class="tier-price-note">configuration + <span data-i18n="pricing.monthly.usage">utilisation mensuelle</span></div>
+<div class="tier-divider"></div>
+<p class="tier-desc" data-i18n="pricing.phone.simple.desc">Gère 1 à 3 types d’appels. Fournit des informations de base (horaires, directions, disponibilité) et prend un message. Conversations courtes et prévisibles. La plupart des appels suivent le même schéma à chaque fois.</p>
+<a class="tier-cta" href="contact.html">Commencer ›</a>
+</div>
+<!-- Standard — popular -->
+<div class="tier-card popular">
+<div class="tier-badge" data-i18n="pricing.popular">Les plus populaires</div>
+<div class="tier-name" data-i18n="pricing.tier.standard">Norme</div>
+<div class="tier-price" data-i18n="price.phone.standard">$1,199</div>
+<div class="tier-price-note">configuration + <span data-i18n="pricing.monthly.usage">utilisation mensuelle</span></div>
+<div class="tier-divider"></div>
+<p class="tier-desc" data-i18n="pricing.phone.standard.desc">Gère 4 à 8 scénarios d’appel différents. Branchement des conversations en fonction des besoins de l'appelant. L'agent doit poser des questions de suivi pour donner la bonne réponse. Intentions d'appel variées au sein de votre base d'appelants.</p>
+<a class="tier-cta" href="contact.html">Commencer ›</a>
+</div>
+<!-- Advanced -->
+<div class="tier-card">
+<div class="tier-name" data-i18n="pricing.tier.advanced">Avancé</div>
+<div class="tier-price" data-i18n="price.phone.advanced">$1,799</div>
+<div class="tier-price-note">configuration + <span data-i18n="pricing.monthly.usage">utilisation mensuelle</span></div>
+<div class="tier-divider"></div>
+<p class="tier-desc" data-i18n="pricing.phone.advanced.desc">Grande variété d'appels, conversations longues ou nuancées, plusieurs types d'appelants avec des besoins différents. Interactions complexes en plusieurs étapes. Les appelants posent des questions que votre entreprise traite de différentes manières.</p>
+<a class="tier-cta" href="contact.html">Commencer ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">🌐</div>
+<div class="addon-pill-text"><strong data-i18n="pricing.language.note">Langue supplémentaire</strong> — <span data-i18n="price.phone.language">+199$ par langue supplémentaire</span></div>
+</div>
+<div class="addon-pill">
+<div class="addon-pill-icon">📞</div>
+<div class="addon-pill-text">Le coût mensuel est basé sur l'utilisation : facturé à la fin du mois en fonction du volume d'appels réel</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══ WEBSITE PRICING ══ -->
+<section class="pricing-section">
+<div class="pricing-section-inner">
+<div class="pricing-section-label" data-i18n="pricing.web.tag">Sites Web</div>
+<h2 class="pricing-section-heading" data-i18n="pricing.web.heading">Tarification du site Web.</h2>
+<p class="pricing-section-sub" data-i18n="pricing.web.sub">Prix ​​par page. Chaque site est construit à partir de zéro avec un code personnalisé – pas de modèles, pas de WordPress.</p>
+<table class="web-table">
+<thead>
+<tr>
+<th>Type de page</th>
+<th>Prix ​​</th>
+<th>Descriptif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-i18n="pricing.web.page">Page standard</td>
+<td class="price-cell" data-i18n="price.web.page">$199</td>
+<td data-i18n="pricing.web.page.desc">N'importe quelle page standard : à propos, services, accueil, contact.</td>
+</tr>
+<tr>
+<td data-i18n="pricing.web.functional">Page fonctionnelle</td>
+<td class="price-cell" data-i18n="price.web.functional">$399</td>
+<td data-i18n="pricing.web.functional.desc">Pages avec flux de réservation, paiement ou panneaux d'administration.</td>
+</tr>
+<tr>
+<td data-i18n="pricing.web.booking">Système de réservation</td>
+<td class="price-cell" data-i18n="price.web.booking">$599</td>
+<td data-i18n="pricing.web.booking.desc">Système complet de réservation/réservation avec logique de disponibilité.</td>
+</tr>
+<tr>
+<td data-i18n="pricing.web.language">Par langue supplémentaire</td>
+<td class="price-cell" data-i18n="price.web.language">199 $/langue</td>
+<td data-i18n="pricing.web.language.desc">Inclut le chatbot dans cette langue sans frais supplémentaires.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- ══ NOT SURE BLOCK ══ -->
+<section class="pricing-section alt" style="padding-top:2rem;padding-bottom:5rem;">
+<div class="pricing-section-inner">
+<div class="notsure-block">
+<div>
+<h3 data-i18n="pricing.notsure">Vous ne savez pas quel niveau ?</h3>
+<p data-i18n="pricing.notsure.sub">Décrivez votre entreprise dans le formulaire de contact et nous vous confirmerons le bon niveau dans les 24 heures.</p>
+</div>
+<a class="btn btn-primary" href="contact.html" style="white-space:nowrap;flex-shrink:0;">
+<span data-i18n="pricing.notsure.cta">Obtenez une évaluation gratuite</span> ›
+</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo grad-text">Zoomy</div>
+<p class="footer-tagline" data-i18n="footer.tagline">Gestion de campagnes, sites Web personnalisés, chatbots IA et agents téléphoniques.</p>
+<div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Ouvert aux projets</span></div>
+</div>
+<div class="footer-col"><h4 data-i18n="footer.services">Prestations</h4><ul>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
+<li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.company">Entreprise</h4><ul>
+<li><a data-i18n="nav.about" href="about.html">À propos de</a></li>
+<li><a data-i18n="nav.pricing" href="pricing.html">Tarifs</a></li>
+<li><a href="portfolio.html">Portefeuille</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul></div>
+<div class="footer-col"><h4 data-i18n="footer.contact">Contacter</h4><ul>
+<li><a href="mailto:contact@zoomy.services">contact@zoomy.services</a></li>
+<li><a data-i18n="nav.contact" href="contact.html">Formulaire de contact</a></li>
+</ul></div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Zoomy. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="#">Confidentialité</a><a data-i18n="footer.terms" href="#">Conditions</a></span>
+</div>
+</div>
+</footer>
+<script>
+// Nav toggle
+document.getElementById('navToggle').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
+
+<script src="../js/chatbot.js?v=20260421"></script>
+</body>
+</html>

@@ -21,6 +21,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -94,11 +96,10 @@
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Digital Production Studio</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campaigns</a></li>
+<li class="nav-dropdown"><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campaigns<span class="nav-caret">▾</span></a><ul class="nav-sub"><li><a data-i18n="nav.creatives" href="animated-creatives.html">Creatives</a></li></ul></li>
 <li><a data-i18n="nav.websites" href="website-design.html">Websites</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Phone Agents</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
-<li><a data-i18n="nav.creatives" href="animated-creatives.html">Creatives</a></li>
 <li><a class="active" data-i18n="nav.pricing" href="pricing.html">Pricing</a></li>
 <li><a data-i18n="nav.contact" href="contact.html">Contact</a></li>
 </ul>
@@ -261,6 +262,100 @@
 </table>
 </div>
 </section>
+<!-- ══ CAMPAIGN MANAGEMENT ══ -->
+<section class="pricing-section alt">
+<div class="pricing-section-inner">
+<div class="pricing-section-label">Meta Ads Campaigns</div>
+<h2 class="pricing-section-heading">Campaign management pricing.</h2>
+<p class="pricing-section-sub">Fixed setup fee, then a monthly management fee based on your ad spend. Ad spend is billed directly by Meta to your card — we never handle it.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+<div class="tier-card">
+<div class="tier-name">Setup Fee</div>
+<div class="tier-price">$999</div>
+<div class="tier-price-note">One-time · Meta Ads</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Full campaign build: structure, ad groups, audience &amp; targeting, ad copy for all formats, pixel &amp; conversion tracking. Ready to launch.</p>
+<a class="tier-cta" href="contact.html">Get started ›</a>
+</div>
+<div class="tier-card popular">
+<div class="tier-badge">Ongoing</div>
+<div class="tier-name">Monthly Management</div>
+<div class="tier-price" style="font-size:2rem;">From $600</div>
+<div class="tier-price-note">/ month · minimum</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Budget pacing &amp; bid optimisation, A/B testing &amp; creative rotation, weekly performance reports, retargeting &amp; audience management. Quoted based on ad spend.</p>
+<a class="tier-cta" href="contact.html">Get a quote ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">📢</div>
+<div class="addon-pill-text"><strong>Want another platform?</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contact us</a> for Google, TikTok, LinkedIn audit or setup</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══ ANIMATED CREATIVES ══ -->
+<section class="pricing-section">
+<div class="pricing-section-inner">
+<div class="pricing-section-label">Animated Creatives</div>
+<h2 class="pricing-section-heading">Ad creatives that move.</h2>
+<p class="pricing-section-sub">AI-generated animated video ads built for Meta placements. Fixed price per video, delivered in all three formats.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+<div class="tier-card popular">
+<div class="tier-badge">Per Video</div>
+<div class="tier-name">Animated Video Ad</div>
+<div class="tier-price">$199</div>
+<div class="tier-price-note">per video</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Up to 32 seconds. Delivered in 1:1, 4:5, and 9:16 — every Meta placement covered in one order. 2 revision rounds included. No raw footage needed.</p>
+<a class="tier-cta" href="animated-creatives.html">See examples ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">📐</div>
+<div class="addon-pill-text"><strong>3 formats included</strong> — 1:1 Feed · 4:5 Feed · 9:16 Stories &amp; Reels</div>
+</div>
+<div class="addon-pill">
+<div class="addon-pill-icon">✏️</div>
+<div class="addon-pill-text"><strong>2 revision rounds</strong> — included in every order</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══ TRACKING ══ -->
+<section class="pricing-section alt">
+<div class="pricing-section-inner">
+<div class="pricing-section-label">Tracking &amp; Attribution</div>
+<h2 class="pricing-section-heading">Make sure your data is right.</h2>
+<p class="pricing-section-sub">Bad tracking means bad decisions. We set it up properly or audit what you have and tell you exactly what's broken.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+<div class="tier-card">
+<div class="tier-name">Tracking Setup</div>
+<div class="tier-price">$399</div>
+<div class="tier-price-note">One-time · Meta Pixel + CAPI</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Full Meta Pixel installation, Conversions API (server-side) setup, standard event mapping (ViewContent, Lead, Purchase), and verification that conversions are firing correctly.</p>
+<a class="tier-cta" href="contact.html">Get started ›</a>
+</div>
+<div class="tier-card">
+<div class="tier-name">Tracking Audit</div>
+<div class="tier-price">$299</div>
+<div class="tier-price-note">One-time · existing setup</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">We audit your existing tracking — duplicate events, missing conversions, incorrect attribution windows, CAPI gaps — and deliver a written report with every issue and the fix.</p>
+<a class="tier-cta" href="contact.html">Get started ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">🔍</div>
+<div class="addon-pill-text"><strong>Other platforms</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contact us</a> to ask about Google Tag Manager, GA4, or TikTok Pixel audits</div>
+</div>
+</div>
+</div>
+</section>
 <!-- ══ NOT SURE BLOCK ══ -->
 <section class="pricing-section alt" style="padding-top:2rem;padding-bottom:5rem;">
 <div class="pricing-section-inner">
@@ -285,11 +380,10 @@
 <div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Open for Projects</span></div>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Services</h4><ul>
-<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campaigns</a></li>
+<li class="nav-dropdown"><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campaigns<span class="nav-caret">▾</span></a><ul class="nav-sub"><li><a data-i18n="nav.creatives" href="animated-creatives.html">Creatives</a></li></ul></li>
 <li><a data-i18n="nav.websites" href="website-design.html">Websites</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Phone Agents</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
-<li><a data-i18n="nav.creatives" href="animated-creatives.html">Creatives</a></li>
 </ul></div>
 <div class="footer-col"><h4 data-i18n="footer.company">Company</h4><ul>
 <li><a data-i18n="nav.about" href="about.html">About</a></li>

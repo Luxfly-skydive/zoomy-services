@@ -10,6 +10,7 @@ HTML
 HTML
 HTML
 HTML
+HTML
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -83,11 +84,10 @@ HTML
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li class="nav-dropdown"><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas<span class="nav-caret">▾</span></a><ul class="nav-sub"><li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li></ul></li>
 <li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
-<li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li>
 <li><a class="active" data-i18n="nav.pricing" href="pricing.html">Precios</a></li>
 <li><a data-i18n="nav.contact" href="contact.html">Contacto</a></li>
 </ul>
@@ -250,6 +250,100 @@ HTML
 </table>
 </div>
 </section>
+<!-- ══ CAMPAIGN MANAGEMENT ══ -->
+<section class="pricing-section alt">
+<div class="pricing-section-inner">
+<div class="pricing-section-label">Campañas de meta anuncios</div>
+<h2 class="pricing-section-heading">Precios de gestión de campañas.</h2>
+<p class="pricing-section-sub">Tarifa de instalación fija, luego una tarifa de administración mensual basada en su inversión publicitaria. Meta factura la inversión publicitaria directamente a su tarjeta; nosotros nunca la manejamos.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+<div class="tier-card">
+<div class="tier-name">Tarifa de instalación</div>
+<div class="tier-price">$999</div>
+<div class="tier-price-note">Único · Metaanuncios</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Creación completa de la campaña: estructura, grupos de anuncios, audiencia y orientación, texto del anuncio para todos los formatos, seguimiento de píxeles y conversiones. Listo para lanzar.</p>
+<a class="tier-cta" href="contact.html">Empezar ›</a>
+</div>
+<div class="tier-card popular">
+<div class="tier-badge">En curso</div>
+<div class="tier-name">Gestión Mensual</div>
+<div class="tier-price" style="font-size:2rem;">Desde $600</div>
+<div class="tier-price-note">/ mes · mínimo</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Ritmo presupuestario y optimización de ofertas, pruebas A/B y rotación creativa, informes de rendimiento semanales, retargeting y gestión de audiencia. Cotizado en función de la inversión publicitaria.</p>
+<a class="tier-cta" href="contact.html">Obtenga una cotización ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">📢</div>
+<div class="addon-pill-text"><strong>¿Quieres otra plataforma?</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contáctenos</a> para auditoría o configuración de Google, TikTok, LinkedIn</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══ ANIMATED CREATIVES ══ -->
+<section class="pricing-section">
+<div class="pricing-section-inner">
+<div class="pricing-section-label">Creatividades animadas</div>
+<h2 class="pricing-section-heading">Creatividades publicitarias que se mueven.</h2>
+<p class="pricing-section-sub">Anuncios de video animados generados por IA creados para ubicaciones Meta. Precio fijo por vídeo, entregado en los tres formatos.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+<div class="tier-card popular">
+<div class="tier-badge">Por vídeo</div>
+<div class="tier-name">Anuncio de vídeo animado</div>
+<div class="tier-price">$199</div>
+<div class="tier-price-note">por vídeo</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Hasta 32 segundos. Entregado en 1:1, 4:5 y 9:16: cada ubicación Meta cubierta en un solo pedido. 2 rondas de revisión incluidas. No se necesitan imágenes sin editar.</p>
+<a class="tier-cta" href="animated-creatives.html">Ver ejemplos ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">📐</div>
+<div class="addon-pill-text"><strong>3 formatos incluidos</strong> — Feed 1:1 · Feed 4:5 · Historias y carretes 9:16</div>
+</div>
+<div class="addon-pill">
+<div class="addon-pill-icon">✏️</div>
+<div class="addon-pill-text"><strong>2 rondas de revisión</strong> — incluido en cada pedido</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ══ TRACKING ══ -->
+<section class="pricing-section alt">
+<div class="pricing-section-inner">
+<div class="pricing-section-label">Seguimiento y atribución</div>
+<h2 class="pricing-section-heading">Asegúrate de que tus datos sean correctos.</h2>
+<p class="pricing-section-sub">Un mal seguimiento significa malas decisiones. Lo configuramos correctamente o auditamos lo que tiene y le decimos exactamente qué está roto.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:1.5rem;">
+<div class="tier-card">
+<div class="tier-name">Configuración de seguimiento</div>
+<div class="tier-price">$399</div>
+<div class="tier-price-note">Única vez · Meta Pixel + CAPI</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Instalación completa de Meta Pixel, configuración de API de conversiones (del lado del servidor), mapeo de eventos estándar (Ver contenido, cliente potencial, compra) y verificación de que las conversiones se activan correctamente.</p>
+<a class="tier-cta" href="contact.html">Empezar ›</a>
+</div>
+<div class="tier-card">
+<div class="tier-name">Auditoría de seguimiento</div>
+<div class="tier-price">$299</div>
+<div class="tier-price-note">Configuración única · existente</div>
+<div class="tier-divider"></div>
+<p class="tier-desc">Auditamos su seguimiento existente (eventos duplicados, conversiones faltantes, ventanas de atribución incorrectas, brechas de CAPI) y entregamos un informe escrito con cada problema y su solución.</p>
+<a class="tier-cta" href="contact.html">Empezar ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill">
+<div class="addon-pill-icon">🔍</div>
+<div class="addon-pill-text"><strong>Otras plataformas</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contáctenos</a> para preguntar sobre las auditorías de Google Tag Manager, GA4 o TikTok Pixel</div>
+</div>
+</div>
+</div>
+</section>
 <!-- ══ NOT SURE BLOCK ══ -->
 <section class="pricing-section alt" style="padding-top:2rem;padding-bottom:5rem;">
 <div class="pricing-section-inner">
@@ -274,11 +368,10 @@ HTML
 <div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
-<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
+<li class="nav-dropdown"><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas<span class="nav-caret">▾</span></a><ul class="nav-sub"><li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li></ul></li>
 <li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
-<li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li>
 </ul></div>
 <div class="footer-col"><h4 data-i18n="footer.company">Empresa</h4><ul>
 <li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>

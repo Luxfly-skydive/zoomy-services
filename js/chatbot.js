@@ -1490,8 +1490,8 @@ function render() {
     // Offline fallback only — worker unreachable
     typing.remove();
     addMsg(md(t(
-      'Something went wrong — email us at **contact@zoomy.services** and we'll reply typically within 24 hours.',
-      'Une erreur s'est produite — écrivez-nous à **contact@zoomy.services**, nous répondons généralement sous 24h.',
+      'Something went wrong — email us at **contact@zoomy.services** and we\'ll reply typically within 24 hours.',
+      'Une erreur s\'est produite — écrivez-nous à **contact@zoomy.services**, nous répondons généralement sous 24h.',
       'Algo salió mal — escríbenos a **contact@zoomy.services** y respondemos normalmente en 24 horas.'
     )), 'bot');
   }

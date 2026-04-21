@@ -1271,7 +1271,8 @@
     "Add-to-cart & checkout flows": "Flux d'ajout au panier et de paiement",
     "ask us directly": "demandez-nous directement",
     "$59/mo": "59 $/mois",
-    "Response within 24h": "Réponse sous 24h"
+    "Response within 24h": "Réponse sous 24h",
+    "From $599": "À partir de 599 $"
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -2545,6 +2546,7 @@
     "Add-to-cart & checkout flows": "Flujos de adición al carrito y pago",
     "ask us directly": "Pregúntanos directamente",
     "$59/mo": "$59/mes",
-    "Response within 24h": "Respuesta en 24h"
+    "Response within 24h": "Respuesta en 24h",
+    "From $599": "Desde $599"
   }
 }

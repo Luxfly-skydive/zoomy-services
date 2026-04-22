@@ -14,24 +14,45 @@ HTML
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="../css/style.css?v=20260421" rel="stylesheet"/>
 <style>
-/* ── Phase rows ── */
-.phase-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
-.phase-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start;position:relative}
-.phase-row:first-child{border-top:1px solid var(--border-b)}
-.phase-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
-.phase-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff}
-.phase-accent{display:block;width:32px;height:2px;border-radius:2px;margin-top:.75rem}
-.phase-ghost{font-family:var(--font-display);font-size:7rem;font-weight:900;line-height:1;position:absolute;right:0;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.06}
-.item-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
-.item-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text-2);line-height:1.6}
-.item-list li::before{content:"\2014";color:var(--muted);flex-shrink:0;margin-top:1px}
-
 /* ── Stats strip ── */
 .stats-strip{padding:3rem 2rem;background:var(--surface);border-top:1px solid var(--border-b);border-bottom:1px solid var(--border-b)}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:var(--max-w);margin:0 auto}
 .stat-block{text-align:center;padding:1.25rem 1rem}
 .stat-block-num{font-family:var(--font-display);font-size:2rem;font-weight:700;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.4rem}
 .stat-block-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono)}
+
+/* ── Service cards ── */
+.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.45);border-color:rgba(255,255,255,.12)}
+.service-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.service-card.s1::before{background:var(--primary)}
+.service-card.s2::before{background:var(--accent)}
+.service-card.s3::before{background:linear-gradient(90deg,var(--accent),var(--secondary))}
+.service-card-num{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.1rem}
+.service-card-icon{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;flex-shrink:0}
+.service-card.s1 .service-card-icon{background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3)}
+.service-card.s2 .service-card-icon{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.3)}
+.service-card.s3 .service-card-icon{background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.25)}
+.service-card-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.service-card-desc{font-size:.875rem;color:var(--text-2);line-height:1.72;flex:1}
+.service-card-list{list-style:none;margin-top:1.1rem;display:flex;flex-direction:column;gap:.45rem}
+.service-card-list li{font-size:.8rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.service-card-list li::before{content:"–";color:var(--muted);flex-shrink:0}
+.service-card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.service-card-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border-b);padding:3px 9px;border-radius:var(--radius-full);letter-spacing:.05em}
+.service-card-cta{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;color:var(--primary);margin-top:1.25rem;text-decoration:none;font-weight:600;transition:gap .15s;width:fit-content}
+.service-card-cta:hover{gap:9px}
+
+/* ── Process steps ── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;position:relative}
+.process-steps::before{content:"";position:absolute;top:25px;left:calc(12.5% + 22px);right:calc(12.5% + 22px);height:1px;background:var(--border-b)}
+.process-step{text-align:center;padding:0 .75rem;position:relative;z-index:1}
+.process-circle{width:50px;height:50px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:#fff;position:relative}
+.process-circle span{position:relative;z-index:1}
+.process-circle::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--grad-main);opacity:.18}
+.process-step-label{font-family:var(--font-display);font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.35rem}
+.process-step-desc{font-size:.775rem;color:var(--muted);line-height:1.6}
 
 /* ── Pricing callout ── */
 .pricing-callout{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;position:relative;overflow:hidden}
@@ -46,12 +67,31 @@ HTML
 .pricing-half-list li{font-size:.8rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start}
 .pricing-half-list li::before{content:"✓";color:var(--primary);font-weight:700;flex-shrink:0}
 
-@media(max-width:768px){
-  .phase-row{grid-template-columns:1fr;gap:1rem}
-  .stats-row{grid-template-columns:repeat(2,1fr)}
+/* ── Platform block ── */
+.platform-block{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.plat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.plat-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.plat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.plat-card.fb::before{background:linear-gradient(90deg,#1877f2,#4267b2)}
+.plat-card.ig::before{background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af)}
+.plat-card-logo{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.plat-card.fb .plat-card-logo{background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.25)}
+.plat-card.ig .plat-card-logo{background:rgba(221,42,123,.1);border:1px solid rgba(221,42,123,.2)}
+.plat-card-name{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.plat-card-desc{font-size:.85rem;color:var(--text-2);line-height:1.7}
+.plat-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.plat-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border-b);padding:3px 9px;border-radius:var(--radius-full)}
+
+@media(max-width:900px){
+  .service-cards{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .process-steps::before{display:none}
+  .platform-block{grid-template-columns:1fr}
   .pricing-callout{grid-template-columns:1fr}
   .pricing-half:first-child{border-right:none;border-bottom:1px solid var(--border-b)}
-  .phase-ghost{display:none}
+}
+@media(max-width:600px){
+  .stats-row{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
@@ -127,8 +167,8 @@ HTML
 <button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<!-- HERO -->
-<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<!-- ═══ HERO ═══ -->
+<section class="hero" style="min-height:58vh;padding:140px 2rem 5rem;">
 <div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
 <div class="grid-overlay"></div>
 <div class="section-inner" style="z-index:2;text-align:center;">
@@ -136,10 +176,14 @@ HTML
 <h1 style="margin-bottom:1.5rem;">
 <span class="glitch grad-text-animated">Creado para campañas.</span><br/>Listo para lanzar.
 </h1>
-<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;margin:0 auto;">Creamos de qué están hechas las grandes metacampañas: creatividades publicitarias, configuración de seguimiento y píxeles, y archivos de campaña estructurados y listos para usar. Entrégaselo a tu equipo interno o ponte en contacto con nosotros si quieres que lo ejecutemos.</p>
+<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:580px;margin:0 auto 2.5rem;">Creamos todo lo que su metacampaña necesita: las creatividades, el seguimiento y los archivos. Entrégaselo todo a tu equipo o ponte en contacto con nosotros si quieres que lo ejecutemos.</p>
+<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<a class="btn btn-primary" href="contact.html">Iniciar un resumen de campaña ›</a>
+<a class="btn btn-ghost" href="#what-we-build">Mira lo que construimos ↓</a>
+</div>
 </div>
 </section>
-<!-- STATS STRIP -->
+<!-- ═══ STATS STRIP ═══ -->
 <div class="stats-strip">
 <div class="stats-row">
 <div class="stat-block reveal">
@@ -147,91 +191,165 @@ HTML
 <div class="stat-block-label">Entregables principales</div>
 </div>
 <div class="stat-block reveal reveal-delay-1">
-<div class="stat-block-num">Píxel</div>
-<div class="stat-block-label">Verificado antes de gastar</div>
-</div>
-<div class="stat-block reveal reveal-delay-2">
-<div class="stat-block-num">Archivos</div>
-<div class="stat-block-label">Estructurado y listo</div>
-</div>
-<div class="stat-block reveal reveal-delay-3">
-<div class="stat-block-num">5 días</div>
+<div class="stat-block-num">~5 días</div>
 <div class="stat-block-label">Cambio típico</div>
 </div>
+<div class="stat-block reveal reveal-delay-2">
+<div class="stat-block-num">Fijo</div>
+<div class="stat-block-label">Precio acordado por adelantado</div>
+</div>
+<div class="stat-block reveal reveal-delay-3">
+<div class="stat-block-num">Tuyo</div>
+<div class="stat-block-label">Eres dueño de todo</div>
 </div>
 </div>
-<!-- WHAT WE BUILD -->
-<section class="section">
+</div>
+<!-- ═══ SERVICE CARDS ═══ -->
+<section class="section" id="what-we-build">
 <div class="section-inner">
 <div class="section-tag">Qué entregamos</div>
-<h2 class="section-title">Tres cosas que hacen que las campañas funcionen.</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:640px;margin-top:.75rem;">Cada metacampaña necesita la misma base: creatividad clara, seguimiento limpio y una configuración estructurada adecuadamente. Construimos los tres.</p>
-<div class="phase-rows">
-<!-- 01 Campaign Files -->
-<div class="phase-row reveal">
-<span class="phase-ghost">01</span>
-<div>
-<div class="phase-label">Entregable 01</div>
-<div class="phase-name">Campaña<br/>Archivos</div>
-<span class="phase-accent" style="background:var(--primary);"></span>
+<h2 class="section-title">Tres cosas que toda campaña necesita.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Las grandes campañas no fracasan debido a la plataforma: fracasan porque la creatividad es débil, el seguimiento no funciona o la configuración nunca se estructuró adecuadamente. Arreglamos los tres.</p>
+<div class="service-cards stagger-children">
+<!-- Card 1: Campaign Files -->
+<div class="service-card s1 reveal">
+<div class="service-card-num">01 — Archivos de campaña</div>
+<div class="service-card-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#6366f1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path><polyline points="14,2 14,8 20,8" stroke="#6366f1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polyline><line stroke="#6366f1" stroke-linecap="round" stroke-width="1.75" x1="16" x2="8" y1="13" y2="13"></line><line stroke="#6366f1" stroke-linecap="round" stroke-width="1.75" x1="16" x2="8" y1="17" y2="17"></line><polyline points="10,9 9,9 8,9" stroke="#6366f1" stroke-linecap="round" stroke-width="1.75"></polyline></svg>
 </div>
-<div>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Construimos su campaña desde cero: todos los archivos estructurados que necesita para lanzar o entregar a un comprador de medios. Configuraciones de audiencia, texto de anuncios, estructura UTM, resúmenes creativos y un documento de configuración completo. Todo está documentado y listo para usar.</p>
-<ul class="item-list">
+<div class="service-card-title">Archivos y estructura de la campaña</div>
+<div class="service-card-desc">Todo lo que necesita para lanzar una metacampaña: creada, documentada y lista para cargarla o entregársela a su comprador de medios. Definimos la estructura, escribimos la copia, configuramos las audiencias y entregamos un paquete de instalación completo.</div>
+<ul class="service-card-list">
 <li>Objetivo de campaña y estructura de anuncios definidos</li>
 <li>Configuraciones de audiencia creadas y documentadas</li>
 <li>Texto del anuncio escrito para cada ubicación y formato</li>
 <li>Estructura de parámetros UTM configurada</li>
 <li>Resumen creativo para cada formato de anuncio incluido</li>
-<li>Documento de configuración completo: listo para cargar o entregar a su equipo</li>
+<li>Documento de configuración completo: listo para cargar o entregar</li>
 </ul>
+<div class="service-card-tags">
+<span class="service-card-tag">Configuración de audiencia</span>
+<span class="service-card-tag">Texto del anuncio</span>
+<span class="service-card-tag">Configuración UTM</span>
+<span class="service-card-tag">Documento de configuración</span>
 </div>
 </div>
-<!-- 02 Pixel & Tracking -->
-<div class="phase-row reveal">
-<span class="phase-ghost">02</span>
-<div>
-<div class="phase-label">Entregable 02</div>
-<div class="phase-name">Píxel y<br/>Seguimiento</div>
-<span class="phase-accent" style="background:var(--accent);"></span>
+<!-- Card 2: Pixel & Tracking -->
+<div class="service-card s2 reveal">
+<div class="service-card-num">02 — Píxel y seguimiento</div>
+<div class="service-card-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="#8b5cf6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polyline></svg>
 </div>
-<div>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Los anuncios son tan buenos como los datos que los alimentan. Instalamos, configuramos y verificamos su Meta Pixel y eventos de conversión para que la plataforma se optimice frente a señales reales. Ya sea que se trate de una configuración nueva o de una instalación existente que necesita auditoría, nos aseguramos de que todo funcione antes de gastar un solo dólar.</p>
-<ul class="item-list">
+<div class="service-card-title">Configuración de píxeles y seguimiento</div>
+<div class="service-card-desc">Los anuncios son tan buenos como los datos que los alimentan. Instalamos, configuramos y verificamos su Meta Pixel y sus eventos de conversión para que la plataforma se optimice según señales reales, no contra ruido. Configuraciones nuevas o auditorías completas de instalaciones existentes.</div>
+<ul class="service-card-list">
 <li>Meta Pixel instalado y verificado en todas las páginas</li>
-<li>Eventos de conversión configurados: compra, cliente potencial, agregar al carrito y más</li>
-<li>Se comprobó la deduplicación de eventos</li>
+<li>Eventos de conversión configurados: compra, cliente potencial, agregar al carrito</li>
+<li>Deduplicación de eventos y diagnóstico de fallos de encendido</li>
 <li>UTM y GA4 se compararon con datos de píxeles</li>
 <li>Los eventos de prueba confirmaron el disparo antes de la entrada en funcionamiento</li>
-<li>Informe de reparación proporcionado con todos los cambios documentados</li>
+<li>Informe de corrección completo con todos los cambios documentados</li>
 </ul>
+<div class="service-card-tags">
+<span class="service-card-tag">Metapíxel</span>
+<span class="service-card-tag">Eventos de conversión</span>
+<span class="service-card-tag">GA4</span>
+<span class="service-card-tag">Deduplicación</span>
 </div>
+<a class="service-card-cta" href="#tracking-pricing">Ver precios ↓</a>
 </div>
-<!-- 03 Ad Creatives -->
-<div class="phase-row reveal">
-<span class="phase-ghost">03</span>
-<div>
-<div class="phase-label">Entregable 03</div>
-<div class="phase-name">Ad<br/>Creativos</div>
-<span class="phase-accent" style="background:linear-gradient(90deg,var(--accent),var(--secondary));"></span>
+<!-- Card 3: Ad Creatives -->
+<div class="service-card s3 reveal">
+<div class="service-card-num">03 — Creatividades publicitarias</div>
+<div class="service-card-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><polygon points="5,3 19,12 5,21 5,3" stroke="#ec4899" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polygon></svg>
 </div>
-<div>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Anuncios animados cortos creados para Meta: formatos de feed e historias, entregados como MP4 y listos para cargar directamente en Ads Manager. Nos animamos a partir de su brief. No se necesitan imágenes. Disponible como producción independiente o como parte de un paquete completo de configuración de campaña.</p>
-<ul class="item-list">
-<li>Formatos Feed (4:5), Story (9:16) y Square (1:1) incluidos</li>
+<div class="service-card-title">Creatividades publicitarias animadas</div>
+<div class="service-card-desc">Anuncios animados cortos creados para Meta: formatos de feed e historias, entregados como archivos MP4 listos para cargar directamente en Ads Manager. Nos animamos a partir de su brief. Sin imágenes, sin recursos, no se necesita nada de tu parte.</div>
+<ul class="service-card-list">
+<li>Formatos Feed (4:5), Story (9:16) y Square (1:1)</li>
 <li>Animación de su producto, mensaje y resumen de audiencia</li>
-<li>Entregado como MP4: listo para cargar directamente en el Administrador de anuncios</li>
+<li>MP4 entregado: cárguelo directamente en el Administrador de anuncios</li>
 <li>Texto y CTA escritos para que coincidan con cada ubicación</li>
 <li>Revisiones incluidas</li>
 <li>Vídeo generado por IA disponible bajo petición</li>
 </ul>
+<div class="service-card-tags">
+<span class="service-card-tag">Feed 4:5</span>
+<span class="service-card-tag">Historia 9:16</span>
+<span class="service-card-tag">Cuadrado 1:1</span>
+<span class="service-card-tag">MP4</span>
 </div>
+<a class="service-card-cta" href="animated-creatives.html">Ver muestras creativas ›</a>
 </div>
 </div>
 </div>
 </section>
-<!-- TRACKING SETUP & AUDIT PRICING -->
+<!-- ═══ HOW IT WORKS ═══ -->
 <section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div class="section-tag">El proceso</div>
+<h2 class="section-title">Así es como va.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:520px;margin-top:.75rem;">Cuatro pasos desde la primera conversación hasta un paquete de campaña terminado y listo para su lanzamiento.</p>
+<div class="process-steps">
+<div class="process-step reveal">
+<div class="process-circle"><span>01</span></div>
+<div class="process-step-label">Comparte el resumen</div>
+<div class="process-step-desc">Cuéntenos su producto, audiencia, objetivo y qué entregables necesita. Cuanto más detalle, mejor.</div>
+</div>
+<div class="process-step reveal reveal-delay-1">
+<div class="process-circle"><span>02</span></div>
+<div class="process-step-label">Lo analizamos</div>
+<div class="process-step-desc">Regresamos con exactamente lo que construiremos y un precio fijo. Sin sorpresas ni facturación indefinida.</div>
+</div>
+<div class="process-step reveal reveal-delay-2">
+<div class="process-circle"><span>03</span></div>
+<div class="process-step-label">Nosotros construimos</div>
+<div class="process-step-desc">Archivos, seguimiento y creatividades producidos y entregados, normalmente en un plazo de cinco días hábiles.</div>
+</div>
+<div class="process-step reveal reveal-delay-3">
+<div class="process-circle"><span>04</span></div>
+<div class="process-step-label">Traspaso</div>
+<div class="process-step-desc">Recibes todo, listo para cargar y ejecutar. Su equipo lo ejecuta, o nosotros lo hacemos: usted decide.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══ PLATFORM FOCUS ═══ -->
+<section class="section">
+<div class="section-inner">
+<div class="section-tag">Enfoque de la plataforma</div>
+<h2 class="section-title">Construido alrededor de Meta.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Todo lo que creamos está optimizado para la publicidad en Facebook e Instagram, las dos ubicaciones que aún ofrecen el mejor costo por resultado para la mayoría de las campañas de respuesta directa. El píxel de Meta y el sistema de atribución son lo que conocemos al dedillo.</p>
+<div class="platform-block stagger-children">
+<div class="plat-card fb reveal">
+<div class="plat-card-logo">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z" fill="#1877f2"></path></svg>
+</div>
+<div class="plat-card-name">Anuncios de Facebook</div>
+<div class="plat-card-desc">Campañas que cubren prospección, retargeting, audiencias personalizadas y similares. Ubicaciones de feeds optimizadas para clics y costo por resultado.</div>
+<div class="plat-tags"><span class="plat-tag">Audiencias personalizadas</span><span class="plat-tag">Parecidos</span><span class="plat-tag">Reorientación</span><span class="plat-tag">Alimentación</span></div>
+</div>
+<div class="plat-card ig reveal reveal-delay-1">
+<div class="plat-card-logo">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><rect height="20" rx="5" ry="5" stroke="#dd2a7b" stroke-width="1.75" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#dd2a7b" stroke-width="1.75"></path><line stroke="#dd2a7b" stroke-linecap="round" stroke-width="2" x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</div>
+<div class="plat-card-name">Anuncios de Instagram</div>
+<div class="plat-card-desc">Ubicaciones de historias y carretes donde los creativos animados cortos funcionan al máximo. Formatos de alta visibilidad creados para audiencias que priorizan los dispositivos móviles.</div>
+<div class="plat-tags"><span class="plat-tag">Historias</span><span class="plat-tag">Carretes</span><span class="plat-tag">Móvil primero</span><span class="plat-tag">Animado</span></div>
+</div>
+</div>
+<div class="reveal" style="margin-top:1.5rem;background:var(--surface);border:1px solid var(--border-b);border-radius:var(--radius-lg);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+<div>
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;margin-bottom:.3rem;">¿Se ejecuta en una plataforma diferente?</div>
+<div style="font-size:.875rem;color:var(--text-2);">Google, TikTok o LinkedIn: ponte en contacto y te informaremos si podemos ayudarte.</div>
+</div>
+<a class="btn btn-ghost" href="contact.html" style="white-space:nowrap;flex-shrink:0;">Ponte en contacto ›</a>
+</div>
+</div>
+</section>
+<!-- ═══ TRACKING PRICING ═══ -->
+<section class="section" id="tracking-pricing" style="background:var(--bg-2);">
 <div class="section-inner">
 <div class="section-tag">Píxel y seguimiento</div>
 <h2 class="section-title">Seguimiento de configuración y auditoría.</h2>
@@ -264,25 +382,25 @@ HTML
 </div>
 </div>
 </section>
-<!-- WANT US TO RUN IT? -->
+<!-- ═══ WANT US TO RUN IT? ═══ -->
 <section class="section">
 <div class="section-inner">
 <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:3rem;position:relative;overflow:hidden;text-align:center;">
 <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main);"></div>
 <div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Gestión completa de campañas</div>
 <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:1rem;">¿Está interesado en que ejecutemos la campaña?</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin:0 auto 2rem;">Si desea algo más que los archivos y la configuración, si desea que nos encarguemos de la administración, la optimización y los informes diarios de su metacampaña, póngase en contacto y le explicaremos cómo funciona.</p>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:560px;margin:0 auto 2rem;">Si desea algo más que los archivos y la configuración (si desea que nos encarguemos de la optimización diaria, la gestión del presupuesto y los informes), póngase en contacto y le explicaremos cómo funciona.</p>
 <a class="btn btn-primary" href="contact.html">Contáctanos sobre gestión de campañas ›</a>
 </div>
 </div>
 </section>
-<!-- CTA -->
+<!-- ═══ CTA ═══ -->
 <section class="section" style="position:relative;overflow:hidden;">
 <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
 <div class="section-tag" style="justify-content:center;">Empezar</div>
 <h2 class="section-title">Cuéntanos qué necesitas construir.</h2>
-<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Creatividades, configuración de píxeles, archivos de campaña o los tres: comparta el resumen y lo analizaremos.</p>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Creatividades, configuración de píxeles, archivos de campaña o los tres: comparta el resumen y le definiremos el alcance y el precio.</p>
 <a class="btn btn-primary btn-lg" href="contact.html">Iniciar un resumen de campaña ›</a>
 </div>
 </section>
@@ -291,7 +409,7 @@ HTML
 <div class="footer-grid">
 <div>
 <div class="footer-logo grad-text">Zoomy</div>
-<p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
+<p class="footer-tagline" data-i18n="footer.tagline">Producción de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
 <li><a class="active" href="campaign-portfolio.html">Campañas</a></li>

@@ -15,24 +15,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css?v=20260421" rel="stylesheet"/>
 <style>
-/* ── Phase rows ── */
-.phase-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
-.phase-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start;position:relative}
-.phase-row:first-child{border-top:1px solid var(--border-b)}
-.phase-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
-.phase-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff}
-.phase-accent{display:block;width:32px;height:2px;border-radius:2px;margin-top:.75rem}
-.phase-ghost{font-family:var(--font-display);font-size:7rem;font-weight:900;line-height:1;position:absolute;right:0;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.06}
-.item-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
-.item-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text-2);line-height:1.6}
-.item-list li::before{content:"\2014";color:var(--muted);flex-shrink:0;margin-top:1px}
-
 /* ── Stats strip ── */
 .stats-strip{padding:3rem 2rem;background:var(--surface);border-top:1px solid var(--border-b);border-bottom:1px solid var(--border-b)}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:var(--max-w);margin:0 auto}
 .stat-block{text-align:center;padding:1.25rem 1rem}
 .stat-block-num{font-family:var(--font-display);font-size:2rem;font-weight:700;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.4rem}
 .stat-block-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono)}
+
+/* ── Service cards ── */
+.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.45);border-color:rgba(255,255,255,.12)}
+.service-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.service-card.s1::before{background:var(--primary)}
+.service-card.s2::before{background:var(--accent)}
+.service-card.s3::before{background:linear-gradient(90deg,var(--accent),var(--secondary))}
+.service-card-num{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.1rem}
+.service-card-icon{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;flex-shrink:0}
+.service-card.s1 .service-card-icon{background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3)}
+.service-card.s2 .service-card-icon{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.3)}
+.service-card.s3 .service-card-icon{background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.25)}
+.service-card-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.service-card-desc{font-size:.875rem;color:var(--text-2);line-height:1.72;flex:1}
+.service-card-list{list-style:none;margin-top:1.1rem;display:flex;flex-direction:column;gap:.45rem}
+.service-card-list li{font-size:.8rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.service-card-list li::before{content:"–";color:var(--muted);flex-shrink:0}
+.service-card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.service-card-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border-b);padding:3px 9px;border-radius:var(--radius-full);letter-spacing:.05em}
+.service-card-cta{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;color:var(--primary);margin-top:1.25rem;text-decoration:none;font-weight:600;transition:gap .15s;width:fit-content}
+.service-card-cta:hover{gap:9px}
+
+/* ── Process steps ── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;position:relative}
+.process-steps::before{content:"";position:absolute;top:25px;left:calc(12.5% + 22px);right:calc(12.5% + 22px);height:1px;background:var(--border-b)}
+.process-step{text-align:center;padding:0 .75rem;position:relative;z-index:1}
+.process-circle{width:50px;height:50px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:var(--font-mono);font-size:.72rem;font-weight:700;color:#fff;position:relative}
+.process-circle span{position:relative;z-index:1}
+.process-circle::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--grad-main);opacity:.18}
+.process-step-label{font-family:var(--font-display);font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.35rem}
+.process-step-desc{font-size:.775rem;color:var(--muted);line-height:1.6}
 
 /* ── Pricing callout ── */
 .pricing-callout{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;position:relative;overflow:hidden}
@@ -47,12 +68,31 @@
 .pricing-half-list li{font-size:.8rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start}
 .pricing-half-list li::before{content:"✓";color:var(--primary);font-weight:700;flex-shrink:0}
 
-@media(max-width:768px){
-  .phase-row{grid-template-columns:1fr;gap:1rem}
-  .stats-row{grid-template-columns:repeat(2,1fr)}
+/* ── Platform block ── */
+.platform-block{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.plat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.plat-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.plat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
+.plat-card.fb::before{background:linear-gradient(90deg,#1877f2,#4267b2)}
+.plat-card.ig::before{background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af)}
+.plat-card-logo{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.plat-card.fb .plat-card-logo{background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.25)}
+.plat-card.ig .plat-card-logo{background:rgba(221,42,123,.1);border:1px solid rgba(221,42,123,.2)}
+.plat-card-name{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.plat-card-desc{font-size:.85rem;color:var(--text-2);line-height:1.7}
+.plat-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.plat-tag{font-family:var(--font-mono);font-size:.6rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border-b);padding:3px 9px;border-radius:var(--radius-full)}
+
+@media(max-width:900px){
+  .service-cards{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .process-steps::before{display:none}
+  .platform-block{grid-template-columns:1fr}
   .pricing-callout{grid-template-columns:1fr}
   .pricing-half:first-child{border-right:none;border-bottom:1px solid var(--border-b)}
-  .phase-ghost{display:none}
+}
+@media(max-width:600px){
+  .stats-row{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
@@ -128,8 +168,8 @@
 <button aria-label="Menu" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<!-- HERO -->
-<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<!-- ═══ HERO ═══ -->
+<section class="hero" style="min-height:58vh;padding:140px 2rem 5rem;">
 <div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
 <div class="grid-overlay"></div>
 <div class="section-inner" style="z-index:2;text-align:center;">
@@ -137,10 +177,14 @@
 <h1 style="margin-bottom:1.5rem;">
 <span class="glitch grad-text-animated">Built for campaigns.</span><br/>Ready to launch.
 </h1>
-<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;margin:0 auto;">We build what great Meta campaigns are made of — ad creatives, pixel and tracking setup, and campaign files structured and ready to go. Hand it to your in-house team, or get in touch if you'd like us to run it.</p>
+<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:580px;margin:0 auto 2.5rem;">We build everything your Meta campaign needs — the creatives, the tracking, and the files. Hand it all to your team, or get in touch if you'd like us to run it.</p>
+<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<a class="btn btn-primary" href="contact.html">Start a Campaign Brief ›</a>
+<a class="btn btn-ghost" href="#what-we-build">See what we build ↓</a>
+</div>
 </div>
 </section>
-<!-- STATS STRIP -->
+<!-- ═══ STATS STRIP ═══ -->
 <div class="stats-strip">
 <div class="stats-row">
 <div class="stat-block reveal">
@@ -148,91 +192,165 @@
 <div class="stat-block-label">Core deliverables</div>
 </div>
 <div class="stat-block reveal reveal-delay-1">
-<div class="stat-block-num">Pixel</div>
-<div class="stat-block-label">Verified before spend</div>
-</div>
-<div class="stat-block reveal reveal-delay-2">
-<div class="stat-block-num">Files</div>
-<div class="stat-block-label">Structured &amp; ready</div>
-</div>
-<div class="stat-block reveal reveal-delay-3">
-<div class="stat-block-num">5 days</div>
+<div class="stat-block-num">~5 days</div>
 <div class="stat-block-label">Typical turnaround</div>
 </div>
+<div class="stat-block reveal reveal-delay-2">
+<div class="stat-block-num">Fixed</div>
+<div class="stat-block-label">Price agreed upfront</div>
+</div>
+<div class="stat-block reveal reveal-delay-3">
+<div class="stat-block-num">Yours</div>
+<div class="stat-block-label">You own everything</div>
 </div>
 </div>
-<!-- WHAT WE BUILD -->
-<section class="section">
+</div>
+<!-- ═══ SERVICE CARDS ═══ -->
+<section class="section" id="what-we-build">
 <div class="section-inner">
 <div class="section-tag">What we deliver</div>
-<h2 class="section-title">Three things that make campaigns work.</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:640px;margin-top:.75rem;">Every Meta campaign needs the same foundation — clear creative, clean tracking, and a properly structured setup. We build all three.</p>
-<div class="phase-rows">
-<!-- 01 Campaign Files -->
-<div class="phase-row reveal">
-<span class="phase-ghost">01</span>
-<div>
-<div class="phase-label">Deliverable 01</div>
-<div class="phase-name">Campaign<br/>Files</div>
-<span class="phase-accent" style="background:var(--primary);"></span>
+<h2 class="section-title">Three things every campaign needs.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Great campaigns don't fail because of the platform — they fail because the creative is weak, the tracking is broken, or the setup was never properly structured. We fix all three.</p>
+<div class="service-cards stagger-children">
+<!-- Card 1: Campaign Files -->
+<div class="service-card s1 reveal">
+<div class="service-card-num">01 — Campaign Files</div>
+<div class="service-card-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#6366f1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path><polyline points="14,2 14,8 20,8" stroke="#6366f1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polyline><line stroke="#6366f1" stroke-linecap="round" stroke-width="1.75" x1="16" x2="8" y1="13" y2="13"></line><line stroke="#6366f1" stroke-linecap="round" stroke-width="1.75" x1="16" x2="8" y1="17" y2="17"></line><polyline points="10,9 9,9 8,9" stroke="#6366f1" stroke-linecap="round" stroke-width="1.75"></polyline></svg>
 </div>
-<div>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">We build your campaign from the ground up — all the structured files you need to launch or hand to a media buyer. Audience configurations, ad copy, UTM structure, creative briefs, and a complete setup document. Everything is documented and ready to use.</p>
-<ul class="item-list">
-<li>Campaign objective and adset structure defined</li>
+<div class="service-card-title">Campaign Files &amp; Structure</div>
+<div class="service-card-desc">Everything you need to launch a Meta campaign — built, documented, and ready to upload or hand off to your media buyer. We define the structure, write the copy, configure the audiences, and deliver a complete setup package.</div>
+<ul class="service-card-list">
+<li>Campaign objective &amp; adset structure defined</li>
 <li>Audience configurations built and documented</li>
 <li>Ad copy written for each placement and format</li>
 <li>UTM parameter structure configured</li>
 <li>Creative brief for each ad format included</li>
-<li>Full setup document — ready to upload or hand off to your team</li>
+<li>Full setup doc — ready to upload or hand off</li>
 </ul>
+<div class="service-card-tags">
+<span class="service-card-tag">Audience Config</span>
+<span class="service-card-tag">Ad Copy</span>
+<span class="service-card-tag">UTM Setup</span>
+<span class="service-card-tag">Setup Doc</span>
 </div>
 </div>
-<!-- 02 Pixel & Tracking -->
-<div class="phase-row reveal">
-<span class="phase-ghost">02</span>
-<div>
-<div class="phase-label">Deliverable 02</div>
-<div class="phase-name">Pixel &amp;<br/>Tracking</div>
-<span class="phase-accent" style="background:var(--accent);"></span>
+<!-- Card 2: Pixel & Tracking -->
+<div class="service-card s2 reveal">
+<div class="service-card-num">02 — Pixel &amp; Tracking</div>
+<div class="service-card-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="#8b5cf6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polyline></svg>
 </div>
-<div>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Ads are only as good as the data feeding them. We install, configure, and verify your Meta Pixel and conversion events so the platform optimises against real signals. Whether it's a fresh setup or an existing install that needs auditing, we make sure everything is working before a single dollar is spent.</p>
-<ul class="item-list">
+<div class="service-card-title">Pixel &amp; Tracking Setup</div>
+<div class="service-card-desc">Ads are only as good as the data feeding them. We install, configure, and verify your Meta Pixel and conversion events so the platform optimises against real signals — not noise. Fresh setups or full audits of existing installs.</div>
+<ul class="service-card-list">
 <li>Meta Pixel installed and verified across all pages</li>
-<li>Conversion events configured — purchase, lead, add-to-cart, and more</li>
-<li>Event deduplication checked</li>
+<li>Conversion events configured — purchase, lead, add-to-cart</li>
+<li>Event deduplication and misfire diagnosis</li>
 <li>UTM and GA4 cross-checked against pixel data</li>
 <li>Test events confirmed firing before go-live</li>
-<li>Fix report provided with all changes documented</li>
+<li>Full fix report with all changes documented</li>
 </ul>
+<div class="service-card-tags">
+<span class="service-card-tag">Meta Pixel</span>
+<span class="service-card-tag">Conversion Events</span>
+<span class="service-card-tag">GA4</span>
+<span class="service-card-tag">Deduplication</span>
 </div>
+<a class="service-card-cta" href="#tracking-pricing">See pricing ↓</a>
 </div>
-<!-- 03 Ad Creatives -->
-<div class="phase-row reveal">
-<span class="phase-ghost">03</span>
-<div>
-<div class="phase-label">Deliverable 03</div>
-<div class="phase-name">Ad<br/>Creatives</div>
-<span class="phase-accent" style="background:linear-gradient(90deg,var(--accent),var(--secondary));"></span>
+<!-- Card 3: Ad Creatives -->
+<div class="service-card s3 reveal">
+<div class="service-card-num">03 — Ad Creatives</div>
+<div class="service-card-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><polygon points="5,3 19,12 5,21 5,3" stroke="#ec4899" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polygon></svg>
 </div>
-<div>
-<p style="color:var(--text-2);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Short animated ads built for Meta — feed and story formats, delivered as MP4 and ready to upload directly to Ads Manager. We animate from your brief. No footage needed. Available as standalone production or as part of a full campaign setup package.</p>
-<ul class="item-list">
-<li>Feed (4:5), Story (9:16), and Square (1:1) formats included</li>
+<div class="service-card-title">Animated Ad Creatives</div>
+<div class="service-card-desc">Short animated ads built for Meta — feed and story formats, delivered as MP4 files ready to upload directly to Ads Manager. We animate from your brief. No footage, no assets, nothing needed on your end.</div>
+<ul class="service-card-list">
+<li>Feed (4:5), Story (9:16), and Square (1:1) formats</li>
 <li>Animated from your product, message, and audience brief</li>
-<li>Delivered as MP4 — ready to upload directly to Ads Manager</li>
+<li>MP4 delivered — upload directly to Ads Manager</li>
 <li>Copy and CTA written to match each placement</li>
 <li>Revisions included</li>
 <li>AI-generated video available on request</li>
 </ul>
+<div class="service-card-tags">
+<span class="service-card-tag">Feed 4:5</span>
+<span class="service-card-tag">Story 9:16</span>
+<span class="service-card-tag">Square 1:1</span>
+<span class="service-card-tag">MP4</span>
 </div>
+<a class="service-card-cta" href="animated-creatives.html">See creative samples ›</a>
 </div>
 </div>
 </div>
 </section>
-<!-- TRACKING SETUP & AUDIT PRICING -->
+<!-- ═══ HOW IT WORKS ═══ -->
 <section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div class="section-tag">The process</div>
+<h2 class="section-title">Here's how it goes.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:520px;margin-top:.75rem;">Four steps from first conversation to a finished, launch-ready campaign package.</p>
+<div class="process-steps">
+<div class="process-step reveal">
+<div class="process-circle"><span>01</span></div>
+<div class="process-step-label">Share the brief</div>
+<div class="process-step-desc">Tell us your product, audience, goal, and which deliverables you need. The more detail, the better.</div>
+</div>
+<div class="process-step reveal reveal-delay-1">
+<div class="process-circle"><span>02</span></div>
+<div class="process-step-label">We scope it</div>
+<div class="process-step-desc">We come back with exactly what we'll build and a fixed price. No surprises, no open-ended billing.</div>
+</div>
+<div class="process-step reveal reveal-delay-2">
+<div class="process-circle"><span>03</span></div>
+<div class="process-step-label">We build</div>
+<div class="process-step-desc">Files, tracking, and creatives produced and delivered — typically within five business days.</div>
+</div>
+<div class="process-step reveal reveal-delay-3">
+<div class="process-circle"><span>04</span></div>
+<div class="process-step-label">Hand-off</div>
+<div class="process-step-desc">You receive everything, ready to upload and launch. Your team runs it, or we do — your call.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══ PLATFORM FOCUS ═══ -->
+<section class="section">
+<div class="section-inner">
+<div class="section-tag">Platform Focus</div>
+<h2 class="section-title">Built around Meta.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Everything we build is optimised for Facebook and Instagram advertising — the two placements that still deliver the best cost-per-result for most direct response campaigns. Meta's Pixel and attribution system are what we know inside-out.</p>
+<div class="platform-block stagger-children">
+<div class="plat-card fb reveal">
+<div class="plat-card-logo">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z" fill="#1877f2"></path></svg>
+</div>
+<div class="plat-card-name">Facebook Ads</div>
+<div class="plat-card-desc">Campaigns covering prospecting, retargeting, custom audiences, and lookalikes. Feed placements optimised for click-through and cost-per-result.</div>
+<div class="plat-tags"><span class="plat-tag">Custom Audiences</span><span class="plat-tag">Lookalikes</span><span class="plat-tag">Retargeting</span><span class="plat-tag">Feed</span></div>
+</div>
+<div class="plat-card ig reveal reveal-delay-1">
+<div class="plat-card-logo">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><rect height="20" rx="5" ry="5" stroke="#dd2a7b" stroke-width="1.75" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#dd2a7b" stroke-width="1.75"></path><line stroke="#dd2a7b" stroke-linecap="round" stroke-width="2" x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</div>
+<div class="plat-card-name">Instagram Ads</div>
+<div class="plat-card-desc">Story and Reel placements where short animated creatives perform at their best. High-visibility formats built for mobile-first audiences.</div>
+<div class="plat-tags"><span class="plat-tag">Stories</span><span class="plat-tag">Reels</span><span class="plat-tag">Mobile-first</span><span class="plat-tag">Animated</span></div>
+</div>
+</div>
+<div class="reveal" style="margin-top:1.5rem;background:var(--surface);border:1px solid var(--border-b);border-radius:var(--radius-lg);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+<div>
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;margin-bottom:.3rem;">Running on a different platform?</div>
+<div style="font-size:.875rem;color:var(--text-2);">Google, TikTok, or LinkedIn — get in touch and we'll let you know if we can help.</div>
+</div>
+<a class="btn btn-ghost" href="contact.html" style="white-space:nowrap;flex-shrink:0;">Get in touch ›</a>
+</div>
+</div>
+</section>
+<!-- ═══ TRACKING PRICING ═══ -->
+<section class="section" id="tracking-pricing" style="background:var(--bg-2);">
 <div class="section-inner">
 <div class="section-tag">Pixel &amp; Tracking</div>
 <h2 class="section-title">Tracking setup &amp; audit.</h2>
@@ -265,25 +383,25 @@
 </div>
 </div>
 </section>
-<!-- WANT US TO RUN IT? -->
+<!-- ═══ WANT US TO RUN IT? ═══ -->
 <section class="section">
 <div class="section-inner">
 <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:3rem;position:relative;overflow:hidden;text-align:center;">
 <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main);"></div>
 <div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Full Campaign Management</div>
 <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:1rem;">Interested in us running the campaign?</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin:0 auto 2rem;">If you want more than just the files and setup — if you'd like us to take over the day-to-day management, optimisation, and reporting of your Meta campaign — get in touch and we'll walk you through how that works.</p>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:560px;margin:0 auto 2rem;">If you want more than the files and setup — if you'd like us to take over the day-to-day optimisation, budget management, and reporting — get in touch and we'll walk you through how that works.</p>
 <a class="btn btn-primary" href="contact.html">Contact us about campaign management ›</a>
 </div>
 </div>
 </section>
-<!-- CTA -->
+<!-- ═══ CTA ═══ -->
 <section class="section" style="position:relative;overflow:hidden;">
 <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
 <div class="section-tag" style="justify-content:center;">Get Started</div>
 <h2 class="section-title">Tell us what you need built.</h2>
-<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Creatives, pixel setup, campaign files, or all three — share the brief and we'll scope it out.</p>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Creatives, pixel setup, campaign files, or all three — share the brief and we'll scope it and price it.</p>
 <a class="btn btn-primary btn-lg" href="contact.html">Start a Campaign Brief ›</a>
 </div>
 </section>
@@ -292,7 +410,7 @@
 <div class="footer-grid">
 <div>
 <div class="footer-logo grad-text">Zoomy</div>
-<p class="footer-tagline" data-i18n="footer.tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
+<p class="footer-tagline" data-i18n="footer.tagline">Campaign production, custom websites, AI chatbots, and phone agents.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Services</h4><ul>
 <li><a class="active" href="campaign-portfolio.html">Campaigns</a></li>

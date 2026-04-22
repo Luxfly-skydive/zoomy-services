@@ -44,7 +44,7 @@
 .tc.pop::before{content:'';position:absolute;inset:0;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(168,85,247,.12));pointer-events:none;z-index:0;}
 .tc>*{position:relative;z-index:1;}
 .tc-badge{display:inline-flex;align-items:center;background:var(--primary);color:#fff;font-size:.65rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:999px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;box-shadow:0 4px 16px rgba(99,102,241,.5);}
-.tc-market{display:inline-flex;align-items:center;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#34d399;font-size:.6rem;font-family:var(--font-mono);font-weight:600;letter-spacing:.06em;padding:3px 9px;border-radius:999px;position:absolute;top:.85rem;right:.85rem;white-space:nowrap;}
+.tc-market{display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.78rem;font-family:var(--font-mono);font-weight:700;letter-spacing:.04em;padding:5px 13px;border-radius:999px;position:absolute;top:.9rem;right:.9rem;white-space:nowrap;line-height:1.2;}
 .tc-name{font-family:var(--font-display);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.85rem;}
 .tc-price{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:#fff;letter-spacing:-.04em;line-height:1;margin-bottom:.25rem;}
 .tc-note{font-size:.74rem;color:var(--muted);margin-bottom:1.2rem;font-family:var(--font-mono);}
@@ -155,7 +155,7 @@
 <p class="ps-sub">One-time setup to build the campaign right, then ongoing management to keep it performing. Ad spend goes directly from your card to Meta — we never touch it.</p>
 <div class="tier-grid-2">
 <div class="tc reveal-up">
-<div class="tc-market">~40% of market</div>
+<div class="tc-market">~40% of market price</div>
 <div class="tc-name">Campaign Setup</div>
 <div class="tc-price">$999</div>
 <div class="tc-note">One-time · Meta Ads</div>
@@ -172,7 +172,7 @@
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">Ongoing</div>
-<div class="tc-market">~40% of market</div>
+<div class="tc-market">~40% of market price</div>
 <div class="tc-name">Monthly Management</div>
 <div class="tc-price" style="font-size:2.2rem;">From $599</div>
 <div class="tc-note">/ month · based on ad spend</div>
@@ -202,7 +202,7 @@
 <p class="ps-sub">Priced per page. Every site built from scratch in HTML, CSS, and JavaScript — full control over performance, design, and functionality.</p>
 <div class="tier-grid-4">
 <div class="tc reveal-up">
-<div class="tc-market">~40% of market</div>
+<div class="tc-market">~40% of market price</div>
 <div class="tc-name" data-i18n="pricing.web.page">Standard page</div>
 <div class="tc-price" data-i18n="price.web.page" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">per page · one-time</div>
@@ -216,7 +216,7 @@
 <a class="tc-cta" href="contact.html">Get started ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">~40% of market</div>
+<div class="tc-market">~40% of market price</div>
 <div class="tc-name" data-i18n="pricing.web.functional">Functional page</div>
 <div class="tc-price" data-i18n="price.web.functional" style="font-size:2.2rem;">$399</div>
 <div class="tc-note">per page · one-time</div>
@@ -231,7 +231,7 @@
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">Full App</div>
-<div class="tc-market">~20% of market</div>
+<div class="tc-market">~20% of market price</div>
 <div class="tc-name">App page</div>
 <div class="tc-price" style="font-size:2.2rem;">$599</div>
 <div class="tc-note">per page · one-time</div>
@@ -245,7 +245,7 @@
 <a class="tc-cta" href="contact.html">Get started ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">~35% of market</div>
+<div class="tc-market">~35% of market price</div>
 <div class="tc-name" data-i18n="pricing.web.language">Extra language</div>
 <div class="tc-price" data-i18n="price.web.language" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">per language</div>
@@ -284,7 +284,7 @@
 <p class="ps-sub">Tier is set by how detailed and varied your business information is — not by feature differences. Every tier uses the same technology.</p>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
-<div class="tc-market">~20% of market</div>
+<div class="tc-market">~20% of market price</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.chatbot.simple">$599</div>
 <div class="tc-note">+ $49/mo hosting</div>
@@ -299,7 +299,7 @@
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Most Popular</div>
-<div class="tc-market">~20% of market</div>
+<div class="tc-market">~20% of market price</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Standard</div>
 <div class="tc-price" data-i18n="price.chatbot.standard">$949</div>
 <div class="tc-note">+ $49/mo hosting</div>
@@ -313,7 +313,7 @@
 <a class="tc-cta" href="contact.html">Get started ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">~20% of market</div>
+<div class="tc-market">~20% of market price</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Advanced</div>
 <div class="tc-price" data-i18n="price.chatbot.advanced">$1,499</div>
 <div class="tc-note">+ $49/mo hosting</div>
@@ -346,7 +346,7 @@
 </div>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
-<div class="tc-market">~20% of market</div>
+<div class="tc-market">~20% of market price</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.phone.simple">$699</div>
 <div class="tc-note">setup + monthly usage</div>
@@ -361,7 +361,7 @@
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Most Popular</div>
-<div class="tc-market">~20% of market</div>
+<div class="tc-market">~20% of market price</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Standard</div>
 <div class="tc-price" data-i18n="price.phone.standard">$1,199</div>
 <div class="tc-note">setup + monthly usage</div>
@@ -375,7 +375,7 @@
 <a class="tc-cta" href="contact.html">Get started ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">~20% of market</div>
+<div class="tc-market">~20% of market price</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Advanced</div>
 <div class="tc-price" data-i18n="price.phone.advanced">$1,799</div>
 <div class="tc-note">setup + monthly usage</div>
@@ -404,7 +404,7 @@
 <p class="ps-sub">Two styles of video ad, same fixed price. No footage or camera crew needed — produced entirely from your brief, delivered in every Meta format.</p>
 <div class="tier-grid-2">
 <div class="tc reveal-up">
-<div class="tc-market">~25% of market</div>
+<div class="tc-market">~25% of market price</div>
 <div class="tc-name">Animated Video Ad</div>
 <div class="tc-price">$199</div>
 <div class="tc-note">per video · any length</div>
@@ -421,7 +421,7 @@
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">Also $199</div>
-<div class="tc-market">~25% of market</div>
+<div class="tc-market">~25% of market price</div>
 <div class="tc-name">AI-Generated Video Ad</div>
 <div class="tc-price">$199</div>
 <div class="tc-note">per video · up to 32s</div>
@@ -447,7 +447,7 @@
 <p class="ps-sub">Bad tracking makes good campaigns look bad. We set it up clean from scratch, or find exactly what's broken in your existing setup — and fix it.</p>
 <div class="tier-grid-2">
 <div class="tc reveal-up">
-<div class="tc-market">~40% of market</div>
+<div class="tc-market">~40% of market price</div>
 <div class="tc-name">Tracking Setup</div>
 <div class="tc-price">$399</div>
 <div class="tc-note">One-time · Meta Pixel + CAPI</div>
@@ -462,7 +462,7 @@
 <a class="tc-cta" href="contact.html">Get started ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">~45% of market</div>
+<div class="tc-market">~45% of market price</div>
 <div class="tc-name">Tracking Audit</div>
 <div class="tc-price">$299</div>
 <div class="tc-note">One-time · existing setup</div>

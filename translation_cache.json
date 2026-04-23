@@ -1490,7 +1490,10 @@
     "per video · up to 30 seconds": "par vidéo · jusqu'à 30 secondes",
     "$200 per finished video, all three formats included": "200 $ par vidéo terminée, les trois formats inclus",
     "Free preview · cart & pages included free.": "Aperçu gratuit · panier et pages inclus gratuitement.",
-    "Free website preview — we build your first page before you pay. Every site includes cart, checkout & utility pages free.": "Aperçu gratuit du site Web : nous construisons votre première page avant que vous payiez. Chaque site comprend des pages de panier, de paiement et d'utilitaires gratuites."
+    "Free website preview — we build your first page before you pay. Every site includes cart, checkout & utility pages free.": "Aperçu gratuit du site Web : nous construisons votre première page avant que vous payiez. Chaque site comprend des pages de panier, de paiement et d'utilitaires gratuites.",
+    "$200 per 30 seconds, all three formats included": "200 $ les 30 secondes, les trois formats inclus",
+    "/ 30s": "/ années 30",
+    "per 30 seconds of footage": "par 30 secondes de séquence"
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -2983,6 +2986,9 @@
     "per video · up to 30 seconds": "por vídeo · hasta 30 segundos",
     "$200 per finished video, all three formats included": "$200 por video terminado, incluidos los tres formatos",
     "Free preview · cart & pages included free.": "Vista previa gratuita · carrito y páginas incluidas gratis.",
-    "Free website preview — we build your first page before you pay. Every site includes cart, checkout & utility pages free.": "Vista previa gratuita del sitio web: creamos su primera página antes de que pague. Cada sitio incluye páginas de carrito, pago y utilidades gratuitas."
+    "Free website preview — we build your first page before you pay. Every site includes cart, checkout & utility pages free.": "Vista previa gratuita del sitio web: creamos su primera página antes de que pague. Cada sitio incluye páginas de carrito, pago y utilidades gratuitas.",
+    "$200 per 30 seconds, all three formats included": "$200 por 30 segundos, los tres formatos incluidos",
+    "/ 30s": "/ 30 años",
+    "per 30 seconds of footage": "por 30 segundos de metraje"
   }
 }

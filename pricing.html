@@ -29,6 +29,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -112,6 +114,18 @@
 .pf-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;}
 @media(max-width:1000px){.tier-grid-3,.tier-grid-4{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){.tier-grid-3,.tier-grid-2,.tier-grid-4{grid-template-columns:1fr;}.jump-wrap{top:60px;}.pf-card{padding:2.5rem 1.5rem;}.trust-bar{gap:.5rem;}.trust-chip{font-size:.73rem;padding:6px 13px;}}
+
+/* ── Conversation Intelligence dropdown pill ── */
+.ci-pill{cursor:pointer;flex-direction:column;align-items:flex-start;gap:.4rem;user-select:none;}
+.ci-pill .ci-header{display:flex;align-items:center;gap:.65rem;width:100%;}
+.ci-pill .ci-toggle{margin-left:auto;font-size:.7rem;color:var(--muted);transition:transform .2s;flex-shrink:0;}
+.ci-pill.open .ci-toggle{transform:rotate(180deg);}
+.ci-pill .ci-dropdown{display:none;margin-top:.25rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.08);width:100%;}
+.ci-pill.open .ci-dropdown{display:block;}
+.ci-tier-row{display:flex;justify-content:space-between;padding:.2rem 0;font-size:.78rem;}
+.ci-tier-row span:first-child{color:var(--muted);}
+.ci-tier-row span:last-child{font-weight:600;}
+.ci-tier-free{color:#4ade80!important;}
 </style>
 <style>
 :root{--bar-h:44px}
@@ -167,7 +181,7 @@ nav{top:var(--bar-h)!important}
 <div class="trust-bar">
 <div class="trust-chip"><span>✓</span> Fixed price, always</div>
 <div class="trust-chip"><span>✓</span> Scope confirmed upfront</div>
-<div class="trust-chip"><span>✓</span> Response within 24 hours</div>
+<div class="trust-chip"><span>✓</span> Typical response within 24 hours</div>
 <div class="trust-chip"><span>✓</span> Ad spend goes direct to Meta</div>
 </div>
 </div>
@@ -312,10 +326,17 @@ nav{top:var(--bar-h)!important}
 <div class="addon-pill" style="border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.06)"><div class="ap-icon">🎁</div><div class="ap-text"><strong>Always included free</strong> — Thank you page · Success &amp; cancel pages · 404 error page · Coming soon page · Privacy &amp; terms pages</div></div>
 <div class="addon-pill" style="border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.06)"><div class="ap-icon">🛒</div><div class="ap-text"><strong>Cart &amp; add-to-cart — included free</strong> on any site with products or purchases · full cart drawer, item management, and checkout flow at no extra charge</div></div>
 <div class="addon-pill"><div class="ap-icon">🌐</div><div class="ap-text"><strong>Additional language</strong> — +$199 on Simple · +$99 on Standard (50% off) · +$40 on Advanced (80% off)</div></div>
-<div class="addon-pill" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)"><div class="ap-icon">📊</div><div class="ap-text"><strong>Conversation Intelligence</strong> — +$50/month on Simple · Included free on Standard &amp; Advanced · Monthly insights report: top questions, knowledge gaps, missed conversions</div></div>
+<div class="addon-pill ci-pill" onclick="this.classList.toggle('open')" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)">
+<div class="ci-header"><span class="ap-icon">📊</span><div class="ap-text"><strong>Conversation Intelligence</strong> — monthly insights from all chat transcripts</div><span class="ci-toggle">▾</span></div>
+<div class="ci-dropdown">
+<div class="ci-tier-row"><span>Simple tier</span><span>+$50/month</span></div>
+<div class="ci-tier-row"><span>Standard tier</span><span class="ci-tier-free">Included free</span></div>
+<div class="ci-tier-row"><span>Advanced tier</span><span class="ci-tier-free">Included free</span></div>
+</div>
+</div>
 <div class="addon-pill"><div class="ap-icon">🛡️</div><div class="ap-text"><strong>Every tier includes</strong> — typo tolerance, self-hosted (no third-party fees), 100+ languages</div></div>
 </div>
-<div class="nudge">Not sure which tier? <a href="contact.html">Tell us about your business →</a> We'll recommend the right option within 24 hours.</div>
+<div class="nudge">Not sure which tier? <a href="contact.html">Tell us about your business →</a> Typical response within 24 hours.</div>
 </div>
 </section>
 <!-- ══ AI PHONE AGENT ══ -->
@@ -379,10 +400,17 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="addon-strip">
 <div class="addon-pill"><div class="ap-icon">🌐</div><div class="ap-text"><strong>Additional language</strong> — +$199 on Simple · 1 free on Standard · 2 free on Advanced</div></div>
-<div class="addon-pill" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)"><div class="ap-icon">📊</div><div class="ap-text"><strong>Conversation Intelligence</strong> — +$50/month on Simple · Included free on Standard &amp; Advanced · Monthly insights: top questions, caller intent, missed opportunities, geographic data</div></div>
+<div class="addon-pill ci-pill" onclick="this.classList.toggle('open')" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)">
+<div class="ci-header"><span class="ap-icon">📊</span><div class="ap-text"><strong>Conversation Intelligence</strong> — monthly insights from all call transcripts</div><span class="ci-toggle">▾</span></div>
+<div class="ci-dropdown">
+<div class="ci-tier-row"><span>Simple tier</span><span>+$50/month</span></div>
+<div class="ci-tier-row"><span>Standard tier</span><span class="ci-tier-free">Included free</span></div>
+<div class="ci-tier-row"><span>Advanced tier</span><span class="ci-tier-free">Included free</span></div>
+</div>
+</div>
 <div class="addon-pill"><div class="ap-icon">📞</div><div class="ap-text">Usage billed end of month — only what the agent actually handled</div></div>
 </div>
-<div class="nudge">Not sure which tier? <a href="contact.html">Tell us about your business →</a> We'll recommend the right option within 24 hours.</div>
+<div class="nudge">Not sure which tier? <a href="contact.html">Tell us about your business →</a> Typical response within 24 hours.</div>
 </div>
 </section>
 <!-- ══ ANIMATED CREATIVES ══ -->
@@ -461,19 +489,6 @@ nav{top:var(--bar-h)!important}
 </div>
 </section>
 <!-- ══ GUARANTEE ══ -->
-<div class="guarantee">
-<div class="g-inner">
-<div class="g-icon">🔒</div>
-<div class="g-title">Fixed-price guarantee</div>
-<p class="g-text">We quote the price. You approve it in writing. We deliver at that price. Scope doesn't change unless you ask for it — and if you do, we requote before proceeding. No invoice surprises, ever.</p>
-<div class="g-chips">
-<div class="g-chip">✓ Quoted in writing</div>
-<div class="g-chip">✓ Approved before we start</div>
-<div class="g-chip">✓ Price locked to scope</div>
-<div class="g-chip">✓ No hidden fees</div>
-</div>
-</div>
-</div>
 <section class="ps alt" id="tracking">
 <div class="ps-inner">
 <div class="ps-tag">Tracking &amp; Attribution</div>
@@ -516,6 +531,19 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 </section>
+<div class="guarantee">
+<div class="g-inner">
+<div class="g-icon">🔒</div>
+<div class="g-title">Fixed-price guarantee</div>
+<p class="g-text">We quote the price. You approve it in writing. We deliver at that price. Scope doesn't change unless you ask for it — and if you do, we requote before proceeding. No invoice surprises, ever.</p>
+<div class="g-chips">
+<div class="g-chip">✓ Quoted in writing</div>
+<div class="g-chip">✓ Approved before we start</div>
+<div class="g-chip">✓ Price locked to scope</div>
+<div class="g-chip">✓ No hidden fees</div>
+</div>
+</div>
+</div>
 <!-- ══ FAQ ══ -->
 <section class="ps" id="faq">
 <div class="ps-inner">
@@ -545,7 +573,7 @@ nav{top:var(--bar-h)!important}
 </details>
 <details class="faq-item">
 <summary>Do you work with businesses outside the US?</summary>
-<div class="faq-body">Yes. All work is fully remote. We've built for clients in France, Luxembourg, the US, and more. Invoicing is in USD. You'll always have a typical response within 24 hours regardless of time zone.</div>
+<div class="faq-body">Yes. All work is fully remote. We've built for clients in France, Luxembourg, the US, and more. Invoicing is in USD. Typical response within 24 hours, regardless of time zone.</div>
 </details>
 </div>
 </div>
@@ -555,7 +583,7 @@ nav{top:var(--bar-h)!important}
 <div class="pf-inner">
 <div class="pf-card reveal">
 <h2>Ready to start?</h2>
-<p>Tell us about your business and what you need. We'll scope the right solution, give you a fixed price, and usually typical response within 24 hours.</p>
+<p>Tell us about your business and what you need. We'll scope the right solution, give you a fixed price, and typical response within 24 hours.</p>
 <div class="pf-btns">
 <a class="btn btn-primary btn-magnetic" href="contact.html">Start a Project ›</a>
 <a class="btn btn-ghost" href="portfolio.html">See Our Work ›</a>

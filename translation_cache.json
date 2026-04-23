@@ -1458,7 +1458,18 @@
     "Always included free": "Toujours inclus gratuitement",
     "— +$199 on Simple · 1 free on Standard · 2 free on Advanced": "— +199$ en Simple · 1 gratuit en Standard · 2 gratuits en Advanced",
     "— Thank you page · Success & cancel pages · 404 error page · Coming soon page · Privacy & terms pages": "— Page de remerciement · Pages de réussite et d'annulation · Page d'erreur 404 · Page à venir · Pages de confidentialité et de conditions",
-    "on any site with products or purchases · full cart drawer, item management, and checkout flow at no extra charge": "sur n'importe quel site avec des produits ou des achats · tiroir de panier complet, gestion des articles et flux de paiement sans frais supplémentaires"
+    "on any site with products or purchases · full cart drawer, item management, and checkout flow at no extra charge": "sur n'importe quel site avec des produits ou des achats · tiroir de panier complet, gestion des articles et flux de paiement sans frais supplémentaires",
+    "+$50/month": "+50$/mois",
+    "Included free": "Inclus gratuitement",
+    "— monthly insights from all chat transcripts": "— informations mensuelles sur toutes les transcriptions de chat",
+    "Simple tier": "Niveau simple",
+    "Typical response within 24 hours": "Réponse typique dans les 24 heures",
+    "Advanced tier": "Niveau avancé",
+    "Yes. All work is fully remote. We've built for clients in France, Luxembourg, the US, and more. Invoicing is in USD. Typical response within 24 hours, regardless of time zone.": "Oui. Tout le travail est entièrement à distance. Nous avons construit pour des clients en France, au Luxembourg, aux États-Unis et plus encore. La facturation est en USD. Réponse typique dans les 24 heures, quel que soit le fuseau horaire.",
+    "Tell us about your business and what you need. We'll scope the right solution, give you a fixed price, and typical response within 24 hours.": "Parlez-nous de votre entreprise et de ce dont vous avez besoin. Nous définirons la bonne solution, vous proposerons un prix fixe et une réponse type dans les 24 heures.",
+    "Standard tier": "Niveau standard",
+    "— monthly insights from all call transcripts": "— informations mensuelles sur toutes les transcriptions d'appels",
+    "Typical response within 24 hours.": "Réponse typique dans les 24 heures."
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -2919,6 +2930,17 @@
     "Always included free": "Siempre incluido gratis",
     "— +$199 on Simple · 1 free on Standard · 2 free on Advanced": "— +$199 en Simple · 1 gratis en Estándar · 2 gratis en Avanzado",
     "— Thank you page · Success & cancel pages · 404 error page · Coming soon page · Privacy & terms pages": "— Página de agradecimiento · Páginas de éxito y cancelación · Página de error 404 · Próximamente página · Páginas de privacidad y términos",
-    "on any site with products or purchases · full cart drawer, item management, and checkout flow at no extra charge": "en cualquier sitio con productos o compras · cajón de carrito completo, gestión de artículos y flujo de pago sin cargo adicional"
+    "on any site with products or purchases · full cart drawer, item management, and checkout flow at no extra charge": "en cualquier sitio con productos o compras · cajón de carrito completo, gestión de artículos y flujo de pago sin cargo adicional",
+    "+$50/month": "+$50/mes",
+    "Included free": "Incluido gratis",
+    "— monthly insights from all chat transcripts": "— información mensual de todas las transcripciones del chat",
+    "Simple tier": "Nivel simple",
+    "Typical response within 24 hours": "Respuesta típica en 24 horas",
+    "Advanced tier": "Nivel avanzado",
+    "Yes. All work is fully remote. We've built for clients in France, Luxembourg, the US, and more. Invoicing is in USD. Typical response within 24 hours, regardless of time zone.": "Sí. Todo el trabajo es totalmente remoto. Hemos creado para clientes en Francia, Luxemburgo, EE. UU. y más. La facturación es en USD. Respuesta típica dentro de las 24 horas, independientemente de la zona horaria.",
+    "Tell us about your business and what you need. We'll scope the right solution, give you a fixed price, and typical response within 24 hours.": "Cuéntanos sobre tu negocio y lo que necesitas. Encontraremos la solución adecuada, le ofreceremos un precio fijo y una respuesta típica dentro de las 24 horas.",
+    "Standard tier": "Nivel estándar",
+    "— monthly insights from all call transcripts": "— información mensual de todas las transcripciones de llamadas",
+    "Typical response within 24 hours.": "Respuesta típica en 24 horas."
   }
 }

@@ -13,6 +13,7 @@ html
 html
 html
 html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -96,6 +97,18 @@ html
 .pf-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;}
 @media(max-width:1000px){.tier-grid-3,.tier-grid-4{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){.tier-grid-3,.tier-grid-2,.tier-grid-4{grid-template-columns:1fr;}.jump-wrap{top:60px;}.pf-card{padding:2.5rem 1.5rem;}.trust-bar{gap:.5rem;}.trust-chip{font-size:.73rem;padding:6px 13px;}}
+
+/* ── Conversation Intelligence dropdown pill ── */
+.ci-pill{cursor:pointer;flex-direction:column;align-items:flex-start;gap:.4rem;user-select:none;}
+.ci-pill .ci-header{display:flex;align-items:center;gap:.65rem;width:100%;}
+.ci-pill .ci-toggle{margin-left:auto;font-size:.7rem;color:var(--muted);transition:transform .2s;flex-shrink:0;}
+.ci-pill.open .ci-toggle{transform:rotate(180deg);}
+.ci-pill .ci-dropdown{display:none;margin-top:.25rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.08);width:100%;}
+.ci-pill.open .ci-dropdown{display:block;}
+.ci-tier-row{display:flex;justify-content:space-between;padding:.2rem 0;font-size:.78rem;}
+.ci-tier-row span:first-child{color:var(--muted);}
+.ci-tier-row span:last-child{font-weight:600;}
+.ci-tier-free{color:#4ade80!important;}
 </style>
 <style>
 :root{--bar-h:44px}
@@ -151,7 +164,7 @@ nav{top:var(--bar-h)!important}
 <div class="trust-bar">
 <div class="trust-chip"><span>✓</span> Prix ​​fixe, toujours</div>
 <div class="trust-chip"><span>✓</span> Portée confirmée d'emblée</div>
-<div class="trust-chip"><span>✓</span> Réponse sous 24 heures</div>
+<div class="trust-chip"><span>✓</span> Réponse typique dans les 24 heures</div>
 <div class="trust-chip"><span>✓</span> Les dépenses publicitaires vont directement à Meta</div>
 </div>
 </div>
@@ -296,10 +309,17 @@ nav{top:var(--bar-h)!important}
 <div class="addon-pill" style="border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.06)"><div class="ap-icon">🎁</div><div class="ap-text"><strong>Toujours inclus gratuitement</strong> — Page de remerciement · Pages de réussite et d'annulation · Page d'erreur 404 · Page à venir · Pages de confidentialité et de conditions</div></div>
 <div class="addon-pill" style="border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.06)"><div class="ap-icon">🛒</div><div class="ap-text"><strong>Panier et ajout au panier — inclus gratuitement</strong> sur n'importe quel site avec des produits ou des achats · tiroir de panier complet, gestion des articles et flux de paiement sans frais supplémentaires</div></div>
 <div class="addon-pill"><div class="ap-icon">🌐</div><div class="ap-text"><strong>Langue supplémentaire</strong> — +199 $ sur Simple · +99 $ sur Standard (50 % de réduction) · +40 $ sur Avancé (80 % de réduction)</div></div>
-<div class="addon-pill" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)"><div class="ap-icon">📊</div><div class="ap-text"><strong>Intelligence conversationnelle</strong> — + 50 $/mois sur Simple · Inclus gratuitement sur Standard et Avancé · Rapport mensuel d'informations : principales questions, lacunes dans les connaissances, conversions manquées</div></div>
+<div class="addon-pill ci-pill" onclick="this.classList.toggle('open')" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)">
+<div class="ci-header"><span class="ap-icon">📊</span><div class="ap-text"><strong>Intelligence conversationnelle</strong> — informations mensuelles sur toutes les transcriptions de chat</div><span class="ci-toggle">▾</span></div>
+<div class="ci-dropdown">
+<div class="ci-tier-row"><span>Niveau simple</span><span>+50$/mois</span></div>
+<div class="ci-tier-row"><span>Niveau standard</span><span class="ci-tier-free">Inclus gratuitement</span></div>
+<div class="ci-tier-row"><span>Niveau avancé</span><span class="ci-tier-free">Inclus gratuitement</span></div>
+</div>
+</div>
 <div class="addon-pill"><div class="ap-icon">🛡️</div><div class="ap-text"><strong>Chaque niveau comprend</strong> — tolérance aux fautes de frappe, auto-hébergé (pas de frais tiers), plus de 100 langues</div></div>
 </div>
-<div class="nudge">Vous ne savez pas quel niveau ? <a href="contact.html">Parlez-nous de votre entreprise →</a> Nous vous recommanderons la bonne option dans les 24 heures.</div>
+<div class="nudge">Vous ne savez pas quel niveau ? <a href="contact.html">Parlez-nous de votre entreprise →</a> Réponse typique dans les 24 heures.</div>
 </div>
 </section>
 <!-- ══ AI PHONE AGENT ══ -->
@@ -363,10 +383,17 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="addon-strip">
 <div class="addon-pill"><div class="ap-icon">🌐</div><div class="ap-text"><strong>Langue supplémentaire</strong> — +199$ en Simple · 1 gratuit en Standard · 2 gratuits en Advanced</div></div>
-<div class="addon-pill" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)"><div class="ap-icon">📊</div><div class="ap-text"><strong>Intelligence conversationnelle</strong> — + 50 $/mois sur Simple · Inclus gratuitement sur Standard et Avancé · Informations mensuelles : principales questions, intention de l'appelant, opportunités manquées, données géographiques</div></div>
+<div class="addon-pill ci-pill" onclick="this.classList.toggle('open')" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)">
+<div class="ci-header"><span class="ap-icon">📊</span><div class="ap-text"><strong>Intelligence conversationnelle</strong> — informations mensuelles sur toutes les transcriptions d'appels</div><span class="ci-toggle">▾</span></div>
+<div class="ci-dropdown">
+<div class="ci-tier-row"><span>Niveau simple</span><span>+50$/mois</span></div>
+<div class="ci-tier-row"><span>Niveau standard</span><span class="ci-tier-free">Inclus gratuitement</span></div>
+<div class="ci-tier-row"><span>Niveau avancé</span><span class="ci-tier-free">Inclus gratuitement</span></div>
+</div>
+</div>
 <div class="addon-pill"><div class="ap-icon">📞</div><div class="ap-text">Utilisation facturée à la fin du mois : uniquement ce que l'agent a réellement traité</div></div>
 </div>
-<div class="nudge">Vous ne savez pas quel niveau ? <a href="contact.html">Parlez-nous de votre entreprise →</a> Nous vous recommanderons la bonne option dans les 24 heures.</div>
+<div class="nudge">Vous ne savez pas quel niveau ? <a href="contact.html">Parlez-nous de votre entreprise →</a> Réponse typique dans les 24 heures.</div>
 </div>
 </section>
 <!-- ══ ANIMATED CREATIVES ══ -->
@@ -445,19 +472,6 @@ nav{top:var(--bar-h)!important}
 </div>
 </section>
 <!-- ══ GUARANTEE ══ -->
-<div class="guarantee">
-<div class="g-inner">
-<div class="g-icon">🔒</div>
-<div class="g-title">Garantie à prix fixe</div>
-<p class="g-text">Nous citons le prix. Vous l'approuvez par écrit. Nous livrons à ce prix. La portée ne change pas à moins que vous ne le demandiez – et si vous le faites, nous réévaluons avant de continuer. Aucune surprise sur la facture, jamais.</p>
-<div class="g-chips">
-<div class="g-chip">✓ Cité par écrit</div>
-<div class="g-chip">✓ Approuvé avant de commencer</div>
-<div class="g-chip">✓ Prix verrouillé sur la portée</div>
-<div class="g-chip">✓ Pas de frais cachés</div>
-</div>
-</div>
-</div>
 <section class="ps alt" id="tracking">
 <div class="ps-inner">
 <div class="ps-tag">Suivi et attribution</div>
@@ -500,6 +514,19 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 </section>
+<div class="guarantee">
+<div class="g-inner">
+<div class="g-icon">🔒</div>
+<div class="g-title">Garantie à prix fixe</div>
+<p class="g-text">Nous citons le prix. Vous l'approuvez par écrit. Nous livrons à ce prix. La portée ne change pas à moins que vous ne le demandiez – et si vous le faites, nous réévaluons avant de continuer. Aucune surprise sur la facture, jamais.</p>
+<div class="g-chips">
+<div class="g-chip">✓ Cité par écrit</div>
+<div class="g-chip">✓ Approuvé avant de commencer</div>
+<div class="g-chip">✓ Prix verrouillé sur la portée</div>
+<div class="g-chip">✓ Pas de frais cachés</div>
+</div>
+</div>
+</div>
 <!-- ══ FAQ ══ -->
 <section class="ps" id="faq">
 <div class="ps-inner">
@@ -529,7 +556,7 @@ nav{top:var(--bar-h)!important}
 </details>
 <details class="faq-item">
 <summary>Travaillez-vous avec des entreprises en dehors des États-Unis ?</summary>
-<div class="faq-body">Oui. Tout le travail est entièrement à distance. Nous avons construit pour des clients en France, au Luxembourg, aux États-Unis et plus encore. La facturation est en USD. Vous obtiendrez toujours une réponse typique dans les 24 heures, quel que soit le fuseau horaire.</div>
+<div class="faq-body">Oui. Tout le travail est entièrement à distance. Nous avons construit pour des clients en France, au Luxembourg, aux États-Unis et plus encore. La facturation est en USD. Réponse typique dans les 24 heures, quel que soit le fuseau horaire.</div>
 </details>
 </div>
 </div>
@@ -539,7 +566,7 @@ nav{top:var(--bar-h)!important}
 <div class="pf-inner">
 <div class="pf-card reveal">
 <h2>Prêt à commencer ?</h2>
-<p>Parlez-nous de votre entreprise et de ce dont vous avez besoin. Nous rechercherons la bonne solution, vous proposerons un prix fixe et, généralement, une réponse typique dans les 24 heures.</p>
+<p>Parlez-nous de votre entreprise et de ce dont vous avez besoin. Nous définirons la bonne solution, vous proposerons un prix fixe et une réponse type dans les 24 heures.</p>
 <div class="pf-btns">
 <a class="btn btn-primary btn-magnetic" href="contact.html">Démarrer un projet ›</a>
 <a class="btn btn-ghost" href="portfolio.html">Voir notre travail ›</a>

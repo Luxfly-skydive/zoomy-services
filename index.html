@@ -91,6 +91,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -269,6 +271,13 @@ nav{top:var(--bar-h)!important}
   </script>
 <noscript><img height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
 <!-- ═══ END META PIXEL ═══ -->
+<style>
+/* Mobile: show call card above description text in phone section */
+@media(max-width:900px){
+  #phone-agent-section .section-inner > div { display:flex; flex-direction:column; }
+  #phone-agent-section .reveal-right { order:-1; margin-bottom:2rem; }
+}
+</style>
 </head>
 <body>
 <!-- ═══ FREE PAGE ANNOUNCEMENT BAR ═══ -->
@@ -856,21 +865,25 @@ window.hpToggleMute = function() {
 
 window.hpToggleSpeaker = async function() {
   hpIsSpeaker = !hpIsSpeaker;
-  try {
-    const devices = await navigator.mediaDevices.enumerateDevices();
-    const outputs = devices.filter(d => d.kind === 'audiooutput');
-    const speakerDev = outputs.find(d => /speaker|loud/i.test(d.label));
-    const targetId = hpIsSpeaker ? (speakerDev ? speakerDev.deviceId : '') : '';
-    document.querySelectorAll('audio').forEach(a => {
-      if (typeof a.setSinkId === 'function') a.setSinkId(targetId).catch(() => {});
-    });
-  } catch(e) {}
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const setSink = (el, id) => { if (typeof el.setSinkId === 'function') el.setSinkId(id).catch(() => {}); };
+  if (window._zmySpeakerObs) { window._zmySpeakerObs.disconnect(); window._zmySpeakerObs = null; }
   if (hpIsSpeaker) {
+    document.querySelectorAll('audio').forEach(a => setSink(a, ''));
+    window._zmySpeakerObs = new MutationObserver(muts => {
+      muts.forEach(m => m.addedNodes.forEach(n => {
+        if (!n || n.nodeType !== 1) return;
+        if (n.tagName === 'AUDIO') setSink(n, '');
+        if (n.querySelectorAll) n.querySelectorAll('audio').forEach(a => setSink(a, ''));
+      }));
+    });
+    window._zmySpeakerObs.observe(document.documentElement, { childList: true, subtree: true });
     hpSpeakerBtn.style.background = 'rgba(74,222,128,.18)';
     hpSpeakerBtn.style.borderColor = 'rgba(74,222,128,.4)';
     hpSpeakerIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';
-    hpSpeakerLabel.textContent = 'Speaker On';
+    hpSpeakerLabel.textContent = isIOS ? 'Speaker (raise vol)' : 'Speaker On';
   } else {
+    document.querySelectorAll('audio').forEach(a => setSink(a, 'default'));
     hpSpeakerBtn.style.background = 'rgba(255,255,255,.08)';
     hpSpeakerBtn.style.borderColor = 'rgba(255,255,255,.15)';
     hpSpeakerIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" opacity=".4"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';

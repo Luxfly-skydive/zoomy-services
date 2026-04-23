@@ -1478,7 +1478,12 @@
     "Full cart drawer, item management, and checkout flow included free on any site that sells products or services. No extra charge for the cart itself.": "Tiroir de panier complet, gestion des articles et flux de paiement inclus gratuitement sur tout site vendant des produits ou des services. Pas de frais supplémentaires pour le chariot lui-même.",
     "Thank you page, success & cancel pages, 404 error page, coming soon page, privacy policy, and terms — included on every project at no extra cost.": "Page de remerciement, pages de réussite et d'annulation, page d'erreur 404, page à venir, politique de confidentialité et conditions — inclus dans chaque projet sans frais supplémentaires.",
     "Every site is built from scratch in custom code — no WordPress, no templates. We build multilingual booking platforms, e-commerce stores, restaurant and venue sites, service business websites, and single-page landing pages. Booking systems, online payment, admin panels, and AI chatbots can all be included depending on what the project needs. Thank you pages, 404 pages, and privacy pages are always included free. Cart and add-to-cart are included free on any site with purchases.": "Chaque site est construit à partir de zéro dans un code personnalisé : pas de WordPress, pas de modèles. Nous construisons des plateformes de réservation multilingues, des boutiques de commerce électronique, des sites de restaurants et de lieux, des sites Web d'entreprises de services et des pages de destination d'une seule page. Les systèmes de réservation, le paiement en ligne, les panneaux d'administration et les chatbots IA peuvent tous être inclus en fonction des besoins du projet. Les pages de remerciement, les pages 404 et les pages de confidentialité sont toujours incluses gratuitement. Le panier et l'ajout au panier sont inclus gratuitement sur n'importe quel site avec des achats.",
-    "Cart & add-to-cart": "Panier et ajout au panier"
+    "Cart & add-to-cart": "Panier et ajout au panier",
+    "Cart & checkout free": "Panier et paiement gratuits",
+    "— +$50/month on Simple · Free on Standard & Advanced": "— +$50/mois sur Simple · Gratuit sur Standard et Avancé",
+    "— included on any site with products or purchases": "— inclus sur n'importe quel site avec des produits ou des achats",
+    "— Thank you page · Success & cancel · 404 · Privacy & terms": "— Page de remerciement · Succès et annulation · 404 · Confidentialité et conditions",
+    "Always free": "Toujours gratuit"
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -2959,6 +2964,11 @@
     "Full cart drawer, item management, and checkout flow included free on any site that sells products or services. No extra charge for the cart itself.": "Cajón completo del carrito, gestión de artículos y flujo de pago incluidos de forma gratuita en cualquier sitio que venda productos o servicios. Sin cargo adicional por el carrito en sí.",
     "Thank you page, success & cancel pages, 404 error page, coming soon page, privacy policy, and terms — included on every project at no extra cost.": "Página de agradecimiento, páginas de éxito y cancelación, página de error 404, página próximamente, política de privacidad y términos, incluidos en cada proyecto sin costo adicional.",
     "Every site is built from scratch in custom code — no WordPress, no templates. We build multilingual booking platforms, e-commerce stores, restaurant and venue sites, service business websites, and single-page landing pages. Booking systems, online payment, admin panels, and AI chatbots can all be included depending on what the project needs. Thank you pages, 404 pages, and privacy pages are always included free. Cart and add-to-cart are included free on any site with purchases.": "Cada sitio se crea desde cero con código personalizado: sin WordPress ni plantillas. Creamos plataformas de reservas multilingües, tiendas de comercio electrónico, sitios de restaurantes y locales, sitios web de empresas de servicios y páginas de destino de una sola página. Se pueden incluir sistemas de reserva, pagos en línea, paneles de administración y chatbots de inteligencia artificial según las necesidades del proyecto. Las páginas de agradecimiento, las páginas 404 y las páginas de privacidad siempre se incluyen de forma gratuita. El carrito y el complemento al carrito se incluyen de forma gratuita en cualquier sitio con compras.",
-    "Cart & add-to-cart": "Carrito y agregar al carrito"
+    "Cart & add-to-cart": "Carrito y agregar al carrito",
+    "Cart & checkout free": "Carrito y pago gratis",
+    "— +$50/month on Simple · Free on Standard & Advanced": "— +$50/mes en Simple · Gratis en Estándar y Avanzado",
+    "— included on any site with products or purchases": "— incluido en cualquier sitio con productos o compras",
+    "— Thank you page · Success & cancel · 404 · Privacy & terms": "— Página de agradecimiento · Éxito y cancelación · 404 · Privacidad y términos",
+    "Always free": "Siempre gratis"
   }
 }

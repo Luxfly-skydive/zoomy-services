@@ -35,6 +35,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -119,17 +121,6 @@
 @media(max-width:1000px){.tier-grid-3,.tier-grid-4{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){.tier-grid-3,.tier-grid-2,.tier-grid-4{grid-template-columns:1fr;}.jump-wrap{top:60px;}.pf-card{padding:2.5rem 1.5rem;}.trust-bar{gap:.5rem;}.trust-chip{font-size:.73rem;padding:6px 13px;}}
 
-/* ── Conversation Intelligence dropdown pill ── */
-.ci-pill{cursor:pointer;flex-direction:column;align-items:flex-start;gap:.4rem;user-select:none;}
-.ci-pill .ci-header{display:flex;align-items:center;gap:.65rem;width:100%;}
-.ci-pill .ci-toggle{margin-left:auto;font-size:.7rem;color:var(--muted);transition:transform .2s;flex-shrink:0;}
-.ci-pill.open .ci-toggle{transform:rotate(180deg);}
-.ci-pill .ci-dropdown{display:none;margin-top:.25rem;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.08);width:100%;}
-.ci-pill.open .ci-dropdown{display:block;}
-.ci-tier-row{display:flex;justify-content:space-between;padding:.2rem 0;font-size:.78rem;}
-.ci-tier-row span:first-child{color:var(--muted);}
-.ci-tier-row span:last-child{font-weight:600;}
-.ci-tier-free{color:#4ade80!important;}
 </style>
 <style>
 :root{--bar-h:44px}
@@ -208,7 +199,7 @@ nav{top:var(--bar-h)!important}
 <div class="ps-inner">
 <div class="ps-tag" data-i18n="pricing.web.tag">Websites</div>
 <h2 class="ps-heading">Custom-coded. No templates, ever.</h2>
-<p class="ps-sub">Priced per page. Every site built from scratch in HTML, CSS, and JavaScript — full control over performance, design, and functionality. Standard pages like thank you, 404, privacy, and terms are always included free. Sites with purchases include a full cart and checkout at no extra charge.</p>
+<p class="ps-sub">Priced per page. Every site built from scratch in HTML, CSS, and JavaScript — full control over performance, design, and functionality.</p>
 <div class="tier-grid-4">
 <div class="tc reveal-up">
 <div class="tc-market">18% of agency rate</div>
@@ -267,6 +258,10 @@ nav{top:var(--bar-h)!important}
 </ul>
 <a class="tc-cta" href="contact.html">Get started ›</a>
 </div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill" style="border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.06)"><div class="ap-icon">🎁</div><div class="ap-text"><strong>Always free</strong> — Thank you page · Success &amp; cancel · 404 · Privacy &amp; terms</div></div>
+<div class="addon-pill" style="border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.06)"><div class="ap-icon">🛒</div><div class="ap-text"><strong>Cart &amp; checkout free</strong> — included on any site with products or purchases</div></div>
 </div>
 <div class="nudge">Building a full site? <a href="contact.html">Send us a brief →</a> We'll scope it and give you a fixed total.</div>
 </div>
@@ -327,14 +322,7 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 <div class="addon-strip">
-<div class="addon-pill ci-pill" onclick="this.classList.toggle('open')" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)">
-<div class="ci-header"><span class="ap-icon">📊</span><div class="ap-text"><strong>Conversation Intelligence</strong> — monthly insights from all chat transcripts</div><span class="ci-toggle">▾</span></div>
-<div class="ci-dropdown">
-<div class="ci-tier-row"><span>Simple tier</span><span>+$50/month</span></div>
-<div class="ci-tier-row"><span>Standard tier</span><span class="ci-tier-free">Included free</span></div>
-<div class="ci-tier-row"><span>Advanced tier</span><span class="ci-tier-free">Included free</span></div>
-</div>
-</div>
+<div class="addon-pill" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)"><div class="ap-icon">📊</div><div class="ap-text"><strong>Conversation Intelligence</strong> — +$50/month on Simple · Free on Standard &amp; Advanced</div></div>
 </div>
 <div class="nudge">Not sure which tier? <a href="contact.html">Tell us about your business →</a> Typical response within 24 hours.</div>
 </div>
@@ -399,14 +387,7 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 <div class="addon-strip">
-<div class="addon-pill ci-pill" onclick="this.classList.toggle('open')" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)">
-<div class="ci-header"><span class="ap-icon">📊</span><div class="ap-text"><strong>Conversation Intelligence</strong> — monthly insights from all call transcripts</div><span class="ci-toggle">▾</span></div>
-<div class="ci-dropdown">
-<div class="ci-tier-row"><span>Simple tier</span><span>+$50/month</span></div>
-<div class="ci-tier-row"><span>Standard tier</span><span class="ci-tier-free">Included free</span></div>
-<div class="ci-tier-row"><span>Advanced tier</span><span class="ci-tier-free">Included free</span></div>
-</div>
-</div>
+<div class="addon-pill" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.06)"><div class="ap-icon">📊</div><div class="ap-text"><strong>Conversation Intelligence</strong> — +$50/month on Simple · Free on Standard &amp; Advanced</div></div>
 </div>
 <div class="nudge">Not sure which tier? <a href="contact.html">Tell us about your business →</a> Typical response within 24 hours.</div>
 </div>

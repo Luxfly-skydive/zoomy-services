@@ -9,6 +9,7 @@ HTML
 HTML
 HTML
 HTML
+HTML
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -30,8 +31,8 @@ HTML
 .trust-bar{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:2.5rem;}
 .trust-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:8px 18px;font-size:.8rem;color:var(--text-2);}
 .trust-chip span{font-size:.9rem;}
-.jump-wrap{position:sticky;top:68px;z-index:90;background:rgba(2,2,8,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);padding:.65rem 2rem;}
-.jump-nav{display:flex;gap:.4rem;max-width:var(--max-w);margin:0 auto;overflow-x:auto;scrollbar-width:none;}
+.jump-wrap{padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.jump-nav{display:flex;gap:.4rem;max-width:var(--max-w);margin:0 auto;overflow-x:auto;scrollbar-width:none;justify-content:center;}
 .jump-nav::-webkit-scrollbar{display:none;}
 .jump-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 15px;border-radius:999px;font-size:.77rem;font-weight:600;font-family:var(--font-display);color:var(--text-2);background:transparent;border:1px solid transparent;white-space:nowrap;cursor:pointer;transition:all .2s;text-decoration:none;}
 .jump-pill:hover{background:rgba(99,102,241,.15);border-color:rgba(99,102,241,.35);color:#fff;}
@@ -146,7 +147,6 @@ nav{top:var(--bar-h)!important}
 <p class="hero-sub" style="margin:0 auto;max-width:560px;font-size:1.05rem;line-height:1.8;">Sin facturación por horas. Sin retenedores indefinidos. Cada proyecto tiene un alcance y un precio por escrito antes de que comience el trabajo, y el precio no cambia a menos que el alcance lo haga.</p>
 <div class="trust-bar">
 <div class="trust-chip"><span>✓</span> Precio fijo, siempre</div>
-<div class="trust-chip"><span>✓</span> No se requieren contratos</div>
 <div class="trust-chip"><span>✓</span> Alcance confirmado por adelantado</div>
 <div class="trust-chip"><span>✓</span> Respuesta en 24h</div>
 <div class="trust-chip"><span>✓</span> La inversión publicitaria va directamente al Meta</div>
@@ -174,7 +174,7 @@ nav{top:var(--bar-h)!important}
 <p class="ps-sub">Precio por página. Cada sitio creado desde cero en HTML, CSS y JavaScript: control total sobre el rendimiento, el diseño y la funcionalidad.</p>
 <div class="tier-grid-4">
 <div class="tc reveal-up">
-<div class="tc-market">40% del precio de mercado</div>
+<div class="tc-market">18% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.web.page">Página estándar</div>
 <div class="tc-price" data-i18n="price.web.page" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">por página · una sola vez</div>
@@ -188,7 +188,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">40% del precio de mercado</div>
+<div class="tc-market">20% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.web.functional">Página funcional</div>
 <div class="tc-price" data-i18n="price.web.functional" style="font-size:2.2rem;">$399</div>
 <div class="tc-note">por página · una sola vez</div>
@@ -203,7 +203,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">Aplicación completa</div>
-<div class="tc-market">20% del precio de mercado</div>
+<div class="tc-market">17% de la tarifa de agencia</div>
 <div class="tc-name">Página de la aplicación</div>
 <div class="tc-price" style="font-size:2.2rem;">$599</div>
 <div class="tc-note">por página · una sola vez</div>
@@ -217,7 +217,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">35% del precio de mercado</div>
+<div class="tc-market">18% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.web.language">Idioma adicional</div>
 <div class="tc-price" data-i18n="price.web.language" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">por idioma</div>
@@ -242,7 +242,7 @@ nav{top:var(--bar-h)!important}
 <p class="ps-sub">El nivel se establece en función del nivel de detalle y variedad de la información de su empresa, no de las diferencias en las funciones. Cada nivel utiliza la misma tecnología.</p>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
-<div class="tc-market">20% del precio de mercado</div>
+<div class="tc-market">20% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.chatbot.simple">$599</div>
 <div class="tc-note">+ Alojamiento de $49/mes</div>
@@ -257,7 +257,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Más populares</div>
-<div class="tc-market">20% del precio de mercado</div>
+<div class="tc-market">16% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Estándar</div>
 <div class="tc-price" data-i18n="price.chatbot.standard">$949</div>
 <div class="tc-note">+ Alojamiento de $49/mes</div>
@@ -271,7 +271,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">20% del precio de mercado</div>
+<div class="tc-market">12% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Avanzado</div>
 <div class="tc-price" data-i18n="price.chatbot.advanced">$1,499</div>
 <div class="tc-note">+ Alojamiento de $49/mes</div>
@@ -305,7 +305,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
-<div class="tc-market">20% del precio de mercado</div>
+<div class="tc-market">17% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.phone.simple">$699</div>
 <div class="tc-note">configuración + uso mensual</div>
@@ -320,7 +320,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Más populares</div>
-<div class="tc-market">20% del precio de mercado</div>
+<div class="tc-market">15% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Estándar</div>
 <div class="tc-price" data-i18n="price.phone.standard">$1,199</div>
 <div class="tc-note">configuración + uso mensual</div>
@@ -334,7 +334,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">20% del precio de mercado</div>
+<div class="tc-market">12% de la tarifa de agencia</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Avanzado</div>
 <div class="tc-price" data-i18n="price.phone.advanced">$1,799</div>
 <div class="tc-note">configuración + uso mensual</div>
@@ -364,7 +364,7 @@ nav{top:var(--bar-h)!important}
 <p class="ps-sub">Dos estilos de anuncios de video: gráficos animados en movimiento a $199 o imágenes fotorrealistas generadas por IA a $499. Sin equipo de cámara, no se necesitan imágenes.</p>
 <div class="tier-grid-2">
 <div class="tc reveal-up">
-<div class="tc-market">25% del precio de mercado</div>
+<div class="tc-market">19% de la tarifa de agencia</div>
 <div class="tc-name">Anuncio de vídeo animado</div>
 <div class="tc-price">$199</div>
 <div class="tc-note">por vídeo · cualquier duración</div>
@@ -381,7 +381,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">De primera calidad</div>
-<div class="tc-market">~20% de la tarifa de agencia</div>
+<div class="tc-market">25% de la tarifa de agencia</div>
 <div class="tc-name">Anuncio de vídeo generado por IA</div>
 <div class="tc-price">$499</div>
 <div class="tc-note">por vídeo · hasta 32s</div>
@@ -400,57 +400,14 @@ nav{top:var(--bar-h)!important}
 </div>
 </section>
 <!-- ══ TRACKING ══ -->
-<section class="ps" id="tracking">
-<div class="ps-inner">
-<div class="ps-tag">Seguimiento y atribución</div>
-<h2 class="ps-heading">Asegúrate de que los datos sean correctos.</h2>
-<p class="ps-sub">Un mal seguimiento hace que las buenas campañas parezcan malas. Lo configuramos desde cero o encontramos exactamente lo que está roto en su configuración existente y lo reparamos.</p>
-<div class="tier-grid-2">
-<div class="tc reveal-up">
-<div class="tc-market">40% del precio de mercado</div>
-<div class="tc-name">Configuración de seguimiento</div>
-<div class="tc-price">$399</div>
-<div class="tc-note">Única vez · Meta Pixel + CAPI</div>
-<div class="tc-div"></div>
-<ul class="tc-features">
-<li>Meta Pixel instalado y verificado</li>
-<li>API de conversiones (del lado del servidor) conectada</li>
-<li>Eventos estándar mapeados (Lead, Compra…)</li>
-<li>Estructura de parámetros UTM configurada</li>
-<li>Disparo verificado correctamente antes del lanzamiento.</li>
-</ul>
-<a class="tc-cta" href="contact.html">Empezar ›</a>
-</div>
-<div class="tc reveal-up">
-<div class="tc-market">45% del precio de mercado</div>
-<div class="tc-name">Auditoría de seguimiento</div>
-<div class="tc-price">$299</div>
-<div class="tc-note">Configuración única · existente</div>
-<div class="tc-div"></div>
-<ul class="tc-features">
-<li>Detección de eventos duplicados</li>
-<li>Falta análisis de conversión</li>
-<li>Revisión de la ventana de atribución</li>
-<li>Identificación de brechas CAPI</li>
-<li>Informe escrito con todas las correcciones incluidas</li>
-</ul>
-<a class="tc-cta" href="contact.html">Empezar ›</a>
-</div>
-</div>
-<div class="addon-strip">
-<div class="addon-pill"><div class="ap-icon">🔍</div><div class="ap-text"><strong>Otras plataformas</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contáctenos</a> para Google Tag Manager, GA4 o TikTok Pixel</div></div>
-</div>
-</div>
-</section>
-<!-- ══ FAQ ══ -->
-<section class="ps alt" id="campaigns">
+<section class="ps" id="campaigns">
 <div class="ps-inner" style="text-align:center;">
 <div class="ps-tag" style="justify-content:center;">Campañas de meta anuncios</div>
 <h2 class="ps-heading">Tu campaña, creada antes del primer día.</h2>
 <p class="ps-sub" style="margin:0 auto 2.75rem;text-align:center;">Creamos todos los archivos que su campaña necesita: estrategia, texto, especificaciones de orientación, configuración, rastreador y panel. Usted (o su equipo) presiona el lanzamiento. No se requiere acceso a la cuenta Meta de nuestra parte.</p>
 <div class="tier-grid-2" style="max-width:600px;margin:0 auto;">
 <div class="tc reveal-up" style="grid-column:1/-1;text-align:left;">
-<div class="tc-market">40% del precio de mercado</div>
+<div class="tc-market">33% de la tarifa de agencia</div>
 <div class="tc-name">Configuración de campaña</div>
 <div class="tc-price">$999</div>
 <div class="tc-note">Una sola vez · Archivos entregados en 5 a 7 días</div>
@@ -487,6 +444,49 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 </div>
+<section class="ps alt" id="tracking">
+<div class="ps-inner">
+<div class="ps-tag">Seguimiento y atribución</div>
+<h2 class="ps-heading">Asegúrate de que los datos sean correctos.</h2>
+<p class="ps-sub">Un mal seguimiento hace que las buenas campañas parezcan malas. Lo configuramos desde cero o encontramos exactamente lo que está roto en su configuración existente y lo reparamos.</p>
+<div class="tier-grid-2">
+<div class="tc reveal-up">
+<div class="tc-market">27% de la tarifa de agencia</div>
+<div class="tc-name">Configuración de seguimiento</div>
+<div class="tc-price">$399</div>
+<div class="tc-note">Única vez · Meta Pixel + CAPI</div>
+<div class="tc-div"></div>
+<ul class="tc-features">
+<li>Meta Pixel instalado y verificado</li>
+<li>API de conversiones (del lado del servidor) conectada</li>
+<li>Eventos estándar mapeados (Lead, Compra…)</li>
+<li>Estructura de parámetros UTM configurada</li>
+<li>Disparo verificado correctamente antes del lanzamiento.</li>
+</ul>
+<a class="tc-cta" href="contact.html">Empezar ›</a>
+</div>
+<div class="tc reveal-up">
+<div class="tc-market">37% de la tarifa de agencia</div>
+<div class="tc-name">Auditoría de seguimiento</div>
+<div class="tc-price">$299</div>
+<div class="tc-note">Configuración única · existente</div>
+<div class="tc-div"></div>
+<ul class="tc-features">
+<li>Detección de eventos duplicados</li>
+<li>Falta análisis de conversión</li>
+<li>Revisión de la ventana de atribución</li>
+<li>Identificación de brechas CAPI</li>
+<li>Informe escrito con todas las correcciones incluidas</li>
+</ul>
+<a class="tc-cta" href="contact.html">Empezar ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill"><div class="ap-icon">🔍</div><div class="ap-text"><strong>Otras plataformas</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contáctenos</a> para Google Tag Manager, GA4 o TikTok Pixel</div></div>
+</div>
+</div>
+</section>
+<!-- ══ FAQ ══ -->
 <section class="ps" id="faq">
 <div class="ps-inner">
 <div class="ps-tag">FAQ</div>
@@ -515,7 +515,7 @@ nav{top:var(--bar-h)!important}
 </details>
 <details class="faq-item">
 <summary>¿Trabaja con empresas fuera de los EE. UU.?</summary>
-<div class="faq-body">Sí. Todo el trabajo es totalmente remoto. Hemos creado para clientes en Francia, Luxemburgo, EE. UU. y más. La facturación es en USD. Siempre tendrás una respuesta dentro de las 24 horas independientemente de la zona horaria.</div>
+<div class="faq-body">Sí. Todo el trabajo es totalmente remoto. Hemos creado para clientes en Francia, Luxemburgo, EE. UU. y más. La facturación es en USD. Siempre recibirá una respuesta, normalmente dentro de las 24 horas, independientemente de la zona horaria.</div>
 </details>
 </div>
 </div>

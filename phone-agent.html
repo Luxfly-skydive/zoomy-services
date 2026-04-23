@@ -133,6 +133,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -947,6 +949,120 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 </section>
+<!-- ═══════════ ROI CALCULATOR ═══════════ -->
+<section class="section" style="background:var(--bg-2);">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:2.5rem;">
+<div class="section-tag">ROI Calculator</div>
+<h2 class="section-title">What are missed calls actually costing you?</h2>
+<p class="section-sub" style="text-align:center;margin:0 auto;">Use your own numbers. No estimates, no guesswork.</p>
+</div>
+<!-- Industry presets -->
+<div style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2.5rem;">
+<button class="roi-preset" data-calls="8" data-rate="25" data-value="85" onclick="setPreset(this)" style="padding:6px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-size:.75rem;cursor:pointer;transition:all .2s;">Restaurant / Café</button>
+<button class="roi-preset" data-calls="10" data-rate="40" data-value="180" onclick="setPreset(this)" style="padding:6px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-size:.75rem;cursor:pointer;transition:all .2s;">Service Business</button>
+<button class="roi-preset" data-calls="12" data-rate="30" data-value="65" onclick="setPreset(this)" style="padding:6px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-size:.75rem;cursor:pointer;transition:all .2s;">Gym / Fitness</button>
+<button class="roi-preset" data-calls="6" data-rate="45" data-value="175" onclick="setPreset(this)" style="padding:6px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-size:.75rem;cursor:pointer;transition:all .2s;">Medical / Wellness</button>
+<button class="roi-preset" data-calls="7" data-rate="20" data-value="95" onclick="setPreset(this)" style="padding:6px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-size:.75rem;cursor:pointer;transition:all .2s;">Retail / E-commerce</button>
+<button class="roi-preset" data-calls="9" data-rate="35" data-value="120" onclick="setPreset(this)" style="padding:6px 16px;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-size:.75rem;cursor:pointer;transition:all .2s;">Beauty / Salon</button>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+<!-- Inputs -->
+<div style="display:flex;flex-direction:column;gap:2rem;">
+<div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.75rem;">
+<label style="font-size:.85rem;color:var(--text-2);">Average transaction value</label>
+<span style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;">$<span id="roi-val-display">150</span></span>
+</div>
+<input id="roi-val" max="1000" min="10" oninput="roiCalc()" step="5" style="width:100%;accent-color:var(--primary);" type="range" value="150"/>
+<div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-top:.3rem;"><span>$10</span><span>$1,000</span></div>
+</div>
+<div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.75rem;">
+<label style="font-size:.85rem;color:var(--text-2);">Call-to-customer conversion rate</label>
+<span style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;"><span id="roi-rate-display">30</span>%</span>
+</div>
+<input id="roi-rate" max="80" min="5" oninput="roiCalc()" step="5" style="width:100%;accent-color:var(--primary);" type="range" value="30"/>
+<div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-top:.3rem;"><span>5%</span><span>80%</span></div>
+<p style="font-size:.72rem;color:var(--muted);margin-top:.5rem;">Of every 10 calls you answer, how many turn into customers?</p>
+</div>
+<div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.75rem;">
+<label style="font-size:.85rem;color:var(--text-2);">Missed calls per week</label>
+<span style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;"><span id="roi-calls-display">7</span> calls</span>
+</div>
+<input id="roi-calls" max="50" min="1" oninput="roiCalc()" step="1" style="width:100%;accent-color:var(--primary);" type="range" value="7"/>
+<div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-top:.3rem;"><span>1</span><span>50</span></div>
+</div>
+</div>
+<!-- Results -->
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:2rem;">
+<div style="font-family:var(--font-mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.5rem;">Based on your numbers</div>
+<div style="display:flex;flex-direction:column;gap:1.1rem;margin-bottom:1.75rem;">
+<div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;border-bottom:1px solid var(--border-b);">
+<span style="font-size:.85rem;color:var(--text-2);">Lost per week</span>
+<span style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text);">$<span id="roi-week">315</span></span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;border-bottom:1px solid var(--border-b);">
+<span style="font-size:.85rem;color:var(--text-2);">Lost per month</span>
+<span style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--text);">$<span id="roi-month">1,365</span></span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:1.25rem;border-bottom:2px solid rgba(239,68,68,.3);">
+<span style="font-size:.95rem;font-weight:600;color:#fff;">Lost per year</span>
+<span style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#ef4444;">$<span id="roi-year">16,380</span></span>
+</div>
+</div>
+<div style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:var(--radius-md);padding:1rem;margin-bottom:1.5rem;">
+<div style="font-size:.78rem;color:var(--muted);margin-bottom:.4rem;">Phone agent annual cost</div>
+<div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--primary);">$708/year</div>
+<div style="font-size:.72rem;color:var(--muted);margin-top:.25rem;">($59/month × 12)</div>
+</div>
+<div style="text-align:center;">
+<div style="font-size:.78rem;color:var(--muted);margin-bottom:.4rem;">Net annual recovery</div>
+<div id="roi-net" style="font-family:var(--font-display);font-size:2.2rem;font-weight:700;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$15,672</div>
+<div id="roi-note" style="font-size:.72rem;color:var(--muted);margin-top:.3rem;">Based on answering all previously missed calls</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+function roiCalc() {
+  const val   = parseInt(document.getElementById('roi-val').value);
+  const rate  = parseInt(document.getElementById('roi-rate').value) / 100;
+  const calls = parseInt(document.getElementById('roi-calls').value);
+  document.getElementById('roi-val-display').textContent   = val.toLocaleString();
+  document.getElementById('roi-rate-display').textContent  = Math.round(rate * 100);
+  document.getElementById('roi-calls-display').textContent = calls;
+  const weeklyLost  = calls * rate * val;
+  const monthlyLost = weeklyLost * 4.33;
+  const yearlyLost  = weeklyLost * 52;
+  const agentCost   = 708;
+  const netRecovery = yearlyLost - agentCost;
+  const fmt = n => Math.round(n).toLocaleString();
+  document.getElementById('roi-week').textContent  = fmt(weeklyLost);
+  document.getElementById('roi-month').textContent = fmt(monthlyLost);
+  document.getElementById('roi-year').textContent  = fmt(yearlyLost);
+  document.getElementById('roi-net').textContent   = '$' + fmt(Math.max(0, netRecovery));
+  const roi = yearlyLost > 0 ? Math.round((netRecovery / agentCost) * 100) : 0;
+  document.getElementById('roi-note').textContent  = roi > 0
+    ? roi + 'x return on investment' 
+    : 'Agent cost exceeds projected recovery at these numbers';
+}
+function setPreset(btn) {
+  document.querySelectorAll('.roi-preset').forEach(b => b.style.background = 'rgba(255,255,255,.06)');
+  document.querySelectorAll('.roi-preset').forEach(b => b.style.borderColor = 'var(--border)');
+  document.querySelectorAll('.roi-preset').forEach(b => b.style.color = 'var(--text-2)');
+  btn.style.background   = 'rgba(99,102,241,.15)';
+  btn.style.borderColor  = 'rgba(99,102,241,.4)';
+  btn.style.color        = '#fff';
+  document.getElementById('roi-val').value   = btn.dataset.value;
+  document.getElementById('roi-rate').value  = btn.dataset.rate;
+  document.getElementById('roi-calls').value = btn.dataset.calls;
+  roiCalc();
+}
+roiCalc();
+</script>
 <!-- ═══════════ CTA ═══════════ -->
 <section class="section" style="position:relative;overflow:hidden;">
 <div class="aurora" style="opacity:.5;">

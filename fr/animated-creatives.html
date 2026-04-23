@@ -9,6 +9,10 @@ html
 html
 html
 html
+html
+html
+html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -64,7 +68,7 @@ html
   .pricing-callout{grid-template-columns:1fr}
   .pricing-half:first-child{border-right:none;border-bottom:1px solid var(--border-b)}
   .phase-ghost{display:none}
-  .section-inner > div[style*="grid-template-columns:1fr 370px"]{grid-template-columns:1fr}
+  .section-inner > div[style*="grid-template-columns:1fr 460px"]{grid-template-columns:1fr}
 }
 </style>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-L5RX761T33"></script>
@@ -72,9 +76,26 @@ html
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wd5th9teha");</script>
 <script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="contact"]').forEach(function(el){el.addEventListener('click',function(){gtag('event','cta_click',{event_category:'engagement',event_label:el.textContent.trim().substring(0,50)});clarity('event','cta_click');fbq('track','Contact');});});var scrollMilestones={25:false,50:false,75:false,90:false};window.addEventListener('scroll',function(){var scrollPct=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);Object.keys(scrollMilestones).forEach(function(m){if(!scrollMilestones[m]&&scrollPct>=parseInt(m)){scrollMilestones[m]=true;gtag('event','scroll_depth',{event_category:'engagement',event_label:m+'%',value:parseInt(m)});}});},{passive:true});});</script>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','972114368527990');fbq('track','PageView');</script>
-<noscript><img height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<noscript><img alt="" height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<style>
+:root{--bar-h:44px}
+nav{top:var(--bar-h)!important}
+#navLinks{top:calc(68px + var(--bar-h))!important}
+.bar-off{--bar-h:0px!important}
+#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;overflow:hidden;background:linear-gradient(90deg,#0f0e1a,#1e1b4b,#2d2a5e);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(max-width:600px){#free-bar{padding:0 2.5rem 0 1rem;gap:8px;}}
+.bar-off #free-bar{display:none!important}
+@media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
+</style>
+<script>(function(){if(sessionStorage.getItem('fzb')||sessionStorage.getItem('fzb_shown')){document.documentElement.classList.add('bar-off');}else{sessionStorage.setItem('fzb_shown','1');}})();</script>
 <script>localStorage.setItem('zmy_lang','fr');</script></head>
 <body>
+<div id="free-bar">
+<span class="bar-full" style="font-size:.78rem;color:rgba(255,255,255,.85);font-weight:400;letter-spacing:.01em;">Aperçu gratuit du site Web : nous construisons votre première page avec un vrai design et un vrai code avant que vous ne payiez quoi que ce soit.</span>
+<span class="bar-short" style="display:none;font-size:.75rem;color:rgba(255,255,255,.85);font-weight:400;">Aperçu gratuit du site Web – sans engagement.</span>
+<a href="contact.html" onmouseout="this.style.background='rgba(255,255,255,.12)'" onmouseover="this.style.background='rgba(255,255,255,.22)'" style="flex-shrink:0;font-size:.75rem;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;text-decoration:none;white-space:nowrap;transition:background .15s">Réclamez une page gratuite →</a>
+<button aria-label="Rejeter" onclick="(function(){document.documentElement.classList.add('bar-off');sessionStorage.setItem('fzb','1');})();" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:1rem;cursor:pointer;padding:4px 8px;line-height:1">✕</button>
+</div>
 <div id="scroll-progress"></div>
 <canvas id="particle-canvas"></canvas>
 <div class="cursor-dot"></div>
@@ -127,7 +148,7 @@ html
 <!-- SHOWCASE -->
 <section class="section">
 <div class="section-inner">
-<div style="display:grid;grid-template-columns:1fr 370px;gap:5rem;align-items:center;">
+<div style="display:grid;grid-template-columns:1fr 460px;gap:3.5rem;align-items:center;">
 <div class="reveal">
 <div class="section-tag">Du vrai travail</div>
 <h2 class="section-title" style="margin-bottom:1.5rem;">Voici à quoi ressemble une animation terminée.</h2>

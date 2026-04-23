@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 html
 html
+html
+html
+html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -36,6 +40,8 @@ html
 .tc.pop::before{content:'';position:absolute;inset:0;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(168,85,247,.12));pointer-events:none;z-index:0;}
 .tc>*{position:relative;z-index:1;}
 .tc-badge{display:inline-flex;align-items:center;background:var(--primary);color:#fff;font-size:.65rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:999px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;box-shadow:0 4px 16px rgba(99,102,241,.5);}
+.tc-market{display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.78rem;font-family:var(--font-mono);font-weight:700;letter-spacing:.04em;padding:5px 13px;border-radius:999px;position:absolute;top:.9rem;right:.9rem;white-space:nowrap;line-height:1.2;}
+.tier-grid-4 .tc{padding-top:3.2rem;}.tier-grid-4 .tc-market{font-size:.68rem;padding:3px 9px;top:.75rem;right:.75rem;}
 .tc-name{font-family:var(--font-display);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.85rem;}
 .tc-price{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:#fff;letter-spacing:-.04em;line-height:1;margin-bottom:.25rem;}
 .tc-note{font-size:.74rem;color:var(--muted);margin-bottom:1.2rem;font-family:var(--font-mono);}
@@ -83,8 +89,25 @@ html
 @media(max-width:1000px){.tier-grid-3,.tier-grid-4{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:680px){.tier-grid-3,.tier-grid-2,.tier-grid-4{grid-template-columns:1fr;}.jump-wrap{top:60px;}.pf-card{padding:2.5rem 1.5rem;}.trust-bar{gap:.5rem;}.trust-chip{font-size:.73rem;padding:6px 13px;}}
 </style>
+<style>
+:root{--bar-h:44px}
+nav{top:var(--bar-h)!important}
+#navLinks{top:calc(68px + var(--bar-h))!important}
+.bar-off{--bar-h:0px!important}
+#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;overflow:hidden;background:linear-gradient(90deg,#0f0e1a,#1e1b4b,#2d2a5e);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(max-width:600px){#free-bar{padding:0 2.5rem 0 1rem;gap:8px;}}
+.bar-off #free-bar{display:none!important}
+@media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
+</style>
+<script>(function(){if(sessionStorage.getItem('fzb')||sessionStorage.getItem('fzb_shown')){document.documentElement.classList.add('bar-off');}else{sessionStorage.setItem('fzb_shown','1');}})();</script>
 <script>localStorage.setItem('zmy_lang','fr');</script></head>
 <body>
+<div id="free-bar">
+<span class="bar-full" style="font-size:.78rem;color:rgba(255,255,255,.85);font-weight:400;letter-spacing:.01em;">Aperçu gratuit du site Web : nous construisons votre première page avec un vrai design et un vrai code avant que vous ne payiez quoi que ce soit.</span>
+<span class="bar-short" style="display:none;font-size:.75rem;color:rgba(255,255,255,.85);font-weight:400;">Aperçu gratuit du site Web – sans engagement.</span>
+<a href="contact.html" onmouseout="this.style.background='rgba(255,255,255,.12)'" onmouseover="this.style.background='rgba(255,255,255,.22)'" style="flex-shrink:0;font-size:.75rem;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;text-decoration:none;white-space:nowrap;transition:background .15s">Réclamez une page gratuite →</a>
+<button aria-label="Rejeter" onclick="(function(){document.documentElement.classList.add('bar-off');sessionStorage.setItem('fzb','1');})();" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:1rem;cursor:pointer;padding:4px 8px;line-height:1">✕</button>
+</div>
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 <nav>
@@ -129,68 +152,25 @@ html
 <!-- ══ JUMP NAV ══ -->
 <div class="jump-wrap">
 <div class="jump-nav">
-<a class="jump-pill" href="#campaigns">📢 Campagnes</a>
 <a class="jump-pill" href="#websites">🌐 Sites Web</a>
 <a class="jump-pill" href="#chatbot">🤖 Chatbot IA</a>
 <a class="jump-pill" href="#phone">📞 Agent téléphonique</a>
 <a class="jump-pill" href="#creatives">🎬 Créatifs</a>
 <a class="jump-pill" href="#tracking">📊 Suivi</a>
+<a class="jump-pill" href="#campaigns">📢 Campagnes</a>
 <a class="jump-pill" href="#faq">❓FAQ</a>
 </div>
 </div>
 <!-- ══ META ADS CAMPAIGNS ══ -->
-<section class="ps" id="campaigns">
-<div class="ps-inner">
-<div class="ps-tag">Campagnes de méta-annonces</div>
-<h2 class="ps-heading">Vos campagnes. Construit pour se convertir.</h2>
-<p class="ps-sub">Configuration unique pour créer correctement la campagne, puis gestion continue pour qu'elle reste performante. Les dépenses publicitaires vont directement de votre carte à Meta – nous n’y touchons jamais.</p>
-<div class="tier-grid-2">
-<div class="tc reveal-up">
-<div class="tc-name">Configuration de la campagne</div>
-<div class="tc-price">$999</div>
-<div class="tc-note">Unique · Méta-annonces</div>
-<div class="tc-div"></div>
-<ul class="tc-features">
-<li>Structure complète de la campagne et groupes d'annonces</li>
-<li>Recherche d'audience et création de ciblage</li>
-<li>Texte publicitaire rédigé pour tous les formats</li>
-<li>Configuration de l'API Meta Pixel + Conversions</li>
-<li>Configuration de l'audience de reciblage</li>
-<li>Vérifié et prêt à être lancé</li>
-</ul>
-<a class="tc-cta" href="contact.html">Commencer ›</a>
-</div>
-<div class="tc pop reveal-up">
-<div class="tc-badge">En cours</div>
-<div class="tc-name">Gestion mensuelle</div>
-<div class="tc-price" style="font-size:2.2rem;">À partir de 599 $</div>
-<div class="tc-note">/ mois · basé sur les dépenses publicitaires</div>
-<div class="tc-div"></div>
-<ul class="tc-features">
-<li>Rythme du budget quotidien et optimisation des enchères</li>
-<li>Tests A/B et rotation des créations</li>
-<li>Rapports de performances hebdomadaires</li>
-<li>Retargeting et gestion d'audience</li>
-<li>Surveillance et alertes proactives CPL</li>
-<li>Appels stratégiques disponibles sur demande</li>
-</ul>
-<a class="tc-cta" href="contact.html">Obtenez un devis ›</a>
-</div>
-</div>
-<div class="addon-strip">
-<div class="addon-pill"><div class="ap-icon">📢</div><div class="ap-text"><strong>Autres plateformes</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contactez-nous</a> pour l'audit ou la configuration de Google, TikTok ou LinkedIn</div></div>
-</div>
-<div class="nudge">Vous ne savez pas ce dont vous avez besoin ? <a href="contact.html">Parlez-nous de votre entreprise →</a> Nous l'examinerons dans les 24 heures.</div>
-</div>
-</section>
 <!-- ══ WEBSITES ══ -->
-<section class="ps alt" id="websites">
+<section class="ps" id="websites">
 <div class="ps-inner">
 <div class="ps-tag" data-i18n="pricing.web.tag">Sites Web</div>
 <h2 class="ps-heading">Codé sur mesure. Aucun modèle, jamais.</h2>
 <p class="ps-sub">Prix ​​par page. Chaque site créé à partir de zéro en HTML, CSS et JavaScript – contrôle total sur les performances, la conception et les fonctionnalités.</p>
 <div class="tier-grid-4">
 <div class="tc reveal-up">
+<div class="tc-market">40 % du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.web.page">Page standard</div>
 <div class="tc-price" data-i18n="price.web.page" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">par page · unique</div>
@@ -204,6 +184,7 @@ html
 <a class="tc-cta" href="contact.html">Commencer ›</a>
 </div>
 <div class="tc reveal-up">
+<div class="tc-market">40 % du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.web.functional">Page fonctionnelle</div>
 <div class="tc-price" data-i18n="price.web.functional" style="font-size:2.2rem;">$399</div>
 <div class="tc-note">par page · unique</div>
@@ -218,6 +199,7 @@ html
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">Application complète</div>
+<div class="tc-market">20% du prix du marché</div>
 <div class="tc-name">Page de l'application</div>
 <div class="tc-price" style="font-size:2.2rem;">$599</div>
 <div class="tc-note">par page · unique</div>
@@ -231,6 +213,7 @@ html
 <a class="tc-cta" href="contact.html">Commencer ›</a>
 </div>
 <div class="tc reveal-up">
+<div class="tc-market">35% du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.web.language">Langue supplémentaire</div>
 <div class="tc-price" data-i18n="price.web.language" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">par langue</div>
@@ -247,28 +230,15 @@ html
 <div class="nudge">Construire un site complet ? <a href="contact.html">Envoyez-nous un brief →</a> Nous l'évaluerons et vous donnerons un total fixe.</div>
 </div>
 </section>
-<!-- ══ GUARANTEE ══ -->
-<div class="guarantee">
-<div class="g-inner">
-<div class="g-icon">🔒</div>
-<div class="g-title">Garantie à prix fixe</div>
-<p class="g-text">Nous citons le prix. Vous l'approuvez par écrit. Nous livrons à ce prix. La portée ne change pas à moins que vous ne le demandiez – et si vous le faites, nous réévaluons avant de continuer. Aucune surprise sur la facture, jamais.</p>
-<div class="g-chips">
-<div class="g-chip">✓ Cité par écrit</div>
-<div class="g-chip">✓ Approuvé avant de commencer</div>
-<div class="g-chip">✓ Prix verrouillé sur la portée</div>
-<div class="g-chip">✓ Pas de frais cachés</div>
-</div>
-</div>
-</div>
 <!-- ══ AI CHATBOT ══ -->
-<section class="ps" id="chatbot">
+<section class="ps alt" id="chatbot">
 <div class="ps-inner">
 <div class="ps-tag" data-i18n="pricing.chatbot.tag">Chatbot IA</div>
 <h2 class="ps-heading" data-i18n="pricing.chatbot.heading">Quel chatbot convient à votre entreprise ?</h2>
 <p class="ps-sub">Le niveau est défini par le degré de détail et de diversité des informations sur votre entreprise, et non par les différences de fonctionnalités. Chaque niveau utilise la même technologie.</p>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
+<div class="tc-market">20% du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.chatbot.simple">$599</div>
 <div class="tc-note">+ 49 $/mois d'hébergement</div>
@@ -283,6 +253,7 @@ html
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Les plus populaires</div>
+<div class="tc-market">20% du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Norme</div>
 <div class="tc-price" data-i18n="price.chatbot.standard">$949</div>
 <div class="tc-note">+ 49 $/mois d'hébergement</div>
@@ -296,6 +267,7 @@ html
 <a class="tc-cta" href="contact.html">Commencer ›</a>
 </div>
 <div class="tc reveal-up">
+<div class="tc-market">20% du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Avancé</div>
 <div class="tc-price" data-i18n="price.chatbot.advanced">$1,499</div>
 <div class="tc-note">+ 49 $/mois d'hébergement</div>
@@ -317,7 +289,7 @@ html
 </div>
 </section>
 <!-- ══ AI PHONE AGENT ══ -->
-<section class="ps alt" id="phone">
+<section class="ps" id="phone">
 <div class="ps-inner">
 <div class="ps-tag" data-i18n="pricing.phone.tag">Agent téléphonique IA</div>
 <h2 class="ps-heading">Répond à chaque appel. 24 heures sur 24.</h2>
@@ -328,6 +300,7 @@ html
 </div>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
+<div class="tc-market">20% du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.phone.simple">$699</div>
 <div class="tc-note">configuration + utilisation mensuelle</div>
@@ -342,6 +315,7 @@ html
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Les plus populaires</div>
+<div class="tc-market">20% du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Norme</div>
 <div class="tc-price" data-i18n="price.phone.standard">$1,199</div>
 <div class="tc-note">configuration + utilisation mensuelle</div>
@@ -355,6 +329,7 @@ html
 <a class="tc-cta" href="contact.html">Commencer ›</a>
 </div>
 <div class="tc reveal-up">
+<div class="tc-market">20% du prix du marché</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Avancé</div>
 <div class="tc-price" data-i18n="price.phone.advanced">$1,799</div>
 <div class="tc-note">configuration + utilisation mensuelle</div>
@@ -376,13 +351,14 @@ html
 </div>
 </section>
 <!-- ══ ANIMATED CREATIVES ══ -->
-<section class="ps" id="creatives">
+<section class="ps alt" id="creatives">
 <div class="ps-inner">
 <div class="ps-tag">Créations animées</div>
 <h2 class="ps-heading">Créations publicitaires qui arrêtent le défilement.</h2>
 <p class="ps-sub">Deux styles de publicité vidéo, même prix fixe. Aucune séquence ni équipe de tournage n'est nécessaire - produit entièrement à partir de votre brief, livré dans tous les formats Meta.</p>
 <div class="tier-grid-2">
 <div class="tc reveal-up">
+<div class="tc-market">25% du prix du marché</div>
 <div class="tc-name">Annonce vidéo animée</div>
 <div class="tc-price">$199</div>
 <div class="tc-note">par vidéo · n'importe quelle durée</div>
@@ -399,6 +375,7 @@ html
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">Aussi 199 $</div>
+<div class="tc-market">25% du prix du marché</div>
 <div class="tc-name">Annonce vidéo générée par l'IA</div>
 <div class="tc-price">$199</div>
 <div class="tc-note">par vidéo · jusqu'à 32s</div>
@@ -417,13 +394,14 @@ html
 </div>
 </section>
 <!-- ══ TRACKING ══ -->
-<section class="ps alt" id="tracking">
+<section class="ps" id="tracking">
 <div class="ps-inner">
 <div class="ps-tag">Suivi et attribution</div>
 <h2 class="ps-heading">Assurez-vous que les données sont correctes.</h2>
 <p class="ps-sub">Un mauvais suivi donne une mauvaise image des bonnes campagnes. Nous le configurons à partir de zéro ou trouvons exactement ce qui ne fonctionne pas dans votre configuration existante – et le réparons.</p>
 <div class="tier-grid-2">
 <div class="tc reveal-up">
+<div class="tc-market">40 % du prix du marché</div>
 <div class="tc-name">Configuration du suivi</div>
 <div class="tc-price">$399</div>
 <div class="tc-note">Unique · Meta Pixel + CAPI</div>
@@ -438,6 +416,7 @@ html
 <a class="tc-cta" href="contact.html">Commencer ›</a>
 </div>
 <div class="tc reveal-up">
+<div class="tc-market">45% du prix du marché</div>
 <div class="tc-name">Audit de suivi</div>
 <div class="tc-price">$299</div>
 <div class="tc-note">Unique · configuration existante</div>
@@ -458,6 +437,50 @@ html
 </div>
 </section>
 <!-- ══ FAQ ══ -->
+<section class="ps alt" id="campaigns">
+<div class="ps-inner" style="text-align:center;">
+<div class="ps-tag" style="justify-content:center;">Campagnes de méta-annonces</div>
+<h2 class="ps-heading">Votre campagne, construite avant le premier jour.</h2>
+<p class="ps-sub" style="margin:0 auto 2.75rem;text-align:center;">Nous créons tous les fichiers dont votre campagne a besoin : stratégie, copie, spécifications de ciblage, configuration, suivi et tableau de bord. Vous (ou votre équipe) poussez le lancement. Aucun accès au compte Meta requis de notre part.</p>
+<div class="tier-grid-2" style="max-width:600px;margin:0 auto;">
+<div class="tc reveal-up" style="grid-column:1/-1;text-align:left;">
+<div class="tc-market">40 % du prix du marché</div>
+<div class="tc-name">Configuration de la campagne</div>
+<div class="tc-price">$999</div>
+<div class="tc-note">Unique · Fichiers livrés en 5 à 7 jours</div>
+<div class="tc-div"></div>
+<ul class="tc-features">
+<li>Document de stratégie de campagne (objectif, audience, angles créatifs)</li>
+<li>Texte publicitaire rédigé pour chaque format et emplacement</li>
+<li>Spécifications de ciblage d'audience complète (géo, centres d'intérêt, données démographiques)</li>
+<li>Brief créatif + structure de dossiers Upload Ready</li>
+<li>Fichier de configuration de campagne avec toutes les spécifications, identifiants et notes</li>
+<li>Tracker Excel (rythme, CPL, budget, journal A/B, objectifs KPI)</li>
+<li>Tableau de bord Analytics : s'ouvre dans le navigateur, aucune connexion n'est nécessaire</li>
+</ul>
+<a class="tc-cta" href="contact.html">Commencer ›</a>
+</div>
+</div>
+<div class="addon-strip" style="justify-content:center;">
+<div class="addon-pill"><div class="ap-icon">📊</div><div class="ap-text"><strong>Gestion continue</strong> — Le prix est basé sur vos dépenses publicitaires. <a href="contact.html" style="color:var(--primary);text-decoration:none;">Parlez-nous de votre campagne →</a></div></div>
+<div class="addon-pill"><div class="ap-icon">📢</div><div class="ap-text"><strong>Autres plateformes</strong> — <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contactez-nous</a> pour Google, TikTok ou LinkedIn</div></div>
+</div>
+</div>
+</section>
+<!-- ══ GUARANTEE ══ -->
+<div class="guarantee">
+<div class="g-inner">
+<div class="g-icon">🔒</div>
+<div class="g-title">Garantie à prix fixe</div>
+<p class="g-text">Nous citons le prix. Vous l'approuvez par écrit. Nous livrons à ce prix. La portée ne change pas à moins que vous ne le demandiez – et si vous le faites, nous réévaluons avant de continuer. Aucune surprise sur la facture, jamais.</p>
+<div class="g-chips">
+<div class="g-chip">✓ Cité par écrit</div>
+<div class="g-chip">✓ Approuvé avant de commencer</div>
+<div class="g-chip">✓ Prix verrouillé sur la portée</div>
+<div class="g-chip">✓ Pas de frais cachés</div>
+</div>
+</div>
+</div>
 <section class="ps" id="faq">
 <div class="ps-inner">
 <div class="ps-tag">FAQ</div>

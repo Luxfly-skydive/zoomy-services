@@ -81,6 +81,12 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -308,7 +314,7 @@ nav{top:var(--bar-h)!important}
 <span class="glitch grad-text-animated">Grow your</span><br/>
       business online.
     </h1>
-<p class="hero-sub" data-i18n="index.hero.sub" style="margin:0 auto 2.5rem;">We build the digital tools your business needs — Meta &amp; Google ad campaigns, custom websites, and AI chatbots. Built from scratch, handed to you live and ready to convert.</p>
+<p class="hero-sub" data-i18n="index.hero.sub" style="margin:0 auto 2.5rem;">We build the digital tools your business needs — Meta ad campaigns, custom websites, and AI chatbots. Built from scratch, handed to you live and ready to convert.</p>
 <div class="hero-actions" style="justify-content:center;margin-bottom:3rem;">
 <a class="btn btn-primary btn-lg" href="contact.html">Start a Project</a>
 <a class="btn btn-ghost btn-lg" href="#our-services">Explore Services</a>
@@ -376,64 +382,66 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-<a class="btn btn-primary btn-lg" href="phone-agent.html" style="display:flex;align-items:center;gap:8px;">
+<button class="btn btn-primary btn-lg" onclick="hpToggleCall()" style="display:flex;align-items:center;gap:8px;cursor:pointer;border:none;">
 <svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
 Try Live Demo
-</a>
+</button>
 <a class="btn btn-ghost btn-lg" href="phone-agent.html#how-it-works">How it works ›</a>
 </div>
 <p style="margin-top:1rem;font-size:.8rem;color:var(--muted);font-family:var(--font-mono);">// Supports any language — auto-detected</p>
 </div>
-<div class="reveal-right" style="display:flex;justify-content:flex-end;">
-<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);">
-<div style="background:linear-gradient(135deg,#312e81,#6366f1);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:14px;">
-<div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;position:relative;">
-              📞
-              <div style="position:absolute;inset:-4px;border-radius:50%;border:1.5px solid rgba(99,102,241,.4);animation:orbPulse 2s ease-in-out infinite;"></div>
+<div class="reveal-right" style="display:flex;flex-direction:column;align-items:center;gap:2rem;">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:3rem 2.5rem;text-align:center;width:100%;max-width:380px;">
+<div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#312e81,#6366f1);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(99,102,241,.4);position:relative;">
+📞
+<div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(99,102,241,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
 </div>
-<div>
-<div style="font-family:var(--font-display);font-weight:700;font-size:.95rem;color:#fff;">AI Phone Agent</div>
-<div style="font-size:.72rem;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:5px;margin-top:2px;">
-<span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;animation:pulseDot 2s infinite;"></span>
-                Live call in progress
-              </div>
+<h3 style="font-family:var(--font-display);color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Zoomy Phone Agent</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;margin-bottom:.6rem;">Click below to start a live voice conversation. Your microphone will be requested.</p>
+<p style="color:var(--primary);font-size:.75rem;line-height:1.5;margin-bottom:2rem;font-family:var(--font-mono);">// After your call ends — view your full transcript below ↓</p>
+<style>@media(min-width:769px){#hp-speaker-btn{display:none!important}}</style>
+<div id="hp-call-ui" style="display:flex;flex-direction:column;align-items:center;gap:.85rem;width:100%;">
+<button id="hp-call-btn" onclick="hpToggleCall()" style="width:100%;padding:14px 28px;background:var(--grad-main);border:none;border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 0 30px rgba(99,102,241,.4);transition:filter .2s,transform .2s;">
+<svg fill="none" height="18" id="hp-call-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+<span id="hp-call-label">Start Call</span>
+</button>
+<div id="hp-active-controls" style="display:none;width:100%;gap:.6rem;flex-direction:row;">
+<button id="hp-mute-btn" onclick="hpToggleMute()" style="flex:1;padding:11px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:600;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s,border-color .2s;">
+<svg fill="none" height="14" id="hp-mute-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23" y2="23"></line></svg>
+<span id="hp-mute-label">Mute</span>
+</button>
+<button id="hp-speaker-btn" onclick="hpToggleSpeaker()" style="flex:1;padding:11px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:600;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s,border-color .2s;">
+<svg fill="none" height="14" id="hp-speaker-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14" opacity=".4"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+<span id="hp-speaker-label">Speaker</span>
+</button>
 </div>
+<div id="hp-call-waves" style="display:none;align-items:center;gap:3px;height:24px;">
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:0s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.12s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.24s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.36s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.48s;"></div>
 </div>
-<div style="padding:1.5rem;background:var(--bg-2);display:flex;flex-direction:column;gap:1rem;">
-<div style="display:flex;gap:10px;">
-<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Agent</span>
-<span style="font-size:.875rem;color:var(--text);line-height:1.6;">Good afternoon, thanks for calling. How can I help you today?</span>
+<div id="hp-call-status" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);">Ready</div>
 </div>
-<div style="display:flex;gap:10px;">
-<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Caller</span>
-<span style="font-size:.875rem;color:var(--text-2);line-height:1.6;">I'd like to book for this Saturday if there's space?</span>
-</div>
-<div style="display:flex;gap:10px;">
-<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Agent</span>
-<span style="font-size:.875rem;color:var(--text);line-height:1.6;">Let me check what's available…</span>
-</div>
-<div style="display:flex;gap:10px;">
-<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--primary);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">System</span>
-<span style="font-size:.78rem;color:var(--primary);font-family:var(--font-mono);font-style:italic;line-height:1.6;">→ Calendar query sent &amp; confirmed</span>
-</div>
-<div style="display:flex;gap:10px;">
-<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:52px;">Agent</span>
-<span style="font-size:.875rem;color:var(--text);line-height:1.6;">We have availability from 10 AM through to 3 PM. What time suits you best?</span>
-</div>
-</div>
-<div style="padding:1rem 1.5rem;border-top:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:space-between;">
-<span style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">01:42</span>
-<div style="display:flex;align-items:center;gap:3px;">
-<div style="width:3px;height:8px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:0s;"></div>
-<div style="width:3px;height:16px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.1s;"></div>
-<div style="width:3px;height:22px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.2s;"></div>
-<div style="width:3px;height:14px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.3s;"></div>
-<div style="width:3px;height:20px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.4s;"></div>
-<div style="width:3px;height:10px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.5s;"></div>
-<div style="width:3px;height:18px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.6s;"></div>
+<div id="hp-transcript-wrap" style="display:none;width:100%;margin-top:.5rem;">
+<button onclick="hpToggleTranscript()" style="width:100%;padding:10px 16px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:var(--radius-md);color:var(--text-2);font-family:var(--font-display);font-weight:600;font-size:.82rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+<span id="hp-transcript-toggle-label">View Call Transcript</span>
+</button>
+<div id="hp-transcript-body" style="display:none;margin-top:.6rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.1rem 1.25rem;max-height:280px;overflow-y:auto;text-align:left;"></div>
 </div>
 </div>
+<div style="display:flex;align-items:center;gap:10px;width:100%;max-width:380px;margin-top:-.5rem;">
+<div style="flex:1;height:1px;background:var(--border);"></div>
+<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;">or call directly</span>
+<div style="flex:1;height:1px;background:var(--border);"></div>
 </div>
+<a href="tel:+19147420640" onmouseout="this.style.background='rgba(255,255,255,.04)';this.style.borderColor='var(--border)'" onmouseover="this.style.background='rgba(99,102,241,.1)';this.style.borderColor='rgba(99,102,241,.4)'" style="display:flex;align-items:center;justify-content:center;gap:9px;width:100%;max-width:380px;padding:13px 20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-family:var(--font-display);font-weight:600;font-size:.9rem;text-decoration:none;transition:background .2s,border-color .2s;">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
++1 (914) 742-0640
+</a>
+<p style="font-size:.78rem;color:var(--muted);text-align:center;max-width:320px;">This call is recorded for quality review. By speaking with the agent you consent to the recording of this conversation.</p>
 </div>
 </div>
 </div>
@@ -691,7 +699,7 @@ Try Live Demo
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
 <div class="section-tag" style="justify-content:center;">Ready?</div>
 <h2 class="section-title" data-i18n="cta.heading">Let's build something great.</h2>
-<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Tell us what you need. We typically typically reply typically within 24 hours with a scope, timeline, and fixed price.</p>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Tell us what you need. We typically reply within 24 hours with a scope, timeline, and fixed price.</p>
 <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
 <a class="btn btn-primary btn-lg" href="contact.html">Start a Project</a>
 <a class="btn btn-ghost btn-lg" href="portfolio.html">See Our Work</a>
@@ -804,5 +812,263 @@ Try Live Demo
 <script src="js/main.js?v=20260416b"></script>
 <script src="js/i18n.js?v=20260416b"></script>
 <script src="js/chatbot.js?v=20260416b"></script>
+<script type="module">
+import { Conversation } from 'https://cdn.jsdelivr.net/npm/@elevenlabs/client@0.14.0/+esm';
+let hpConv = null;
+let hpCallTimer = null;
+let hpIsMuted = false;
+let hpIsSpeaker = false;
+let hpTranscriptLines = [];
+const HP_CALL_LIMIT = 300; // 5 minutes per IP per day
+const hpBtn        = document.getElementById('hp-call-btn');
+const hpLabel      = document.getElementById('hp-call-label');
+const hpIcon       = document.getElementById('hp-call-icon');
+const hpWaves      = document.getElementById('hp-call-waves');
+const hpStatus     = document.getElementById('hp-call-status');
+const hpActiveCtrls = document.getElementById('hp-active-controls');
+const hpMuteBtn    = document.getElementById('hp-mute-btn');
+const hpMuteIcon   = document.getElementById('hp-mute-icon');
+const hpMuteLabel  = document.getElementById('hp-mute-label');
+const hpSpeakerBtn = document.getElementById('hp-speaker-btn');
+const hpSpeakerIcon = document.getElementById('hp-speaker-icon');
+const hpSpeakerLabel = document.getElementById('hp-speaker-label');
+const hpTranscriptWrap = document.getElementById('hp-transcript-wrap');
+const hpTranscriptBody = document.getElementById('hp-transcript-body');
+const HP_TOKEN_URL = 'https://zoomy-ai.zoozoomfast.workers.dev/elevenlabs-token?source=homepage';
+
+window.hpToggleMute = function() {
+  hpIsMuted = !hpIsMuted;
+  if (hpConv && hpConv.setMicMuted) hpConv.setMicMuted(hpIsMuted);
+  if (hpIsMuted) {
+    hpMuteBtn.style.background = 'rgba(239,68,68,.18)';
+    hpMuteBtn.style.borderColor = 'rgba(239,68,68,.4)';
+    hpMuteIcon.innerHTML = '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" opacity=".3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2" opacity=".3"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/><line x1="1" y1="1" x2="23" y2="23" stroke="#ef4444" stroke-width="2.5"/>';
+    hpMuteLabel.textContent = 'Unmute';
+  } else {
+    hpMuteBtn.style.background = 'rgba(255,255,255,.08)';
+    hpMuteBtn.style.borderColor = 'rgba(255,255,255,.15)';
+    hpMuteIcon.innerHTML = '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>';
+    hpMuteLabel.textContent = 'Mute';
+  }
+};
+
+window.hpToggleSpeaker = async function() {
+  hpIsSpeaker = !hpIsSpeaker;
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const outputs = devices.filter(d => d.kind === 'audiooutput');
+    const speakerDev = outputs.find(d => /speaker|loud/i.test(d.label));
+    const targetId = hpIsSpeaker ? (speakerDev ? speakerDev.deviceId : '') : '';
+    document.querySelectorAll('audio').forEach(a => {
+      if (typeof a.setSinkId === 'function') a.setSinkId(targetId).catch(() => {});
+    });
+  } catch(e) {}
+  if (hpIsSpeaker) {
+    hpSpeakerBtn.style.background = 'rgba(74,222,128,.18)';
+    hpSpeakerBtn.style.borderColor = 'rgba(74,222,128,.4)';
+    hpSpeakerIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+    hpSpeakerLabel.textContent = 'Speaker On';
+  } else {
+    hpSpeakerBtn.style.background = 'rgba(255,255,255,.08)';
+    hpSpeakerBtn.style.borderColor = 'rgba(255,255,255,.15)';
+    hpSpeakerIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" opacity=".4"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+    hpSpeakerLabel.textContent = 'Speaker';
+  }
+};
+
+window.hpToggleTranscript = function() {
+  const isOpen = hpTranscriptBody.style.display !== 'none';
+  hpTranscriptBody.style.display = isOpen ? 'none' : 'block';
+  document.getElementById('hp-transcript-toggle-label').textContent = isOpen ? 'View Call Transcript' : 'Hide Transcript';
+};
+
+let hpSharedAudioCtx = null;
+
+function hpPlayRing() {
+  return new Promise(resolve => {
+    try {
+      hpSharedAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const ctx = hpSharedAudioCtx;
+      const t = ctx.currentTime;
+      [[t, t+0.4],[t+0.65, t+1.05]].forEach(([s, e]) => {
+        [440, 480].forEach(freq => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.type = 'sine'; osc.frequency.value = freq;
+          gain.gain.setValueAtTime(0.18, s);
+          gain.gain.setValueAtTime(0.18, e - 0.04);
+          gain.gain.linearRampToValueAtTime(0, e);
+          osc.start(s); osc.stop(e);
+        });
+      });
+      setTimeout(() => {
+        try {
+          const silence = ctx.createBuffer(1, ctx.sampleRate * 0.1, ctx.sampleRate);
+          const src = ctx.createBufferSource();
+          src.buffer = silence; src.connect(ctx.destination); src.start();
+        } catch(e) {}
+        resolve();
+      }, 1300);
+    } catch { resolve(); }
+  });
+}
+
+function hpStartCallTimer() {
+  let elapsed = 0;
+  hpCallTimer = setInterval(async () => {
+    elapsed++;
+    const remaining = HP_CALL_LIMIT - elapsed;
+    if (remaining <= 30 && remaining > 0) {
+      hpStatus.textContent = `Live — ${remaining}s left`;
+    } else if (remaining <= 0) {
+      clearInterval(hpCallTimer); hpCallTimer = null;
+      hpStatus.textContent = 'Time limit reached';
+      hpStatus.style.color = '#f59e0b';
+      if (hpConv) { await hpConv.endSession(); hpConv = null; }
+    }
+  }, 1000);
+}
+
+function hpResetUI(msg) {
+  if (hpCallTimer) { clearInterval(hpCallTimer); hpCallTimer = null; }
+  hpConv = null; hpIsMuted = false; hpIsSpeaker = false;
+  hpLabel.textContent = 'Start Call';
+  hpBtn.style.opacity = '1';
+  hpBtn.style.background = 'var(--grad-main)';
+  hpBtn.style.boxShadow = '0 0 30px rgba(99,102,241,.4)';
+  hpIcon.innerHTML = '<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>';
+  hpWaves.style.display = 'none';
+  hpActiveCtrls.style.display = 'none';
+  hpMuteLabel.textContent = 'Mute';
+  hpMuteIcon.innerHTML = '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>';
+  hpMuteBtn.style.background = 'rgba(255,255,255,.08)';
+  hpMuteBtn.style.borderColor = 'rgba(255,255,255,.15)';
+  hpSpeakerLabel.textContent = 'Speaker';
+  hpSpeakerIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" opacity=".4"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>';
+  hpSpeakerBtn.style.background = 'rgba(255,255,255,.08)';
+  hpSpeakerBtn.style.borderColor = 'rgba(255,255,255,.15)';
+  hpStatus.textContent = msg || 'Call ended';
+  hpStatus.style.color = '';
+  if (hpTranscriptLines.length > 0) {
+    hpTranscriptBody.innerHTML = hpTranscriptLines.map(l =>
+      `<div style="margin-bottom:.75rem;"><span style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;">${l.role}</span><p style="color:${l.role==='Agent'?'var(--text)':'var(--text-2)'};font-size:.83rem;line-height:1.6;margin:.15rem 0 0;">${l.text}</p></div>`
+    ).join('');
+    hpTranscriptWrap.style.display = 'block';
+    hpTranscriptBody.style.display = 'none';
+  }
+}
+
+window.hpToggleCall = async function() {
+  if (hpConv) { await hpConv.endSession(); return; }
+  try {
+    hpLabel.textContent = 'Calling...';
+    hpBtn.style.opacity = '0.7';
+    hpBtn.disabled = true;
+    hpStatus.textContent = 'Requesting microphone...';
+    const micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    micStream.getTracks().forEach(t => t.stop());
+    hpStatus.textContent = 'Ringing...';
+    const tokenRes = await fetch(HP_TOKEN_URL);
+    if (!tokenRes.ok) {
+      const err = await tokenRes.json().catch(() => ({}));
+      hpBtn.disabled = false;
+      hpResetUI(null);
+      hpStatus.textContent = err.reason === 'ip_daily' ? 'Daily limit reached (5 min/day).' : 'Could not connect. Try again.';
+      hpStatus.style.color = '#f59e0b';
+      return;
+    }
+    const { signedUrl } = await tokenRes.json();
+    await hpPlayRing();
+    hpStatus.textContent = 'Connecting...';
+    hpTranscriptLines = [];
+    const pageLang = window.location.pathname.includes('/fr/') ? 'fr'
+                   : window.location.pathname.includes('/es/') ? 'es'
+                   : (document.documentElement.lang || localStorage.getItem('zmy_lang') || 'en');
+    const firstMessages = {
+      fr: "Bonjour ! Je suis l'assistante IA de Zoomy. Comment puis-je vous aider aujourd'hui ?",
+      es: "¡Hola! Soy la asistente IA de Zoomy. ¿En qué puedo ayudarle hoy?",
+      en: "Hi there, this is Zoomy. I can help answer any questions about our services in any language. What can I do for you?"
+    };
+    const systemPrompts = {
+      fr: `# Langue (CRITIQUE)
+Tu DOIS répondre UNIQUEMENT en français.
+
+# Personnalité
+Tu es l'assistante IA de Zoomy, une agence digitale. Chaleureuse, directe et professionnelle.
+
+# Services
+1. Campagnes Meta Ads (Facebook & Instagram) — à partir de 999$
+2. Sites web sur mesure (HTML/CSS/JS) — à partir de 199$/page
+3. Agents téléphoniques IA — à partir de 699$
+4. Chatbots IA — à partir de 599$
+5. Vidéos animées Meta — 199$/vidéo
+
+Pour un devis : hello@zoomy.services`,
+      es: `# Idioma (CRÍTICO)
+DEBES responder ÚNICAMENTE en español.
+
+# Personalidad
+Eres la asistente IA de Zoomy, una agencia digital. Cálida, directa y profesional.
+
+# Servicios
+1. Campañas Meta Ads — desde $999
+2. Sitios web personalizados — desde $199/página
+3. Agentes telefónicos IA — desde $699
+4. Chatbots IA — desde $599
+5. Videos animados Meta — $199/video
+
+Contacto: hello@zoomy.services`,
+      en: undefined
+    };
+    const agentOverride = { language: pageLang, firstMessage: firstMessages[pageLang] || firstMessages.en };
+    if (systemPrompts[pageLang]) agentOverride.prompt = { prompt: systemPrompts[pageLang] };
+    hpConv = await Conversation.startSession({
+      signedUrl,
+      overrides: { agent: agentOverride },
+      onConnect: () => {
+        hpBtn.disabled = false;
+        hpLabel.textContent = 'End Call';
+        hpBtn.style.opacity = '1';
+        hpBtn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
+        hpBtn.style.boxShadow = '0 0 30px rgba(239,68,68,.4)';
+        hpIcon.innerHTML = '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>';
+        hpWaves.style.display = 'flex';
+        hpActiveCtrls.style.display = 'flex';
+        hpTranscriptWrap.style.display = 'none';
+        hpStatus.textContent = 'Live';
+        hpStatus.style.color = '#4ade80';
+        hpStartCallTimer();
+      },
+      onMessage: (msg) => {
+        const role = (msg.source === 'ai' || msg.source === 'agent' || msg.role === 'agent') ? 'Agent' : 'You';
+        const text = msg.message || msg.text || '';
+        if (text && text.trim()) hpTranscriptLines.push({ role, text: text.trim() });
+      },
+      onDisconnect: (details) => {
+        if (details && details.reason === 'error') {
+          const code = details.closeCode ? ` (${details.closeCode})` : '';
+          hpResetUI(null);
+          hpStatus.textContent = 'Connection error' + code + '. Try again.';
+          hpStatus.style.color = '#ef4444';
+        } else { hpResetUI('Call ended'); }
+      },
+      onError: (err) => {
+        hpBtn.disabled = false;
+        hpResetUI(null);
+        const msg = err.closeReason || err.message || 'Could not connect';
+        const code = err.closeCode ? ` [${err.closeCode}]` : '';
+        hpStatus.textContent = 'Error: ' + msg + code;
+        hpStatus.style.color = '#ef4444';
+      }
+    });
+  } catch(e) {
+    hpBtn.disabled = false;
+    hpResetUI(null);
+    hpStatus.textContent = 'Could not connect. Check microphone permissions.';
+    hpStatus.style.color = '#ef4444';
+  }
+};
+</script>
 </body>
 </html>

@@ -68,6 +68,7 @@ html
 html
 html
 html
+html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -394,9 +395,6 @@ nav{top:var(--bar-h)!important}
     var sendBtn    = document.getElementById('chatbot-send');
     if (!messagesEl || !inputEl || !sendBtn) return;
 
-    // Clear the static demo messages on first interaction
-    var firstInteraction = true;
-
     function appendMsg(text, role) {
       var div = document.createElement('div');
       div.className = 'msg msg-' + role;
@@ -412,15 +410,15 @@ nav{top:var(--bar-h)!important}
     }
 
     var AI_WORKER = 'https://zoomy-ai.zoozoomfast.workers.dev/chat';
-    var history = [];
+    // Pre-seed history with the visible demo conversation so the AI has context
+    var history = [
+      { role: 'user', text: 'How does the chatbot work?' },
+      { role: 'bot', text: "It's trained on a custom knowledge base built around your business. When a visitor asks a question, it matches their input against that knowledge base and responds accurately. It only knows what you've provided — it doesn't improvise or make things up." }
+    ];
 
     async function sendMessage() {
       var text = inputEl.value.trim();
       if (!text) return;
-      if (firstInteraction) {
-        messagesEl.innerHTML = '';
-        firstInteraction = false;
-      }
       appendMsg(text, 'user');
       inputEl.value = '';
       history.push({ role: 'user', text: text });

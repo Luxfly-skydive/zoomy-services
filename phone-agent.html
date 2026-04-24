@@ -3,6 +3,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -70,7 +72,7 @@
 }
 </style>
 <style>
-:root{--bar-h:44px}
+:root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
 nav{top:var(--bar-h)!important}
 #navLinks{top:calc(68px + var(--bar-h))!important}
 .bar-off{--bar-h:0px!important}
@@ -78,7 +80,7 @@ nav{top:var(--bar-h)!important}
 .bar-off #free-bar{display:none!important}
 @media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
 </style>
-<script>(function(){if(sessionStorage.getItem('fzb')||sessionStorage.getItem('fzb_shown')){document.documentElement.classList.add('bar-off');}else{sessionStorage.setItem('fzb_shown','1');}})();</script>
+<script>(function(){if('scrollRestoration'in history)history.scrollRestoration='manual';if(sessionStorage.getItem('fzb')||sessionStorage.getItem('fzb_shown')){document.documentElement.classList.add('bar-off');}else{sessionStorage.setItem('fzb_shown','1');}})();</script>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
 <!-- Google Analytics 4 -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-L5RX761T33"></script>

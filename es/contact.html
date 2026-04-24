@@ -74,6 +74,7 @@ HTML
 HTML
 HTML
 HTML
+HTML
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -359,6 +360,12 @@ HTML
 <label data-i18n="contact.form.message">Cuéntanos tu proyecto</label>
 <textarea data-i18n-ph="contact.form.placeholder" name="message" placeholder="Describe lo que necesitas, tu audiencia y cualquier detalle o plazo relevante." required=""></textarea>
 </div>
+<div class="form-field" id="referral-field" style="display:none;">
+<label>Referido por</label>
+<input id="referred-by-input" name="referred_by" placeholder="Nombre de la persona que te envió" type="text"/>
+<div id="referral-note" style="font-size:.75rem;color:var(--primary);margin-top:.4rem;display:none;">✓ Referencia anotada: su contacto recibirá su descuento en su próximo proyecto.</div>
+</div>
+<input id="referral-source" name="referral_source" type="hidden"/>
 <button class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send" id="contact-btn-text">Enviar mensaje</span> ›</button>
 <!-- What happens next -->
 <div style="margin-top:1.5rem;padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;">
@@ -393,6 +400,31 @@ HTML
 </form>
 <script>
 (function(){
+  // ── Referral tracking ──────────────────────────────────────────
+  var params = new URLSearchParams(window.location.search);
+  var refParam = params.get('ref');          // e.g. ?ref=John+Smith
+  var referField = document.getElementById('referral-field');
+  var referInput = document.getElementById('referred-by-input');
+  var referNote  = document.getElementById('referral-note');
+  var referHidden = document.getElementById('referral-source');
+
+  // Always show the "Referred by" field — it's optional
+  if(referField) referField.style.display = 'block';
+
+  // If ?ref= param present, pre-fill and show confirmation note
+  if(refParam && referInput){
+    referInput.value = decodeURIComponent(refParam);
+    if(referNote) referNote.style.display = 'block';
+  }
+
+  // Keep hidden field in sync for form submission
+  if(referInput && referHidden){
+    referInput.addEventListener('input', function(){
+      referHidden.value = referInput.value;
+    });
+    referHidden.value = referInput.value;
+  }
+
   var form=document.getElementById('contact-form');
   if(!form)return;
 

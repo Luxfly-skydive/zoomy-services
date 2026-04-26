@@ -431,6 +431,500 @@ nav{top:var(--bar-h)!important}
 <span class="marquee-item"><span class="marquee-dot"></span>Booking Systems</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Admin Panels</span>
 </div>
+
+<!-- ═══════════ ADMIN PANEL DEMO ═══════════ -->
+<section class="section" style="overflow:hidden;padding-bottom:4rem;">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:2.5rem;">
+  <div class="section-tag">Admin Panel</div>
+  <h2 class="section-title" style="margin-bottom:1rem;">Your website. Editable by you.</h2>
+  <p style="color:var(--text-2);font-size:1rem;line-height:1.7;max-width:560px;margin:0 auto 1.75rem;">Every site we build comes with a password-protected admin panel. Click any text, swap images, change colours — no developer needed. Try it right now.</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:.85rem;">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Live demo — try it now</div>
+    <span style="font-size:.85rem;color:#cbd5e1;">👆 Click any text below to edit it — it actually works</span>
+  </div>
+</div>
+<div id="admShell" style="--ac:#0ea5e9;background:#0a0a0a;border:1px solid #222;border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.8);">
+
+<!-- TOP BAR -->
+<div style="background:#0d0d0d;border-bottom:1px solid #1a1a1a;padding:.6rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
+  <div style="display:flex;align-items:center;gap:.85rem;">
+    <div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div><div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div></div>
+    <span style="font-size:.72rem;font-weight:700;color:var(--ac);letter-spacing:.08em;text-transform:uppercase;font-family:monospace;">Lumina Studio — Admin</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <span id="admBadge" style="font-size:.65rem;background:var(--ac);color:#0a0a08;padding:2px 10px;border-radius:4px;font-weight:700;display:none;font-family:monospace;"></span>
+    <button onclick="admPublish()" style="background:var(--ac);color:#0a0a08;border:none;padding:5px 18px;border-radius:6px;font-size:.75rem;font-weight:700;cursor:pointer;letter-spacing:.03em;" onmouseover="this.style.filter='brightness(1.15)'" onmouseout="this.style.filter=''">Publish ↑</button>
+  </div>
+</div>
+
+<!-- BODY -->
+<div style="display:flex;min-height:560px;">
+
+<!-- SIDEBAR -->
+<div style="width:148px;flex-shrink:0;background:#0b0b0b;border-right:1px solid #1a1a1a;padding:.9rem 0;display:flex;flex-direction:column;">
+  <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Pages</div>
+  <div class="adm-nav-item active-nav" onclick="admNav('home',this)" style="padding:.4rem 1rem;font-size:.74rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🏠</span>Home</div>
+  <div class="adm-nav-item" onclick="admNav('classes',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>🧘</span>Classes</div>
+  <div class="adm-nav-item" onclick="admNav('trainers',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>💪</span>Trainers</div>
+  <div class="adm-nav-item" onclick="admNav('pricing',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>💳</span>Pricing</div>
+  <div class="adm-nav-item" onclick="admNav('contact',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>📍</span>Contact</div>
+  <div style="margin:.6rem .8rem;border-top:1px solid #1a1a1a;"></div>
+  <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Settings</div>
+  <div class="adm-nav-item" onclick="admNav('colours',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>🎨</span>Colours</div>
+  <div class="adm-nav-item" onclick="admNav('seo',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>🔍</span>SEO</div>
+</div>
+
+<!-- CANVAS -->
+<div style="flex:1;background:#0f0f14;position:relative;overflow:hidden;">
+<div style="position:sticky;top:0;left:0;right:0;background:var(--ac);color:#0a0a08;font-size:.66rem;font-weight:800;letter-spacing:.07em;padding:4px 14px;z-index:10;display:flex;justify-content:space-between;"><span>✏ EDIT MODE — click any field</span><span style="font-weight:500;opacity:.75;">edits save as you type</span></div>
+
+<!-- PAGE: HOME -->
+<div id="adm-page-home" class="adm-page" style="padding:2rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+<!-- STATS ROW -->
+<div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;padding-bottom:1.75rem;border-bottom:1px solid #1e1e1e;margin-bottom:.25rem;">
+  <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:.85rem 1rem;">
+    <div style="font-size:.48rem;color:#888;text-transform:uppercase;letter-spacing:.12em;font-family:monospace;margin-bottom:.35rem;">Bookings this week</div>
+    <div class="adm-field" contenteditable="true" oninput="admChange('stat_book')" id="f-stat_book" spellcheck="false" style="font-size:1.55rem;font-weight:800;color:#28c840;font-family:monospace;line-height:1;">47</div>
+    <div style="font-size:.6rem;color:#28c840;margin-top:.3rem;opacity:.8;">↑ 12% vs last week</div>
+  </div>
+  <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:.85rem 1rem;">
+    <div style="font-size:.48rem;color:#888;text-transform:uppercase;letter-spacing:.12em;font-family:monospace;margin-bottom:.35rem;">Revenue this week</div>
+    <div style="display:flex;align-items:baseline;gap:2px;"><span style="font-size:.9rem;font-weight:700;color:var(--ac);">$</span><div class="adm-field" contenteditable="true" oninput="admChange('stat_rev')" id="f-stat_rev" spellcheck="false" style="font-size:1.55rem;font-weight:800;color:#f0eeff;font-family:monospace;line-height:1;">4,180</div></div>
+    <div style="font-size:.6rem;color:#888;margin-top:.3rem;">↑ 8% vs last week</div>
+  </div>
+  <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:.85rem 1rem;">
+    <div style="font-size:.48rem;color:#888;text-transform:uppercase;letter-spacing:.12em;font-family:monospace;margin-bottom:.35rem;">New members</div>
+    <div class="adm-field" contenteditable="true" oninput="admChange('stat_mem')" id="f-stat_mem" spellcheck="false" style="font-size:1.55rem;font-weight:800;color:var(--ac);font-family:monospace;line-height:1;">9</div>
+    <div style="font-size:.6rem;color:#888;margin-top:.3rem;">This month: 31 total</div>
+  </div>
+  <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:.85rem 1rem;">
+    <div style="font-size:.48rem;color:#888;text-transform:uppercase;letter-spacing:.12em;font-family:monospace;margin-bottom:.35rem;">Avg class rating</div>
+    <div class="adm-field" contenteditable="true" oninput="admChange('stat_rat')" id="f-stat_rat" spellcheck="false" style="font-size:1.55rem;font-weight:800;color:#f59e0b;font-family:monospace;line-height:1;">4.9</div>
+    <div style="font-size:.6rem;color:#f59e0b;margin-top:.3rem;">★★★★★ from 38 reviews</div>
+  </div>
+</div>
+  <div style="display:flex;flex-direction:column;gap:1.1rem;">
+    <div><div class="adm-label">Tagline</div><div id="f-tagline" class="adm-field" contenteditable="true" oninput="admChange('tagline')" spellcheck="false">PREMIUM FITNESS STUDIO</div></div>
+    <div><div class="adm-label">Main heading</div><div id="f-heading" class="adm-field" contenteditable="true" oninput="admChange('heading')" spellcheck="false" style="font-size:1.6rem;font-weight:800;color:#f0eeff;line-height:1.2;">Move. Breathe.<br/>Transform.</div></div>
+    <div><div class="adm-label">Subtext</div><div id="f-sub" class="adm-field" contenteditable="true" oninput="admChange('sub')" spellcheck="false" style="font-size:.85rem;color:#7070a0;line-height:1.65;">Studio classes for every level — downtown and online. Join 2,000+ members.</div></div>
+    <div><div class="adm-label">Button</div><div id="f-btn" class="adm-field" contenteditable="true" oninput="admChange('btn')" spellcheck="false" style="display:inline-block;background:var(--ac);color:#0a0a08;padding:7px 18px;border-radius:6px;font-size:.8rem;font-weight:800;cursor:text;">Book a Free Class →</div></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:1.1rem;">
+    <div>
+      <div class="adm-label">Hero image — click to upload</div>
+      <div id="f-img-wrap" onclick="document.getElementById('f-img-input').click()" style="border-radius:8px;height:155px;background:#1a1a2e;border:2px dashed rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--ac)'" onmouseout="this.style.borderColor='rgba(255,255,255,.15)'">
+        <img id="f-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;" /><div id="f-img-ph" style="text-align:center;pointer-events:none;"><div style="font-size:1.8rem;">📷</div><div style="font-size:.7rem;color:var(--ac);font-weight:600;margin-top:.25rem;">Click to upload</div><div style="font-size:.6rem;color:#444;margin-top:.15rem;">JPG · PNG · WEBP</div></div>
+      </div>
+      <input id="f-img-input" type="file" accept="image/*" style="display:none;" onchange="admImgUpload(this)"/>
+    </div>
+    <div><div class="adm-label">Announcement banner</div><div id="f-announcement" class="adm-field" contenteditable="true" oninput="admChange('announcement')" spellcheck="false" style="font-size:.78rem;color:#f0eeff;padding:8px 10px;background:rgba(99,102,241,.1);border-radius:6px;line-height:1.55;">🎉 New: Reformer Pilates now available — first class free!</div></div>
+  </div>
+</div>
+
+<!-- PAGE: CLASSES -->
+<div id="adm-page-classes" class="adm-page" style="display:none;padding:2rem 2.5rem;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
+    <div style="font-size:.52rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;">3 Active Classes — click any field to edit</div>
+    <div style="font-size:.68rem;color:var(--ac);font-weight:700;background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.3);border-radius:6px;padding:3px 10px;cursor:pointer;">+ Add class</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;overflow:hidden;">
+      <div style="height:80px;background:linear-gradient(135deg,#1a1a3e,#2a1a4e);display:flex;align-items:center;justify-content:center;position:relative;">
+        <div class="adm-field" contenteditable="true" oninput="admChange('c1icon')" id="f-c1icon" spellcheck="false" style="cursor:text;font-size:2rem;text-align:center;outline:none;">🧘</div>
+        <div style="position:absolute;bottom:5px;right:7px;font-size:.5rem;color:rgba(255,255,255,.3);font-family:monospace;">click to edit</div>
+      </div>
+      <div style="padding:.85rem;">
+        <div class="adm-label">Class name</div><div class="adm-field" contenteditable="true" oninput="admChange('c1name')" spellcheck="false" id="f-c1name" style="font-weight:700;color:#f0eeff;font-size:.9rem;margin-bottom:.5rem;">Yoga Flow</div>
+        <div class="adm-label">Description</div><div class="adm-field" contenteditable="true" oninput="admChange('c1desc')" spellcheck="false" id="f-c1desc" style="font-size:.75rem;color:#aab0c4;line-height:1.55;margin-bottom:.75rem;">All levels welcome. Breathwork and flexibility focus.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem;">
+          <div><div class="adm-label">Duration</div><div class="adm-field" contenteditable="true" oninput="admChange('c1dur')" spellcheck="false" id="f-c1dur" style="font-size:.78rem;color:var(--ac);font-weight:700;">60 min</div></div>
+          <div><div class="adm-label">Price / drop-in</div><div class="adm-field" contenteditable="true" oninput="admChange('c1price')" spellcheck="false" id="f-c1price" style="font-size:.78rem;color:#f0eeff;font-weight:700;">$22</div></div>
+        </div>
+        <div><div class="adm-label">Next session</div><div class="adm-field" contenteditable="true" oninput="admChange('c1next')" spellcheck="false" id="f-c1next" style="font-size:.72rem;color:#aaa;">Mon &amp; Wed · 7:00 am</div></div>
+        <div style="margin-top:.75rem;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:.3rem;"><span style="font-size:.6rem;color:#888;">Spots remaining</span><span style="font-size:.6rem;color:#28c840;font-weight:700;">8 / 12</span></div>
+          <div style="background:#1a1a1a;border-radius:4px;height:4px;overflow:hidden;"><div style="width:66%;height:100%;background:linear-gradient(90deg,var(--ac),rgba(14,165,233,.4));border-radius:4px;"></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#111;border:2px solid var(--ac);border-radius:10px;overflow:hidden;position:relative;">
+      <div style="position:absolute;top:0;left:0;right:0;background:var(--ac);color:#0a0a08;font-size:.5rem;font-weight:800;letter-spacing:.08em;text-align:center;padding:2px 0;z-index:2;">MOST POPULAR</div>
+      <div style="height:80px;background:linear-gradient(135deg,#1a3e1a,#1a4e2a);display:flex;align-items:center;justify-content:center;margin-top:18px;">
+        <div class="adm-field" contenteditable="true" oninput="admChange('c2icon')" id="f-c2icon" spellcheck="false" style="cursor:text;font-size:2rem;text-align:center;outline:none;">💪</div>
+      </div>
+      <div style="padding:.85rem;">
+        <div class="adm-label">Class name</div><div class="adm-field" contenteditable="true" oninput="admChange('c2name')" spellcheck="false" id="f-c2name" style="font-weight:700;color:#f0eeff;font-size:.9rem;margin-bottom:.5rem;">HIIT Power</div>
+        <div class="adm-label">Description</div><div class="adm-field" contenteditable="true" oninput="admChange('c2desc')" spellcheck="false" id="f-c2desc" style="font-size:.75rem;color:#aab0c4;line-height:1.55;margin-bottom:.75rem;">High intensity. Burn calories and build strength fast.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem;">
+          <div><div class="adm-label">Duration</div><div class="adm-field" contenteditable="true" oninput="admChange('c2dur')" spellcheck="false" id="f-c2dur" style="font-size:.78rem;color:var(--ac);font-weight:700;">45 min</div></div>
+          <div><div class="adm-label">Price / drop-in</div><div class="adm-field" contenteditable="true" oninput="admChange('c2price')" spellcheck="false" id="f-c2price" style="font-size:.78rem;color:#f0eeff;font-weight:700;">$22</div></div>
+        </div>
+        <div><div class="adm-label">Next session</div><div class="adm-field" contenteditable="true" oninput="admChange('c2next')" spellcheck="false" id="f-c2next" style="font-size:.72rem;color:#aaa;">Tue &amp; Thu · 6:30 am</div></div>
+        <div style="margin-top:.75rem;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:.3rem;"><span style="font-size:.6rem;color:#888;">Spots remaining</span><span style="font-size:.6rem;color:#f59e0b;font-weight:700;">3 / 16</span></div>
+          <div style="background:#1a1a1a;border-radius:4px;height:4px;overflow:hidden;"><div style="width:81%;height:100%;background:linear-gradient(90deg,#f59e0b,rgba(245,158,11,.4));border-radius:4px;"></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;overflow:hidden;">
+      <div style="height:80px;background:linear-gradient(135deg,#3e1a1a,#4e2a1a);display:flex;align-items:center;justify-content:center;">
+        <div class="adm-field" contenteditable="true" oninput="admChange('c3icon')" id="f-c3icon" spellcheck="false" style="cursor:text;font-size:2rem;text-align:center;outline:none;">🔥</div>
+      </div>
+      <div style="padding:.85rem;">
+        <div class="adm-label">Class name</div><div class="adm-field" contenteditable="true" oninput="admChange('c3name')" spellcheck="false" id="f-c3name" style="font-weight:700;color:#f0eeff;font-size:.9rem;margin-bottom:.5rem;">Pilates Reformer</div>
+        <div class="adm-label">Description</div><div class="adm-field" contenteditable="true" oninput="admChange('c3desc')" spellcheck="false" id="f-c3desc" style="font-size:.75rem;color:#aab0c4;line-height:1.55;margin-bottom:.75rem;">Core strength and posture. Equipment provided.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem;">
+          <div><div class="adm-label">Duration</div><div class="adm-field" contenteditable="true" oninput="admChange('c3dur')" spellcheck="false" id="f-c3dur" style="font-size:.78rem;color:var(--ac);font-weight:700;">55 min</div></div>
+          <div><div class="adm-label">Price / drop-in</div><div class="adm-field" contenteditable="true" oninput="admChange('c3price')" spellcheck="false" id="f-c3price" style="font-size:.78rem;color:#f0eeff;font-weight:700;">$28</div></div>
+        </div>
+        <div><div class="adm-label">Next session</div><div class="adm-field" contenteditable="true" oninput="admChange('c3next')" spellcheck="false" id="f-c3next" style="font-size:.72rem;color:#aaa;">Sat · 9:00 am</div></div>
+        <div style="margin-top:.75rem;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:.3rem;"><span style="font-size:.6rem;color:#888;">Spots remaining</span><span style="font-size:.6rem;color:#28c840;font-weight:700;">6 / 8</span></div>
+          <div style="background:#1a1a1a;border-radius:4px;height:4px;overflow:hidden;"><div style="width:25%;height:100%;background:linear-gradient(90deg,#28c840,rgba(40,200,64,.4));border-radius:4px;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: TRAINERS -->
+<div id="adm-page-trainers" class="adm-page" style="display:none;padding:2rem 2.5rem;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
+    <div style="font-size:.52rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;">Trainer profiles — click any field to edit</div>
+    <div style="font-size:.68rem;color:var(--ac);font-weight:700;background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.3);border-radius:6px;padding:3px 10px;cursor:pointer;">+ Add trainer</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;text-align:center;">
+      <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--ac),rgba(14,165,233,.25));margin:0 auto .75rem;display:flex;align-items:center;justify-content:center;">
+        <div class="adm-field" contenteditable="true" oninput="admChange('t1emoji')" id="f-t1emoji" spellcheck="false" style="font-size:1.8rem;line-height:1;outline:none;cursor:text;" title="click to change emoji">👩</div>
+      </div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t1name')" spellcheck="false" id="f-t1name" style="font-weight:700;color:#f0eeff;font-size:.95rem;margin-bottom:.25rem;">Sofia Reyes</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t1role')" spellcheck="false" id="f-t1role" style="font-size:.7rem;color:var(--ac);font-weight:600;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.08em;">Yoga &amp; Pilates</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t1bio')" spellcheck="false" id="f-t1bio" style="font-size:.75rem;color:#aab0c4;line-height:1.6;margin-bottom:.85rem;text-align:left;">Certified RYT-500. 8 years teaching. Specialises in restorative flow.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;border-top:1px solid #1e1e1e;padding-top:.75rem;text-align:left;">
+        <div><div class="adm-label">Rating</div><div class="adm-field" contenteditable="true" oninput="admChange('t1rat')" id="f-t1rat" spellcheck="false" style="font-size:.82rem;color:#f59e0b;font-weight:600;">★ 4.9</div></div>
+        <div><div class="adm-label">Sessions / mo</div><div class="adm-field" contenteditable="true" oninput="admChange('t1sess')" id="f-t1sess" spellcheck="false" style="font-size:.82rem;color:#f0eeff;font-weight:700;">24</div></div>
+      </div>
+      <div style="margin-top:.6rem;text-align:left;"><div class="adm-label">Next available</div><div class="adm-field" contenteditable="true" oninput="admChange('t1avail')" id="f-t1avail" spellcheck="false" style="font-size:.72rem;color:#28c840;">Mon 7:00 am</div></div>
+    </div>
+    <div style="background:#111;border:2px solid var(--ac);border-radius:10px;padding:1.25rem;text-align:center;position:relative;">
+      <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--ac);color:#0a0a08;font-size:.5rem;font-weight:800;padding:2px 12px;border-radius:0 0 6px 6px;letter-spacing:.08em;white-space:nowrap;">TOP RATED</div>
+      <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#6366f1,rgba(99,102,241,.25));margin:1rem auto .75rem;display:flex;align-items:center;justify-content:center;">
+        <div class="adm-field" contenteditable="true" oninput="admChange('t2emoji')" id="f-t2emoji" spellcheck="false" style="font-size:1.8rem;line-height:1;outline:none;cursor:text;">👨</div>
+      </div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t2name')" spellcheck="false" id="f-t2name" style="font-weight:700;color:#f0eeff;font-size:.95rem;margin-bottom:.25rem;">Marcus Cole</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t2role')" spellcheck="false" id="f-t2role" style="font-size:.7rem;color:var(--ac);font-weight:600;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.08em;">HIIT &amp; Strength</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t2bio')" spellcheck="false" id="f-t2bio" style="font-size:.75rem;color:#aab0c4;line-height:1.6;margin-bottom:.85rem;text-align:left;">Former athlete. NASM certified. Known for high-energy sessions.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;border-top:1px solid #1e1e1e;padding-top:.75rem;text-align:left;">
+        <div><div class="adm-label">Rating</div><div class="adm-field" contenteditable="true" oninput="admChange('t2rat')" id="f-t2rat" spellcheck="false" style="font-size:.82rem;color:#f59e0b;font-weight:600;">★ 5.0</div></div>
+        <div><div class="adm-label">Sessions / mo</div><div class="adm-field" contenteditable="true" oninput="admChange('t2sess')" id="f-t2sess" spellcheck="false" style="font-size:.82rem;color:#f0eeff;font-weight:700;">32</div></div>
+      </div>
+      <div style="margin-top:.6rem;text-align:left;"><div class="adm-label">Next available</div><div class="adm-field" contenteditable="true" oninput="admChange('t2avail')" id="f-t2avail" spellcheck="false" style="font-size:.72rem;color:#28c840;">Tue 6:30 am</div></div>
+    </div>
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;text-align:center;">
+      <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#10b981,rgba(16,185,129,.25));margin:0 auto .75rem;display:flex;align-items:center;justify-content:center;">
+        <div class="adm-field" contenteditable="true" oninput="admChange('t3emoji')" id="f-t3emoji" spellcheck="false" style="font-size:1.8rem;line-height:1;outline:none;cursor:text;">👩</div>
+      </div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t3name')" spellcheck="false" id="f-t3name" style="font-weight:700;color:#f0eeff;font-size:.95rem;margin-bottom:.25rem;">Priya Nair</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t3role')" spellcheck="false" id="f-t3role" style="font-size:.7rem;color:var(--ac);font-weight:600;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.08em;">Reformer Pilates</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('t3bio')" spellcheck="false" id="f-t3bio" style="font-size:.75rem;color:#aab0c4;line-height:1.6;margin-bottom:.85rem;text-align:left;">Stott Pilates instructor. Works with rehabilitation and performance.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;border-top:1px solid #1e1e1e;padding-top:.75rem;text-align:left;">
+        <div><div class="adm-label">Rating</div><div class="adm-field" contenteditable="true" oninput="admChange('t3rat')" id="f-t3rat" spellcheck="false" style="font-size:.82rem;color:#f59e0b;font-weight:600;">★ 4.8</div></div>
+        <div><div class="adm-label">Sessions / mo</div><div class="adm-field" contenteditable="true" oninput="admChange('t3sess')" id="f-t3sess" spellcheck="false" style="font-size:.82rem;color:#f0eeff;font-weight:700;">18</div></div>
+      </div>
+      <div style="margin-top:.6rem;text-align:left;"><div class="adm-label">Next available</div><div class="adm-field" contenteditable="true" oninput="admChange('t3avail')" id="f-t3avail" spellcheck="false" style="font-size:.72rem;color:#28c840;">Sat 9:00 am</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: PRICING -->
+<div id="adm-page-pricing" class="adm-page" style="display:none;padding:2rem 2.5rem;">
+  <div style="font-size:.52rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:1.25rem;">Pricing plans — every field is editable</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.5rem;">
+      <div class="adm-field" contenteditable="true" oninput="admChange('p1name')" spellcheck="false" id="f-p1name" style="font-size:.8rem;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">Drop-In</div>
+      <div style="display:flex;align-items:baseline;gap:3px;margin-bottom:.85rem;"><span style="color:var(--ac);font-size:.9rem;">$</span><div class="adm-field" contenteditable="true" oninput="admChange('p1price')" spellcheck="false" id="f-p1price" style="font-size:2.2rem;font-weight:800;color:#f0eeff;min-width:20px;">22</div><span style="color:#444;font-size:.8rem;">/class</span></div>
+      <div style="font-size:.75rem;line-height:1.7;display:flex;flex-direction:column;gap:.25rem;"><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p1f1')" id="f-p1f1" spellcheck="false">Single class</div></div><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p1f2')" id="f-p1f2" spellcheck="false">Any style</div></div><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p1f3')" id="f-p1f3" spellcheck="false">Equipment included</div></div></div>
+    </div>
+    <div style="background:#111;border:2px solid var(--ac);border-radius:10px;padding:1.5rem;position:relative;">
+      <div style="position:absolute;top:-1px;right:16px;background:var(--ac);color:#0a0a08;font-size:.6rem;font-weight:800;padding:2px 10px;border-radius:0 0 6px 6px;letter-spacing:.08em;">POPULAR</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('p2name')" spellcheck="false" id="f-p2name" style="font-size:.8rem;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">Monthly</div>
+      <div style="display:flex;align-items:baseline;gap:3px;margin-bottom:.85rem;"><span style="color:var(--ac);font-size:.9rem;">$</span><div class="adm-field" contenteditable="true" oninput="admChange('p2price')" spellcheck="false" id="f-p2price" style="font-size:2.2rem;font-weight:800;color:#f0eeff;min-width:20px;">89</div><span style="color:#444;font-size:.8rem;">/mo</span></div>
+      <div style="font-size:.75rem;line-height:1.7;display:flex;flex-direction:column;gap:.25rem;"><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p2f1')" id="f-p2f1" spellcheck="false">Unlimited classes</div></div><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p2f2')" id="f-p2f2" spellcheck="false">Guest pass included</div></div><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p2f3')" id="f-p2f3" spellcheck="false">Priority booking</div></div></div>
+    </div>
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.5rem;">
+      <div class="adm-field" contenteditable="true" oninput="admChange('p3name')" spellcheck="false" id="f-p3name" style="font-size:.8rem;font-weight:700;color:var(--ac);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">Annual</div>
+      <div style="display:flex;align-items:baseline;gap:3px;margin-bottom:.85rem;"><span style="color:var(--ac);font-size:.9rem;">$</span><div class="adm-field" contenteditable="true" oninput="admChange('p3price')" spellcheck="false" id="f-p3price" style="font-size:2.2rem;font-weight:800;color:#f0eeff;min-width:20px;">69</div><span style="color:#444;font-size:.8rem;">/mo</span></div>
+      <div style="font-size:.75rem;line-height:1.7;display:flex;flex-direction:column;gap:.25rem;"><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p3f1')" id="f-p3f1" spellcheck="false">Everything in Monthly</div></div><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p3f2')" id="f-p3f2" spellcheck="false">2 months free</div></div><div style="color:#aaa;display:flex;gap:6px;"><span style="color:var(--ac);">✓</span><div class="adm-field" contenteditable="true" oninput="admChange('p3f3')" id="f-p3f3" spellcheck="false">Private session / quarter</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: CONTACT -->
+<div id="adm-page-contact" class="adm-page" style="display:none;padding:2rem 2.5rem;">
+  <div style="font-size:.52rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:1.25rem;">Contact details — click to edit</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem;">
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.1rem 1.25rem;"><div class="adm-label">Studio address</div><div class="adm-field" contenteditable="true" oninput="admChange('addr')" spellcheck="false" id="f-addr" style="font-size:.85rem;color:#f0eeff;line-height:1.6;">48 Kingsway, Unit 3<br/>New York, NY 10001</div></div>
+      <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.1rem 1.25rem;"><div class="adm-label">Phone</div><div class="adm-field" contenteditable="true" oninput="admChange('phone')" spellcheck="false" id="f-phone" style="font-size:.85rem;color:#f0eeff;">+1 (212) 555 0174</div></div>
+      <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.1rem 1.25rem;"><div class="adm-label">Email</div><div class="adm-field" contenteditable="true" oninput="admChange('email')" spellcheck="false" id="f-email" style="font-size:.85rem;color:#f0eeff;">hello@luminastudio.com</div></div>
+    </div>
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;">
+      <div class="adm-label">Opening hours</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.25rem;">
+        <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #1a1a1a;"><span style="font-size:.78rem;color:#aaa;">Mon – Fri</span><div class="adm-field" contenteditable="true" oninput="admChange('h1')" spellcheck="false" id="f-h1" style="font-size:.78rem;color:#f0eeff;text-align:right;">6:00 am – 9:00 pm</div></div>
+        <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid #1a1a1a;"><span style="font-size:.78rem;color:#aaa;">Saturday</span><div class="adm-field" contenteditable="true" oninput="admChange('h2')" spellcheck="false" id="f-h2" style="font-size:.78rem;color:#f0eeff;text-align:right;">7:00 am – 6:00 pm</div></div>
+        <div style="display:flex;justify-content:space-between;padding:.4rem 0;"><span style="font-size:.78rem;color:#aaa;">Sunday</span><div class="adm-field" contenteditable="true" oninput="admChange('h3')" spellcheck="false" id="f-h3" style="font-size:.78rem;color:#f0eeff;text-align:right;">8:00 am – 2:00 pm</div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Social media row -->
+  <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;">
+    <div class="adm-label" style="margin-bottom:.85rem;">Social media handles</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <div style="display:flex;align-items:center;gap:.6rem;">
+        <span style="font-size:1.1rem;">📸</span>
+        <div style="flex:1;"><div class="adm-label">Instagram</div><div class="adm-field" contenteditable="true" oninput="admChange('ig')" id="f-ig" spellcheck="false" style="font-size:.82rem;color:#f0eeff;">@luminastudio</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;">
+        <span style="font-size:1.1rem;">📘</span>
+        <div style="flex:1;"><div class="adm-label">Facebook</div><div class="adm-field" contenteditable="true" oninput="admChange('fb')" id="f-fb" spellcheck="false" style="font-size:.82rem;color:#f0eeff;">Lumina Studio NYC</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;">
+        <span style="font-size:1.1rem;">🎵</span>
+        <div style="flex:1;"><div class="adm-label">TikTok</div><div class="adm-field" contenteditable="true" oninput="admChange('tt')" id="f-tt" spellcheck="false" style="font-size:.82rem;color:#f0eeff;">@luminastudio</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: COLOURS -->
+<div id="adm-page-colours" class="adm-page" style="display:none;padding:2rem 2.5rem;">
+  <div style="font-size:.52rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:1.5rem;">Brand colour — changes apply instantly across the whole panel</div>
+  <div style="display:flex;flex-direction:column;gap:1.5rem;max-width:480px;">
+    <div>
+      <div class="adm-label" style="margin-bottom:.75rem;">Presets</div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+        <div onclick="admSetColor('#c9a84c')" title="Gold" style="width:36px;height:36px;border-radius:50%;background:#c9a84c;cursor:pointer;border:2px solid transparent;transition:transform .15s,border-color .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+        <div onclick="admSetColor('#6366f1')" title="Indigo" style="width:36px;height:36px;border-radius:50%;background:#6366f1;cursor:pointer;border:2px solid transparent;transition:transform .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+        <div onclick="admSetColor('#10b981')" title="Emerald" style="width:36px;height:36px;border-radius:50%;background:#10b981;cursor:pointer;border:2px solid transparent;transition:transform .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+        <div onclick="admSetColor('#f43f5e')" title="Rose" style="width:36px;height:36px;border-radius:50%;background:#f43f5e;cursor:pointer;border:2px solid transparent;transition:transform .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+        <div onclick="admSetColor('#0ea5e9')" title="Sky" style="width:36px;height:36px;border-radius:50%;background:#0ea5e9;cursor:pointer;border:2px solid transparent;transition:transform .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+        <div onclick="admSetColor('#f97316')" title="Orange" style="width:36px;height:36px;border-radius:50%;background:#f97316;cursor:pointer;border:2px solid transparent;transition:transform .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+        <div onclick="admSetColor('#a855f7')" title="Purple" style="width:36px;height:36px;border-radius:50%;background:#a855f7;cursor:pointer;border:2px solid transparent;transition:transform .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+        <div onclick="admSetColor('#ec4899')" title="Pink" style="width:36px;height:36px;border-radius:50%;background:#ec4899;cursor:pointer;border:2px solid transparent;transition:transform .15s;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform=''"></div>
+      </div>
+    </div>
+    <div>
+      <div class="adm-label" style="margin-bottom:.6rem;">Custom colour</div>
+      <div style="display:flex;align-items:center;gap:.75rem;">
+        <input type="color" id="admColorPicker" value="#0ea5e9" oninput="admSetColor(this.value)" style="width:48px;height:36px;border:1px solid #222;border-radius:6px;background:#111;cursor:pointer;padding:2px;">
+        <div id="admColorHex" style="font-family:monospace;font-size:.85rem;color:#f0eeff;background:#111;border:1px solid #222;padding:6px 14px;border-radius:6px;">#0ea5e9</div>
+        <span style="font-size:.75rem;color:#aaa;">Pick any colour</span>
+      </div>
+    </div>
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;">
+      <div class="adm-label" style="margin-bottom:.75rem;">Preview</div>
+      <div style="display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;">
+        <div id="admPrevBtn" style="background:var(--ac);color:#0a0a08;padding:7px 18px;border-radius:6px;font-size:.8rem;font-weight:700;">Book Now →</div>
+        <div id="admPrevTag" style="color:var(--ac);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;">Active Page</div>
+        <div id="admPrevBorder" style="border:2px solid var(--ac);border-radius:6px;padding:5px 12px;font-size:.75rem;color:var(--ac);">Highlight</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: SEO -->
+<div id="adm-page-seo" class="adm-page" style="display:none;padding:2rem 2.5rem;">
+  <div style="font-size:.52rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:1.25rem;">SEO settings — edit page title and description</div>
+  <div style="display:flex;flex-direction:column;gap:1.25rem;max-width:600px;">
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;">
+      <div class="adm-label">Page title (shows in browser tab &amp; Google)</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('seo_title')" spellcheck="false" id="f-seo_title" style="font-size:.88rem;color:#f0eeff;margin-top:.3rem;">Lumina Studio — Premium Fitness Classes in New York</div>
+    </div>
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;">
+      <div class="adm-label">Meta description (shows under title in search results)</div>
+      <div class="adm-field" contenteditable="true" oninput="admChange('seo_desc')" spellcheck="false" id="f-seo_desc" style="font-size:.85rem;color:#f0eeff;line-height:1.65;margin-top:.3rem;">Yoga, HIIT, and Pilates Reformer classes in downtown New York. All levels welcome. First class free — book online.</div>
+    </div>
+    <div style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;">
+      <div style="font-size:.52rem;color:#888;text-transform:uppercase;letter-spacing:.1em;font-family:monospace;margin-bottom:.75rem;">Google preview</div>
+      <div style="font-size:.78rem;color:#1a73e8;margin-bottom:.2rem;" id="seo-preview-title">Lumina Studio — Premium Fitness Classes in New York</div>
+      <div style="font-size:.7rem;color:#006621;margin-bottom:.2rem;">https://lumina-studio.com</div>
+      <div style="font-size:.75rem;color:#545454;line-height:1.55;" id="seo-preview-desc">Yoga, HIIT, and Pilates Reformer classes in downtown New York. All levels welcome. First class free — book online.</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /canvas -->
+
+<!-- RIGHT HINT PANEL -->
+<div style="width:148px;flex-shrink:0;background:#0b0b0b;border-left:1px solid #1a1a1a;padding:.9rem .8rem;display:flex;flex-direction:column;gap:.85rem;">
+  <div>
+    <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:.5rem;">Active</div>
+    <div id="admHintField" style="font-size:.72rem;color:#aaa;line-height:1.55;">Click a field to start editing</div>
+  </div>
+  <div style="border-top:1px solid #1a1a1a;padding-top:.85rem;">
+    <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:.5rem;">Edits</div>
+    <div id="admChangeList" style="display:flex;flex-direction:column;gap:.28rem;"><span style="font-size:.68rem;color:#666;">None yet</span></div>
+  </div>
+  <div style="border-top:1px solid #1a1a1a;padding-top:.85rem;margin-top:auto;">
+    <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:.5rem;">Tip</div>
+    <div style="font-size:.65rem;color:#888;line-height:1.6;">Changes auto-save as you type. Click Publish to go live.</div>
+  </div>
+</div>
+
+</div><!-- /body -->
+
+<!-- BOTTOM BAR -->
+<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:.55rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
+  <span style="font-size:.66rem;color:#666;font-family:monospace;">lumina-studio.com</span>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <span id="admStatusBar" style="font-size:.66rem;color:#444;"></span>
+    <button onclick="admPublish()" style="background:var(--ac);color:#0a0a08;border:none;padding:4px 16px;border-radius:5px;font-size:.7rem;font-weight:700;cursor:pointer;" onmouseover="this.style.filter='brightness(1.15)'" onmouseout="this.style.filter=''">Publish changes ↑</button>
+  </div>
+</div>
+
+</div><!-- /admShell -->
+<style>
+.adm-field{outline:none;cursor:text;border-radius:4px;padding:3px 6px;border:1px dashed rgba(255,255,255,.12);transition:border-color .18s,background .18s;}
+.adm-field:hover{border-color:rgba(255,255,255,.28);}
+.adm-field:focus{border-color:var(--ac) !important;background:rgba(255,255,255,.03);}
+.adm-label{font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:.3rem;}
+.adm-page{animation:admFadeIn .22s ease;}
+.adm-nav-item.active-nav{color:var(--ac) !important;background:rgba(255,255,255,.04);border-left:2px solid var(--ac);padding-left:calc(1rem - 2px);}
+@keyframes admFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){#admShell{display:none;}#admin-demo-wrap>div:first-child{display:none;}}
+</style>
+<script>
+(function(){
+var SK='zoomy_adm3';
+var unsaved=0;
+var changed={};
+var currentPage='home';
+
+function getState(){try{return JSON.parse(sessionStorage.getItem(SK)||'{}')}catch(e){return{}}}
+function setState(d){try{sessionStorage.setItem(SK,JSON.stringify(d))}catch(e){}}
+
+function loadAll(){
+  var d=getState();
+  // text fields
+  document.querySelectorAll('[id^="f-"]').forEach(function(el){
+    var key=el.id.slice(2);
+    if(d[key]!==undefined) el.innerHTML=d[key];
+  });
+  // image
+  if(d._img){var img=document.getElementById('f-img');if(img){img.src=d._img;img.style.display='block';var ph=document.getElementById('f-img-ph');if(ph)ph.style.display='none';}}
+  // color
+  if(d._color) applyColor(d._color,false);
+}
+
+function saveAll(){
+  var d=getState();
+  document.querySelectorAll('[id^="f-"]').forEach(function(el){
+    var key=el.id.slice(2);
+    if(el.tagName!=='INPUT') d[key]=el.innerHTML;
+  });
+  var img=document.getElementById('f-img');
+  if(img&&img.src&&img.src.length>100) d._img=img.src;
+  setState(d);
+}
+
+window.admChange=function(key){
+  if(!changed[key]){changed[key]=true;unsaved++;}
+  updateBadge();
+  updateChangeList();
+  // live SEO preview
+  if(key==='seo_title'){var el=document.getElementById('f-seo_title'),pv=document.getElementById('seo-preview-title');if(el&&pv)pv.textContent=el.innerText;}
+  if(key==='seo_desc'){var el=document.getElementById('f-seo_desc'),pv=document.getElementById('seo-preview-desc');if(el&&pv)pv.textContent=el.innerText;}
+  saveAll();
+};
+
+function updateBadge(){
+  var b=document.getElementById('admBadge');
+  if(b){if(unsaved>0){b.style.display='inline';b.textContent=unsaved+(unsaved===1?' unsaved':' unsaved');}else b.style.display='none';}
+}
+
+function updateChangeList(){
+  var el=document.getElementById('admChangeList');
+  if(!el)return;
+  var keys=Object.keys(changed);
+  if(keys.length===0){el.innerHTML='<span style="font-size:.68rem;color:#666;">None yet</span>';return;}
+  el.innerHTML=keys.slice(0,6).map(function(k){return'<div style="font-size:.65rem;color:var(--ac);display:flex;align-items:center;gap:4px;"><span style="opacity:.5;font-size:.55rem;">●</span>'+k+'</div>';}).join('');
+  if(keys.length>6){el.innerHTML+='<div style="font-size:.6rem;color:#666;">+'+(keys.length-6)+' more</div>';}
+}
+
+window.admPublish=function(){
+  unsaved=0;changed={};
+  updateBadge();updateChangeList();
+  var s=document.getElementById('admStatusBar');
+  if(s){s.textContent='✓ Live';s.style.color='#28c840';setTimeout(function(){s.textContent='';s.style.color='';},2500);}
+  saveAll();
+};
+
+window.admNav=function(page,el){
+  // hide all pages
+  document.querySelectorAll('.adm-page').forEach(function(p){p.style.display='none';});
+  // show target
+  var target=document.getElementById('adm-page-'+page);
+  if(target) target.style.display=(page==='home'?'grid':'block');
+  // update nav active
+  document.querySelectorAll('.adm-nav-item').forEach(function(n){
+    n.classList.remove('active-nav');
+    n.style.color='#555';
+  });
+  el.classList.add('active-nav');
+  el.style.color='';
+  currentPage=page;
+};
+
+function applyColor(hex,save){
+  var shell=document.getElementById('admShell');
+  if(shell) shell.style.setProperty('--ac',hex);
+  var picker=document.getElementById('admColorPicker');
+  if(picker) picker.value=hex;
+  var hexEl=document.getElementById('admColorHex');
+  if(hexEl) hexEl.textContent=hex;
+  if(save){
+    var d=getState();d._color=hex;setState(d);
+    if(!changed._color){changed._color=true;unsaved++;}
+    updateBadge();updateChangeList();
+  }
+}
+
+window.admSetColor=function(hex){applyColor(hex,true);};
+
+window.admImgUpload=function(input){
+  var file=input.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var img=document.getElementById('f-img');
+    if(img){img.src=e.target.result;img.style.display='block';}
+    var ph=document.getElementById('f-img-ph');if(ph)ph.style.display='none';
+    var d=getState();d._img=e.target.result;setState(d);
+    if(!changed._img){changed._img=true;unsaved++;}
+    updateBadge();updateChangeList();
+  };
+  reader.readAsDataURL(file);
+};
+
+// Focus hints
+document.addEventListener('focusin',function(e){
+  if(e.target.classList.contains('adm-field')){
+    var h=document.getElementById('admHintField');
+    if(h) h.textContent='Editing: '+e.target.id.replace('f-','').replace(/_/g,' ');
+  }
+});
+
+document.addEventListener('DOMContentLoaded',function(){
+  loadAll();
+  updateChangeList();
+});
+})();
+</script>
+</div><!-- /section-inner -->
+</section>
+<!-- ═══════════ END ADMIN PANEL DEMO ═══════════ -->
 </div>
 <!-- ═══════════ PHONE AGENT FEATURE + SERVICES (reorder on mobile) ═══════════ -->
 <div class="sections-reorder">

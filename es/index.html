@@ -1,85 +1,4 @@
 <!DOCTYPE html>
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
-HTML
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
@@ -167,6 +86,12 @@ HTML
 .chatbot-features{grid-template-columns:1fr}
 .cap-strip{grid-template-columns:1fr}
 }
+
+/* custom dark scrollbar for admin canvas */
+#admShell .adm-canvas::-webkit-scrollbar{width:6px;}
+#admShell .adm-canvas::-webkit-scrollbar-track{background:#0a0a0a;}
+#admShell .adm-canvas::-webkit-scrollbar-thumb{background:#333;border-radius:3px;}
+#admShell .adm-canvas::-webkit-scrollbar-thumb:hover{background:#555;}
 </style>
 <style>
 :root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
@@ -271,7 +196,7 @@ nav{top:var(--bar-h)!important}
 <body>
 <!-- ═══ FREE PAGE ANNOUNCEMENT BAR ═══ -->
 <div id="free-bar">
-<span class="bar-full" style="font-size:.78rem;color:rgba(255,255,255,.85);font-weight:400;letter-spacing:.01em;">Vista previa gratuita del sitio web: creamos su primera página antes de que pague. Cada sitio incluye páginas de carrito, pago y utilidades gratuitas.</span>
+<span class="bar-full" style="font-size:.78rem;color:rgba(255,255,255,.85);font-weight:400;letter-spacing:.01em;">Vista previa gratuita del sitio web: creamos su primera página antes de que pague. Cada sitio incluye carrito, términos y páginas de utilidades de forma gratuita.</span>
 <span class="bar-short" style="display:none;font-size:.75rem;color:rgba(255,255,255,.85);font-weight:400;">Vista previa gratuita del sitio web, sin compromiso.</span>
 <a href="contact.html" onmouseout="this.style.background='rgba(255,255,255,.12)'" onmouseover="this.style.background='rgba(255,255,255,.22)'" style="flex-shrink:0;font-size:.75rem;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;text-decoration:none;white-space:nowrap;transition:background .15s">Reclama página gratuita →</a>
 <button aria-label="Descartar" onclick="(function(){document.documentElement.classList.add('bar-off');sessionStorage.setItem('fzb','1');})()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:1rem;cursor:pointer;padding:4px 8px;line-height:1">✕</button>
@@ -283,11 +208,11 @@ nav{top:var(--bar-h)!important}
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
 <li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
-<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
 <li><a data-i18n="nav.about" href="about.html">Acerca de</a></li>
 <li><a data-i18n="nav.pricing" href="pricing.html">Precios</a></li>
 <li><a data-i18n="nav.contact" href="contact.html">Contacto</a></li>
@@ -316,7 +241,7 @@ nav{top:var(--bar-h)!important}
 <span class="glitch grad-text-animated">Haz crecer tu</span><br/>
       negocios en línea.
     </h1>
-<p class="hero-sub" data-i18n="index.hero.sub" style="margin:0 auto 2.5rem;">Creamos las herramientas digitales que su empresa necesita: metacampañas publicitarias, sitios web personalizados y chatbots de inteligencia artificial. Construido desde cero, entregado en vivo y listo para convertir.</p>
+<p class="hero-sub" data-i18n="index.hero.sub" style="margin:0 auto 2.5rem;">Creamos las herramientas digitales que su empresa necesita: campañas de Google Ads, sitios web personalizados y chatbots de IA. Construido desde cero, entregado en vivo y listo para convertir.</p>
 <div class="hero-actions" style="justify-content:center;margin-bottom:3rem;">
 <a class="btn btn-primary btn-lg" href="contact.html">Iniciar un proyecto</a>
 <a class="btn btn-ghost btn-lg" href="#our-services">Explorar servicios</a>
@@ -338,7 +263,7 @@ nav{top:var(--bar-h)!important}
 <span class="marquee-item"><span class="marquee-dot"></span>Chatbots de IA</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Registro de dominio</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Configuración de alojamiento</span>
-<span class="marquee-item"><span class="marquee-dot"></span>Metaanuncios</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Anuncios de Google</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Sistemas de Reservas</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Paneles de administración</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Archivos de campaña</span>
@@ -346,7 +271,7 @@ nav{top:var(--bar-h)!important}
 <span class="marquee-item"><span class="marquee-dot"></span>Chatbots de IA</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Registro de dominio</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Configuración de alojamiento</span>
-<span class="marquee-item"><span class="marquee-dot"></span>Metaanuncios</span>
+<span class="marquee-item"><span class="marquee-dot"></span>Anuncios de Google</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Sistemas de Reservas</span>
 <span class="marquee-item"><span class="marquee-dot"></span>Paneles de administración</span>
 </div>
@@ -456,60 +381,63 @@ Pruebe la demostración en vivo
 <h2 class="section-title" data-i18n="index.svc.heading">Lo que construimos.</h2>
 <p class="section-sub" style="max-width:560px;">Cuatro servicios distintos. Cada uno con alcance y precio por proyecto.</p>
 </div>
-<div class="services-list">
-<div class="svc-row reveal">
-<div class="svc-left">
-<div class="svc-num">01</div>
-<div class="svc-title">Campaña<br/>Gestión</div>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">🌐</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Sitios web y páginas de destino</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Codificado personalizado desde cero. Sistemas de reservas, soporte multilingüe, paneles de administración y chatbots de IA disponibles según el proyecto.</div>
 </div>
-<div class="svc-right">
-<p>Nos especializamos en Meta Ads: campañas de Facebook e Instagram. Eso significa la configuración completa (estrategia, configuración de audiencia, texto del anuncio, seguimiento e implementación de píxeles) y la gestión continua: monitorear el rendimiento, optimizar el gasto, ajustar la orientación e informar los resultados. ¿Publicar anuncios en otra plataforma? Ponte en contacto.</p>
-<p>Las campañas se ejecutan en su cuenta publicitaria. Nosotros nos encargamos de todo lo demás.</p>
-<a class="svc-link" href="campaign-portfolio.html" style="color:var(--primary);margin-top:1.25rem;">Qué incluye ›</a>
+<a href="website-design.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--secondary);text-decoration:none;">Qué incluye ›</a>
+</div>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">💬</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Chatbot del sitio web</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Capacitados sobre sus servicios, precios, horarios y políticas. Maneja preguntas y recopila clientes potenciales en más de 100 idiomas. Sin suscripciones SaaS.</div>
+</div>
+<a href="chatbot.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--green);text-decoration:none;">Ver demostración en vivo ›</a>
+</div>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">📞</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Agente telefónico de IA</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Responde llamadas entrantes en cualquier idioma, maneja preguntas comunes y programa citas, sin participación humana.</div>
+</div>
+<a href="phone-agent.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--primary);text-decoration:none;">Cómo funciona ›</a>
+</div>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">🎬</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Creatividades animadas</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Anuncios de imagen y video animados creados a partir de su resumen. Sin imágenes, sin equipo de cámara. Se entrega listo para cargar. Opciones generadas por IA disponibles.</div>
+</div>
+<a href="animated-creatives.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--primary);text-decoration:none;">Ver detalles ›</a>
+</div>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;grid-column:span 2;transition:border-color var(--transition);">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+<div style="display:flex;flex-direction:column;gap:1rem;">
+<div style="font-size:2rem;line-height:1;">📈</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Campañas de anuncios de Google</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Estrategia de palabras clave, estructura del grupo de anuncios, texto, seguimiento de conversiones y optimización continua. Las campañas se ejecutan en su cuenta; nosotros nos encargamos de todo lo demás.</div>
+</div>
+<a href="campaign-portfolio.html" style="font-size:.875rem;font-weight:600;color:var(--primary);text-decoration:none;">Qué incluye ›</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:.65rem;">
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Investigación de palabras clave y tipos de concordancia</span>
+</div>
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Texto del anuncio y estructura RSA</span>
+</div>
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Seguimiento de conversiones y GA4</span>
+</div>
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Optimización e informes continuos</span>
 </div>
 </div>
-<div class="svc-row reveal">
-<div class="svc-left">
-<div class="svc-num">02</div>
-<div class="svc-title">Sitios web y<br/>Páginas de destino</div>
-</div>
-<div class="svc-right">
-<p>Cada sitio se crea desde cero con código personalizado: sin WordPress ni plantillas. Creamos plataformas de reservas multilingües, tiendas de comercio electrónico, sitios de restaurantes y locales, sitios web de empresas de servicios y páginas de destino de una sola página. Se pueden incluir sistemas de reserva, pagos en línea, paneles de administración y chatbots de inteligencia artificial según las necesidades del proyecto. Las páginas de agradecimiento, las páginas 404 y las páginas de privacidad siempre se incluyen de forma gratuita. El carrito y el complemento al carrito se incluyen de forma gratuita en cualquier sitio con compras.</p>
-<p>El registro de dominio y la configuración de alojamiento están disponibles como opción en cualquier proyecto.</p>
-<a class="svc-link" href="website-design.html" style="color:var(--secondary);margin-top:1.25rem;">Qué incluye ›</a>
-</div>
-</div>
-<div class="svc-row reveal">
-<div class="svc-left">
-<div class="svc-num">03</div>
-<div class="svc-title">Teléfono AI<br/>Agente</div>
-</div>
-<div class="svc-right">
-<p>Un agente de IA que responde a sus llamadas entrantes, habla con naturalidad en cualquier idioma y maneja preguntas comunes sin participación humana. La reserva de calendario en vivo y la integración de herramientas están disponibles como complementos opcionales según las necesidades de su negocio.</p>
-<p>El agente está capacitado sobre la información que usted proporciona. Si tiene un sitio web existente, podemos trabajar a partir de él. De lo contrario, usted proporciona los detalles comerciales, los precios, las reglas de disponibilidad y cualquier otra información relevante, y nosotros construimos a partir de eso.</p>
-<a class="svc-link" href="phone-agent.html" style="color:var(--primary);margin-top:1.25rem;">Cómo funciona ›</a>
-</div>
-</div>
-<div class="svc-row reveal">
-<div class="svc-left">
-<div class="svc-num">04</div>
-<div class="svc-title">Sitio web<br/>Chatbot</div>
-</div>
-<div class="svc-right">
-<p>Un chatbot capacitado para su negocio específico: sus servicios, precios, horarios de apertura y políticas. Maneja las preguntas de los visitantes, recopila clientes potenciales y funciona en más de 100 idiomas. Se ejecuta a través de su propia infraestructura de Cloudflare: sin suscripciones SaaS ni bloqueo de plataforma.</p>
-<p>Disponible como versión independiente o como complemento al solicitar un sitio web o una página de destino.</p>
-<a class="svc-link" href="chatbot.html" style="color:var(--green);margin-top:1.25rem;">Ver demostración en vivo ›</a>
-</div>
-</div>
-<div class="svc-row reveal">
-<div class="svc-left">
-<div class="svc-num">05</div>
-<div class="svc-title">Animado<br/>Creativos</div>
-</div>
-<div class="svc-right">
-<p>Anuncios animados cortos creados para Meta: formatos de feed e historias, entregados como MP4, listos para cargar. Animamos a partir de tu brief: producto, mensaje y audiencia. No se necesitan imágenes ni equipo de cámara.</p>
-<p>$199 por vídeo. Se incluyen los tres metaformatos (1:1, 4:5, 9:16). Vídeo generado por IA también disponible a pedido.</p>
-<a class="svc-link" href="animated-creatives.html" style="color:var(--primary);margin-top:1.25rem;">Ver detalles ›</a>
 </div>
 </div>
 </div>
@@ -548,6 +476,518 @@ Pruebe la demostración en vivo
 </div>
 </section>
 </div><!-- /sections-reorder -->
+<!-- ═══════════ ADMIN PANEL DEMO ═══════════ -->
+<section class="section" style="overflow:hidden;padding-bottom:4rem;">
+<div class="section-inner">
+<div style="display:grid;grid-template-columns:320px 1fr;gap:2.5rem;align-items:start;">
+<div class="reveal-left">
+<div class="section-tag">Panel de administración</div>
+<h2 class="section-title" style="margin-bottom:1.25rem;">Tú controlas el contenido.<br/>No se necesita desarrollador.</h2>
+<p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;font-size:1.05rem;">Inicie sesión, haga clic en cualquier texto o imagen en su sitio en vivo y podrá editarlo instantáneamente, sin códigos ni esperas.</p>
+<div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;">
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">✏️ Editar cualquier texto</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">🖼️ Intercambiar imágenes</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">💰 Actualizar precios</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">🎨 Cambiar colores de marca</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">📢 Ejecutar anuncios</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">🔍 Controlar el SEO</span>
+</div>
+<a class="btn btn-primary" href="contact.html">Incluye en tu proyecto ›</a>
+</div>
+<!-- INTERACTIVE ADMIN DEMO -->
+<div>
+<!-- TRY IT LABEL -->
+<div style="display:flex;align-items:center;gap:1rem;margin-top:3rem;margin-bottom:.85rem;">
+<div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Demostración en vivo: pruébalo ahora</div>
+<span style="font-size:.8rem;color:#cbd5e1;">👇 Pruébelo: haga clic en cualquiera <strong>imagen</strong> para intercambiarlo, haga clic en cualquier <strong>texto</strong> para editarlo en vivo</span>
+</div>
+<div id="admShell" style="--ac:#0ea5e9;background:#0a0a0a;border:1px solid #222;border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.8);">
+<!-- TOP BAR -->
+<div style="background:#0d0d0d;border-bottom:1px solid #1a1a1a;padding:.6rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
+<div style="display:flex;align-items:center;gap:.85rem;">
+<div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div><div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div></div>
+<span style="font-size:.72rem;font-weight:700;color:var(--ac);letter-spacing:.08em;text-transform:uppercase;font-family:monospace;">Estudio Lumina — Administrador</span>
+</div>
+<div style="display:flex;align-items:center;gap:.75rem;">
+<span id="admBadge" style="font-size:.65rem;background:var(--ac);color:#0a0a08;padding:2px 10px;border-radius:4px;font-weight:700;display:none;font-family:monospace;"></span>
+<button onclick="admPublish()" onmouseout="this.style.filter=''" onmouseover="this.style.filter='brightness(1.15)'" style="background:var(--ac);color:#0a0a08;border:none;padding:5px 18px;border-radius:6px;font-size:.75rem;font-weight:700;cursor:pointer;letter-spacing:.03em;">Publicar ↑</button>
+</div>
+</div>
+<!-- BODY -->
+<div style="display:flex;">
+<!-- SIDEBAR -->
+<div style="width:148px;flex-shrink:0;background:#0b0b0b;border-right:1px solid #1a1a1a;padding:.9rem 0;display:flex;flex-direction:column;">
+<div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">paginas</div>
+<div class="adm-nav-item active-nav" onclick="admNav('home',this)" style="padding:.4rem 1rem;font-size:.74rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🏠</span>Inicio</div>
+<div class="adm-nav-item" onclick="admNav('classes',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🧘</span>Clases</div>
+<div class="adm-nav-item" onclick="admNav('trainers',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>💪</span>Zapatillas</div>
+<div class="adm-nav-item" onclick="admNav('pricing',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>💳</span>Precios</div>
+<div class="adm-nav-item" onclick="admNav('contact',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>📍</span>Contacto</div>
+<div style="margin:.6rem .8rem;border-top:1px solid #1a1a1a;"></div>
+<div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Configuración</div>
+<div class="adm-nav-item" onclick="admNav('colours',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🎨</span>Colores</div>
+</div>
+<!-- CANVAS -->
+<div class="adm-canvas" style="flex:1;height:520px;overflow-y:auto;overflow-x:hidden;position:relative;">
+<iframe id="adm-iframe" src="" style="width:100%;height:100%;border:none;display:block;" title="Vista previa de página"></iframe>
+<div id="adm-colour-panel" style="display:none;position:absolute;inset:0;background:#0b0b14;overflow-y:auto;padding:1.5rem;z-index:5;">
+<div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0ea5e9;margin-bottom:.5rem;">Configuración de marca</div>
+<div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;margin-bottom:.3rem;font-family:system-ui,sans-serif;">Color de la marca</div>
+<p style="font-size:.78rem;color:#64748b;margin-bottom:1.25rem;">Toca un ajuste preestablecido o elige un color personalizado. Los cambios se aplican a la vista previa del sitio al instante.</p>
+<div id="adm-swatches" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.25rem;">
+<div class="adm-swatch adm-swatch-active" data-color="#0ea5e9" style="width:36px;height:36px;border-radius:8px;background:#0ea5e9;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 3px rgba(14,165,233,.5);"></div>
+<div class="adm-swatch" data-color="#8b5cf6" style="width:36px;height:36px;border-radius:8px;background:#8b5cf6;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#10b981" style="width:36px;height:36px;border-radius:8px;background:#10b981;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#f59e0b" style="width:36px;height:36px;border-radius:8px;background:#f59e0b;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#ef4444" style="width:36px;height:36px;border-radius:8px;background:#ef4444;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#ec4899" style="width:36px;height:36px;border-radius:8px;background:#ec4899;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#f97316" style="width:36px;height:36px;border-radius:8px;background:#f97316;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#14b8a6" style="width:36px;height:36px;border-radius:8px;background:#14b8a6;cursor:pointer;border:2px solid transparent;"></div>
+</div>
+<div style="font-size:.75rem;color:#64748b;margin-bottom:.4rem;">Hexágono personalizado</div>
+<div style="display:flex;gap:.5rem;">
+<input id="adm-custom-color" style="width:42px;height:38px;border:none;border-radius:8px;cursor:pointer;padding:2px;background:transparent;" type="color" value="#0ea5e9"/>
+<input id="adm-hex-input" maxlength="7" placeholder="#000000" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;" type="text" value="#0ea5e9"/>
+</div>
+</div>
+</div>
+</div><!-- /admShell -->
+</div>
+</div><!-- /right col -->
+</div><!-- /grid -->
+<style>
+.adm-field{outline:none;cursor:text;border-radius:4px;padding:3px 6px;border:1px dashed rgba(255,255,255,.12);transition:border-color .18s,background .18s;}
+.adm-field:hover{border-color:rgba(255,255,255,.28);}
+.adm-field:focus{border-color:var(--ac) !important;background:rgba(255,255,255,.03);}
+.adm-label{font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;font-family:monospace;margin-bottom:.3rem;}
+.adm-page{animation:admFadeIn .22s ease;}
+.adm-nav-item.active-nav{color:var(--ac) !important;background:rgba(255,255,255,.04);border-left:2px solid var(--ac);padding-left:calc(1rem - 2px);}
+@keyframes admFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){#admShell{display:none;}#admin-demo-wrap>div:first-child{display:none;}}
+</style>
+<script>
+(function(){
+var SK='zoomy_adm3';
+var unsaved=0;
+var changed={};
+var currentPage='home';
+
+function getState(){try{return JSON.parse(sessionStorage.getItem(SK)||'{}')}catch(e){return{}}}
+function setState(d){try{sessionStorage.setItem(SK,JSON.stringify(d))}catch(e){}}
+
+function loadAll(){
+  var d=getState();
+  // text fields
+  document.querySelectorAll('[id^="f-"]').forEach(function(el){
+    var key=el.id.slice(2);
+    if(d[key]!==undefined) el.innerHTML=d[key];
+  });
+  // image
+  if(d._img){var img=document.getElementById('f-img');if(img){img.src=d._img;img.style.display='block';var ph=document.getElementById('f-img-ph');if(ph)ph.style.display='none';}}
+  // color
+  if(d._color) applyColor(d._color,false);
+}
+
+function saveAll(){
+  var d=getState();
+  document.querySelectorAll('[id^="f-"]').forEach(function(el){
+    var key=el.id.slice(2);
+    if(el.tagName!=='INPUT') d[key]=el.innerHTML;
+  });
+  var img=document.getElementById('f-img');
+  if(img&&img.src&&img.src.length>100) d._img=img.src;
+  setState(d);
+}
+
+window.admChange=function(key){
+  if(!changed[key]){changed[key]=true;unsaved++;}
+  updateBadge();
+  updateChangeList();
+  // live SEO preview
+  if(key==='seo_title'){var el=document.getElementById('f-seo_title'),pv=document.getElementById('seo-preview-title');if(el&&pv)pv.textContent=el.innerText;}
+  if(key==='seo_desc'){var el=document.getElementById('f-seo_desc'),pv=document.getElementById('seo-preview-desc');if(el&&pv)pv.textContent=el.innerText;}
+  saveAll();
+};
+
+function updateBadge(){
+  var b=document.getElementById('admBadge');
+  if(b){if(unsaved>0){b.style.display='inline';b.textContent=unsaved+(unsaved===1?' unsaved':' unsaved');}else b.style.display='none';}
+}
+
+function updateChangeList(){
+  var el=document.getElementById('admChangeList');
+  if(!el)return;
+  var keys=Object.keys(changed);
+  if(keys.length===0){el.innerHTML='<span style="font-size:.68rem;color:#666;">None yet</span>';return;}
+  el.innerHTML=keys.slice(0,6).map(function(k){return'<div style="font-size:.65rem;color:var(--ac);display:flex;align-items:center;gap:4px;"><span style="opacity:.5;font-size:.55rem;">●</span>'+k+'</div>';}).join('');
+  if(keys.length>6){el.innerHTML+='<div style="font-size:.6rem;color:#666;">+'+(keys.length-6)+' more</div>';}
+}
+
+window.admPublish=function(){
+  unsaved=0;changed={};
+  updateBadge();updateChangeList();
+  var s=document.getElementById('admStatusBar');
+  if(s){s.textContent='✓ Live';s.style.color='#28c840';setTimeout(function(){s.textContent='';s.style.color='';},2500);}
+  saveAll();
+};
+
+window.admNav=function(page,el){
+  document.querySelectorAll('.adm-nav-item').forEach(function(i){
+    i.style.background='';i.style.color='#555';i.classList.remove('active-nav');
+  });
+  if(el){el.style.background='rgba(14,165,233,.12)';el.style.color='var(--ac)';el.classList.add('active-nav');}
+  var iframe=document.getElementById('adm-iframe');
+  var colPanel=document.getElementById('adm-colour-panel');
+  if(page==='colours'){
+    if(colPanel)colPanel.style.display='block';
+  } else {
+    if(colPanel)colPanel.style.display='none';
+    var map={home:'/zenflow/home.html',classes:'/zenflow/classes.html',trainers:'/zenflow/trainers.html',pricing:'/zenflow/pricing.html',contact:'/zenflow/contact.html'};
+    if(iframe&&map[page])iframe.src=map[page];
+  }
+};
+
+// Replace all hardcoded brand colors in an iframe document
+function zfReplaceColor(doc, oldHex, newHex) {
+  try {
+    if (!doc || !oldHex || !newHex || oldHex === newHex) return;
+    function expand(h){ h=h.replace('#',''); if(h.length===3)h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2]; return h; }
+    var oh=expand(oldHex), nh=expand(newHex);
+    var oR=parseInt(oh.slice(0,2),16),oG=parseInt(oh.slice(2,4),16),oB=parseInt(oh.slice(4,6),16);
+    var nR=parseInt(nh.slice(0,2),16),nG=parseInt(nh.slice(2,4),16),nB=parseInt(nh.slice(4,6),16);
+    var pairs=[
+      ['#'+oh,'#'+nh],
+      ['rgba('+oR+','+oG+','+oB+',','rgba('+nR+','+nG+','+nB+','],
+      ['rgb('+oR+','+oG+','+oB+')','rgb('+nR+','+nG+','+nB+')']
+    ];
+    doc.querySelectorAll('[style]').forEach(function(el){
+      var s=el.getAttribute('style'); if(!s) return;
+      var changed=false;
+      pairs.forEach(function(p){ if(s.indexOf(p[0])!==-1){s=s.split(p[0]).join(p[1]);changed=true;} });
+      if(changed) el.setAttribute('style',s);
+    });
+    doc.querySelectorAll('style').forEach(function(st){
+      var t=st.textContent; var changed=false;
+      pairs.forEach(function(p){ if(t.indexOf(p[0])!==-1){t=t.split(p[0]).join(p[1]);changed=true;} });
+      if(changed) st.textContent=t;
+    });
+    doc.documentElement.style.setProperty('--ac','#'+nh);
+    doc.documentElement.style.setProperty('--ac-dk','#'+nh);
+  } catch(e){}
+}
+
+window.applyDemoColor=function(hex){
+  hex=(hex||'').trim();
+  if(!/^#[0-9a-fA-F]{3,6}$/.test(hex))return;
+  var prevColor=window._zfDemoColor||'#0ea5e9';
+  window._zfDemoColor=hex;
+  // Update admin shell accent color (nav, buttons, badges)
+  var shell=document.getElementById('admShell');
+  if(shell) shell.style.setProperty('--ac',hex);
+  document.querySelectorAll('.adm-swatch').forEach(function(s){
+    var active=s.getAttribute('data-color')===hex;
+    s.style.border=active?'2px solid #fff':'2px solid transparent';
+    s.style.boxShadow=active?'0 0 0 3px rgba(14,165,233,.5)':'none';
+  });
+  document.getElementById('adm-hex-input').value=hex;
+  document.getElementById('adm-custom-color').value=hex;
+  var iframe=document.getElementById('adm-iframe');
+  try{
+    if(iframe&&iframe.contentDocument&&iframe.contentDocument.documentElement){
+      zfReplaceColor(iframe.contentDocument,prevColor,hex);
+    }
+  }catch(e){}
+};
+
+document.addEventListener('click',function(e){
+  var sw=e.target.closest('.adm-swatch');
+  if(sw)applyDemoColor(sw.getAttribute('data-color'));
+});
+document.getElementById('adm-custom-color').addEventListener('input',function(){
+  applyDemoColor(this.value);
+});
+document.getElementById('adm-hex-input').addEventListener('input',function(){
+  if(/^#[0-9a-fA-F]{6}$/.test(this.value)) applyDemoColor(this.value);
+});
+
+// Inject edit mode into iframe when it loads
+document.getElementById('adm-iframe').addEventListener('load', function() {
+  var self = this;
+  // Apply color immediately (prevents flash of original blue on page switch)
+  if (window._zfDemoColor) {
+    try { zfReplaceColor(self.contentDocument, '#0ea5e9', window._zfDemoColor); } catch(e) {}
+  }
+  setTimeout(function() { zfInjectEditMode(self.contentDocument); }, 400);
+});
+
+function zfInjectEditMode(doc) {
+  if (!doc || !doc.body) return;
+  try {
+    var old = doc.getElementById('zf-edit-style'); if (old) old.remove();
+    var style = doc.createElement('style');
+    style.id = 'zf-edit-style';
+    style.textContent = [
+      'a[href]{pointer-events:none!important;cursor:text!important;}',
+      'button:not(.zf-cam):not(.zf-apply-btn):not(.zf-cancel-btn):not(.zf-save-pos-btn):not(.zf-tab-btn){pointer-events:none!important;}',
+      'form{pointer-events:none!important;}',
+      '*:not(#zf-badge):not(.zf-tab-btn):hover{outline:1px dashed rgba(14,165,233,.35)!important;}',
+      '#zf-badge{position:fixed;top:0;left:50%;transform:translateX(-50%);background:rgba(14,165,233,.97);color:#fff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:5px 20px;border-radius:0 0 10px 10px;z-index:999999;pointer-events:none;font-family:system-ui,sans-serif;white-space:nowrap;}',
+      'img:not(#zf-focal-img):hover{cursor:pointer!important;outline:2px solid rgba(14,165,233,.7)!important;}',
+      '[style*="background:linear-gradient"][style*="position:absolute"]{pointer-events:none!important;}'
+    ].join('\n');
+    doc.head.appendChild(style);
+
+    // Force desktop layout inside iframe
+    var vp = doc.querySelector('meta[name=viewport]');
+    if (!vp) { vp = doc.createElement('meta'); vp.name = 'viewport'; doc.head.appendChild(vp); }
+    vp.content = 'width=800';
+
+    // Ensure object-fit on all images so objectPosition works
+    doc.querySelectorAll('img').forEach(function(img) {
+      if (!img.style.objectFit) img.style.objectFit = 'cover';
+    });
+
+    if (!doc.getElementById('zf-badge')) {
+      var badge = doc.createElement('div');
+      badge.id = 'zf-badge';
+      badge.textContent = '✏ EDIT MODE — click text to edit · click image to swap';
+      doc.body.appendChild(badge);
+    }
+
+    if (window._zfDemoColor) {
+      zfReplaceColor(doc, '#0ea5e9', window._zfDemoColor);
+    }
+
+    doc.designMode = 'on';
+
+    if (!doc.getElementById('zf-modal')) {
+      var modal = doc.createElement('div');
+      modal.id = 'zf-modal';
+      modal.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:99999;align-items:center;justify-content:center;font-family:sans-serif;';
+      modal.innerHTML = [
+        '<div style="background:#111827;border:1.5px solid #0ea5e9;border-radius:16px;padding:22px;width:350px;max-width:92vw;">',
+        '<div style="font-size:.95rem;font-weight:700;color:#f1f5f9;margin-bottom:12px;">📷 Edit Image</div>',
+        '<div style="display:flex;gap:6px;margin-bottom:14px;">',
+        '<button class="zf-tab-btn zf-tab-active" data-tab="replace" style="flex:1;padding:7px;border:1px solid #0ea5e9;background:rgba(14,165,233,.15);color:#38bdf8;border-radius:8px;font-size:.76rem;font-weight:700;cursor:pointer;">Replace</button>',
+        '<button class="zf-tab-btn" data-tab="position" style="flex:1;padding:7px;border:1px solid #374151;background:transparent;color:#94a3b8;border-radius:8px;font-size:.76rem;font-weight:700;cursor:pointer;">Position &amp; Crop</button>',
+        '</div>',
+        '<div id="zf-panel-replace">',
+        '<div id="zf-dropzone" style="border:2px dashed #374151;border-radius:10px;padding:20px;text-align:center;color:#64748b;font-size:.8rem;cursor:pointer;margin-bottom:10px;transition:border-color .15s,color .15s;">',
+        '<div style="font-size:1.5rem;margin-bottom:5px;">📲</div>',
+        'Drop image here or <strong style="color:#38bdf8;">click to upload</strong>',
+        '<input type="file" id="zf-file-input" accept="image/*" style="display:none;">',
+        '</div>',
+        '<div style="text-align:center;color:#475569;font-size:.74rem;margin-bottom:8px;">or paste an image URL</div>',
+        '<div style="display:flex;gap:8px;margin-bottom:10px;">',
+        '<input id="zf-url-input" type="text" placeholder="https://..." style="flex:1;background:#0d0d0d;border:1px solid #374151;border-radius:8px;padding:8px 10px;color:#e2e8f0;font-size:.82rem;outline:none;"/>',
+        '<button class="zf-apply-btn" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:.8rem;font-weight:700;cursor:pointer;">Apply</button>',
+        '</div>',
+        '</div>',
+        '<div id="zf-panel-position" style="display:none;">',
+        '<div style="font-size:.76rem;color:#94a3b8;margin-bottom:8px;">Click or drag to set focal point (stays centred when cropped):</div>',
+        '<div id="zf-focal-wrap" style="position:relative;cursor:crosshair;border-radius:8px;overflow:hidden;background:#0d0d0d;margin-bottom:10px;height:180px;">',
+        '<img id="zf-focal-img" style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;">',
+        '<div id="zf-focal-dot" style="position:absolute;width:18px;height:18px;border:2.5px solid #fff;border-radius:50%;background:rgba(14,165,233,.85);transform:translate(-50%,-50%);pointer-events:none;box-shadow:0 0 0 3px rgba(14,165,233,.4);top:50%;left:50%;"></div>',
+        '</div>',
+        '<button class="zf-save-pos-btn" style="width:100%;background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px;font-size:.82rem;font-weight:700;cursor:pointer;margin-bottom:10px;">Save Position</button>',
+        '</div>',
+        '<button class="zf-cancel-btn" style="width:100%;background:transparent;border:1px solid #374151;border-radius:8px;padding:7px;color:#94a3b8;font-size:.8rem;cursor:pointer;">Cancel</button>',
+        '</div>'
+      ].join('');
+      doc.body.appendChild(modal);
+
+      var zfTarget = null;
+      var imgPendingPos = { x: 50, y: 50 };
+      var focalInited = false, focalDragging = false;
+
+      // Tab switching
+      modal.querySelectorAll('.zf-tab-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          modal.querySelectorAll('.zf-tab-btn').forEach(function(b) {
+            b.style.border = '1px solid #374151'; b.style.background = 'transparent'; b.style.color = '#94a3b8';
+          });
+          btn.style.border = '1px solid #0ea5e9'; btn.style.background = 'rgba(14,165,233,.15)'; btn.style.color = '#38bdf8';
+          var tab = btn.getAttribute('data-tab');
+          doc.getElementById('zf-panel-replace').style.display = tab === 'replace' ? '' : 'none';
+          doc.getElementById('zf-panel-position').style.display = tab === 'position' ? '' : 'none';
+          if (tab === 'position') { initFocal(); loadFocalImg(); }
+        });
+      });
+
+      // File drag & drop
+      var dropzone = doc.getElementById('zf-dropzone');
+      var fileInput = doc.getElementById('zf-file-input');
+      dropzone.addEventListener('click', function() { fileInput.click(); });
+      dropzone.addEventListener('dragover', function(e) { e.preventDefault(); dropzone.style.borderColor='#0ea5e9'; dropzone.style.color='#38bdf8'; });
+      dropzone.addEventListener('dragleave', function() { dropzone.style.borderColor='#374151'; dropzone.style.color='#64748b'; });
+      dropzone.addEventListener('drop', function(e) {
+        e.preventDefault(); dropzone.style.borderColor='#374151'; dropzone.style.color='#64748b';
+        var file = e.dataTransfer.files[0];
+        if (file && file.type.startsWith('image/')) readFile(file);
+      });
+      fileInput.addEventListener('change', function() { if (fileInput.files[0]) readFile(fileInput.files[0]); });
+
+      function readFile(file) {
+        var reader = new FileReader();
+        reader.onload = function(ev) { applyImg(ev.target.result); };
+        reader.readAsDataURL(file);
+      }
+
+      function applyImg(src) {
+        if (!zfTarget) return;
+        doc.designMode = 'off';
+        if (zfTarget.tagName === 'IMG') zfTarget.src = src;
+        else zfTarget.style.backgroundImage = 'url(' + src + ')';
+        doc.designMode = 'on';
+        closeModal();
+      }
+
+      modal.querySelector('.zf-apply-btn').addEventListener('click', function() {
+        var url = (doc.getElementById('zf-url-input').value || '').trim();
+        if (url) applyImg(url);
+      });
+
+      // Focal point
+      function initFocal() {
+        if (focalInited) return; focalInited = true;
+        var wrap = doc.getElementById('zf-focal-wrap');
+        function setPos(e) {
+          var r = wrap.getBoundingClientRect();
+          var cx = e.touches ? e.touches[0].clientX : e.clientX;
+          var cy = e.touches ? e.touches[0].clientY : e.clientY;
+          imgPendingPos = {
+            x: Math.min(100, Math.max(0, Math.round(((cx - r.left) / r.width) * 100))),
+            y: Math.min(100, Math.max(0, Math.round(((cy - r.top) / r.height) * 100)))
+          };
+          var dot = doc.getElementById('zf-focal-dot');
+          if (dot) { dot.style.left = imgPendingPos.x + '%'; dot.style.top = imgPendingPos.y + '%'; }
+          var fi = doc.getElementById('zf-focal-img');
+          if (fi) fi.style.objectPosition = imgPendingPos.x + '% ' + imgPendingPos.y + '%';
+        }
+        wrap.addEventListener('mousedown', function(e) { focalDragging = true; setPos(e); e.preventDefault(); });
+        wrap.addEventListener('mousemove', function(e) { if (focalDragging) setPos(e); });
+        wrap.addEventListener('mouseup', function() { focalDragging = false; });
+        wrap.addEventListener('mouseleave', function() { focalDragging = false; });
+        wrap.addEventListener('touchstart', function(e) { setPos(e); e.preventDefault(); }, { passive: false });
+        wrap.addEventListener('touchmove', function(e) { setPos(e); e.preventDefault(); }, { passive: false });
+      }
+
+      function loadFocalImg() {
+        var fi = doc.getElementById('zf-focal-img');
+        if (fi && zfTarget) {
+          if (zfTarget.tagName === 'IMG') {
+            fi.src = zfTarget.src;
+            var existing = zfTarget.style.objectPosition || '50% 50%';
+            var parts = existing.replace(/%/g,'').trim().split(/\s+/);
+            imgPendingPos = { x: parseFloat(parts[0])||50, y: parseFloat(parts[1]||parts[0])||50 };
+          } else {
+            var cs = doc.defaultView.getComputedStyle(zfTarget);
+            var bg = cs.backgroundImage || '';
+            var pS = bg.indexOf('(') + 1;
+            var pE = bg.lastIndexOf(')');
+            var bgUrl = pS > 0 && pE > pS ? bg.slice(pS, pE) : '';
+            bgUrl = bgUrl.split('"').join('').split("'").join('');
+            fi.src = bgUrl || '';
+          }
+        }
+        var dot = doc.getElementById('zf-focal-dot');
+        if (dot) { dot.style.left = imgPendingPos.x + '%'; dot.style.top = imgPendingPos.y + '%'; }
+        if (fi) fi.style.objectPosition = imgPendingPos.x + '% ' + imgPendingPos.y + '%';
+      }
+
+      modal.querySelector('.zf-save-pos-btn').addEventListener('click', function() {
+        if (!zfTarget) return;
+        doc.designMode = 'off';
+        var pos = imgPendingPos.x + '% ' + imgPendingPos.y + '%';
+        if (zfTarget.tagName === 'IMG') zfTarget.style.objectPosition = pos;
+        else zfTarget.style.backgroundPosition = pos;
+        doc.designMode = 'on';
+        closeModal();
+      });
+
+      function openModal(target) {
+        zfTarget = target;
+        doc.designMode = 'off';
+        doc.getElementById('zf-url-input').value = '';
+        modal.querySelectorAll('.zf-tab-btn').forEach(function(b, i) {
+          if (i === 0) { b.style.border='1px solid #0ea5e9'; b.style.background='rgba(14,165,233,.15)'; b.style.color='#38bdf8'; }
+          else { b.style.border='1px solid #374151'; b.style.background='transparent'; b.style.color='#94a3b8'; }
+        });
+        doc.getElementById('zf-panel-replace').style.display = '';
+        doc.getElementById('zf-panel-position').style.display = 'none';
+        modal.style.display = 'flex';
+      }
+      function closeModal() { modal.style.display = 'none'; doc.designMode = 'on'; }
+      modal.querySelector('.zf-cancel-btn').addEventListener('click', closeModal);
+      doc.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+      // Click any image to open swap modal
+      doc.addEventListener('mousedown', function(e) {
+        if (e.target.tagName === 'IMG' && e.target.id !== 'zf-focal-img') {
+          e.preventDefault(); e.stopPropagation();
+          openModal(e.target);
+        }
+      }, true);
+    }
+  } catch(e) {}
+}
+
+// Set src AFTER listener attached — avoids race condition
+(function() {
+  var f = document.getElementById('adm-iframe');
+  if (f) f.src = '/zenflow/home.html';
+})();
+
+
+
+
+function applyColor(hex,save){
+  var shell=document.getElementById('admShell');
+  if(shell) shell.style.setProperty('--ac',hex);
+  var picker=document.getElementById('admColorPicker');
+  if(picker) picker.value=hex;
+  var hexEl=document.getElementById('admColorHex');
+  if(hexEl) hexEl.textContent=hex;
+  if(save){
+    var d=getState();d._color=hex;setState(d);
+    if(!changed._color){changed._color=true;unsaved++;}
+    updateBadge();updateChangeList();
+  }
+}
+
+window.admSetColor=function(hex){applyColor(hex,true);};
+
+window.admImgUpload=function(input){
+  var file=input.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var img=document.getElementById('f-img');
+    if(img){img.src=e.target.result;img.style.display='block';}
+    var ph=document.getElementById('f-img-ph');if(ph)ph.style.display='none';
+    var d=getState();d._img=e.target.result;setState(d);
+    if(!changed._img){changed._img=true;unsaved++;}
+    updateBadge();updateChangeList();
+  };
+  reader.readAsDataURL(file);
+};
+
+// Focus hints
+document.addEventListener('focusin',function(e){
+  if(e.target.classList.contains('adm-field')){
+    var h=document.getElementById('admHintField');
+    if(h) h.textContent='Editing: '+e.target.id.replace('f-','').replace(/_/g,' ');
+  }
+});
+
+document.addEventListener('DOMContentLoaded',function(){
+  loadAll();
+  updateChangeList();
+});
+})();
+</script>
+</div><!-- /section-inner -->
+</section>
+<!-- ═══════════ END ADMIN PANEL DEMO ═══════════ -->
 <!-- ═══════════ HOW IT WORKS ═══════════ -->
 <section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
@@ -1032,7 +1472,7 @@ Tu es l'assistante IA de Zoomy, une agence digitale. Chaleureuse, directe et pro
 4. Chatbots IA — à partir de 599$
 5. Vidéos animées Meta — 199$/vidéo
 
-Pour un devis : hello@zoomy.services`,
+Pour un devis : zoomy.services/contact`,
       es: `# Idioma (CRÍTICO)
 DEBES responder ÚNICAMENTE en español.
 
@@ -1046,7 +1486,7 @@ Eres la asistente IA de Zoomy, una agencia digital. Cálida, directa y profesion
 4. Chatbots IA — desde $599
 5. Videos animados Meta — $199/video
 
-Contacto: hello@zoomy.services`,
+Contacto: zoomy.services/contact`,
       en: undefined
     };
     const agentOverride = { language: pageLang, firstMessage: firstMessages[pageLang] || firstMessages.en };

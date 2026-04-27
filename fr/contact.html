@@ -1,84 +1,4 @@
 <!DOCTYPE html>
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -193,11 +113,11 @@ html
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Studio de production numérique</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
 <li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
-<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
 <li><a data-i18n="nav.creatives" href="animated-creatives.html">Créatifs</a></li>
+<li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
 <li><a data-i18n="nav.about" href="about.html">À propos de</a></li>
 <li><a data-i18n="nav.pricing" href="pricing.html">Tarifs</a></li>
 <li><a class="active" data-i18n="nav.contact" href="contact.html">Contacter</a></li>
@@ -236,7 +156,6 @@ html
 <div style="color:var(--muted);font-size:.8rem;margin-top:3px;">Nous répondons généralement dans les 24 heures</div>
 </div>
 </div>
-
 <div class="contact-info-item">
 <div class="contact-icon">🕑</div>
 <div>
@@ -259,8 +178,9 @@ html
 <div id="wi-tabs" style="display:flex;gap:.4rem;flex-wrap:wrap;">
 <button class="wi-tab wi-tab-active" id="wi-tab-campaign" onclick="wiTab('campaign')">Campagne</button>
 <button class="wi-tab" id="wi-tab-website" onclick="wiTab('website')">Site Web</button>
-<button class="wi-tab" id="wi-tab-chatbot" onclick="wiTab('chatbot')">Chatbot</button>
 <button class="wi-tab" id="wi-tab-phone" onclick="wiTab('phone')">Agent téléphonique</button>
+<button class="wi-tab" id="wi-tab-chatbot" onclick="wiTab('chatbot')">Chatbot</button>
+<button class="wi-tab" id="wi-tab-animated" onclick="wiTab('animated')">Créations animées</button>
 </div>
 </div>
 <div style="padding:1.25rem 1.5rem;">
@@ -295,6 +215,13 @@ html
 <li class="wi-item"><span class="wi-arrow">›</span> Tout système de réservation ou CRM existant à intégrer à</li>
 <li class="wi-item"><span class="wi-arrow">›</span> Avez-vous un numéro de téléphone existant à associer ou avez-vous besoin d'un nouveau</li>
 </ul>
+<ul class="wi-panel" id="wi-animated" style="list-style:none;display:none;flex-direction:column;gap:.55rem;margin:0;padding:0;">
+<li class="wi-item"><span class="wi-arrow">›</span> Ce dont vous faites la publicité : produit, service ou offre</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Public cible et ton recherché</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Plateforme — Méta-flux, story ou les deux</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Que vous ayez besoin de musique, de voix off ou de visuels uniquement</li>
+<li class="wi-item"><span class="wi-arrow">›</span> Toutes les couleurs de marque, logos ou séquences existantes à incorporer</li>
+</ul>
 </div>
 </div>
 <style>
@@ -306,13 +233,36 @@ html
         </style>
 <script>
           function wiTab(id){
-            ['campaign','website','chatbot','phone'].forEach(function(t){
+            ['campaign','website','chatbot','phone','animated'].forEach(function(t){
               document.getElementById('wi-'+t).style.display='none';
               document.getElementById('wi-tab-'+t).classList.remove('wi-tab-active');
             });
             document.getElementById('wi-'+id).style.display='flex';
             document.getElementById('wi-tab-'+id).classList.add('wi-tab-active');
           }
+          // Service dropdown
+          function toggleSvcDd(){
+            var panel=document.getElementById('svc-dd-panel');
+            var arrow=document.getElementById('svc-dd-arrow');
+            var open=panel.style.display==='block';
+            panel.style.display=open?'none':'block';
+            arrow.style.transform=open?'':'rotate(180deg)';
+          }
+          function updateSvcLabel(){
+            var checked=Array.from(document.querySelectorAll('input[name="service"]:checked')).map(function(el){return el.value;});
+            var lbl=document.getElementById('svc-dd-label');
+            var tags=document.getElementById('svc-tags');
+            if(checked.length===0){lbl.textContent='Select services (choose all that apply)';lbl.style.opacity='.55';tags.innerHTML='';}
+            else{lbl.textContent=checked.length+' service'+(checked.length>1?'s':'')+' selected';lbl.style.opacity='1';
+              tags.innerHTML=checked.map(function(v){return'<span style="background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.4);color:#a5b4fc;font-size:.75rem;padding:2px 10px;border-radius:20px;">'+v+'</span>';}).join('');}
+          }
+          document.addEventListener('DOMContentLoaded',function(){
+            document.querySelectorAll('input[name="service"]').forEach(function(cb){cb.addEventListener('change',updateSvcLabel);});
+            document.addEventListener('mousedown',function(e){
+              var dd=document.getElementById('svc-dd');
+              if(dd&&!dd.contains(e.target)){document.getElementById('svc-dd-panel').style.display='none';document.getElementById('svc-dd-arrow').style.transform='';}
+            });
+          });
         </script>
 </div>
 <div class="contact-form reveal-right">
@@ -341,37 +291,41 @@ html
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.need">Qu'est-ce que tu cherches?</label>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.5rem;">
-<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Campaign Files"/> Fichiers de campagne
-              </label>
-<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Custom Website"/> Site Web personnalisé
-              </label>
-<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Landing Page"/> Page de destination
-              </label>
-<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="AI Chatbot"/> Chatbot IA
-              </label>
-<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Phone AI Agent"/> Agent IA téléphonique
-              </label>
-<label style="display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--text-2);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;">
-<input name="service" style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Domain &amp; Hosting Setup"/> Configuration du domaine et de l'hébergement
-              </label>
+<div id="svc-dd" style="position:relative;margin-top:.5rem;">
+<button id="svc-dd-btn" onclick="toggleSvcDd()" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:11px 14px;color:var(--text-2);font-size:.875rem;font-family:var(--font-body);cursor:pointer;text-align:left;transition:border-color .18s;" type="button">
+<span id="svc-dd-label" style="opacity:.55;">Sélectionnez les services (choisissez toutes les réponses applicables)</span>
+<svg fill="none" height="12" id="svc-dd-arrow" style="flex-shrink:0;margin-left:8px;transition:transform .18s;" viewbox="0 0 12 12" width="12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div id="svc-dd-panel" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:.5rem;z-index:50;box-shadow:0 8px 32px rgba(0,0,0,.4);">
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Campaign Management"/> Gestion de campagne
+    </label>
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Custom Website"/> Site Web personnalisé
+    </label>
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Landing Page"/> Page de destination
+    </label>
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="AI Chatbot"/> Chatbot IA
+    </label>
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Phone AI Agent"/> Agent IA téléphonique
+    </label>
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Animated Creatives"/> Créations animées
+    </label>
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Domain &amp; Hosting Setup"/> Configuration du domaine et de l'hébergement
+    </label>
 </div>
+</div>
+<div id="svc-tags" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;"></div>
 </div>
 <div class="form-field">
 <label data-i18n="contact.form.message">Parlez-nous de votre projet</label>
 <textarea data-i18n-ph="contact.form.placeholder" name="message" placeholder="Décrivez ce dont vous avez besoin, votre public et tous les détails ou délais pertinents." required=""></textarea>
 </div>
-<div class="form-field" id="referral-field" style="display:none;">
-<label>Référé par</label>
-<input id="referred-by-input" name="referred_by" placeholder="Nom de la personne qui vous a envoyé" type="text"/>
-<div id="referral-note" style="font-size:.75rem;color:var(--primary);margin-top:.4rem;display:none;">✓ Parrainage noté — votre contact bénéficiera de sa réduction sur son prochain projet.</div>
-</div>
-<input id="referral-source" name="referral_source" type="hidden"/>
 <button class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send" id="contact-btn-text">Envoyer un message</span> ›</button>
 <!-- What happens next -->
 <div style="margin-top:1.5rem;padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;">
@@ -406,31 +360,6 @@ html
 </form>
 <script>
 (function(){
-  // ── Referral tracking ──────────────────────────────────────────
-  var params = new URLSearchParams(window.location.search);
-  var refParam = params.get('ref');          // e.g. ?ref=John+Smith
-  var referField = document.getElementById('referral-field');
-  var referInput = document.getElementById('referred-by-input');
-  var referNote  = document.getElementById('referral-note');
-  var referHidden = document.getElementById('referral-source');
-
-  // Always show the "Referred by" field — it's optional
-  if(referField) referField.style.display = 'block';
-
-  // If ?ref= param present, pre-fill and show confirmation note
-  if(refParam && referInput){
-    referInput.value = decodeURIComponent(refParam);
-    if(referNote) referNote.style.display = 'block';
-  }
-
-  // Keep hidden field in sync for form submission
-  if(referInput && referHidden){
-    referInput.addEventListener('input', function(){
-      referHidden.value = referInput.value;
-    });
-    referHidden.value = referInput.value;
-  }
-
   var form=document.getElementById('contact-form');
   if(!form)return;
 
@@ -444,6 +373,10 @@ html
   }
   form.querySelectorAll('input[name="service"]').forEach(function(cb){
     cb.addEventListener('change', updateFreePageVisibility);
+  });
+  // Also update dropdown label from form-level listeners
+  form.querySelectorAll('input[name="service"]').forEach(function(cb){
+    cb.addEventListener('change', function(){ if(typeof updateSvcLabel==='function') updateSvcLabel(); });
   });
 
   function getCookie(name){var m=document.cookie.match('(^|;)\\s*'+name+'\\s*=\\s*([^;]+)');return m?m.pop():null;}
@@ -523,7 +456,6 @@ html
 <div class="footer-col"><h4 data-i18n="footer.contact">Contacter</h4><ul>
 <li><a class="active" href="contact.html">Démarrer un projet</a></li>
 <li><a href="mailto:contact@zoomy.services">contact@zoomy.services</a></li>
-
 </ul>
 <div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Ouvert aux projets</span></div>
 </div>

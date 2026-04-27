@@ -161,6 +161,12 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -318,7 +324,6 @@
 <div style="color:var(--muted);font-size:.8rem;margin-top:3px;">We typically typically typical response within 24 hours</div>
 </div>
 </div>
-
 <div class="contact-info-item">
 <div class="contact-icon">🕑</div>
 <div>
@@ -341,8 +346,8 @@
 <div id="wi-tabs" style="display:flex;gap:.4rem;flex-wrap:wrap;">
 <button class="wi-tab wi-tab-active" id="wi-tab-campaign" onclick="wiTab('campaign')">Campaign</button>
 <button class="wi-tab" id="wi-tab-website" onclick="wiTab('website')">Website</button>
-<button class="wi-tab" id="wi-tab-chatbot" onclick="wiTab('chatbot')">Chatbot</button>
 <button class="wi-tab" id="wi-tab-phone" onclick="wiTab('phone')">Phone Agent</button>
+<button class="wi-tab" id="wi-tab-chatbot" onclick="wiTab('chatbot')">Chatbot</button>
 <button class="wi-tab" id="wi-tab-animated" onclick="wiTab('animated')">Animated Creatives</button>
 </div>
 </div>
@@ -455,33 +460,33 @@
 <div class="form-field">
 <label data-i18n="contact.form.need">What are you looking for?</label>
 <div id="svc-dd" style="position:relative;margin-top:.5rem;">
-  <button type="button" id="svc-dd-btn" onclick="toggleSvcDd()" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:11px 14px;color:var(--text-2);font-size:.875rem;font-family:var(--font-body);cursor:pointer;text-align:left;transition:border-color .18s;">
-    <span id="svc-dd-label" style="opacity:.55;">Select services (choose all that apply)</span>
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;margin-left:8px;transition:transform .18s;" id="svc-dd-arrow"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-  <div id="svc-dd-panel" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:.5rem;z-index:50;box-shadow:0 8px 32px rgba(0,0,0,.4);">
-    <label style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;" onmouseover="this.style.background='rgba(99,102,241,.1)'" onmouseout="this.style.background=''">
-      <input name="service" type="checkbox" value="Campaign Management" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;"/> Campaign Management
+<button id="svc-dd-btn" onclick="toggleSvcDd()" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:11px 14px;color:var(--text-2);font-size:.875rem;font-family:var(--font-body);cursor:pointer;text-align:left;transition:border-color .18s;" type="button">
+<span id="svc-dd-label" style="opacity:.55;">Select services (choose all that apply)</span>
+<svg fill="none" height="12" id="svc-dd-arrow" style="flex-shrink:0;margin-left:8px;transition:transform .18s;" viewbox="0 0 12 12" width="12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div id="svc-dd-panel" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:.5rem;z-index:50;box-shadow:0 8px 32px rgba(0,0,0,.4);">
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Campaign Management"/> Campaign Management
     </label>
-    <label style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;" onmouseover="this.style.background='rgba(99,102,241,.1)'" onmouseout="this.style.background=''">
-      <input name="service" type="checkbox" value="Custom Website" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;"/> Custom Website
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Custom Website"/> Custom Website
     </label>
-    <label style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;" onmouseover="this.style.background='rgba(99,102,241,.1)'" onmouseout="this.style.background=''">
-      <input name="service" type="checkbox" value="Landing Page" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;"/> Landing Page
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Landing Page"/> Landing Page
     </label>
-    <label style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;" onmouseover="this.style.background='rgba(99,102,241,.1)'" onmouseout="this.style.background=''">
-      <input name="service" type="checkbox" value="AI Chatbot" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;"/> AI Chatbot
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="AI Chatbot"/> AI Chatbot
     </label>
-    <label style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;" onmouseover="this.style.background='rgba(99,102,241,.1)'" onmouseout="this.style.background=''">
-      <input name="service" type="checkbox" value="Phone AI Agent" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;"/> Phone AI Agent
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Phone AI Agent"/> Phone AI Agent
     </label>
-    <label style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;" onmouseover="this.style.background='rgba(99,102,241,.1)'" onmouseout="this.style.background=''">
-      <input name="service" type="checkbox" value="Animated Creatives" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;"/> Animated Creatives
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Animated Creatives"/> Animated Creatives
     </label>
-    <label style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;" onmouseover="this.style.background='rgba(99,102,241,.1)'" onmouseout="this.style.background=''">
-      <input name="service" type="checkbox" value="Domain &amp; Hosting Setup" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;"/> Domain &amp; Hosting Setup
+<label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Domain &amp; Hosting Setup"/> Domain &amp; Hosting Setup
     </label>
-  </div>
+</div>
 </div>
 <div id="svc-tags" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;"></div>
 </div>
@@ -489,12 +494,6 @@
 <label data-i18n="contact.form.message">Tell us about your project</label>
 <textarea data-i18n-ph="contact.form.placeholder" name="message" placeholder="Describe what you need, your audience, and any relevant details or deadlines." required=""></textarea>
 </div>
-<div class="form-field" id="referral-field" style="display:none;">
-<label>Referred by</label>
-<input id="referred-by-input" name="referred_by" placeholder="Name of the person who sent you" type="text"/>
-<div id="referral-note" style="font-size:.75rem;color:var(--primary);margin-top:.4rem;display:none;">✓ Referral noted — your contact will receive their discount on their next project.</div>
-</div>
-<input id="referral-source" name="referral_source" type="hidden"/>
 <button class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send" id="contact-btn-text">Send Message</span> ›</button>
 <!-- What happens next -->
 <div style="margin-top:1.5rem;padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;">
@@ -529,31 +528,6 @@
 </form>
 <script>
 (function(){
-  // ── Referral tracking ──────────────────────────────────────────
-  var params = new URLSearchParams(window.location.search);
-  var refParam = params.get('ref');          // e.g. ?ref=John+Smith
-  var referField = document.getElementById('referral-field');
-  var referInput = document.getElementById('referred-by-input');
-  var referNote  = document.getElementById('referral-note');
-  var referHidden = document.getElementById('referral-source');
-
-  // Always show the "Referred by" field — it's optional
-  if(referField) referField.style.display = 'block';
-
-  // If ?ref= param present, pre-fill and show confirmation note
-  if(refParam && referInput){
-    referInput.value = decodeURIComponent(refParam);
-    if(referNote) referNote.style.display = 'block';
-  }
-
-  // Keep hidden field in sync for form submission
-  if(referInput && referHidden){
-    referInput.addEventListener('input', function(){
-      referHidden.value = referInput.value;
-    });
-    referHidden.value = referInput.value;
-  }
-
   var form=document.getElementById('contact-form');
   if(!form)return;
 
@@ -650,7 +624,6 @@
 <div class="footer-col"><h4 data-i18n="footer.contact">Contact</h4><ul>
 <li><a class="active" href="contact.html">Start a Project</a></li>
 <li><a href="mailto:contact@zoomy.services">contact@zoomy.services</a></li>
-
 </ul>
 <div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Open for Projects</span></div>
 </div>

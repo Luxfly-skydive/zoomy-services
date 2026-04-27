@@ -263,7 +263,7 @@ def translate_file(html_file, lang, lc, out_dir):
 
     # Write
     os.makedirs(out_dir, exist_ok=True)
-    out = '<!DOCTYPE html>\n' + re.sub(r'^\s*html\s*\n','', str(soup))
+    out = '<!DOCTYPE html>\n' + re.sub(r'^(?:html\n)+', '', str(soup), flags=re.IGNORECASE)
     with open(os.path.join(out_dir, filename),'w',encoding='utf-8') as f:
         f.write(out)
 
@@ -275,7 +275,7 @@ def update_root_pages(html_files):
             content = f.read()
         soup = BeautifulSoup(content,'html.parser')
         update_switcher_root(soup, filename)
-        out = '<!DOCTYPE html>\n' + re.sub(r'^\s*html\s*\n','', str(soup))
+        out = '<!DOCTYPE html>\n' + re.sub(r'^(?:html\n)+', '', str(soup), flags=re.IGNORECASE)
         with open(path,'w',encoding='utf-8') as f:
             f.write(out)
 

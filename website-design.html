@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -188,7 +194,6 @@ nav{top:var(--bar-h)!important}
 <div class="reveal-left">
 <div class="section-tag">Admin Panel</div>
 <h2 class="section-title" style="margin-bottom:1.25rem;">You control the content.<br/>No developer needed.</h2>
-
 <p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;font-size:1.05rem;">Log in, click any text or image on your live site, and it's instantly editable — no code, no waiting.</p>
 <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;">
 <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">✏️ Edit any text</span>
@@ -207,68 +212,61 @@ nav{top:var(--bar-h)!important}
 <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Live demo — try it now</div>
 <span style="font-size:.8rem;color:#cbd5e1;">👇 Try it — click any <strong>image</strong> to swap it, click any <strong>text</strong> to edit it live</span>
 </div>
-
 <!-- ADMIN SHELL -->
 <div id="admShell" style="--ac:#0ea5e9;background:#0a0a0a;border:1px solid #222;border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.8);">
-
 <!-- TOP BAR -->
 <div style="background:#0d0d0d;border-bottom:1px solid #1a1a1a;padding:.6rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
-  <div style="display:flex;align-items:center;gap:.85rem;">
-    <div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div><div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div></div>
-    <span style="font-size:.72rem;font-weight:700;color:var(--ac);letter-spacing:.08em;text-transform:uppercase;font-family:monospace;">Lumina Studio — Admin</span>
-  </div>
-  <div style="display:flex;align-items:center;gap:.75rem;">
-    <span id="admBadge" style="font-size:.65rem;background:var(--ac);color:#0a0a08;padding:2px 10px;border-radius:4px;font-weight:700;display:none;font-family:monospace;"></span>
-    <button onclick="admPublish()" style="background:var(--ac);color:#0a0a08;border:none;padding:5px 18px;border-radius:6px;font-size:.75rem;font-weight:700;cursor:pointer;letter-spacing:.03em;" onmouseover="this.style.filter='brightness(1.15)'" onmouseout="this.style.filter=''">Publish ↑</button>
-  </div>
+<div style="display:flex;align-items:center;gap:.85rem;">
+<div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div><div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div><div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div></div>
+<span style="font-size:.72rem;font-weight:700;color:var(--ac);letter-spacing:.08em;text-transform:uppercase;font-family:monospace;">Lumina Studio — Admin</span>
 </div>
-
+<div style="display:flex;align-items:center;gap:.75rem;">
+<span id="admBadge" style="font-size:.65rem;background:var(--ac);color:#0a0a08;padding:2px 10px;border-radius:4px;font-weight:700;display:none;font-family:monospace;"></span>
+<button onclick="admPublish()" onmouseout="this.style.filter=''" onmouseover="this.style.filter='brightness(1.15)'" style="background:var(--ac);color:#0a0a08;border:none;padding:5px 18px;border-radius:6px;font-size:.75rem;font-weight:700;cursor:pointer;letter-spacing:.03em;">Publish ↑</button>
+</div>
+</div>
 <!-- BODY -->
 <div style="display:flex;">
-
 <!-- SIDEBAR -->
 <div style="width:148px;flex-shrink:0;background:#0b0b0b;border-right:1px solid #1a1a1a;padding:.9rem 0;display:flex;flex-direction:column;">
-  <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Pages</div>
-  <div class="adm-nav-item active-nav" onclick="admNav('home',this)" style="padding:.4rem 1rem;font-size:.74rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🏠</span>Home</div>
-  <div class="adm-nav-item" onclick="admNav('classes',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>🧘</span>Classes</div>
-  <div class="adm-nav-item" onclick="admNav('trainers',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>💪</span>Trainers</div>
-  <div class="adm-nav-item" onclick="admNav('pricing',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>💳</span>Pricing</div>
-  <div class="adm-nav-item" onclick="admNav('contact',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>📍</span>Contact</div>
-  <div style="margin:.6rem .8rem;border-top:1px solid #1a1a1a;"></div>
-  <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Settings</div>
-  <div class="adm-nav-item" onclick="admNav('colours',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>🎨</span>Colours</div>
+<div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Pages</div>
+<div class="adm-nav-item active-nav" onclick="admNav('home',this)" style="padding:.4rem 1rem;font-size:.74rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🏠</span>Home</div>
+<div class="adm-nav-item" onclick="admNav('classes',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🧘</span>Classes</div>
+<div class="adm-nav-item" onclick="admNav('trainers',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>💪</span>Trainers</div>
+<div class="adm-nav-item" onclick="admNav('pricing',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>💳</span>Pricing</div>
+<div class="adm-nav-item" onclick="admNav('contact',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>📍</span>Contact</div>
+<div style="margin:.6rem .8rem;border-top:1px solid #1a1a1a;"></div>
+<div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Settings</div>
+<div class="adm-nav-item" onclick="admNav('colours',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🎨</span>Colours</div>
 </div>
-
 <!-- CANVAS -->
 <div class="adm-canvas" style="flex:1;height:520px;overflow-y:auto;overflow-x:hidden;position:relative;">
 <iframe id="adm-iframe" src="" style="width:100%;height:100%;border:none;display:block;" title="Page Preview"></iframe>
 <div id="adm-colour-panel" style="display:none;position:absolute;inset:0;background:#0b0b14;overflow-y:auto;padding:1.5rem;z-index:5;">
-  <div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0ea5e9;margin-bottom:.5rem;">Brand Settings</div>
-  <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;margin-bottom:.3rem;font-family:system-ui,sans-serif;">Brand Colour</div>
-  <p style="font-size:.78rem;color:#64748b;margin-bottom:1.25rem;">Tap a preset or pick a custom colour. Changes apply to the site preview instantly.</p>
-  <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.25rem;" id="adm-swatches">
-    <div class="adm-swatch adm-swatch-active" data-color="#0ea5e9" style="width:36px;height:36px;border-radius:8px;background:#0ea5e9;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 3px rgba(14,165,233,.5);"></div>
-    <div class="adm-swatch" data-color="#8b5cf6" style="width:36px;height:36px;border-radius:8px;background:#8b5cf6;cursor:pointer;border:2px solid transparent;"></div>
-    <div class="adm-swatch" data-color="#10b981" style="width:36px;height:36px;border-radius:8px;background:#10b981;cursor:pointer;border:2px solid transparent;"></div>
-    <div class="adm-swatch" data-color="#f59e0b" style="width:36px;height:36px;border-radius:8px;background:#f59e0b;cursor:pointer;border:2px solid transparent;"></div>
-    <div class="adm-swatch" data-color="#ef4444" style="width:36px;height:36px;border-radius:8px;background:#ef4444;cursor:pointer;border:2px solid transparent;"></div>
-    <div class="adm-swatch" data-color="#ec4899" style="width:36px;height:36px;border-radius:8px;background:#ec4899;cursor:pointer;border:2px solid transparent;"></div>
-    <div class="adm-swatch" data-color="#f97316" style="width:36px;height:36px;border-radius:8px;background:#f97316;cursor:pointer;border:2px solid transparent;"></div>
-    <div class="adm-swatch" data-color="#14b8a6" style="width:36px;height:36px;border-radius:8px;background:#14b8a6;cursor:pointer;border:2px solid transparent;"></div>
-  </div>
-  <div style="font-size:.75rem;color:#64748b;margin-bottom:.4rem;">Custom hex</div>
-  <div style="display:flex;gap:.5rem;">
-    <input type="color" id="adm-custom-color" value="#0ea5e9" style="width:42px;height:38px;border:none;border-radius:8px;cursor:pointer;padding:2px;background:transparent;">
-    <input type="text" id="adm-hex-input" value="#0ea5e9" maxlength="7" placeholder="#000000" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;">
-  </div>
+<div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0ea5e9;margin-bottom:.5rem;">Brand Settings</div>
+<div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;margin-bottom:.3rem;font-family:system-ui,sans-serif;">Brand Colour</div>
+<p style="font-size:.78rem;color:#64748b;margin-bottom:1.25rem;">Tap a preset or pick a custom colour. Changes apply to the site preview instantly.</p>
+<div id="adm-swatches" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.25rem;">
+<div class="adm-swatch adm-swatch-active" data-color="#0ea5e9" style="width:36px;height:36px;border-radius:8px;background:#0ea5e9;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 3px rgba(14,165,233,.5);"></div>
+<div class="adm-swatch" data-color="#8b5cf6" style="width:36px;height:36px;border-radius:8px;background:#8b5cf6;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#10b981" style="width:36px;height:36px;border-radius:8px;background:#10b981;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#f59e0b" style="width:36px;height:36px;border-radius:8px;background:#f59e0b;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#ef4444" style="width:36px;height:36px;border-radius:8px;background:#ef4444;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#ec4899" style="width:36px;height:36px;border-radius:8px;background:#ec4899;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#f97316" style="width:36px;height:36px;border-radius:8px;background:#f97316;cursor:pointer;border:2px solid transparent;"></div>
+<div class="adm-swatch" data-color="#14b8a6" style="width:36px;height:36px;border-radius:8px;background:#14b8a6;cursor:pointer;border:2px solid transparent;"></div>
+</div>
+<div style="font-size:.75rem;color:#64748b;margin-bottom:.4rem;">Custom hex</div>
+<div style="display:flex;gap:.5rem;">
+<input id="adm-custom-color" style="width:42px;height:38px;border:none;border-radius:8px;cursor:pointer;padding:2px;background:transparent;" type="color" value="#0ea5e9"/>
+<input id="adm-hex-input" maxlength="7" placeholder="#000000" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;" type="text" value="#0ea5e9"/>
 </div>
 </div>
-
+</div>
 </div><!-- /admShell -->
 </div>
 </div><!-- /right col -->
 </div><!-- /grid -->
-
 <style>
 .adm-field{outline:none;cursor:text;border-radius:4px;padding:3px 6px;border:1px dashed rgba(255,255,255,.12);transition:border-color .18s,background .18s;}
 .adm-field:hover{border-color:rgba(255,255,255,.28);}
@@ -284,7 +282,6 @@ nav{top:var(--bar-h)!important}
   .section-title{font-size:clamp(1.6rem,6vw,2.2rem)!important;}
 }
 </style>
-
 <script>
 (function(){
 var SK='zoomy_adm3';
@@ -708,7 +705,6 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 })();
 </script>
-
 </div><!-- /section-inner -->
 </section>
 <!-- ═══ WHAT CAN BE INCLUDED ═══ -->
@@ -718,7 +714,6 @@ document.addEventListener('DOMContentLoaded',function(){
 <h2 class="section-title">What can be included.</h2>
 <p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:560px;margin-top:.75rem;margin-bottom:3rem;">Scoped to what the project actually needs — not every site gets everything below, but all of it is available.</p>
 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;">
-
 <div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🌍</div>
 <div>
@@ -726,7 +721,6 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">EN, FR, DE, NL, ES, and more. Language switchers and fallback logic included on any site that needs them.</div>
 </div>
 </div>
-
 <div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🤖</div>
 <div>
@@ -734,7 +728,6 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">Trained on your business — services, prices, hours, FAQs. Handles questions and collects leads. No third-party subscriptions.</div>
 </div>
 </div>
-
 <div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">📊</div>
 <div>
@@ -742,7 +735,6 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">GA4, GTM, and pixel setup. Event tracking and goal configuration. Connected to paid campaigns where relevant.</div>
 </div>
 </div>
-
 <div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">✨</div>
 <div>
@@ -750,7 +742,6 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">Scroll animations, parallax, hover effects, and transitions — applied where they fit the project, not forced in.</div>
 </div>
 </div>
-
 <div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🔒</div>
 <div>
@@ -758,7 +749,6 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">Cookie consent, privacy policy structure, and data handling configuration. Standard on every project.</div>
 </div>
 </div>
-
 <div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🌐</div>
 <div>
@@ -766,7 +756,6 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">We handle registration and setup if needed. Already have both? We deploy straight to yours.</div>
 </div>
 </div>
-
 </div>
 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.25rem;">
 <div class="reveal" style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.18);border-radius:12px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:center;">
@@ -786,7 +775,6 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 </section>
-
 <!-- CHATBOT SECTION -->
 <section class="section" id="chatbot" style="position:relative;overflow:hidden;">
 <div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-2"></div></div>

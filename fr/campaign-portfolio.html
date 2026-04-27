@@ -1,42 +1,4 @@
 <!DOCTYPE html>
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
-html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -46,7 +8,7 @@ html
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <link href="https://zoomy.services/campaign-portfolio.html" rel="canonical"/>
 <title>Campagnes — Zoomy</title>
-<meta content="We build what Meta campaigns are made of — ad creatives, pixel and tracking setup, and campaign files structured and ready to launch." name="description"/>
+<meta content="We build what Google Ads campaigns are made of — keyword strategy, ad group structure, ad copy, conversion tracking, and creatives. Structured and ready to launch." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
@@ -110,11 +72,11 @@ html
 .plat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
 .plat-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
 .plat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px}
-.plat-card.fb::before{background:linear-gradient(90deg,#1877f2,#4267b2)}
-.plat-card.ig::before{background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af)}
+.plat-card.gs::before{background:linear-gradient(90deg,#4285F4,#34A853)}
+.plat-card.gd::before{background:linear-gradient(90deg,#FBBC05,#EA4335)}
 .plat-card-logo{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-.plat-card.fb .plat-card-logo{background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.25)}
-.plat-card.ig .plat-card-logo{background:rgba(221,42,123,.1);border:1px solid rgba(221,42,123,.2)}
+.plat-card.gs .plat-card-logo{background:rgba(66,133,244,.15);border:1px solid rgba(66,133,244,.3)}
+.plat-card.gd .plat-card-logo{background:rgba(251,188,5,.15);border:1px solid rgba(251,188,5,.3)}
 .plat-card-name{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem}
 .plat-card-desc{font-size:.85rem;color:var(--text-2);line-height:1.7}
 .plat-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
@@ -203,11 +165,11 @@ nav{top:var(--bar-h)!important}
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Studio de production numérique</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a class="active" data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
 <li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
-<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
+<li><a data-i18n="nav.phone" href="phone-agent.html">Agents téléphoniques</a></li>
 <li><a data-i18n="nav.creatives" href="animated-creatives.html">Créatifs</a></li>
+<li><a class="active" data-i18n="nav.campaigns" href="campaign-portfolio.html">Campagnes</a></li>
 <li><a data-i18n="nav.about" href="about.html">À propos de</a></li>
 <li><a data-i18n="nav.pricing" href="pricing.html">Tarifs</a></li>
 <li><a data-i18n="nav.contact" href="contact.html">Contacter</a></li>
@@ -231,7 +193,7 @@ nav{top:var(--bar-h)!important}
 <h1 style="margin-bottom:1.5rem;">
 <span class="glitch grad-text-animated">Conçu pour les campagnes.</span><br/>Prêt à lancer.
 </h1>
-<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:580px;margin:0 auto 2.5rem;">Nous construisons tout ce dont votre campagne Meta a besoin : les créations, le suivi et les fichiers. Remettez le tout à votre équipe ou contactez-nous si vous souhaitez que nous le gérions.</p>
+<p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:580px;margin:0 auto 2.5rem;">Nous construisons tout ce dont votre campagne Google Ads a besoin : stratégie de mots clés, structure des groupes d'annonces, textes et créations. Livré sous forme de dossier complet. Gestion continue légère disponible si vous en avez besoin.</p>
 <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
 <a class="btn btn-primary" href="contact.html">Démarrer une brève campagne ›</a>
 <a class="btn btn-ghost" href="#what-we-build">Voyez ce que nous construisons ↓</a>
@@ -263,8 +225,8 @@ nav{top:var(--bar-h)!important}
 <section class="section" id="what-we-build">
 <div class="section-inner">
 <div class="section-tag">Ce que nous livrons</div>
-<h2 class="section-title">Trois choses dont chaque campagne a besoin.</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Les bonnes campagnes n'échouent pas à cause de la plate-forme : elles échouent parce que la création est faible, le suivi est défectueux ou la configuration n'a jamais été correctement structurée. Nous réparons les trois.</p>
+<h2 class="section-title">Ce que nous construisons pour vous.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Les bonnes campagnes n'échouent pas à cause de la plate-forme : elles échouent parce que la stratégie de mots clés est faible, que la copie n'atteint pas ou que la structure n'a jamais été correctement réfléchie. Nous nous occupons de tout avant que vous dépensiez un centime.</p>
 <div class="service-cards stagger-children">
 <!-- Card 1: Campaign Files -->
 <div class="service-card s1 reveal">
@@ -273,17 +235,17 @@ nav{top:var(--bar-h)!important}
 <svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#6366f1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path><polyline points="14,2 14,8 20,8" stroke="#6366f1" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polyline><line stroke="#6366f1" stroke-linecap="round" stroke-width="1.75" x1="16" x2="8" y1="13" y2="13"></line><line stroke="#6366f1" stroke-linecap="round" stroke-width="1.75" x1="16" x2="8" y1="17" y2="17"></line><polyline points="10,9 9,9 8,9" stroke="#6366f1" stroke-linecap="round" stroke-width="1.75"></polyline></svg>
 </div>
 <div class="service-card-title">Fichiers et structure de la campagne</div>
-<div class="service-card-desc">Tout ce dont vous avez besoin pour lancer une méta-campagne : conçue, documentée et prête à être téléchargée ou remise à votre acheteur média. Nous définissons la structure, rédigeons la copie, configurons les audiences et livrons un package de configuration complet.</div>
+<div class="service-card-desc">Tout ce dont vous avez besoin pour lancer une campagne Google Ads : conçu, documenté et prêt à être remis à votre équipe ou mis en ligne. Nous définissons la stratégie de mots clés, rédigeons le texte, structurons les groupes d'annonces et fournissons un package de configuration complet.</div>
 <ul class="service-card-list">
-<li>Objectif de campagne et structure de l'ensemble de publicités définis</li>
-<li>Configurations d'audience construites et documentées</li>
-<li>Texte publicitaire rédigé pour chaque emplacement et format</li>
+<li>Recherche de mots clés et stratégie de type de correspondance</li>
+<li>Structure du groupe d'annonces créée et documentée</li>
+<li>Texte d'annonce responsive sur le Réseau de Recherche rédigé pour chaque groupe d'annonces</li>
+<li>Stratégie d'enchères et recommandations budgétaires</li>
 <li>Structure des paramètres UTM configurée</li>
-<li>Brief créatif pour chaque format publicitaire inclus</li>
 <li>Document de configuration complet — prêt à être téléchargé ou transféré</li>
 </ul>
 <div class="service-card-tags">
-<span class="service-card-tag">Configuration de l'audience</span>
+<span class="service-card-tag">Recherche de mots clés</span>
 <span class="service-card-tag">Copie d'annonce</span>
 <span class="service-card-tag">Configuration UTM</span>
 <span class="service-card-tag">Document d'installation</span>
@@ -291,27 +253,26 @@ nav{top:var(--bar-h)!important}
 </div>
 <!-- Card 2: Pixel & Tracking -->
 <div class="service-card s2 reveal">
-<div class="service-card-num">02 — Pixels et suivi</div>
+<div class="service-card-num">02 — Suivi des conversions</div>
 <div class="service-card-icon">
 <svg fill="none" height="22" viewbox="0 0 24 24" width="22"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="#8b5cf6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polyline></svg>
 </div>
-<div class="service-card-title">Configuration des pixels et du suivi</div>
-<div class="service-card-desc">La qualité des publicités dépend de la qualité des données qui les alimentent. Nous installons, configurons et vérifions vos métapixels et vos événements de conversion afin que la plate-forme s'optimise par rapport aux signaux réels et non au bruit. Nouvelles configurations ou audits complets des installations existantes.</div>
+<div class="service-card-title">Configuration du suivi des conversions</div>
+<div class="service-card-desc">Google Ads n'optimise bien que lorsqu'il peut voir ce qui convertit. Nous avons mis en place le suivi des conversions via Google Tag et GA4 afin que l'algorithme enchérisse sur des signaux réels (achats, prospects, appels) dès le premier jour.</div>
 <ul class="service-card-list">
-<li>Meta Pixel installé et vérifié sur toutes les pages</li>
-<li>Événements de conversion configurés : achat, prospect, ajout au panier</li>
-<li>Déduplication d'événements et diagnostic des ratés d'allumage</li>
-<li>UTM et GA4 recoupés avec les données de pixels</li>
-<li>Les événements tests ont confirmé le tir avant la mise en service</li>
-<li>Rapport de correctif complet avec toutes les modifications documentées</li>
+<li>Google Tag installé et vérifié sur toutes les pages</li>
+<li>Actions de conversion configurées dans Google Ads (achat, prospect, appel)</li>
+<li>GA4 lié et croisé avec Google Ads</li>
+<li>Marquage automatique confirmé et structure UTM alignée</li>
+<li>Test des conversions confirmées avant la mise en ligne</li>
+<li>Tous les changements documentés</li>
 </ul>
 <div class="service-card-tags">
-<span class="service-card-tag">Méta-Pixel</span>
-<span class="service-card-tag">Événements de conversion</span>
+<span class="service-card-tag">Balise Google</span>
+<span class="service-card-tag">Actions de conversion</span>
 <span class="service-card-tag">GA4</span>
-<span class="service-card-tag">Déduplication</span>
+<span class="service-card-tag">Marquage automatique</span>
 </div>
-<a class="service-card-cta" href="#tracking-pricing">Voir les tarifs ↓</a>
 </div>
 <!-- Card 3: Ad Creatives -->
 <div class="service-card s3 reveal">
@@ -320,18 +281,18 @@ nav{top:var(--bar-h)!important}
 <svg fill="none" height="22" viewbox="0 0 24 24" width="22"><polygon points="5,3 19,12 5,21 5,3" stroke="#ec4899" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></polygon></svg>
 </div>
 <div class="service-card-title">Créations publicitaires animées</div>
-<div class="service-card-desc">Courtes publicités animées conçues pour Meta – formats de flux et d'histoire, livrées sous forme de fichiers MP4 prêts à être téléchargés directement sur Ads Manager. Nous animons à partir de votre brief. Aucune séquence, aucun élément, rien de nécessaire de votre part.</div>
+<div class="service-card-desc">Courtes annonces animées conçues pour les emplacements display et vidéo Google Ads, diffusées sous forme de fichiers MP4 prêts à être téléchargés. Nous animons à partir de votre brief. Aucune séquence, aucun élément, rien de nécessaire de votre part.</div>
 <ul class="service-card-list">
 <li>Formats Flux (4:5), Histoire (9:16) et Carré (1:1)</li>
 <li>Animé à partir de votre produit, de votre message et de votre brief d'audience</li>
-<li>MP4 livré – téléchargez directement dans Ads Manager</li>
+<li>MP4 livré — prêt à être téléchargé sur votre plateforme publicitaire</li>
 <li>Copie et CTA rédigés pour correspondre à chaque placement</li>
 <li>Révisions incluses</li>
 <li>Vidéo générée par l'IA disponible sur demande</li>
 </ul>
 <div class="service-card-tags">
-<span class="service-card-tag">Alimentation 4:5</span>
-<span class="service-card-tag">Histoire 9:16</span>
+<span class="service-card-tag">Afficher</span>
+<span class="service-card-tag">YouTube</span>
 <span class="service-card-tag">Carré 1:1</span>
 <span class="service-card-tag">MP4</span>
 </div>
@@ -374,66 +335,32 @@ nav{top:var(--bar-h)!important}
 <section class="section">
 <div class="section-inner">
 <div class="section-tag">Focus sur la plateforme</div>
-<h2 class="section-title">Construit autour de Meta.</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Tout ce que nous construisons est optimisé pour la publicité sur Facebook et Instagram, les deux emplacements qui offrent toujours le meilleur coût par résultat pour la plupart des campagnes à réponse directe. Le Pixel et le système d'attribution de Meta sont ce que nous connaissons parfaitement.</p>
+<h2 class="section-title">Construit autour de Google Ads.</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:580px;margin-top:.75rem;">Nos fichiers de campagne, notre stratégie de mots clés et notre contenu sont spécialement conçus pour Google Ads – Search et Display. La plate-forme sur laquelle l'intention est la plus élevée et la configuration la plus importante.</p>
 <div class="platform-block stagger-children">
-<div class="plat-card fb reveal">
+<div class="plat-card gs reveal">
 <div class="plat-card-logo">
-<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z" fill="#1877f2"></path></svg>
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><path d="M21.35 11.1H12.18V13.83H18.69C18.36 17.64 15.19 19.27 12.19 19.27C8.36 19.27 5 16.25 5 12C5 7.9 8.2 4.73 12.2 4.73C15.29 4.73 17.1 6.7 17.1 6.7L19 4.72C19 4.72 16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12C2.03 17.05 6.16 22 12.25 22C17.6 22 21.5 18.33 21.5 12.91C21.5 11.76 21.35 11.1 21.35 11.1Z" fill="#4285F4"></path></svg>
 </div>
-<div class="plat-card-name">Publicités Facebook</div>
-<div class="plat-card-desc">Campagnes couvrant la prospection, le reciblage, les audiences personnalisées et les sosies. Emplacements de flux optimisés pour les clics et le coût par résultat.</div>
-<div class="plat-tags"><span class="plat-tag">Audiences personnalisées</span><span class="plat-tag">Sosies</span><span class="plat-tag">Reciblage</span><span class="plat-tag">Nourrir</span></div>
+<div class="plat-card-name">Recherche Google</div>
+<div class="plat-card-desc">Campagnes ciblées par mots clés qui capturent la demande au moment de l'intention. Nous construisons la structure des mots clés, les groupes d'annonces et le texte publicitaire réactif du Réseau de Recherche, prêts à être mis en ligne.</div>
+<div class="plat-tags"><span class="plat-tag">Stratégie de mots clés</span><span class="plat-tag">RSA</span><span class="plat-tag">Groupes d'annonces</span><span class="plat-tag">Enchères</span></div>
 </div>
-<div class="plat-card ig reveal reveal-delay-1">
+<div class="plat-card gd reveal reveal-delay-1">
 <div class="plat-card-logo">
-<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><rect height="20" rx="5" ry="5" stroke="#dd2a7b" stroke-width="1.75" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#dd2a7b" stroke-width="1.75"></path><line stroke="#dd2a7b" stroke-linecap="round" stroke-width="2" x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22"><rect fill="none" height="14" rx="2" stroke="#FBBC05" stroke-width="1.75" width="20" x="2" y="5"></rect><path d="M2 10h20" stroke="#EA4335" stroke-width="1.75"></path></svg>
 </div>
-<div class="plat-card-name">Publicités Instagram</div>
-<div class="plat-card-desc">Emplacements Story et Reel où les courtes créations animées fonctionnent de manière optimale. Formats à haute visibilité conçus pour un public axé sur les mobiles.</div>
-<div class="plat-tags"><span class="plat-tag">Histoires</span><span class="plat-tag">Bobines</span><span class="plat-tag">Le mobile d’abord</span><span class="plat-tag">Animé</span></div>
+<div class="plat-card-name">Affichage Google et YouTube</div>
+<div class="plat-card-desc">Créations animées formatées pour les emplacements display et vidéo. Nous construisons les actifs et les spécifications de ciblage, prêts à être téléchargés et diffusés parallèlement à vos campagnes de recherche.</div>
+<div class="plat-tags"><span class="plat-tag">Afficher</span><span class="plat-tag">YouTube</span><span class="plat-tag">MP4 animé</span><span class="plat-tag">Spécification de ciblage</span></div>
 </div>
 </div>
 <div class="reveal" style="margin-top:1.5rem;background:var(--surface);border:1px solid var(--border-b);border-radius:var(--radius-lg);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
 <div>
-<div style="font-family:var(--font-display);font-weight:600;color:#fff;margin-bottom:.3rem;">Vous travaillez sur une autre plateforme ?</div>
-<div style="font-size:.875rem;color:var(--text-2);">Google, TikTok ou LinkedIn : contactez-nous et nous vous ferons savoir si nous pouvons vous aider.</div>
+<div style="font-family:var(--font-display);font-weight:600;color:#fff;margin-bottom:.3rem;">Vous travaillez sur Meta, TikTok ou une autre plateforme ?</div>
+<div style="font-size:.875rem;color:var(--text-2);">Contactez-nous : nous vous ferons savoir si nous pouvons vous aider et à quoi cela ressemblerait.</div>
 </div>
 <a class="btn btn-ghost" href="contact.html" style="white-space:nowrap;flex-shrink:0;">Contactez-nous ›</a>
-</div>
-</div>
-</section>
-<!-- ═══ TRACKING PRICING ═══ -->
-<section class="section" id="tracking-pricing" style="background:var(--bg-2);">
-<div class="section-inner">
-<div class="section-tag">Pixels et suivi</div>
-<h2 class="section-title">Configuration et audit du suivi.</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:600px;margin-top:.75rem;">La plupart des campagnes sont sous-performantes parce que le suivi est erroné : événements ratés, pixels en double, aucune donnée de conversion n'atteignant la plateforme publicitaire. Nous réparons cela. Que vous repartiez à zéro ou que vous héritiez d'une configuration défectueuse, nous faisons circuler les données correctement avant que l'argent ne soit dépensé pour optimiser les mauvais signaux.</p>
-<div class="pricing-callout reveal" style="margin-top:2.5rem;">
-<div class="pricing-half">
-<div class="pricing-half-tag">Nouvelle configuration</div>
-<div class="pricing-half-price">$399<span> / unique</span></div>
-<p class="pricing-half-desc">Configuration de suivi complète à partir de zéro. Meta Pixel, événements de conversion, paramètres UTM et connexion GA4. Tout a été vérifié correctement avant le lancement.</p>
-<ul class="pricing-half-list">
-<li>Meta Pixel installé et vérifié</li>
-<li>Événements de conversion configurés (achat, prospect, ajout au panier, etc.)</li>
-<li>Configuration de la structure des paramètres UTM</li>
-<li>GA4 lié et recoupé</li>
-<li>Événements tests confirmés avant la mise en ligne</li>
-</ul>
-</div>
-<div class="pricing-half">
-<div class="pricing-half-tag">Audit de configuration existante</div>
-<div class="pricing-half-price">$299<span> / unique</span></div>
-<p class="pricing-half-desc">Examen complet de votre configuration actuelle de pixels et d’événements. Nous identifions les ratés, les doublons, les événements manquants et les lacunes d'attribution, et les corrigeons.</p>
-<ul class="pricing-half-list">
-<li>Bilan de santé des pixels sur toutes les pages</li>
-<li>Déduplication d'événements et diagnostic des ratés d'allumage</li>
-<li>Examen de la fenêtre d'attribution</li>
-<li>Rapport de correction avec toutes les modifications documentées</li>
-<li>Re-vérification après l'application des correctifs</li>
-</ul>
-</div>
 </div>
 </div>
 </section>
@@ -443,9 +370,9 @@ nav{top:var(--bar-h)!important}
 <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:3rem;position:relative;overflow:hidden;text-align:center;">
 <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main);"></div>
 <div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Gestion complète de la campagne</div>
-<h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:1rem;">Intéressé à ce que nous menions la campagne ?</h2>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:560px;margin:0 auto 2rem;">Si vous voulez plus que les fichiers et la configuration — si vous souhaitez que nous prenions en charge l'optimisation quotidienne, la gestion du budget et le reporting — contactez-nous et nous vous expliquerons comment cela fonctionne.</p>
-<a class="btn btn-primary" href="contact.html">Contactez-nous à propos de la gestion des campagnes ›</a>
+<h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:1rem;">Voulez-vous que nous le gérions aussi ?</h2>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:560px;margin:0 auto 2rem;">Si vous voulez plus que les fichiers (si vous souhaitez que nous gérions le quotidien sur Google Ads, surveillons les performances, ajustons les enchères et vous rendions compte), contactez-nous et nous vous expliquerons comment cela fonctionne.</p>
+<a class="btn btn-primary" href="contact.html">Renseignez-vous sur la gestion des campagnes ›</a>
 </div>
 </div>
 </section>

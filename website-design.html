@@ -257,17 +257,9 @@ nav{top:var(--bar-h)!important}
     <div class="adm-swatch" data-color="#14b8a6" style="width:36px;height:36px;border-radius:8px;background:#14b8a6;cursor:pointer;border:2px solid transparent;"></div>
   </div>
   <div style="font-size:.75rem;color:#64748b;margin-bottom:.4rem;">Custom hex</div>
-  <div style="display:flex;gap:.5rem;margin-bottom:1.5rem;">
+  <div style="display:flex;gap:.5rem;">
     <input type="color" id="adm-custom-color" value="#0ea5e9" style="width:42px;height:38px;border:none;border-radius:8px;cursor:pointer;padding:2px;background:transparent;">
-    <input type="text" id="adm-hex-input" value="#0ea5e9" maxlength="7" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;">
-    <button onclick="applyDemoColor(document.getElementById('adm-hex-input').value)" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:.78rem;font-weight:700;cursor:pointer;">Apply</button>
-  </div>
-  <div style="font-size:.75rem;color:#64748b;margin-bottom:.5rem;">Preview</div>
-  <div style="display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;">
-    <span id="adm-prev-btn" style="background:#0ea5e9;color:#fff;padding:.5rem 1.25rem;border-radius:8px;font-size:.82rem;font-weight:700;">Primary Button</span>
-    <span id="adm-prev-outline" style="border:2px solid #0ea5e9;color:#0ea5e9;padding:.5rem 1.25rem;border-radius:8px;font-size:.82rem;font-weight:700;">Outline</span>
-    <span id="adm-prev-link" style="color:#0ea5e9;font-weight:600;font-size:.85rem;">Link colour</span>
-    <div id="adm-prev-dot" style="width:28px;height:28px;border-radius:50%;background:#0ea5e9;"></div>
+    <input type="text" id="adm-hex-input" value="#0ea5e9" maxlength="7" placeholder="#000000" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;">
   </div>
 </div>
 </div>
@@ -409,6 +401,9 @@ window.applyDemoColor=function(hex){
   if(!/^#[0-9a-fA-F]{3,6}$/.test(hex))return;
   var prevColor=window._zfDemoColor||'#0ea5e9';
   window._zfDemoColor=hex;
+  // Update admin shell accent color (nav, buttons, badges)
+  var shell=document.getElementById('admShell');
+  if(shell) shell.style.setProperty('--ac',hex);
   // Update swatches UI
   document.querySelectorAll('.adm-swatch').forEach(function(s){
     var active=s.getAttribute('data-color')===hex;
@@ -417,11 +412,6 @@ window.applyDemoColor=function(hex){
   });
   document.getElementById('adm-hex-input').value=hex;
   document.getElementById('adm-custom-color').value=hex;
-  // Update preview elements
-  var pb=document.getElementById('adm-prev-btn');if(pb)pb.style.background=hex;
-  var po=document.getElementById('adm-prev-outline');if(po){po.style.borderColor=hex;po.style.color=hex;}
-  var pl=document.getElementById('adm-prev-link');if(pl)pl.style.color=hex;
-  var pd=document.getElementById('adm-prev-dot');if(pd)pd.style.background=hex;
   // Apply to iframe — full DOM color replacement (handles hardcoded inline styles)
   var iframe=document.getElementById('adm-iframe');
   try{
@@ -439,10 +429,17 @@ document.addEventListener('click',function(e){
 document.getElementById('adm-custom-color').addEventListener('input',function(){
   applyDemoColor(this.value);
 });
+document.getElementById('adm-hex-input').addEventListener('input',function(){
+  if(/^#[0-9a-fA-F]{6}$/.test(this.value)) applyDemoColor(this.value);
+});
 
 // Inject edit mode into iframe when it loads
 document.getElementById('adm-iframe').addEventListener('load', function() {
   var self = this;
+  // Apply color immediately (prevents flash of original blue on page switch)
+  if (window._zfDemoColor) {
+    try { zfReplaceColor(self.contentDocument, '#0ea5e9', window._zfDemoColor); } catch(e) {}
+  }
   setTimeout(function() { zfInjectEditMode(self.contentDocument); }, 400);
 });
 

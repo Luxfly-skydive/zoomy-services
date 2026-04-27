@@ -91,7 +91,7 @@ nav{top:var(--bar-h)!important}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Track outbound CTA clicks (contact page links)
-      document.querySelectorAll('a[href*="contact"]').forEach(function(el) {
+      document.querySelectorAll('a.btn[href*="contact"], a.btn-nav[href*="contact"]').forEach(function(el) {
         el.addEventListener('click', function() {
           gtag('event', 'cta_click', {event_category: 'engagement', event_label: el.textContent.trim().substring(0,50)});
           clarity('event', 'cta_click');

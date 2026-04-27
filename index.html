@@ -530,12 +530,39 @@ Try Live Demo
   <div style="margin:.6rem .8rem;border-top:1px solid #1a1a1a;"></div>
   <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Settings</div>
   <div class="adm-nav-item" onclick="admNav('colours',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>🎨</span>Colours</div>
-  <div class="adm-nav-item" onclick="admNav('seo',this)" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;" onmouseover="this.style.color='#aaa'" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'"><span>🔍</span>SEO</div>
 </div>
 
 <!-- CANVAS -->
-<div class="adm-canvas" style="flex:1;height:520px;overflow-y:auto;overflow-x:hidden;">
+<div class="adm-canvas" style="flex:1;height:520px;overflow-y:auto;overflow-x:hidden;position:relative;">
 <iframe id="adm-iframe" src="" style="width:100%;height:100%;border:none;display:block;" title="Page Preview"></iframe>
+<div id="adm-colour-panel" style="display:none;position:absolute;inset:0;background:#0b0b14;overflow-y:auto;padding:1.5rem;z-index:5;">
+  <div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0ea5e9;margin-bottom:.5rem;">Brand Settings</div>
+  <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;margin-bottom:.3rem;font-family:system-ui,sans-serif;">Brand Colour</div>
+  <p style="font-size:.78rem;color:#64748b;margin-bottom:1.25rem;">Tap a preset or pick a custom colour. Changes apply to the site preview instantly.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.25rem;" id="adm-swatches">
+    <div class="adm-swatch adm-swatch-active" data-color="#0ea5e9" style="width:36px;height:36px;border-radius:8px;background:#0ea5e9;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 3px rgba(14,165,233,.5);"></div>
+    <div class="adm-swatch" data-color="#8b5cf6" style="width:36px;height:36px;border-radius:8px;background:#8b5cf6;cursor:pointer;border:2px solid transparent;"></div>
+    <div class="adm-swatch" data-color="#10b981" style="width:36px;height:36px;border-radius:8px;background:#10b981;cursor:pointer;border:2px solid transparent;"></div>
+    <div class="adm-swatch" data-color="#f59e0b" style="width:36px;height:36px;border-radius:8px;background:#f59e0b;cursor:pointer;border:2px solid transparent;"></div>
+    <div class="adm-swatch" data-color="#ef4444" style="width:36px;height:36px;border-radius:8px;background:#ef4444;cursor:pointer;border:2px solid transparent;"></div>
+    <div class="adm-swatch" data-color="#ec4899" style="width:36px;height:36px;border-radius:8px;background:#ec4899;cursor:pointer;border:2px solid transparent;"></div>
+    <div class="adm-swatch" data-color="#f97316" style="width:36px;height:36px;border-radius:8px;background:#f97316;cursor:pointer;border:2px solid transparent;"></div>
+    <div class="adm-swatch" data-color="#14b8a6" style="width:36px;height:36px;border-radius:8px;background:#14b8a6;cursor:pointer;border:2px solid transparent;"></div>
+  </div>
+  <div style="font-size:.75rem;color:#64748b;margin-bottom:.4rem;">Custom hex</div>
+  <div style="display:flex;gap:.5rem;margin-bottom:1.5rem;">
+    <input type="color" id="adm-custom-color" value="#0ea5e9" style="width:42px;height:38px;border:none;border-radius:8px;cursor:pointer;padding:2px;background:transparent;">
+    <input type="text" id="adm-hex-input" value="#0ea5e9" maxlength="7" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;">
+    <button onclick="applyDemoColor(document.getElementById('adm-hex-input').value)" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:.78rem;font-weight:700;cursor:pointer;">Apply</button>
+  </div>
+  <div style="font-size:.75rem;color:#64748b;margin-bottom:.5rem;">Preview</div>
+  <div style="display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;">
+    <span id="adm-prev-btn" style="background:#0ea5e9;color:#fff;padding:.5rem 1.25rem;border-radius:8px;font-size:.82rem;font-weight:700;">Primary Button</span>
+    <span id="adm-prev-outline" style="border:2px solid #0ea5e9;color:#0ea5e9;padding:.5rem 1.25rem;border-radius:8px;font-size:.82rem;font-weight:700;">Outline</span>
+    <span id="adm-prev-link" style="color:#0ea5e9;font-weight:600;font-size:.85rem;">Link colour</span>
+    <div id="adm-prev-dot" style="width:28px;height:28px;border-radius:50%;background:#0ea5e9;"></div>
+  </div>
+</div>
 </div>
 
 </div><!-- /admShell -->
@@ -623,10 +650,47 @@ window.admNav=function(page,el){
     i.style.background='';i.style.color='#555';i.classList.remove('active-nav');
   });
   if(el){el.style.background='rgba(14,165,233,.12)';el.style.color='var(--ac)';el.classList.add('active-nav');}
-  var map={home:'/zenflow/home.html',classes:'/zenflow/classes.html',trainers:'/zenflow/trainers.html',pricing:'/zenflow/pricing.html',contact:'/zenflow/contact.html',colours:'/zenflow/colours.html',seo:'/zenflow/seo.html'};
   var iframe=document.getElementById('adm-iframe');
-  if(iframe&&map[page]){iframe.src=map[page];}
+  var colPanel=document.getElementById('adm-colour-panel');
+  if(page==='colours'){
+    if(colPanel)colPanel.style.display='block';
+  } else {
+    if(colPanel)colPanel.style.display='none';
+    var map={home:'/zenflow/home.html',classes:'/zenflow/classes.html',trainers:'/zenflow/trainers.html',pricing:'/zenflow/pricing.html',contact:'/zenflow/contact.html'};
+    if(iframe&&map[page])iframe.src=map[page];
+  }
 };
+
+window.applyDemoColor=function(hex){
+  hex=(hex||'').trim();
+  if(!/^#[0-9a-fA-F]{3,6}$/.test(hex))return;
+  document.querySelectorAll('.adm-swatch').forEach(function(s){
+    var active=s.getAttribute('data-color')===hex;
+    s.style.border=active?'2px solid #fff':'2px solid transparent';
+    s.style.boxShadow=active?'0 0 0 3px rgba(14,165,233,.5)':'none';
+  });
+  document.getElementById('adm-hex-input').value=hex;
+  document.getElementById('adm-custom-color').value=hex;
+  var pb=document.getElementById('adm-prev-btn');if(pb)pb.style.background=hex;
+  var po=document.getElementById('adm-prev-outline');if(po){po.style.borderColor=hex;po.style.color=hex;}
+  var pl=document.getElementById('adm-prev-link');if(pl)pl.style.color=hex;
+  var pd=document.getElementById('adm-prev-dot');if(pd)pd.style.background=hex;
+  var iframe=document.getElementById('adm-iframe');
+  try{
+    if(iframe&&iframe.contentDocument&&iframe.contentDocument.documentElement){
+      iframe.contentDocument.documentElement.style.setProperty('--ac',hex);
+      iframe.contentDocument.documentElement.style.setProperty('--ac-dk',hex);
+    }
+  }catch(e){}
+};
+
+document.addEventListener('click',function(e){
+  var sw=e.target.closest('.adm-swatch');
+  if(sw)applyDemoColor(sw.getAttribute('data-color'));
+});
+document.getElementById('adm-custom-color').addEventListener('input',function(){
+  applyDemoColor(this.value);
+});
 
 // Inject edit mode into iframe when it loads
 document.getElementById('adm-iframe').addEventListener('load', function() {
@@ -770,6 +834,8 @@ function zfInjectEditMode(doc) {
           };
           var dot = doc.getElementById('zf-focal-dot');
           if (dot) { dot.style.left = imgPendingPos.x + '%'; dot.style.top = imgPendingPos.y + '%'; }
+          var fi = doc.getElementById('zf-focal-img');
+          if (fi) fi.style.objectPosition = imgPendingPos.x + '% ' + imgPendingPos.y + '%';
         }
         wrap.addEventListener('mousedown', function(e) { focalDragging = true; setPos(e); e.preventDefault(); });
         wrap.addEventListener('mousemove', function(e) { if (focalDragging) setPos(e); });
@@ -784,6 +850,9 @@ function zfInjectEditMode(doc) {
         if (fi && zfTarget) {
           if (zfTarget.tagName === 'IMG') {
             fi.src = zfTarget.src;
+            var existing = zfTarget.style.objectPosition || '50% 50%';
+            var parts = existing.replace(/%/g,'').trim().split(/\s+/);
+            imgPendingPos = { x: parseFloat(parts[0])||50, y: parseFloat(parts[1]||parts[0])||50 };
           } else {
             var cs = doc.defaultView.getComputedStyle(zfTarget);
             var bg = cs.backgroundImage || '';
@@ -794,9 +863,9 @@ function zfInjectEditMode(doc) {
             fi.src = bgUrl || '';
           }
         }
-        imgPendingPos = { x: 50, y: 50 };
         var dot = doc.getElementById('zf-focal-dot');
-        if (dot) { dot.style.left = '50%'; dot.style.top = '50%'; }
+        if (dot) { dot.style.left = imgPendingPos.x + '%'; dot.style.top = imgPendingPos.y + '%'; }
+        if (fi) fi.style.objectPosition = imgPendingPos.x + '% ' + imgPendingPos.y + '%';
       }
 
       modal.querySelector('.zf-save-pos-btn').addEventListener('click', function() {

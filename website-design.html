@@ -1,166 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -363,12 +201,11 @@ nav{top:var(--bar-h)!important}
 <a class="btn btn-primary" href="contact.html">Include in your project ›</a>
 </div>
 <!-- INTERACTIVE ADMIN DEMO -->
-</div><!-- /left col -->
 <div>
 <!-- TRY IT LABEL -->
 <div style="display:flex;align-items:center;gap:1rem;margin-top:3rem;margin-bottom:.85rem;">
 <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Live demo — try it now</div>
-<span style="font-size:.8rem;color:#cbd5e1;">👆 Click any text below to edit it — try changing the heading, swap the colour, or explore the pages</span>
+<span style="font-size:.8rem;color:#cbd5e1;">👆 Try it — click any <strong>image</strong> to swap it, click any <strong>text</strong> to edit it live</span>
 </div>
 
 <!-- ADMIN SHELL -->
@@ -411,6 +248,7 @@ nav{top:var(--bar-h)!important}
 
 </div><!-- /admShell -->
 </div>
+</div><!-- /right col -->
 </div><!-- /grid -->
 
 <style>
@@ -506,28 +344,30 @@ document.getElementById('adm-iframe').addEventListener('load', function() {
     var doc = this.contentDocument;
     if (!doc || !doc.body) return;
 
-    // 1. Disable ALL links and buttons (no navigating away)
+    // 1. Base styles: disable links/forms, image overlays
     var style = doc.createElement('style');
     style.textContent = [
       'a[href]{pointer-events:none!important;cursor:default!important;}',
-      'button:not(.zenflow-book-btn){pointer-events:none!important;}',
+      'button:not(.zf-apply-btn):not(.zf-cancel-btn):not(.zf-preset-btn){pointer-events:none!important;}',
       'form{pointer-events:none!important;}',
-      '*:hover{outline:1px dashed rgba(14,165,233,.25)!important;}',
-      '*:focus{outline:2px solid rgba(14,165,233,.7)!important;}'
-    ].join('');
+      '*:hover{outline:1px dashed rgba(14,165,233,.18)!important;}',
+      '*:focus{outline:2px solid rgba(14,165,233,.7)!important;}',
+      '.zf-img-wrap{position:relative!important;display:inline-block!important;cursor:pointer!important;line-height:0!important;}',
+      '.zf-img-wrap>img{display:block!important;}',
+      '.zf-img-overlay{position:absolute!important;inset:0!important;background:rgba(0,0,0,0)!important;display:flex!important;align-items:center!important;justify-content:center!important;transition:background .22s!important;pointer-events:none!important;z-index:10!important;}',
+      '.zf-img-label{background:rgba(14,165,233,.95)!important;color:#fff!important;font-size:11px!important;font-weight:700!important;padding:5px 12px!important;border-radius:20px!important;opacity:0!important;transition:opacity .2s!important;font-family:sans-serif!important;white-space:nowrap!important;pointer-events:none!important;box-shadow:0 2px 8px rgba(0,0,0,.5)!important;}',
+      '.zf-img-wrap:hover .zf-img-overlay{background:rgba(0,0,0,.5)!important;}',
+      '.zf-img-wrap:hover .zf-img-label{opacity:1!important;}',
+      '.zf-hero-badge{position:absolute!important;top:14px!important;right:14px!important;background:rgba(14,165,233,.92)!important;color:#fff!important;font-size:11px!important;font-weight:700!important;padding:5px 13px!important;border-radius:20px!important;font-family:sans-serif!important;z-index:20!important;pointer-events:none!important;box-shadow:0 2px 8px rgba(0,0,0,.5)!important;}'
+    ].join('\n');
     doc.head.appendChild(style);
 
     // 2. Make key text elements editable
     var editSelectors = [
-      'h1','h2','h3','h4',
-      'p:not(nav p)',
-      'nav a',
-      '.btn','a.btn',
+      'h1','h2','h3','h4','p:not(nav p)',
+      'nav a','.btn','a.btn',
       '[class*="section-label"]',
-      'li',
-      'td','th',
-      'label',
-      'span:not(.tag)',
+      'li','td','th','label','span:not(.tag)',
       'div[style*="font-weight:800"]',
       'div[style*="font-weight:900"]',
       'div[style*="font-weight:700"]'
@@ -538,6 +378,94 @@ document.getElementById('adm-iframe').addEventListener('load', function() {
         el.style.cursor = 'text';
       }
     });
+
+    // 3. Inject image-picker modal
+    var modal = doc.createElement('div');
+    modal.id = 'zf-modal';
+    modal.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:99999;align-items:center;justify-content:center;font-family:sans-serif;';
+    modal.innerHTML = '<div style="background:#111827;border:1.5px solid #0ea5e9;border-radius:16px;padding:28px 24px;width:370px;max-width:92vw;">' +
+      '<div style="font-size:1rem;font-weight:700;color:#f1f5f9;margin-bottom:5px;">📷 Swap Image</div>' +
+      '<div style="font-size:.78rem;color:#94a3b8;margin-bottom:14px;">Paste any image URL, or pick a quick preset below:</div>' +
+      '<div id="zf-presets" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;"></div>' +
+      '<div style="display:flex;gap:8px;margin-bottom:12px;">' +
+        '<input id="zf-url-input" type="text" placeholder="https://images.unsplash.com/..." style="flex:1;background:#0d0d0d;border:1px solid #374151;border-radius:8px;padding:8px 10px;color:#e2e8f0;font-size:.82rem;outline:none;" />' +
+        '<button class="zf-apply-btn" style="background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px 18px;font-size:.82rem;font-weight:700;cursor:pointer;">Apply</button>' +
+      '</div>' +
+      '<button class="zf-cancel-btn" style="width:100%;background:transparent;border:1px solid #374151;border-radius:8px;padding:7px;color:#94a3b8;font-size:.8rem;cursor:pointer;">Cancel</button>' +
+    '</div>';
+    doc.body.appendChild(modal);
+
+    var zfTarget = null;
+    var presets = [
+      {label:'Gym',url:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&auto=format&fit=crop'},
+      {label:'Yoga',url:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&auto=format&fit=crop'},
+      {label:'HIIT',url:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&auto=format&fit=crop'},
+      {label:'Trainer',url:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&auto=format&fit=crop'},
+      {label:'Weights',url:'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&auto=format&fit=crop'},
+      {label:'Pool',url:'https://images.unsplash.com/photo-1560089000-7433a4ebbd64?w=900&auto=format&fit=crop'}
+    ];
+    var presetsDiv = doc.getElementById('zf-presets');
+    presets.forEach(function(p){
+      var btn = doc.createElement('button');
+      btn.className = 'zf-preset-btn';
+      btn.textContent = p.label;
+      btn.style.cssText = 'background:#0d0d0d;border:1px solid #0ea5e9;color:#38bdf8;border-radius:20px;padding:4px 12px;font-size:.74rem;cursor:pointer;';
+      btn.addEventListener('click',function(){doc.getElementById('zf-url-input').value=p.url;});
+      presetsDiv.appendChild(btn);
+    });
+
+    function openModal(target){zfTarget=target;doc.getElementById('zf-url-input').value='';modal.style.display='flex';}
+    function closeModal(){modal.style.display='none';}
+
+    modal.querySelector('.zf-apply-btn').addEventListener('click',function(){
+      var url=(doc.getElementById('zf-url-input').value||'').trim();
+      if(!url||!zfTarget) return;
+      if(zfTarget.tagName==='IMG'){zfTarget.src=url;}
+      else{zfTarget.style.backgroundImage='url('+url+')';}
+      closeModal();
+    });
+    modal.querySelector('.zf-cancel-btn').addEventListener('click',closeModal);
+    doc.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+    // 4. Wrap each img with hover overlay
+    doc.querySelectorAll('img').forEach(function(img){
+      if(img.closest('.zf-img-wrap')) return;
+      var wrap = doc.createElement('div');
+      wrap.className = 'zf-img-wrap';
+      var cs = doc.defaultView.getComputedStyle(img);
+      if(cs.width && cs.width!=='0px') wrap.style.width = cs.width;
+      if(cs.height && cs.height!=='0px') wrap.style.height = cs.height;
+      if(img.style.borderRadius) wrap.style.borderRadius = img.style.borderRadius;
+      img.parentNode.insertBefore(wrap, img);
+      wrap.appendChild(img);
+      var overlay = doc.createElement('div'); overlay.className = 'zf-img-overlay';
+      var lbl = doc.createElement('span'); lbl.className = 'zf-img-label';
+      lbl.textContent = '📷 Click to swap';
+      overlay.appendChild(lbl); wrap.appendChild(overlay);
+      wrap.style.pointerEvents = 'auto';
+      wrap.addEventListener('click', function(e){ e.stopPropagation(); openModal(img); });
+    });
+
+    // 5. Background-image sections get a badge + click handler
+    doc.querySelectorAll('[style*="background-image"]').forEach(function(el){
+      if(el.id==='zf-modal') return;
+      var cs2 = doc.defaultView.getComputedStyle(el);
+      if(cs2.position==='static') el.style.position='relative';
+      if(el.querySelector('.zf-hero-badge')) return;
+      var badge = doc.createElement('span');
+      badge.className = 'zf-hero-badge';
+      badge.textContent = '📷 Click background to swap';
+      el.appendChild(badge);
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function(e){
+        if(!e.target.closest('.zf-img-wrap') && e.target.tagName !== 'IMG'){
+          openModal(el);
+        }
+      });
+    });
+
+  } catch(e) { /* cross-origin or not ready */ }
+});
 
     // 3. Make hero background images replaceable — add click hint
     doc.querySelectorAll('section[style*="background-image"], [style*="background-image"]').forEach(function(el) {

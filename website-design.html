@@ -184,7 +184,7 @@ nav{top:var(--bar-h)!important}
 <!-- ═══ ADMIN PANEL SHOWCASE ═══ -->
 <section class="section" id="admin-panel">
 <div class="section-inner">
-<div style="display:grid;grid-template-columns:320px 1fr;gap:2.5rem;align-items:start;">
+<div id="admin-demo-wrap" style="display:grid;grid-template-columns:320px 1fr;gap:2.5rem;align-items:start;">
 <div class="reveal-left">
 <div class="section-tag">Admin Panel</div>
 <h2 class="section-title" style="margin-bottom:1.25rem;">You control the content.<br/>No developer needed.</h2>
@@ -285,7 +285,12 @@ nav{top:var(--bar-h)!important}
 .adm-page{animation:admFadeIn .22s ease;}
 .adm-nav-item.active-nav{color:var(--ac) !important;background:rgba(255,255,255,.04);border-left:2px solid var(--ac);padding-left:calc(1rem - 2px);}
 @keyframes admFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){#admShell{display:none;}#admin-demo-wrap>div:first-child{display:none;}}
+@media(max-width:768px){
+  #admShell{display:none;}
+  #admin-demo-wrap{grid-template-columns:1fr!important;}
+  #admin-demo-wrap>div:last-child{display:none;}
+  .section-title{font-size:clamp(1.6rem,6vw,2.2rem)!important;}
+}
 </style>
 
 <script>
@@ -373,6 +378,7 @@ window.admNav=function(page,el){
 window.applyDemoColor=function(hex){
   hex=(hex||'').trim();
   if(!/^#[0-9a-fA-F]{3,6}$/.test(hex))return;
+  window._zfDemoColor=hex;
   // Update swatches UI
   document.querySelectorAll('.adm-swatch').forEach(function(s){
     var active=s.getAttribute('data-color')===hex;
@@ -423,7 +429,8 @@ function zfInjectEditMode(doc) {
       'form{pointer-events:none!important;}',
       '*:not(#zf-badge):not(.zf-tab-btn):hover{outline:1px dashed rgba(14,165,233,.35)!important;}',
       '#zf-badge{position:fixed;top:0;left:50%;transform:translateX(-50%);background:rgba(14,165,233,.97);color:#fff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:5px 20px;border-radius:0 0 10px 10px;z-index:999999;pointer-events:none;font-family:system-ui,sans-serif;white-space:nowrap;}',
-      'img:not(#zf-focal-img):hover{cursor:pointer!important;outline:2px solid rgba(14,165,233,.7)!important;}'
+      'img:not(#zf-focal-img):hover{cursor:pointer!important;outline:2px solid rgba(14,165,233,.7)!important;}',
+      '[style*="background:linear-gradient"][style*="position:absolute"]{pointer-events:none!important;}'
     ].join('\n');
     doc.head.appendChild(style);
 
@@ -442,6 +449,12 @@ function zfInjectEditMode(doc) {
       badge.id = 'zf-badge';
       badge.textContent = '✏ EDIT MODE — click text to edit · click image to swap';
       doc.body.appendChild(badge);
+    }
+
+    // Apply stored accent colour (persists across page navigation)
+    if (window._zfDemoColor) {
+      doc.documentElement.style.setProperty('--ac', window._zfDemoColor);
+      doc.documentElement.style.setProperty('--ac-dk', window._zfDemoColor);
     }
 
     doc.designMode = 'on';

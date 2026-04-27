@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trainers — Zenflow Fitness Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#07070f;--surf:#0d0d1e;--card:#0f0f22;--ac:#0ea5e9;--ac-dk:#0284c7;--text:#e8e8f4;--muted:#8892a4;--border:rgba(255,255,255,.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.5rem;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;transition:all .2s;letter-spacing:.01em}
+.btn-primary{background:var(--ac);color:#fff}.btn-primary:hover{background:var(--ac-dk);transform:translateY(-1px);box-shadow:0 6px 20px rgba(14,165,233,.35)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.12)}.btn-ghost:hover{border-color:var(--ac);color:var(--ac)}
+.section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}
+.card:hover{transform:translateY(-5px);border-color:rgba(14,165,233,.25);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.tag{display:inline-block;padding:.22rem .65rem;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.section-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:.75rem}
+h2.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
+.sub{color:var(--muted);font-size:1rem;line-height:1.75;max-width:580px}
+img{display:block;max-width:100%;object-fit:cover}
+</style></head>
+<body>
+<nav style="background:rgba(7,7,15,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:.85rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;">
+  <a href="home.html" style="font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:#0ea5e9;letter-spacing:-.02em;">⚡ ZENFLOW</a>
+  <div style="display:flex;gap:1.75rem;align-items:center;">
+    <a href="home.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Home</a><a href="classes.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Classes</a><a href="trainers.html" style="color:#0ea5e9;font-size:.875rem;font-weight:600;">Trainers</a><a href="pricing.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Pricing</a><a href="contact.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Contact</a>
+    <a href="pricing.html" style="background:#0ea5e9;color:#fff;padding:.5rem 1.2rem;border-radius:8px;font-size:.83rem;font-weight:700;margin-left:.25rem;">Join Now →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section style="padding:5rem 2rem 4rem;text-align:center;background:linear-gradient(180deg,rgba(14,165,233,.07) 0%,transparent 100%);border-bottom:1px solid var(--border);">
+  <div class="section-label">8 Certified Professionals</div>
+  <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;margin-bottom:.85rem;">Meet Your Trainers</h1>
+  <p style="color:#8892a4;font-size:1.05rem;max-width:560px;margin:0 auto;line-height:1.75;">Every Zenflow trainer holds advanced certifications and brings years of real-world coaching experience. These aren't gym floor staff — they're experts who have dedicated their careers to transformation.</p>
+</section>
+
+<!-- TRAINERS -->
+<section class="section">
+  <div class="container" style="display:flex;flex-direction:column;gap:2rem;">
+
+    <div class="card" style="display:grid;grid-template-columns:280px 1fr;gap:0;overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80&auto=format" alt="Sofia Chen" style="width:100%;height:100%;object-fit:cover;min-height:280px;">
+      <div style="padding:2.25rem;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+          <div>
+            <h2 style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:.3rem;">Sofia Chen</h2>
+            <div style="color:#0ea5e9;font-weight:600;font-size:.9rem;">Head of Yoga & Mindfulness</div>
+          </div>
+          <div style="text-align:right;"><div style="color:#f59e0b;font-size:1rem;margin-bottom:.2rem;">★★★★★</div><div style="color:#8892a4;font-size:.78rem;">4.9 · 847 sessions</div></div>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem;">
+          <span class="tag" style="background:rgba(14,165,233,.12);color:#0ea5e9;border:1px solid rgba(14,165,233,.2);">RYT-500 Certified</span>
+          <span class="tag" style="background:rgba(255,255,255,.05);color:#8892a4;border:1px solid rgba(255,255,255,.1);">8 Years Experience</span>
+          <span class="tag" style="background:rgba(255,255,255,.05);color:#8892a4;border:1px solid rgba(255,255,255,.1);">Breathwork Specialist</span>
+          <span class="tag" style="background:rgba(255,255,255,.05);color:#8892a4;border:1px solid rgba(255,255,255,.1);">Meditation Coach</span>
+        </div>
+        <p style="color:#a0a8b8;font-size:.9rem;line-height:1.8;margin-bottom:1.5rem;">Sofia began her yoga journey in Bali after burning out from a decade in finance. She trained under master teachers in India before returning to NYC to teach. Her classes balance challenge with restoration — you'll sweat, breathe deeply, and leave calmer than you arrived.</p>
+        <div style="display:flex;gap:2rem;margin-bottom:1.5rem;">
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">847</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">SESSIONS</div></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">8yr</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">EXPERIENCE</div></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">4.9★</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">RATING</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book a Session with Sofia →</a>
+      </div>
+    </div>
+
+    <div class="card" style="display:grid;grid-template-columns:280px 1fr;gap:0;overflow:hidden;border-color:rgba(14,165,233,.3);">
+      <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80&auto=format" alt="Marcus Williams" style="width:100%;height:100%;object-fit:cover;min-height:280px;">
+      <div style="padding:2.25rem;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+          <div>
+            <h2 style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:.3rem;">Marcus Williams</h2>
+            <div style="color:#0ea5e9;font-weight:600;font-size:.9rem;">Head of Strength & Conditioning</div>
+          </div>
+          <div style="text-align:right;"><div style="color:#f59e0b;font-size:1rem;margin-bottom:.2rem;">★★★★★</div><div style="color:#8892a4;font-size:.78rem;">5.0 · 1,204 sessions</div></div>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem;">
+          <span class="tag" style="background:rgba(14,165,233,.12);color:#0ea5e9;border:1px solid rgba(14,165,233,.2);">NASM-CPT</span>
+          <span class="tag" style="background:rgba(14,165,233,.12);color:#0ea5e9;border:1px solid rgba(14,165,233,.2);">Olympic Athlete</span>
+          <span class="tag" style="background:rgba(255,255,255,.05);color:#8892a4;border:1px solid rgba(255,255,255,.1);">12 Years Coaching</span>
+          <span class="tag" style="background:rgba(255,255,255,.05);color:#8892a4;border:1px solid rgba(255,255,255,.1);">Sports Nutrition</span>
+        </div>
+        <p style="color:#a0a8b8;font-size:.9rem;line-height:1.8;margin-bottom:1.5rem;">Marcus competed as a decathlete in two national championships before turning to coaching. He built his methodology over 12 years working with professional athletes, weekend warriors, and everyone in between. His HIIT classes are famous for being the hardest — and most effective — in the city.</p>
+        <div style="display:flex;gap:2rem;margin-bottom:1.5rem;">
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">1,204</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">SESSIONS</div></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">12yr</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">EXPERIENCE</div></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">5.0★</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">RATING</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book a Session with Marcus →</a>
+      </div>
+    </div>
+
+    <div class="card" style="display:grid;grid-template-columns:280px 1fr;gap:0;overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80&auto=format" alt="Aria Martinez" style="width:100%;height:100%;object-fit:cover;min-height:280px;">
+      <div style="padding:2.25rem;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+          <div>
+            <h2 style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:900;margin-bottom:.3rem;">Aria Martinez</h2>
+            <div style="color:#0ea5e9;font-weight:600;font-size:.9rem;">Pilates & Rehabilitation Specialist</div>
+          </div>
+          <div style="text-align:right;"><div style="color:#f59e0b;font-size:1rem;margin-bottom:.2rem;">★★★★★</div><div style="color:#8892a4;font-size:.78rem;">4.8 · 962 sessions</div></div>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem;">
+          <span class="tag" style="background:rgba(14,165,233,.12);color:#0ea5e9;border:1px solid rgba(14,165,233,.2);">DPT Certified</span>
+          <span class="tag" style="background:rgba(14,165,233,.12);color:#0ea5e9;border:1px solid rgba(14,165,233,.2);">PMA-CPT</span>
+          <span class="tag" style="background:rgba(255,255,255,.05);color:#8892a4;border:1px solid rgba(255,255,255,.1);">Injury Rehab</span>
+          <span class="tag" style="background:rgba(255,255,255,.05);color:#8892a4;border:1px solid rgba(255,255,255,.1);">Movement Science</span>
+        </div>
+        <p style="color:#a0a8b8;font-size:.9rem;line-height:1.8;margin-bottom:1.5rem;">As a Doctor of Physical Therapy, Aria brings a clinical eye to every session. She specialises in working with clients recovering from injury, managing chronic pain, or simply wanting to move better. Her reformer pilates classes are sought after by professional dancers, post-surgical patients, and everyone in between.</p>
+        <div style="display:flex;gap:2rem;margin-bottom:1.5rem;">
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">962</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">SESSIONS</div></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">6yr</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">EXPERIENCE</div></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:800;font-family:'Montserrat',sans-serif;color:#e8e8f4;">4.8★</div><div style="font-size:.75rem;color:#8892a4;letter-spacing:.04em;">RATING</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book a Session with Aria →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JOIN THE TEAM -->
+<section class="section" style="background:var(--surf);border-top:1px solid var(--border);">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+    <div>
+      <div class="section-label">Careers</div>
+      <h2 class="section-title">Join Our Team</h2>
+      <p style="color:#8892a4;line-height:1.8;margin-bottom:1.5rem;">We're always looking for exceptional coaches who share our commitment to transformation. If you hold advanced certifications and believe fitness is about more than just reps — we'd love to meet you.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem;">
+        <li style="display:flex;align-items:center;gap:.6rem;color:#a0a8b8;font-size:.9rem;"><span style="color:#0ea5e9;font-size:.9rem;">✓</span> Competitive salary + performance bonuses</li>
+        <li style="display:flex;align-items:center;gap:.6rem;color:#a0a8b8;font-size:.9rem;"><span style="color:#0ea5e9;font-size:.9rem;">✓</span> Continuing education reimbursement</li>
+        <li style="display:flex;align-items:center;gap:.6rem;color:#a0a8b8;font-size:.9rem;"><span style="color:#0ea5e9;font-size:.9rem;">✓</span> Free unlimited membership for you + a guest</li>
+        <li style="display:flex;align-items:center;gap:.6rem;color:#a0a8b8;font-size:.9rem;"><span style="color:#0ea5e9;font-size:.9rem;">✓</span> Flexible scheduling around your specialty</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Submit Your Application →</a>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2.5rem;">
+      <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;margin-bottom:1.5rem;font-size:1.1rem;">We're Currently Hiring</h3>
+      <div style="display:flex;flex-direction:column;gap:.75rem;">
+        <div style="background:var(--surf);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:.9rem;font-weight:600;">Senior Yoga Instructor</span><span style="background:rgba(40,200,80,.12);color:#4ade80;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;">OPEN</span></div>
+        <div style="background:var(--surf);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:.9rem;font-weight:600;">HIIT / Functional Trainer</span><span style="background:rgba(40,200,80,.12);color:#4ade80;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;">OPEN</span></div>
+        <div style="background:var(--surf);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:.9rem;font-weight:600;">Cycling Coach (Part-time)</span><span style="background:rgba(255,165,0,.12);color:#fb923c;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:4px;">FILLING</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#050510;border-top:1px solid rgba(255,255,255,.07);padding:4rem 2rem 2rem;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07);">
+    <div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:900;color:#0ea5e9;margin-bottom:.9rem;">⚡ ZENFLOW</div>
+      <p style="color:#8892a4;font-size:.85rem;line-height:1.8;max-width:280px;margin-bottom:1.25rem;">Premium fitness studio dedicated to transforming lives through expert coaching, community, and science-backed programming.</p>
+      <div style="display:flex;gap:.6rem;">
+        <a href="#" style="background:rgba(255,255,255,.05);color:#8892a4;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;border:1px solid rgba(255,255,255,.07);">𝕏</a>
+        <a href="#" style="background:rgba(255,255,255,.05);color:#8892a4;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;border:1px solid rgba(255,255,255,.07);">📸</a>
+        <a href="#" style="background:rgba(255,255,255,.05);color:#8892a4;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;border:1px solid rgba(255,255,255,.07);">▶</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700;margin-bottom:.9rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#e8e8f4;">Studio</div>
+      <div style="display:flex;flex-direction:column;gap:.55rem;">
+        <a href="home.html" style="color:#8892a4;font-size:.85rem;transition:color .15s">Home</a>
+        <a href="classes.html" style="color:#8892a4;font-size:.85rem;">Classes</a>
+        <a href="trainers.html" style="color:#8892a4;font-size:.85rem;">Trainers</a>
+        <a href="pricing.html" style="color:#8892a4;font-size:.85rem;">Pricing</a>
+        <a href="contact.html" style="color:#8892a4;font-size:.85rem;">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700;margin-bottom:.9rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#e8e8f4;">Hours</div>
+      <div style="color:#8892a4;font-size:.84rem;line-height:2;">
+        <div>Mon–Fri &nbsp;<span style="color:#e8e8f4;">5:30am–10pm</span></div>
+        <div>Saturday &nbsp;<span style="color:#e8e8f4;">7am–8pm</span></div>
+        <div>Sunday &nbsp;<span style="color:#e8e8f4;">8am–6pm</span></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700;margin-bottom:.9rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#e8e8f4;">Contact</div>
+      <div style="display:flex;flex-direction:column;gap:.8rem;color:#8892a4;font-size:.84rem;">
+        <div>📍 241 Fitness Avenue<br><span style="color:#e8e8f4;">New York, NY 10001</span></div>
+        <div>📞 <a href="tel:+12125550198" style="color:#0ea5e9;">(212) 555-0198</a></div>
+        <div>✉️ <a href="mailto:hello@zenflow.studio" style="color:#0ea5e9;">hello@zenflow.studio</a></div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;align-items:center;">
+    <span style="color:#8892a4;font-size:.8rem;">© 2026 Zenflow Fitness Studio. All rights reserved.</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="#" style="color:#8892a4;font-size:.8rem;">Privacy Policy</a>
+      <a href="#" style="color:#8892a4;font-size:.8rem;">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+</body></html>

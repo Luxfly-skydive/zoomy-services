@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pricing — Zenflow Fitness Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#07070f;--surf:#0d0d1e;--card:#0f0f22;--ac:#0ea5e9;--ac-dk:#0284c7;--text:#e8e8f4;--muted:#8892a4;--border:rgba(255,255,255,.07)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.5rem;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;transition:all .2s;letter-spacing:.01em}
+.btn-primary{background:var(--ac);color:#fff}.btn-primary:hover{background:var(--ac-dk);transform:translateY(-1px);box-shadow:0 6px 20px rgba(14,165,233,.35)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.12)}.btn-ghost:hover{border-color:var(--ac);color:var(--ac)}
+.section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}
+.card:hover{transform:translateY(-5px);border-color:rgba(14,165,233,.25);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.tag{display:inline-block;padding:.22rem .65rem;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.section-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:.75rem}
+h2.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
+.sub{color:var(--muted);font-size:1rem;line-height:1.75;max-width:580px}
+img{display:block;max-width:100%;object-fit:cover}
+</style></head>
+<body>
+<nav style="background:rgba(7,7,15,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:.85rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;">
+  <a href="home.html" style="font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:#0ea5e9;letter-spacing:-.02em;">⚡ ZENFLOW</a>
+  <div style="display:flex;gap:1.75rem;align-items:center;">
+    <a href="home.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Home</a><a href="classes.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Classes</a><a href="trainers.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Trainers</a><a href="pricing.html" style="color:#0ea5e9;font-size:.875rem;font-weight:600;">Pricing</a><a href="contact.html" style="color:#8892a4;font-size:.875rem;font-weight:400;">Contact</a>
+    <a href="pricing.html" style="background:#0ea5e9;color:#fff;padding:.5rem 1.2rem;border-radius:8px;font-size:.83rem;font-weight:700;margin-left:.25rem;">Join Now →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section style="padding:5rem 2rem 4rem;text-align:center;background:linear-gradient(180deg,rgba(14,165,233,.07) 0%,transparent 100%);border-bottom:1px solid var(--border);">
+  <div class="section-label">Simple & Transparent</div>
+  <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;margin-bottom:.85rem;">Invest in Yourself</h1>
+  <p style="color:#8892a4;font-size:1.05rem;max-width:520px;margin:0 auto 1.5rem;line-height:1.75;">No hidden fees. No confusing tiers. Just straightforward access to world-class fitness.</p>
+  <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(40,200,80,.1);border:1px solid rgba(40,200,80,.2);color:#4ade80;padding:.45rem 1rem;border-radius:20px;font-size:.83rem;font-weight:700;">
+    ✓ First week free — no credit card required
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="section">
+  <div class="container">
+    <div class="grid-3" style="gap:1.5rem;align-items:start;">
+
+      <!-- DROP IN -->
+      <div class="card" style="padding:2rem;">
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8892a4;margin-bottom:.5rem;">Drop-In</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:2.75rem;font-weight:900;line-height:1;margin-bottom:.35rem;">$22<span style="font-size:1rem;font-weight:500;color:#8892a4;">/class</span></div>
+          <div style="color:#8892a4;font-size:.85rem;line-height:1.6;">Pay per class. No commitment. Perfect for trying us out.</div>
+        </div>
+        <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center;margin-bottom:1.5rem;">Get Started</a>
+        <div style="display:flex;flex-direction:column;gap:.65rem;">
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> Access to all class types</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> Book up to 48 hours in advance</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> Studio equipment included</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#8892a4;opacity:.45;"><span>✗</span> Member app access</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#8892a4;opacity:.45;"><span>✗</span> Guest passes</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#8892a4;opacity:.45;"><span>✗</span> Priority booking</div>
+        </div>
+      </div>
+
+      <!-- MONTHLY -->
+      <div class="card" style="padding:2rem;border-color:#0ea5e9;position:relative;background:linear-gradient(160deg,rgba(14,165,233,.06) 0%,var(--card) 100%);">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#0ea5e9;color:#fff;font-size:.72rem;font-weight:800;padding:.3rem 1.1rem;border-radius:20px;letter-spacing:.06em;white-space:nowrap;">⭐ BEST VALUE</div>
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0ea5e9;margin-bottom:.5rem;">Monthly Unlimited</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:2.75rem;font-weight:900;line-height:1;margin-bottom:.35rem;color:#0ea5e9;">$89<span style="font-size:1rem;font-weight:500;color:#8892a4;">/month</span></div>
+          <div style="color:#8892a4;font-size:.85rem;line-height:1.6;">Unlimited classes. Cancel anytime. Most popular for regulars.</div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:1.5rem;">Start Free Trial →</a>
+        <div style="display:flex;flex-direction:column;gap:.65rem;">
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> Unlimited classes every month</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> Book up to 7 days in advance</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> Full member app access</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> 2 guest passes per month</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#0ea5e9;">✓</span> Priority waitlist access</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#8892a4;opacity:.45;"><span>✗</span> Personal training discount</div>
+        </div>
+      </div>
+
+      <!-- ANNUAL -->
+      <div class="card" style="padding:2rem;">
+        <div style="margin-bottom:1.5rem;">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4ade80;margin-bottom:.5rem;">Annual — Save 23%</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:2.75rem;font-weight:900;line-height:1;margin-bottom:.35rem;">$69<span style="font-size:1rem;font-weight:500;color:#8892a4;">/month</span></div>
+          <div style="color:#8892a4;font-size:.85rem;line-height:1.6;">Billed $828/year. Save $240 vs. monthly. Our most committed members.</div>
+        </div>
+        <a href="contact.html" class="btn btn-ghost" style="width:100%;justify-content:center;margin-bottom:1.5rem;">Start Free Trial →</a>
+        <div style="display:flex;flex-direction:column;gap:.65rem;">
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#4ade80;">✓</span> Everything in Monthly</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#4ade80;">✓</span> 4 guest passes per month</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#4ade80;">✓</span> 20% off personal training</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#4ade80;">✓</span> VIP early booking (14 days out)</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#4ade80;">✓</span> Free nutrition consultation</div>
+          <div style="display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#a0a8b8;"><span style="color:#4ade80;">✓</span> Annual body composition scan</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div style="margin-top:3rem;background:linear-gradient(135deg,rgba(40,200,80,.08) 0%,rgba(14,165,233,.08) 100%);border:1px solid rgba(40,200,80,.2);border-radius:16px;padding:2rem;display:flex;align-items:center;gap:2rem;">
+      <div style="font-size:3rem;flex-shrink:0;">🛡️</div>
+      <div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:.5rem;">30-Day Money-Back Guarantee</h3>
+        <p style="color:#8892a4;font-size:.9rem;line-height:1.7;">Not completely satisfied after 30 days? We'll refund your membership — no questions asked. We're that confident you'll love it here.</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top:4rem;">
+      <h3 style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.5rem;text-align:center;margin-bottom:2rem;">Frequently Asked Questions</h3>
+      <div style="display:flex;flex-direction:column;gap:.75rem;max-width:760px;margin:0 auto;">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:#e8e8f4;">Can I cancel my monthly membership anytime?</div><div style="color:#8892a4;font-size:.87rem;line-height:1.7;">Yes — cancel any time with no fees. Your membership stays active until the end of your billing period.</div></div><div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:#e8e8f4;">Is the free trial really no credit card required?</div><div style="color:#8892a4;font-size:.87rem;line-height:1.7;">Absolutely. Sign up, attend for 7 days, then decide. We'll ask for payment details only when you choose to continue.</div></div><div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:#e8e8f4;">Can I freeze my membership if I travel?</div><div style="color:#8892a4;font-size:.87rem;line-height:1.7;">Monthly and Annual members can freeze their membership for up to 60 days per year for no charge.</div></div><div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:#e8e8f4;">Are towels and lockers included?</div><div style="color:#8892a4;font-size:.87rem;line-height:1.7;">Yes — towel service and full locker room with showers are included with all memberships. Drop-in visitors can rent a locker for $2.</div></div><div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:#e8e8f4;">How do I book classes?</div><div style="color:#8892a4;font-size:.87rem;line-height:1.7;">Download the Zenflow app or use the website. Monthly+ members can book 7 days in advance; drop-ins can book 48 hours ahead.</div></div><div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:#e8e8f4;">What if a class is full?</div><div style="color:#8892a4;font-size:.87rem;line-height:1.7;">Join the waitlist in the app. You'll be automatically added if a spot opens — usually it does.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#050510;border-top:1px solid rgba(255,255,255,.07);padding:4rem 2rem 2rem;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07);">
+    <div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:900;color:#0ea5e9;margin-bottom:.9rem;">⚡ ZENFLOW</div>
+      <p style="color:#8892a4;font-size:.85rem;line-height:1.8;max-width:280px;margin-bottom:1.25rem;">Premium fitness studio dedicated to transforming lives through expert coaching, community, and science-backed programming.</p>
+      <div style="display:flex;gap:.6rem;">
+        <a href="#" style="background:rgba(255,255,255,.05);color:#8892a4;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;border:1px solid rgba(255,255,255,.07);">𝕏</a>
+        <a href="#" style="background:rgba(255,255,255,.05);color:#8892a4;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;border:1px solid rgba(255,255,255,.07);">📸</a>
+        <a href="#" style="background:rgba(255,255,255,.05);color:#8892a4;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;border:1px solid rgba(255,255,255,.07);">▶</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700;margin-bottom:.9rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#e8e8f4;">Studio</div>
+      <div style="display:flex;flex-direction:column;gap:.55rem;">
+        <a href="home.html" style="color:#8892a4;font-size:.85rem;transition:color .15s">Home</a>
+        <a href="classes.html" style="color:#8892a4;font-size:.85rem;">Classes</a>
+        <a href="trainers.html" style="color:#8892a4;font-size:.85rem;">Trainers</a>
+        <a href="pricing.html" style="color:#8892a4;font-size:.85rem;">Pricing</a>
+        <a href="contact.html" style="color:#8892a4;font-size:.85rem;">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700;margin-bottom:.9rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#e8e8f4;">Hours</div>
+      <div style="color:#8892a4;font-size:.84rem;line-height:2;">
+        <div>Mon–Fri &nbsp;<span style="color:#e8e8f4;">5:30am–10pm</span></div>
+        <div>Saturday &nbsp;<span style="color:#e8e8f4;">7am–8pm</span></div>
+        <div>Sunday &nbsp;<span style="color:#e8e8f4;">8am–6pm</span></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700;margin-bottom:.9rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#e8e8f4;">Contact</div>
+      <div style="display:flex;flex-direction:column;gap:.8rem;color:#8892a4;font-size:.84rem;">
+        <div>📍 241 Fitness Avenue<br><span style="color:#e8e8f4;">New York, NY 10001</span></div>
+        <div>📞 <a href="tel:+12125550198" style="color:#0ea5e9;">(212) 555-0198</a></div>
+        <div>✉️ <a href="mailto:hello@zenflow.studio" style="color:#0ea5e9;">hello@zenflow.studio</a></div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:1.5rem auto 0;display:flex;justify-content:space-between;align-items:center;">
+    <span style="color:#8892a4;font-size:.8rem;">© 2026 Zenflow Fitness Studio. All rights reserved.</span>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="#" style="color:#8892a4;font-size:.8rem;">Privacy Policy</a>
+      <a href="#" style="color:#8892a4;font-size:.8rem;">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+</body></html>

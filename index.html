@@ -623,7 +623,7 @@ window.admNav=function(page,el){
     i.style.background='';i.style.color='#555';i.classList.remove('active-nav');
   });
   if(el){el.style.background='rgba(14,165,233,.12)';el.style.color='var(--ac)';el.classList.add('active-nav');}
-  var map={home:'/zenflow/home.html',classes:'/zenflow/classes.html',trainers:'/zenflow/trainers.html',pricing:'/zenflow/pricing.html',contact:'/zenflow/contact.html'};
+  var map={home:'/zenflow/home.html',classes:'/zenflow/classes.html',trainers:'/zenflow/trainers.html',pricing:'/zenflow/pricing.html',contact:'/zenflow/contact.html',colours:'/zenflow/colours.html',seo:'/zenflow/seo.html'};
   var iframe=document.getElementById('adm-iframe');
   if(iframe&&map[page]){iframe.src=map[page];}
 };
@@ -644,18 +644,16 @@ function zfInjectEditMode(doc) {
       'a[href]{pointer-events:none!important;cursor:text!important;}',
       'button:not(.zf-cam):not(.zf-apply-btn):not(.zf-cancel-btn):not(.zf-save-pos-btn):not(.zf-tab-btn){pointer-events:none!important;}',
       'form{pointer-events:none!important;}',
-      '*:not(#zf-badge):not(.zf-cam):not(.zf-tab-btn):hover{outline:1px dashed rgba(14,165,233,.35)!important;}',
+      '*:not(#zf-badge):not(.zf-tab-btn):hover{outline:1px dashed rgba(14,165,233,.35)!important;}',
       '#zf-badge{position:fixed;top:0;left:50%;transform:translateX(-50%);background:rgba(14,165,233,.97);color:#fff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:5px 20px;border-radius:0 0 10px 10px;z-index:999999;pointer-events:none;font-family:system-ui,sans-serif;white-space:nowrap;}',
-      '.zf-cam{position:absolute;z-index:99998;background:rgba(14,165,233,.88);color:#fff;font-size:11px;font-weight:700;padding:5px 10px;border-radius:12px;cursor:pointer;pointer-events:auto!important;font-family:sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.5);white-space:nowrap;border:none;}',
-      '.zf-cam:hover{background:rgba(14,165,233,1)!important;}',
-      '.zf-img-ov{position:absolute;z-index:99997;pointer-events:none;box-sizing:border-box;}'
+      'img:not(#zf-focal-img):hover{cursor:pointer!important;outline:2px solid rgba(14,165,233,.7)!important;}'
     ].join('\n');
     doc.head.appendChild(style);
 
     // Force desktop layout inside iframe
     var vp = doc.querySelector('meta[name=viewport]');
     if (!vp) { vp = doc.createElement('meta'); vp.name = 'viewport'; doc.head.appendChild(vp); }
-    vp.content = 'width=960';
+    vp.content = 'width=800';
 
     // Ensure object-fit on all images so objectPosition works
     doc.querySelectorAll('img').forEach(function(img) {
@@ -665,7 +663,7 @@ function zfInjectEditMode(doc) {
     if (!doc.getElementById('zf-badge')) {
       var badge = doc.createElement('div');
       badge.id = 'zf-badge';
-      badge.textContent = '✏ EDIT MODE — click any text to edit · 📷 to swap images';
+      badge.textContent = '✏ EDIT MODE — click text to edit · click image to swap';
       doc.body.appendChild(badge);
     }
 
@@ -751,7 +749,6 @@ function zfInjectEditMode(doc) {
         else zfTarget.style.backgroundImage = 'url(' + src + ')';
         doc.designMode = 'on';
         closeModal();
-        zfInjectImgOverlays(doc, openModal);
       }
 
       modal.querySelector('.zf-apply-btn').addEventListener('click', function() {
@@ -827,53 +824,15 @@ function zfInjectEditMode(doc) {
       modal.querySelector('.zf-cancel-btn').addEventListener('click', closeModal);
       doc.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
-      zfInjectImgOverlays(doc, openModal);
+      // Click any image to open swap modal
+      doc.addEventListener('mousedown', function(e) {
+        if (e.target.tagName === 'IMG' && e.target.id !== 'zf-focal-img') {
+          e.preventDefault(); e.stopPropagation();
+          openModal(e.target);
+        }
+      }, true);
     }
   } catch(e) {}
-}
-
-function zfInjectImgOverlays(doc, openModal) {
-  doc.querySelectorAll('.zf-img-ov,.zf-cam').forEach(function(e) { e.remove(); });
-
-  doc.querySelectorAll('img').forEach(function(img) {
-    if (!img.offsetWidth && !img.offsetHeight) return;
-    var top = 0, left = 0, node = img;
-    do { top += node.offsetTop || 0; left += node.offsetLeft || 0; node = node.offsetParent; }
-    while (node && node !== doc.body);
-    // Transparent overlay (pointer-events:none — text above image stays editable)
-    var ov = doc.createElement('div');
-    ov.className = 'zf-img-ov';
-    ov.style.cssText = 'position:absolute;z-index:99997;pointer-events:none;top:'+top+'px;left:'+left+'px;width:'+img.offsetWidth+'px;height:'+img.offsetHeight+'px;';
-    doc.body.appendChild(ov);
-    // Camera badge pinned bottom-right of image
-    var cam = doc.createElement('div');
-    cam.className = 'zf-cam';
-    cam.textContent = '📷 Swap';
-    var camTop = top + img.offsetHeight - 34;
-    var camLeft = left + img.offsetWidth - 80;
-    cam.style.cssText = 'position:absolute;z-index:99998;top:'+camTop+'px;left:'+camLeft+'px;background:rgba(14,165,233,.88);color:#fff;font-size:11px;font-weight:700;padding:5px 10px;border-radius:12px;cursor:pointer;pointer-events:auto;font-family:sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.5);white-space:nowrap;';
-    cam.addEventListener('mouseenter', function() { cam.style.background='rgba(14,165,233,1)'; });
-    cam.addEventListener('mouseleave', function() { cam.style.background='rgba(14,165,233,.88)'; });
-    cam.addEventListener('mousedown', function(e) { e.preventDefault(); e.stopPropagation(); openModal(img); }, true);
-    doc.body.appendChild(cam);
-  });
-
-  // Background-image sections
-  doc.querySelectorAll('[style*="background-image"]').forEach(function(el) {
-    if (el.id === 'zf-modal') return;
-    var cs = doc.defaultView.getComputedStyle(el);
-    if (cs.position === 'static') el.style.position = 'relative';
-    if (el.querySelector('.zf-bg-badge')) return;
-    var b2 = doc.createElement('div');
-    b2.className = 'zf-bg-badge';
-    b2.style.cssText = 'position:absolute;top:12px;right:12px;background:rgba(14,165,233,.92);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;z-index:100;pointer-events:none;font-family:sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.5);white-space:nowrap;';
-    b2.textContent = '📷 Click background to swap';
-    el.appendChild(b2);
-    el.style.cursor = 'pointer';
-    el.addEventListener('click', function(e) {
-      if (e.target === el || e.target === b2) openModal(el);
-    });
-  });
 }
 
 // Set src AFTER listener attached — avoids race condition

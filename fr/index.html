@@ -71,8 +71,6 @@
 .sections-reorder{display:flex;flex-direction:column}
 @media(max-width:900px){
 .sections-reorder{display:flex;flex-direction:column}
-#phone-agent-section{order:2}
-#our-services{order:1}
 .svc-row{grid-template-columns:1fr;gap:1.25rem}
 .svc-left{position:static}
 .steps-flow{grid-template-columns:repeat(2,1fr);gap:1.5rem}
@@ -563,7 +561,14 @@ Essayez la démo en direct
 .adm-page{animation:admFadeIn .22s ease;}
 .adm-nav-item.active-nav{color:var(--ac) !important;background:rgba(255,255,255,.04);border-left:2px solid var(--ac);padding-left:calc(1rem - 2px);}
 @keyframes admFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){#admShell{display:none;}#admin-demo-wrap>div:first-child{display:none;}}
+@media(max-width:768px){
+  #admShell .adm-canvas{height:380px;}
+  #admShell>div:last-child{flex-direction:column;}
+  #admShell>div:last-child>div:first-child{width:100%;flex-direction:row;overflow-x:auto;padding:.4rem 0;border-right:none;border-bottom:1px solid #1a1a1a;flex-shrink:0;}
+  #admShell>div:last-child>div:first-child .adm-nav-item{white-space:nowrap;padding:.35rem .8rem;font-size:.68rem;}
+  #admShell>div:last-child>div:first-child [style*="font-size:.5rem"]{display:none;}
+  #admShell>div:last-child>div:first-child [style*="border-top"]{display:none;}
+}
 </style>
 <script>
 (function(){

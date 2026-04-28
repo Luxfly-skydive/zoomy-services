@@ -1627,3 +1627,187 @@ html[data-theme="light"] .hs-chat-avatar{width:20px; height:20px}
   html[data-theme="light"] .hero{padding:6rem 1.5rem 4rem!important;min-height:auto!important}
   html[data-theme="light"] .hero h1{font-size:clamp(2.2rem, 7vw, 3.4rem)!important}
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO v11 — combined mockup BELOW centered text, hero taller
+   Wins over v10 peripheral positioning via cascade order + !important.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Hero — taller, vertical flow: text first, mockup feature below */
+html[data-theme="light"] .hero{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  text-align:center!important;
+  padding:clamp(6rem, 10vh, 8.5rem) 2rem 4rem!important;
+  min-height:clamp(820px, 105vh, 1000px)!important;
+  position:relative;
+  overflow:hidden;
+}
+
+html[data-theme="light"] .hero .section-inner{
+  width:100%!important;
+  max-width:900px!important;
+  margin:0 auto!important;
+  padding-left:1.5rem!important;
+  padding-right:1.5rem!important;
+  text-align:center!important;
+  position:relative;
+  z-index:2;
+}
+
+html[data-theme="light"] .hero h1{
+  text-align:center!important;
+  max-width:none!important;
+  font-size:clamp(2.6rem, 6.4vw, 5.6rem)!important;
+  line-height:1.04!important;
+  margin:0 auto 1.5rem!important;
+}
+html[data-theme="light"] .hero-sub{
+  text-align:center!important;
+  margin:0 auto 2rem!important;
+  max-width:600px!important;
+}
+html[data-theme="light"] .hero .badge,
+html[data-theme="light"] .hero .badge-primary{margin:0 auto 1.5rem!important}
+html[data-theme="light"] .hero-actions{
+  justify-content:center!important;
+  max-width:none;
+  margin:0 auto 1.75rem!important;
+}
+html[data-theme="light"] .hero .section-inner > div:last-of-type{
+  justify-content:center!important;
+  max-width:none!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:.7rem 1.6rem!important;
+}
+
+/* MOCKUP STAGE — flow normally, margin auto, BELOW text content */
+html[data-theme="light"] .hero-stage{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  margin:clamp(2.5rem, 6vh, 5rem) auto 0!important;
+  width:min(720px, 88vw)!important;
+  height:clamp(360px, 42vh, 440px)!important;
+  pointer-events:none;
+  z-index:1;
+  display:block!important;
+  opacity:1!important;
+}
+
+/* Three pieces CLUSTERED again (browser back, chat front-left, phone top-right).
+   Override the v10 corner-positioning. */
+html[data-theme="light"] .hs-browser{
+  position:absolute!important;
+  top:0!important;
+  left:8%!important;
+  right:auto!important;
+  width:80%!important;
+  height:84%!important;
+  max-height:none!important;
+  z-index:1;
+  transform:rotate(-3deg);
+  animation:hs-float-1 8s ease-in-out infinite;
+}
+html[data-theme="light"] .hs-chat{
+  position:absolute!important;
+  bottom:-2%!important;
+  left:0!important;
+  top:auto!important;
+  right:auto!important;
+  width:54%!important;
+  z-index:3;
+  transform:rotate(2.5deg);
+  animation:hs-float-2 9s ease-in-out infinite;
+  animation-delay:.4s;
+}
+html[data-theme="light"] .hs-phone{
+  position:absolute!important;
+  top:14%!important;
+  right:-3%!important;
+  left:auto!important;
+  bottom:auto!important;
+  z-index:4;
+  animation:hs-float-3 7s ease-in-out infinite;
+  animation-delay:.7s;
+}
+html[data-theme="light"] .hs-phone-card{
+  transform:rotate(4deg);
+  padding:14px 16px;
+}
+html[data-theme="light"] .hs-phone-icon{width:38px; height:38px}
+html[data-theme="light"] .hs-phone-icon svg{width:22px; height:22px}
+html[data-theme="light"] .hs-phone-num{font-size:13px}
+html[data-theme="light"] .hs-phone-label{font-size:9px}
+
+/* Restore browser content sizing (was shrunk for corner placement in v10) */
+html[data-theme="light"] .hs-browser-bar{padding:10px 14px}
+html[data-theme="light"] .hs-browser-content{padding:24px 22px 18px; gap:12px}
+html[data-theme="light"] .hs-h{height:18px}
+html[data-theme="light"] .hs-p{height:8px}
+html[data-theme="light"] .hs-cta{height:30px; width:160px}
+html[data-theme="light"] .hs-card-img{height:48px}
+html[data-theme="light"] .hs-card-line{height:6px}
+
+/* Chat bubble sizing back to v6 */
+html[data-theme="light"] .hs-chat-bubble{font-size:12px; padding:7px 12px}
+html[data-theme="light"] .hs-chat-avatar{width:24px; height:24px}
+
+/* Mobile (<1024px) — hide entire mockup, recenter hero, drop min-height */
+@media(max-width:1023px){
+  html[data-theme="light"] .hero-stage{display:none!important}
+  html[data-theme="light"] .hero{
+    padding:6rem 1.5rem 4rem!important;
+    min-height:auto!important;
+  }
+  html[data-theme="light"] .hero h1{
+    font-size:clamp(2.2rem, 7vw, 3.4rem)!important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   PRICING — fix the green see-through boxes (.guarantee + .g-chip)
+   They used rgba(16,185,129,...) which renders too vibrant on cream.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Guarantee section — was a vibrant green/cyan gradient see-through band */
+html[data-theme="light"] .guarantee{
+  background:var(--bg-2)!important;
+  background-image:none!important;
+  border-top:1px solid var(--border)!important;
+  border-bottom:1px solid var(--border)!important;
+}
+html[data-theme="light"] .g-icon{filter:none}
+html[data-theme="light"] .g-title{color:var(--text)!important}
+html[data-theme="light"] .g-text{color:var(--text-2)!important}
+html[data-theme="light"] .g-chips{flex-wrap:wrap}
+html[data-theme="light"] .g-chip{
+  background:rgba(31,92,63,.08)!important;
+  border:1px solid rgba(31,92,63,.30)!important;
+  color:#1F5C3F!important;
+}
+
+/* Catch any other green see-through boxes on pricing page */
+html[data-theme="light"] [style*="background:rgba(16,185,129"]{
+  background:rgba(31,92,63,.08)!important;
+  border-color:rgba(31,92,63,.30)!important;
+  color:#1F5C3F!important;
+}
+html[data-theme="light"] [style*="color:#34d399"],
+html[data-theme="light"] [style*="color:#6ee7b7"],
+html[data-theme="light"] [style*="color:#10b981"]{color:#1F5C3F!important}
+
+/* Cyan-tinted info notes (.usage-note used rgba(6,182,212,...)) */
+html[data-theme="light"] .usage-note{
+  background:var(--bg-2)!important;
+  border:1px solid var(--border)!important;
+  color:var(--text-2)!important;
+}
+html[data-theme="light"] .un-icon{color:var(--primary)!important}

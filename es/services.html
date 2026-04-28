@@ -108,8 +108,17 @@ nav{top:var(--bar-h)!important}
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '972114368527990');
-    fbq('track', 'PageView');
+    (function(){
+    var _ud={};
+    var _fbc=document.cookie.match(/_fbc=([^;]+)/);
+    var _fbp=document.cookie.match(/_fbp=([^;]+)/);
+    try{var _p=new URLSearchParams(window.location.search);var _cl=_p.get('fbclid');
+    if(_cl&&!_fbc){var _fc='fb.1.'+Date.now()+'.'+_cl;document.cookie='_fbc='+_fc+';path=/;max-age=7776000;SameSite=Lax';_ud.fbc=_fc;}
+    else if(_fbc){_ud.fbc=_fbc[1];}
+    if(_fbp){_ud.fbp=_fbp[1];}}catch(e){}
+    fbq('init','972114368527990',_ud);
+    fbq('track','PageView');
+  })();
     fbq('track', 'ViewContent', {content_name: document.title});
   </script>
 <noscript><img height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
@@ -130,7 +139,7 @@ nav{top:var(--bar-h)!important}
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web/aplicaciones</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li>
@@ -232,7 +241,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
 <li><a data-i18n="nav.campaigns" href="campaign-portfolio.html">Campañas</a></li>
-<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web/aplicaciones</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a href="chatbot.html">Chatbots de IA</a></li>
 <li><a href="animated-creatives.html">Creatividades animadas</a></li>

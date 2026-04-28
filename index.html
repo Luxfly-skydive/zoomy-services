@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -32,8 +14,7 @@
 <meta content="Campaign files, custom websites, AI chatbots, domain registration and hosting setup. We build it, we launch it." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=fallback" rel="stylesheet"/>
-<link href="css/style.css?v=20260416b" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
 <style>
 /* ── Services as clean text rows ── */
 .services-list{margin-top:3rem}
@@ -110,16 +91,6 @@
 #admShell .adm-canvas::-webkit-scrollbar-track{background:#0a0a0a;}
 #admShell .adm-canvas::-webkit-scrollbar-thumb{background:#333;border-radius:3px;}
 #admShell .adm-canvas::-webkit-scrollbar-thumb:hover{background:#555;}
-</style>
-<style>
-:root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
-nav{top:var(--bar-h)!important}
-#navLinks{top:calc(68px + var(--bar-h))!important}
-.bar-off{--bar-h:0px!important}
-#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;overflow:hidden;background:linear-gradient(90deg,#0f0e1a,#1e1b4b,#2d2a5e);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
-@media(max-width:600px){#free-bar{padding:0 2.5rem 0 1rem;gap:8px;}}
-.bar-off #free-bar{display:none!important}
-@media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
 </style>
 <script>(function(){if(sessionStorage.getItem('fzb')||sessionStorage.getItem('fzb_shown')){document.documentElement.classList.add('bar-off');}else{sessionStorage.setItem('fzb_shown','1');}})();</script>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
@@ -210,13 +181,286 @@ nav{top:var(--bar-h)!important}
     fbq('track','PageView');
   })();
   </script>
-<noscript><img height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<noscript><img alt="" height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
 <!-- ═══ END META PIXEL ═══ -->
 <style>
-/* Mobile: show call card above description text in phone section */
+/* ════════════════════════════════════════════════════════════════
+   ZOOMY — NEW DESIGN SYSTEM
+   Warm white editorial look. Syne display + DM Sans body.
+   Turquoise accent #00C9A7. Light/dark section alternation.
+   All content preserved exactly — CSS-only redesign.
+════════════════════════════════════════════════════════════════ */
+:root {
+  --bg:       #F8F7F4;
+  --bg-1:     #FFFFFF;
+  --bg-2:     #ECEAE4;
+  --bg-dark:  #0C0C0A;
+  --text:     #0C0C0A;
+  --text-2:   #4B4B47;
+  --muted:    #888880;
+  --primary:  #00C9A7;
+  --accent:   #00C9A7;
+  --secondary:#00A88A;
+  --green:    #00C9A7;
+  --card:     #FFFFFF;
+  --border:   rgba(0,0,0,.07);
+  --border-b: rgba(0,0,0,.1);
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', ui-monospace, monospace;
+  --radius-sm:  6px; --radius-md: 12px;
+  --radius-lg:  20px; --radius-xl: 28px;
+  --radius-full: 9999px;
+  --transition: .22s cubic-bezier(.4,0,.2,1);
+  --grad-main: linear-gradient(135deg,#00C9A7,#00A88A);
+}
+
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg)!important;color:var(--text)!important;font-family:var(--font-body)!important;overflow-x:hidden}
+a{text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+
+/* ── Cursor glow ── */
+.cursor-glow{position:fixed;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,.055),transparent 70%);pointer-events:none;transform:translate(-50%,-50%);z-index:0;transition:left .55s ease,top .55s ease;display:none}
+@media(hover:hover){.cursor-glow{display:block}}
+
+/* ── Scroll progress ── */
+#scroll-progress{background:#00C9A7!important}
+
+/* ── Free bar ── */
+#free-bar{background:#0C0C0A!important;border-bottom:1px solid rgba(255,255,255,.06)!important}
+
+/* ── NAV ── */
+nav{background:rgba(248,247,244,.97)!important;backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,0,0,.07)!important;box-shadow:none!important}
+nav.scrolled{box-shadow:0 2px 40px rgba(0,0,0,.07)!important}
+.nav-logo,.nav-logo a{color:#0C0C0A!important;font-family:var(--font-display)!important;font-weight:800!important}
+.nav-logo-sub{color:#888880!important;font-family:var(--font-body)!important}
+.nav-links a{color:#4B4B47!important;font-family:var(--font-body)!important}
+.nav-links a:hover{color:#0C0C0A!important;background:rgba(0,0,0,.04)!important}
+.lang-btn{color:#888880!important}
+.lang-btn:hover{color:#0C0C0A!important}
+.btn-nav{background:#0C0C0A!important;color:#F8F7F4!important;border:none!important;font-family:var(--font-body)!important}
+.btn-nav:hover{background:#00C9A7!important;color:#0C0C0A!important}
+.nav-toggle span{background:#0C0C0A!important}
+@media(max-width:768px){
+  .nav-links{background:#F8F7F4!important;box-shadow:-8px 0 40px rgba(0,0,0,.1)!important;border-left:1px solid rgba(0,0,0,.07)!important}
+  .nav-links a{color:#0C0C0A!important;border-bottom:1px solid rgba(0,0,0,.07)!important}
+}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(180deg,#F8F7F4 80%,#ECEAE4 100%)!important}
+.hero .aurora{display:none!important}
+.hero .grid-overlay{display:none!important}
+.hero .section-inner{text-align:left!important}
+/* hero eyebrow badge */
+.hero .badge.badge-primary,.hero .badge-primary{
+  background:transparent!important;border:none!important;
+  color:#888880!important;font-family:var(--font-body)!important;
+  font-size:.75rem!important;letter-spacing:.12em!important;
+  text-transform:uppercase!important;padding:0!important;
+  display:inline-flex!important;align-items:center!important;gap:10px!important
+}
+.hero .badge.badge-primary::before{
+  content:'';display:inline-block;width:24px;height:1.5px;
+  background:#00C9A7;flex-shrink:0
+}
+.hero .badge.badge-primary .badge-dot{display:none!important}
+/* h1 */
+.hero h1{font-family:var(--font-display)!important;font-weight:800!important;color:#0C0C0A!important;letter-spacing:-.04em!important}
+.hero h1 .glitch,.hero h1 .grad-text-animated{
+  background:none!important;-webkit-background-clip:unset!important;
+  -webkit-text-fill-color:#0C0C0A!important;background-clip:unset!important;color:#0C0C0A!important
+}
+.hero .hero-sub{color:#4B4B47!important}
+/* hero checks row — left-align */
+.hero [style*="justify-content:center;gap:2rem"]{justify-content:flex-start!important}
+.hero [style*="align-items:center;justify-content:center;gap:2rem"]{justify-content:flex-start!important}
+/* hero check items */
+.hero [style*="gap:2rem;flex-wrap:wrap"] > div{color:#4B4B47!important}
+.hero [style*="gap:2rem;flex-wrap:wrap"] span[style*="color:var(--green)"]{color:#00C9A7!important}
+/* hero actions */
+.hero .hero-actions{justify-content:flex-start!important}
+
+/* ── BUTTONS ── */
+.btn-primary{background:#0C0C0A!important;color:#F8F7F4!important;font-family:var(--font-body)!important}
+.btn-primary:hover{background:#00C9A7!important;color:#0C0C0A!important;transform:translateY(-1px)}
+.btn-ghost{background:transparent!important;color:#0C0C0A!important;border:1.5px solid rgba(0,0,0,.18)!important;font-family:var(--font-body)!important}
+.btn-ghost:hover{border-color:#0C0C0A!important;transform:translateY(-1px)}
+
+/* ── MARQUEE ── */
+.marquee{background:#0C0C0A!important}
+.marquee-item{color:rgba(255,255,255,.45)!important;font-family:var(--font-body)!important}
+.marquee-dot{background:#00C9A7!important}
+
+/* ── SECTION TAGS / EYEBROWS ── */
+.section-tag{color:#00C9A7!important;font-family:var(--font-body)!important}
+.section-tag::before{background:#00C9A7!important}
+h2,.section-title{font-family:var(--font-display)!important;font-weight:800!important;letter-spacing:-.035em!important}
+h3,h4{font-family:var(--font-body)!important}
+
+/* ── PHONE AGENT SECTION ── */
+#phone-agent-section{background:#0C0C0A!important}
+#phone-agent-section .section-tag{color:#00C9A7!important}
+#phone-agent-section .section-title,
+#phone-agent-section h2{color:#F8F7F4!important}
+#phone-agent-section p[style*="color:var(--text-2)"]{color:rgba(255,255,255,.6)!important}
+#phone-agent-section [style*="font-weight:600;color:#fff"]{color:rgba(255,255,255,.9)!important}
+#phone-agent-section [style*="color:var(--muted)"]{color:rgba(255,255,255,.4)!important}
+#phone-agent-section [style*="font-family:var(--font-mono)"]{color:rgba(255,255,255,.35)!important}
+#phone-agent-section [style*="background:rgba(99,102,241"]{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.1)!important}
+#phone-agent-section [style*="background:var(--card)"]{background:#111110!important;border-color:rgba(255,255,255,.1)!important}
+#phone-agent-section [style*="height:1px;background:var(--border)"]{background:rgba(255,255,255,.08)!important}
+#phone-agent-section [style*="background:linear-gradient(135deg,#312e81"]{background:linear-gradient(135deg,#004D40,#00C9A7)!important}
+
+/* ── SERVICES ── */
+#our-services{background:#F8F7F4!important}
+#our-services h2,.section-title{color:#0C0C0A!important}
+#our-services .section-sub{color:#4B4B47!important}
+/* service cards */
+#our-services [style*="background:var(--bg-1)"]{background:#FFFFFF!important;border-color:rgba(0,0,0,.07)!important}
+#our-services [style*="font-weight:700;color:#fff"]{color:#0C0C0A!important}
+#our-services [style*="color:var(--text-2)"][style*="font-size:.875rem"]{color:#4B4B47!important}
+#our-services [style*="color:var(--secondary)"],
+#our-services [style*="color:var(--green)"],
+#our-services [style*="color:var(--primary)"][style*="font-weight:600"]{color:#00C9A7!important}
+/* google ads check items */
+#our-services [style*="background:rgba(99,102,241,.05)"]{background:rgba(0,201,167,.06)!important;border-color:rgba(0,201,167,.15)!important}
+#our-services [style*="color:var(--primary);font-size:1rem"]{color:#00C9A7!important}
+
+/* ── CAPABILITY STRIP ── */
+.cap-strip{border-color:rgba(0,0,0,.07)!important}
+.cap-icon{background:rgba(0,201,167,.1)!important;border-color:rgba(0,201,167,.2)!important}
+.cap-label{color:#0C0C0A!important;font-family:var(--font-display)!important}
+.cap-desc{color:#888880!important}
+
+/* ── SAMPLE BANNER ── */
+.sample-banner{background:#0C0C0A!important;border:none!important}
+.sample-banner h2{color:#F8F7F4!important}
+.sample-banner .grad-text-animated{color:#00C9A7!important;background:none!important;-webkit-text-fill-color:#00C9A7!important}
+.sample-banner [style*="color:var(--text-2)"]{color:rgba(255,255,255,.55)!important}
+.sample-tag{background:rgba(0,201,167,.15)!important;border-color:rgba(0,201,167,.3)!important;color:#00C9A7!important}
+.sample-glow,.sample-glow2{display:none!important}
+
+/* ── ADMIN PANEL SECTION ── */
+section:has(#admShell){background:#F8F7F4!important}
+section:has(#admShell) .section-tag{color:#00C9A7!important}
+section:has(#admShell) .section-title,
+section:has(#admShell) h2{color:#0C0C0A!important}
+section:has(#admShell) p[style*="color:var(--text-2)"]{color:#4B4B47!important}
+section:has(#admShell) span[style*="color:#e2e8f0"]{color:#0C0C0A!important;background:rgba(0,201,167,.08)!important;border-color:rgba(0,201,167,.2)!important}
+section:has(#admShell) [style*="color:#cbd5e1"]{color:#888880!important}
+
+/* ── HOW IT WORKS ── */
+section:has(.steps-flow){background:#ECEAE4!important}
+section:has(.steps-flow) .section-tag{color:#00C9A7!important}
+section:has(.steps-flow) .section-title,
+section:has(.steps-flow) h2{color:#0C0C0A!important}
+section:has(.steps-flow) .section-sub{color:#4B4B47!important}
+.step-card{background:#FFFFFF!important;border-color:rgba(0,0,0,.07)!important}
+.step-card:hover{border-color:rgba(0,201,167,.4)!important;box-shadow:0 16px 48px rgba(0,0,0,.08)!important}
+.step-card h4{color:#0C0C0A!important}
+.step-card p{color:#4B4B47!important}
+.step-badge,.step-badge-1,.step-badge-2,.step-badge-3,.step-badge-4{
+  background:#0C0C0A!important;box-shadow:none!important;color:#F8F7F4!important
+}
+.steps-flow::before{background:linear-gradient(90deg,rgba(0,201,167,0),#00C9A7,rgba(0,201,167,0))!important;opacity:.4!important}
+
+/* ── AI CHATBOT SECTION ── */
+section:has(.chatbot-section){background:#0C0C0A!important}
+section:has(.chatbot-section) .section-tag{color:#00C9A7!important}
+section:has(.chatbot-section) .section-title,
+section:has(.chatbot-section) h2{color:#F8F7F4!important}
+section:has(.chatbot-section) p[style*="color:var(--text-2)"]{color:rgba(255,255,255,.6)!important}
+.chatbot-feat{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.08)!important}
+.chatbot-feat:hover{background:rgba(255,255,255,.07)!important;border-color:rgba(0,201,167,.3)!important}
+.chatbot-feat-icon{font-size:1.25rem}
+.chatbot-feat-title{color:rgba(255,255,255,.9)!important}
+.chatbot-feat-desc{color:rgba(255,255,255,.4)!important}
+section:has(.chatbot-section) [style*="margin-top:2rem"] .btn-primary{background:#F8F7F4!important;color:#0C0C0A!important}
+section:has(.chatbot-section) [style*="margin-top:2rem"] .btn-primary:hover{background:#00C9A7!important}
+
+/* ── WHY ZOOMY ── */
+section:has(.terminal){background:#F8F7F4!important}
+section:has(.terminal) .section-tag{color:#00C9A7!important}
+section:has(.terminal) .section-title,section:has(.terminal) h2{color:#0C0C0A!important}
+.terminal{background:#0C0C0A!important;border:1px solid rgba(255,255,255,.08)!important}
+.terminal-dot{opacity:.8}
+.term-prompt,.term-cmd,.term-output,.term-cursor{font-family:var(--font-mono)!important}
+section:has(.terminal) [style*="background:rgba(99,102,241,.08)"]{background:rgba(0,201,167,.06)!important;border-color:rgba(0,201,167,.2)!important}
+section:has(.terminal) [style*="background:rgba(168,85,247,.08)"]{background:#F1EFE9!important;border-color:rgba(0,0,0,.07)!important}
+section:has(.terminal) [style*="background:rgba(6,182,212,.08)"]{background:rgba(0,201,167,.06)!important;border-color:rgba(0,201,167,.2)!important}
+section:has(.terminal) h4[style*="color:var(--primary)"]{color:#00C9A7!important}
+section:has(.terminal) h4[style*="color:var(--accent)"]{color:#0C0C0A!important}
+section:has(.terminal) h4[style*="color:var(--secondary)"]{color:#00C9A7!important}
+section:has(.terminal) [style*="color:var(--text-2)"][style*="font-size:.9rem"]{color:#4B4B47!important}
+
+/* ── CTA SECTION ── */
+section:has([data-i18n="cta.heading"]){background:#0C0C0A!important}
+section:has([data-i18n="cta.heading"]) .section-tag{color:#00C9A7!important}
+section:has([data-i18n="cta.heading"]) .section-title,[data-i18n="cta.heading"]{color:#F8F7F4!important}
+section:has([data-i18n="cta.heading"]) .section-sub{color:rgba(255,255,255,.55)!important}
+section:has([data-i18n="cta.heading"]) .btn-primary{background:#F8F7F4!important;color:#0C0C0A!important}
+section:has([data-i18n="cta.heading"]) .btn-primary:hover{background:#00C9A7!important;color:#0C0C0A!important}
+section:has([data-i18n="cta.heading"]) .btn-ghost{border-color:rgba(255,255,255,.2)!important;color:rgba(255,255,255,.8)!important}
+section:has([data-i18n="cta.heading"]) .btn-ghost:hover{border-color:rgba(255,255,255,.6)!important}
+
+/* ── FOOTER ── */
+footer{background:#0C0C0A!important;border-top:1px solid rgba(255,255,255,.05)!important}
+.footer-logo{color:#F8F7F4!important;font-family:var(--font-display)!important;background:none!important;-webkit-text-fill-color:#F8F7F4!important}
+.footer-tagline{color:rgba(255,255,255,.4)!important}
+.footer-col h4{color:rgba(255,255,255,.4)!important;font-family:var(--font-body)!important}
+.footer-col ul li a{color:rgba(255,255,255,.45)!important}
+.footer-col ul li a:hover{color:#F8F7F4!important}
+.footer-bottom{color:rgba(255,255,255,.3)!important;border-color:rgba(255,255,255,.05)!important}
+.footer-bottom a{color:rgba(255,255,255,.3)!important}
+.footer-bottom a:hover{color:rgba(255,255,255,.6)!important}
+.badge-green{background:rgba(0,201,167,.15)!important;color:#00C9A7!important;border:1px solid rgba(0,201,167,.3)!important}
+
+/* ── CHATBOT MOCK (always dark) ── */
+.chatbot-mock{background:#111110!important;border:1px solid rgba(255,255,255,.06)!important}
+.chatbot-header{background:#161614!important;border-bottom:1px solid rgba(255,255,255,.06)!important}
+.chatbot-avatar{background:#00C9A7!important}
+.chatbot-name{color:rgba(255,255,255,.9)!important}
+.chatbot-status{color:#00C9A7!important}
+.chatbot-messages{scrollbar-width:thin}
+.msg-bot{background:#1e1e1c!important;color:rgba(255,255,255,.8)!important}
+.msg-user{background:#00C9A7!important;color:#0C0C0A!important}
+.chatbot-input{background:#161614!important;border-top:1px solid rgba(255,255,255,.06)!important}
+.chatbot-input-field{background:#0c0c0a!important;border:1px solid rgba(255,255,255,.1)!important;color:rgba(255,255,255,.9)!important;font-family:var(--font-body)!important}
+.chatbot-input-field::placeholder{color:rgba(255,255,255,.3)!important}
+.chatbot-send{background:#00C9A7!important;color:#0C0C0A!important}
+.chatbot-send:hover{background:#00A88A!important}
+
+/* ── MISC OVERRIDES ── */
+/* sections-reorder wrapper needs white bg */
+.sections-reorder{background:#F8F7F4}
+/* Phone section nav reorder mobile */
 @media(max-width:900px){
-  #phone-agent-section .section-inner > div { display:flex; flex-direction:column; }
-  #phone-agent-section .reveal-right { order:-1; margin-bottom:2rem; }
+  #phone-agent-section .section-inner>div{display:flex;flex-direction:column}
+  #phone-agent-section .reveal-right{order:-1;margin-bottom:2rem}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal,.reveal-left,.reveal-right{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .55s ease,transform .55s ease
+}
+.reveal-left{transform:translateX(-20px)}
+.reveal-right{transform:translateX(20px)}
+.reveal.visible,.reveal-left.visible,.reveal-right.visible{opacity:1!important;transform:translate(0)!important}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ── HOVER EFFECTS ── */
+.svc-row:hover{background:rgba(0,201,167,.03)!important}
+
+/* ── MOBILE ── */
+@media(max-width:520px){
+  .hero{min-height:85vh}
+  section:has(#admShell) [style*="grid-template-columns:320px 1fr"]{display:block!important}
 }
 </style>
 </head>
@@ -229,9 +473,7 @@ nav{top:var(--bar-h)!important}
 <button aria-label="Dismiss" onclick="(function(){document.documentElement.classList.add('bar-off');sessionStorage.setItem('fzb','1');})()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:1rem;cursor:pointer;padding:4px 8px;line-height:1">✕</button>
 </div>
 <div id="scroll-progress"></div>
-<canvas id="particle-canvas"></canvas>
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Digital Production Studio</span></a>
 <ul class="nav-links" id="navLinks">
@@ -256,12 +498,6 @@ nav{top:var(--bar-h)!important}
 </nav>
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-<div class="aurora">
-<div class="aurora-blob aurora-blob-1"></div>
-<div class="aurora-blob aurora-blob-2"></div>
-<div class="aurora-blob aurora-blob-3"></div>
-</div>
-<div class="grid-overlay"></div>
 <div class="section-inner" style="z-index:2;text-align:center;">
 <span class="badge badge-primary badge-dot" data-i18n="index.hero.badge" style="margin-bottom:1.75rem;display:inline-flex;">Digital Services for Businesses</span>
 <h1 style="margin-bottom:1.5rem;">
@@ -306,10 +542,6 @@ nav{top:var(--bar-h)!important}
 <!-- ═══════════ PHONE AGENT FEATURE + SERVICES (reorder on mobile) ═══════════ -->
 <div class="sections-reorder">
 <section class="section" id="phone-agent-section" style="background:var(--bg-2);position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.4;">
-<div class="aurora-blob aurora-blob-1" style="background:radial-gradient(circle,#6366f1,transparent);animation-duration:16s;"></div>
-<div class="aurora-blob aurora-blob-2" style="animation-duration:20s;"></div>
-</div>
 <div class="section-inner" style="position:relative;z-index:2;">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
 <div class="reveal-left">
@@ -353,7 +585,6 @@ Try Live Demo
 <h3 style="font-family:var(--font-display);color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Zoomy Phone Agent</h3>
 <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;margin-bottom:.6rem;">Click below to start a live voice conversation. Your microphone will be requested.</p>
 <p style="color:var(--primary);font-size:.75rem;line-height:1.5;margin-bottom:2rem;font-family:var(--font-mono);">// After your call ends — view your full transcript below ↓</p>
-<style>@media(min-width:769px){#hp-speaker-btn{display:none!important}}</style>
 <div id="hp-call-ui" style="display:flex;flex-direction:column;align-items:center;gap:.85rem;width:100%;">
 <button id="hp-call-btn" onclick="hpToggleCall()" style="width:100%;padding:14px 28px;background:var(--grad-main);border:none;border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 0 30px rgba(99,102,241,.4);transition:filter .2s,transform .2s;">
 <svg fill="none" height="18" id="hp-call-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
@@ -1056,10 +1287,6 @@ document.addEventListener('DOMContentLoaded',function(){
 </section>
 <!-- ═══════════ AI CHATBOT SHOWCASE ═══════════ -->
 <section class="section" style="position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.5;">
-<div class="aurora-blob aurora-blob-2" style="animation-duration:15s;"></div>
-<div class="aurora-blob aurora-blob-3" style="animation-duration:22s;"></div>
-</div>
 <div class="section-inner" style="position:relative;z-index:2;">
 <div class="chatbot-section">
 <div class="reveal-left">
@@ -1168,10 +1395,6 @@ document.addEventListener('DOMContentLoaded',function(){
 </section>
 <!-- ═══════════ CTA ═══════════ -->
 <section class="section" style="position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.5;">
-<div class="aurora-blob aurora-blob-1"></div>
-<div class="aurora-blob aurora-blob-3"></div>
-</div>
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
 <div class="section-tag" style="justify-content:center;">Ready?</div>
 <h2 class="section-title" data-i18n="cta.heading">Let's build something great.</h2>
@@ -1307,7 +1530,6 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 })();
 </script>
-<script src="js/main.js?v=20260416b"></script>
 <script src="js/i18n.js?v=20260416b"></script>
 <script src="js/chatbot.js?v=20260422a"></script>
 <script type="module">
@@ -1571,6 +1793,111 @@ Contacto: zoomy.services/contact`,
     hpStatus.style.color = '#ef4444';
   }
 };
+</script>
+<script>
+// ── New design system JS ──────────────────────────────────────────
+(function(){
+  // Scroll progress bar
+  var prog = document.getElementById('scroll-progress');
+  if(prog){
+    window.addEventListener('scroll', function(){
+      var pct = window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight);
+      prog.style.width = (Math.min(1, pct)*100)+'%';
+    }, {passive:true});
+  }
+
+  // Cursor glow
+  var glow = document.getElementById('cursorGlow');
+  if(glow){
+    document.addEventListener('mousemove', function(e){
+      glow.style.left = e.clientX+'px';
+      glow.style.top  = e.clientY+'px';
+    });
+  }
+
+  // Nav scroll class
+  var nav = document.querySelector('nav');
+  window.addEventListener('scroll', function(){
+    if(nav) nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, {passive:true});
+
+  // Hamburger nav
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  if(toggle && links){
+    toggle.addEventListener('click', function(){
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', function(e){
+      if(!toggle.contains(e.target) && !links.contains(e.target)){
+        toggle.classList.remove('open');
+        links.classList.remove('open');
+      }
+    });
+  }
+
+  // Scroll reveal (IntersectionObserver)
+  var reveals = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+    reveals.forEach(function(el){ obs.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  // CTA tracking (outbound links)
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a.btn[href*="contact"],a.btn-nav[href*="contact"]').forEach(function(el){
+      el.addEventListener('click', function(){
+        if(typeof gtag!=='undefined') gtag('event','cta_click',{event_category:'engagement',event_label:el.textContent.trim().substring(0,50)});
+        if(typeof clarity!=='undefined') clarity('event','cta_click');
+        if(typeof fbq!=='undefined') fbq('track','Contact');
+      });
+    });
+    // Free bar
+    var freeBar = document.getElementById('free-bar');
+    if(freeBar && freeBar.querySelector('a')){
+      freeBar.querySelector('a').addEventListener('click', function(){
+        if(typeof gtag!=='undefined') gtag('event','free_bar_claim',{event_category:'engagement'});
+        if(typeof clarity!=='undefined') clarity('event','free_bar_claim');
+        if(typeof fbq!=='undefined') fbq('track','Lead');
+      });
+    }
+    // Scroll depth
+    var milestones={25:false,50:false,75:false,90:false};
+    window.addEventListener('scroll',function(){
+      var pct=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);
+      Object.keys(milestones).forEach(function(m){
+        if(!milestones[m]&&pct>=parseInt(m)){
+          milestones[m]=true;
+          if(typeof gtag!=='undefined') gtag('event','scroll_depth',{event_category:'engagement',event_label:m+'%',value:parseInt(m)});
+        }
+      });
+    },{passive:true});
+    // Forms
+    document.querySelectorAll('form').forEach(function(form){
+      form.addEventListener('submit',function(){
+        if(typeof gtag!=='undefined') gtag('event','form_submit',{event_category:'conversion',event_label:window.location.pathname});
+        if(typeof clarity!=='undefined') clarity('event','form_submit');
+        if(typeof fbq!=='undefined') fbq('track','Lead');
+      });
+    });
+  });
+})();
 </script>
 </body>
 </html>

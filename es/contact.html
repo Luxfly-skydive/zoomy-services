@@ -11,8 +11,9 @@
 <meta content="Start your project. We typically typically typical response within 24 hours with a tailored proposal." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link href="../css/style.css?v=20260427b" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=fallback" rel="stylesheet"/>
+<style>html,body{background:#020208}nav{background:rgba(2,2,8,.96)}</style>
+<link href="../css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;margin-top:3rem}
 .contact-info-item{display:flex;align-items:flex-start;gap:16px;padding:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1rem}
@@ -110,7 +111,7 @@
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 <nav>
-<a class="nav-logo logo-turq" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
 <li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
@@ -127,15 +128,17 @@
 <a class="lang-btn" href="../fr/contact.html">FR</a>
 <span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
 </div>
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
 <button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<section class="hero" style="min-height:55vh">
-<div class="section-inner">
-<div class="section-tag" data-i18n="contact.hero.tag" style="margin-bottom:1.5rem;">Contacto</div>
-<h1>Construyamos<br/><span class="h1-accent">algo genial.</span></h1>
-<p class="hero-sub" data-i18n="contact.hero.sub">Cuéntanos sobre tu proyecto. Por lo general, respondemos dentro de las 24 horas con una propuesta y un cronograma personalizados.</p>
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-3"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" data-i18n="contact.hero.tag" style="justify-content:center;margin-bottom:1.5rem;">Contacto</div>
+<h1 style="margin-bottom:1.5rem;">Construyamos<br/><span class="grad-text-animated">algo genial.</span></h1>
+<p class="hero-sub" data-i18n="contact.hero.sub" style="margin:0 auto;">Cuéntanos sobre tu proyecto. Por lo general, respondemos dentro de las 24 horas con una propuesta y un cronograma personalizados.</p>
 </div>
 </section>
 <section class="section" style="padding-top:2rem;">
@@ -143,7 +146,7 @@
 <div class="contact-grid">
 <div class="reveal-left">
 <div class="section-tag" style="margin-bottom:1.5rem;">Ponte en contacto</div>
-<h2 style="font-family:var(--f-display);font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-.02em;">Estamos aquí para ayudar.</h2>
+<h2 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-.02em;">Estamos aquí para ayudar.</h2>
 <p style="color:var(--text-2);margin-bottom:2rem;line-height:1.7;">Ya sea que tenga un informe detallado o simplemente una idea, comuníquese con nosotros. Hacemos las preguntas correctas para comprender sus necesidades y crear una propuesta que se ajuste a sus objetivos y presupuesto.</p>
 <div class="contact-info-item">
 <div class="contact-icon">✉</div>
@@ -171,7 +174,7 @@
 </div>
 <div style="margin-top:2rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:14px;overflow:hidden;">
 <div style="padding:1rem 1.5rem .75rem;border-bottom:1px solid rgba(99,102,241,.12);">
-<div style="font-size:.7rem;color:rgba(255,255,255,.4);font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">Qué incluir</div>
+<div style="font-size:.7rem;color:rgba(255,255,255,.4);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;">Qué incluir</div>
 <div id="wi-tabs" style="display:flex;gap:.4rem;flex-wrap:wrap;">
 <button class="wi-tab wi-tab-active" id="wi-tab-campaign" onclick="wiTab('campaign')">Campaña</button>
 <button class="wi-tab" id="wi-tab-website" onclick="wiTab('website')">Sitio web</button>
@@ -222,11 +225,11 @@
 </div>
 </div>
 <style>
-          .wi-tab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:4px 11px;font-size:.75rem;font-family:var(--f-mono);color:rgba(255,255,255,.5);cursor:pointer;transition:all .18s;}
+          .wi-tab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:4px 11px;font-size:.75rem;font-family:var(--font-mono);color:rgba(255,255,255,.5);cursor:pointer;transition:all .18s;}
           .wi-tab:hover{background:rgba(99,102,241,.15);color:#fff;border-color:rgba(99,102,241,.4);}
           .wi-tab-active{background:rgba(99,102,241,.2)!important;color:#fff!important;border-color:rgba(99,102,241,.5)!important;}
           .wi-item{font-size:.875rem;color:var(--text-2);display:flex;gap:8px;}
-          .wi-arrow{color:var(--accent);flex-shrink:0;}
+          .wi-arrow{color:var(--primary);flex-shrink:0;}
         </style>
 <script>
           function wiTab(id){
@@ -264,7 +267,7 @@
 </div>
 <div class="contact-form reveal-right">
 <div style="margin-bottom:2rem;">
-<h3 style="font-family:var(--f-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.5rem;">Iniciar un proyecto</h3>
+<h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.5rem;">Iniciar un proyecto</h3>
 <p style="color:var(--muted);font-size:.875rem;">Complete el formulario y normalmente nos comunicaremos con usted dentro de las 24 horas.</p>
 </div>
 <form id="contact-form">
@@ -289,31 +292,31 @@
 <div class="form-field">
 <label data-i18n="contact.form.need">¿Qué estás buscando?</label>
 <div id="svc-dd" style="position:relative;margin-top:.5rem;">
-<button id="svc-dd-btn" onclick="toggleSvcDd()" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:11px 14px;color:var(--text-2);font-size:.875rem;font-family:var(--f-body);cursor:pointer;text-align:left;transition:border-color .18s;" type="button">
+<button id="svc-dd-btn" onclick="toggleSvcDd()" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:11px 14px;color:var(--text-2);font-size:.875rem;font-family:var(--font-body);cursor:pointer;text-align:left;transition:border-color .18s;" type="button">
 <span id="svc-dd-label" style="opacity:.55;">Seleccionar servicios (elija todos los que correspondan)</span>
 <svg fill="none" height="12" id="svc-dd-arrow" style="flex-shrink:0;margin-left:8px;transition:transform .18s;" viewbox="0 0 12 12" width="12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
 </button>
 <div id="svc-dd-panel" style="display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--bg-3,#0d0d1e);border:1px solid var(--border);border-radius:var(--radius,10px);padding:.5rem;z-index:50;box-shadow:0 8px 32px rgba(0,0,0,.4);">
 <label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
-<input name="service" style="width:15px;height:15px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" type="checkbox" value="Campaign Management"/> Gestión de campañas
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Campaign Management"/> Gestión de campañas
     </label>
 <label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
-<input name="service" style="width:15px;height:15px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" type="checkbox" value="Custom Website"/> Sitio web personalizado
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Custom Website"/> Sitio web personalizado
     </label>
 <label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
-<input name="service" style="width:15px;height:15px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" type="checkbox" value="Landing Page"/> Página de destino
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Landing Page"/> Página de destino
     </label>
 <label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
-<input name="service" style="width:15px;height:15px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" type="checkbox" value="AI Chatbot"/> Chatbot de IA
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="AI Chatbot"/> Chatbot de IA
     </label>
 <label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
-<input name="service" style="width:15px;height:15px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" type="checkbox" value="Phone AI Agent"/> Agente de IA por teléfono
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Phone AI Agent"/> Agente de IA por teléfono
     </label>
 <label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
-<input name="service" style="width:15px;height:15px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" type="checkbox" value="Animated Creatives"/> Creatividades animadas
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Animated Creatives"/> Creatividades animadas
     </label>
 <label onmouseout="this.style.background=''" onmouseover="this.style.background='rgba(99,102,241,.1)'" style="display:flex;align-items:center;gap:10px;padding:.55rem .6rem;border-radius:6px;font-size:.875rem;color:var(--text-2);cursor:pointer;transition:background .12s;">
-<input name="service" style="width:15px;height:15px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" type="checkbox" value="Domain &amp; Hosting Setup"/> Configuración de dominio y alojamiento
+<input name="service" style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;" type="checkbox" value="Domain &amp; Hosting Setup"/> Configuración de dominio y alojamiento
     </label>
 </div>
 </div>
@@ -326,7 +329,7 @@
 <button class="btn btn-primary" id="contact-submit" style="width:100%;justify-content:center;" type="submit"><span data-i18n="contact.form.send" id="contact-btn-text">Enviar mensaje</span> ›</button>
 <!-- What happens next -->
 <div style="margin-top:1.5rem;padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;">
-<div style="font-size:.7rem;font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:1rem;">¿Qué pasa después?</div>
+<div style="font-size:.7rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:1rem;">¿Qué pasa después?</div>
 <div style="display:flex;flex-direction:column;gap:.875rem;">
 <div style="display:flex;align-items:flex-start;gap:12px;">
 <div style="width:22px;height:22px;border-radius:50%;background:rgba(99,102,241,.3);border:1px solid rgba(99,102,241,.5);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#a5b4fc;flex-shrink:0;margin-top:1px;">1</div>
@@ -435,7 +438,7 @@
 <div class="footer-inner">
 <div class="footer-grid">
 <div>
-<div class="footer-logo footer-logo">Zoomy</div>
+<div class="footer-logo grad-text">Zoomy</div>
 <p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
@@ -466,21 +469,5 @@
 <script src="../js/main.js?v=20260416"></script>
 
 <script src="../js/chatbot.js?v=20260422a"></script>
-<script>
-function toggleTheme(){
-  var html=document.documentElement;
-  var isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  localStorage.setItem('zt',isDark?'light':'dark');
-  var btn=document.getElementById('themeToggle');
-  if(btn)btn.innerHTML=isDark
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-}
-(function(){
-  var t=localStorage.getItem('zt')||'light';
-  document.documentElement.setAttribute('data-theme',t);
-})();
-</script>
 </body>
 </html>

@@ -48,8 +48,8 @@ if(canvas){
   const ctx=canvas.getContext('2d');
   let W,H,particles=[],stars=[];
   const mouse={x:null,y:null};
-  const P_COLORS=['#00C9A7','#00A88A','#00e0bb','#007a65'];
-  const S_COLORS=['#ffffff','#e0f7f3','#b3ede5','#80ddd2','#4dccc0'];
+  const P_COLORS=['#6366f1','#a855f7','#06b6d4','#ec4899'];
+  const S_COLORS=['#ffffff','#e0e7ff','#c7d2fe','#a5b4fc','#818cf8'];
   function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
   resize();
   window.addEventListener('resize',()=>{resize();stars=[];initStars()});
@@ -95,7 +95,7 @@ if(canvas){
     for(let i=0;i<particles.length;i++){
       for(let j=i+1;j<particles.length;j++){
         const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<85){ctx.beginPath();ctx.strokeStyle='#00C9A7';ctx.globalAlpha=(1-d/85)*.08;ctx.lineWidth=.4;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();ctx.globalAlpha=1}
+        if(d<85){ctx.beginPath();ctx.strokeStyle='#6366f1';ctx.globalAlpha=(1-d/85)*.1;ctx.lineWidth=.4;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();ctx.globalAlpha=1}
       }
     }
   }

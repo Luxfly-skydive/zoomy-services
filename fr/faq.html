@@ -11,17 +11,18 @@
 <meta content="Frequently asked questions about campaign management, websites, chatbots, phone agents, and working with Zoomy." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link href="../css/style.css?v=20260427b" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>html,body{background:#020208}nav{background:rgba(2,2,8,.96)}</style>
+<link href="../css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
-.faq-item{border-bottom:1px solid var(--border);padding:1.5rem 0}
+.faq-item{border-bottom:1px solid var(--border-b);padding:1.5rem 0}
 .faq-item:first-child{padding-top:0}
-.faq-q{font-family:var(--f-display);font-weight:600;font-size:1rem;color:var(--text);margin-bottom:.75rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q{font-family:var(--font-display);font-weight:600;font-size:1rem;color:#fff;margin-bottom:.75rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .faq-a{color:var(--text-2);font-size:.9rem;line-height:1.75}
-.faq-icon{color:var(--accent);font-size:1.2rem;flex-shrink:0;transition:transform .3s}
+.faq-icon{color:var(--primary);font-size:1.2rem;flex-shrink:0;transition:transform .3s}
 .faq-section{margin-bottom:3rem}
-.faq-section-title{font-family:var(--f-mono);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.faq-section-title{font-family:var(--font-mono);font-size:.7rem;color:var(--primary);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
 @media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
 </style>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
@@ -112,7 +113,7 @@
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 <nav>
-<a class="nav-logo logo-turq" href="index.html">Zoomy<span class="nav-logo-sub">Studio de production numérique</span></a>
+<a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Studio de production numérique</span></a>
 <ul class="nav-links" id="navLinks">
 <li><a data-i18n="nav.websites" href="website-design.html">Sites Web</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
@@ -129,15 +130,17 @@
 <span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">FR</span>
 <a class="lang-btn" href="../es/faq.html">ES</a>
 </div>
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Démarrer un projet</span> ›</a>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Démarrer un projet</span> ›</a>
 <button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<section class="hero" style="min-height:55vh">
-<div class="section-inner">
-<div class="section-tag" data-i18n="faq.hero.tag" style="margin-bottom:1.5rem;">FAQ</div>
-<h1>Foire aux questions<br/><span class="h1-accent">questions.</span></h1>
-<p class="hero-sub" data-i18n="faq.hero.sub">Tout ce que vous devez savoir pour travailler avec nous. Vous ne trouvez pas votre réponse ? Envoyez un e-mail à contact@zoomy.services.</p>
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
+<div class="section-tag" data-i18n="faq.hero.tag" style="justify-content:center;margin-bottom:1.5rem;">FAQ</div>
+<h1 style="margin-bottom:1.5rem;">Foire aux questions<br/><span class="grad-text-animated">questions.</span></h1>
+<p class="hero-sub" data-i18n="faq.hero.sub" style="margin:0 auto;">Tout ce que vous devez savoir pour travailler avec nous. Vous ne trouvez pas votre réponse ? Envoyez un e-mail à contact@zoomy.services.</p>
 </div>
 </section>
 <section class="section">
@@ -146,7 +149,7 @@
 <div>
 <div class="section-tag" style="margin-bottom:1.5rem;">Aller à</div>
 <ul style="list-style:none;display:flex;flex-direction:column;gap:.75rem;">
-<li><a href="#general" style="color:var(--text-2);font-size:.9rem;transition:color var(--ease);">Questions générales</a></li>
+<li><a href="#general" style="color:var(--text-2);font-size:.9rem;transition:color var(--transition);">Questions générales</a></li>
 <li><a href="#campaigns" style="color:var(--text-2);font-size:.9rem;">Fichiers de campagne</a></li>
 <li><a href="#websites" style="color:var(--text-2);font-size:.9rem;">Sites Web</a></li>
 <li><a href="#chatbots" style="color:var(--text-2);font-size:.9rem;">Chatbots IA</a></li>
@@ -254,7 +257,7 @@
 <div class="footer-inner">
 <div class="footer-grid">
 <div>
-<div class="footer-logo footer-logo">Zoomy</div>
+<div class="footer-logo grad-text">Zoomy</div>
 <p class="footer-tagline" data-i18n="footer.tagline">Gestion de campagnes, sites Web personnalisés, chatbots IA et agents téléphoniques.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Prestations</h4><ul>
@@ -285,21 +288,5 @@
 <script src="../js/main.js?v=20260416"></script>
 
 <script src="../js/chatbot.js?v=20260422a"></script>
-<script>
-function toggleTheme(){
-  var html=document.documentElement;
-  var isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  localStorage.setItem('zt',isDark?'light':'dark');
-  var btn=document.getElementById('themeToggle');
-  if(btn)btn.innerHTML=isDark
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-}
-(function(){
-  var t=localStorage.getItem('zt')||'light';
-  document.documentElement.setAttribute('data-theme',t);
-})();
-</script>
 </body>
 </html>

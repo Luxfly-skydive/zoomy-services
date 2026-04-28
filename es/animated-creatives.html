@@ -11,41 +11,41 @@
 <meta content="Short animated ads made for Meta. We animate from your brief — no footage needed. Feed and story formats, $200 per 30 seconds." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link href="../css/style.css?v=20260427b" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=fallback" rel="stylesheet"/>
+<link href="../css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .phase-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
-.phase-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border);align-items:start;position:relative}
-.phase-row:first-child{border-top:1px solid var(--border)}
-.phase-label{font-family:var(--f-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
-.phase-name{font-family:var(--f-display);font-size:1.15rem;font-weight:700;color:#fff}
+.phase-row{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start;position:relative}
+.phase-row:first-child{border-top:1px solid var(--border-b)}
+.phase-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.phase-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff}
 .phase-accent{display:block;width:32px;height:2px;border-radius:2px;margin-top:.75rem}
-.phase-ghost{font-family:var(--f-display);font-size:7rem;font-weight:900;line-height:1;position:absolute;right:0;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.06}
+.phase-ghost{font-family:var(--font-display);font-size:7rem;font-weight:900;line-height:1;position:absolute;right:0;top:50%;transform:translateY(-50%);pointer-events:none;user-select:none;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.06}
 .item-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-top:1rem}
 .item-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text-2);line-height:1.6}
 .item-list li::before{content:"\2014";color:var(--muted);flex-shrink:0;margin-top:1px}
-.stats-strip{padding:3rem 2rem;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-strip{padding:3rem 2rem;background:var(--surface);border-top:1px solid var(--border-b);border-bottom:1px solid var(--border-b)}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:var(--max-w);margin:0 auto}
 .stat-block{text-align:center;padding:1.25rem 1rem}
-.stat-block-num{font-family:var(--f-display);font-size:2rem;font-weight:700;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.4rem}
-.stat-block-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--f-mono)}
+.stat-block-num{font-family:var(--font-display);font-size:2rem;font-weight:700;background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.4rem}
+.stat-block-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono)}
 .format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
 .format-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden}
 .format-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main)}
-.format-label{font-family:var(--f-mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
-.format-name{font-family:var(--f-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.format-label{font-family:var(--font-mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.format-name{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.6rem}
 .format-desc{font-size:.875rem;color:var(--text-2);line-height:1.7}
 .pricing-callout{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:3rem;position:relative;overflow:hidden}
 .pricing-callout::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-main)}
 .pricing-half{padding:2.25rem 2.5rem;position:relative}
-.pricing-half:first-child{border-right:1px solid var(--border)}
-.pricing-half-tag{font-family:var(--f-mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.75rem}
-.pricing-half-price{font-family:var(--f-display);font-size:2.5rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.25rem}
+.pricing-half:first-child{border-right:1px solid var(--border-b)}
+.pricing-half-tag{font-family:var(--font-mono);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.75rem}
+.pricing-half-price{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.25rem}
 .pricing-half-price span{font-size:1rem;font-weight:400;color:var(--muted)}
 .pricing-half-desc{font-size:.875rem;color:var(--text-2);line-height:1.65;margin-top:.75rem}
 .pricing-half-list{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.4rem}
 .pricing-half-list li{font-size:.8rem;color:var(--text-2);display:flex;gap:8px;align-items:flex-start}
-.pricing-half-list li::before{content:"\2713";color:var(--accent);font-weight:700;flex-shrink:0}
+.pricing-half-list li::before{content:"\2713";color:var(--primary);font-weight:700;flex-shrink:0}
 .ai-video-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;position:relative;overflow:hidden;margin-top:2rem}
 .ai-video-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#6366f1,#a855f7,#ec4899)}
 @media(max-width:768px){
@@ -53,7 +53,7 @@
   .format-grid{grid-template-columns:1fr}
   .stats-row{grid-template-columns:repeat(2,1fr)}
   .pricing-callout{grid-template-columns:1fr}
-  .pricing-half:first-child{border-right:none;border-bottom:1px solid var(--border)}
+  .pricing-half:first-child{border-right:none;border-bottom:1px solid var(--border-b)}
   .phase-ghost{display:none}
   .section-inner > div[style*="grid-template-columns:1fr 460px"]{grid-template-columns:1fr}
 }
@@ -65,7 +65,11 @@
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','972114368527990');fbq('track','PageView');</script>
 <noscript><img alt="" height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
 <style>
-#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;overflow:hidden;background:var(--bg-dark,#0D0D0B);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+:root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
+nav{top:var(--bar-h)!important}
+#navLinks{top:calc(68px + var(--bar-h))!important}
+.bar-off{--bar-h:0px!important}
+#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;overflow:hidden;background:linear-gradient(90deg,#0f0e1a,#1e1b4b,#2d2a5e);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
 @media(max-width:600px){#free-bar{padding:0 2.5rem 0 1rem;gap:8px;}}
 .bar-off #free-bar{display:none!important}
 @media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
@@ -84,7 +88,7 @@
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 <nav>
-<a class="nav-logo logo-turq" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
 <li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
@@ -101,15 +105,17 @@
 <a class="lang-btn" href="../fr/animated-creatives.html">FR</a>
 <span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
 </div>
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
 <button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <!-- HERO -->
-<section class="hero" style="min-height:55vh">
-<div class="section-inner">
+<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;text-align:center;">
 <div class="section-tag" style="margin-bottom:1.5rem;">Creatividad del anuncio</div>
-<h1><span class="h1-accent" data-text="Animated ad creatives.">Creatividades publicitarias animadas.</span><br/>No se necesitan imágenes.</h1>
+<h1 style="margin-bottom:1.5rem;"><span class="glitch grad-text-animated" data-text="Animated ad creatives.">Creatividades publicitarias animadas.</span><br/>No se necesitan imágenes.</h1>
 <p style="color:var(--text-2);font-size:1.1rem;line-height:1.8;max-width:580px;margin:0 auto 2.5rem;">Animaciones en bucle breves creadas para Google Ads, feeds sociales y ubicaciones de visualización. Usted nos informa sobre el producto, el mensaje y la audiencia; nosotros nos encargamos de todo lo demás. Los tres formatos se entregan listos para cargar.</p>
 <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
 <a class="btn btn-primary btn-lg" href="contact.html">Enviar un resumen</a>
@@ -144,7 +150,7 @@
 </ul>
 </div>
 <div class="reveal">
-<div style="background:var(--bg-dark);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;font-family:system-ui,sans-serif;box-shadow:0 24px 64px rgba(0,0,0,.6);">
+<div style="background:#1a1a2e;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;font-family:system-ui,sans-serif;box-shadow:0 24px 64px rgba(0,0,0,.6);">
 <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;">
 <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#a855f7);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#fff;flex-shrink:0;">Z</div>
 <div><div style="font-size:.82rem;font-weight:600;color:#fff;line-height:1.2;">Zoomy</div><div style="font-size:.68rem;color:rgba(255,255,255,.4);margin-top:1px;">Patrocinado · META</div></div>
@@ -169,7 +175,7 @@
 </div>
 </section>
 <!-- FORMATS -->
-<section class="section" style="background:var(--bg-soft);">
+<section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
 <div class="section-tag">Lo que hacemos</div>
 <h2 class="section-title">Construido para la alimentación. Diseñado para detener el desplazamiento.</h2>
@@ -215,7 +221,7 @@
 </div>
 </section>
 <!-- ANIMATION PRICING -->
-<section class="section" style="background:var(--bg-soft);">
+<section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
 <div class="section-tag">Animación</div>
 <h2 class="section-title">Creativos animados hechos a mano.</h2>
@@ -223,7 +229,7 @@
 <div class="pricing-callout reveal" style="margin-top:2.5rem;">
 <div class="pricing-half">
 <div class="pricing-half-tag">Creativos de imágenes animadas</div>
-<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--f-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">~22% de la tarifa de agencia</div>
+<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--font-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">~22% de la tarifa de agencia</div>
 <div class="pricing-half-price">$100<span> / conjunto</span></div>
 <p class="pricing-half-desc">Anuncios con imágenes fijas hechos a mano, ni IA ni fotografías de archivo. Superposiciones de marca y elementos animados, diseñados para funcionar en cualquier feed o ubicación de visualización.</p>
 <ul class="pricing-half-list"><li>Anuncios gráficos listos para el feed con elementos en movimiento</li><li>Colores y logotipo de la marca aplicados</li><li>Se entregan varios tamaños</li><li>No se necesita fotografía</li><li>2 rondas de revisión incluidas</li></ul>
@@ -231,7 +237,7 @@
 </div>
 <div class="pricing-half">
 <div class="pricing-half-tag">Vídeo animado</div>
-<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--f-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">25% de la tarifa de agencia</div>
+<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--font-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">25% de la tarifa de agencia</div>
 <div class="pricing-half-price">$300<span> / bloque de los 30</span></div>
 <p class="pricing-half-desc">Un anuncio animado terminado en tres formatos. Se incluyen dos rondas de revisión. Entregado como MP4, listo para ejecutarse en Google Ads, redes sociales o display.</p>
 <ul class="pricing-half-list"><li>1:1 cuadrado, 4:5 vertical, 9:16 piso</li><li>Gráficos en movimiento y sonido</li><li>Colores y logotipo de la marca aplicados</li><li>Hasta 2 rondas de revisión</li><li>Entrega de MP4: lista para plataforma</li></ul>
@@ -249,7 +255,7 @@
 <div class="pricing-callout reveal" style="margin-top:2.5rem;">
 <div class="pricing-half">
 <div class="pricing-half-tag">Anuncios con imágenes de IA</div>
-<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--f-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">~33% de la tarifa de agencia</div>
+<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--font-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">~33% de la tarifa de agencia</div>
 <div class="pricing-half-price">$100<span> / conjunto</span></div>
 <p class="pricing-half-desc">Imágenes fotorrealistas generadas por IA diseñadas según su informe: tomas de estilo de vida de productos, imágenes conceptuales, imágenes destacadas. Se aplicaron superposiciones de marca. Más rápido y económico que una sesión de fotos.</p>
 <ul class="pricing-half-list"><li>Imágenes fotorrealistas generadas por IA</li><li>Estilo de vida del producto y elementos visuales de los héroes</li><li>Superposiciones de marca y texto aplicado</li><li>Múltiples formatos entregados</li><li>2 rondas de revisión incluidas</li></ul>
@@ -257,7 +263,7 @@
 </div>
 <div class="pricing-half">
 <div class="pricing-half-tag">Anuncios de vídeo con IA</div>
-<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--f-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">25% de la tarifa de agencia</div>
+<div style="display:inline-flex;align-items:center;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.4);color:#34d399;font-size:.72rem;font-family:var(--font-mono);font-weight:700;letter-spacing:.04em;padding:4px 11px;border-radius:999px;margin-bottom:.6rem;">25% de la tarifa de agencia</div>
 <div class="pricing-half-price">$499<span> / vídeo</span></div>
 <p class="pricing-half-desc">Imágenes fotorrealistas generadas por IA para campañas que necesitan revelaciones cinematográficas de productos, escenas de estilo de vida o clips de historias de marca. Usted describe la escena: nosotros la generamos y la entregamos.</p>
 <ul class="pricing-half-list"><li>Imágenes fotorrealistas generadas por IA</li><li>Revelaciones de productos y escenas de estilo de vida</li><li>Hasta 32 segundos</li><li>Formateado para cualquier plataforma · Entrega MP4</li><li>Subtítulos disponibles bajo petición</li></ul>
@@ -268,9 +274,9 @@
 </section>
 <!-- CTA -->
 <section class="section" style="position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.4;"></div>
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
-<div class="section-tag" >Empezar</div>
+<div class="section-tag" style="justify-content:center;">Empezar</div>
 <h2 class="section-title">Cuéntanos qué quieres animar.</h2>
 <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Producto, mensaje, audiencia, colores de marca. Eso es todo lo que necesitamos para empezar.</p>
 <a class="btn btn-primary btn-lg" href="contact.html">Enviar un resumen creativo</a>
@@ -280,7 +286,7 @@
 <div class="footer-inner">
 <div class="footer-grid">
 <div>
-<div class="footer-logo footer-logo">Zoomy</div>
+<div class="footer-logo grad-text">Zoomy</div>
 <p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
@@ -309,21 +315,5 @@
 <script src="../js/main.js?v=20260416"></script>
 
 <script src="../js/chatbot.js?v=20260422a"></script>
-<script>
-function toggleTheme(){
-  var html=document.documentElement;
-  var isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  localStorage.setItem('zt',isDark?'light':'dark');
-  var btn=document.getElementById('themeToggle');
-  if(btn)btn.innerHTML=isDark
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-}
-(function(){
-  var t=localStorage.getItem('zt')||'light';
-  document.documentElement.setAttribute('data-theme',t);
-})();
-</script>
 </body>
 </html>

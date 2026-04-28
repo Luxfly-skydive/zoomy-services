@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -12,8 +32,95 @@
 <meta content="Campaign files, custom websites, AI chatbots, domain registration and hosting setup. We build it, we launch it." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link href="css/style.css?v=20260427b" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=fallback" rel="stylesheet"/>
+<link href="css/style.css?v=20260416b" rel="stylesheet"/>
+<style>
+/* ── Services as clean text rows ── */
+.services-list{margin-top:3rem}
+.svc-row{display:grid;grid-template-columns:260px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start;transition:background var(--transition)}
+.svc-row:first-child{border-top:1px solid var(--border-b)}
+.svc-row:hover{background:rgba(99,102,241,.025)}
+.svc-left{position:sticky;top:100px}
+.svc-num{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem}
+.svc-title{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-.02em}
+.svc-right p{color:var(--text-2);font-size:.95rem;line-height:1.8;margin-bottom:1rem}
+.svc-right p:last-of-type{margin-bottom:1.25rem}
+.svc-meta{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.05em}
+.svc-meta span{color:var(--text-2)}
+.svc-link{font-size:.875rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+
+/* ── Free sample banner ── */
+.sample-banner{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(99,102,241,.12) 0%,rgba(168,85,247,.12) 50%,rgba(6,182,212,.08) 100%);border:1px solid rgba(99,102,241,.3);border-radius:var(--radius-xl);padding:3rem;margin-top:4rem;text-align:center}
+.sample-glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.2),transparent);top:-80px;right:-60px;filter:blur(60px);pointer-events:none}
+.sample-glow2{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.2),transparent);bottom:-60px;left:-40px;filter:blur(60px);pointer-events:none}
+.sample-tag{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(168,85,247,.2));border:1px solid rgba(99,102,241,.4);border-radius:var(--radius-full);padding:5px 16px;font-family:var(--font-mono);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#fff;margin-bottom:1.25rem}
+
+/* ── Steps redesign ── */
+.steps-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:3rem}
+.steps-flow::before{content:"";position:absolute;top:36px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,var(--primary),var(--accent),var(--secondary),transparent);opacity:.4;z-index:0}
+.step-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem 1.5rem;text-align:center;position:relative;margin:0 .75rem;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
+.step-card:hover{border-color:rgba(99,102,241,.45);box-shadow:0 16px 48px rgba(0,0,0,.4);transform:translateY(-4px)}
+.step-card:first-child{margin-left:0}
+.step-card:last-child{margin-right:0}
+.step-badge{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:#fff;margin:0 auto 1.25rem;position:relative;z-index:1}
+.step-badge-1{background:var(--primary);box-shadow:0 0 24px rgba(99,102,241,.5)}
+.step-badge-2{background:var(--accent);box-shadow:0 0 24px rgba(168,85,247,.5)}
+.step-badge-3{background:linear-gradient(135deg,var(--accent),var(--secondary));box-shadow:0 0 24px rgba(6,182,212,.4)}
+.step-badge-4{background:var(--secondary);box-shadow:0 0 24px rgba(6,182,212,.5)}
+.step-card h4{font-family:var(--font-display);font-size:1rem;font-weight:600;color:#fff;margin-bottom:.75rem}
+.step-card p{font-size:.85rem;color:var(--text-2);line-height:1.65}
+
+/* ── Chatbot demo section ── */
+.chatbot-section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.chatbot-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.chatbot-feat{padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.14);border-radius:12px;transition:border-color var(--transition),background var(--transition)}
+.chatbot-feat:hover{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3)}
+.chatbot-feat-icon{font-size:1.4rem;margin-bottom:.6rem}
+.chatbot-feat-title{font-weight:600;color:#fff;font-size:.9rem;margin-bottom:.25rem}
+.chatbot-feat-desc{color:var(--muted);font-size:.8rem}
+
+/* ── Capability strip (replaces fake stats) ── */
+.cap-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:2.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:3rem}
+.cap-item{display:flex;align-items:flex-start;gap:14px}
+.cap-icon{width:40px;height:40px;border-radius:10px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cap-label{font-weight:600;color:#fff;font-size:.9rem;margin-bottom:.2rem;font-family:var(--font-display)}
+.cap-desc{font-size:.78rem;color:var(--muted);line-height:1.4}
+
+@keyframes orbPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.12)}}
+@keyframes waveBounce{0%,100%{transform:scaleY(.4);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+.sections-reorder{display:flex;flex-direction:column}
+@media(max-width:900px){
+.sections-reorder{display:flex;flex-direction:column}
+.svc-row{grid-template-columns:1fr;gap:1.25rem}
+.svc-left{position:static}
+.steps-flow{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.steps-flow::before{display:none}
+.step-card{margin:0}
+.chatbot-section{grid-template-columns:1fr}
+.chatbot-features{grid-template-columns:1fr 1fr}
+.cap-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+.chatbot-features{grid-template-columns:1fr}
+.cap-strip{grid-template-columns:1fr}
+}
+
+/* custom dark scrollbar for admin canvas */
+#admShell .adm-canvas::-webkit-scrollbar{width:6px;}
+#admShell .adm-canvas::-webkit-scrollbar-track{background:#0a0a0a;}
+#admShell .adm-canvas::-webkit-scrollbar-thumb{background:#333;border-radius:3px;}
+#admShell .adm-canvas::-webkit-scrollbar-thumb:hover{background:#555;}
+</style>
+<style>
+:root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
+nav{top:var(--bar-h)!important}
+#navLinks{top:calc(68px + var(--bar-h))!important}
+.bar-off{--bar-h:0px!important}
+#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;overflow:hidden;background:linear-gradient(90deg,#0f0e1a,#1e1b4b,#2d2a5e);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(max-width:600px){#free-bar{padding:0 2.5rem 0 1rem;gap:8px;}}
+.bar-off #free-bar{display:none!important}
+@media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
+</style>
 <script>(function(){if(sessionStorage.getItem('fzb')||sessionStorage.getItem('fzb_shown')){document.documentElement.classList.add('bar-off');}else{sessionStorage.setItem('fzb_shown','1');}})();</script>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
 <!-- Google Analytics 4 -->
@@ -106,23 +213,27 @@
 <noscript><img height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
 <!-- ═══ END META PIXEL ═══ -->
 <style>
+/* Mobile: show call card above description text in phone section */
 @media(max-width:900px){
-  #phone-agent-section .phone-grid { display:flex; flex-direction:column; }
+  #phone-agent-section .section-inner > div { display:flex; flex-direction:column; }
   #phone-agent-section .reveal-right { order:-1; margin-bottom:2rem; }
 }
 </style>
 </head>
 <body>
+<!-- ═══ FREE PAGE ANNOUNCEMENT BAR ═══ -->
 <div id="free-bar">
-<span class="bar-text bar-full">Free website preview — we build your first page before you pay. Every site includes cart, terms &amp; utility pages free.</span>
-<span class="bar-text bar-short" style="display:none;font-size:.75rem;">Free website preview — no commitment.</span>
-<a class="bar-cta" href="contact.html">Claim free page &#8594;</a>
-<button class="bar-dismiss" aria-label="Dismiss" onclick="(function(){document.documentElement.classList.add('bar-off');sessionStorage.setItem('fzb','1');})()">&#10005;</button>
+<span class="bar-full" style="font-size:.78rem;color:rgba(255,255,255,.85);font-weight:400;letter-spacing:.01em;">Free website preview — we build your first page before you pay. Every site includes cart, terms &amp; utility pages free.</span>
+<span class="bar-short" style="display:none;font-size:.75rem;color:rgba(255,255,255,.85);font-weight:400;">Free website preview — no commitment.</span>
+<a href="contact.html" onmouseout="this.style.background='rgba(255,255,255,.12)'" onmouseover="this.style.background='rgba(255,255,255,.22)'" style="flex-shrink:0;font-size:.75rem;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;text-decoration:none;white-space:nowrap;transition:background .15s">Claim free page →</a>
+<button aria-label="Dismiss" onclick="(function(){document.documentElement.classList.add('bar-off');sessionStorage.setItem('fzb','1');})()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.5);font-size:1rem;cursor:pointer;padding:4px 8px;line-height:1">✕</button>
 </div>
 <div id="scroll-progress"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
+<canvas id="particle-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
 <nav>
-<a class="nav-logo logo-turq" href="index.html">Zoomy<span class="nav-logo-sub">Digital Production Studio</span></a>
+<a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Digital Production Studio</span></a>
 <ul class="nav-links" id="navLinks">
 <li><a data-i18n="nav.websites" href="website-design.html">Websites / Apps</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
@@ -139,29 +250,39 @@
 <a class="lang-btn" href="fr/index.html">FR</a>
 <a class="lang-btn" href="es/index.html">ES</a>
 </div>
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Start a Project</span> &#8250;</a>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Start a Project</span> ›</a>
 <button aria-label="Menu" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<main>
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-<div class="section-inner">
-<span class="hero-eyebrow" data-i18n="index.hero.badge">Digital Services for Businesses</span>
-<h1>Grow your<br/><span class="h1-accent">business</span> online.</h1>
-<p class="hero-sub" data-i18n="index.hero.sub">We build the digital tools your business needs — AI chatbots, custom websites, and ad campaigns. Built from scratch, handed to you live and ready to convert.</p>
-<div class="hero-actions">
+<div class="aurora">
+<div class="aurora-blob aurora-blob-1"></div>
+<div class="aurora-blob aurora-blob-2"></div>
+<div class="aurora-blob aurora-blob-3"></div>
+</div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;text-align:center;">
+<span class="badge badge-primary badge-dot" data-i18n="index.hero.badge" style="margin-bottom:1.75rem;display:inline-flex;">Digital Services for Businesses</span>
+<h1 style="margin-bottom:1.5rem;">
+<span class="glitch grad-text-animated">Grow your</span><br/>
+      business online.
+    </h1>
+<p class="hero-sub" data-i18n="index.hero.sub" style="margin:0 auto 2.5rem;">We build the digital tools your business needs — AI chatbots, custom websites, and ad campaigns. Built from scratch, handed to you live and ready to convert.</p>
+<div class="hero-actions" style="justify-content:center;margin-bottom:3rem;">
 <a class="btn btn-primary btn-lg" href="contact.html">Start a Project</a>
 <a class="btn btn-ghost btn-lg" href="#our-services">Explore Services</a>
 </div>
-<div class="hero-checks">
-<div class="hero-check"><span class="check-icon">✓</span> <span data-i18n="index.hero.check1">Campaign Management</span></div>
-<div class="hero-check"><span class="check-icon">✓</span> <span data-i18n="index.hero.check2">Custom Websites</span></div>
-<div class="hero-check"><span class="check-icon">✓</span> <span data-i18n="index.hero.check3">AI Chatbots</span></div>
-<div class="hero-check"><span class="check-icon">✓</span> <span data-i18n="index.hero.check4">Domain &amp; Hosting Setup</span></div>
-<div class="hero-check"><span class="check-icon">✓</span> <span data-i18n="index.hero.check5">Free First Page — No Commitment</span></div>
+<div style="display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;">
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check1">Campaign Management</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check2">Custom Websites</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check3">AI Chatbots</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check4">Domain &amp; Hosting Setup</span></div>
+<div style="display:flex;align-items:center;gap:8px;color:var(--text-2);font-size:.875rem;"><span style="color:var(--green);font-weight:700;">✓</span> <span data-i18n="index.hero.check5">Free First Page — No Commitment</span></div>
 </div>
 </div>
 </section>
+<!-- ═══════════ MARQUEE ═══════════ -->
 <div class="marquee">
 <div class="marquee-track">
 <span class="marquee-item"><span class="marquee-dot"></span>Campaign Files</span>
@@ -182,160 +303,206 @@
 <span class="marquee-item"><span class="marquee-dot"></span>Admin Panels</span>
 </div>
 </div>
-<section class="section section-dark" id="phone-agent-section">
-<div class="section-inner">
-<div class="phone-grid">
+<!-- ═══════════ PHONE AGENT FEATURE + SERVICES (reorder on mobile) ═══════════ -->
+<div class="sections-reorder">
+<section class="section" id="phone-agent-section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;">
+<div class="aurora-blob aurora-blob-1" style="background:radial-gradient(circle,#6366f1,transparent);animation-duration:16s;"></div>
+<div class="aurora-blob aurora-blob-2" style="animation-duration:20s;"></div>
+</div>
+<div class="section-inner" style="position:relative;z-index:2;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
 <div class="reveal-left">
 <div class="section-tag">AI Phone Agent</div>
-<h2 class="section-title" style="color:#fff;">Every call.<br/>Answered.</h2>
-<p style="color:rgba(255,255,255,.6);font-size:1rem;line-height:1.82;margin-bottom:1.25rem;">A custom AI voice agent that picks up every inbound call, speaks naturally in any language, and handles your most common requests without any human involvement.</p>
-<p style="color:rgba(255,255,255,.6);font-size:1rem;line-height:1.82;margin-bottom:2rem;">It never misses a call, never takes a day off, and represents your business consistently every time. Live calendar booking and webhook integrations with your existing tools are available as optional add-ons.</p>
-<div class="phone-features">
-<div class="phone-feat"><div class="phone-feat-title">Any language</div><div class="phone-feat-desc">Detects and responds in the caller&#39;s language automatically</div></div>
-<div class="phone-feat"><div class="phone-feat-title">Business-specific</div><div class="phone-feat-desc">Trained on your services, prices, hours, and policies</div></div>
-<div class="phone-feat"><div class="phone-feat-title">24/7 availability</div><div class="phone-feat-desc">Operates at all hours, handles multiple concurrent calls</div></div>
-
+<h2 class="section-title" style="margin-bottom:1.25rem;">Every call.<br/>Answered.</h2>
+<p style="color:var(--text-2);font-size:1rem;line-height:1.82;margin-bottom:1.25rem;">A custom AI voice agent that picks up every inbound call, speaks naturally in any language, and handles your most common requests without any human involvement.</p>
+<p style="color:var(--text-2);font-size:1rem;line-height:1.82;margin-bottom:2rem;">It never misses a call, never takes a day off, and represents your business consistently every time. Live calendar booking and webhook integrations with your existing tools are available as optional add-ons.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">Any language</div>
+<div style="color:var(--muted);font-size:.8rem;">Detects and responds in the caller's language automatically</div>
 </div>
-<div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:2rem;">
-<button class="btn btn-accent btn-lg" onclick="hpToggleCall()" style="display:flex;align-items:center;gap:8px;cursor:pointer;">
-<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">Any language</div>
+<div style="color:var(--muted);font-size:.8rem;">Detects and responds in the caller's language automatically</div>
+</div>
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">Business-specific</div>
+<div style="color:var(--muted);font-size:.8rem;">Trained on your services, prices, hours, and policies</div>
+</div>
+<div style="padding:1rem;background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.18);border-radius:10px;">
+<div style="font-weight:600;color:#fff;font-size:.875rem;margin-bottom:.25rem;">24/7 availability</div>
+<div style="color:var(--muted);font-size:.8rem;">Operates at all hours, handles multiple concurrent calls</div>
+</div>
+</div>
+<div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+<button class="btn btn-primary btn-lg" onclick="hpToggleCall()" style="display:flex;align-items:center;gap:8px;cursor:pointer;border:none;">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
 Try Live Demo
 </button>
-<a class="btn btn-ghost-inv btn-lg" href="phone-agent.html#how-it-works">How it works &#8250;</a>
+<a class="btn btn-ghost btn-lg" href="phone-agent.html#how-it-works">How it works ›</a>
 </div>
-<p style="margin-top:1rem;font-size:.8rem;color:rgba(255,255,255,.3);font-family:var(--f-mono);">// Supports any language — auto-detected</p>
+<p style="margin-top:1rem;font-size:.8rem;color:var(--muted);font-family:var(--font-mono);">// Supports any language — auto-detected</p>
 </div>
 <div class="reveal-right" style="display:flex;flex-direction:column;align-items:center;gap:2rem;">
-<div style="background:#111110;border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:3rem 2.5rem;text-align:center;width:100%;max-width:380px;">
-<div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#004D40,#00C9A7);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(0,201,167,.3);position:relative;">
+<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:3rem 2.5rem;text-align:center;width:100%;max-width:380px;">
+<div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#312e81,#6366f1);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(99,102,241,.4);position:relative;">
 📞
-<div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(0,201,167,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
+<div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(99,102,241,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
 </div>
-<h3 style="color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Zoomy Phone Agent</h3>
-<p style="color:rgba(255,255,255,.55);font-size:.875rem;line-height:1.6;margin-bottom:.6rem;">Click below to start a live voice conversation. Your microphone will be requested.</p>
-<p style="color:var(--accent);font-size:.75rem;line-height:1.5;margin-bottom:2rem;font-family:var(--f-mono);">// After your call ends — view your full transcript below &#8595;</p>
+<h3 style="font-family:var(--font-display);color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Zoomy Phone Agent</h3>
+<p style="color:var(--text-2);font-size:.875rem;line-height:1.6;margin-bottom:.6rem;">Click below to start a live voice conversation. Your microphone will be requested.</p>
+<p style="color:var(--primary);font-size:.75rem;line-height:1.5;margin-bottom:2rem;font-family:var(--font-mono);">// After your call ends — view your full transcript below ↓</p>
 <style>@media(min-width:769px){#hp-speaker-btn{display:none!important}}</style>
 <div id="hp-call-ui" style="display:flex;flex-direction:column;align-items:center;gap:.85rem;width:100%;">
-<button id="hp-call-btn" onclick="hpToggleCall()" style="width:100%;padding:14px 28px;background:var(--grad-main);border:none;border-radius:var(--radius-full);color:#fff;font-family:var(--f-display);font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 0 30px rgba(0,201,167,.3);transition:filter .2s,transform .2s;">
-<svg fill="none" height="18" id="hp-call-icon" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+<button id="hp-call-btn" onclick="hpToggleCall()" style="width:100%;padding:14px 28px;background:var(--grad-main);border:none;border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 0 30px rgba(99,102,241,.4);transition:filter .2s,transform .2s;">
+<svg fill="none" height="18" id="hp-call-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
 <span id="hp-call-label">Start Call</span>
 </button>
 <div id="hp-active-controls" style="display:none;width:100%;gap:.6rem;flex-direction:row;">
-<button id="hp-mute-btn" onclick="hpToggleMute()" style="flex:1;padding:11px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-full);color:#fff;font-family:var(--f-display);font-weight:600;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s,border-color .2s;">
-<svg fill="none" height="14" id="hp-mute-icon" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="14"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23" y2="23"></line></svg>
+<button id="hp-mute-btn" onclick="hpToggleMute()" style="flex:1;padding:11px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:600;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s,border-color .2s;">
+<svg fill="none" height="14" id="hp-mute-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="23"></line><line x1="8" x2="16" y1="23" y2="23"></line></svg>
 <span id="hp-mute-label">Mute</span>
 </button>
-<button id="hp-speaker-btn" onclick="hpToggleSpeaker()" style="flex:1;padding:11px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-full);color:#fff;font-family:var(--f-display);font-weight:600;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s,border-color .2s;">
-<svg fill="none" height="14" id="hp-speaker-icon" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="14"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14" opacity=".4"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+<button id="hp-speaker-btn" onclick="hpToggleSpeaker()" style="flex:1;padding:11px 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-full);color:#fff;font-family:var(--font-display);font-weight:600;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .2s,border-color .2s;">
+<svg fill="none" height="14" id="hp-speaker-icon" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14" opacity=".4"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
 <span id="hp-speaker-label">Speaker</span>
 </button>
 </div>
 <div id="hp-call-waves" style="display:none;align-items:center;gap:3px;height:24px;">
-<div style="width:3px;border-radius:2px;background:var(--accent);animation:waveBounce 1s ease-in-out infinite;animation-delay:0s;"></div>
-<div style="width:3px;border-radius:2px;background:var(--accent);animation:waveBounce 1s ease-in-out infinite;animation-delay:.12s;"></div>
-<div style="width:3px;border-radius:2px;background:var(--accent);animation:waveBounce 1s ease-in-out infinite;animation-delay:.24s;"></div>
-<div style="width:3px;border-radius:2px;background:var(--accent);animation:waveBounce 1s ease-in-out infinite;animation-delay:.36s;"></div>
-<div style="width:3px;border-radius:2px;background:var(--accent);animation:waveBounce 1s ease-in-out infinite;animation-delay:.48s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:0s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.12s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.24s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.36s;"></div>
+<div style="width:3px;border-radius:2px;background:var(--primary);animation:waveBounce 1s ease-in-out infinite;animation-delay:.48s;"></div>
 </div>
-<div id="hp-call-status" style="font-family:var(--f-mono);font-size:.72rem;color:rgba(255,255,255,.35);">Ready</div>
+<div id="hp-call-status" style="font-family:var(--font-mono);font-size:.72rem;color:var(--muted);">Ready</div>
 </div>
 <div id="hp-transcript-wrap" style="display:none;width:100%;margin-top:.5rem;">
-<button onclick="hpToggleTranscript()" style="width:100%;padding:10px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);color:rgba(255,255,255,.6);font-family:var(--f-display);font-weight:600;font-size:.82rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;">
-<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+<button onclick="hpToggleTranscript()" style="width:100%;padding:10px 16px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:var(--radius-md);color:var(--text-2);font-family:var(--font-display);font-weight:600;font-size:.82rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
 <span id="hp-transcript-toggle-label">View Call Transcript</span>
 </button>
-<div id="hp-transcript-body" style="display:none;margin-top:.6rem;background:#0c0c0a;border:1px solid rgba(255,255,255,.08);border-radius:var(--r-md);padding:1.1rem 1.25rem;max-height:280px;overflow-y:auto;text-align:left;"></div>
+<div id="hp-transcript-body" style="display:none;margin-top:.6rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.1rem 1.25rem;max-height:280px;overflow-y:auto;text-align:left;"></div>
 </div>
 </div>
 <div style="display:flex;align-items:center;gap:10px;width:100%;max-width:380px;margin-top:-.5rem;">
-<div style="flex:1;height:1px;background:rgba(255,255,255,.08);"></div>
-<span style="font-family:var(--f-mono);font-size:.65rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;">or call directly</span>
-<div style="flex:1;height:1px;background:rgba(255,255,255,.08);"></div>
+<div style="flex:1;height:1px;background:var(--border);"></div>
+<span style="font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;">or call directly</span>
+<div style="flex:1;height:1px;background:var(--border);"></div>
 </div>
-<a href="tel:+19147420640" style="display:flex;align-items:center;justify-content:center;gap:9px;width:100%;max-width:380px;padding:13px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-full);color:rgba(255,255,255,.6);font-family:var(--f-display);font-weight:600;font-size:.9rem;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(0,201,167,.1)';this.style.borderColor='rgba(0,201,167,.4)'" onmouseout="this.style.background='rgba(255,255,255,.04)';this.style.borderColor='rgba(255,255,255,.08)'">
-<svg fill="none" height="15" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+<a href="tel:+19147420640" onmouseout="this.style.background='rgba(255,255,255,.04)';this.style.borderColor='var(--border)'" onmouseover="this.style.background='rgba(99,102,241,.1)';this.style.borderColor='rgba(99,102,241,.4)'" style="display:flex;align-items:center;justify-content:center;gap:9px;width:100%;max-width:380px;padding:13px 20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--radius-full);color:var(--text-2);font-family:var(--font-display);font-weight:600;font-size:.9rem;text-decoration:none;transition:background .2s,border-color .2s;">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
 +1 (914) 742-0640
 </a>
-<p style="font-size:.78rem;color:rgba(255,255,255,.3);text-align:center;max-width:320px;">This call is recorded for quality review. By speaking with the agent you consent to the recording of this conversation.</p>
+<p style="font-size:.78rem;color:var(--muted);text-align:center;max-width:320px;">This call is recorded for quality review. By speaking with the agent you consent to the recording of this conversation.</p>
 </div>
 </div>
 </div>
 </section>
+<!-- ═══════════ SERVICES ═══════════ -->
 <section class="section" id="our-services">
 <div class="section-inner">
-<div style="margin-bottom:3rem;">
+<div style="margin-bottom:1rem;">
 <div class="section-tag">Services</div>
 <h2 class="section-title" data-i18n="index.svc.heading">What we build.</h2>
 <p class="section-sub" style="max-width:560px;">Four distinct services. Each one scoped and priced per project.</p>
 </div>
-<div class="svc-list">
-<div class="svc-row reveal">
-<div class="svc-left"><span class="svc-num">01</span></div>
-<div class="svc-mid">
-<h3 class="svc-title">Websites &amp; Landing Pages</h3>
-<p class="svc-desc">Custom-coded from scratch. Booking systems, multilingual support, admin panels, and AI chatbots available depending on the project.</p>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">🌐</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Websites &amp; Landing Pages</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Custom-coded from scratch. Booking systems, multilingual support, admin panels, and AI chatbots available depending on the project.</div>
 </div>
-<div class="svc-right"><a class="svc-link" href="website-design.html">What&#x2019;s included &#8250;</a></div>
+<a href="website-design.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--secondary);text-decoration:none;">What's included ›</a>
 </div>
-<div class="svc-row reveal reveal-delay-1">
-<div class="svc-left"><span class="svc-num">02</span></div>
-<div class="svc-mid">
-<h3 class="svc-title">Website Chatbot</h3>
-<p class="svc-desc">Trained on your services, prices, hours, and policies. Handles questions and collects leads in 100+ languages. No SaaS subscriptions.</p>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">💬</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Website Chatbot</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Trained on your services, prices, hours, and policies. Handles questions and collects leads in 100+ languages. No SaaS subscriptions.</div>
 </div>
-<div class="svc-right"><a class="svc-link" href="chatbot.html">See live demo &#8250;</a></div>
+<a href="chatbot.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--green);text-decoration:none;">See live demo ›</a>
 </div>
-<div class="svc-row reveal reveal-delay-2">
-<div class="svc-left"><span class="svc-num">03</span></div>
-<div class="svc-mid">
-<h3 class="svc-title">AI Phone Agent</h3>
-<p class="svc-desc">Answers inbound calls in any language, handles common questions, and books appointments — without human involvement.</p>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">📞</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">AI Phone Agent</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Answers inbound calls in any language, handles common questions, and books appointments — without human involvement.</div>
 </div>
-<div class="svc-right"><a class="svc-link" href="phone-agent.html">How it works &#8250;</a></div>
+<a href="phone-agent.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--primary);text-decoration:none;">How it works ›</a>
 </div>
-<div class="svc-row reveal reveal-delay-3">
-<div class="svc-left"><span class="svc-num">04</span></div>
-<div class="svc-mid">
-<h3 class="svc-title">Animated Creatives</h3>
-<p class="svc-desc">Animated image and video ads built from your brief. No footage, no camera crew. Delivered ready to upload. AI-generated options available.</p>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition);">
+<div style="font-size:2rem;line-height:1;">🎬</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Animated Creatives</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Animated image and video ads built from your brief. No footage, no camera crew. Delivered ready to upload. AI-generated options available.</div>
 </div>
-<div class="svc-right"><a class="svc-link" href="animated-creatives.html">View details &#8250;</a></div>
+<a href="animated-creatives.html" style="margin-top:auto;font-size:.875rem;font-weight:600;color:var(--primary);text-decoration:none;">View details ›</a>
 </div>
-<div class="svc-row svc-row-wide reveal">
-<div class="svc-left"><span class="svc-num">05</span></div>
-<div class="svc-mid">
-<h3 class="svc-title">Google Ads Campaigns</h3>
-<p class="svc-desc">Keyword strategy, ad group structure, copy, conversion tracking, and ongoing optimisation. Campaigns run in your account — we handle everything else.</p>
-<div class="svc-checks">
-<span>Keyword research &amp; match types</span>
-<span>Ad copy &amp; RSA structure</span>
-<span>Conversion tracking &amp; GA4</span>
-<span>Ongoing optimisation &amp; reporting</span>
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;grid-column:span 2;transition:border-color var(--transition);">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+<div style="display:flex;flex-direction:column;gap:1rem;">
+<div style="font-size:2rem;line-height:1;">📈</div>
+<div>
+<div style="font-weight:700;color:#fff;font-size:1.05rem;margin-bottom:.45rem;">Google Ads Campaigns</div>
+<div style="color:var(--text-2);font-size:.875rem;line-height:1.65;">Keyword strategy, ad group structure, copy, conversion tracking, and ongoing optimisation. Campaigns run in your account — we handle everything else.</div>
+</div>
+<a href="campaign-portfolio.html" style="font-size:.875rem;font-weight:600;color:var(--primary);text-decoration:none;">What's included ›</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:.65rem;">
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Keyword research &amp; match types</span>
+</div>
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Ad copy &amp; RSA structure</span>
+</div>
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Conversion tracking &amp; GA4</span>
+</div>
+<div style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.12);border-radius:8px;">
+<span style="color:var(--primary);font-size:1rem;">✓</span><span style="color:var(--text-2);font-size:.85rem;">Ongoing optimisation &amp; reporting</span>
 </div>
 </div>
-<div class="svc-right"><a class="svc-link" href="campaign-portfolio.html">What&#x2019;s included &#8250;</a></div>
+</div>
 </div>
 </div>
 <!-- CAPABILITY STRIP -->
-<div class="cap-strip reveal">
-<div class="cap-item"><div class="cap-label">Campaign Management</div><div class="cap-desc">Created, managed, and reported on by us</div></div>
-<div class="cap-item"><div class="cap-label">Domain &amp; Hosting</div><div class="cap-desc">We register domains and configure hosting for you</div></div>
-<div class="cap-item"><div class="cap-label">Free First Page</div><div class="cap-desc">Full website first page built at zero cost, no commitment</div></div>
-<div class="cap-item"><div class="cap-label">Zero Templates</div><div class="cap-desc">Every project is custom-coded from scratch</div></div>
+<div class="cap-strip stagger-children">
+<div class="cap-item reveal">
+<div class="cap-icon">🕑</div>
+<div><div class="cap-label">Campaign Management</div><div class="cap-desc">Created, managed, and reported on by us</div></div>
+</div>
+<div class="cap-item reveal reveal-delay-1">
+<div class="cap-icon">🌐</div>
+<div><div class="cap-label">Domain &amp; Hosting</div><div class="cap-desc">We register domains and configure hosting for you</div></div>
+</div>
+<div class="cap-item reveal reveal-delay-2">
+<div class="cap-icon">🆕</div>
+<div><div class="cap-label">Free First Page</div><div class="cap-desc">Full website first page built at zero cost, no commitment</div></div>
+</div>
+<div class="cap-item reveal reveal-delay-3">
+<div class="cap-icon">📄</div>
+<div><div class="cap-label">Zero Templates</div><div class="cap-desc">Every project is custom-coded from scratch</div></div>
+</div>
 </div>
 <!-- FREE SAMPLE BANNER -->
 <div class="sample-banner reveal">
-<div class="sample-tag">Limited Offer</div>
-<h2 style="font-family:var(--f-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:1rem;line-height:1.2;">We build your entire first page.<br/><span style="color:var(--accent);">For free.</span></h2>
-<p style="color:rgba(255,255,255,.55);font-size:1.05rem;max-width:600px;margin:0 auto 2rem;line-height:1.7;">Not sure yet? Let us build the full first page of your website — real design, real code, real content. Zero commitment. If you love it, we build the rest.</p>
+<div class="sample-glow"></div>
+<div class="sample-glow2"></div>
+<div class="sample-tag">🆕 Limited Offer</div>
+<h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:#fff;letter-spacing:-.03em;margin-bottom:1rem;line-height:1.2;">We build your entire first page.<br/><span class="grad-text-animated">For free.</span></h2>
+<p style="color:var(--text-2);font-size:1.05rem;max-width:600px;margin:0 auto 2rem;line-height:1.7;">Not sure yet? Let us build the full first page of your website — real design, real code, real content. Zero commitment. If you love it, we build the rest.</p>
 <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-<a class="btn btn-accent btn-lg" href="contact.html">Claim Your Free Page &#8250;</a>
-<a class="btn btn-ghost-inv btn-lg" href="website-design.html">See Examples</a>
+<a class="btn btn-primary btn-lg" href="contact.html">Claim Your Free Page ›</a>
+<a class="btn btn-ghost btn-lg" href="website-design.html">See Examples</a>
 </div>
-<p style="margin-top:1.25rem;font-size:.78rem;color:rgba(255,255,255,.3);font-family:var(--f-mono);">// No credit card. No commitment. Just results.</p>
+<p style="margin-top:1.25rem;font-size:.78rem;color:var(--muted);font-family:var(--font-mono);">// No credit card. No commitment. Just results.</p>
 </div>
 </div>
 </section>
+</div><!-- /sections-reorder -->
 <!-- ═══════════ ADMIN PANEL DEMO ═══════════ -->
 <section class="section" style="overflow:hidden;padding-bottom:4rem;">
 <div class="section-inner">
@@ -345,12 +512,12 @@ Try Live Demo
 <h2 class="section-title" style="margin-bottom:1.25rem;">You control the content.<br/>No developer needed.</h2>
 <p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;font-size:1.05rem;">Log in, click any text or image on your live site, and it's instantly editable — no code, no waiting.</p>
 <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;">
-<div class="adm-pills"><span class="adm-pill">✏️ Edit any text</span>
-<span class="adm-pill">🖼️ Swap images</span>
-<span class="adm-pill">💰 Update pricing</span>
-<span class="adm-pill">🎨 Change brand colours</span>
-<span class="adm-pill">📢 Run announcements</span>
-<span class="adm-pill">🔍 Control SEO</span></div>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">✏️ Edit any text</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">🖼️ Swap images</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">💰 Update pricing</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">🎨 Change brand colours</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">📢 Run announcements</span>
+<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.3);border-radius:9999px;padding:5px 14px;font-size:.82rem;color:#e2e8f0;white-space:nowrap;">🔍 Control SEO</span>
 </div>
 <a class="btn btn-primary" href="contact.html">Include in your project ›</a>
 </div>
@@ -358,10 +525,10 @@ Try Live Demo
 <div>
 <!-- TRY IT LABEL -->
 <div style="display:flex;align-items:center;gap:1rem;margin-top:3rem;margin-bottom:.85rem;">
-<div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--f-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Live demo — try it now</div>
+<div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Live demo — try it now</div>
 <span style="font-size:.8rem;color:#cbd5e1;">👇 Try it — click any <strong>image</strong> to swap it, click any <strong>text</strong> to edit it live</span>
 </div>
-<div id="admShell" style="--ac:#00C9A7;background:#0a0a0a;border:1px solid #222;border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.8);">
+<div id="admShell" style="--ac:#0ea5e9;background:#0a0a0a;border:1px solid #222;border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.8);">
 <!-- TOP BAR -->
 <div style="background:#0d0d0d;border-bottom:1px solid #1a1a1a;padding:.6rem 1.25rem;display:flex;align-items:center;justify-content:space-between;">
 <div style="display:flex;align-items:center;gap:.85rem;">
@@ -391,11 +558,11 @@ Try Live Demo
 <div class="adm-canvas" style="flex:1;height:520px;overflow-y:auto;overflow-x:hidden;position:relative;">
 <iframe id="adm-iframe" src="" style="width:100%;height:100%;border:none;display:block;" title="Page Preview"></iframe>
 <div id="adm-colour-panel" style="display:none;position:absolute;inset:0;background:#0b0b14;overflow-y:auto;padding:1.5rem;z-index:5;">
-<div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00C9A7;margin-bottom:.5rem;">Brand Settings</div>
+<div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0ea5e9;margin-bottom:.5rem;">Brand Settings</div>
 <div style="font-size:1.1rem;font-weight:800;color:#f1f5f9;margin-bottom:.3rem;font-family:system-ui,sans-serif;">Brand Colour</div>
 <p style="font-size:.78rem;color:#64748b;margin-bottom:1.25rem;">Tap a preset or pick a custom colour. Changes apply to the site preview instantly.</p>
 <div id="adm-swatches" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.25rem;">
-<div class="adm-swatch adm-swatch-active" data-color="#00C9A7" style="width:36px;height:36px;border-radius:8px;background:#00C9A7;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 3px rgba(0,201,167,.5);"></div>
+<div class="adm-swatch adm-swatch-active" data-color="#0ea5e9" style="width:36px;height:36px;border-radius:8px;background:#0ea5e9;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 3px rgba(14,165,233,.5);"></div>
 <div class="adm-swatch" data-color="#8b5cf6" style="width:36px;height:36px;border-radius:8px;background:#8b5cf6;cursor:pointer;border:2px solid transparent;"></div>
 <div class="adm-swatch" data-color="#10b981" style="width:36px;height:36px;border-radius:8px;background:#10b981;cursor:pointer;border:2px solid transparent;"></div>
 <div class="adm-swatch" data-color="#f59e0b" style="width:36px;height:36px;border-radius:8px;background:#f59e0b;cursor:pointer;border:2px solid transparent;"></div>
@@ -406,8 +573,8 @@ Try Live Demo
 </div>
 <div style="font-size:.75rem;color:#64748b;margin-bottom:.4rem;">Custom hex</div>
 <div style="display:flex;gap:.5rem;">
-<input id="adm-custom-color" style="width:42px;height:38px;border:none;border-radius:8px;cursor:pointer;padding:2px;background:transparent;" type="color" value="#00C9A7"/>
-<input id="adm-hex-input" maxlength="7" placeholder="#000000" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;" type="text" value="#00C9A7"/>
+<input id="adm-custom-color" style="width:42px;height:38px;border:none;border-radius:8px;cursor:pointer;padding:2px;background:transparent;" type="color" value="#0ea5e9"/>
+<input id="adm-hex-input" maxlength="7" placeholder="#000000" style="flex:1;background:#0d0d1e;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;color:#e2e8f0;font-size:.85rem;outline:none;font-family:monospace;" type="text" value="#0ea5e9"/>
 </div>
 </div>
 </div>
@@ -854,28 +1021,30 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 </div><!-- /section-inner -->
 </section>
-<!-- ═══════════ END ADMIN PANEL DEMO ═══════════ --><section class="section section-soft" id="how-it-works">
+<!-- ═══════════ END ADMIN PANEL DEMO ═══════════ -->
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
-<div style="text-align:center;margin-bottom:3.5rem;">
+<div style="text-align:center;margin-bottom:1rem;">
 <div class="section-tag">How It Works</div>
 <h2 class="section-title">Four steps. Zero friction.</h2>
 <p class="section-sub" style="text-align:center;margin:0 auto;">From first contact to a live product with hosting configured.</p>
 </div>
-<div class="steps-flow stagger-children" style="position:relative;"><div class="steps-connector"></div>
-<div class="step-card reveal">
+<div class="steps-flow stagger-children">
+<div class="step-card reveal" style="position:relative;">
 <div class="step-badge step-badge-1" data-i18n="step1.num">01</div>
 <h4 data-i18n="step1.title">Briefing</h4>
 <p>Tell us your goal, target audience, and deadline. We ask the right questions and confirm the full scope and price typically within 24 hours.</p>
 </div>
-<div class="step-card reveal reveal-delay-1">
+<div class="step-card reveal reveal-delay-1" style="position:relative;">
 <div class="step-badge step-badge-2" data-i18n="step2.num">02</div>
 <h4 data-i18n="step2.title">We Build</h4>
 <p>We handle everything — design, code, copy, integrations. You get a direct line for any questions while we work.</p>
 </div>
-<div class="step-card reveal reveal-delay-2">
+<div class="step-card reveal reveal-delay-2" style="position:relative;">
 <div class="step-badge step-badge-3" data-i18n="step3.num">03</div>
 <h4 data-i18n="step3.title">Review &amp; Revise</h4>
-<p>You receive a polished, production-ready deliverable. We handle your revision round, then it&#x2019;s yours.</p>
+<p>You receive a polished, production-ready deliverable. We handle your revision round, then it's yours.</p>
 </div>
 <div class="step-card reveal reveal-delay-3">
 <div class="step-badge step-badge-4" data-i18n="step4.num">04</div>
@@ -885,31 +1054,49 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 </section>
-<section class="section" id="chatbot-section">
-<div class="section-inner">
+<!-- ═══════════ AI CHATBOT SHOWCASE ═══════════ -->
+<section class="section" style="position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.5;">
+<div class="aurora-blob aurora-blob-2" style="animation-duration:15s;"></div>
+<div class="aurora-blob aurora-blob-3" style="animation-duration:22s;"></div>
+</div>
+<div class="section-inner" style="position:relative;z-index:2;">
 <div class="chatbot-section">
 <div class="reveal-left">
 <div class="section-tag">AI Chatbot</div>
 <h2 class="section-title" style="margin-bottom:1rem;">Your 24/7 sales assistant.</h2>
 <p style="color:var(--text-2);line-height:1.8;margin-bottom:1.5rem;">A custom AI assistant trained entirely on your business — your products, your prices, your policies. Not a generic bot. It knows your business the way you do.</p>
 <p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Available as a standalone build or as an add-on when you order a website or landing page. Just mention it in your brief.</p>
-<div class="chatbot-feat-bar">
-<div class="cfb-item"><span class="cfb-icon">&#128172;</span><div><div class="cfb-title">Fully trained</div><div class="cfb-desc">On your real business data</div></div></div>
-<div class="cfb-sep"></div>
-<div class="cfb-item"><span class="cfb-icon">&#127760;</span><div><div class="cfb-title">Multilingual</div><div class="cfb-desc">Serves visitors in their language</div></div></div>
-<div class="cfb-sep"></div>
-<div class="cfb-item"><span class="cfb-icon">&#128100;</span><div><div class="cfb-title">Lead capture</div><div class="cfb-desc">Email &amp; phone collection built in</div></div></div>
-<div class="cfb-sep"></div>
-<div class="cfb-item"><span class="cfb-icon">&#128274;</span><div><div class="cfb-title">GDPR-compliant</div><div class="cfb-desc">No SaaS platform — your own infrastructure</div></div></div>
+<div class="chatbot-features">
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">💬</div>
+<div class="chatbot-feat-title">Fully trained</div>
+<div class="chatbot-feat-desc">On your real business data</div>
+</div>
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">🌐</div>
+<div class="chatbot-feat-title">Multilingual</div>
+<div class="chatbot-feat-desc">Serves visitors in their language</div>
+</div>
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">👤</div>
+<div class="chatbot-feat-title">Lead capture</div>
+<div class="chatbot-feat-desc">Email &amp; phone collection built in</div>
+</div>
+<div class="chatbot-feat">
+<div class="chatbot-feat-icon">🔒</div>
+<div class="chatbot-feat-title">GDPR-compliant</div>
+<div class="chatbot-feat-desc">No SaaS platform — your own infrastructure</div>
+</div>
 </div>
 <div style="margin-top:2rem;">
-<a class="btn btn-primary" href="contact.html">Add to Your Project &#8250;</a>
+<a class="btn btn-primary" href="contact.html">Add to Your Project ›</a>
 </div>
 </div>
 <div class="reveal-right" style="display:flex;justify-content:flex-end;">
 <div class="chatbot-mock" style="width:100%;max-width:400px;">
 <div class="chatbot-header">
-<div class="chatbot-avatar">&#129302;</div>
+<div class="chatbot-avatar">🤖</div>
 <div>
 <div class="chatbot-name">Zoomy Assistant</div>
 <div class="chatbot-status">Online — try it out</div>
@@ -918,12 +1105,12 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="chatbot-messages" id="chatbot-messages">
 <div class="msg msg-bot">Hi! Ask me anything about our services — websites, chatbots, campaigns, or phone agents.</div>
 <div class="msg msg-user">What makes your chatbot different from just adding ChatGPT to a site?</div>
-<div class="msg msg-bot">It&#x2019;s trained only on your business — your real services, prices, and policies. It won&#x2019;t go off-topic or make things up. And when the moment is right, it captures the visitor&#x2019;s contact details directly in the conversation.</div>
+<div class="msg msg-bot">It’s trained only on your business — your real services, prices, and policies. It won’t go off-topic or make things up. And when the moment is right, it captures the visitor’s contact details directly in the conversation.</div>
 </div>
 <div class="chatbot-input">
 <input class="chatbot-input-field" id="chatbot-input-field" placeholder="Ask about our services..." type="text"/>
 <button class="chatbot-send" id="chatbot-send">
-<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="16"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
 </button>
 </div>
 </div>
@@ -931,13 +1118,14 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 </section>
-<section class="section section-soft" id="why-zoomy">
+<!-- ═══════════ WHY ZOOMY ═══════════ -->
+<section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
-<div style="text-align:center;margin-bottom:3.5rem;">
+<div style="text-align:center;margin-bottom:3rem;">
 <div class="section-tag">Why Zoomy</div>
 <h2 class="section-title">Built for brands that move fast.</h2>
 </div>
-<div class="why-grid">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
 <div class="terminal reveal-left">
 <div class="terminal-header">
 <div class="terminal-dot" style="background:#10b981;"></div>
@@ -961,40 +1149,44 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 <div class="reveal-right">
 <div style="display:grid;gap:1.5rem;">
-<div class="why-card">
-<h4 class="why-card-title">72-Hour Campaign Delivery</h4>
-<p class="why-card-desc">Campaign files built and tested in under 3 days. Websites in 5&#8211;21 days depending on scope.</p>
+<div style="padding:1.5rem;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:14px;">
+<h4 style="color:var(--primary);margin-bottom:.5rem;font-weight:600;">72-Hour Campaign Delivery</h4>
+<p style="color:var(--text-2);font-size:.9rem;">Campaign files built and tested in under 3 days. Websites in 5–21 days depending on scope.</p>
 </div>
-<div class="why-card">
-<h4 class="why-card-title">Full-Stack Delivery</h4>
-<p class="why-card-desc">We don&#x2019;t hand you files. We hand you a live product &#8212; domain registered, hosting configured, site up.</p>
+<div style="padding:1.5rem;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);border-radius:14px;">
+<h4 style="color:var(--accent);margin-bottom:.5rem;font-weight:600;">Full-Stack Delivery</h4>
+<p style="color:var(--text-2);font-size:.9rem;">We don't hand you files. We hand you a live product — domain registered, hosting configured, site up.</p>
 </div>
-<div class="why-card">
-<h4 class="why-card-title">Premium Quality</h4>
-<p class="why-card-desc">Animations, accessibility, SEO. Mobile-perfect on all devices. No cut corners on any project.</p>
+<div style="padding:1.5rem;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);border-radius:14px;">
+<h4 style="color:var(--secondary);margin-bottom:.5rem;font-weight:600;">Premium Quality</h4>
+<p style="color:var(--text-2);font-size:.9rem;">Animations, accessibility, SEO. Mobile-perfect on all devices. No cut corners on any project.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="section section-dark" id="cta-section">
-<div class="section-inner" style="text-align:center;">
+<!-- ═══════════ CTA ═══════════ -->
+<section class="section" style="position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.5;">
+<div class="aurora-blob aurora-blob-1"></div>
+<div class="aurora-blob aurora-blob-3"></div>
+</div>
+<div class="section-inner" style="text-align:center;z-index:2;position:relative;">
 <div class="section-tag" style="justify-content:center;">Ready?</div>
-<h2 class="section-title" data-i18n="cta.heading" style="color:#fff;">Let&#x2019;s build something great.</h2>
-<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;color:rgba(255,255,255,.5);">Tell us what you need. Typical response within 24 hours with a scope, timeline, and fixed price.</p>
+<h2 class="section-title" data-i18n="cta.heading">Let's build something great.</h2>
+<p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Tell us what you need. Typical response within 24 hours with a scope, timeline, and fixed price.</p>
 <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-<a class="btn btn-accent btn-lg" href="contact.html">Start a Project</a>
-<a class="btn btn-ghost-inv btn-lg" href="portfolio.html">See Our Work</a>
+<a class="btn btn-primary btn-lg" href="contact.html">Start a Project</a>
+<a class="btn btn-ghost btn-lg" href="portfolio.html">See Our Work</a>
 </div>
 </div>
 </section>
-</main>
 <footer>
 <div class="footer-inner">
 <div class="footer-grid">
 <div>
-<div class="footer-logo logo-turq">Zoomy</div>
+<div class="footer-logo grad-text">Zoomy</div>
 <p class="footer-tagline" data-i18n="footer.tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Services</h4><ul>
@@ -1018,8 +1210,8 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 <div class="footer-bottom">
-<span>&#169; 2026 Zoomy &#8212; All rights reserved.</span>
-<div class="footer-bottom-links"><a data-i18n="footer.privacy" href="privacy.html">Privacy</a><a data-i18n="footer.terms" href="terms.html">Terms</a></div>
+<span>© 2026 Zoomy — All rights reserved.</span>
+<span style="display:flex;gap:20px;"><a data-i18n="footer.privacy" href="privacy.html">Privacy</a><a data-i18n="footer.terms" href="terms.html">Terms</a></span>
 </div>
 </div>
 </footer>
@@ -1115,6 +1307,9 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 })();
 </script>
+<script src="js/main.js?v=20260416b"></script>
+<script src="js/i18n.js?v=20260416b"></script>
+<script src="js/chatbot.js?v=20260422a"></script>
 <script type="module">
 import { Conversation } from 'https://cdn.jsdelivr.net/npm/@elevenlabs/client@0.14.0/+esm';
 let hpConv = null;
@@ -1259,7 +1454,7 @@ function hpResetUI(msg) {
   hpStatus.style.color = '';
   if (hpTranscriptLines.length > 0) {
     hpTranscriptBody.innerHTML = hpTranscriptLines.map(l =>
-      `<div style="margin-bottom:.75rem;"><span style="font-family:var(--f-mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;">${l.role}</span><p style="color:${l.role==='Agent'?'var(--text)':'var(--text-2)'};font-size:.83rem;line-height:1.6;margin:.15rem 0 0;">${l.text}</p></div>`
+      `<div style="margin-bottom:.75rem;"><span style="font-family:var(--font-mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;">${l.role}</span><p style="color:${l.role==='Agent'?'var(--text)':'var(--text-2)'};font-size:.83rem;line-height:1.6;margin:.15rem 0 0;">${l.text}</p></div>`
     ).join('');
     hpTranscriptWrap.style.display = 'block';
     hpTranscriptBody.style.display = 'none';
@@ -1376,189 +1571,6 @@ Contacto: zoomy.services/contact`,
     hpStatus.style.color = '#ef4444';
   }
 };
-</script>
-<script>
-(function(){
-  var prog=document.getElementById('scroll-progress');
-  if(prog) window.addEventListener('scroll',function(){
-    prog.style.width=(Math.min(1,window.scrollY/Math.max(1,document.body.scrollHeight-window.innerHeight))*100)+'%';
-  },{passive:true});
-  var glow=document.getElementById('cursorGlow');
-  if(glow) document.addEventListener('mousemove',function(e){glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';});
-  var nav=document.querySelector('nav');
-  window.addEventListener('scroll',function(){ if(nav) nav.classList.toggle('scrolled',window.scrollY>10); },{passive:true});
-  var toggle=document.getElementById('navToggle'),links=document.getElementById('navLinks');
-  if(toggle&&links){
-    toggle.addEventListener('click',function(){ toggle.classList.toggle('open'); links.classList.toggle('open'); });
-    links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ toggle.classList.remove('open'); links.classList.remove('open'); }); });
-    document.addEventListener('click',function(e){ if(!toggle.contains(e.target)&&!links.contains(e.target)){ toggle.classList.remove('open'); links.classList.remove('open'); } });
-  }
-  var reveals=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
-  if('IntersectionObserver' in window){
-    var obs=new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('visible'); obs.unobserve(entry.target); } }); },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-    reveals.forEach(function(el){ obs.observe(el); });
-  } else { reveals.forEach(function(el){ el.classList.add('visible'); }); }
-  document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('a.btn[href*="contact"],a.btn-nav[href*="contact"]').forEach(function(el){
-      el.addEventListener('click',function(){
-        if(typeof gtag!=='undefined') gtag('event','cta_click',{event_category:'engagement',event_label:el.textContent.trim().substring(0,50)});
-        if(typeof clarity!=='undefined') clarity('event','cta_click');
-        if(typeof fbq!=='undefined') fbq('track','Contact');
-      });
-    });
-    var freeBar=document.getElementById('free-bar');
-    if(freeBar&&freeBar.querySelector('a')) freeBar.querySelector('a').addEventListener('click',function(){
-      if(typeof gtag!=='undefined') gtag('event','free_bar_claim',{event_category:'engagement'});
-      if(typeof clarity!=='undefined') clarity('event','free_bar_claim');
-      if(typeof fbq!=='undefined') fbq('track','Lead');
-    });
-    var milestones={25:false,50:false,75:false,90:false};
-    window.addEventListener('scroll',function(){
-      var pct=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);
-      Object.keys(milestones).forEach(function(m){ if(!milestones[m]&&pct>=parseInt(m)){ milestones[m]=true; if(typeof gtag!=='undefined') gtag('event','scroll_depth',{event_category:'engagement',event_label:m+'%',value:parseInt(m)}); } });
-    },{passive:true});
-    document.querySelectorAll('form').forEach(function(form){ form.addEventListener('submit',function(){ if(typeof gtag!=='undefined') gtag('event','form_submit',{event_category:'conversion',event_label:window.location.pathname}); if(typeof clarity!=='undefined') clarity('event','form_submit'); if(typeof fbq!=='undefined') fbq('track','Lead'); }); });
-  });
-})();
-</script>
-<script src="js/i18n.js"></script>
-<script>
-/* ── Advanced enhancements ── */
-(function(){
-  /* 1. Counter animation on hero stats */
-  function animateCounter(el){
-    var target=parseInt(el.dataset.count);
-    var suffix=el.dataset.suffix||'';
-    if(!target) return;
-    var start=0,dur=1200,startTime=null;
-    function step(ts){
-      if(!startTime) startTime=ts;
-      var p=Math.min((ts-startTime)/dur,1);
-      var ease=1-Math.pow(1-p,3);
-      el.textContent=Math.round(start+(target-start)*ease)+suffix;
-      if(p<1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if('IntersectionObserver' in window){
-    var cObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animateCounter(e.target);cObs.unobserve(e.target);}});},{threshold:0.5});
-    document.querySelectorAll('[data-count]').forEach(function(el){cObs.observe(el);});
-  }
-
-  /* 2. Magnetic buttons — subtle cursor attraction */
-  document.querySelectorAll('.btn,.btn-nav').forEach(function(btn){
-    btn.addEventListener('mousemove',function(e){
-      var r=btn.getBoundingClientRect();
-      var x=(e.clientX-r.left-r.width/2)*0.18;
-      var y=(e.clientY-r.top-r.height/2)*0.18;
-      btn.style.transform='translate('+x+'px,'+y+'px)';
-    });
-    btn.addEventListener('mouseleave',function(){
-      btn.style.transform='';
-      btn.style.transition='transform .4s cubic-bezier(.34,1.56,.64,1)';
-      setTimeout(function(){btn.style.transition='';},400);
-    });
-  });
-
-  /* 3. Cursor glow that actually follows */
-  var glow=document.getElementById('cursorGlow');
-  if(glow){
-    var mx=0,my=0,cx=0,cy=0;
-    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
-    (function lerp(){
-      cx+=(mx-cx)*.08; cy+=(my-cy)*.08;
-      glow.style.left=cx+'px'; glow.style.top=cy+'px';
-      requestAnimationFrame(lerp);
-    })();
-  }
-
-  /* 4. Service row hover — number turns accent */
-  document.querySelectorAll('.svc-row').forEach(function(row){
-    var num=row.querySelector('.svc-num');
-    row.addEventListener('mouseenter',function(){
-      if(num) num.style.color='var(--accent)';
-    });
-    row.addEventListener('mouseleave',function(){
-      if(num) num.style.color='';
-    });
-  });
-
-  /* 5. Why Zoomy terminal — typewriter on scroll-into-view */
-  var termBody=document.querySelector('.terminal-body');
-  if(termBody&&'IntersectionObserver' in window){
-    var termLines=termBody.querySelectorAll('div');
-    termLines.forEach(function(l){l.style.opacity='0';l.style.transition='opacity .25s';});
-    var tObs=new IntersectionObserver(function(entries){
-      if(entries[0].isIntersecting){
-        termLines.forEach(function(l,i){
-          setTimeout(function(){l.style.opacity='1';},i*80);
-        });
-        tObs.disconnect();
-      }
-    },{threshold:0.3});
-    tObs.observe(termBody);
-  }
-
-  /* 6. Chatbot section — live typing simulation */
-  var chatInput=document.getElementById('chatbot-input-field');
-  var chatSend=document.getElementById('chatbot-send');
-  var chatMsgs=document.getElementById('chatbot-messages');
-  if(chatInput&&chatSend&&chatMsgs){
-    var responses={
-      'price':'Our pricing is project-based and fixed before we start — no surprises. Websites from $800. Campaigns from $350. Chatbots from $450. Ask us for a specific quote.',
-      'website':'We build custom websites from scratch — no templates, no WordPress. Booking systems, multilingual support, admin panels, and AI chatbots included on request.',
-      'chatbot':'Every chatbot is trained only on your business data. It speaks in 100+ languages, captures leads, and never goes off-topic.',
-      'phone':'Our AI phone agent picks up every inbound call, speaks naturally in any language, and handles your most common requests — 24/7, no human needed.',
-      'campaign':'We build and manage Google Ads campaigns from brief to live — keyword strategy, RSA copy, conversion tracking, and ongoing optimisation. Campaigns run in your account.',
-      'free':'Yes — we build the full first page of your website for free, no commitment. If you love it, we build the rest. No credit card required.'
-    };
-    function addMsg(text,cls){
-      var d=document.createElement('div');
-      d.className='msg '+cls;
-      chatMsgs.appendChild(d);
-      chatMsgs.scrollTop=chatMsgs.scrollHeight;
-      if(cls==='msg-bot'){
-        var i=0;
-        (function type(){
-          if(i<=text.length){d.textContent=text.slice(0,i++);chatMsgs.scrollTop=chatMsgs.scrollHeight;setTimeout(type,12);}
-        })();
-      } else { d.textContent=text; }
-    }
-    function handleSend(){
-      var q=chatInput.value.trim();
-      if(!q) return;
-      addMsg(q,'msg-user');
-      chatInput.value='';
-      var key=Object.keys(responses).find(function(k){return q.toLowerCase().includes(k);});
-      var ans=key?responses[key]:"Great question. The best next step is to reach out directly — we typically respond within a few hours with a full scope and price.";
-      setTimeout(function(){addMsg(ans,'msg-bot');},600);
-    }
-    chatSend.addEventListener('click',handleSend);
-    chatInput.addEventListener('keydown',function(e){if(e.key==='Enter')handleSend();});
-  }
-})();
-</script>
-<script>
-// ── Theme toggle ──
-function toggleTheme(){
-  var html=document.documentElement;
-  var isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  localStorage.setItem('zt',isDark?'light':'dark');
-  var btn=document.getElementById('themeToggle');
-  if(btn)btn.innerHTML=isDark
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-}
-// Init from storage
-(function(){
-  var t=localStorage.getItem('zt')||'light';
-  document.documentElement.setAttribute('data-theme',t);
-  window.addEventListener('DOMContentLoaded',function(){
-    var btn=document.getElementById('themeToggle');
-    if(btn&&t==='dark')btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-  });
-})();
 </script>
 </body>
 </html>

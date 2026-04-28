@@ -11,19 +11,23 @@
 <meta content="Campaign management, custom websites, AI phone agents, and website chatbots. Everything scoped and priced per project." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link href="../css/style.css?v=20260427b" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=fallback" rel="stylesheet"/>
+<link href="../css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .overview-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
-.overview-row{display:grid;grid-template-columns:260px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border);align-items:start}
-.overview-row:first-child{border-top:1px solid var(--border)}
-.overview-num{font-family:var(--f-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
-.overview-title{font-family:var(--f-display);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:.75rem}
+.overview-row{display:grid;grid-template-columns:260px 1fr;gap:3.5rem;padding:2.5rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.overview-row:first-child{border-top:1px solid var(--border-b)}
+.overview-num{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.overview-title{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.75rem}
 .overview-desc{color:var(--text-2);font-size:.925rem;line-height:1.78;margin-bottom:1.25rem}
 @media(max-width:768px){.overview-row{grid-template-columns:1fr;gap:1rem}}
 </style>
 <style>
-#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;background:var(--bg-dark,#0D0D0B);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+:root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
+nav{top:var(--bar-h)!important}
+#navLinks{top:calc(68px + var(--bar-h))!important}
+.bar-off{--bar-h:0px!important}
+#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;background:linear-gradient(90deg,#0f0e1a,#1e1b4b,#2d2a5e);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .bar-off #free-bar{display:none!important}
 @media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
 </style>
@@ -124,7 +128,7 @@
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 <nav>
-<a class="nav-logo logo-turq" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
+<a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
 <li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
@@ -141,15 +145,17 @@
 <a class="lang-btn" href="../fr/services.html">FR</a>
 <span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
 </div>
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
 <button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<section class="hero" style="min-height:55vh">
-<div class="section-inner">
-<div class="section-tag" style="margin-bottom:1.5rem;">Servicios</div>
-<h1><span class="h1-accent">Cuatro servicios.</span><br/>Un estudio.</h1>
-<p class="hero-sub">Cada servicio tiene un alcance y un precio por proyecto. Algunos clientes necesitan uno. Algunos necesitan los cuatro. Trabajamos con presupuestos fijos con un alcance claro acordado de antemano.</p>
+<section class="hero" style="min-height:50vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;text-align:center;">
+<div class="section-tag" style="justify-content:center;margin-bottom:1.5rem;">Servicios</div>
+<h1 style="margin-bottom:1.5rem;"><span class="glitch grad-text-animated">Cuatro servicios.</span><br/>Un estudio.</h1>
+<p class="hero-sub" style="margin:0 auto;">Cada servicio tiene un alcance y un precio por proyecto. Algunos clientes necesitan uno. Algunos necesitan los cuatro. Trabajamos con presupuestos fijos con un alcance claro acordado de antemano.</p>
 </div>
 </section>
 <section class="section">
@@ -208,10 +214,10 @@
 </div>
 </div>
 </section>
-<section class="section" style="background:var(--bg-soft);position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.4;"></div>
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-1"></div></div>
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
-<div class="section-tag" >Empezar</div>
+<div class="section-tag" style="justify-content:center;">Empezar</div>
 <h2 class="section-title">Cuéntanos qué necesitas.</h2>
 <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Describe el proyecto y te daremos un alcance, enfoque y precio fijo.</p>
 <a class="btn btn-primary btn-lg" href="contact.html">Iniciar un proyecto</a>
@@ -221,7 +227,7 @@
 <div class="footer-inner">
 <div class="footer-grid">
 <div>
-<div class="footer-logo footer-logo">Zoomy</div>
+<div class="footer-logo grad-text">Zoomy</div>
 <p class="footer-tagline" data-i18n="footer.tagline">Gestión de campañas, sitios web personalizados, chatbots de IA y agentes telefónicos.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
@@ -252,21 +258,5 @@
 <script src="../js/main.js?v=20260416"></script>
 
 <script src="../js/chatbot.js?v=20260422a"></script>
-<script>
-function toggleTheme(){
-  var html=document.documentElement;
-  var isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  localStorage.setItem('zt',isDark?'light':'dark');
-  var btn=document.getElementById('themeToggle');
-  if(btn)btn.innerHTML=isDark
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-}
-(function(){
-  var t=localStorage.getItem('zt')||'light';
-  document.documentElement.setAttribute('data-theme',t);
-})();
-</script>
 </body>
 </html>

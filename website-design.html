@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -11,14 +31,14 @@
 <meta content="Custom websites and landing pages built from scratch. Multilingual, booking systems, e-commerce, admin panels, and AI chatbots." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link href="css/style.css?v=20260427b" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=fallback" rel="stylesheet"/>
+<link href="css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .cap-rows{display:flex;flex-direction:column;gap:0;margin-top:3rem}
-.cap-row-item{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.25rem 0;border-bottom:1px solid var(--border);align-items:start}
-.cap-row-item:first-child{border-top:1px solid var(--border)}
-.cap-row-label{font-family:var(--f-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
-.cap-row-name{font-family:var(--f-display);font-size:1.1rem;font-weight:700;color:#fff}
+.cap-row-item{display:grid;grid-template-columns:200px 1fr;gap:3.5rem;padding:2.25rem 0;border-bottom:1px solid var(--border-b);align-items:start}
+.cap-row-item:first-child{border-top:1px solid var(--border-b)}
+.cap-row-label{font-family:var(--font-mono);font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+.cap-row-name{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#fff}
 .cap-desc{color:var(--text-2);font-size:.9rem;line-height:1.75}
 .feature-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
 .feature-box{padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.14);border-radius:12px}
@@ -43,7 +63,11 @@
 #admShell .adm-canvas::-webkit-scrollbar-thumb:hover{background:#555;}
 </style>
 <style>
-#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;background:var(--bg-dark,#0D0D0B);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+:root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
+nav{top:var(--bar-h)!important}
+#navLinks{top:calc(68px + var(--bar-h))!important}
+.bar-off{--bar-h:0px!important}
+#free-bar{position:fixed;top:0;left:0;right:0;z-index:10001;height:44px;background:linear-gradient(90deg,#0f0e1a,#1e1b4b,#2d2a5e);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 3rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .bar-off #free-bar{display:none!important}
 @media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
 </style>
@@ -153,7 +177,7 @@
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 <nav>
-<a class="nav-logo logo-turq" href="index.html">Zoomy<span class="nav-logo-sub">Digital Production Studio</span></a>
+<a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Digital Production Studio</span></a>
 <ul class="nav-links" id="navLinks">
 <li><a class="active" data-i18n="nav.websites" href="website-design.html">Websites / Apps</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
@@ -170,15 +194,17 @@
 <a class="lang-btn" href="fr/website-design.html">FR</a>
 <a class="lang-btn" href="es/website-design.html">ES</a>
 </div>
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Start a Project</span> ›</a>
+<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Start a Project</span> ›</a>
 <button aria-label="Menu" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<section class="hero" style="min-height:55vh">
-<div class="section-inner">
+<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div><div class="aurora-blob aurora-blob-3"></div></div>
+<div class="grid-overlay"></div>
+<div class="section-inner" style="z-index:2;">
 <div class="section-tag" style="margin-bottom:1.5rem;">Websites &amp; Apps</div>
 <h1 style="text-align:left;margin-bottom:1.5rem;max-width:700px;">
-<span class="h1-accent">Built from</span><br/>
+<span class="glitch grad-text-animated">Built from</span><br/>
       scratch.
     </h1>
 <p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;">Everything is custom-coded — no WordPress, no page builders, no templates. Websites in HTML/CSS/JS. Apps in React Native with Expo. Each project is built for what it actually needs to do.</p>
@@ -206,7 +232,7 @@
 <div>
 <!-- TRY IT LABEL -->
 <div style="display:flex;align-items:center;gap:1rem;margin-top:3rem;margin-bottom:.85rem;">
-<div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--f-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Live demo — try it now</div>
+<div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(14,165,233,.18),rgba(14,165,233,.06));border:1px solid rgba(14,165,233,.55);border-radius:9999px;padding:6px 18px;font-family:var(--font-mono);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#38bdf8;">✏ Live demo — try it now</div>
 <span style="font-size:.8rem;color:#cbd5e1;">👇 Try it — click any <strong>image</strong> to swap it, click any <strong>text</strong> to edit it live</span>
 </div>
 <!-- ADMIN SHELL -->
@@ -741,8 +767,8 @@ document.addEventListener('DOMContentLoaded',function(){
 </div><!-- /section-inner -->
 </section>
 <!-- ═══ MOBILE APPS ═══ -->
-<section class="section alt" id="mobile-apps" style="background:var(--bg-soft);position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.35;"></div>
+<section class="section alt" id="mobile-apps" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.35;"><div class="aurora-blob aurora-blob-2"></div><div class="aurora-blob aurora-blob-3"></div></div>
 <div class="section-inner" style="position:relative;z-index:2;">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
 <div class="reveal-left">
@@ -766,7 +792,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- INTERACTIVE PHONE DEMO -->
 <div style="display:flex;flex-direction:column;align-items:center;gap:1.1rem;">
   <!-- App type label -->
-  <div id="appLabel" style="font-size:.7rem;font-family:var(--f-mono);color:#6366f1;text-transform:uppercase;letter-spacing:.14em;min-height:1.1em;transition:opacity .25s;">Fitness App</div>
+  <div id="appLabel" style="font-size:.7rem;font-family:var(--font-mono);color:#6366f1;text-transform:uppercase;letter-spacing:.14em;min-height:1.1em;transition:opacity .25s;">Fitness App</div>
   <!-- Phone Bezel -->
   <div style="width:250px;background:linear-gradient(160deg,#1c1c1e,#0d0d0d);border-radius:44px;padding:9px;box-shadow:0 0 0 1px #2a2a2a,0 0 0 3px #111,0 50px 120px rgba(0,0,0,.9);position:relative;-webkit-user-select:none;user-select:none;">
     <!-- Side buttons -->
@@ -1127,48 +1153,48 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </section>
 <!-- ═══ WHAT CAN BE INCLUDED ═══ -->
-<section class="section" style="background:var(--bg-soft);">
+<section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
 <div class="section-tag">Features</div>
 <h2 class="section-title">What can be included.</h2>
 <p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:560px;margin-top:.75rem;margin-bottom:3rem;">Scoped to what the project actually needs — not every site gets everything below, but all of it is available.</p>
 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;">
-<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🌍</div>
 <div>
 <div style="font-weight:700;color:#fff;font-size:.97rem;margin-bottom:.4rem;">Multilingual</div>
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">EN, FR, DE, NL, ES, and more. Language switchers and fallback logic included on any site that needs them.</div>
 </div>
 </div>
-<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🤖</div>
 <div>
 <div style="font-weight:700;color:#fff;font-size:.97rem;margin-bottom:.4rem;">AI chatbot</div>
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">Trained on your business — services, prices, hours, FAQs. Handles questions and collects leads. No third-party subscriptions.</div>
 </div>
 </div>
-<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">📊</div>
 <div>
 <div style="font-weight:700;color:#fff;font-size:.97rem;margin-bottom:.4rem;">Analytics</div>
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">GA4, GTM, and pixel setup. Event tracking and goal configuration. Connected to paid campaigns where relevant.</div>
 </div>
 </div>
-<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">✨</div>
 <div>
 <div style="font-weight:700;color:#fff;font-size:.97rem;margin-bottom:.4rem;">Animations &amp; motion</div>
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">Scroll animations, parallax, hover effects, and transitions — applied where they fit the project, not forced in.</div>
 </div>
 </div>
-<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🔒</div>
 <div>
 <div style="font-weight:700;color:#fff;font-size:.97rem;margin-bottom:.4rem;">GDPR-ready</div>
 <div style="color:var(--text-2);font-size:.85rem;line-height:1.65;">Cookie consent, privacy policy structure, and data handling configuration. Standard on every project.</div>
 </div>
 </div>
-<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
+<div class="reveal" style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:14px;padding:1.75rem 2rem;display:flex;gap:1.25rem;align-items:flex-start;">
 <div style="font-size:1.4rem;flex-shrink:0;line-height:1;">🌐</div>
 <div>
 <div style="font-weight:700;color:#fff;font-size:.97rem;margin-bottom:.4rem;">Domain &amp; hosting</div>
@@ -1180,14 +1206,14 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="reveal" style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.18);border-radius:12px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:center;">
 <div style="font-size:1.2rem;flex-shrink:0;">🎁</div>
 <div>
-<div style="font-size:.62rem;font-family:var(--f-mono);color:#4ade80;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;">Always free</div>
+<div style="font-size:.62rem;font-family:var(--font-mono);color:#4ade80;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;">Always free</div>
 <div style="font-weight:600;color:#fff;font-size:.9rem;">Utility pages — thank you, 404, privacy &amp; terms</div>
 </div>
 </div>
 <div class="reveal" style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.18);border-radius:12px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:center;">
 <div style="font-size:1.2rem;flex-shrink:0;">🛒</div>
 <div>
-<div style="font-size:.62rem;font-family:var(--f-mono);color:#4ade80;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;">Free on any purchase site</div>
+<div style="font-size:.62rem;font-family:var(--font-mono);color:#4ade80;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;">Free on any purchase site</div>
 <div style="font-weight:600;color:#fff;font-size:.9rem;">Add-to-cart &amp; cart drawer</div>
 </div>
 </div>
@@ -1196,7 +1222,7 @@ document.addEventListener('DOMContentLoaded',function(){
 </section>
 <!-- CHATBOT SECTION -->
 <section class="section" id="chatbot" style="position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.4;"></div>
+<div class="aurora" style="opacity:.4;"><div class="aurora-blob aurora-blob-2"></div></div>
 <div class="section-inner" style="position:relative;z-index:2;">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
 <div class="reveal-left">
@@ -1207,23 +1233,23 @@ document.addEventListener('DOMContentLoaded',function(){
 <p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Available as a standalone build, or included when ordering a website or landing page. Mention it in your brief and we'll scope it into the same project.</p>
 <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;">
 <div style="display:flex;align-items:flex-start;gap:12px;">
-<span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
 <span style="color:var(--text-2);font-size:.9rem;">Responds accurately because it only knows what you've provided — it does not improvise</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px;">
-<span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
 <span style="color:var(--text-2);font-size:.9rem;">Multilingual — responds in the language the visitor is using</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px;">
-<span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
 <span style="color:var(--text-2);font-size:.9rem;">Collects leads — captures email or phone when relevant</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px;">
-<span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
 <span style="color:var(--text-2);font-size:.9rem;">Fuzzy matching — understands typos and informal phrasing</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:12px;">
-<span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
+<span style="color:var(--primary);font-weight:700;flex-shrink:0;margin-top:2px;">—</span>
 <span style="color:var(--text-2);font-size:.9rem;">AI-powered via Gemini — no monthly platform subscriptions</span>
 </div>
 </div>
@@ -1255,7 +1281,7 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </section>
 <!-- ═══ INTRO — WHY IT MATTERS ═══ -->
-<section class="section" style="background:var(--bg-soft);">
+<section class="section" style="background:var(--bg-2);">
 <div class="section-inner">
 <div class="reveal" style="display:grid;grid-template-columns:360px 1fr;gap:3rem;align-items:start;">
 <div>
@@ -1267,17 +1293,17 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 <div style="display:flex;flex-direction:column;gap:.9rem;padding-top:.25rem;">
 <div style="padding:1.2rem 1.4rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.13);border-radius:10px;">
-<div style="font-size:.63rem;font-family:var(--f-mono);color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;">Performance</div>
+<div style="font-size:.63rem;font-family:var(--font-mono);color:var(--primary);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;">Performance</div>
 <div style="color:#fff;font-weight:600;font-size:.92rem;margin-bottom:.3rem;">Fast on every device</div>
 <div style="color:var(--text-2);font-size:.83rem;line-height:1.65;">No plugins, no bloat. Pages that score well in Core Web Vitals and feel instant to use.</div>
 </div>
 <div style="padding:1.2rem 1.4rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.13);border-radius:10px;">
-<div style="font-size:.63rem;font-family:var(--f-mono);color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;">Independence</div>
+<div style="font-size:.63rem;font-family:var(--font-mono);color:var(--primary);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;">Independence</div>
 <div style="color:#fff;font-weight:600;font-size:.92rem;margin-bottom:.3rem;">Update it yourself, immediately</div>
 <div style="color:var(--text-2);font-size:.83rem;line-height:1.65;">Every site includes an admin panel. Edit text, swap images, change prices — without touching a line of code.</div>
 </div>
 <div style="padding:1.2rem 1.4rem;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.13);border-radius:10px;">
-<div style="font-size:.63rem;font-family:var(--f-mono);color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;">Ownership</div>
+<div style="font-size:.63rem;font-family:var(--font-mono);color:var(--primary);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;">Ownership</div>
 <div style="color:#fff;font-weight:600;font-size:.92rem;margin-bottom:.3rem;">You own the whole thing</div>
 <div style="color:var(--text-2);font-size:.83rem;line-height:1.65;">No platform lock-in. Cancel any subscription and your site still runs exactly as built.</div>
 </div>
@@ -1285,10 +1311,10 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 </section>
-<section class="section" style="background:var(--bg-soft);position:relative;overflow:hidden;">
-<div class="aurora" style="opacity:.3;"></div>
+<section class="section" style="background:var(--bg-2);position:relative;overflow:hidden;">
+<div class="aurora" style="opacity:.3;"><div class="aurora-blob aurora-blob-1"></div></div>
 <div class="section-inner" style="text-align:center;z-index:2;position:relative;">
-<div class="section-tag" >Get Started</div>
+<div class="section-tag" style="justify-content:center;">Get Started</div>
 <h2 class="section-title">Tell us what you need.</h2>
 <p class="section-sub" style="text-align:center;margin:1.5rem auto 2.5rem;">Describe the project and we'll come back with a scope and price.</p>
 <a class="btn btn-primary btn-lg" href="contact.html">Start a Website Brief</a>
@@ -1298,7 +1324,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="footer-inner">
 <div class="footer-grid">
 <div>
-<div class="footer-logo footer-logo">Zoomy</div>
+<div class="footer-logo grad-text">Zoomy</div>
 <p class="footer-tagline" data-i18n="footer.tagline">Campaign management, custom websites, AI chatbots, and phone agents.</p>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Services</h4><ul>
@@ -1329,26 +1355,5 @@ document.addEventListener('DOMContentLoaded',function(){
 <script src="js/main.js?v=20260416"></script>
 <script src="js/i18n.js?v=20260416"></script>
 <script src="js/chatbot.js?v=20260422a"></script>
-<script>
-// ── Theme toggle ──
-function toggleTheme(){
-  var html=document.documentElement;
-  var isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  localStorage.setItem('zt',isDark?'light':'dark');
-  var btn=document.getElementById('themeToggle');
-  if(btn)btn.innerHTML=isDark
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-}
-(function(){
-  var t=localStorage.getItem('zt')||'light';
-  document.documentElement.setAttribute('data-theme',t);
-  window.addEventListener('DOMContentLoaded',function(){
-    var btn=document.getElementById('themeToggle');
-    if(btn&&t==='dark')btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
-  });
-})();
-</script>
 </body>
 </html>

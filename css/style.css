@@ -2623,3 +2623,149 @@ html[data-theme="light"] #admShell [style*="color:#94a3b8"]{
 html[data-theme="light"] #admShell [style*="color:#38bdf8"]{
   color:#38bdf8!important;
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   v19 — website-design.html hero visual + phone preview arrows
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Hero on website-design.html: 2-col layout with code card filling empty space */
+.wd-hero-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:3rem;
+  align-items:center;
+  width:100%;
+  max-width:var(--max-w);
+  margin:0 auto;
+}
+@media(min-width:980px){
+  .wd-hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,420px);
+    gap:4rem;
+  }
+}
+.wd-hero-text{ width:100%; }
+
+/* Code card mockup */
+.wd-hero-visual{ display:none; }
+@media(min-width:980px){ .wd-hero-visual{ display:block; } }
+.wd-code-card{
+  background:#0d1117;
+  border:1px solid rgba(99,102,241,.22);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(99,102,241,.10);
+  font-family:var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size:.78rem;
+  line-height:1.7;
+  position:relative;
+}
+html[data-theme="light"] .wd-code-card{
+  border:1px solid var(--border, rgba(58,46,29,.18));
+  box-shadow:0 24px 56px -16px rgba(58,46,29,.18);
+}
+.wd-code-bar{
+  background:rgba(255,255,255,.04);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:8px 14px;
+  display:flex; align-items:center; gap:8px;
+}
+.wd-dot{ width:10px; height:10px; border-radius:50%; }
+.wd-dot-r{ background:#ff5f56; }
+.wd-dot-y{ background:#febc2e; }
+.wd-dot-g{ background:#28c840; }
+.wd-code-tab{
+  margin-left:14px;
+  font-size:.7rem;
+  color:rgba(255,255,255,.55);
+  font-family:var(--font-mono, monospace);
+  letter-spacing:.04em;
+}
+.wd-code-body{
+  padding:18px 18px 6px;
+  color:#cbd5e1;
+}
+.wd-code-line{
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.wd-code-spacer{ height:.6rem; }
+.wd-c-num{ display:inline-block; width:1.6rem; color:rgba(255,255,255,.20); user-select:none; }
+.wd-c-tag{ color:#7dd3fc; }
+.wd-c-attr{ color:#fcd34d; }
+.wd-c-str{ color:#86efac; }
+.wd-c-text{ color:#e2e8f0; }
+.wd-c-kw{ color:#c084fc; }
+.wd-c-var{ color:#7dd3fc; }
+.wd-c-fn{ color:#facc15; }
+.wd-c-bool{ color:#fb923c; }
+.wd-c-cursor{
+  display:inline-block; width:6px; height:.95em; vertical-align:-2px;
+  background:#cbd5e1; margin-left:2px;
+  animation:wdBlink 1s steps(1) infinite;
+}
+@keyframes wdBlink{ 0%,49%{opacity:1} 50%,100%{opacity:0} }
+.wd-code-foot{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:9px 14px;
+  display:flex; align-items:center; gap:8px;
+  font-size:.66rem;
+  font-family:var(--font-mono, monospace);
+  color:rgba(255,255,255,.55);
+  letter-spacing:.04em;
+}
+.wd-status-dot{
+  width:7px; height:7px; border-radius:50%; background:#4ade80;
+  box-shadow:0 0 8px rgba(74,222,128,.6);
+}
+.wd-status-text{ color:rgba(255,255,255,.7); }
+
+/* Phone preview: left/right arrow buttons (desktop only) */
+.wd-phone-wrap{ position:relative; }
+.wd-phone-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:42px; height:42px;
+  border-radius:50%;
+  background:rgba(99,102,241,.12);
+  border:1px solid rgba(99,102,241,.30);
+  color:#a5b4fc;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:background .2s, border-color .2s, color .2s, transform .2s;
+  z-index:5;
+}
+.wd-phone-arrow:hover{
+  background:rgba(99,102,241,.22);
+  border-color:rgba(99,102,241,.55);
+  color:#fff;
+  transform:translateY(-50%) scale(1.06);
+}
+.wd-phone-arrow-prev{ left:-58px; }
+.wd-phone-arrow-next{ right:-58px; }
+html[data-theme="light"] .wd-phone-arrow{
+  background:var(--bg-2, #EAE0C2);
+  border:1px solid var(--border, rgba(58,46,29,.18));
+  color:var(--text, #2A2218);
+}
+html[data-theme="light"] .wd-phone-arrow:hover{
+  background:var(--primary, #4A3B2D);
+  border-color:var(--primary, #4A3B2D);
+  color:var(--bg, #F2EBD7);
+}
+/* Hide arrows on mobile (touch-swipe takes over there) */
+@media(max-width:900px){
+  .wd-phone-arrow{ display:none; }
+}
+
+/* Reduce hero gap to admin panel — was floating high */
+.wd-hero{
+  min-height:auto!important;
+}
+.wd-hero + section{
+  padding-top:3rem!important;
+}

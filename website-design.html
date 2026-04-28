@@ -59,6 +59,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -245,16 +247,45 @@ html[data-theme="light"] [style*="background:#0d0d1c"],html[data-theme="light"] 
 <button aria-label="Menu" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
-<section class="hero" style="min-height:55vh;padding:140px 2rem 5rem;">
+<section class="hero wd-hero" style="min-height:auto;padding:130px 2rem 3rem;">
 <div class="aurora"><div class="aurora-blob aurora-blob-1"></div><div class="aurora-blob aurora-blob-2"></div><div class="aurora-blob aurora-blob-3"></div></div>
 <div class="grid-overlay"></div>
-<div class="section-inner" style="z-index:2;">
+<div class="section-inner wd-hero-grid" style="z-index:2;">
+<div class="wd-hero-text">
 <div class="section-tag" style="margin-bottom:1.5rem;">Websites &amp; Apps</div>
 <h1 style="text-align:left;margin-bottom:1.5rem;max-width:700px;">
 <span class="glitch grad-text-animated">Built from</span><br/>
       scratch.
     </h1>
 <p style="color:var(--text-2);font-size:1.05rem;line-height:1.8;max-width:600px;">Everything is custom-coded — no WordPress, no page builders, no templates. Websites in HTML/CSS/JS. Apps in React Native with Expo. Each project is built for what it actually needs to do.</p>
+</div>
+<!-- RIGHT-SIDE CODE MOCKUP — fills the empty space -->
+<aside aria-hidden="true" class="wd-hero-visual">
+<div class="wd-code-card">
+<div class="wd-code-bar">
+<span class="wd-dot wd-dot-r"></span>
+<span class="wd-dot wd-dot-y"></span>
+<span class="wd-dot wd-dot-g"></span>
+<span class="wd-code-tab">index.html</span>
+</div>
+<div class="wd-code-body">
+<div class="wd-code-line"><span class="wd-c-num">01</span><span class="wd-c-tag">&lt;section</span> <span class="wd-c-attr">class</span>=<span class="wd-c-str">"hero"</span><span class="wd-c-tag">&gt;</span></div>
+<div class="wd-code-line"><span class="wd-c-num">02</span> <span class="wd-c-tag">&lt;h1&gt;</span><span class="wd-c-text">Grow your business</span><span class="wd-c-tag">&lt;/h1&gt;</span></div>
+<div class="wd-code-line"><span class="wd-c-num">03</span> <span class="wd-c-tag">&lt;p&gt;</span><span class="wd-c-text">Built from scratch.</span><span class="wd-c-tag">&lt;/p&gt;</span></div>
+<div class="wd-code-line"><span class="wd-c-num">04</span> <span class="wd-c-tag">&lt;a</span> <span class="wd-c-attr">href</span>=<span class="wd-c-str">"contact.html"</span><span class="wd-c-tag">&gt;</span><span class="wd-c-text">Start →</span><span class="wd-c-tag">&lt;/a&gt;</span></div>
+<div class="wd-code-line"><span class="wd-c-num">05</span><span class="wd-c-tag">&lt;/section&gt;</span></div>
+<div class="wd-code-line wd-code-spacer"></div>
+<div class="wd-code-line"><span class="wd-c-num">06</span><span class="wd-c-kw">const</span> <span class="wd-c-var">app</span> = <span class="wd-c-fn">createApp</span>({</div>
+<div class="wd-code-line"><span class="wd-c-num">07</span> <span class="wd-c-attr">name</span>: <span class="wd-c-str">'Zoomy'</span>,</div>
+<div class="wd-code-line"><span class="wd-c-num">08</span> <span class="wd-c-attr">stack</span>: [<span class="wd-c-str">'React Native'</span>],</div>
+<div class="wd-code-line"><span class="wd-c-num">09</span> <span class="wd-c-attr">live</span>: <span class="wd-c-bool">true</span><span class="wd-c-cursor"></span></div>
+<div class="wd-code-line"><span class="wd-c-num">10</span>});</div>
+</div>
+<div class="wd-code-foot">
+<span class="wd-status-dot"></span><span class="wd-status-text">Build · 0.42s · 0 errors</span>
+</div>
+</div>
+</aside>
 </div>
 </section>
 <!-- ═══ ADMIN PANEL SHOWCASE ═══ -->
@@ -840,7 +871,10 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="display:flex;flex-direction:column;align-items:center;gap:1.1rem;">
 <!-- App type label -->
 <div id="appLabel" style="font-size:.7rem;font-family:var(--font-mono);color:#6366f1;text-transform:uppercase;letter-spacing:.14em;min-height:1.1em;transition:opacity .25s;">Fitness App</div>
-<!-- Phone Bezel -->
+<!-- Phone Bezel + nav arrows -->
+<div class="wd-phone-wrap" style="position:relative;display:inline-block;">
+<button aria-label="Previous app" class="wd-phone-arrow wd-phone-arrow-prev" id="wdPhonePrev" type="button"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="20"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+<button aria-label="Next app" class="wd-phone-arrow wd-phone-arrow-next" id="wdPhoneNext" type="button"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="20"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
 <div style="width:250px;background:linear-gradient(160deg,#1c1c1e,#0d0d0d);border-radius:44px;padding:9px;box-shadow:0 0 0 1px #2a2a2a,0 0 0 3px #111,0 50px 120px rgba(0,0,0,.9);position:relative;-webkit-user-select:none;user-select:none;">
 <!-- Side buttons -->
 <div style="position:absolute;left:-3px;top:78px;width:3px;height:26px;background:#1e1e1e;border-radius:2px 0 0 2px;"></div>
@@ -1142,6 +1176,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="width:88px;height:4px;background:rgba(255,255,255,.22);border-radius:2px;"></div>
 </div>
 </div><!-- /bezel -->
+</div><!-- /phone-wrap -->
 <!-- Dots -->
 <div id="phoneDots" style="display:flex;gap:.5rem;align-items:center;">
 <div class="pdot" style="width:7px;height:7px;border-radius:50%;background:#6366f1;cursor:pointer;transition:all .25s;transform:scale(1.3);"></div>
@@ -1168,6 +1203,11 @@ document.addEventListener('DOMContentLoaded',function(){
     if(label){label.style.opacity='0';setTimeout(function(){label.textContent=labels[cur];label.style.opacity='1';},140);}
   }
   dots.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(timer);go(i);});});
+  // Arrow buttons (desktop)
+  var prevBtn=document.getElementById('wdPhonePrev');
+  var nextBtn=document.getElementById('wdPhoneNext');
+  if(prevBtn)prevBtn.addEventListener('click',function(){clearInterval(timer);go(cur-1);});
+  if(nextBtn)nextBtn.addEventListener('click',function(){clearInterval(timer);go(cur+1);});
   // Touch swipe
   var sx=0,sy=0,st=0,scrollEl=null;
   screen.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;st=Date.now();scrollEl=e.target.closest('[style*="overflow-y:auto"]');},{passive:true});

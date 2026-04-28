@@ -1066,3 +1066,208 @@ html[data-theme="light"] .hero > .container{position:relative;z-index:2}
 html[data-theme="light"] .hero{
   min-height:clamp(540px, 78vh, 760px);
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   LIGHT MODE v7 — kill remaining gradient text, fix hero layout, lighten buttons
+   ════════════════════════════════════════════════════════════════════ */
+
+/* — Kill .grad-text and .grad-text-animated in light mode — */
+/* These use background-clip:text with hardcoded purple/cyan/pink gradients.
+   In light mode we want solid dark text. */
+html[data-theme="light"] .grad-text,
+html[data-theme="light"] .grad-text-animated{
+  background:none!important;
+  background-image:none!important;
+  -webkit-background-clip:initial!important;
+  background-clip:initial!important;
+  -webkit-text-fill-color:var(--text)!important;
+  color:var(--text)!important;
+  animation:none!important;
+}
+html[data-theme="light"] .footer-logo.grad-text,
+html[data-theme="light"] .footer-logo{
+  -webkit-text-fill-color:var(--text)!important;
+  color:var(--text)!important;
+  background:none!important;
+}
+
+/* — Hero layout in light mode: left-aligned, text constrained to left half — */
+html[data-theme="light"] .hero .section-inner{
+  text-align:left!important;
+  max-width:1200px;
+  margin:0 auto;
+  padding-left:2rem;
+  padding-right:2rem;
+}
+html[data-theme="light"] .hero h1{
+  text-align:left!important;
+  max-width:min(620px, 56%);
+}
+html[data-theme="light"] .hero-sub{
+  text-align:left!important;
+  margin:0 0 2.5rem 0!important;
+  max-width:min(540px, 50%);
+}
+html[data-theme="light"] .hero .badge,
+html[data-theme="light"] .hero .badge-primary{margin-left:0!important}
+html[data-theme="light"] .hero-actions{
+  justify-content:flex-start!important;
+  max-width:580px;
+}
+/* Hero check-row stays left-aligned, fewer columns */
+html[data-theme="light"] .hero .section-inner > div:last-of-type{
+  justify-content:flex-start!important;
+  max-width:600px;
+}
+/* On mobile (where mockup is hidden), recenter to keep balance */
+@media(max-width:1023px){
+  html[data-theme="light"] .hero .section-inner{text-align:center!important}
+  html[data-theme="light"] .hero h1{text-align:center!important;max-width:none}
+  html[data-theme="light"] .hero-sub{text-align:center!important;margin:0 auto 2.5rem!important;max-width:none}
+  html[data-theme="light"] .hero-actions{justify-content:center!important}
+  html[data-theme="light"] .hero .section-inner > div:last-of-type{justify-content:center!important}
+}
+
+/* — Lighten dark buttons across the site in light mode — */
+/* var(--primary) = #4A3B2D (warm cocoa) — softer than var(--text) #2A2218 */
+html[data-theme="light"] .btn-primary{
+  background:var(--primary)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+  border:1.5px solid var(--primary)!important;
+  box-shadow:none!important;
+}
+html[data-theme="light"] .btn-primary:hover{
+  background:var(--text)!important;
+  border-color:var(--text)!important;
+  color:var(--bg)!important;
+  filter:none!important;
+}
+html[data-theme="light"] .btn-nav{
+  background:var(--primary)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+  border:1.5px solid var(--primary)!important;
+  box-shadow:none!important;
+}
+html[data-theme="light"] .btn-nav:hover{
+  background:var(--text)!important;
+  border-color:var(--text)!important;
+  color:var(--bg)!important;
+}
+
+/* — Phone agent demo button on index.html (#hp-call-btn) — */
+html[data-theme="light"] #hp-call-btn{
+  background:var(--primary)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+  box-shadow:0 4px 14px rgba(74,59,45,.18)!important;
+}
+html[data-theme="light"] #hp-call-btn:hover{
+  background:var(--text)!important;
+  filter:none!important;
+}
+
+/* — Floating chatbot bubble + header — lighter warm cocoa instead of darkest brown — */
+html[data-theme="light"] #zmy-bubble{
+  background:var(--primary)!important;
+  background-image:none!important;
+  box-shadow:0 4px 16px rgba(74,59,45,.22)!important;
+}
+html[data-theme="light"] #zmy-bubble:hover{
+  background:var(--text)!important;
+  box-shadow:0 8px 24px rgba(74,59,45,.30)!important;
+}
+html[data-theme="light"] #zmy-head{
+  background:var(--primary)!important;
+  background-image:none!important;
+  border-bottom:1px solid var(--primary)!important;
+}
+html[data-theme="light"] .zmy-user{
+  background:var(--primary)!important;
+  background-image:none!important;
+}
+html[data-theme="light"] #zmy-send{
+  background:var(--primary)!important;
+  background-image:none!important;
+}
+
+/* — Hero mockup composition: avoid the small phone card overlapping — */
+/* Keep the mockup further right so it doesn't hit the headline */
+html[data-theme="light"] .hero-stage{
+  right:max(1rem, 2vw);
+  width:min(540px, 42vw);
+}
+@media(min-width:1280px){
+  html[data-theme="light"] .hero-stage{
+    right:max(2rem, 4vw);
+    width:min(580px, 40vw);
+  }
+}
+
+/* — Hero badge had centered inline-flex — left-align in light — */
+html[data-theme="light"] .hero .badge.badge-primary{
+  background:var(--bg-2)!important;
+  color:var(--text)!important;
+  border-color:var(--border)!important;
+}
+
+/* — Sample-banner had an animated rainbow gradient on "For free." — kill it — */
+html[data-theme="light"] .sample-banner h2 .grad-text-animated,
+html[data-theme="light"] .sample-banner .grad-text-animated{
+  -webkit-text-fill-color:var(--text)!important;
+  color:var(--text)!important;
+  background:none!important;
+  background-image:none!important;
+  animation:none!important;
+}
+
+/* — Sample tag (the LIMITED OFFER chip with purple bg) — flatten to dark — */
+html[data-theme="light"] .sample-tag{
+  background:var(--text)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+  border-color:var(--text)!important;
+}
+
+/* — Step-badge step-1..4 backgrounds were dark dark — lighten — */
+html[data-theme="light"] .step-badge,
+html[data-theme="light"] .step-badge-1,
+html[data-theme="light"] .step-badge-2,
+html[data-theme="light"] .step-badge-3,
+html[data-theme="light"] .step-badge-4{
+  background:var(--primary)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+  box-shadow:none!important;
+}
+
+/* — Footer logo (Zoomy wordmark) — solid dark, no gradient — */
+html[data-theme="light"] .footer-logo{
+  font-family:var(--font-display);
+  font-weight:700;
+  background:none!important;
+  -webkit-background-clip:initial!important;
+  background-clip:initial!important;
+  -webkit-text-fill-color:var(--text)!important;
+  color:var(--text)!important;
+}
+
+/* — Catch-all: any element with .glitch class still showing rainbow — */
+html[data-theme="light"] .glitch{
+  -webkit-text-fill-color:var(--text)!important;
+  color:var(--text)!important;
+  background:none!important;
+  background-image:none!important;
+  animation:none!important;
+}
+html[data-theme="light"] .glitch::before,
+html[data-theme="light"] .glitch::after{display:none!important}
+
+/* — Ensure section-tag lines (// SERVICES, // ABOUT etc) — — */
+html[data-theme="light"] .section-tag{
+  background:var(--bg-2)!important;
+  border-color:var(--border)!important;
+  color:var(--text-2)!important;
+}

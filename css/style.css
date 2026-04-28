@@ -687,3 +687,138 @@ html[data-theme="light"] [style*="color:#872C13"],
 html[data-theme="light"] [style*="color:#B07C2C"]{color:var(--text)!important}
 html[data-theme="light"] [style*="background:#B23A1A"],
 html[data-theme="light"] [style*="background:#B07C2C"]{background:var(--text)!important;color:var(--bg)!important}
+
+
+/* ════════════════════════════════════════════════════════════════════
+   LIGHT MODE v5 — fixes for terminal, floating chatbot, white-on-white
+   ════════════════════════════════════════════════════════════════════ */
+
+/* — TERMINAL: dark bg with FORCED light text in both themes — */
+/* Terminal is a code-metaphor element. Stays dark even in light mode.   */
+/* But text inside must be light to be readable on the dark bg.          */
+html[data-theme="light"] .terminal{
+  background:#0d1117!important;
+  border:1px solid rgba(58,46,29,.18)!important;
+  color:#e2e8f0!important;
+}
+html[data-theme="light"] .terminal-header{
+  background:rgba(255,255,255,.04)!important;
+  border-bottom:1px solid rgba(255,255,255,.06)!important;
+}
+html[data-theme="light"] .terminal-title{color:#94a3b8!important}
+html[data-theme="light"] .terminal-body{color:#e2e8f0!important}
+html[data-theme="light"] .term-prompt{color:#10b981!important}
+html[data-theme="light"] .term-cmd{color:#e2e8f0!important}
+html[data-theme="light"] .term-output{color:#94a3b8!important}
+html[data-theme="light"] .term-highlight{color:#7dd3fc!important}
+html[data-theme="light"] .term-cursor{background:#e2e8f0!important}
+/* Catch any explicit white-text patterns INSIDE .terminal that the
+   inline-style attribute selectors might have wrongly converted */
+html[data-theme="light"] .terminal *,
+html[data-theme="light"] .terminal-body *{color:inherit}
+html[data-theme="light"] .terminal [style*="color:#fff"],
+html[data-theme="light"] .terminal-body [style*="color:#fff"]{color:#e2e8f0!important}
+
+/* — FLOATING CHATBOT BUBBLE & WINDOW (injected by js/chatbot.js) — */
+/* Bubble: solid dark brown (no purple gradient) */
+html[data-theme="light"] #zmy-bubble{
+  background:var(--text)!important;
+  background-image:none!important;
+  box-shadow:0 4px 16px rgba(58,46,29,.20)!important;
+}
+html[data-theme="light"] #zmy-bubble:hover{
+  box-shadow:0 8px 24px rgba(58,46,29,.28)!important;
+}
+html[data-theme="light"] #zmy-bubble svg{fill:var(--bg)!important}
+/* Attention bubble (the speech-bubble teaser) */
+html[data-theme="light"] #zmy-attn{
+  background:var(--card)!important;
+  color:var(--text)!important;
+  border:1px solid var(--border)!important;
+  box-shadow:0 4px 16px rgba(58,46,29,.12)!important;
+}
+/* Chat window — cream surface with hairlines */
+html[data-theme="light"] #zmy-win{
+  background:var(--card)!important;
+  border:1px solid var(--border)!important;
+  box-shadow:0 20px 50px rgba(58,46,29,.20)!important;
+}
+/* Header — solid dark brown bar with cream text */
+html[data-theme="light"] #zmy-head{
+  background:var(--text)!important;
+  background-image:none!important;
+  border-bottom:1px solid var(--text)!important;
+}
+html[data-theme="light"] #zmy-name{color:var(--bg)!important}
+html[data-theme="light"] #zmy-status,
+html[data-theme="light"] #zmy-status *{color:rgba(242,235,215,.78)!important}
+html[data-theme="light"] #zmy-close{color:rgba(242,235,215,.78)!important}
+html[data-theme="light"] #zmy-close:hover{
+  color:var(--bg)!important;
+  background:rgba(242,235,215,.12)!important;
+}
+/* Messages area — cream bg with dark scrollbar */
+html[data-theme="light"] #zmy-msgs{
+  background:var(--bg)!important;
+}
+html[data-theme="light"] #zmy-msgs::-webkit-scrollbar-thumb{
+  background:rgba(58,46,29,.30)!important;
+}
+html[data-theme="light"] #zmy-msgs::-webkit-scrollbar-thumb:hover{
+  background:rgba(58,46,29,.55)!important;
+}
+/* Bot/user messages */
+html[data-theme="light"] .zmy-bot{
+  background:var(--card)!important;
+  border:1px solid var(--border)!important;
+  color:var(--text)!important;
+}
+html[data-theme="light"] .zmy-user{
+  background:var(--text)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+}
+html[data-theme="light"] .zmy-msg a{color:var(--primary)!important;text-decoration:underline}
+html[data-theme="light"] .zmy-typing span{background:var(--text)!important}
+/* Input row */
+html[data-theme="light"] #zmy-inp-row{
+  background:var(--card)!important;
+  border-top:1px solid var(--border)!important;
+}
+html[data-theme="light"] #zmy-input{
+  background:var(--bg)!important;
+  border:1px solid var(--border)!important;
+  color:var(--text)!important;
+}
+html[data-theme="light"] #zmy-input::placeholder{color:var(--muted)!important}
+html[data-theme="light"] #zmy-send{
+  background:var(--text)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+}
+
+/* — WHITE-ON-WHITE FIXES — */
+/* Contact page chatbot widget tabs (.wi-tab) used color:rgba(255,255,255,.5) */
+html[data-theme="light"] .wi-tab,
+html[data-theme="light"] .wi-tab *,
+html[data-theme="light"] [class*="wi-"]{color:var(--text-2)!important}
+html[data-theme="light"] .wi-tab[class*="active"]{color:var(--text)!important;background:var(--bg-2)!important;border-color:var(--border)!important}
+
+/* Any inline color:rgba(255,255,255,X) that the previous catch-all missed
+   when the element ALSO has a dark inline background — these stay white */
+/* (No change needed; my v4 catch-all already excluded background:linear-gradient/rgb/#) */
+
+/* — Highlight class (thank-you and other pages) — */
+html[data-theme="light"] .highlight{color:var(--text)!important;font-weight:500}
+
+/* — pricing.html "Get a quote" link still purple — handled inline below — */
+
+/* — Specific catch for any remaining inline color:#a855f7 / #818cf8 / #8b5cf6 — */
+html[data-theme="light"] [style*="color:#a855f7"],
+html[data-theme="light"] [style*="color: #a855f7"],
+html[data-theme="light"] [style*="color:#818cf8"],
+html[data-theme="light"] [style*="color: #818cf8"],
+html[data-theme="light"] [style*="color:#8b5cf6"],
+html[data-theme="light"] [style*="color: #8b5cf6"],
+html[data-theme="light"] [style*="color:#6366f1"],
+html[data-theme="light"] [style*="color: #6366f1"]{color:var(--text)!important}

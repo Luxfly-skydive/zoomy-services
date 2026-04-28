@@ -1417,3 +1417,213 @@ html[data-theme="light"] .hero-stage{
     max-width:none!important;
   }
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   PRICING v9 — fix tier highlighting + green chips in light mode
+   ════════════════════════════════════════════════════════════════════ */
+
+/* "Most Popular" tier — drop purple gradient, use cream + cocoa border */
+html[data-theme="light"] .tc.pop{
+  background:var(--bg-2)!important;
+  background-image:none!important;
+  border:2px solid var(--primary)!important;
+  box-shadow:0 8px 28px rgba(74,59,45,.08)!important;
+}
+html[data-theme="light"] .tc.pop::before{display:none!important}
+
+/* Badge: warm cocoa bg with CREAM text (override autogen dark-text) */
+html[data-theme="light"] .tc-badge,
+html[data-theme="light"] .tc-badge *{
+  background:var(--primary)!important;
+  background-image:none!important;
+  color:var(--bg)!important;
+  box-shadow:0 4px 14px rgba(74,59,45,.30)!important;
+  border:none!important;
+  letter-spacing:.12em;
+  font-weight:600;
+}
+
+/* Tier card hover */
+html[data-theme="light"] .tc:hover{
+  border-color:var(--primary)!important;
+  box-shadow:0 12px 32px rgba(74,59,45,.10)!important;
+}
+
+/* Tier text colors — readable */
+html[data-theme="light"] .tc-name{color:var(--text-2)!important}
+html[data-theme="light"] .tc-price{color:var(--text)!important}
+html[data-theme="light"] .tc-note{color:var(--muted)!important}
+html[data-theme="light"] .tc-features li{color:var(--text-2)!important}
+
+/* Feature checks: muted forest green */
+html[data-theme="light"] .tc-features li::before{color:#1F5C3F!important}
+
+/* Tier CTA button: cream-2 default, cocoa fill on hover */
+html[data-theme="light"] .tc-cta{
+  background:var(--bg-2)!important;
+  background-image:none!important;
+  border:1px solid var(--border)!important;
+  color:var(--text)!important;
+  box-shadow:none!important;
+}
+html[data-theme="light"] .tc-cta:hover,
+html[data-theme="light"] .tc.pop .tc-cta{
+  background:var(--primary)!important;
+  border-color:var(--primary)!important;
+  color:var(--bg)!important;
+  background-image:none!important;
+  filter:none!important;
+}
+html[data-theme="light"] .tc.pop .tc-cta:hover{
+  background:var(--text)!important;
+  border-color:var(--text)!important;
+  color:var(--bg)!important;
+}
+
+/* "MARKET PRICE" green badge → muted forest */
+html[data-theme="light"] .tc-market{
+  background:rgba(31,92,63,.08)!important;
+  border:1px solid rgba(31,92,63,.30)!important;
+  color:#1F5C3F!important;
+}
+
+/* Pricing-final + jump-nav cream */
+html[data-theme="light"] .pricing-final{background:var(--bg-2)!important}
+html[data-theme="light"] .jump-nav,
+html[data-theme="light"] .jump-wrap{background:transparent!important}
+
+/* Generic catch: any rgba(99,102,241,...) bg in pricing → cream-2 */
+html[data-theme="light"] .pf-card,
+html[data-theme="light"] [style*="background:rgba(99,102,241"]{
+  background:var(--bg-2)!important;
+  border-color:var(--border)!important;
+  color:var(--text)!important;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO v10 — revert centered layout, mockup as peripheral decoration
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Undo v8 left-align — text content centers again (like dark mode) */
+html[data-theme="light"] .hero{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  padding:clamp(5rem, 9vh, 7rem) 2rem clamp(3rem, 6vh, 4.5rem)!important;
+  min-height:clamp(560px, 78vh, 720px)!important;
+  position:relative;
+}
+html[data-theme="light"] .hero .section-inner{
+  width:100%!important;
+  max-width:1200px!important;
+  margin:0 auto!important;
+  padding-left:2rem!important;
+  padding-right:2rem!important;
+  text-align:center!important;
+  position:relative;
+  z-index:2;  /* text above mockup pieces */
+}
+html[data-theme="light"] .hero h1{
+  text-align:center!important;
+  max-width:none!important;
+  font-size:clamp(2.6rem, 6.4vw, 5.6rem)!important;
+  line-height:1.04!important;
+  margin:0 auto 1.5rem!important;
+}
+html[data-theme="light"] .hero-sub{
+  text-align:center!important;
+  margin:0 auto 2rem!important;
+  max-width:600px!important;
+}
+html[data-theme="light"] .hero .badge,
+html[data-theme="light"] .hero .badge-primary{
+  margin:0 auto 1.5rem!important;
+}
+html[data-theme="light"] .hero-actions{
+  justify-content:center!important;
+  max-width:none;
+  margin:0 auto 2rem!important;
+}
+html[data-theme="light"] .hero .section-inner > div:last-of-type{
+  justify-content:center!important;
+  max-width:none!important;
+}
+
+/* Mockup composition becomes peripheral decoration (not a column).
+   Pieces float in the corners around the centered text. */
+html[data-theme="light"] .hero-stage{
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  width:100%; height:100%;
+  pointer-events:none;
+  z-index:0;
+  transform:none;
+  opacity:.92;  /* slight fade so it doesn't compete */
+}
+
+/* Reposition individual pieces around the periphery: */
+
+/* Browser window — TOP-RIGHT CORNER, smaller */
+html[data-theme="light"] .hs-browser{
+  position:absolute;
+  top:6%;
+  right:max(2rem, 4vw);
+  width:min(360px, 30vw);
+  height:auto;
+  max-height:55%;
+}
+
+/* Chat bubble — BOTTOM-LEFT CORNER, smaller */
+html[data-theme="light"] .hs-chat{
+  position:absolute;
+  bottom:6%;
+  left:max(2rem, 4vw);
+  width:min(300px, 26vw);
+  top:auto;
+}
+
+/* Phone card — TOP-LEFT CORNER, smaller */
+html[data-theme="light"] .hs-phone{
+  position:absolute;
+  top:8%;
+  left:max(2rem, 4vw);
+  right:auto;
+}
+html[data-theme="light"] .hs-phone-card{
+  transform:rotate(-3deg);
+  padding:10px 12px;
+  gap:8px;
+}
+html[data-theme="light"] .hs-phone-icon{width:32px; height:32px}
+html[data-theme="light"] .hs-phone-icon svg{width:16px; height:16px}
+html[data-theme="light"] .hs-phone-num{font-size:11px}
+html[data-theme="light"] .hs-phone-label{font-size:8px}
+
+/* Smaller browser content */
+html[data-theme="light"] .hs-browser-bar{padding:6px 10px}
+html[data-theme="light"] .hs-browser-content{padding:14px 12px 12px; gap:8px}
+html[data-theme="light"] .hs-h{height:12px}
+html[data-theme="light"] .hs-p{height:6px}
+html[data-theme="light"] .hs-cta{height:22px; width:120px}
+html[data-theme="light"] .hs-card-img{height:34px}
+html[data-theme="light"] .hs-card-line{height:5px}
+
+/* Smaller chat bubbles */
+html[data-theme="light"] .hs-chat-bubble{font-size:11px; padding:6px 10px}
+html[data-theme="light"] .hs-chat-avatar{width:20px; height:20px}
+
+/* If viewport too narrow, only show one piece (browser top-right) — */
+@media(min-width:1024px) and (max-width:1279px){
+  html[data-theme="light"] .hs-phone{display:none}
+  html[data-theme="light"] .hs-chat{display:none}
+}
+
+/* Mobile (under 1024px) — hide entire stage, recenter is automatic */
+@media(max-width:1023px){
+  html[data-theme="light"] .hero-stage{display:none!important}
+  html[data-theme="light"] .hero{padding:6rem 1.5rem 4rem!important;min-height:auto!important}
+  html[data-theme="light"] .hero h1{font-size:clamp(2.2rem, 7vw, 3.4rem)!important}
+}

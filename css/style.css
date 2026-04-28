@@ -1987,3 +1987,102 @@ html[data-theme="light"] .hs-chat-avatar{width:24px; height:24px}
     max-width:none!important;
   }
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO v13 — organize the 5 check items into a 2-col grid
+   Applies to BOTH themes. The long 5th item spans both columns.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Override the inline flex wrapper on the hero check-row */
+.hero .section-inner > div:last-of-type{
+  display:grid!important;
+  grid-template-columns:repeat(2, max-content)!important;
+  gap:.65rem 2.4rem!important;
+  flex-wrap:initial!important;
+  justify-content:flex-start;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+}
+
+/* The 5th item ("Free First Page — No Commitment") spans both columns */
+.hero .section-inner > div:last-of-type > div:nth-child(5){
+  grid-column:1 / -1;
+}
+
+/* Each item: keep flex for ✓ + label, normalize spacing */
+.hero .section-inner > div:last-of-type > div{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:.55rem!important;
+  white-space:nowrap;
+  font-size:.88rem;
+}
+
+/* In light mode the hero is left-aligned (v12) — keep the grid left-anchored */
+html[data-theme="light"] .hero .section-inner > div:last-of-type{
+  justify-content:flex-start!important;
+  margin-left:0!important;
+  margin-right:auto!important;
+}
+
+/* In dark mode the hero is centered — center the grid */
+html:not([data-theme="light"]) .hero .section-inner > div:last-of-type{
+  justify-content:center!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* Mobile — collapse to single column for easier scanning on narrow screens */
+@media(max-width:640px){
+  .hero .section-inner > div:last-of-type{
+    grid-template-columns:1fr!important;
+    gap:.55rem 0!important;
+    width:100%!important;
+    justify-content:center!important;
+    margin:0 auto!important;
+  }
+  .hero .section-inner > div:last-of-type > div:nth-child(5){
+    grid-column:auto;  /* No longer needs span; one column */
+  }
+  .hero .section-inner > div:last-of-type > div{
+    justify-content:center!important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   PHONE CARD VISIBILITY FIX — was rendered cream-on-cream by an earlier
+   catch-all rule [class*="phone-card"] that flipped it to var(--card)
+   bg with var(--bg) text (both cream). Restore the intentional dark
+   phone-call card with cream text so the +1 (914) 742-0640 reads.
+   ════════════════════════════════════════════════════════════════════ */
+html[data-theme="light"] .hs-phone-card{
+  background:var(--text)!important;     /* dark warm brown */
+  background-image:none!important;
+  color:var(--bg)!important;            /* cream text */
+  border:none!important;
+  box-shadow:0 16px 40px -14px rgba(58,46,29,.30)!important;
+}
+html[data-theme="light"] .hs-phone-card *{color:var(--bg)}
+html[data-theme="light"] .hs-phone-num{
+  color:var(--bg)!important;            /* explicit re-assert */
+  -webkit-text-fill-color:var(--bg)!important;
+}
+html[data-theme="light"] .hs-phone-label{
+  color:rgba(242,235,215,.70)!important;  /* faded cream for the label */
+}
+html[data-theme="light"] .hs-phone-icon{
+  background:rgba(242,235,215,.10)!important;
+  border:1px solid rgba(242,235,215,.20)!important;
+  color:var(--bg)!important;
+}
+/* The pulse ring on the phone card stays the green dot */
+html[data-theme="light"] .hs-phone-card::before{
+  background:#5BB665!important;
+  border:2px solid var(--text)!important;
+}
+/* Waveform bars — green stays */
+html[data-theme="light"] .hs-phone-wave span{
+  background:#5BB665!important;
+}

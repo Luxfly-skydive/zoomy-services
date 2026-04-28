@@ -92,7 +92,7 @@
 #admShell .adm-canvas::-webkit-scrollbar-thumb:hover{background:#555;}
 </style>
 <style>
-:root{--bar-h:44px}html,body{background:#020208}nav{background:rgba(2,2,8,.96)}
+:root{--bar-h:44px}html,body{background:#020208}html[data-theme="light"],html[data-theme="light"] body{background:var(--bg)}nav{background:rgba(2,2,8,.96)}html[data-theme="light"] nav{background:rgba(247,241,229,.96)}
 nav{top:var(--bar-h)!important}
 #navLinks{top:calc(68px + var(--bar-h))!important}
 .bar-off{--bar-h:0px!important}
@@ -198,6 +198,18 @@ nav{top:var(--bar-h)!important}
   #phone-agent-section .section-inner > div { display:flex; flex-direction:column; }
   #phone-agent-section .reveal-right { order:-1; margin-bottom:2rem; }
 }
+
+/* ZMY_LIGHT_MODE_OVERRIDES */
+html[data-theme="light"] .svc-title{color:var(--text)}
+html[data-theme="light"] .step-card h4{color:var(--text)}
+html[data-theme="light"] .chatbot-feat-title{color:var(--text)}
+html[data-theme="light"] .cap-label{color:var(--text)}
+html[data-theme="light"] .svc-link{color:var(--primary-dk)}
+html[data-theme="light"] .chatbot-feat{background:rgba(99,102,241,.04);border-color:rgba(99,102,241,.18)}
+html[data-theme="light"] .svc-row:hover{background:rgba(99,102,241,.04)}
+html[data-theme="light"] [style*="color:#fff"]:not([class*="btn-"]):not([class*="badge"]):not([class*="step-badge"]):not([class*="chatbot-send"]):not([class*="msg-user"]):not([style*="background:linear-gradient"]):not([style*="background: linear-gradient"]):not([style*="background:#6366f1"]):not([style*="background:#a855f7"]):not([style*="background:#0d0d1c"]){color:var(--text)!important}
+html[data-theme="light"] [style*="color:rgba(255,255,255"]:not([class*="btn-"]):not([class*="badge"]):not([style*="background:linear-gradient"]):not([style*="background:rgb"]):not([style*="background:#6366f1"]):not([style*="background:#a855f7"]){color:var(--text-2)!important}
+html[data-theme="light"] [style*="background:#0d0d1c"],html[data-theme="light"] [style*="background:#111128"],html[data-theme="light"] [style*="background:rgba(99,102,241,.06)"]{background:var(--card)!important}
 </style>
 <script>(function(){try{var t=localStorage.getItem('zmy_theme');if(t==='dark')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <script>localStorage.setItem('zmy_lang','es');</script></head>

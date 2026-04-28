@@ -8,7 +8,12 @@
 <link href="../favicon.png" rel="icon" sizes="64x64" type="image/png"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://zoomy.services/terms.html" rel="canonical"/>
-<style>html,body{background:#020208}nav{background:rgba(2,2,8,.96)}</style>
+<style>html,body{background:#020208}html[data-theme="light"],html[data-theme="light"] body{background:var(--bg)}nav{background:rgba(2,2,8,.96)}html[data-theme="light"] nav{background:rgba(247,241,229,.96)}
+/* ZMY_LIGHT_MODE_OVERRIDES */
+html[data-theme="light"] [style*="color:#fff"]:not([class*="btn-"]):not([class*="badge"]):not([class*="step-badge"]):not([class*="chatbot-send"]):not([class*="msg-user"]):not([style*="background:linear-gradient"]):not([style*="background: linear-gradient"]):not([style*="background:#6366f1"]):not([style*="background:#a855f7"]):not([style*="background:#0d0d1c"]){color:var(--text)!important}
+html[data-theme="light"] [style*="color:rgba(255,255,255"]:not([class*="btn-"]):not([class*="badge"]):not([style*="background:linear-gradient"]):not([style*="background:rgb"]):not([style*="background:#6366f1"]):not([style*="background:#a855f7"]){color:var(--text-2)!important}
+html[data-theme="light"] [style*="background:#0d0d1c"],html[data-theme="light"] [style*="background:#111128"],html[data-theme="light"] [style*="background:rgba(99,102,241,.06)"]{background:var(--card)!important}
+</style>
 <link href="../css/style.css?v=20260416b" rel="stylesheet"/>
 <script>(function(){try{var t=localStorage.getItem('zmy_theme');if(t==='dark')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <script>localStorage.setItem('zmy_lang','es');</script></head>

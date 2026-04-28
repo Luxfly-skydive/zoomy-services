@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=fallback" rel="stylesheet"/>
-<style>html,body{background:#020208}nav{background:rgba(2,2,8,.96)}</style>
+<style>html,body{background:#020208}html[data-theme="light"],html[data-theme="light"] body{background:var(--bg)}nav{background:rgba(2,2,8,.96)}html[data-theme="light"] nav{background:rgba(247,241,229,.96)}</style>
 <link href="../css/style.css?v=20260416" rel="stylesheet"/>
 <style>
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;margin-top:3rem}
@@ -21,6 +21,11 @@
 .contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+
+/* ZMY_LIGHT_MODE_OVERRIDES */
+html[data-theme="light"] [style*="color:#fff"]:not([class*="btn-"]):not([class*="badge"]):not([class*="step-badge"]):not([class*="chatbot-send"]):not([class*="msg-user"]):not([style*="background:linear-gradient"]):not([style*="background: linear-gradient"]):not([style*="background:#6366f1"]):not([style*="background:#a855f7"]):not([style*="background:#0d0d1c"]){color:var(--text)!important}
+html[data-theme="light"] [style*="color:rgba(255,255,255"]:not([class*="btn-"]):not([class*="badge"]):not([style*="background:linear-gradient"]):not([style*="background:rgb"]):not([style*="background:#6366f1"]):not([style*="background:#a855f7"]){color:var(--text-2)!important}
+html[data-theme="light"] [style*="background:#0d0d1c"],html[data-theme="light"] [style*="background:#111128"],html[data-theme="light"] [style*="background:rgba(99,102,241,.06)"]{background:var(--card)!important}
 </style>
 <!-- ═══ ANALYTICS & TRACKING ═══ -->
 <!-- Google Analytics 4 -->

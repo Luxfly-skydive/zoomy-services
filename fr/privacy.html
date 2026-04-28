@@ -10,12 +10,13 @@
 <link href="https://zoomy.services/privacy.html" rel="canonical"/>
 <style>html,body{background:#020208}nav{background:rgba(2,2,8,.96)}</style>
 <link href="../css/style.css?v=20260416b" rel="stylesheet"/>
+<script>(function(){try{var t=localStorage.getItem('zmy_theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <script>localStorage.setItem('zmy_lang','fr');</script></head>
 <body>
 <nav class="nav scrolled" id="nav">
 <div class="nav-inner">
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Studio de production numérique</span></a>
-<a class="btn-nav" href="contact.html">Démarrer un projet ›</a>
+<button aria-label="Basculer le thème clair/sombre" class="theme-toggle" id="themeToggle" onclick="toggleTheme()" type="button"><svg aria-hidden="true" class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><svg aria-hidden="true" class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button><a class="btn-nav" href="contact.html">Démarrer un projet ›</a>
 <button aria-label="Menus" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div></nav>
 <section class="section" style="padding-top:140px;min-height:80vh;">
@@ -46,5 +47,6 @@
 </div>
 </footer>
 <script src="../js/main.js?v=20260416b"></script>
+<script>/*ZMY_THEME_TOGGLE*/function toggleTheme(){var c=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';var n=c==='light'?'dark':'light';if(n==='light')document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('zmy_theme',n);}catch(e){}}</script>
 </body>
 </html>

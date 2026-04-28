@@ -209,3 +209,139 @@ footer{position:relative;background:var(--bg-2);border-top:1px solid var(--borde
   [style*="gap:5rem"]{gap:2rem!important;}
   [style*="gap:4rem"]{gap:2rem!important;}
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIGHT THEME · added 2026-04-28
+   Activate by adding data-theme="light" to <html>. Default = dark.
+   Toggle button injected in nav next to btn-nav.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Theme toggle button (visible in BOTH themes) */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;background:transparent;border:1px solid var(--border-b);border-radius:50%;color:var(--text-2);cursor:pointer;transition:color var(--transition),border-color var(--transition),background var(--transition),transform var(--transition);flex-shrink:0;padding:0;font-family:inherit}
+.theme-toggle:hover{border-color:rgba(99,102,241,.5);color:var(--white);background:rgba(99,102,241,.06);transform:translateY(-1px)}
+.theme-toggle svg{width:16px;height:16px;display:block;stroke-width:2}
+.theme-toggle .icon-moon{display:none}
+.theme-toggle .icon-sun{display:block}
+[data-theme="light"] .theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-moon{display:block}
+[data-theme="light"] .theme-toggle:hover{color:var(--text);background:rgba(99,102,241,.08)}
+@media(max-width:768px){.theme-toggle{width:34px;height:34px}.theme-toggle svg{width:15px;height:15px}}
+
+/* ── Light theme variable overrides ──────────────────────────────── */
+[data-theme="light"]{
+  --bg:#fafaff;
+  --bg-2:#f4f5fb;
+  --surface:#ffffff;
+  --card:#ffffff;
+  --card-hover:#f5f6ff;
+  --border:rgba(99,102,241,.20);
+  --border-b:rgba(15,23,42,.08);
+  --primary:#4f46e5;
+  --primary-dk:#4338ca;
+  --secondary:#0891b2;
+  --accent:#9333ea;
+  --pink:#db2777;
+  --green:#059669;
+  --amber:#d97706;
+  --glow-p:rgba(99,102,241,.16);
+  --glow-s:rgba(6,182,212,.14);
+  --glow-a:rgba(168,85,247,.14);
+  --text:#0f172a;
+  --text-2:#475569;
+  --muted:#64748b;
+  /* keep --white as #fff so white-on-gradient buttons stay readable */
+  --grad-glow:linear-gradient(135deg,rgba(99,102,241,.10) 0%,rgba(168,85,247,.10) 100%);
+  --grad-card:linear-gradient(135deg,rgba(99,102,241,.06) 0%,rgba(6,182,212,.06) 100%);
+  color-scheme:light;
+}
+
+/* Body-level adjustments */
+[data-theme="light"] body{background-image:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(99,102,241,.06) 0%,transparent 70%)}
+
+/* Nav: scrolled state on light bg should be light, not dark */
+[data-theme="light"] nav.scrolled{background:rgba(255,255,255,.94);border-bottom-color:rgba(15,23,42,.08);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%)}
+[data-theme="light"] .nav-toggle span{background:var(--text)}
+[data-theme="light"] .nav-sub{background:#fff;border-color:rgba(15,23,42,.08);box-shadow:0 16px 48px rgba(15,23,42,.10)}
+[data-theme="light"] .nav-sub li a:hover{color:var(--text)!important;background:rgba(99,102,241,.06)}
+
+/* Mobile menu drawer color */
+@media(max-width:768px){
+  [data-theme="light"] .nav-links{background:rgba(255,255,255,.98);box-shadow:-8px 0 48px rgba(15,23,42,.16)}
+  [data-theme="light"] .nav-links li{border-bottom-color:rgba(15,23,42,.08)}
+  [data-theme="light"] .nav-links li a:hover,[data-theme="light"] .nav-links li a.active{color:var(--text)}
+  [data-theme="light"] .nav-mobile-footer{border-top-color:rgba(15,23,42,.10)}
+}
+
+/* Aurora blobs — much lighter on light background */
+[data-theme="light"] .aurora-blob{opacity:.16}
+
+/* Grid overlay — softer on light */
+[data-theme="light"] .grid-overlay{background-image:linear-gradient(rgba(99,102,241,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.05) 1px,transparent 1px)}
+
+/* Particle canvas — reduce opacity on light */
+[data-theme="light"] #particle-canvas{opacity:.18;mix-blend-mode:multiply}
+
+/* Cards — different shadow pattern on light */
+[data-theme="light"] .card{box-shadow:0 1px 3px rgba(15,23,42,.04),0 0 0 1px rgba(15,23,42,.04)}
+[data-theme="light"] .card:hover{box-shadow:0 12px 32px rgba(99,102,241,.10),0 0 0 1px rgba(99,102,241,.20);border-color:rgba(99,102,241,.30)}
+
+/* Buttons — ghost button color on light */
+[data-theme="light"] .btn-ghost{color:var(--text);border-color:rgba(15,23,42,.18)}
+[data-theme="light"] .btn-ghost:hover{color:var(--text);border-color:rgba(99,102,241,.50);background:rgba(99,102,241,.06)}
+
+/* Element-level white text overrides — these targets sit on the page background, not on a colored element */
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active,
+[data-theme="light"] .section-title,
+[data-theme="light"] .hero h1,
+[data-theme="light"] .footer-col h4,
+[data-theme="light"] .svc-title,
+[data-theme="light"] .step-card h4,
+[data-theme="light"] .cap-label,
+[data-theme="light"] .chatbot-feat-title,
+[data-theme="light"] .why-card-title,
+[data-theme="light"] .feat-title,
+[data-theme="light"] .pillar-title,
+[data-theme="light"] .h-display,
+[data-theme="light"] .h-section,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3{color:var(--text)}
+
+/* Free bar on light (was very dark) */
+[data-theme="light"] #free-bar{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff}
+[data-theme="light"] #free-bar .bar-text{color:rgba(255,255,255,.85)}
+
+/* Footer gets a subtle warm tint on light */
+[data-theme="light"] footer{background:var(--bg-2);border-top:1px solid var(--border-b)}
+[data-theme="light"] .footer-bottom{border-top-color:var(--border-b);color:var(--muted)}
+
+/* Code/mono blocks tend to look bad on light without contrast — soften */
+[data-theme="light"] .terminal,
+[data-theme="light"] .terminal-body,
+[data-theme="light"] pre,
+[data-theme="light"] code{background:#0f172a;color:#e2e8f0;border-color:rgba(15,23,42,.20)}
+
+/* Section tags (the `// SERVICES` mono labels) — give them more contrast */
+[data-theme="light"] .section-tag{background:rgba(99,102,241,.08);border-color:rgba(99,102,241,.22);color:var(--primary-dk)}
+
+/* Badges */
+[data-theme="light"] .badge-primary{background:rgba(99,102,241,.10);color:var(--primary-dk);border-color:rgba(99,102,241,.30)}
+
+/* Marquee bar on light bg */
+[data-theme="light"] .marquee{background:var(--bg-2);border-top-color:var(--border-b);border-bottom-color:var(--border-b)}
+[data-theme="light"] .marquee-item{color:var(--muted)}
+[data-theme="light"] .marquee-dot{background:var(--primary);opacity:.7}
+
+/* Sample banner light styling */
+[data-theme="light"] .sample-banner{background:linear-gradient(135deg,rgba(99,102,241,.06) 0%,rgba(168,85,247,.06) 50%,rgba(6,182,212,.04) 100%);border-color:rgba(99,102,241,.22)}
+
+/* Lang switcher active-state on light */
+[data-theme="light"] .lang-btn.lang-active{background:rgba(99,102,241,.10);color:var(--primary-dk);border:1px solid rgba(99,102,241,.30)}
+
+/* Inline `style="color:#fff"` elements on the page background can't be CSS-overridden. Common case: the free-bar `Claim free page` link uses inline styles. That sits on dark bg either way (free bar is dark in both themes), so it's correct. */
+
+/* Reduced motion still respected */
+@media(prefers-reduced-motion:reduce){
+  [data-theme="light"] *,[data-theme="light"] *::before,[data-theme="light"] *::after{transition:none!important;animation:none!important}
+}

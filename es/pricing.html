@@ -96,6 +96,7 @@ nav{top:var(--bar-h)!important}
 @media(max-width:600px){.bar-full{display:none!important}.bar-short{display:inline!important}}
 </style>
 <script>(function(){if(sessionStorage.getItem('fzb')||sessionStorage.getItem('fzb_shown')){document.documentElement.classList.add('bar-off');}else{sessionStorage.setItem('fzb_shown','1');}})();</script>
+<script>(function(){try{var t=localStorage.getItem('zmy_theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <script>localStorage.setItem('zmy_lang','es');</script></head>
 <body>
 <div id="free-bar">
@@ -109,7 +110,7 @@ nav{top:var(--bar-h)!important}
 <nav>
 <a class="nav-logo" href="index.html">Zoomy<span class="nav-logo-sub">Estudio de producción digital</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web/aplicaciones</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li>
@@ -124,7 +125,7 @@ nav{top:var(--bar-h)!important}
 <a class="lang-btn" href="../fr/pricing.html">FR</a>
 <span class="lang-btn lang-active" style="opacity:1;font-weight:700;cursor:default;">ES</span>
 </div>
-<a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
+<button aria-label="Alternar tema claro/oscuro" class="theme-toggle" id="themeToggle" onclick="toggleTheme()" type="button"><svg aria-hidden="true" class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><svg aria-hidden="true" class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button><a class="btn-nav" href="contact.html"><span data-i18n="nav.cta">Iniciar un proyecto</span> ›</a>
 <button aria-label="Menú" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </div>
 </nav>
@@ -159,6 +160,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="jump-wrap">
 <div class="jump-nav">
+<a class="jump-pill" href="#apps">📱 Aplicaciones móviles</a>
 <a class="jump-pill" href="#websites">🌐 Sitios web</a>
 <a class="jump-pill" href="#chatbot">🤖 Chatbot de IA</a>
 <a class="jump-pill" href="#phone">📞 Agente telefónico</a>
@@ -169,6 +171,77 @@ nav{top:var(--bar-h)!important}
 </div>
 </div>
 <!-- ══ META ADS CAMPAIGNS ══ -->
+<!-- ══ MOBILE APPS ══ -->
+<section class="ps alt" id="apps">
+<div class="ps-inner">
+<div class="ps-tag">Aplicaciones móviles</div>
+<h2 class="ps-heading">Aplicaciones móviles personalizadas. Construido para funcionar.</h2>
+<p class="ps-sub">Aplicaciones para iOS y Android basadas en Expo creadas con React Native: precio por pantalla y entrega rápida. Una base de código se ejecuta tanto en iPhone como en Android desde el primer día.</p>
+<div class="tier-grid-4">
+<div class="tc reveal-up">
+<div class="tc-market">7% del tipo de mercado</div>
+<div class="tc-name">Pantalla estándar</div>
+<div class="tc-price" style="font-size:2.2rem;">$99</div>
+<div class="tc-note">por pantalla · una sola vez</div>
+<div class="tc-div"></div>
+<ul class="tc-features">
+<li>Pantallas de inicio, presentación e incorporación</li>
+<li>Acerca de, información, preguntas frecuentes y listados estáticos</li>
+<li>Diseño de marca personalizado y animaciones</li>
+<li>Funciona en iOS y Android</li>
+</ul>
+<a class="tc-cta" href="contact.html">Empezar ›</a>
+</div>
+<div class="tc reveal-up">
+<div class="tc-market">8% del tipo de mercado</div>
+<div class="tc-name">Pantalla funcional</div>
+<div class="tc-price" style="font-size:2.2rem;">$199</div>
+<div class="tc-note">por pantalla · una sola vez</div>
+<div class="tc-div"></div>
+<ul class="tc-features">
+<li>Pantallas de inicio de sesión, registro y perfil</li>
+<li>Buscar, filtrar y transmitir datos en vivo</li>
+<li>Formularios, flujos de reserva y modales</li>
+<li>Conexión de API y notificaciones push</li>
+</ul>
+<a class="tc-cta" href="contact.html">Empezar ›</a>
+</div>
+<div class="tc pop reveal-up">
+<div class="tc-badge">Más complejo</div>
+<div class="tc-market">9% del tipo de mercado</div>
+<div class="tc-name">Pantalla compleja</div>
+<div class="tc-price" style="font-size:2.2rem;">$299</div>
+<div class="tc-note">por pantalla · una sola vez</div>
+<div class="tc-div"></div>
+<ul class="tc-features">
+<li>Paneles de control con gráficos y análisis en vivo</li>
+<li>Mapas, geolocalización y pines personalizados</li>
+<li>Cámara, captura y reproducción de fotos/videos</li>
+<li>Flujos de pago y pago de Stripe</li>
+</ul>
+<a class="tc-cta" href="contact.html">Empezar ›</a>
+</div>
+<div class="tc reveal-up">
+<div class="tc-market">8% del tipo de mercado</div>
+<div class="tc-name">Idioma adicional</div>
+<div class="tc-price" style="font-size:2.2rem;">$50</div>
+<div class="tc-note">por idioma</div>
+<div class="tc-div"></div>
+<ul class="tc-features">
+<li>Cualquier idioma: francés, español, alemán y más</li>
+<li>Interfaz de usuario de cambio de idioma completa en la aplicación</li>
+<li>Todas las cadenas traducidas por pantalla</li>
+<li>Preferencia de idioma persistente</li>
+</ul>
+<a class="tc-cta" href="contact.html">Empezar ›</a>
+</div>
+</div>
+<div class="addon-strip">
+<div class="addon-pill" style="border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.06)"><div class="ap-icon">🎁</div><div class="ap-text"><strong>Siempre incluido</strong> — Envío de App Store · Configuración de notificaciones push · Vista previa de Expo Go · Transferencia de código fuente</div></div>
+</div>
+<div class="nudge">¿Creando una aplicación completa? <a href="contact.html">Envíanos tu lista de pantallas →</a> Le daremos un total fijo el mismo día.</div>
+</div>
+</section>
 <!-- ══ WEBSITES ══ -->
 <section class="ps" id="websites">
 <div class="ps-inner">
@@ -177,7 +250,7 @@ nav{top:var(--bar-h)!important}
 <p class="ps-sub">Precio por página. Cada sitio creado desde cero en HTML, CSS y JavaScript: control total sobre el rendimiento, el diseño y la funcionalidad.</p>
 <div class="tier-grid-4">
 <div class="tc reveal-up">
-<div class="tc-market">18% de la tarifa de agencia</div>
+<div class="tc-market">20% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.web.page">Página estándar</div>
 <div class="tc-price" data-i18n="price.web.page" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">por página · una sola vez</div>
@@ -191,7 +264,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">20% de la tarifa de agencia</div>
+<div class="tc-market">20% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.web.functional">Página funcional</div>
 <div class="tc-price" data-i18n="price.web.functional" style="font-size:2.2rem;">$399</div>
 <div class="tc-note">por página · una sola vez</div>
@@ -206,7 +279,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">Aplicación completa</div>
-<div class="tc-market">17% de la tarifa de agencia</div>
+<div class="tc-market">17% del tipo de mercado</div>
 <div class="tc-name">Página de la aplicación</div>
 <div class="tc-price" style="font-size:2.2rem;">$599</div>
 <div class="tc-note">por página · una sola vez</div>
@@ -220,15 +293,15 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">18% de la tarifa de agencia</div>
+<div class="tc-market">13% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.web.language">Idioma adicional</div>
 <div class="tc-price" data-i18n="price.web.language" style="font-size:2.2rem;">$199</div>
 <div class="tc-note">por idioma</div>
 <div class="tc-div"></div>
 <ul class="tc-features">
-<li>FR, ES, DE o cualquier idioma</li>
-<li>Chatbot en ese idioma incluido</li>
-<li>Traducción del contenido completo</li>
+<li>Cualquier idioma: francés, español, alemán y más</li>
+<li>Traducción de contenido completo, revisada por humanos</li>
+<li>Selector de idiomas integrado en el sitio</li>
 <li>Mismo diseño, diferente ubicación</li>
 </ul>
 <a class="tc-cta" href="contact.html">Empezar ›</a>
@@ -249,7 +322,7 @@ nav{top:var(--bar-h)!important}
 <p class="ps-sub">El nivel se establece en función del nivel de detalle y variedad de la información de su empresa, no de las diferencias en las funciones. Cada nivel utiliza la misma tecnología.</p>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
-<div class="tc-market">20% de la tarifa de agencia</div>
+<div class="tc-market">20% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.chatbot.simple">$599</div>
 <div class="tc-note">+ Alojamiento de $49/mes</div>
@@ -264,7 +337,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Más populares</div>
-<div class="tc-market">16% de la tarifa de agencia</div>
+<div class="tc-market">19% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Estándar</div>
 <div class="tc-price" data-i18n="price.chatbot.standard">$949</div>
 <div class="tc-note">+ Alojamiento de $49/mes</div>
@@ -279,7 +352,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">12% de la tarifa de agencia</div>
+<div class="tc-market">19% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Avanzado</div>
 <div class="tc-price" data-i18n="price.chatbot.advanced">$1,499</div>
 <div class="tc-note">+ Alojamiento de $49/mes</div>
@@ -312,7 +385,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tier-grid-3">
 <div class="tc reveal-up">
-<div class="tc-market">17% de la tarifa de agencia</div>
+<div class="tc-market">23% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.tier.simple">Simple</div>
 <div class="tc-price" data-i18n="price.phone.simple">$699</div>
 <div class="tc-note">configuración + uso mensual</div>
@@ -327,7 +400,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge" data-i18n="pricing.popular">Más populares</div>
-<div class="tc-market">15% de la tarifa de agencia</div>
+<div class="tc-market">24% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.tier.standard">Estándar</div>
 <div class="tc-price" data-i18n="price.phone.standard">$1,199</div>
 <div class="tc-note">configuración + uso mensual</div>
@@ -342,7 +415,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">12% de la tarifa de agencia</div>
+<div class="tc-market">22% del tipo de mercado</div>
 <div class="tc-name" data-i18n="pricing.tier.advanced">Avanzado</div>
 <div class="tc-price" data-i18n="price.phone.advanced">$1,799</div>
 <div class="tc-note">configuración + uso mensual</div>
@@ -378,7 +451,7 @@ nav{top:var(--bar-h)!important}
 <p class="ps-sub">Vídeos animados, anuncios con imágenes hechos a mano y elementos visuales generados por IA, todo ello creado a partir de su informe. No se necesitan metraje, ni sesiones de fotos, ni equipos de cámara.</p>
 <div class="tier-grid-4">
 <div class="tc reveal-up">
-<div class="tc-market">~22% de la tarifa de agencia</div>
+<div class="tc-market">20% del tipo de mercado</div>
 <div class="tc-name">Imagen creativa</div>
 <div class="tc-price" style="font-size:2.2rem;">$100</div>
 <div class="tc-note">por juego · hecho a mano</div>
@@ -393,7 +466,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">25% de la tarifa de agencia</div>
+<div class="tc-market">15% del tipo de mercado</div>
 <div class="tc-name">Anuncio de vídeo animado</div>
 <div class="tc-price" style="font-size:2.2rem;">$300</div>
 <div class="tc-note">por bloque de 30</div>
@@ -409,7 +482,7 @@ nav{top:var(--bar-h)!important}
 <a class="tc-cta" href="contact.html">Empezar ›</a>
 </div>
 <div class="tc reveal-up">
-<div class="tc-market">~33% de la tarifa de agencia</div>
+<div class="tc-market">25% del tipo de mercado</div>
 <div class="tc-name">Anuncio con imágenes de IA</div>
 <div class="tc-price" style="font-size:2.2rem;">$100</div>
 <div class="tc-note">por conjunto · Generado por IA</div>
@@ -425,7 +498,7 @@ nav{top:var(--bar-h)!important}
 </div>
 <div class="tc pop reveal-up">
 <div class="tc-badge">De primera calidad</div>
-<div class="tc-market">25% de la tarifa de agencia</div>
+<div class="tc-market">33% del tipo de mercado</div>
 <div class="tc-name">Anuncio de vídeo con IA</div>
 <div class="tc-price" style="font-size:2.2rem;">$499</div>
 <div class="tc-note">por vídeo · hasta 32s</div>
@@ -451,7 +524,7 @@ nav{top:var(--bar-h)!important}
 <p class="ps-sub" style="margin:0 auto 2.75rem;text-align:center;">Creamos todos los archivos que necesita su campaña de Google Ads: estrategia, texto, especificaciones de orientación, configuración, rastreador y panel. Usted (o su equipo) presiona el lanzamiento. No se requiere acceso a la cuenta por nuestra parte. ¿Se ejecuta en Meta u otra plataforma? <a href="contact.html" style="color:var(--primary);text-decoration:none;">Contáctenos</a> - Trabajamos en plataformas publicitarias.</p>
 <div class="tier-grid-2" style="max-width:600px;margin:0 auto;">
 <div class="tc reveal-up" style="grid-column:1/-1;text-align:left;">
-<div class="tc-market">33% de la tarifa de agencia</div>
+<div class="tc-market">33% del tipo de mercado</div>
 <div class="tc-name">Configuración de campaña</div>
 <div class="tc-price">$999</div>
 <div class="tc-note">Una sola vez · Archivos entregados en 5 a 7 días</div>
@@ -561,7 +634,7 @@ nav{top:var(--bar-h)!important}
 <div style="margin-top:20px;"><span class="badge badge-green badge-dot" data-i18n="footer.open">Abierto a Proyectos</span></div>
 </div>
 <div class="footer-col"><h4 data-i18n="footer.services">Servicios</h4><ul>
-<li><a data-i18n="nav.websites" href="website-design.html">Sitios web</a></li>
+<li><a data-i18n="nav.websites" href="website-design.html">Sitios web/aplicaciones</a></li>
 <li><a data-i18n="nav.chatbots" href="chatbot.html">Chatbots</a></li>
 <li><a data-i18n="nav.phone" href="phone-agent.html">Agentes telefónicos</a></li>
 <li><a data-i18n="nav.creatives" href="animated-creatives.html">Creativos</a></li>
@@ -587,5 +660,6 @@ nav{top:var(--bar-h)!important}
 <script src="../js/main.js?v=20260421"></script>
 
 <script src="../js/chatbot.js?v=20260421"></script>
+<script>/*ZMY_THEME_TOGGLE*/function toggleTheme(){var c=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';var n=c==='light'?'dark':'light';if(n==='light')document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('zmy_theme',n);}catch(e){}}</script>
 </body>
 </html>

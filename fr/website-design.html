@@ -128,17 +128,8 @@ nav{top:var(--bar-h)!important}
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    (function(){
-    var _ud={};
-    var _fbc=document.cookie.match(/_fbc=([^;]+)/);
-    var _fbp=document.cookie.match(/_fbp=([^;]+)/);
-    try{var _p=new URLSearchParams(window.location.search);var _cl=_p.get('fbclid');
-    if(_cl&&!_fbc){var _fc='fb.1.'+Date.now()+'.'+_cl;document.cookie='_fbc='+_fc+';path=/;max-age=7776000;SameSite=Lax';_ud.fbc=_fc;}
-    else if(_fbc){_ud.fbc=_fbc[1];}
-    if(_fbp){_ud.fbp=_fbp[1];}}catch(e){}
-    fbq('init','972114368527990',_ud);
-    fbq('track','PageView');
-  })();
+    fbq('init', '972114368527990');
+    fbq('track', 'PageView');
     fbq('track', 'ViewContent', {content_name: document.title});
   </script>
 <noscript><img height="1" src="https://www.facebook.com/tr?id=972114368527990&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
@@ -228,19 +219,10 @@ nav{top:var(--bar-h)!important}
 <button onclick="admPublish()" onmouseout="this.style.filter=''" onmouseover="this.style.filter='brightness(1.15)'" style="background:var(--ac);color:#0a0a08;border:none;padding:5px 18px;border-radius:6px;font-size:.75rem;font-weight:700;cursor:pointer;letter-spacing:.03em;">Publier ↑</button>
 </div>
 </div>
-<!-- MOBILE PAGE TABS (visible on mobile only) -->
-<div id="admMobileTabs" style="display:none;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;background:#0d0d0d;border-bottom:1px solid #1c1c1c;padding:.55rem .7rem;gap:.4rem;">
-<div class="adm-mtab adm-mtab-active" data-page="home" onclick="admNavMobile('home',this)" style="flex-shrink:0;display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;border-radius:8px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;background:rgba(14,165,233,.14);border:1px solid rgba(14,165,233,.45);color:#38bdf8;transition:all .18s;">🏠 Accueil</div>
-<div class="adm-mtab" data-page="classes" onclick="admNavMobile('classes',this)" style="flex-shrink:0;display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;border-radius:8px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.45);transition:all .18s;">🧘 Cours</div>
-<div class="adm-mtab" data-page="trainers" onclick="admNavMobile('trainers',this)" style="flex-shrink:0;display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;border-radius:8px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.45);transition:all .18s;">💪 Formateurs</div>
-<div class="adm-mtab" data-page="pricing" onclick="admNavMobile('pricing',this)" style="flex-shrink:0;display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;border-radius:8px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.45);transition:all .18s;">💳 Tarifs</div>
-<div class="adm-mtab" data-page="contact" onclick="admNavMobile('contact',this)" style="flex-shrink:0;display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;border-radius:8px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.45);transition:all .18s;">📍Contacter</div>
-<div class="adm-mtab" data-page="colours" onclick="admNavMobile('colours',this)" style="flex-shrink:0;display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;border-radius:8px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.45);transition:all .18s;">🎨 Couleurs</div>
-</div>
 <!-- BODY -->
 <div style="display:flex;">
 <!-- SIDEBAR -->
-<div id="admSidebar" style="width:148px;flex-shrink:0;background:#0b0b0b;border-right:1px solid #1a1a1a;padding:.9rem 0;display:flex;flex-direction:column;">
+<div style="width:148px;flex-shrink:0;background:#0b0b0b;border-right:1px solid #1a1a1a;padding:.9rem 0;display:flex;flex-direction:column;">
 <div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.14em;padding:.2rem 1rem .25rem;font-family:monospace;">Pages</div>
 <div class="adm-nav-item active-nav" onclick="admNav('home',this)" style="padding:.4rem 1rem;font-size:.74rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🏠</span>Accueil</div>
 <div class="adm-nav-item" onclick="admNav('classes',this)" onmouseout="if(!this.classList.contains('active-nav'))this.style.color='#555'" onmouseover="this.style.color='#aaa'" style="padding:.4rem 1rem;font-size:.74rem;color:#555;cursor:pointer;display:flex;align-items:center;gap:.5rem;transition:background .15s;"><span>🧘</span>Cours</div>
@@ -288,17 +270,10 @@ nav{top:var(--bar-h)!important}
 .adm-nav-item.active-nav{color:var(--ac) !important;background:rgba(255,255,255,.04);border-left:2px solid var(--ac);padding-left:calc(1rem - 2px);}
 @keyframes admFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){
+  #admShell{display:none;}
   #admin-demo-wrap{grid-template-columns:1fr!important;}
-  #admin-demo-wrap>div:last-child{margin-top:1rem;}
-  #admShell{min-width:0!important;width:100%!important;}
-  #admMobileTabs{display:flex!important;}
-  #admSidebar{display:none!important;}
-  .adm-canvas{height:400px!important;}
+  #admin-demo-wrap>div:last-child{display:none;}
   .section-title{font-size:clamp(1.6rem,6vw,2.2rem)!important;}
-  #mobile-apps .reveal-right{display:flex;justify-content:center;}
-  #phoneScreen{height:430px;}
-  #mobile-apps>div{padding:3rem 1rem;}
-  #admMobileTabs::-webkit-scrollbar{display:none;}
 }
 </style>
 <script>
@@ -367,31 +342,11 @@ window.admPublish=function(){
   saveAll();
 };
 
-window.admNavMobile=function(page,el){
-  // Update mobile tabs
-  document.querySelectorAll('.adm-mtab').forEach(function(t){
-    t.style.background='rgba(255,255,255,.04)';t.style.color='rgba(255,255,255,.45)';t.style.borderColor='rgba(255,255,255,.09)';t.classList.remove('adm-mtab-active');
-  });
-  if(el){el.style.background='rgba(14,165,233,.14)';el.style.color='#38bdf8';el.style.borderColor='rgba(14,165,233,.45)';el.classList.add('adm-mtab-active');}
-  // Also sync sidebar nav items
-  document.querySelectorAll('.adm-nav-item').forEach(function(i){i.style.background='';i.style.color='#555';i.classList.remove('active-nav');});
-  var sideItem=document.querySelector('.adm-nav-item[onclick*=\''+page+'\']');
-  if(sideItem){sideItem.style.background='rgba(14,165,233,.12)';sideItem.style.color='var(--ac)';sideItem.classList.add('active-nav');}
-  // Navigate
-  var iframe=document.getElementById('adm-iframe');
-  var colPanel=document.getElementById('adm-colour-panel');
-  if(page==='colours'){if(colPanel)colPanel.style.display='block';}
-  else{if(colPanel)colPanel.style.display='none';var map={home:'/zenflow/home.html',classes:'/zenflow/classes.html',trainers:'/zenflow/trainers.html',pricing:'/zenflow/pricing.html',contact:'/zenflow/contact.html'};if(iframe&&map[page])iframe.src=map[page];}
-};
 window.admNav=function(page,el){
   document.querySelectorAll('.adm-nav-item').forEach(function(i){
     i.style.background='';i.style.color='#555';i.classList.remove('active-nav');
   });
   if(el){el.style.background='rgba(14,165,233,.12)';el.style.color='var(--ac)';el.classList.add('active-nav');}
-  // Sync mobile tabs
-  document.querySelectorAll('.adm-mtab').forEach(function(t){t.style.background='rgba(255,255,255,.04)';t.style.color='rgba(255,255,255,.45)';t.style.borderColor='rgba(255,255,255,.09)';t.classList.remove('adm-mtab-active');});
-  var mTab=document.querySelector('.adm-mtab[data-page="'+page+'"]');
-  if(mTab){mTab.style.background='rgba(14,165,233,.14)';mTab.style.color='#38bdf8';mTab.style.borderColor='rgba(14,165,233,.45)';mTab.classList.add('adm-mtab-active');}
   var iframe=document.getElementById('adm-iframe');
   var colPanel=document.getElementById('adm-colour-panel');
   if(page==='colours'){
@@ -754,374 +709,58 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="reveal-left">
 <div class="section-tag">Applications mobiles</div>
 <h2 class="section-title" style="margin-bottom:1.25rem;">Une vraie application.<br/>Pas seulement un site mobile.</h2>
-<p style="color:var(--text-2);font-size:1rem;line-height:1.85;max-width:520px;margin-bottom:2rem;">Nous créons des applications mobiles personnalisées : jeux, trackers de fitness, plateformes sociales, applications de livraison, outils de réservation, flux communautaires. Quelle que soit l’idée, il fonctionne à la fois sur iOS et Android à partir d’une seule base de code, intégrée à React Native avec Expo.</p>
-<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:520px;margin-bottom:2rem;">Pas un modèle avec votre nom dessus. Construit à partir de zéro en fonction de ce que votre application doit réellement faire.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;margin-bottom:2.5rem;">
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> Jeux et divertissements</div>
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> Remise en forme et bien-être</div>
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> Social et communautaire</div>
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> Nourriture et livraison</div>
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> E-commerce et boutiques</div>
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> Réservation et planification</div>
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> Activités et tableaux de bord</div>
-<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.85rem;"><span style="color:#4ade80;font-size:.9rem;">✓</span> iOS et Android, une seule version</div>
+<p style="color:var(--text-2);font-size:1rem;line-height:1.85;max-width:520px;margin-bottom:2rem;">Nous développons des applications mobiles natives pour les entreprises, celles que vos clients utilisent réellement au quotidien. Flux de réservation, portails membres, tableaux de bord de services, flux sociaux, gestion des clients. Construit dans React Native avec Expo, il fonctionne donc à la fois sur iOS et Android à partir d'une seule base de code.</p>
+<p style="color:var(--text-2);font-size:.95rem;line-height:1.8;max-width:520px;margin-bottom:2.5rem;">Chaque application est conçue autour de votre logique métier spécifique, et non d'un modèle avec votre logo ajouté. Si votre entreprise a un flux de travail, une relation client ou un service à fournir, il existe une application pour cela.</p>
+<div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.88rem;"><span style="color:#4ade80;font-size:1rem;">✓</span> Réservation et planification</div>
+<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.88rem;"><span style="color:#4ade80;font-size:1rem;">✓</span> Portails clients et membres</div>
+<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.88rem;"><span style="color:#4ade80;font-size:1rem;">✓</span> Flux sociaux et communautaires</div>
+<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.88rem;"><span style="color:#4ade80;font-size:1rem;">✓</span> E-commerce et paiement</div>
+<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.88rem;"><span style="color:#4ade80;font-size:1rem;">✓</span> Outils métier internes</div>
+<div style="display:flex;align-items:center;gap:.5rem;color:var(--text-2);font-size:.88rem;"><span style="color:#4ade80;font-size:1rem;">✓</span> iOS et Android, une seule version</div>
 </div>
 <a class="btn" href="contact.html" style="display:inline-flex;align-items:center;gap:.5rem;">Parlez-nous de votre application <span style="font-size:1.1em;">›</span></a>
 </div>
-<div class="reveal-right" style="position:relative;display:flex;justify-content:center;">
-<!-- INTERACTIVE PHONE DEMO -->
-<div style="display:flex;flex-direction:column;align-items:center;gap:1.1rem;">
-<!-- App type label -->
-<div id="appLabel" style="font-size:.7rem;font-family:var(--font-mono);color:#6366f1;text-transform:uppercase;letter-spacing:.14em;min-height:1.1em;transition:opacity .25s;">Application de remise en forme</div>
-<!-- Phone Bezel -->
-<div style="width:250px;background:linear-gradient(160deg,#1c1c1e,#0d0d0d);border-radius:44px;padding:9px;box-shadow:0 0 0 1px #2a2a2a,0 0 0 3px #111,0 50px 120px rgba(0,0,0,.9);position:relative;-webkit-user-select:none;user-select:none;">
-<!-- Side buttons -->
-<div style="position:absolute;left:-3px;top:78px;width:3px;height:26px;background:#1e1e1e;border-radius:2px 0 0 2px;"></div>
-<div style="position:absolute;left:-3px;top:114px;width:3px;height:48px;background:#1e1e1e;border-radius:2px 0 0 2px;"></div>
-<div style="position:absolute;left:-3px;top:172px;width:3px;height:48px;background:#1e1e1e;border-radius:2px 0 0 2px;"></div>
-<div style="position:absolute;right:-3px;top:118px;width:3px;height:68px;background:#1e1e1e;border-radius:0 2px 2px 0;"></div>
-<!-- Screen -->
-<div id="phoneScreen" style="background:#000;border-radius:36px;overflow:hidden;position:relative;height:490px;cursor:grab;">
-<!-- Dynamic Island -->
-<div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:88px;height:26px;background:#000;border-radius:20px;z-index:20;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);"></div>
-<!-- Status bar -->
-<div style="position:absolute;top:0;left:0;right:0;height:44px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 22px 8px;z-index:15;pointer-events:none;">
-<span style="font-size:.56rem;color:#fff;font-weight:700;">9:41</span>
-<div style="display:flex;gap:5px;align-items:center;">
-<div style="display:flex;gap:1.5px;align-items:flex-end;height:10px;">
-<div style="width:2px;height:4px;background:rgba(255,255,255,.9);border-radius:1px;align-self:flex-end;"></div>
-<div style="width:2px;height:6px;background:rgba(255,255,255,.9);border-radius:1px;align-self:flex-end;"></div>
-<div style="width:2px;height:8px;background:rgba(255,255,255,.9);border-radius:1px;align-self:flex-end;"></div>
-<div style="width:2px;height:10px;background:rgba(255,255,255,.9);border-radius:1px;align-self:flex-end;"></div>
-</div>
-<svg fill="none" height="9" viewbox="0 0 14 9" width="14"><rect height="8" rx="1.5" stroke="rgba(255,255,255,.9)" stroke-width="1" width="11" x=".5" y=".5"></rect><rect fill="rgba(255,255,255,.5)" height="4" rx="1" width="2" x="12" y="2.5"></rect><rect fill="rgba(255,255,255,.9)" height="6" rx=".75" width="7.5" x="1.5" y="1.5"></rect></svg>
-</div>
-</div>
-<!-- Slides wrapper — 5 screens side by side -->
-<div id="pSlides" style="display:flex;width:500%;height:100%;transition:transform .38s cubic-bezier(.4,0,.2,1);will-change:transform;">
-<!-- ── SCREEN 1: FITNESS ── -->
-<div style="width:20%;height:100%;flex-shrink:0;overflow-y:auto;overflow-x:hidden;background:linear-gradient(180deg,#080818 0%,#000 100%);">
-<div style="padding:50px 14px 14px;">
-<div style="font-size:.54rem;color:rgba(255,255,255,.35);margin-bottom:2px;text-transform:uppercase;letter-spacing:.08em;">Lundi · 28 avril</div>
-<div style="font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.9rem;">Salut, Alex 💪</div>
-<div style="display:flex;justify-content:center;margin-bottom:.85rem;">
-<svg height="106" viewbox="0 0 106 106" width="106">
-<circle cx="53" cy="53" fill="none" r="44" stroke="rgba(244,63,94,.12)" stroke-width="8"></circle>
-<circle cx="53" cy="53" fill="none" r="44" stroke="#f43f5e" stroke-dasharray="276" stroke-dashoffset="70" stroke-linecap="round" stroke-width="8" transform="rotate(-90 53 53)"></circle>
-<circle cx="53" cy="53" fill="none" r="32" stroke="rgba(249,115,22,.12)" stroke-width="8"></circle>
-<circle cx="53" cy="53" fill="none" r="32" stroke="#f97316" stroke-dasharray="201" stroke-dashoffset="52" stroke-linecap="round" stroke-width="8" transform="rotate(-90 53 53)"></circle>
-<circle cx="53" cy="53" fill="none" r="20" stroke="rgba(74,222,128,.12)" stroke-width="8"></circle>
-<circle cx="53" cy="53" fill="none" r="20" stroke="#4ade80" stroke-dasharray="126" stroke-dashoffset="28" stroke-linecap="round" stroke-width="8" transform="rotate(-90 53 53)"></circle>
-<text fill="#fff" font-family="system-ui,sans-serif" font-size="9.5" font-weight="700" text-anchor="middle" x="53" y="49">8,234</text>
-<text fill="rgba(255,255,255,.38)" font-family="system-ui,sans-serif" font-size="6.5" text-anchor="middle" x="53" y="60">étapes aujourd'hui</text>
-</svg>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem;margin-bottom:.8rem;">
-<div style="background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.2);border-radius:10px;padding:.55rem .35rem;text-align:center;">
-<div style="font-size:.75rem;font-weight:700;color:#f43f5e;">420</div>
-<div style="font-size:.5rem;color:rgba(255,255,255,.35);margin-top:1px;">kcal</div>
-</div>
-<div style="background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2);border-radius:10px;padding:.55rem .35rem;text-align:center;">
-<div style="font-size:.75rem;font-weight:700;color:#f97316;">32</div>
-<div style="font-size:.5rem;color:rgba(255,255,255,.35);margin-top:1px;">minutes</div>
-</div>
-<div style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);border-radius:10px;padding:.55rem .35rem;text-align:center;">
-<div style="font-size:.75rem;font-weight:700;color:#4ade80;">4.2</div>
-<div style="font-size:.5rem;color:rgba(255,255,255,.35);margin-top:1px;">km</div>
-</div>
-</div>
-<div style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:12px;padding:.8rem;margin-bottom:.7rem;">
-<div style="font-size:.52rem;color:#818cf8;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.35rem;">Entraînement du jour</div>
-<div style="font-size:.8rem;font-weight:700;color:#fff;margin-bottom:.25rem;">Poussée du haut du corps</div>
-<div style="font-size:.62rem;color:rgba(255,255,255,.45);">6 exercices · 45 min</div>
-<div style="margin-top:.6rem;background:#6366f1;border-radius:7px;padding:.45rem;text-align:center;font-size:.68rem;font-weight:700;color:#fff;">Démarrer l'entraînement →</div>
-</div>
-<div style="font-size:.52rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;">Récent</div>
-<div style="display:flex;flex-direction:column;gap:.35rem;">
-<div style="display:flex;align-items:center;gap:.5rem;padding:.45rem;background:rgba(255,255,255,.03);border-radius:8px;">
-<div style="width:24px;height:24px;background:rgba(249,115,22,.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;">🏃</div>
-<div><div style="font-size:.65rem;font-weight:600;color:#fff;">Course du matin</div><div style="font-size:.55rem;color:rgba(255,255,255,.32);">5,1 km · Hier</div></div>
-</div>
-<div style="display:flex;align-items:center;gap:.5rem;padding:.45rem;background:rgba(255,255,255,.03);border-radius:8px;">
-<div style="width:24px;height:24px;background:rgba(99,102,241,.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;">🏋️</div>
-<div><div style="font-size:.65rem;font-weight:600;color:#fff;">Jour de poitrine</div><div style="font-size:.55rem;color:rgba(255,255,255,.32);">42 min · Sam</div></div>
-</div>
-</div>
-</div>
-<div style="position:sticky;bottom:0;background:#080818;border-top:1px solid rgba(255,255,255,.06);padding:.55rem .55rem .85rem;display:flex;justify-content:space-around;">
-<div style="text-align:center;"><div style="font-size:.9rem;">🏠</div><div style="font-size:.46rem;color:#6366f1;margin-top:.1rem;">Accueil</div></div>
-<div style="text-align:center;opacity:.32;"><div style="font-size:.9rem;">📊</div><div style="font-size:.46rem;color:rgba(255,255,255,.4);margin-top:.1rem;">Statistiques</div></div>
-<div style="text-align:center;opacity:.32;"><div style="font-size:.9rem;">🎯</div><div style="font-size:.46rem;color:rgba(255,255,255,.4);margin-top:.1rem;">Objectifs</div></div>
-<div style="text-align:center;opacity:.32;"><div style="font-size:.9rem;">👤</div><div style="font-size:.46rem;color:rgba(255,255,255,.4);margin-top:.1rem;">Profil</div></div>
-</div>
-</div>
-<!-- ── SCREEN 2: SOCIAL FEED ── -->
-<div style="width:20%;height:100%;flex-shrink:0;overflow-y:auto;overflow-x:hidden;background:#000;">
-<div style="padding:50px 0 0;">
-<div style="padding:0 12px .6rem;display:flex;overflow-x:auto;gap:.55rem;scrollbar-width:none;">
-<div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.2rem;">
-<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(45deg,#f43f5e,#f97316);padding:2px;"><div style="width:100%;height:100%;border-radius:50%;background:#111;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;line-height:1;">+</div></div>
-<span style="font-size:.44rem;color:rgba(255,255,255,.4);">Votre histoire</span>
-</div>
-<div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.2rem;">
-<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(45deg,#6366f1,#ec4899);padding:2px;"><div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#16213e);"></div></div>
-<span style="font-size:.44rem;color:rgba(255,255,255,.4);">mia_r</span>
-</div>
-<div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.2rem;">
-<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(45deg,#4ade80,#06b6d4);padding:2px;"><div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#061a0f,#061a1a);"></div></div>
-<span style="font-size:.44rem;color:rgba(255,255,255,.4);">jake.v</span>
-</div>
-<div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.2rem;">
-<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(45deg,#f59e0b,#f43f5e);padding:2px;"><div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#1a1200,#2a0f00);"></div></div>
-<span style="font-size:.44rem;color:rgba(255,255,255,.4);">sam_k</span>
-</div>
-</div>
-<div style="border-top:1px solid rgba(255,255,255,.07);">
-<div style="padding:.65rem 12px .45rem;">
-<div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.5rem;">
-<div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);flex-shrink:0;"></div>
-<span style="font-size:.62rem;font-weight:700;color:#fff;">alex.builds</span>
-<span style="font-size:.52rem;color:rgba(255,255,255,.28);margin-left:auto;">2m</span>
-</div>
-<div style="background:linear-gradient(135deg,#1a1a3e,#0d0d2a);border-radius:10px;height:115px;margin-bottom:.5rem;display:flex;align-items:center;justify-content:center;font-size:2.2rem;">🌃</div>
-<div style="display:flex;gap:.75rem;margin-bottom:.35rem;font-size:.72rem;">❤️ 💬 ↗️</div>
-<div style="font-size:.58rem;color:rgba(255,255,255,.48);"><span style="color:#fff;font-weight:600;">alex.builds</span> Je viens d'expédier la v2 🚀 Je suis tellement excité pour celle-ci</div>
-</div>
-<div style="padding:.65rem 12px .45rem;border-top:1px solid rgba(255,255,255,.05);">
-<div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.5rem;">
-<div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#f43f5e,#f97316);flex-shrink:0;"></div>
-<span style="font-size:.62rem;font-weight:700;color:#fff;">mia_creates</span>
-<span style="font-size:.52rem;color:rgba(255,255,255,.28);margin-left:auto;">14m</span>
-</div>
-<div style="background:linear-gradient(135deg,#1a0808,#2a1010);border-radius:10px;height:95px;margin-bottom:.5rem;display:flex;align-items:center;justify-content:center;font-size:2.2rem;">🎨</div>
-<div style="font-size:.58rem;color:rgba(255,255,255,.48);"><span style="color:#fff;font-weight:600;">mia_creates</span> De nouvelles illustrations tombent ce vendredi ✨</div>
-</div>
-<div style="padding:.65rem 12px .45rem;border-top:1px solid rgba(255,255,255,.05);">
-<div style="display:flex;align-items:center;gap:.45rem;margin-bottom:.5rem;">
-<div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#4ade80,#06b6d4);flex-shrink:0;"></div>
-<span style="font-size:.62rem;font-weight:700;color:#fff;">extérieur_kai</span>
-<span style="font-size:.52rem;color:rgba(255,255,255,.28);margin-left:auto;">1h</span>
-</div>
-<div style="background:linear-gradient(135deg,#061a0f,#0a2518);border-radius:10px;height:95px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;">🏔️</div>
-</div>
-</div>
-</div>
-<div style="position:sticky;bottom:0;background:#000;border-top:1px solid rgba(255,255,255,.08);padding:.55rem .55rem .85rem;display:flex;justify-content:space-around;font-size:.9rem;">
-<span>🏠</span><span style="opacity:.28;">🔍</span><span style="opacity:.28;">➕</span><span style="opacity:.28;">❤️</span><span style="opacity:.28;">👤</span>
-</div>
-</div>
-<!-- ── SCREEN 3: GAME ── -->
-<div style="width:20%;height:100%;flex-shrink:0;overflow-y:auto;overflow-x:hidden;background:linear-gradient(180deg,#04040f 0%,#08051a 100%);">
-<div style="padding:50px 12px 14px;display:flex;flex-direction:column;gap:.65rem;">
-<div style="text-align:center;">
-<div style="font-size:1.6rem;margin-bottom:.15rem;">🏆</div>
-<div style="font-size:.95rem;font-weight:800;color:#f59e0b;letter-spacing:.05em;">RUÉE GALAXIE</div>
-<div style="font-size:.56rem;color:rgba(255,255,255,.35);">Saison 3 · Rang : Diamant</div>
-</div>
-<div style="background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(168,85,247,.1));border:1px solid rgba(99,102,241,.3);border-radius:14px;padding:.85rem;text-align:center;">
-<div style="font-size:1.5rem;margin-bottom:.25rem;">⚡</div>
-<div style="font-size:.82rem;font-weight:700;color:#fff;">124 560 pts</div>
-<div style="font-size:.52rem;color:rgba(255,255,255,.35);margin-bottom:.55rem;">Votre meilleur score</div>
-<div style="display:flex;gap:.35rem;">
-<div style="flex:1;background:#6366f1;border-radius:8px;padding:.4rem;font-size:.62rem;font-weight:700;color:#fff;cursor:pointer;">▶ Jouer</div>
-<div style="flex:1;background:rgba(255,255,255,.07);border-radius:8px;padding:.4rem;font-size:.62rem;color:rgba(255,255,255,.55);cursor:pointer;">Mission quotidienne</div>
-</div>
-</div>
-<div>
-<div style="font-size:.52rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.35rem;">Classement</div>
-<div style="display:flex;flex-direction:column;gap:.28rem;">
-<div style="display:flex;align-items:center;gap:.45rem;padding:.42rem .55rem;background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.15);border-radius:8px;">
-<span style="font-size:.75rem;">🥇</span><div style="flex:1;font-size:.62rem;color:#fff;font-weight:600;">libellule99</div><div style="font-size:.6rem;color:#f59e0b;font-weight:700;">287,430</div>
-</div>
-<div style="display:flex;align-items:center;gap:.45rem;padding:.42rem .55rem;background:rgba(255,255,255,.04);border-radius:8px;">
-<span style="font-size:.75rem;">🥈</span><div style="flex:1;font-size:.62rem;color:#fff;">cosmique_k</div><div style="font-size:.6rem;color:rgba(255,255,255,.45);">201,120</div>
-</div>
-<div style="display:flex;align-items:center;gap:.45rem;padding:.42rem .55rem;background:rgba(255,255,255,.04);border-radius:8px;">
-<span style="font-size:.75rem;">🥉</span><div style="flex:1;font-size:.62rem;color:#fff;">starfall_x</div><div style="font-size:.6rem;color:rgba(255,255,255,.45);">178,900</div>
-</div>
-<div style="display:flex;align-items:center;gap:.45rem;padding:.42rem .55rem;background:linear-gradient(135deg,rgba(99,102,241,.14),rgba(168,85,247,.08));border:1px solid rgba(99,102,241,.3);border-radius:8px;">
-<span style="font-size:.75rem;">💎</span><div style="flex:1;font-size:.62rem;color:#818cf8;font-weight:700;">Vous</div><div style="font-size:.6rem;color:#6366f1;font-weight:700;">124,560</div>
-</div>
-</div>
-</div>
-<div>
-<div style="font-size:.52rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.35rem;">Réalisations</div>
-<div style="display:flex;flex-wrap:wrap;gap:.35rem;">
-<div style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:.35rem .55rem;font-size:.55rem;color:#f59e0b;">🔥 Séquence de 7 jours</div>
-<div style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:.35rem .55rem;font-size:.55rem;color:#4ade80;">⚡ Démon de vitesse</div>
-<div style="background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:8px;padding:.35rem .55rem;font-size:.55rem;color:#818cf8;">🏆 Diamant</div>
-<div style="background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.2);border-radius:8px;padding:.35rem .55rem;font-size:.55rem;color:#ec4899;">👑Top 10</div>
-</div>
-</div>
-</div>
-</div>
-<!-- ── SCREEN 4: FOOD & DELIVERY ── -->
-<div style="width:20%;height:100%;flex-shrink:0;overflow-y:auto;overflow-x:hidden;background:#080808;">
-<div style="padding:50px 0 0;">
-<div style="padding:0 13px .65rem;">
-<div style="font-size:.54rem;color:rgba(255,255,255,.35);">📍 Soho, New York</div>
-<div style="font-size:.95rem;font-weight:700;color:#fff;">De quoi as-tu envie ? 🍕</div>
-</div>
-<div style="margin:0 13px .65rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:.45rem .7rem;display:flex;align-items:center;gap:.35rem;">
-<span style="font-size:.7rem;">🔍</span><span style="font-size:.62rem;color:rgba(255,255,255,.28);">Rechercher des restaurants...</span>
-</div>
-<div style="display:flex;gap:.45rem;overflow-x:auto;padding:0 13px .65rem;scrollbar-width:none;">
-<div style="flex-shrink:0;background:#f97316;border-radius:20px;padding:.28rem .7rem;font-size:.58rem;font-weight:700;color:#fff;">🍕Pizzas</div>
-<div style="flex-shrink:0;background:rgba(255,255,255,.06);border-radius:20px;padding:.28rem .7rem;font-size:.58rem;color:rgba(255,255,255,.55);">🍣 Sushis</div>
-<div style="flex-shrink:0;background:rgba(255,255,255,.06);border-radius:20px;padding:.28rem .7rem;font-size:.58rem;color:rgba(255,255,255,.55);">🍔 Burgers</div>
-<div style="flex-shrink:0;background:rgba(255,255,255,.06);border-radius:20px;padding:.28rem .7rem;font-size:.58rem;color:rgba(255,255,255,.55);">🌮 Tacos</div>
-</div>
-<div style="display:flex;flex-direction:column;gap:.45rem;padding:0 13px 14px;">
-<div style="background:#111;border-radius:12px;overflow:hidden;">
-<div style="height:88px;background:linear-gradient(135deg,#1a0a00,#2a1500);display:flex;align-items:center;justify-content:center;font-size:2.4rem;">🍕</div>
-<div style="padding:.55rem .7rem;">
-<div style="display:flex;justify-content:space-between;align-items:center;">
-<div style="font-size:.7rem;font-weight:700;color:#fff;">Naples Express</div>
-<div style="font-size:.58rem;color:#f59e0b;">⭐ 4.8</div>
-</div>
-<div style="font-size:.56rem;color:rgba(255,255,255,.38);margin-top:.12rem;">20-30 min · Livraison gratuite</div>
-<div style="margin-top:.45rem;background:#f97316;border-radius:6px;padding:.32rem;text-align:center;font-size:.6rem;font-weight:700;color:#fff;">Commandez maintenant</div>
-</div>
-</div>
-<div style="background:#111;border-radius:12px;overflow:hidden;">
-<div style="height:70px;background:linear-gradient(135deg,#001818,#002828);display:flex;align-items:center;justify-content:center;font-size:2.4rem;">🍣</div>
-<div style="padding:.55rem .7rem;">
-<div style="display:flex;justify-content:space-between;align-items:center;">
-<div style="font-size:.7rem;font-weight:700;color:#fff;">Bouchées de Tokyo</div>
-<div style="font-size:.58rem;color:#f59e0b;">⭐ 4.6</div>
-</div>
-<div style="font-size:.56rem;color:rgba(255,255,255,.38);margin-top:.12rem;">35-45 min · Livraison à 2,99 $</div>
-</div>
-</div>
-<div style="background:#111;border-radius:12px;overflow:hidden;">
-<div style="height:70px;background:linear-gradient(135deg,#100a1a,#1a1030);display:flex;align-items:center;justify-content:center;font-size:2.4rem;">🍜</div>
-<div style="padding:.55rem .7rem;">
-<div style="display:flex;justify-content:space-between;align-items:center;">
-<div style="font-size:.7rem;font-weight:700;color:#fff;">Maison Ramen</div>
-<div style="font-size:.58rem;color:#f59e0b;">⭐ 4.7</div>
-</div>
-<div style="font-size:.56rem;color:rgba(255,255,255,.38);margin-top:.12rem;">25-35 min · Livraison gratuite</div>
-</div>
-</div>
-</div>
-</div>
-<div style="position:sticky;bottom:0;background:#080808;border-top:1px solid rgba(255,255,255,.06);padding:.55rem .55rem .85rem;display:flex;justify-content:space-around;font-size:.9rem;">
-<span>🏠</span><span style="opacity:.28;">🔍</span><span style="opacity:.28;">🛒</span><span style="opacity:.28;">👤</span>
-</div>
-</div>
-<!-- ── SCREEN 5: BUSINESS DASHBOARD ── -->
-<div style="width:20%;height:100%;flex-shrink:0;overflow-y:auto;overflow-x:hidden;background:#04040f;">
-<div style="padding:50px 13px 14px;">
-<div style="font-size:.54rem;color:rgba(255,255,255,.35);">Aperçu · avril 2026</div>
-<div style="font-size:.92rem;font-weight:700;color:#fff;margin-bottom:.85rem;">Bonjour Sarah 👋</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-bottom:.75rem;">
-<div style="background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:11px;padding:.65rem .7rem;">
-<div style="font-size:.52rem;color:rgba(255,255,255,.35);margin-bottom:.15rem;">Revenus</div>
-<div style="font-size:.85rem;font-weight:800;color:#fff;">$12,840</div>
-<div style="font-size:.5rem;color:#4ade80;margin-top:.1rem;">↑ 18 % par rapport au mois dernier</div>
-</div>
-<div style="background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.2);border-radius:11px;padding:.65rem .7rem;">
-<div style="font-size:.52rem;color:rgba(255,255,255,.35);margin-bottom:.15rem;">Clients</div>
-<div style="font-size:.85rem;font-weight:800;color:#fff;">147</div>
-<div style="font-size:.5rem;color:#4ade80;margin-top:.1rem;">+12 ce mois-ci</div>
-</div>
-<div style="background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2);border-radius:11px;padding:.65rem .7rem;">
-<div style="font-size:.52rem;color:rgba(255,255,255,.35);margin-bottom:.15rem;">Réservations</div>
-<div style="font-size:.85rem;font-weight:800;color:#fff;">38</div>
-<div style="font-size:.5rem;color:#f97316;margin-top:.1rem;">↑ 6 cette semaine</div>
-</div>
-<div style="background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2);border-radius:11px;padding:.65rem .7rem;">
-<div style="font-size:.52rem;color:rgba(255,255,255,.35);margin-bottom:.15rem;">Note</div>
-<div style="font-size:.85rem;font-weight:800;color:#fff;">4.9 ⭐</div>
-<div style="font-size:.5rem;color:rgba(255,255,255,.35);margin-top:.1rem;">98 avis</div>
-</div>
-</div>
-<div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:11px;padding:.7rem;margin-bottom:.75rem;">
-<div style="font-size:.52rem;color:rgba(255,255,255,.35);margin-bottom:.55rem;">Revenu hebdomadaire</div>
-<div style="display:flex;align-items:flex-end;gap:.28rem;height:52px;">
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;height:100%;"><div style="width:100%;background:rgba(99,102,241,.3);border-radius:2px 2px 0 0;flex:0 0 60%;"></div><div style="font-size:.4rem;color:rgba(255,255,255,.28);">M</div></div>
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;height:100%;"><div style="width:100%;background:rgba(99,102,241,.4);border-radius:2px 2px 0 0;flex:0 0 75%;"></div><div style="font-size:.4rem;color:rgba(255,255,255,.28);">T</div></div>
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;height:100%;"><div style="width:100%;background:rgba(99,102,241,.45);border-radius:2px 2px 0 0;flex:0 0 55%;"></div><div style="font-size:.4rem;color:rgba(255,255,255,.28);">W</div></div>
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;height:100%;"><div style="width:100%;background:rgba(99,102,241,.6);border-radius:2px 2px 0 0;flex:0 0 90%;"></div><div style="font-size:.4rem;color:rgba(255,255,255,.28);">T</div></div>
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;height:100%;"><div style="width:100%;background:#6366f1;border-radius:2px 2px 0 0;flex:0 0 100%;"></div><div style="font-size:.4rem;color:#6366f1;font-weight:700;">F</div></div>
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;height:100%;"><div style="width:100%;background:rgba(99,102,241,.4);border-radius:2px 2px 0 0;flex:0 0 68%;"></div><div style="font-size:.4rem;color:rgba(255,255,255,.28);">S</div></div>
-<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.18rem;height:100%;"><div style="width:100%;background:rgba(99,102,241,.2);border-radius:2px 2px 0 0;flex:0 0 40%;"></div><div style="font-size:.4rem;color:rgba(255,255,255,.28);">S</div></div>
-</div>
-</div>
-<div style="font-size:.52rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;">Clients récents</div>
-<div style="display:flex;flex-direction:column;gap:.3rem;">
-<div style="display:flex;align-items:center;gap:.45rem;padding:.45rem;background:rgba(255,255,255,.03);border-radius:8px;">
-<div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);flex-shrink:0;"></div>
-<div style="flex:1;font-size:.6rem;color:#fff;">Jessica M.</div><div style="font-size:.56rem;color:#4ade80;">+$340</div>
-</div>
-<div style="display:flex;align-items:center;gap:.45rem;padding:.45rem;background:rgba(255,255,255,.03);border-radius:8px;">
-<div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f43f5e,#ec4899);flex-shrink:0;"></div>
-<div style="flex:1;font-size:.6rem;color:#fff;">Marc T.</div><div style="font-size:.56rem;color:#4ade80;">+$280</div>
-</div>
-<div style="display:flex;align-items:center;gap:.45rem;padding:.45rem;background:rgba(255,255,255,.03);border-radius:8px;">
-<div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#4ade80,#06b6d4);flex-shrink:0;"></div>
-<div style="flex:1;font-size:.6rem;color:#fff;">Priya S.</div><div style="font-size:.56rem;color:#4ade80;">+$520</div>
-</div>
-</div>
-</div>
-<div style="position:sticky;bottom:0;background:#04040f;border-top:1px solid rgba(255,255,255,.06);padding:.55rem .55rem .85rem;display:flex;justify-content:space-around;font-size:.9rem;">
-<span>📊</span><span style="opacity:.28;">📅</span><span style="opacity:.28;">💬</span><span style="opacity:.28;">⚙️</span>
-</div>
-</div>
-</div><!-- /pSlides -->
-</div><!-- /phoneScreen -->
-<!-- Home indicator -->
-<div style="display:flex;justify-content:center;padding:.45rem 0 .2rem;">
-<div style="width:88px;height:4px;background:rgba(255,255,255,.22);border-radius:2px;"></div>
-</div>
-</div><!-- /bezel -->
-<!-- Dots -->
-<div id="phoneDots" style="display:flex;gap:.5rem;align-items:center;">
-<div class="pdot" style="width:7px;height:7px;border-radius:50%;background:#6366f1;cursor:pointer;transition:all .25s;transform:scale(1.3);"></div>
-<div class="pdot" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s;"></div>
-<div class="pdot" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s;"></div>
-<div class="pdot" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s;"></div>
-<div class="pdot" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s;"></div>
-</div>
-<!-- Hint -->
-<div style="font-size:.62rem;color:rgba(255,255,255,.28);">faites glisser ou cliquez sur les points pour explorer</div>
-</div>
-<script>
-(function(){
-  var cur=0,timer;
-  var labels=['Fitness App','Social Feed','Mobile Game','Food & Delivery','Business Dashboard'];
-  var slides=document.getElementById('pSlides');
-  var dots=document.querySelectorAll('#phoneDots .pdot');
-  var label=document.getElementById('appLabel');
-  var screen=document.getElementById('phoneScreen');
-  function go(n){
-    cur=((n%5)+5)%5;
-    slides.style.transform='translateX(-'+(cur*20)+'%)';
-    dots.forEach(function(d,i){d.style.background=i===cur?'#6366f1':'rgba(255,255,255,.2)';d.style.transform=i===cur?'scale(1.3)':'scale(1)';});
-    if(label){label.style.opacity='0';setTimeout(function(){label.textContent=labels[cur];label.style.opacity='1';},140);}
-  }
-  dots.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(timer);go(i);});});
-  // Touch swipe
-  var sx=0,sy=0,st=0,scrollEl=null;
-  screen.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;st=Date.now();scrollEl=e.target.closest('[style*="overflow-y:auto"]');},{passive:true});
-  screen.addEventListener('touchend',function(e){
-    var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy,dt=Date.now()-st;
-    if(Math.abs(dx)>Math.abs(dy)*1.8&&Math.abs(dx)>38&&dt<500){clearInterval(timer);go(dx<0?cur+1:cur-1);}
-  },{passive:true});
-  // Mouse drag
-  var mx=0,dragging=false;
-  screen.addEventListener('mousedown',function(e){mx=e.clientX;dragging=true;screen.style.cursor='grabbing';clearInterval(timer);});
-  document.addEventListener('mouseup',function(e){
-    if(!dragging)return;dragging=false;screen.style.cursor='grab';
-    var dx=e.clientX-mx;if(Math.abs(dx)>40)go(dx<0?cur+1:cur-1);
-  });
-  // Auto-advance
-  function startAuto(){timer=setInterval(function(){go(cur+1);},4200);}
-  startAuto();
-  screen.addEventListener('mousedown',function(){clearInterval(timer);});
-  screen.addEventListener('touchstart',function(){clearInterval(timer);},{passive:true});
-})();
-</script>
+<div class="reveal-right" style="position:relative;">
+<div style="background:var(--bg-1);border:1px solid var(--border-b);border-radius:24px;overflow:hidden;max-width:300px;margin:0 auto;box-shadow:0 40px 100px rgba(0,0,0,.7);">
+<!-- Phone mockup showing app screens -->
+<div style="background:#0a0a14;padding:1rem 1.25rem .5rem;display:flex;align-items:center;gap:.6rem;border-bottom:1px solid rgba(99,102,241,.12);">
+<div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></div>
+<div style="width:8px;height:8px;border-radius:50%;background:#fbbf24;"></div>
+<div style="width:8px;height:8px;border-radius:50%;background:#4ade80;"></div>
+<span style="font-size:.72rem;color:rgba(255,255,255,.3);margin-left:.4rem;font-family:monospace;">VotreApp.tsx</span>
+</div>
+<div style="padding:1.5rem 1.25rem;">
+<div style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);border-radius:12px;padding:1rem;margin-bottom:.75rem;">
+<div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.08em;">Accueil</div>
+<div style="font-size:.85rem;font-weight:700;color:#fff;margin-bottom:.25rem;">Bonjour Sarah</div>
+<div style="font-size:.72rem;color:rgba(255,255,255,.45);">3 réservations cette semaine</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem;">
+<div style="background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:.75rem;text-align:center;">
+<div style="font-size:1.1rem;margin-bottom:.2rem;">📅</div>
+<div style="font-size:.7rem;color:rgba(255,255,255,.55);">Livre</div>
+</div>
+<div style="background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.15);border-radius:10px;padding:.75rem;text-align:center;">
+<div style="font-size:1.1rem;margin-bottom:.2rem;">💬</div>
+<div style="font-size:.7rem;color:rgba(255,255,255,.55);">Messages</div>
+</div>
+</div>
+<div style="background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.1);border-radius:10px;padding:.75rem;">
+<div style="font-size:.7rem;color:rgba(255,255,255,.35);margin-bottom:.4rem;">Prochain rendez-vous</div>
+<div style="font-size:.8rem;font-weight:600;color:#fff;">Mardi, 14h00</div>
+<div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-top:.1rem;">Yoga Flow — Studio B</div>
+</div>
+</div>
+<div style="background:#0a0a14;border-top:1px solid rgba(99,102,241,.12);padding:.75rem 1.25rem;display:flex;justify-content:space-around;">
+<div style="text-align:center;"><div style="font-size:1rem;">🏠</div><div style="font-size:.6rem;color:#6366f1;margin-top:.15rem;">Accueil</div></div>
+<div style="text-align:center;"><div style="font-size:1rem;opacity:.4;">📋</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);margin-top:.15rem;">Cours</div></div>
+<div style="text-align:center;"><div style="font-size:1rem;opacity:.4;">🔍</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);margin-top:.15rem;">Rechercher</div></div>
+<div style="text-align:center;"><div style="font-size:1rem;opacity:.4;">👤</div><div style="font-size:.6rem;color:rgba(255,255,255,.3);margin-top:.15rem;">Profil</div></div>
+</div>
+</div>
+<div style="position:absolute;top:-20px;right:-10px;width:120px;height:120px;background:radial-gradient(circle,rgba(99,102,241,.25),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+<div style="position:absolute;bottom:-20px;left:-10px;width:100px;height:100px;background:radial-gradient(circle,rgba(168,85,247,.2),transparent 70%);border-radius:50%;pointer-events:none;"></div>
 </div>
 </div>
 </div>

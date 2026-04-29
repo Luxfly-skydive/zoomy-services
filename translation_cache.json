@@ -2031,7 +2031,12 @@
     "Website Builds": "Créations de sites Web",
     "// Output Console": "// Console de sortie",
     "Campaign Launches": "Lancements de campagne",
-    "LIVE": "EN DIRECT"
+    "LIVE": "EN DIRECT",
+    "A — F": "UNE-F",
+    "→  built in-house · shipped in days": "→  construit en interne · expédié en quelques jours",
+    "SERVICES": "PRESTATIONS",
+    "Phone Agents": "Agents téléphoniques",
+    "Animations": "Animations"
   },
   "es": {
     "Do you work with clients outside the US?": "¿Trabaja con clientes fuera de EE. UU.?",
@@ -4065,6 +4070,11 @@
     "Website Builds": "Construcciones de sitios web",
     "// Output Console": "// Consola de salida",
     "Campaign Launches": "Lanzamientos de campaña",
-    "LIVE": "VIVIR"
+    "LIVE": "VIVIR",
+    "A — F": "A — F",
+    "→  built in-house · shipped in days": "→  construido internamente · enviado en días",
+    "SERVICES": "SERVICIOS",
+    "Phone Agents": "Agentes telefónicos",
+    "Animations": "animaciones"
   }
 }

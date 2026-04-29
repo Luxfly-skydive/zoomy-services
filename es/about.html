@@ -155,72 +155,43 @@ html[data-theme="light"] [style*="background:#0d0d1c"],html[data-theme="light"] 
 <p class="hero-sub" data-i18n="about.hero.sub">Somos un estudio de producción digital en crecimiento, mejorado por IA. Creamos y gestionamos campañas, creamos sitios web personalizados y desarrollamos herramientas de inteligencia artificial para empresas.</p>
 </div>
 <div aria-hidden="true" class="about-hero-visual">
-<div class="oc-card">
-<div class="oc-head">
-<span class="oc-dot"></span>
-<span class="oc-label">// Consola de salida</span>
-<span class="oc-status">VIVIR</span>
+<div class="ts-card">
+<div class="ts-side">// 06<br/>SERVICIOS</div>
+<div class="ts-meta-top">
+<span class="ts-meta-num">A — F</span>
+<span class="ts-meta-pulse"></span>
 </div>
-<div class="oc-row">
-<div class="oc-name">Construcciones de sitios web</div>
-<div class="oc-bar"><span class="oc-fill" style="--w:88%;--d:.0s;"></span></div>
-<div class="oc-num" data-target="42">0</div>
-</div>
-<div class="oc-row">
-<div class="oc-name">Lanzamientos de campaña</div>
-<div class="oc-bar"><span class="oc-fill" style="--w:74%;--d:.18s;"></span></div>
-<div class="oc-num" data-target="68">0</div>
-</div>
-<div class="oc-row">
-<div class="oc-name">Agentes telefónicos</div>
-<div class="oc-bar"><span class="oc-fill" style="--w:62%;--d:.36s;"></span></div>
-<div class="oc-num" data-target="14">0</div>
-</div>
-<div class="oc-row">
-<div class="oc-name">Chatbots de IA</div>
-<div class="oc-bar"><span class="oc-fill" style="--w:80%;--d:.54s;"></span></div>
-<div class="oc-num" data-target="23">0</div>
-</div>
-<div class="oc-row">
-<div class="oc-name">Idiomas enviados</div>
-<div class="oc-bar"><span class="oc-fill" style="--w:96%;--d:.72s;"></span></div>
-<div class="oc-num" data-target="133">0</div>
-</div>
-<div class="oc-foot">
-<span class="oc-pulse"></span>
-<span class="oc-foot-text">Envíos siempre. Actualizado en tiempo real.</span>
-</div>
+<ul class="ts-stack" id="ts-stack">
+<li class="ts-row" data-i="0"><span class="ts-num">A</span><span class="ts-name">Sitios web</span><span class="ts-rule"></span></li>
+<li class="ts-row" data-i="1"><span class="ts-num">B</span><span class="ts-name">Agentes telefónicos</span><span class="ts-rule"></span></li>
+<li class="ts-row" data-i="2"><span class="ts-num">C</span><span class="ts-name">Chatbots</span><span class="ts-rule"></span></li>
+<li class="ts-row" data-i="3"><span class="ts-num">D</span><span class="ts-name">Campañas</span><span class="ts-rule"></span></li>
+<li class="ts-row" data-i="4"><span class="ts-num">E</span><span class="ts-name">animaciones</span><span class="ts-rule"></span></li>
+<li class="ts-row" data-i="5"><span class="ts-num">F</span><span class="ts-name">Alojamiento</span><span class="ts-rule"></span></li>
+</ul>
+<div class="ts-foot">→  construido internamente · enviado en días</div>
 </div>
 </div>
 </div>
 </section>
 <script>
 (function(){
-  var nums = document.querySelectorAll('.about-hero-visual .oc-num');
-  if(!nums.length) return;
-  var started = false;
-  function run(){
-    if(started) return; started = true;
-    nums.forEach(function(el, i){
-      var target = parseInt(el.getAttribute('data-target'), 10) || 0;
-      var dur = 1400 + i*180, t0 = null;
-      function step(t){
-        if(!t0) t0 = t;
-        var p = Math.min(1, (t - t0) / dur);
-        // ease-out cubic
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(eased * target).toLocaleString();
-        if(p < 1) requestAnimationFrame(step);
-      }
-      setTimeout(function(){ requestAnimationFrame(step); }, i*120);
+  var rows = document.querySelectorAll('#ts-stack .ts-row');
+  if(!rows.length) return;
+  var i = 0;
+  function setActive(idx){
+    rows.forEach(function(r, n){
+      if(n === idx) r.classList.add('is-active');
+      else r.classList.remove('is-active');
     });
   }
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ run(); io.disconnect(); }});
-    }, {threshold:.4});
-    io.observe(document.querySelector('.about-hero-visual'));
-  } else { run(); }
+  function tick(){
+    setActive(i);
+    i = (i + 1) % rows.length;
+  }
+  // Stagger the first activation slightly so the page settles
+  setTimeout(tick, 250);
+  setInterval(tick, 2400);
 })();
 </script>
 <section class="section">

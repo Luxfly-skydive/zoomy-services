@@ -3865,3 +3865,82 @@ html[data-theme="light"] .ah-wave{
 @media (prefers-reduced-motion: reduce){
   .ah-wave{ animation:none !important; }
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   v32 — About hero "growing network" visual
+   Replaces the wave field. Three seed nodes (team) radiate outward into
+   a branching constellation (output). CSS-only continuous loop.
+   ════════════════════════════════════════════════════════════════════ */
+
+.ah-svg{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  display:block;
+  overflow:visible;
+}
+
+.ah-edge{
+  fill:none;
+  stroke:rgba(255,255,255,0.55);
+  stroke-width:1.05;
+  stroke-linecap:round;
+  pathLength: 1;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: ahEdgeDraw 12s ease-in-out infinite;
+  animation-delay: calc((var(--i, 0) * 0.07s) + (var(--d, 0) * 0.35s));
+}
+html[data-theme="light"] .ah-edge{
+  stroke:rgba(74,59,45,0.55);
+}
+
+.ah-node{
+  fill:rgba(255,255,255,0.85);
+  opacity:0;
+  transform-origin:center;
+  transform-box:fill-box;
+  animation: ahNodePop 12s ease-in-out infinite;
+  animation-delay: calc((var(--i, 0) * 0.07s) + (var(--d, 0) * 0.35s));
+}
+html[data-theme="light"] .ah-node{
+  fill:rgba(74,59,45,0.85);
+}
+
+.ah-node-seed{
+  fill:var(--primary, #6366f1);
+  filter: drop-shadow(0 0 6px rgba(99,102,241,.45));
+}
+html[data-theme="light"] .ah-node-seed{
+  fill:var(--primary, #B07C2C);
+  filter: drop-shadow(0 0 8px rgba(176,124,44,.35));
+}
+
+/* Edge: draw, hold, fade, reset */
+@keyframes ahEdgeDraw{
+  0%   { stroke-dashoffset: 1; opacity: 0; }
+  4%   { opacity: 1; }
+  35%  { stroke-dashoffset: 0; opacity: 1; }
+  78%  { stroke-dashoffset: 0; opacity: 1; }
+  90%  { stroke-dashoffset: 0; opacity: 0; }
+  100% { stroke-dashoffset: 1; opacity: 0; }
+}
+
+/* Node: scale up, hold, fade, reset */
+@keyframes ahNodePop{
+  0%   { opacity: 0; transform: scale(0.4); }
+  3%   { opacity: 0; transform: scale(0.4); }
+  10%  { opacity: 1; transform: scale(1); }
+  78%  { opacity: 1; transform: scale(1); }
+  90%  { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 0; transform: scale(0.4); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ah-edge, .ah-node{
+    animation: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+    transform: none !important;
+  }
+}

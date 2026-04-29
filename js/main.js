@@ -32,14 +32,10 @@ if(toggle&&links){
     const frA=document.createElement('a');frA.className='lang-btn';frA.href='fr/'+curPage;frA.textContent='FR';
     const esA=document.createElement('a');esA.className='lang-btn';esA.href='es/'+curPage;esA.textContent='ES';
     ls.appendChild(enBtn);ls.appendChild(frA);ls.appendChild(esA);
-    /* Theme toggle inside the drawer (mobile light/dark switch) */
-    const tt=document.createElement('button');tt.className='theme-toggle theme-toggle-menu';tt.type='button';tt.setAttribute('aria-label','Toggle light/dark theme');
-    tt.innerHTML='<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span class="theme-toggle-label">Theme</span>';
-    tt.addEventListener('click',function(){if(typeof toggleTheme==='function')toggleTheme();});
-    mf.appendChild(cta);mf.appendChild(ls);mf.appendChild(tt);links.appendChild(mf);
+    mf.appendChild(cta);mf.appendChild(ls);links.appendChild(mf);
   }
-  function openMenu(){toggle.classList.add('open');links.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';const b=document.getElementById('zmy-bubble');if(b)b.style.display='none';}
-  function closeMenu(){toggle.classList.remove('open');links.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';const b=document.getElementById('zmy-bubble');if(b)b.style.display='';}
+  function openMenu(){toggle.classList.add('open');links.classList.add('open');overlay.classList.add('open');document.documentElement.classList.add('zmy-nav-open');document.body.classList.add('zmy-nav-open');document.body.style.overflow='hidden';document.documentElement.style.overflow='hidden';const b=document.getElementById('zmy-bubble');if(b)b.style.display='none';}
+  function closeMenu(){toggle.classList.remove('open');links.classList.remove('open');overlay.classList.remove('open');document.documentElement.classList.remove('zmy-nav-open');document.body.classList.remove('zmy-nav-open');document.body.style.overflow='';document.documentElement.style.overflow='';const b=document.getElementById('zmy-bubble');if(b)b.style.display='';}
   toggle.addEventListener('click',()=>{links.classList.contains('open')?closeMenu():openMenu();});
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
   overlay.addEventListener('click',closeMenu);

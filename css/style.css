@@ -2769,3 +2769,112 @@ html[data-theme="light"] .wd-phone-arrow:hover{
 .wd-hero + section{
   padding-top:3rem!important;
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   v20 — mobile drawer polish (alignment, sizes, scroll lock, gap)
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Hide any theme-toggle-menu that may still be in the DOM (defensive) */
+.theme-toggle-menu{ display:none!important; }
+
+/* — 1. Lang buttons: identical alignment for EN button + FR/ES anchors — */
+@media(max-width:1024px){
+  .nav-mobile-footer .lang-switcher .lang-btn,
+  .nav-mobile-footer .lang-switcher button.lang-btn,
+  .nav-mobile-footer .lang-switcher a.lang-btn{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    height:32px!important;
+    min-height:32px!important;
+    line-height:1!important;
+    padding:0 14px!important;
+    font-size:.78rem!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+    text-decoration:none!important;
+  }
+  /* Same for top-nav lang switcher (kept for the in-bar one) */
+  nav .lang-switcher .lang-btn{
+    height:30px!important;
+    min-height:30px!important;
+    line-height:1!important;
+    padding:0 8px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+  }
+
+  /* — 2. Lang-switcher box not vertically stretched — */
+  .nav-mobile-footer .lang-switcher{
+    display:inline-flex!important;
+    align-items:center!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:3px!important;
+    gap:2px!important;
+    width:fit-content;
+    margin:0 auto;
+  }
+  nav .lang-switcher{
+    display:inline-flex!important;
+    align-items:center!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:2px!important;
+    gap:2px!important;
+  }
+
+  /* — 3. Theme toggle in TOP NAV not stretched — */
+  nav .theme-toggle{
+    width:32px!important;
+    height:32px!important;
+    min-height:0!important;
+    min-width:0!important;
+    padding:0!important;
+    flex-shrink:0;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  nav .theme-toggle svg{
+    width:14px!important;
+    height:14px!important;
+  }
+}
+
+/* — 4. Scroll lock when drawer open (reinforced) — */
+html.zmy-nav-open,
+html.zmy-nav-open body,
+body.zmy-nav-open{
+  overflow:hidden!important;
+  height:100vh!important;
+  touch-action:none!important;
+}
+/* :has() fallback for browsers that support it */
+@supports selector(:has(*)){
+  html:has(.nav-links.open),
+  body:has(.nav-links.open){
+    overflow:hidden!important;
+    touch-action:none!important;
+  }
+}
+
+/* — 5. Drawer top — match nav bottom exactly, no gap — */
+@media(max-width:1024px){
+  /* Lock nav height to a known value */
+  nav{ height:56px!important; }
+  /* Drawer top sits exactly at nav bottom = bar-h + nav height */
+  #navLinks{
+    top:calc(var(--bar-h, 44px) + 56px)!important;
+    height:calc(100vh - var(--bar-h, 44px) - 56px)!important;
+    border-top:none!important;
+    margin-top:0!important;
+    padding-top:1.5rem!important;
+  }
+  /* When free bar is dismissed (.bar-off), drawer aligns flush with nav */
+  .bar-off #navLinks{
+    top:56px!important;
+    height:calc(100vh - 56px)!important;
+  }
+}

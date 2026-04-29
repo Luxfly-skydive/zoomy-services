@@ -3279,3 +3279,53 @@ html[data-theme="light"] [style*="color:#fff"]:is(h1, h2, h3, h4, h5, h6){
   .cg-form{order:2!important;}
   .cg-info{order:3!important;}
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   v24 — hero check-list: ROW-PER-ITEM vertical stack
+   This block must come LAST. It overrides v13 (mobile 2-col grid) and
+   v18 (desktop 3-col grid). Each of the 5 items gets its own row.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Reset both desktop and mobile breakpoints to a single vertical column */
+.hero .section-inner > div:last-of-type,
+html .hero .section-inner > div:last-of-type{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  gap:.55rem!important;
+  flex-wrap:nowrap!important;
+  grid-template-columns:none!important;
+  width:max-content!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:auto!important;
+}
+
+/* Each row: ✓ + label, single line, no wrap, no inline-flex grid placement */
+.hero .section-inner > div:last-of-type > div,
+html .hero .section-inner > div:last-of-type > div{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:.55rem!important;
+  white-space:nowrap!important;
+  font-size:.92rem!important;
+  grid-column:auto!important;
+  grid-row:auto!important;
+}
+
+@media(max-width:768px){
+  .hero .section-inner > div:last-of-type,
+  html .hero .section-inner > div:last-of-type{
+    align-items:flex-start!important;
+    margin-left:0!important;
+    margin-right:auto!important;
+    gap:.5rem!important;
+  }
+  .hero .section-inner > div:last-of-type > div,
+  html .hero .section-inner > div:last-of-type > div{
+    font-size:.85rem!important;
+    white-space:normal!important;   /* allow wrap if a phone is too narrow */
+  }
+}

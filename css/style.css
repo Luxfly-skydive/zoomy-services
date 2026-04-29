@@ -3944,3 +3944,45 @@ html[data-theme="light"] .ah-node-seed{
     transform: none !important;
   }
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   v33 — refined growing network: slower, fewer, more elegant
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Slow the cycle from 12s to 18s; longer hold time. */
+.ah-edge{
+  animation-duration: 18s !important;
+  animation-delay: calc((var(--i, 0) * 0.10s) + (var(--d, 0) * 0.55s)) !important;
+}
+.ah-node{
+  animation-duration: 18s !important;
+  animation-delay: calc((var(--i, 0) * 0.10s) + (var(--d, 0) * 0.55s)) !important;
+}
+
+/* Replace previous keyframes timing — gentler reveal + longer hold. */
+@keyframes ahEdgeDraw{
+  0%   { stroke-dashoffset: 1; opacity: 0; }
+  6%   { opacity: 1; }
+  35%  { stroke-dashoffset: 0; opacity: 1; }
+  85%  { stroke-dashoffset: 0; opacity: 1; }
+  93%  { stroke-dashoffset: 0; opacity: 0; }
+  100% { stroke-dashoffset: 1; opacity: 0; }
+}
+@keyframes ahNodePop{
+  0%   { opacity: 0; transform: scale(0.4); }
+  4%   { opacity: 0; transform: scale(0.4); }
+  12%  { opacity: 1; transform: scale(1); }
+  85%  { opacity: 1; transform: scale(1); }
+  93%  { opacity: 0; transform: scale(0.55); }
+  100% { opacity: 0; transform: scale(0.4); }
+}
+
+/* Slightly thicker edges, slightly bigger seed glow. */
+.ah-edge{ stroke-width: 1.25; }
+.ah-node-seed{
+  filter: drop-shadow(0 0 12px rgba(99,102,241,.45));
+}
+html[data-theme="light"] .ah-node-seed{
+  filter: drop-shadow(0 0 14px rgba(176,124,44,.40));
+}

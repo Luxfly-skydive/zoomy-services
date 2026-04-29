@@ -2878,3 +2878,103 @@ body.zmy-nav-open{
     height:calc(100vh - 56px)!important;
   }
 }
+
+
+/* ════════════════════════════════════════════════════════════════════
+   v21 — admin panel demo: mobile-friendly horizontal nav
+   ════════════════════════════════════════════════════════════════════ */
+
+@media(max-width:900px){
+  /* — 1. Admin section sits higher on home — */
+  #admin-panel,
+  section:has(#admShell){
+    padding-top:2.5rem!important;
+  }
+
+  /* — 2. admShell layout: stack column, no horizontal overflow — */
+  #admShell{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:hidden!important;
+    border-radius:14px!important;
+  }
+  #admShell > div:nth-child(2){
+    /* The inner BODY div that uses display:flex */
+    flex-direction:column!important;
+  }
+
+  /* — 3. Sidebar (was 148px column) → horizontal pill bar — */
+  #admShell > div:nth-child(2) > div:first-child{
+    width:100%!important;
+    flex-shrink:1!important;
+    border-right:none!important;
+    border-bottom:1px solid #1a1a1a!important;
+    padding:.55rem .65rem!important;
+    flex-direction:row!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    align-items:center!important;
+    gap:.35rem!important;
+    white-space:nowrap;
+  }
+  #admShell > div:nth-child(2) > div:first-child::-webkit-scrollbar{display:none}
+
+  /* Hide the section labels (Pages, Settings) and the divider on mobile */
+  #admShell > div:nth-child(2) > div:first-child > div:first-child,  /* "Pages" label */
+  #admShell > div:nth-child(2) > div:first-child > div[style*="text-transform:uppercase"],
+  #admShell > div:nth-child(2) > div:first-child > div[style*="border-top"]{
+    display:none!important;
+  }
+
+  /* The nav items become compact horizontal pills */
+  #admShell .adm-nav-item{
+    flex-shrink:0!important;
+    padding:.35rem .75rem!important;
+    border-radius:999px!important;
+    background:rgba(255,255,255,.04)!important;
+    border:1px solid rgba(255,255,255,.06)!important;
+    font-size:.7rem!important;
+    color:#aaa!important;
+    transition:background .15s, border-color .15s, color .15s;
+  }
+  #admShell .adm-nav-item.active-nav{
+    background:rgba(14,165,233,.18)!important;
+    border-color:rgba(14,165,233,.45)!important;
+    color:var(--ac, #38bdf8)!important;
+  }
+
+  /* — Canvas: tighter height on mobile — */
+  #admShell .adm-canvas{
+    height:380px!important;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+  }
+  #admShell .adm-canvas iframe{
+    width:100%!important;
+    max-width:100%!important;
+    border:none!important;
+  }
+
+  /* — Top bar: tighter on mobile — */
+  #admShell > div:first-child{
+    padding:.5rem .85rem!important;
+  }
+  #admShell > div:first-child span[style*="text-transform:uppercase"]{
+    font-size:.62rem!important;
+    letter-spacing:.05em!important;
+  }
+  #admShell button[onclick*="admPublish"]{
+    padding:4px 12px!important;
+    font-size:.68rem!important;
+  }
+}
+
+/* Light mode mobile pills */
+@media(max-width:900px){
+  html[data-theme="light"] #admShell{
+    border-color:#1a1a1a!important;
+  }
+  /* admShell stays dark in both themes — preserved earlier — */
+}

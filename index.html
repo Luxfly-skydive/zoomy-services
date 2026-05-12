@@ -55,7 +55,7 @@
 .chatbot-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
 .chatbot-feat{padding:1.25rem;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.14);border-radius:12px;transition:border-color var(--transition),background var(--transition)}
 .chatbot-feat:hover{background:rgba(99,102,241,.1);border-color:rgba(99,102,241,.3)}
-.chatbot-feat-icon{font-size:1.4rem;margin-bottom:.6rem}
+.chatbot-feat-icon{width:36px;height:36px;border-radius:8px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.18);display:flex;align-items:center;justify-content:center;margin-bottom:.6rem}
 .chatbot-feat-title{font-weight:600;color:#fff;font-size:.9rem;margin-bottom:.25rem}
 .chatbot-feat-desc{color:var(--muted);font-size:.8rem}
 
@@ -462,7 +462,7 @@ Try Live Demo
 <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:3rem 2.5rem;text-align:center;width:100%;max-width:380px;">
 <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#312e81,#6366f1);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(99,102,241,.4);position:relative;">
 
-<div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(99,102,241,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3"  y="16" width="3" height="4"  rx="1.5" fill="white" opacity="0.45"/><rect x="8"  y="12" width="3" height="12" rx="1.5" fill="white" opacity="0.65"/><rect x="13" y="7"  width="3" height="22" rx="1.5" fill="white" opacity="0.9"/><rect x="18" y="10" width="3" height="16" rx="1.5" fill="white"/><rect x="23" y="6"  width="3" height="24" rx="1.5" fill="white" opacity="0.85"/><rect x="28" y="13" width="3" height="10" rx="1.5" fill="white" opacity="0.6"/><rect x="33" y="17" width="3" height="4"  rx="1.5" fill="white" opacity="0.35"/></svg><div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(99,102,241,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
 </div>
 <h3 style="font-family:var(--font-display);color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Zoomy Phone Agent</h3>
 <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;margin-bottom:.6rem;">Click below to start a live voice conversation. Your microphone will be requested.</p>
@@ -580,19 +580,19 @@ Try Live Demo
 <!-- CAPABILITY STRIP -->
 <div class="cap-strip stagger-children">
 <div class="cap-item reveal">
-<div class="cap-icon"></div>
+<div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
 <div><div class="cap-label">Campaign Management</div><div class="cap-desc">Created, managed, and reported on by us</div></div>
 </div>
 <div class="cap-item reveal reveal-delay-1">
-<div class="cap-icon"></div>
+<div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
 <div><div class="cap-label">Domain &amp; Hosting</div><div class="cap-desc">We register domains and configure hosting for you</div></div>
 </div>
 <div class="cap-item reveal reveal-delay-2">
-<div class="cap-icon">🆕</div>
+<div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
 <div><div class="cap-label">Free First Page</div><div class="cap-desc">Full website first page built at zero cost, no commitment</div></div>
 </div>
 <div class="cap-item reveal reveal-delay-3">
-<div class="cap-icon"></div>
+<div class="cap-icon"><svg width="20" height="20" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
 <div><div class="cap-label">Zero Templates</div><div class="cap-desc">Every project is custom-coded from scratch</div></div>
 </div>
 </div>
@@ -1204,22 +1204,22 @@ document.addEventListener('DOMContentLoaded',function(){
 <p style="color:var(--text-2);line-height:1.8;margin-bottom:2rem;">Available as a standalone build or as an add-on when you order a website or landing page. Just mention it in your brief.</p>
 <div class="chatbot-features">
 <div class="chatbot-feat">
-<div class="chatbot-feat-icon"></div>
+<div class="chatbot-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
 <div class="chatbot-feat-title">Fully trained</div>
 <div class="chatbot-feat-desc">On your real business data</div>
 </div>
 <div class="chatbot-feat">
-<div class="chatbot-feat-icon"></div>
+<div class="chatbot-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
 <div class="chatbot-feat-title">Multilingual</div>
 <div class="chatbot-feat-desc">Serves visitors in their language</div>
 </div>
 <div class="chatbot-feat">
-<div class="chatbot-feat-icon"></div>
+<div class="chatbot-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
 <div class="chatbot-feat-title">Lead capture</div>
 <div class="chatbot-feat-desc">Email &amp; phone collection built in</div>
 </div>
 <div class="chatbot-feat">
-<div class="chatbot-feat-icon"></div>
+<div class="chatbot-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
 <div class="chatbot-feat-title">GDPR-compliant</div>
 <div class="chatbot-feat-desc">Data stays on your own infrastructure</div>
 </div>

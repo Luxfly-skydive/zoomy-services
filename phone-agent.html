@@ -27,7 +27,7 @@
 .use-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .use-case{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color var(--ease),transform var(--ease)}
 .use-case:hover{border-color:rgba(99,102,241,.4);transform:translateY(-3px)}
-.use-case-icon{font-size:2rem;margin-bottom:1rem}
+.use-case-icon{width:44px;height:44px;border-radius:10px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.18);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
 .use-case h4{font-family:var(--f-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:.6rem}
 .use-case p{font-size:.875rem;color:var(--text-2);line-height:1.65}
 .voice-demo{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:460px;width:100%}
@@ -58,7 +58,7 @@
 @keyframes waveBounce{0%,100%{transform:scaleY(.4);opacity:.5}50%{transform:scaleY(1);opacity:1}}
 .integration-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
 .integration-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;text-align:center}
-.integration-icon{font-size:1.6rem;margin-bottom:.6rem}
+.integration-icon{width:44px;height:44px;border-radius:10px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.18);display:flex;align-items:center;justify-content:center;margin-bottom:.6rem}
 .integration-name{font-size:.8rem;font-weight:600;color:#fff;font-family:var(--f-display)}
 .integration-desc{font-size:.72rem;color:var(--muted);margin-top:.2rem}
 @media(max-width:900px){
@@ -187,7 +187,7 @@
 <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:3rem 2.5rem;text-align:center;width:100%;max-width:380px;">
 <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#312e81,#6366f1);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(99,102,241,.4);position:relative;">
             
-            <div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(99,102,241,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="3"  y="16" width="3" height="4"  rx="1.5" fill="white" opacity="0.45"/><rect x="8"  y="12" width="3" height="12" rx="1.5" fill="white" opacity="0.65"/><rect x="13" y="7"  width="3" height="22" rx="1.5" fill="white" opacity="0.9"/><rect x="18" y="10" width="3" height="16" rx="1.5" fill="white"/><rect x="23" y="6"  width="3" height="24" rx="1.5" fill="white" opacity="0.85"/><rect x="28" y="13" width="3" height="10" rx="1.5" fill="white" opacity="0.6"/><rect x="33" y="17" width="3" height="4"  rx="1.5" fill="white" opacity="0.35"/></svg><div style="position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(99,102,241,.3);animation:orbPulse 2s ease-in-out infinite;"></div>
 </div>
 <h3 style="font-family:var(--f-display);color:#fff;font-size:1.2rem;margin-bottom:.75rem;">Zoomy Phone Agent</h3>
 <p style="color:var(--text-2);font-size:.875rem;line-height:1.6;margin-bottom:2rem;">Click below to start a live voice conversation with the demo agent. Your microphone will be requested.</p>
@@ -663,32 +663,32 @@
 <h2 class="section-title">Built for businesses<br/>that rely on the phone.</h2>
 <div class="use-case-grid stagger-children">
 <div class="use-case reveal">
-<div class="use-case-icon"></div>
+<div class="use-case-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
 <h4>Restaurants &amp; Venues</h4>
 <p>Handles reservation requests, confirms table availability, answers menu and dietary questions, and manages cancellations. Operates during and outside service hours.</p>
 </div>
 <div class="use-case reveal reveal-delay-1">
-<div class="use-case-icon"></div>
+<div class="use-case-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
 <h4>Health &amp; Wellness</h4>
 <p>Books, reschedules, and cancels client appointments. Answers standard questions about services, pricing, and availability. Integrates with booking systems directly.</p>
 </div>
 <div class="use-case reveal reveal-delay-2">
-<div class="use-case-icon"></div>
+<div class="use-case-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
 <h4>Sports &amp; Activities</h4>
 <p>Manages session bookings, provides information about packages and requirements, handles group enquiries, and answers questions about location and arrival instructions.</p>
 </div>
 <div class="use-case reveal">
-<div class="use-case-icon"></div>
+<div class="use-case-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
 <h4>Property &amp; Real Estate</h4>
 <p>Answers enquiries about listings, schedules viewings, collects caller information, and provides property details — without a human agent needing to be available at all times.</p>
 </div>
 <div class="use-case reveal reveal-delay-1">
-<div class="use-case-icon"></div>
+<div class="use-case-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
 <h4>Service Businesses</h4>
 <p>Handles inbound service requests, schedules on-site visits or consultations, collects job details, and routes calls according to priority or service type.</p>
 </div>
 <div class="use-case reveal reveal-delay-2">
-<div class="use-case-icon"></div>
+<div class="use-case-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
 <h4>Professional Services</h4>
 <p>Manages initial enquiry calls, schedules consultations, and provides information about services and processes — handling the first point of contact professionally and consistently.</p>
 </div>
@@ -746,22 +746,22 @@ roiCalc();
 <div class="reveal-right">
 <div class="integration-grid">
 <div class="integration-item">
-<div class="integration-icon"></div>
+<div class="integration-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
 <div class="integration-name">Google Calendar</div>
 <div class="integration-desc">Live availability &amp; booking</div>
 </div>
 <div class="integration-item">
-<div class="integration-icon"></div>
+<div class="integration-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
 <div class="integration-name">CRM Systems</div>
 <div class="integration-desc">Contact &amp; lead creation</div>
 </div>
 <div class="integration-item">
-<div class="integration-icon"></div>
+<div class="integration-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></div>
 <div class="integration-name">Custom Webhooks</div>
 <div class="integration-desc">Any API-connected tool</div>
 </div>
 <div class="integration-item">
-<div class="integration-icon"></div>
+<div class="integration-icon"><svg width="22" height="22" viewBox="0 0 24 24" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></div>
 <div class="integration-name">Booking Software</div>
 <div class="integration-desc">Read &amp; write appointments</div>
 </div>
